@@ -1,0 +1,125 @@
+title: 如何通过Github Pages + hexo 搭建个人博客
+date: 2016-03-13 00:09:51
+tags: [Github Pages，hexo]
+---
+
+这是在github page上建立的个人博客站点，专注WEB前端开发技术知识，有别于个人独立博客站点：[西风博客](http://www.xifengxx.com/).
+
+### 为什么要搭建个人博客呢？
+1. 个人知识积累。
+经历过那么多，是不是想把自己的经历、想法观点给记录下来，网站是个不错的选择。
+俗话说得好，好记性不如烂笔头。你不写出来，是会遗忘的，那是一笔多么宝贵的财富啊。同时，你在写的过程中，你会思考、会反思自己的过往经历，更能理性的认清生活，了解自己，积累经验教训。
+
+2. 自由无拘束。
+你可能会说，我通过新浪微博、网易博客、QQ空间，照样可以写日记啊，何必多此一举，建自己的网站呢？
+的却可以，但使用这些空间或服务的时候，必定会受到诸多限制，敏感词汇会被屏蔽，甚至你的博客都有可能被封。而自己的网站，自己想干啥就干啥，自由度很高。
+
+3. 交流分享。
+人与人之间是需要交流学习的，而通过网站这种形式，将自己的思想、经历、生活等展现出来，与别人分享，能让他人更加认识你，成为朋友的几率便更好，如此，你能找到志同道合的朋友，形成所谓的圈子。
+
+4. 工作机会。
+通过网站，你可以积累各方面的经验，让别人认识你，如果有合适的工作机会，别人考虑你的几率是不是会增大很多？
+因为通过你的网站、你的文章，别人能更深刻认识你这个人，和你的专业度。
+同时，你的网站相当于你的精彩简历，实力的证明，找工作时附上个人网站，有兴趣的HR会更看重你，因为仅通过面谈是会遗漏很多信息的，透过文字更能全面的了解一个人的过往经历。
+
+### 如何搭建个人博客？
+可以参看我写过的两篇文章：
+- [如何搭建个人博客网站？](http://www.xifengxx.com/web-front-end/wordpress/161.html)
+- [利用WordPress快速搭建个人网站教程](http://www.xifengxx.com/wordpress-study)
+
+### 关于本博客
+**基于Github Page搭建，主要记录个人学习Web前端开发技术过程中记录、总结、学习的各类知识、经验。**
+
+阮一峰[阮一峰博客](http://www.ruanyifeng.com/)曾说过：
+> 喜欢写Blog的人，会经历三个阶段:
+第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。
+
+第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。
+
+第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。
+
+我现在正在向第三阶段过渡，待完全掌握前端技术后，会重新制作个人博客，然后将其迁移到github上来。
+
+### Github Page 个人博客如何搭建？
+使用Github Page搭建个人博客有3种方式（个人了解的就这么多，也可能有其他方式）
+
+1. Github Pages + Jekyll (需下载Ruby+Devkit) [](http://cnfeat.com/)
+
+2. Github Pages + Hexo   [](http://wsgzao.github.io/)
+
+3. Github Pages + Hugo   [](http://blog.coderzh.com/)
+
+互联网上关于这类教程非常多，其中很多作者写的非常好，堪称傻瓜式教程，只要按照其步骤便可以快速搭建起个人博客。
+这里便引用他人的详细教程。
+
+- 方法1：
+-- [阮一峰博客](http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html)
+-- [雨知博客](http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html)
+-- [BeiYuu](http://beiyuu.com/github-pages/)
+
+- 方法2：
+[Zippera博客](http://zipperary.com/2013/05/28/hexo-guide-2/)
+
+- 方法3：
+[CoderZh博客](http://blog.coderzh.com/2015/08/29/hugo/)
+
+#### Github Page + hexo搭建博客
+
+我的这个博客是使用方法2搭建的，基于Github Page + hexo搭建的。（原本最开始是准备用方法1的，结果测试后发现Jeky11好像不支持XP系统，无奈只能选用其他方法。）
+以下详细介绍这种方法搭建博客注意点：
+
+- **工具：Github + Node.JS + Hexo**
+
+-- [Github](https://desktop.github.com/) ——Win7及以上系统适用
+
+-- [Node.JS](https://nodejs.org/en/)
+
+-- [Git](http://git-scm.com/)   ——XP/Win7及以上系统皆适用
+
+Github和Git这两个工具，任选其一即可。
+
+- **XP系统适用教程：**
+此文章使用的Git工具是：Github(工具下载见上面链接)[Zippera博客](http://zipperary.com/2013/05/28/hexo-guide-2/)
+
+- **Win7及以上系统适用教程：**
+此文章使用的Git工具是：Git(工具下载见上面链接)
+[Hello Dog博客](http://wsgzao.github.io/post/hexo-guide/)
+
+**可能出现的问题：（以下问题是我搭建时碰到的）**
+> 
+$ hexo deploy
+ERROR Deployer not found: git
+
+![图片](http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy.png)
+
+**解决方法：**
+- 方法1：
+
+在_config.yml 中设置 deploy中的type一项为git。(我测试过这种方法，*失败*)
+（deploy下的"type"/"repository"/"branch"三项冒号后面需要空一格输入，正确格式如下：
+```
+deploy:
+  type: git
+  repository: https://github.com/xifengxx/xifengxx.github.io.git
+  branch: master
+```
+
+- 方法2：
+
+在git中运行：图片1-4，解决问题。
+
+![1](http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy%201.png)
+
+![2](http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy%202.png)
+
+![3](http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy%203.png)
+
+![4](http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy%204.png)
+
+输入github博客网站：xifengxx.github.io.git,成功创建。
+
+
+### 引申阅读：
+FarBox、Jekyll、Octopress、ghost、marboo、Hexo、Medium、Logdown、prose.io，这些博客程序有什么特点？
+
+[知乎](http://www.zhihu.com/question/21981094)
