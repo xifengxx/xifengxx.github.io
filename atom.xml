@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>西风Web前端学习博客</title>
+  <subtitle>在梦想面前，一切都是借口。</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-04-07T02:01:56.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Xifengxx</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo 内置标签</title>
+    <link href="http://yoursite.com/2016/04/07/hexo-%E5%86%85%E7%BD%AE%E6%A0%87%E7%AD%BE/"/>
+    <id>http://yoursite.com/2016/04/07/hexo-内置标签/</id>
+    <published>2016-04-07T01:47:25.000Z</published>
+    <updated>2016-04-07T02:01:56.000Z</updated>
+    
+    <content type="html">&lt;p&gt;标签(Tag Plugin) 是 Hexo 提供的一种快速生成特定内容的方式。 在标准 Markdown 中，我们无法指定图片的大小，在这种情景下，我们即可使用标签来解决。 Hexo 内置来许多标签来帮助写作者可以更快的书写， 完整的标签列表 可以参考 &lt;a href=&quot;https://hexo.io/docs/tag-plugins.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo 官网&lt;/a&gt;。 另外，Hexo 也开放来接口给主题，使主题有可能提供给写作者更简便的写作方法。&lt;/p&gt;
+&lt;h3 id=&quot;文本居中引用&quot;&gt;&lt;a href=&quot;#文本居中引用&quot; class=&quot;headerlink&quot; title=&quot;文本居中引用&quot;&gt;&lt;/a&gt;文本居中引用&lt;/h3&gt;&lt;p&gt;此标签将生成一个带上下分割线的引用，同时引用内文本将自动居中。 文本居中时，多行文本若长度不等，视觉上会显得不对称，因此建议在引用单行文本的场景下使用。 例如作为文章开篇引用 或者 结束语之前的总结引用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用方式&lt;/strong&gt;&lt;br&gt;HTML方式：使用这种方式时，给 img 添加属性 class=”blockquote-center” 即可。&lt;br&gt;标签方式：使用 centerquote 或者 简写 cq。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;
+&lt;!-- 其中 class=&quot;blockquote-center&quot; 是必须的 --&gt;
+  &lt;blockquote class=&quot;blockquote-center&quot;&gt;blah blah blah&lt;/blockquote&gt;
+
+  &lt;!-- 标签 方式，要求NexT版本在0.4.5或以上 --&gt;
+&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;blah blah blah&lt;/p&gt;
+&lt;/blockquote&gt;
+  &lt;!-- 标签别名 --&gt;
+&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;blah blah blah &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;效果示例：&lt;br&gt;&lt;img src=&quot;http://theme-next.iissnan.com/uploads/tags/blockquote-center.png&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;h3 id=&quot;图片容器宽度限制的图片&quot;&gt;&lt;a href=&quot;#图片容器宽度限制的图片&quot; class=&quot;headerlink&quot; title=&quot;图片容器宽度限制的图片&quot;&gt;&lt;/a&gt;图片容器宽度限制的图片&lt;/h3&gt;&lt;p&gt;当使用此标签引用图片时，图片将自动扩大 26%，并突破文章容器的宽度。 此标签使用于需要突出显示的图片, 图片的扩大与容器的偏差从视觉上提升图片的吸引力。 此标签有两种调用方式（详细参看底下示例）：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用方式&lt;/strong&gt;&lt;br&gt;HTML方式：使用这种方式时，为 img 添加属性 class=”full-image”即可。&lt;br&gt;标签方式：使用 fullimage 或者 简写 fi， 并传递图片地址、 alt 和 title 属性即可。 属性之间以逗号分隔。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;
+&lt;!-- 其中 class=&quot;full-image&quot; 是必须的 --&gt;
+&lt;p&gt;&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+   &lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;
+&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; alt=&quot;alt&quot; title=&quot;title&quot;&gt;
+&lt;!-- 别名 --&gt;
+&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; alt=&quot;alt&quot; title=&quot;title&quot;&gt;
+&lt;p&gt;效果示例：&lt;br&gt;&lt;img src=&quot;http://theme-next.iissnan.com/uploads/tags/full-image.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;###如何设置阅读全文&lt;br&gt;在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。 NexT 提供三种方式来控制文章在首页的显示方式。 也就是说，在首页显示文章的摘录并显示&lt;strong&gt;阅读全文&lt;/strong&gt;按钮，可以通过以下方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在文章中使用 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt; 手动进行截断，Hexo 提供的方式 推荐&lt;/li&gt;
+&lt;li&gt;在文章的 front-matter 中添加 description，并提供文章摘录&lt;/li&gt;
+&lt;li&gt;自动形成摘要，在 主题配置文件 中添加：&lt;blockquote&gt;
+&lt;p&gt;auto_excerpt:&lt;br&gt;enable: true&lt;br&gt;length: 150&lt;br&gt;默认截取的长度为 150 字符，可以根据需要自行设定&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;建议使用 &lt;!-- more --&gt;（即第一种方式），除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;标签(Tag Plugin) 是 Hexo 提供的一种快速生成特定内容的方式。 在标准 Markdown 中，我们无法指定图片的大小，在这种情景下，我们即可使用标签来解决。 Hexo 内置来许多标签来帮助写作者可以更快的书写， 完整的标签列表 可以参考 &lt;a href=&quot;https://hexo.io/docs/tag-plugins.html&quot;&gt;Hexo 官网&lt;/a&gt;。 另外，Hexo 也开放来接口给主题，使主题有可能提供给写作者更简便的写作方法。&lt;/p&gt;
+&lt;h3 id=&quot;文本居中引用&quot;&gt;&lt;a href=&quot;#文本居中引用&quot; class=&quot;headerlink&quot; title=&quot;文本居中引用&quot;&gt;&lt;/a&gt;文本居中引用&lt;/h3&gt;&lt;p&gt;此标签将生成一个带上下分割线的引用，同时引用内文本将自动居中。 文本居中时，多行文本若长度不等，视觉上会显得不对称，因此建议在引用单行文本的场景下使用。 例如作为文章开篇引用 或者 结束语之前的总结引用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用方式&lt;/strong&gt;&lt;br&gt;HTML方式：使用这种方式时，给 img 添加属性 class=”blockquote-center” 即可。&lt;br&gt;标签方式：使用 centerquote 或者 简写 cq。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;
+&lt;!-- 其中 class=&quot;blockquote-center&quot; 是必须的 --&gt;
+  &lt;blockquote class=&quot;blockquote-center&quot;&gt;blah blah blah&lt;/blockquote&gt;
+
+  &lt;!-- 标签 方式，要求NexT版本在0.4.5或以上 --&gt;
+&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;blah blah blah&lt;/p&gt;
+&lt;/blockquote&gt;
+  &lt;!-- 标签别名 --&gt;
+&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;blah blah blah &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;效果示例：&lt;br&gt;&lt;img src=&quot;http://theme-next.iissnan.com/uploads/tags/blockquote-center.png&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
+&lt;h3 id=&quot;图片容器宽度限制的图片&quot;&gt;&lt;a href=&quot;#图片容器宽度限制的图片&quot; class=&quot;headerlink&quot; title=&quot;图片容器宽度限制的图片&quot;&gt;&lt;/a&gt;图片容器宽度限制的图片&lt;/h3&gt;&lt;p&gt;当使用此标签引用图片时，图片将自动扩大 26%，并突破文章容器的宽度。 此标签使用于需要突出显示的图片, 图片的扩大与容器的偏差从视觉上提升图片的吸引力。 此标签有两种调用方式（详细参看底下示例）：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用方式&lt;/strong&gt;&lt;br&gt;HTML方式：使用这种方式时，为 img 添加属性 class=”full-image”即可。&lt;br&gt;标签方式：使用 fullimage 或者 简写 fi， 并传递图片地址、 alt 和 title 属性即可。 属性之间以逗号分隔。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;
+&lt;!-- 其中 class=&quot;full-image&quot; 是必须的 --&gt;
+&lt;p&gt;&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; /&gt;&lt;/p&gt;
+   &lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;
+&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; alt=&quot;alt&quot; title=&quot;title&quot; /&gt;
+&lt;!-- 别名 --&gt;
+&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; alt=&quot;alt&quot; title=&quot;title&quot; /&gt;
+&lt;p&gt;效果示例：&lt;br&gt;&lt;img src=&quot;http://theme-next.iissnan.com/uploads/tags/full-image.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;###如何设置阅读全文&lt;br&gt;在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。 NexT 提供三种方式来控制文章在首页的显示方式。 也就是说，在首页显示文章的摘录并显示&lt;strong&gt;阅读全文&lt;/strong&gt;按钮，可以通过以下方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在文章中使用
+    
+    </summary>
+    
+      <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2016/04/07/HTTP%E5%8D%8F%E8%AE%AE%E7%9F%A5%E5%A4%9A%E5%B0%91/"/>
+    <id>http://yoursite.com/2016/04/07/HTTP协议知多少/</id>
+    <published>2016-04-07T01:01:36.750Z</published>
+    <updated>2016-04-05T14:36:14.000Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;HTTP协议及相关知识&quot;&gt;&lt;a href=&quot;#HTTP协议及相关知识&quot; class=&quot;headerlink&quot; title=&quot;HTTP协议及相关知识&quot;&gt;&lt;/a&gt;HTTP协议及相关知识&lt;/h1&gt;&lt;p&gt;HTTP，或者超文本传输协议，是上世纪80年代由蒂姆.伯纳斯.李发明的。&lt;br&gt;它是一个规则系统，是一种协议，把应用程序和超文本文档之间的传输联系起来。换句话说，HTTP 就是机器之间彼此沟通的一个协议，或者说一个消息格式。&lt;br&gt;HTTP 遵循一个简单的模型：从客户端发出请求到服务器并等待响应。因此它也被认为是一种“请求–响应协议”。请求和响应都是文本信息，或者说是字符串，信息写法遵循着一个规则，能保证其他机器能够理解上面的内容。&lt;/p&gt;
+&lt;h3 id=&quot;HTTP请求&quot;&gt;&lt;a href=&quot;#HTTP请求&quot; class=&quot;headerlink&quot; title=&quot;HTTP请求&quot;&gt;&lt;/a&gt;HTTP请求&lt;/h3&gt;&lt;p&gt;每一个HTTP请求都会得到一个响应，哪怕这响应是一个错误响应.(有时响应会超时)&lt;br&gt;GET请求：向服务器发起请求数据；&lt;br&gt;POST请求：给服务器提交数据&lt;/p&gt;
+&lt;h4 id=&quot;GET请求&quot;&gt;&lt;a href=&quot;#GET请求&quot; class=&quot;headerlink&quot; title=&quot;GET请求&quot;&gt;&lt;/a&gt;GET请求&lt;/h4&gt;&lt;p&gt;GET 请求一般出现在超链接或者浏览器的地址栏里。当你在你的浏览器地址栏里输入类似 &lt;a href=&quot;http://www.reddit.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.reddit.com&lt;/a&gt; 这样的地址的时候，你就是在发起一个 GET 请求。你让浏览器去取这个地址上的资源，这就意味着我们在整本书里一直在使用GET请求。在你点击 web 应用上的超链接的时候也会发生同样的事情。超链接的默认行为就是向一个 URL 发送GET请求。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;GET 请求经常用于取得一个资源，而且大部分超链接都是 GET 请求。&lt;/li&gt;
+&lt;li&gt;一个 GET 请求的响应可以是任何东西，但是如果响应是一个 HTML 并且里面引用了其他资源，你的浏览器会自动对这些资源发起请求，而一个纯粹的 HTTP 工具则不会。&lt;/li&gt;
+&lt;li&gt;使用 GET 请求的时候在大小和安全性上有一些限制。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;POST请求&quot;&gt;&lt;a href=&quot;#POST请求&quot; class=&quot;headerlink&quot; title=&quot;POST请求&quot;&gt;&lt;/a&gt;POST请求&lt;/h4&gt;&lt;p&gt;浏览器里的典型 POST 使用案例就是你提交一个表单的时候。POST 请求允许我们向服务器发送更大或者敏感的数据，比如图片或者视频。&lt;br&gt;POST 请求也能避免你使用 GET 请求时的查询字符串长度限制问题。通过 POST 请求，我们可以给服务器发送更大的数据。&lt;/p&gt;
+&lt;h4 id=&quot;HTTP头部&quot;&gt;&lt;a href=&quot;#HTTP头部&quot; class=&quot;headerlink&quot; title=&quot;HTTP头部&quot;&gt;&lt;/a&gt;HTTP头部&lt;/h4&gt;&lt;p&gt;HTTP 头部允许客户端和服务器在请求/响应的 HTTP 周期里发送额外的信息。头部，通常是以冒号分隔的键值对儿，一般是纯文本格式的。&lt;/p&gt;
+&lt;h4 id=&quot;请求头部-Request-Headers&quot;&gt;&lt;a href=&quot;#请求头部-Request-Headers&quot; class=&quot;headerlink&quot; title=&quot;请求头部 Request Headers&quot;&gt;&lt;/a&gt;请求头部 Request Headers&lt;/h4&gt;&lt;p&gt;请求头部提供更多关于服务器和要获取的资源的信息。一些有用的请求头部是:&lt;/p&gt;
+&lt;p&gt;字段名          |  描述                    |    举例&lt;br&gt;Host            |  服务器域名              |    Host:www.reddit.com&lt;br&gt;—————-|————————- | ————————-&lt;br&gt;Accept-Language |  可接受的语言            |    Accept-Language: en-US，en;q=0.8&lt;br&gt;User-Agent      |  一个标识客户端的字符串  |    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML，like Gecko) Chrome/38.0.2125.101 Safari/537.36&lt;br&gt;Connection      |   客户端连接的类型       |    Connection: keep-alive&lt;/p&gt;
+&lt;h3 id=&quot;处理响应&quot;&gt;&lt;a href=&quot;#处理响应&quot; class=&quot;headerlink&quot; title=&quot;处理响应&quot;&gt;&lt;/a&gt;处理响应&lt;/h3&gt;&lt;p&gt;服务器返回的原始数据就是所谓的响应。&lt;/p&gt;
+&lt;h4 id=&quot;状态码&quot;&gt;&lt;a href=&quot;#状态码&quot; class=&quot;headerlink&quot; title=&quot;状态码&quot;&gt;&lt;/a&gt;状态码&lt;/h4&gt;&lt;p&gt;状态码是服务器接收到请求后返回的标识请求状态的三位数.在状态码的旁边，就是描述这个状态码的状态文本.&lt;br&gt;常见的状态码有：&lt;br&gt;状态码     |   状态文本                 |     含义&lt;br&gt;———–|—————————-|—————————&lt;br&gt;200        |    OK                      |     请求被正确处理&lt;br&gt;302        |    Found                   |     所请求的资源已暂时更改.通常会重定向到另一个 URL&lt;br&gt;404        |    Not Found               |     所请求的资源无法找到&lt;br&gt;500        |    Internal Server Error   |       服务器出现一般性错误&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;302 Redirect（重定向）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;当一个资源的位置移动了会发生什么呢？ 最通用的解决方案是把对旧 URL 的请求重新引导到新 URL 上.这种重新引导请求的行为有一个术语叫重定向（ redirect ）。当你的浏览器看到一个 302 响应状态码的时候，他就知道这个资源已经移动到别处了，然后就会自动跳转到 Location 响应头部里指定的 URL 。&lt;br&gt;例子：&lt;br&gt;比如说你想要看 GitHub 上的账户配置，你就要访问这个链接 &lt;a href=&quot;https://github.com/settings/profile&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/settings/profile&lt;/a&gt; 。但是，要有访问账户配置页面的权限，你必须先登录。如果你没有登录就访问这个链接，浏览器会把你送到登录页面去。当你填写正确的登录信息后，你就会被重定向到你最早想访问的页面。这个是大多数 web 应用的通用工作流程。&lt;br&gt;当你在浏览器里输入 &lt;a href=&quot;https://github.com/settings/profile时，浏览器会直接按照重定向的指示给你展示出&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/settings/profile时，浏览器会直接按照重定向的指示给你展示出&lt;/a&gt; GitHub 的登录页面:&lt;br&gt;其Location响应头部如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Location: &lt;a href=&quot;https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fprofile&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fprofile&lt;/a&gt;&lt;br&gt;这个 URL 里有一个 return_to 参数，它的值就是在登录之后客户端要重定向到的 URL。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;响应头部&quot;&gt;&lt;a href=&quot;#响应头部&quot; class=&quot;headerlink&quot; title=&quot;响应头部&quot;&gt;&lt;/a&gt;响应头部&lt;/h4&gt;&lt;p&gt;响应头部提供了更多关于服务器返回的资源的信息。让我们来看看一些常见的响应头部:&lt;br&gt;头部名称            |   描述                   |  举例&lt;br&gt;——————–|————————–|————————-&lt;br&gt;Content-Encoding    |   数据的编码类型         |  Content-Encoding: gzip&lt;br&gt;Server              |   服务器的名称           |  Server:thin 1.5.0 codename Knife&lt;br&gt;Location            |   通知客户端新的资源位置 | Location: &lt;a href=&quot;http://www.github.com/login&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.github.com/login&lt;/a&gt;&lt;br&gt;Content-Type        |   响应数据的类型         |  Content-Type:text/html; charset=UTF-8&lt;/p&gt;
+&lt;h4 id=&quot;消息正文&quot;&gt;&lt;a href=&quot;#消息正文&quot; class=&quot;headerlink&quot; title=&quot;消息正文&quot;&gt;&lt;/a&gt;消息正文&lt;/h4&gt;&lt;p&gt;HTTP响应中的原始数据。&lt;/p&gt;
+&lt;h3 id=&quot;有状态的WEB应用&quot;&gt;&lt;a href=&quot;#有状态的WEB应用&quot; class=&quot;headerlink&quot; title=&quot;有状态的WEB应用&quot;&gt;&lt;/a&gt;有状态的WEB应用&lt;/h3&gt;&lt;p&gt;HTTP 协议是无状态的。换句话说，在你的各次请求之间，服务器是不会保留你的 “状态” 信息。&lt;br&gt;&lt;img src=&quot;http://book.haoduoshipin.com/tealeaf-http/images/http_client_server.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;每一次请求都被认为是一次全新的请求，不同的请求之间并不知道对方的存在.这种” 无状态性 “使得 HTTP 和互联网都是 “去中心化” 的，不会轻易被人掌控。&lt;/p&gt;
+&lt;p&gt;web 开发者常用的实现 “有状态” 体验的技术手段,主要包括：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;会话（ session ）&lt;/li&gt;
+&lt;li&gt;Cookies&lt;/li&gt;
+&lt;li&gt;异步 javascript 调用（ AJAX ）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;会话（session）&quot;&gt;&lt;a href=&quot;#会话（session）&quot; class=&quot;headerlink&quot; title=&quot;会话（session）&quot;&gt;&lt;/a&gt;会话（session）&lt;/h4&gt;&lt;p&gt;人们可以把这个无状态的HTTP 协议通过某种方式保持状态。&lt;br&gt;在客户端（一般就是指浏览器）的帮助下，HTTP 的行为会让人觉得它会在客户端与服务器之间维护一个有状态的连接，尽管实际并没有。达到这种效果的一个办法就是， 服务器在发送响应数据给客户端的时候带一个唯一的令牌（英文叫 token，就是一串数）。随后不论何时客户端向服务器发起请求的时候都把这个令牌附加在后面，让服务器能够辨识这个客户端。在 web 开发领域我们把这个来回传递的令牌叫做会话标识符（ session identifier ）。&lt;/p&gt;
+&lt;p&gt;这种在客户端与服务器之间传递会话 id的机制，能让服务器创建一种各次请求之间的持续连接状态。Web 开发人员利用这种人造的状态，来构建复杂的应用程序。即使这样，每一个请求严格上来说还是无状态的，各次请求之间并不知道彼此的存在。&lt;/p&gt;
+&lt;p&gt;这种人造状态，会有几个后果。第一，必须检查每个请求，查看它是否包含会话标识符。第二，如果请求有会话标识符，也就是有一个会话 id，服务器必须检查每一个会话 id ，确保这些会话 id 是没有过期的，也就是服务器需要维护一些关于如何处理会话过期，如何存储会话数据的规则。第三，服务器要基于这个会话 id 取出这个会话的数据。最后，服务器要根据取出的会话数据重新创建应用程序的状态（ 比如，一个请求对应的 HTML )，然后将其作为响应返回给客户端。&lt;/p&gt;
+&lt;p&gt;这就意味着服务器必须非常辛勤的工作，来模拟这个有状态的用户体验。每一个请求都会有一个独立的响应，哪怕这次的响应跟前一个响应没有任何区别。&lt;br&gt;举个例子，如果你登录到 Facebook 上，服务器会给你一个响应，生成你看到的主页。这个响应是一个十分复杂的 HTML 页面。Facebook 的服务器会把页面上所有照片和留言的赞和评论都组合起来，然后显示在你的时间线上。生成这样一个页面的成本非常高。现在，如果你点了某个照片下面的” 赞 “链接，理论上，Facebook 会重新生成整个页面，它会把你赞过的照片的被赞数加 1，然后把整个 HTML 作为响应返回给你，尽管除了这个赞数以外大部分内容都没有改变。 庆幸的是，实际中 Facebook 使用 Ajax 代替了全页面刷新。不然的话，刷新一个页面会花费很长时间。&lt;/p&gt;
+&lt;p&gt;服务器使用了很多先进的技术来优化会话和实现安全机制，不过这些话题都超出了本书的范围，暂且放下。现在我们来聊一个常用的存储会话信息的方法: 浏览器 cookie 。&lt;/p&gt;
+&lt;h4 id=&quot;Cookies&quot;&gt;&lt;a href=&quot;#Cookies&quot; class=&quot;headerlink&quot; title=&quot;Cookies&quot;&gt;&lt;/a&gt;Cookies&lt;/h4&gt;&lt;p&gt;cookie 就是在一个请求/响应周期内，服务器发送给客户端（通常就是浏览器），并存储在客户端的一段数据。Cookies 或者 HTTP cookies，就是存储在浏览器里包含着会话信息的小文件。&lt;br&gt;默认情况下，大部分浏览器的 cookies 都是启用的。当你第一次访问一个网站的时候，服务器会给你发送会话信息并将其存储在你本地电脑浏览器的 cookie 里。要注意的是真正的会话数据是存在服务器上的。在客户端发起每一个请求的时候，服务器就会比对客户端的 cookie 和服务器上的会话数据，用来标识当前的会话。通过这种方法，当你再次访问同一个网站的时候，服务器就会通过 cookie 和里面的信息来认出你的会话。&lt;br&gt;&lt;strong&gt;会话数据是由服务器生成并存储在服务器上，会话 id 以 cookie 的形式发送到客户端上。&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;AJAX&quot;&gt;&lt;a href=&quot;#AJAX&quot; class=&quot;headerlink&quot; title=&quot;AJAX&quot;&gt;&lt;/a&gt;AJAX&lt;/h4&gt;&lt;p&gt;AJAX 是”异步 javascript 和 XML “ 的简称（ Asynchronous JavaScript and XML ）。它的主要特点就是允许浏览器发送请求和处理响应的时候不用刷新整个页面。&lt;br&gt;举个例子，如果你登录到 Facebook 上，服务器会给你一个响应，生成你看到的主页。 这个响应是一个十分复杂的 HTML 页面。Facebook 的服务器会把各种信息组合起来，显示在你的时间线上。在前面的讨论中，我们知道，为每一个请求都重新生成一次页面的成本是非常高的（记住，你的每一个动作，点个链接，提交个表单，都会发起一个新的请求）。&lt;br&gt;当使用 AJAX 的时候，所有客户端发送的请求都是异步的，就是说页面不会刷新。&lt;br&gt;AJAX 请求就像是普通请求：发送到服务器的请求依然跟普通请求一样有着一个 HTTP 请求该有的所有组成部分，并且服务器处理 AJAX 请求的方法跟处理普通请求也是一样的。唯一不同就是，不是通过浏览器刷新来处理响应，而通常由客户端的一些 javascript 代码来处理。&lt;/p&gt;
+&lt;h3 id=&quot;HTTP安全相关&quot;&gt;&lt;a href=&quot;#HTTP安全相关&quot; class=&quot;headerlink&quot; title=&quot;HTTP安全相关&quot;&gt;&lt;/a&gt;HTTP安全相关&lt;/h3&gt;&lt;h4 id=&quot;HTTPS-安全的HTTP&quot;&gt;&lt;a href=&quot;#HTTPS-安全的HTTP&quot; class=&quot;headerlink&quot; title=&quot;HTTPS(安全的HTTP)&quot;&gt;&lt;/a&gt;HTTPS(安全的HTTP)&lt;/h4&gt;&lt;p&gt;在客户端和服务器互相发送请求和响应的时候，所有的请求和响应里的信息都是通过明文字符串发送的。如果一个恶意的黑客连接到同一网络，他就可以利用数据包嗅探技术来读取来回发送的消息。&lt;br&gt;正如我们已知道的，请求可以包含会话 id ，它唯一地标识你到服务器之间的联系，所以如果别人复制了这个会话 id ，他们可以手动创建到服务器的请求，伪装成你的客户端，甚至都不需要你的用户名和密码就可以自动登陆。&lt;/p&gt;
+&lt;p&gt;这种情况就需要安全的 HTTP 也就是 HTTPS 来帮忙啦。通过 HTTPS 访问资源的时候，通常以 https:// 开头而不是 http:// ，而且通常在边上都会有个小锁子的图标：&lt;br&gt;&lt;img src=&quot;http://book.haoduoshipin.com/tealeaf-http/images/https_address_bar.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;通过 HTTPS 发送的请求和响应在发送前都会被加密。这意味着如果一个恶意的黑客监听 HTTP 通信，他得到的信息都是加密的和无用的。HTTPS 通过一个叫做 TLS 的加密协议来加密消息。在 TLS 开发完成前，早期 HTTPS 使用 SSL （ Secure Sockets Layer ）。这些加密协议在加密数据之前，需要先使用证书来与远程服务器进行通信来交换安全密钥。&lt;/p&gt;
+&lt;h4 id=&quot;同源策略（-Same-origin-policy-）&quot;&gt;&lt;a href=&quot;#同源策略（-Same-origin-policy-）&quot; class=&quot;headerlink&quot; title=&quot;同源策略（ Same-origin policy ）&quot;&gt;&lt;/a&gt;同源策略（ Same-origin policy ）&lt;/h4&gt;&lt;p&gt;同源策略是一个重要的概念，它允许来自同一站点的资源进行互相访问而不受限制，但是会阻止其他不同站点对文档/资源的访问。换句话说它可以阻止另一个站点通过脚本来操纵本站点的文档。&lt;br&gt;&lt;strong&gt;同源的文档必须有相同的协议，主机名和端口号。&lt;/strong&gt;&lt;br&gt;举个例子，&lt;a href=&quot;http://www.test.com/aboutus.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.test.com/aboutus.html&lt;/a&gt; 上的 HTML 文档可以嵌入 &lt;a href=&quot;http://www.test.com/fancy.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.test.com/fancy.js&lt;/a&gt; 这个 javascript 文件，因为它们是同源的，有相同的协议，主机名和端口号(默认的 80) 。&lt;br&gt;反过来说，这就意味着 &lt;a href=&quot;http://www.test.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.test.com&lt;/a&gt; 上的文档不能嵌入 &lt;a href=&quot;http://www.example.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.example.com&lt;/a&gt; 上的文档，因为它们不是同源的。&lt;br&gt;同源策略是防范会话劫持的重要手段，并作为 web 应用安全的基石。&lt;br&gt;&lt;strong&gt;同源策略涉及的是访问文件内容，而不是链接，你可以随意链接到任何 URL。&lt;/strong&gt;&lt;br&gt;虽然这样很安全，但是有时 web 开发人员需要进行跨域的内容访问就会很麻烦，所以就有了跨域资源共享技术CORS 。 &lt;/p&gt;
+&lt;h4 id=&quot;跨域资源共享技术-CORS&quot;&gt;&lt;a href=&quot;#跨域资源共享技术-CORS&quot; class=&quot;headerlink&quot; title=&quot;跨域资源共享技术 CORS&quot;&gt;&lt;/a&gt;跨域资源共享技术 CORS&lt;/h4&gt;&lt;p&gt;CORS是一种机制，允许我们绕过同源策略，从一个域名向另一个域名的资源发起请求。CORS的原理是添加新的 HTTP头部，来对一些域名授权，那这些域名就可以发起对本页面资源的请求。&lt;/p&gt;
+&lt;h4 id=&quot;会话劫持（-Session-Hijacking-）&quot;&gt;&lt;a href=&quot;#会话劫持（-Session-Hijacking-）&quot; class=&quot;headerlink&quot; title=&quot;会话劫持（ Session Hijacking ）&quot;&gt;&lt;/a&gt;会话劫持（ Session Hijacking ）&lt;/h4&gt;&lt;p&gt;会话在维持 HTTP 的状态上扮演着重要的角色。我们也知道会话 id 作为一个唯一的令牌来唯一标识一个会话。通常，会话 id 是作为 cookie 存储在计算机上的一个随机字符串. 会话 id 随着每一个到服务器的请求被送往服务器用于唯一标识这个会话。&lt;br&gt;事实上，这也就是很多 web 应用的用户认证系统所在做的事情，当用户的用户名和密码匹配之后，会话 id 会存储在用户的浏览器里，这样他们的下一个请求就不用重新认证了。&lt;/p&gt;
+&lt;p&gt;不幸的是，如果一个攻击者拿到了这个会话 id ，他就会跟用户共享这一个会话，同时也就能访问这个 web 应用了。在会话劫持攻击中，用户根本意识不到一个攻击者甚至不用知道她的用户名和密码就可以访问她的会话了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;会话劫持的对策&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;重置会话。也就是对于一个用户认证系统来说，一次成功的登录包括验证旧的会话 id 和生成一个新的会话id完成此步骤后，在下一个请求里，会要求受害者进行身份验证。然后会话 id 就会改变，这样攻击者就无法访问到这个会话了。很多网站都采取这种办法，当用户在进行敏感操作的时候保证用户身份的正确性，比如给信用卡充值或者删除账户的时候。&lt;/li&gt;
+&lt;li&gt;给会话设置过期时间。那些不会过期的会话给了攻击者太多的时间去伪装成一个合法用户。如果设置了过期时间，比如 30 分钟，这样一来攻击者就不会那么从容的进行攻击了。&lt;/li&gt;
+&lt;li&gt;整站使用 HTTPS 把攻击者能得到会话 id 的可能性降至最低。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;跨站脚本攻击-XSS&quot;&gt;&lt;a href=&quot;#跨站脚本攻击-XSS&quot; class=&quot;headerlink&quot; title=&quot;跨站脚本攻击 (XSS)&quot;&gt;&lt;/a&gt;跨站脚本攻击 (XSS)&lt;/h4&gt;&lt;p&gt;当你允许用户输入的 HTML 和 javascript 在你自己的网站上直接显示的时候，就有可能遭受这种攻击。&lt;/p&gt;
+&lt;p&gt;如果服务器端对于用户的输入不做任何无害处理的话，这些内容就会注入到网页的内容中去，然后浏览器就会解释执行这些 HTML 和 javascript 代码。&lt;br&gt;恶意用户可以使用 HTML 和 javascript 代码对服务器或者以后访问这个页面的用户发起毁灭性的攻击。举个例子，一个攻击者可以使用 javascript 代码去获取所有在他之后访问这个页面的用户的会话 id ，然后伪装成其他用户。而这一切都发生在受害者一无所知的情况下。而且要注意的是，这种攻击也能绕过同源策略，因为这段恶意代码是存在于当前这个网站上的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;跨站脚本攻击的解决方案&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;总是对用户输入的内容做无害处理。消除有问题的输入，比如&lt;script&gt;标签，或者使用一个更安全的输入格式，比如 Markdown，这样就可以阻止 HTML 和 javascript 同时出现在用户的输入里。&lt;/li&gt;
+&lt;li&gt;在显示之前转义用户输入的所有数据.如果你需要用户能够输入 HTML 和 javascript 代码，那么当你显示这些输入内容的时候要确保它们被正确转义，这样浏览器就不会把它们当做代码给执行了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://book.haoduoshipin.com/tealeaf-http/&quot;&gt;HTTP下午茶&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/script&gt;&lt;/li&gt;&lt;/ul&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;HTTP协议及相关知识&quot;&gt;&lt;a href=&quot;#HTTP协议及相关知识&quot; class=&quot;headerlink&quot; title=&quot;HTTP协议及相关知识&quot;&gt;&lt;/a&gt;HTTP协议及相关知识&lt;/h1&gt;&lt;p&gt;HTTP，或者超文本传输协议，是上世纪80年代由蒂姆.伯纳斯.李发明
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hello</title>
+    <link href="http://yoursite.com/2016/04/06/hello/"/>
+    <id>http://yoursite.com/2016/04/06/hello/</id>
+    <published>2016-04-06T12:24:07.000Z</published>
+    <updated>2016-04-06T12:24:08.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/04/06/hello-world/"/>
+    <id>http://yoursite.com/2016/04/06/hello-world/</id>
+    <published>2016-04-06T12:15:39.870Z</published>
+    <updated>2016-04-06T12:15:40.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo安装及部署</title>
+    <link href="http://yoursite.com/2016/04/05/Hexo%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2016/04/05/Hexo基本操作/</id>
+    <published>2016-04-05T11:09:51.000Z</published>
+    <updated>2016-04-07T02:20:22.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;配置SSH-Key&quot;&gt;&lt;a href=&quot;#配置SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;配置SSH Key&quot;&gt;&lt;/a&gt;配置SSH Key&lt;/h3&gt;&lt;p&gt;用SSH Key将本地git项目与远程GitHub建立联系。&lt;br&gt;定位到目标文件夹，右键-Git Bash下输入命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ssh -T git@github.com&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Hexo安装&quot;&gt;&lt;a href=&quot;#Hexo安装&quot; class=&quot;headerlink&quot; title=&quot;Hexo安装&quot;&gt;&lt;/a&gt;Hexo安装&lt;/h3&gt;&lt;p&gt;首先要安装好Git 和Node.js软件。&lt;br&gt;安装完后，打开Git Bash，输入命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;npm install hexo-cli -g&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;通过以下命令来确认Hexo是否安装成功：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hexo -v&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果出现类似内容，则说明安装成功：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hexo-cli: 1.0.1&lt;br&gt;os: Windows_NT 5.1.2600 win32 ia32&lt;br&gt;http_parser: 2.5.0&lt;br&gt;node: 4.2.4&lt;br&gt;v8: 4.5.103.35&lt;br&gt;uv: 1.7.5&lt;br&gt;zlib: 1.2.8&lt;br&gt;ares: 1.10.1-DEV&lt;br&gt;icu: 56.1&lt;br&gt;modules: 46&lt;br&gt;openssl: 1.0.2e&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Hexo部署&quot;&gt;&lt;a href=&quot;#Hexo部署&quot; class=&quot;headerlink&quot; title=&quot;Hexo部署&quot;&gt;&lt;/a&gt;Hexo部署&lt;/h3&gt;&lt;p&gt;在目标文件夹下，Git Bash命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hexo init&lt;br&gt;npm install&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;新建博客文章：&quot;&gt;&lt;a href=&quot;#新建博客文章：&quot; class=&quot;headerlink&quot; title=&quot;新建博客文章：&quot;&gt;&lt;/a&gt;新建博客文章：&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;hexo new “文章标题”&lt;br&gt;一个博文内容包括以下几部分：&lt;br&gt;title: 如何通过Github Pages + hexo 搭建个人博客&lt;br&gt;date: 2016-03-13 00:09:51&lt;br&gt;tags: [Github Pages, hexo]&lt;/p&gt;
+&lt;h2 id=&quot;categories-hexo&quot;&gt;&lt;a href=&quot;#categories-hexo&quot; class=&quot;headerlink&quot; title=&quot;categories: hexo&quot;&gt;&lt;/a&gt;categories: hexo&lt;/h2&gt;&lt;p&gt;此处为正文内容&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;新建页面：&quot;&gt;&lt;a href=&quot;#新建页面：&quot; class=&quot;headerlink&quot; title=&quot;新建页面：&quot;&gt;&lt;/a&gt;新建页面：&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;hexo new page “页面名称”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;博客文章页面预览&quot;&gt;&lt;a href=&quot;#博客文章页面预览&quot; class=&quot;headerlink&quot; title=&quot;博客文章页面预览&quot;&gt;&lt;/a&gt;博客文章页面预览&lt;/h3&gt;&lt;p&gt;使用以下命令启动本地服务器&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hexo server&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;提示信息：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;INFO  Start processing&lt;br&gt;INFO  Hexo is running at &lt;a href=&quot;http://localhost:4000/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/&lt;/a&gt;. Press Ctrl+C to stop.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在浏览器访问：&lt;a href=&quot;http://localhost:4000/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/&lt;/a&gt; 访问页面&lt;/p&gt;
+&lt;h3 id=&quot;将本地文件部署到GitHub&quot;&gt;&lt;a href=&quot;#将本地文件部署到GitHub&quot; class=&quot;headerlink&quot; title=&quot;将本地文件部署到GitHub&quot;&gt;&lt;/a&gt;将本地文件部署到GitHub&lt;/h3&gt;&lt;h4 id=&quot;修改-config-yml文件&quot;&gt;&lt;a href=&quot;#修改-config-yml文件&quot; class=&quot;headerlink&quot; title=&quot;修改_config.yml文件&quot;&gt;&lt;/a&gt;修改_config.yml文件&lt;/h4&gt;&lt;blockquote&gt;
+&lt;h1 id=&quot;Deployment&quot;&gt;&lt;a href=&quot;#Deployment&quot; class=&quot;headerlink&quot; title=&quot;Deployment&quot;&gt;&lt;/a&gt;Deployment&lt;/h1&gt;&lt;h2 id=&quot;Docs-https-hexo-io-docs-deployment-html&quot;&gt;&lt;a href=&quot;#Docs-https-hexo-io-docs-deployment-html&quot; class=&quot;headerlink&quot; title=&quot;Docs: https://hexo.io/docs/deployment.html&quot;&gt;&lt;/a&gt;Docs: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io/docs/deployment.html&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;deploy:&lt;br&gt;  type: git&lt;br&gt;  repository: &lt;a href=&quot;https://github.com/xifengxx/xifengxx.github.io.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/xifengxx.github.io.git&lt;/a&gt;&lt;br&gt;  branch: master&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;将其deploy到仓库&quot;&gt;&lt;a href=&quot;#将其deploy到仓库&quot; class=&quot;headerlink&quot; title=&quot;将其deploy到仓库&quot;&gt;&lt;/a&gt;将其deploy到仓库&lt;/h4&gt;&lt;p&gt;打开Git Bash，依次输入以下命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hexo clean&lt;br&gt;hexo generate&lt;br&gt;hexo deploy&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;此时有可能出现错误，如：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ hexo d&lt;br&gt;ERROR Deployer not found: git&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;此时需要在Git Bash中运行以下命令：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;npm install hexo-deployer-git –save&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后重新再输入命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hexo clean&lt;br&gt;hexo generate&lt;br&gt;hexo deploy&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;hexo clean (清除缓存)&lt;br&gt;hexo generate (生成静态网页)&lt;br&gt;hexo deploy (开始部署)&lt;/p&gt;
+&lt;p&gt;这时出现如下提示表示正确：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;…………（省略内容）&lt;br&gt;Branch master set up to track remote branch master from &lt;a href=&quot;https://github.com/xifengxx/xifengxx.github.io.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/xifengxx.github.io.git&lt;/a&gt;.&lt;br&gt;To &lt;a href=&quot;https://github.com/xifengxx/xifengxx.github.io.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/xifengxx.github.io.git&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fb62809…9b7c22e HEAD -&amp;gt; master (forced update)&lt;br&gt;INFO  Deploy done: git&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;到这里，个人博客已经部署到GitHub上了。可以输入网址查看博客：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;xifengxx.github.io&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;快捷键&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;hexo g == hexo generate&lt;/li&gt;
+&lt;li&gt;hexo d == hexo deploy&lt;/li&gt;
+&lt;li&gt;hexo s == hexo server&lt;/li&gt;
+&lt;li&gt;hexo n == hexo new&lt;br&gt;还能组合使用，如：&lt;/li&gt;
+&lt;li&gt;hexo d -g&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;参考资源&quot;&gt;&lt;a href=&quot;#参考资源&quot; class=&quot;headerlink&quot; title=&quot;参考资源&quot;&gt;&lt;/a&gt;参考资源&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://sunwhut.com/2015/10/30/buildBlog/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sunwhut’s 博客&lt;/a&gt; ☆☆☆☆☆推荐。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.arao.me/2015/hexo-next-theme-optimize-seo/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;arao博客&lt;/a&gt; :Hexo博客优化&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;配置SSH-Key&quot;&gt;&lt;a href=&quot;#配置SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;配置SSH Key&quot;&gt;&lt;/a&gt;配置SSH Key&lt;/h3&gt;&lt;p&gt;用SSH Key将本地git项目与远程GitHub建立联系。&lt;br&gt;定位到目标文件夹
+    
+    </summary>
+    
+      <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git实战教程</title>
+    <link href="http://yoursite.com/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/"/>
+    <id>http://yoursite.com/2016/04/05/git实战教程/</id>
+    <published>2016-04-05T11:09:51.000Z</published>
+    <updated>2016-04-07T01:13:28.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;简明释义&quot;&gt;&lt;a href=&quot;#简明释义&quot; class=&quot;headerlink&quot; title=&quot;简明释义&quot;&gt;&lt;/a&gt;简明释义&lt;/h3&gt;&lt;h4 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Git&lt;/h4&gt;&lt;p&gt;Git 是一个版本控制工具，是一个可以安装在你自己机器上的软件。&lt;br&gt;git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。&lt;/p&gt;
+&lt;h4 id=&quot;github&quot;&gt;&lt;a href=&quot;#github&quot; class=&quot;headerlink&quot; title=&quot;github&quot;&gt;&lt;/a&gt;github&lt;/h4&gt;&lt;p&gt;Git 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。&lt;br&gt;Github 首先是一个公司，&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github网站&lt;/a&gt;是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。&lt;/p&gt;
+&lt;h3 id=&quot;安装及初始化&quot;&gt;&lt;a href=&quot;#安装及初始化&quot; class=&quot;headerlink&quot; title=&quot;安装及初始化&quot;&gt;&lt;/a&gt;安装及初始化&lt;/h3&gt;&lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Windows上安装Git&lt;/strong&gt;&lt;br&gt;msysgit是Windows版的Git。&lt;br&gt;&lt;a href=&quot;http://msysgit.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;然后按默认选项安装即可。&lt;/p&gt;
+&lt;p&gt;安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！&lt;/p&gt;
+&lt;p&gt;安装完成后，还需要最后一步设置，在命令行输入：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git config –global user.name “Your Name”&lt;br&gt;$ git config –global user.email “email@example.com”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。&lt;/p&gt;
+&lt;h4 id=&quot;创建版本库&quot;&gt;&lt;a href=&quot;#创建版本库&quot; class=&quot;headerlink&quot; title=&quot;创建版本库&quot;&gt;&lt;/a&gt;创建版本库&lt;/h4&gt;&lt;p&gt;版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。&lt;/p&gt;
+&lt;p&gt;如何创建版本库？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在电脑磁盘里的任意位置，创建一个空目录&lt;br&gt;方法1：直接在磁盘任意位置，右键-新建文件夹；&lt;br&gt;方法2：在git命令行里创建。&lt;br&gt;关于创建文件常用命令（Unix Linux命令）：&lt;br&gt;-mkdir&lt;br&gt;-cd        ：切换目录命令&lt;br&gt;–cd ..    : 切换到上一级目录。&lt;br&gt;如当前目录为e盘下的code目录，使用命令”cd ..”，会切换到e盘。&lt;br&gt;–cd e:    : 切换盘符。&lt;br&gt;如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。&lt;br&gt;–cd /     : 切换到根目录。&lt;br&gt;–cd 目录名：切换到具体目录。&lt;br&gt;如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。&lt;br&gt;如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。&lt;br&gt;-pwd       : 显示当前所在目录&lt;br&gt;-dir       : 显示当前目录下的所有文件&lt;br&gt;-mkdir     : 创建目录。&lt;br&gt;如当前在e盘下，需要在e盘下创建一个新目录”code1”,使用命令”mkdir code1”即可；&lt;br&gt;如果要在其他盘下创建目录，先使用cd命令定位到目标盘，然后再使用mkdir命令。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;通过git init命名把这个目录变成Git可以管理的仓库。&lt;br&gt;创建完目录后，在磁盘中找到该目录，右键–Git Bash Here即可定位到当前目录，或是通过上面的Linux命令来定位到目标目录。&lt;br&gt;在命令行输入命令”git init”，即成功创建Git仓库。&lt;br&gt;这时在当前目录下，会多出一个.git目录（如果没有，说明被隐藏了，需要在”工具-文件夹选项-查看”里设置隐藏属性为显示所有文件）。这个目录是Git来跟踪管理版本库的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;远程仓库&quot;&gt;&lt;a href=&quot;#远程仓库&quot; class=&quot;headerlink&quot; title=&quot;远程仓库&quot;&gt;&lt;/a&gt;远程仓库&lt;/h3&gt;&lt;h4 id=&quot;配置SSH-Key&quot;&gt;&lt;a href=&quot;#配置SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;配置SSH Key&quot;&gt;&lt;/a&gt;配置SSH Key&lt;/h4&gt;&lt;p&gt;目的：本地Git仓库与GitHub网站仓库之间实现同步传输及存储。&lt;br&gt;步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;需要注册一个GitHub账号。(注册地址)[&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com&lt;/a&gt;].&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;设置SSH Key.(本地Git仓库和GitHub仓库之间的传输是通过SSH加密的)&lt;br&gt;打开Git Bash,创建SSH Key.&lt;br&gt;输入命令：$ ssh-keygen -t rsa -c “youremail@examle.com”&lt;br&gt;将邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。&lt;br&gt;成功的话，会在用户主目录（我的是在”C:\Documents and Settings\Administrator”）里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件。（这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;登录&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub网站&lt;/a&gt;，打开”我的账号/Account settings”—“personal settings”—“SSH keys”，点击”New SSH key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;打开Git Bash，输入命令以下命令检测是否成功连接本机与GitHub。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ssh -T git@github.com&lt;br&gt;在遇到提示的情况下，输入”yes”即可。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;添加远程库&quot;&gt;&lt;a href=&quot;#添加远程库&quot; class=&quot;headerlink&quot; title=&quot;添加远程库&quot;&gt;&lt;/a&gt;添加远程库&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;登录GitHub,点击右上角的”+”号—“New repository”，创建新的Git仓库。&lt;/li&gt;
+&lt;li&gt;把本地仓库的内容推送到GitHub仓库。&lt;br&gt;① 打开GitHub上新建的repository仓库，找到HTTPS/SSH地址并复制地址，如”&lt;a href=&quot;https://github.com/xifengxx/demo.git&amp;quot;是我的一个仓库https地址。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&amp;quot;是我的一个仓库https地址。&lt;/a&gt;&lt;br&gt;② 本地仓库下运行命令&lt;blockquote&gt;
+&lt;p&gt;$ git remote add origin &lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;&lt;br&gt;添加后，远程仓库的名字就是origin(这是Git默认叫法，可以将origin改成其他的名字)&lt;br&gt;③ 继续运行命令&lt;br&gt;$ git push -u origin master&lt;br&gt;把本地仓库内容推送到远程，用git push命令。实际上是把当前分支master推送到远程。&lt;br&gt;由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。&lt;br&gt;推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样。&lt;br&gt;此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改：&lt;br&gt;$ git push origin master&lt;br&gt;④ 推送时，会弹出需要输入github账号及密码框，输入即可。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注意事项&lt;/strong&gt;&lt;br&gt;在第二步②时，输入命令”$ git remote add origin &lt;a href=&quot;https://github.com/xifengxx/demo.git&amp;quot;时，可能会报错。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&amp;quot;时，可能会报错。&lt;/a&gt;&lt;br&gt;错误信息：”fatal: remote origin already exists.……”&lt;br&gt;原因：远程仓库已经存在内容，与本地仓库推送内容冲突。&lt;br&gt;解决方法：&lt;br&gt; 1、先输入”$ git remote rm origin”命令，删除远程仓库内容。&lt;br&gt; 2、再输入”$ git remote add origin git@github.com:djqiang/gitdemo.git” 就不会报错了！&lt;br&gt;上述方法针对第一次将本地仓库推送到远程仓库时遇到这个问题的解决方法。&lt;br&gt;如果不想删除远程仓库内容，可以使用下面的方法，将本地仓库内容和远程仓库内容合并。&lt;br&gt;解决方法：&lt;br&gt; 1、先输入”$ git pull origin master”命令，将远程仓库内容pull到本地仓库。&lt;br&gt; 2、再输入”$ git push origin master”命令，即可。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;从远程库克隆&quot;&gt;&lt;a href=&quot;#从远程库克隆&quot; class=&quot;headerlink&quot; title=&quot;从远程库克隆&quot;&gt;&lt;/a&gt;从远程库克隆&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;登录GitHub,创建一个新的仓库，例如我的一个仓库，名字叫demo&lt;/li&gt;
+&lt;li&gt;找到新仓库的HTTPS/SSH地址并复制地址，如”git@github.com:xifengxx/demo.git”或”&lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;“&lt;/li&gt;
+&lt;li&gt;使用命令git clone克隆一个本地库&lt;blockquote&gt;
+&lt;p&gt;$ git clone git@github.com:xifengxx/demo.git&lt;br&gt;也可以使用命令：&lt;br&gt;$ git clone &lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;&lt;br&gt;Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。&lt;br&gt;使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Git基础操作&quot;&gt;&lt;a href=&quot;#Git基础操作&quot; class=&quot;headerlink&quot; title=&quot;Git基础操作&quot;&gt;&lt;/a&gt;Git基础操作&lt;/h3&gt;&lt;h4 id=&quot;将文件添加到版本库&quot;&gt;&lt;a href=&quot;#将文件添加到版本库&quot; class=&quot;headerlink&quot; title=&quot;将文件添加到版本库&quot;&gt;&lt;/a&gt;将文件添加到版本库&lt;/h4&gt;&lt;p&gt;使用命令：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;git add:将文件添加到仓库。&lt;br&gt;命令：$ git add 文件名&lt;br&gt;将某个文件复制到当前目录，然后再使用这个命令。&lt;/li&gt;
+&lt;li&gt;git commit:将文件提交到仓库。&lt;br&gt;命令：$ git commit -m “xxx”&lt;br&gt;git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。&lt;br&gt;如：$ git commit -m “首次提交”&lt;br&gt;备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注意事项&lt;/strong&gt;&lt;br&gt;将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。&lt;br&gt;关键是如何退出默认编辑器界面并重新返回到Git bash界面。&lt;br&gt;方法：&lt;br&gt;① 按ESC键，确定退出编辑模式。&lt;br&gt;② 然后输入”:wq”，即可返回Git界面。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;利用Github-Page-搭建网页Demo&quot;&gt;&lt;a href=&quot;#利用Github-Page-搭建网页Demo&quot; class=&quot;headerlink&quot; title=&quot;利用Github Page 搭建网页Demo&quot;&gt;&lt;/a&gt;利用Github Page 搭建网页Demo&lt;/h3&gt;&lt;p&gt;适用场景：&lt;br&gt;写了一些网页demo,想上传到网上查看效果，并做展示用途。不同于用Github搭建的个人博客。&lt;/p&gt;
+&lt;p&gt;方法：Github Page部署。&lt;br&gt;步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;注册&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github账号&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;下载安装git.&lt;br&gt;msysgit是Windows版的Git。(下载地址)[&lt;a href=&quot;http://msysgit.github.io/]。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://msysgit.github.io/]。&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;登录Github，新建一个repository项目(这里使用project做项目名字)。&lt;/li&gt;
+&lt;li&gt;在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。&lt;br&gt;设置完成后，这个repository项目的展示地址变为：&lt;br&gt;&lt;a href=&quot;http://xifengxx.github.io/project&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;‘xifengxx’为我注册Github的账号名，project为repository项目名。&lt;br&gt;可以通过上面的网址来访问项目。&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;电脑里选定一个文件夹（这里是Git）放置Github上的项目project。&lt;br&gt;右键——“git bash here”,调出git命令界面，输入以下命令将project项目克隆到本地文件夹下。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git clone &lt;a href=&quot;https://github.com/xifengxx/project.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/project.git&lt;/a&gt;&lt;br&gt;这时本地Git文件夹下会多出一个文件夹Project。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;本地新建分支。&lt;br&gt;输入以下命令，在本地新建一个gh-pages分支并切换到gh-pages分支，这个分支是远程分支origin/gh-pages的镜像。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ cd project/&lt;br&gt;$ git checkout -b gh-pages origin/gh-pages&lt;br&gt;这时本地文件夹project里多出的文件，来自github上的gh-pages分支中的文件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;执行以下命令，删除原有的gh-pages文件，并提交（commit）本次修改。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git rm -rf .&lt;br&gt;$ git add .&lt;br&gt;$ git commit -m “delete all files”&lt;br&gt;这时project里的文件都删除了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将自己的网页Demo文件复制粘贴到project文件夹里。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将本地gh-pages中的网页文件同步到远程库的gh-pages中。&lt;br&gt;输入以下命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git add .&lt;br&gt;$ git commit -m “My design Demo”&lt;br&gt;$ git push origin gh-pages&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;输入第三行命令时，会有弹出框提示输入Github账号和密码，输入后等待片刻，当命令行提示”$”符号时，说明已经完成。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;浏览器输入网址访问：&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://xifengxx.github.io/project/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xifengxx.github.io/project/index.html&lt;/a&gt;&lt;br&gt;或 &lt;a href=&quot;http://xifengxx.github.io/project&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;此处的index.html为网页Demo中的文件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/lijiayi/p/githubpages.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考资源&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;简明释义&quot;&gt;&lt;a href=&quot;#简明释义&quot; class=&quot;headerlink&quot; title=&quot;简明释义&quot;&gt;&lt;/a&gt;简明释义&lt;/h3&gt;&lt;h4 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Gi
+    
+    </summary>
+    
+      <category term="Git" scheme="http://yoursite.com/categories/Git/"/>
+    
+    
+      <category term="Git实战" scheme="http://yoursite.com/tags/Git%E5%AE%9E%E6%88%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何通过Github Pages + hexo 搭建个人博客</title>
+    <link href="http://yoursite.com/2016/03/13/%E9%80%9A%E8%BF%87Github%20Pages%20+%20Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2016/03/13/通过Github Pages + Hexo搭建博客/</id>
+    <published>2016-03-12T16:09:51.000Z</published>
+    <updated>2016-04-07T01:13:28.000Z</updated>
+    
+    <content type="html">&lt;p&gt;这是在github page上建立的个人博客站点，专注WEB前端开发技术知识，有别于个人独立博客站点：&lt;a href=&quot;http://www.xifengxx.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;西风博客&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;为什么要搭建个人博客呢？&quot;&gt;&lt;a href=&quot;#为什么要搭建个人博客呢？&quot; class=&quot;headerlink&quot; title=&quot;为什么要搭建个人博客呢？&quot;&gt;&lt;/a&gt;为什么要搭建个人博客呢？&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;个人知识积累。&lt;br&gt;经历过那么多，是不是想把自己的经历、想法观点给记录下来，网站是个不错的选择。&lt;br&gt;俗话说得好，好记性不如烂笔头。你不写出来，是会遗忘的，那是一笔多么宝贵的财富啊。同时，你在写的过程中，你会思考、会反思自己的过往经历，更能理性的认清生活，了解自己，积累经验教训。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;自由无拘束。&lt;br&gt;你可能会说，我通过新浪微博、网易博客、QQ空间，照样可以写日记啊，何必多此一举，建自己的网站呢？&lt;br&gt;的却可以，但使用这些空间或服务的时候，必定会受到诸多限制，敏感词汇会被屏蔽，甚至你的博客都有可能被封。而自己的网站，自己想干啥就干啥，自由度很高。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;交流分享。&lt;br&gt;人与人之间是需要交流学习的，而通过网站这种形式，将自己的思想、经历、生活等展现出来，与别人分享，能让他人更加认识你，成为朋友的几率便更好，如此，你能找到志同道合的朋友，形成所谓的圈子。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;工作机会。&lt;br&gt;通过网站，你可以积累各方面的经验，让别人认识你，如果有合适的工作机会，别人考虑你的几率是不是会增大很多？&lt;br&gt;因为通过你的网站、你的文章，别人能更深刻认识你这个人，和你的专业度。&lt;br&gt;同时，你的网站相当于你的精彩简历，实力的证明，找工作时附上个人网站，有兴趣的HR会更看重你，因为仅通过面谈是会遗漏很多信息的，透过文字更能全面的了解一个人的过往经历。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;如何搭建个人博客？&quot;&gt;&lt;a href=&quot;#如何搭建个人博客？&quot; class=&quot;headerlink&quot; title=&quot;如何搭建个人博客？&quot;&gt;&lt;/a&gt;如何搭建个人博客？&lt;/h3&gt;&lt;p&gt;可以参看我写过的两篇文章：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.xifengxx.com/web-front-end/wordpress/161.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如何搭建个人博客网站？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.xifengxx.com/wordpress-study&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;利用WordPress快速搭建个人网站教程&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;关于本博客&quot;&gt;&lt;a href=&quot;#关于本博客&quot; class=&quot;headerlink&quot; title=&quot;关于本博客&quot;&gt;&lt;/a&gt;关于本博客&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;基于Github Page搭建，主要记录个人学习Web前端开发技术过程中记录、总结、学习的各类知识、经验。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;阮一峰 &lt;a href=&quot;http://www.ruanyifeng.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;阮一峰博客&lt;/a&gt;曾说过：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;喜欢写Blog的人，会经历三个阶段:&lt;/p&gt;
+&lt;p&gt;第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。&lt;/p&gt;
+&lt;p&gt;第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。&lt;/p&gt;
+&lt;p&gt;第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我现在正在向第三阶段过渡，待完全掌握前端技术后，会重新制作个人博客，然后将其迁移到github上来。&lt;/p&gt;
+&lt;h3 id=&quot;Github-Page-个人博客如何搭建？&quot;&gt;&lt;a href=&quot;#Github-Page-个人博客如何搭建？&quot; class=&quot;headerlink&quot; title=&quot;Github Page 个人博客如何搭建？&quot;&gt;&lt;/a&gt;Github Page 个人博客如何搭建？&lt;/h3&gt;&lt;p&gt;使用Github Page搭建个人博客有3种方式（个人了解的就这么多，也可能有其他方式）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Github Pages + Jekyll (需下载Ruby+Devkit) &lt;a href=&quot;http://cnfeat.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Github Pages + Hexo   &lt;a href=&quot;http://wsgzao.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Github Pages + Hugo   &lt;a href=&quot;http://blog.coderzh.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;互联网上关于这类教程非常多，其中很多作者写的非常好，堪称傻瓜式教程，只要按照其步骤便可以快速搭建起个人博客。&lt;br&gt;这里便引用他人的详细教程。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;方法1：&lt;br&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;阮一峰博客&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;雨知博客&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://beiyuu.com/github-pages/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;BeiYuu&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;方法2：&lt;br&gt;&lt;a href=&quot;http://zipperary.com/2013/05/28/hexo-guide-2/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Zippera博客&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://sunwhut.com/2015/10/30/buildBlog/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sunwhut博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;方法3：&lt;br&gt;&lt;a href=&quot;http://blog.coderzh.com/2015/08/29/hugo/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CoderZh博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Github-Page-hexo搭建博客&quot;&gt;&lt;a href=&quot;#Github-Page-hexo搭建博客&quot; class=&quot;headerlink&quot; title=&quot;Github Page + hexo搭建博客&quot;&gt;&lt;/a&gt;Github Page + hexo搭建博客&lt;/h4&gt;&lt;p&gt;我的这个博客是使用方法2搭建的，基于Github Page + hexo搭建的。（原本最开始是准备用方法1的，结果测试后发现Jeky11好像不支持XP系统，无奈只能选用其他方法。）&lt;br&gt;以下详细介绍这种方法搭建博客注意点：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;工具：Github + Node.JS + Hexo&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://desktop.github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github&lt;/a&gt; ——Win7及以上系统适用&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://nodejs.org/en/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Node.JS&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://git-scm.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Git&lt;/a&gt;   ——XP/Win7及以上系统皆适用&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Github和Git这两个工具，任选其一即可。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;XP系统适用教程：&lt;/strong&gt;&lt;br&gt;此文章使用的Git工具是：Github(工具下载见上面链接)&lt;br&gt;教程链接：&lt;a href=&quot;http://zipperary.com/2013/05/28/hexo-guide-2/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Zippera博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Win7及以上系统适用教程：&lt;/strong&gt;&lt;br&gt;此文章使用的Git工具是：Git(工具下载见上面链接)&lt;br&gt;教程链接：&lt;a href=&quot;http://wsgzao.github.io/post/hexo-guide/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hello Dog博客&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;可能出现的问题：（以下问题是我搭建时碰到的）&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ hexo deploy&lt;br&gt;ERROR Deployer not found: git&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy.png&quot; alt=&quot;图片&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方法：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;方法1：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在_config.yml 中设置 deploy中的type一项为git。(我测试过这种方法，&lt;em&gt;失败&lt;/em&gt;)&lt;br&gt;（deploy下的”type”/“repository”/“branch”三项冒号后面需要空一格输入，正确格式如下：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  repository: https://github.com/xifengxx/xifengxx.github.io.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  branch: master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;方法2：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在git中运行：图片1-4，解决问题。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy%201.png&quot; alt=&quot;1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy%202.png&quot; alt=&quot;2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy%203.png&quot; alt=&quot;3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy%204.png&quot; alt=&quot;4&quot;&gt;&lt;/p&gt;
+&lt;p&gt;输入github博客网站：xifengxx.github.io.git，成功创建。&lt;/p&gt;
+&lt;h3 id=&quot;引申阅读：&quot;&gt;&lt;a href=&quot;#引申阅读：&quot; class=&quot;headerlink&quot; title=&quot;引申阅读：&quot;&gt;&lt;/a&gt;引申阅读：&lt;/h3&gt;&lt;p&gt;FarBox、Jekyll、Octopress、ghost、marboo、Hexo、Medium、Logdown、prose.io，这些博客程序有什么特点？&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.zhihu.com/question/21981094&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;知乎&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是在github page上建立的个人博客站点，专注WEB前端开发技术知识，有别于个人独立博客站点：&lt;a href=&quot;http://www.xifengxx.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;西风博客&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id
+    
+    </summary>
+    
+      <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="Github Pages" scheme="http://yoursite.com/tags/Github-Pages/"/>
+    
+  </entry>
+  
+</feed>
