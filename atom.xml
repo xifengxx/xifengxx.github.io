@@ -65,6 +65,119 @@
   </entry>
   
   <entry>
+    <title>Git实战教程</title>
+    <link href="http://xifengxx.github.io/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/"/>
+    <id>http://xifengxx.github.io/2016/04/05/git实战教程/</id>
+    <published>2016-04-05T11:09:51.000Z</published>
+    <updated>2016-04-07T14:30:58.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;简明释义&quot;&gt;&lt;a href=&quot;#简明释义&quot; class=&quot;headerlink&quot; title=&quot;简明释义&quot;&gt;&lt;/a&gt;简明释义&lt;/h3&gt;&lt;h4 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Git&lt;/h4&gt;&lt;p&gt;Git 是一个版本控制工具，是一个可以安装在你自己机器上的软件。&lt;br&gt;git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。&lt;/p&gt;
+&lt;h4 id=&quot;github&quot;&gt;&lt;a href=&quot;#github&quot; class=&quot;headerlink&quot; title=&quot;github&quot;&gt;&lt;/a&gt;github&lt;/h4&gt;&lt;p&gt;Git 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。&lt;br&gt;Github 首先是一个公司，&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github网站&lt;/a&gt;是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。&lt;/p&gt;
+&lt;h3 id=&quot;安装及初始化&quot;&gt;&lt;a href=&quot;#安装及初始化&quot; class=&quot;headerlink&quot; title=&quot;安装及初始化&quot;&gt;&lt;/a&gt;安装及初始化&lt;/h3&gt;&lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Windows上安装Git&lt;/strong&gt;&lt;br&gt;msysgit是Windows版的Git。&lt;br&gt;&lt;a href=&quot;http://msysgit.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;然后按默认选项安装即可。&lt;/p&gt;
+&lt;p&gt;安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！&lt;/p&gt;
+&lt;p&gt;安装完成后，还需要最后一步设置，在命令行输入：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git config –global user.name “Your Name”&lt;br&gt;$ git config –global user.email “email@example.com”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。&lt;/p&gt;
+&lt;h4 id=&quot;创建版本库&quot;&gt;&lt;a href=&quot;#创建版本库&quot; class=&quot;headerlink&quot; title=&quot;创建版本库&quot;&gt;&lt;/a&gt;创建版本库&lt;/h4&gt;&lt;p&gt;版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。&lt;/p&gt;
+&lt;p&gt;如何创建版本库？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在电脑磁盘里的任意位置，创建一个空目录&lt;br&gt;方法1：直接在磁盘任意位置，右键-新建文件夹；&lt;br&gt;方法2：在git命令行里创建。&lt;br&gt;关于创建文件常用命令（Unix Linux命令）：&lt;br&gt;-mkdir&lt;br&gt;-cd        ：切换目录命令&lt;br&gt;–cd ..    : 切换到上一级目录。&lt;br&gt;如当前目录为e盘下的code目录，使用命令”cd ..”，会切换到e盘。&lt;br&gt;–cd e:    : 切换盘符。&lt;br&gt;如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。&lt;br&gt;–cd /     : 切换到根目录。&lt;br&gt;–cd 目录名：切换到具体目录。&lt;br&gt;如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。&lt;br&gt;如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。&lt;br&gt;-pwd       : 显示当前所在目录&lt;br&gt;-dir       : 显示当前目录下的所有文件&lt;br&gt;-mkdir     : 创建目录。&lt;br&gt;如当前在e盘下，需要在e盘下创建一个新目录”code1”,使用命令”mkdir code1”即可；&lt;br&gt;如果要在其他盘下创建目录，先使用cd命令定位到目标盘，然后再使用mkdir命令。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;通过git init命名把这个目录变成Git可以管理的仓库。&lt;br&gt;创建完目录后，在磁盘中找到该目录，右键–Git Bash Here即可定位到当前目录，或是通过上面的Linux命令来定位到目标目录。&lt;br&gt;在命令行输入命令”git init”，即成功创建Git仓库。&lt;br&gt;这时在当前目录下，会多出一个.git目录（如果没有，说明被隐藏了，需要在”工具-文件夹选项-查看”里设置隐藏属性为显示所有文件）。这个目录是Git来跟踪管理版本库的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;远程仓库&quot;&gt;&lt;a href=&quot;#远程仓库&quot; class=&quot;headerlink&quot; title=&quot;远程仓库&quot;&gt;&lt;/a&gt;远程仓库&lt;/h3&gt;&lt;h4 id=&quot;配置SSH-Key&quot;&gt;&lt;a href=&quot;#配置SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;配置SSH Key&quot;&gt;&lt;/a&gt;配置SSH Key&lt;/h4&gt;&lt;p&gt;目的：本地Git仓库与GitHub网站仓库之间实现同步传输及存储。&lt;br&gt;步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;需要注册一个GitHub账号。(注册地址)[&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com&lt;/a&gt;].&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;设置SSH Key.(本地Git仓库和GitHub仓库之间的传输是通过SSH加密的)&lt;br&gt;打开Git Bash,创建SSH Key.&lt;br&gt;输入命令：$ ssh-keygen -t rsa -c “youremail@examle.com”&lt;br&gt;将邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。&lt;br&gt;成功的话，会在用户主目录（我的是在”C:\Documents and Settings\Administrator”）里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件。（这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;登录&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub网站&lt;/a&gt;，打开”我的账号/Account settings”—“personal settings”—“SSH keys”，点击”New SSH key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;打开Git Bash，输入命令以下命令检测是否成功连接本机与GitHub。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ssh -T git@github.com&lt;br&gt;在遇到提示的情况下，输入”yes”即可。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;添加远程库&quot;&gt;&lt;a href=&quot;#添加远程库&quot; class=&quot;headerlink&quot; title=&quot;添加远程库&quot;&gt;&lt;/a&gt;添加远程库&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;登录GitHub,点击右上角的”+”号—“New repository”，创建新的Git仓库。&lt;/li&gt;
+&lt;li&gt;把本地仓库的内容推送到GitHub仓库。&lt;br&gt;① 打开GitHub上新建的repository仓库，找到HTTPS/SSH地址并复制地址，如”&lt;a href=&quot;https://github.com/xifengxx/demo.git&amp;quot;是我的一个仓库https地址。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&amp;quot;是我的一个仓库https地址。&lt;/a&gt;&lt;br&gt;② 本地仓库下运行命令&lt;blockquote&gt;
+&lt;p&gt;$ git remote add origin &lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;&lt;br&gt;添加后，远程仓库的名字就是origin(这是Git默认叫法，可以将origin改成其他的名字)&lt;br&gt;③ 继续运行命令&lt;br&gt;$ git push -u origin master&lt;br&gt;把本地仓库内容推送到远程，用git push命令。实际上是把当前分支master推送到远程。&lt;br&gt;由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。&lt;br&gt;推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样。&lt;br&gt;此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改：&lt;br&gt;$ git push origin master&lt;br&gt;④ 推送时，会弹出需要输入github账号及密码框，输入即可。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注意事项&lt;/strong&gt;&lt;br&gt;在第二步②时，输入命令”$ git remote add origin &lt;a href=&quot;https://github.com/xifengxx/demo.git&amp;quot;时，可能会报错。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&amp;quot;时，可能会报错。&lt;/a&gt;&lt;br&gt;错误信息：”fatal: remote origin already exists.……”&lt;br&gt;原因：远程仓库已经存在内容，与本地仓库推送内容冲突。&lt;br&gt;解决方法：&lt;br&gt; 1、先输入”$ git remote rm origin”命令，删除远程仓库内容。&lt;br&gt; 2、再输入”$ git remote add origin git@github.com:djqiang/gitdemo.git” 就不会报错了！&lt;br&gt;上述方法针对第一次将本地仓库推送到远程仓库时遇到这个问题的解决方法。&lt;br&gt;如果不想删除远程仓库内容，可以使用下面的方法，将本地仓库内容和远程仓库内容合并。&lt;br&gt;解决方法：&lt;br&gt; 1、先输入”$ git pull origin master”命令，将远程仓库内容pull到本地仓库。&lt;br&gt; 2、再输入”$ git push origin master”命令，即可。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;从远程库克隆&quot;&gt;&lt;a href=&quot;#从远程库克隆&quot; class=&quot;headerlink&quot; title=&quot;从远程库克隆&quot;&gt;&lt;/a&gt;从远程库克隆&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;登录GitHub,创建一个新的仓库，例如我的一个仓库，名字叫demo&lt;/li&gt;
+&lt;li&gt;找到新仓库的HTTPS/SSH地址并复制地址，如”git@github.com:xifengxx/demo.git”或”&lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;“&lt;/li&gt;
+&lt;li&gt;使用命令git clone克隆一个本地库&lt;blockquote&gt;
+&lt;p&gt;$ git clone git@github.com:xifengxx/demo.git&lt;br&gt;也可以使用命令：&lt;br&gt;$ git clone &lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;&lt;br&gt;Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。&lt;br&gt;使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Git基础操作&quot;&gt;&lt;a href=&quot;#Git基础操作&quot; class=&quot;headerlink&quot; title=&quot;Git基础操作&quot;&gt;&lt;/a&gt;Git基础操作&lt;/h3&gt;&lt;h4 id=&quot;将文件添加到版本库&quot;&gt;&lt;a href=&quot;#将文件添加到版本库&quot; class=&quot;headerlink&quot; title=&quot;将文件添加到版本库&quot;&gt;&lt;/a&gt;将文件添加到版本库&lt;/h4&gt;&lt;p&gt;使用命令：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;git add:将文件添加到仓库。&lt;br&gt;命令：$ git add 文件名&lt;br&gt;将某个文件复制到当前目录，然后再使用这个命令。&lt;/li&gt;
+&lt;li&gt;git commit:将文件提交到仓库。&lt;br&gt;命令：$ git commit -m “xxx”&lt;br&gt;git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。&lt;br&gt;如：$ git commit -m “首次提交”&lt;br&gt;备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注意事项&lt;/strong&gt;&lt;br&gt;将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。&lt;br&gt;关键是如何退出默认编辑器界面并重新返回到Git bash界面。&lt;br&gt;方法：&lt;br&gt;① 按ESC键，确定退出编辑模式。&lt;br&gt;② 然后输入”:wq”，即可返回Git界面。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;利用Github-Page-搭建网页Demo&quot;&gt;&lt;a href=&quot;#利用Github-Page-搭建网页Demo&quot; class=&quot;headerlink&quot; title=&quot;利用Github Page 搭建网页Demo&quot;&gt;&lt;/a&gt;利用Github Page 搭建网页Demo&lt;/h3&gt;&lt;p&gt;适用场景：&lt;br&gt;写了一些网页demo,想上传到网上查看效果，并做展示用途。不同于用Github搭建的个人博客。&lt;/p&gt;
+&lt;p&gt;方法：Github Page部署。&lt;br&gt;步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;注册&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github账号&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;下载安装git.&lt;br&gt;msysgit是Windows版的Git。(下载地址)[&lt;a href=&quot;http://msysgit.github.io/]。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://msysgit.github.io/]。&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;登录Github，新建一个repository项目(这里使用project做项目名字)。&lt;/li&gt;
+&lt;li&gt;在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。&lt;br&gt;设置完成后，这个repository项目的展示地址变为：&lt;br&gt;&lt;a href=&quot;http://xifengxx.github.io/project&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;‘xifengxx’为我注册Github的账号名，project为repository项目名。&lt;br&gt;可以通过上面的网址来访问项目。&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;电脑里选定一个文件夹（这里是Git）放置Github上的项目project。&lt;br&gt;右键——“git bash here”,调出git命令界面，输入以下命令将project项目克隆到本地文件夹下。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git clone &lt;a href=&quot;https://github.com/xifengxx/project.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/project.git&lt;/a&gt;&lt;br&gt;这时本地Git文件夹下会多出一个文件夹Project。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;本地新建分支。&lt;br&gt;输入以下命令，在本地新建一个gh-pages分支并切换到gh-pages分支，这个分支是远程分支origin/gh-pages的镜像。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ cd project/&lt;br&gt;$ git checkout -b gh-pages origin/gh-pages&lt;br&gt;这时本地文件夹project里多出的文件，来自github上的gh-pages分支中的文件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;执行以下命令，删除原有的gh-pages文件，并提交（commit）本次修改。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git rm -rf .&lt;br&gt;$ git add .&lt;br&gt;$ git commit -m “delete all files”&lt;br&gt;这时project里的文件都删除了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将自己的网页Demo文件复制粘贴到project文件夹里。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将本地gh-pages中的网页文件同步到远程库的gh-pages中。&lt;br&gt;输入以下命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git add .&lt;br&gt;$ git commit -m “My design Demo”&lt;br&gt;$ git push origin gh-pages&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;输入第三行命令时，会有弹出框提示输入Github账号和密码，输入后等待片刻，当命令行提示”$”符号时，说明已经完成。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;浏览器输入网址访问：&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://xifengxx.github.io/project/index.html&quot;&gt;http://xifengxx.github.io/project/index.html&lt;/a&gt;&lt;br&gt;或 &lt;a href=&quot;http://xifengxx.github.io/project&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;此处的index.html为网页Demo中的文件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/lijiayi/p/githubpages.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考资源&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;简明释义&quot;&gt;&lt;a href=&quot;#简明释义&quot; class=&quot;headerlink&quot; title=&quot;简明释义&quot;&gt;&lt;/a&gt;简明释义&lt;/h3&gt;&lt;h4 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Gi
+    
+    </summary>
+    
+      <category term="Git" scheme="http://xifengxx.github.io/categories/Git/"/>
+    
+    
+      <category term="Git实战" scheme="http://xifengxx.github.io/tags/Git%E5%AE%9E%E6%88%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo安装及部署</title>
     <link href="http://xifengxx.github.io/2016/04/05/Hexo%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
     <id>http://xifengxx.github.io/2016/04/05/Hexo基本操作/</id>
@@ -194,119 +307,6 @@
   </entry>
   
   <entry>
-    <title>Git实战教程</title>
-    <link href="http://xifengxx.github.io/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/"/>
-    <id>http://xifengxx.github.io/2016/04/05/git实战教程/</id>
-    <published>2016-04-05T11:09:51.000Z</published>
-    <updated>2016-04-07T01:13:28.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;简明释义&quot;&gt;&lt;a href=&quot;#简明释义&quot; class=&quot;headerlink&quot; title=&quot;简明释义&quot;&gt;&lt;/a&gt;简明释义&lt;/h3&gt;&lt;h4 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Git&lt;/h4&gt;&lt;p&gt;Git 是一个版本控制工具，是一个可以安装在你自己机器上的软件。&lt;br&gt;git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。&lt;/p&gt;
-&lt;h4 id=&quot;github&quot;&gt;&lt;a href=&quot;#github&quot; class=&quot;headerlink&quot; title=&quot;github&quot;&gt;&lt;/a&gt;github&lt;/h4&gt;&lt;p&gt;Git 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。&lt;br&gt;Github 首先是一个公司，&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github网站&lt;/a&gt;是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。&lt;/p&gt;
-&lt;h3 id=&quot;安装及初始化&quot;&gt;&lt;a href=&quot;#安装及初始化&quot; class=&quot;headerlink&quot; title=&quot;安装及初始化&quot;&gt;&lt;/a&gt;安装及初始化&lt;/h3&gt;&lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Windows上安装Git&lt;/strong&gt;&lt;br&gt;msysgit是Windows版的Git。&lt;br&gt;&lt;a href=&quot;http://msysgit.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;然后按默认选项安装即可。&lt;/p&gt;
-&lt;p&gt;安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！&lt;/p&gt;
-&lt;p&gt;安装完成后，还需要最后一步设置，在命令行输入：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git config –global user.name “Your Name”&lt;br&gt;$ git config –global user.email “email@example.com”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。&lt;/p&gt;
-&lt;h4 id=&quot;创建版本库&quot;&gt;&lt;a href=&quot;#创建版本库&quot; class=&quot;headerlink&quot; title=&quot;创建版本库&quot;&gt;&lt;/a&gt;创建版本库&lt;/h4&gt;&lt;p&gt;版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。&lt;/p&gt;
-&lt;p&gt;如何创建版本库？&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;在电脑磁盘里的任意位置，创建一个空目录&lt;br&gt;方法1：直接在磁盘任意位置，右键-新建文件夹；&lt;br&gt;方法2：在git命令行里创建。&lt;br&gt;关于创建文件常用命令（Unix Linux命令）：&lt;br&gt;-mkdir&lt;br&gt;-cd        ：切换目录命令&lt;br&gt;–cd ..    : 切换到上一级目录。&lt;br&gt;如当前目录为e盘下的code目录，使用命令”cd ..”，会切换到e盘。&lt;br&gt;–cd e:    : 切换盘符。&lt;br&gt;如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。&lt;br&gt;–cd /     : 切换到根目录。&lt;br&gt;–cd 目录名：切换到具体目录。&lt;br&gt;如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。&lt;br&gt;如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。&lt;br&gt;-pwd       : 显示当前所在目录&lt;br&gt;-dir       : 显示当前目录下的所有文件&lt;br&gt;-mkdir     : 创建目录。&lt;br&gt;如当前在e盘下，需要在e盘下创建一个新目录”code1”,使用命令”mkdir code1”即可；&lt;br&gt;如果要在其他盘下创建目录，先使用cd命令定位到目标盘，然后再使用mkdir命令。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;通过git init命名把这个目录变成Git可以管理的仓库。&lt;br&gt;创建完目录后，在磁盘中找到该目录，右键–Git Bash Here即可定位到当前目录，或是通过上面的Linux命令来定位到目标目录。&lt;br&gt;在命令行输入命令”git init”，即成功创建Git仓库。&lt;br&gt;这时在当前目录下，会多出一个.git目录（如果没有，说明被隐藏了，需要在”工具-文件夹选项-查看”里设置隐藏属性为显示所有文件）。这个目录是Git来跟踪管理版本库的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;远程仓库&quot;&gt;&lt;a href=&quot;#远程仓库&quot; class=&quot;headerlink&quot; title=&quot;远程仓库&quot;&gt;&lt;/a&gt;远程仓库&lt;/h3&gt;&lt;h4 id=&quot;配置SSH-Key&quot;&gt;&lt;a href=&quot;#配置SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;配置SSH Key&quot;&gt;&lt;/a&gt;配置SSH Key&lt;/h4&gt;&lt;p&gt;目的：本地Git仓库与GitHub网站仓库之间实现同步传输及存储。&lt;br&gt;步骤：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;需要注册一个GitHub账号。(注册地址)[&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com&lt;/a&gt;].&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;设置SSH Key.(本地Git仓库和GitHub仓库之间的传输是通过SSH加密的)&lt;br&gt;打开Git Bash,创建SSH Key.&lt;br&gt;输入命令：$ ssh-keygen -t rsa -c “youremail@examle.com”&lt;br&gt;将邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。&lt;br&gt;成功的话，会在用户主目录（我的是在”C:\Documents and Settings\Administrator”）里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件。（这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;登录&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub网站&lt;/a&gt;，打开”我的账号/Account settings”—“personal settings”—“SSH keys”，点击”New SSH key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;打开Git Bash，输入命令以下命令检测是否成功连接本机与GitHub。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ssh -T git@github.com&lt;br&gt;在遇到提示的情况下，输入”yes”即可。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;添加远程库&quot;&gt;&lt;a href=&quot;#添加远程库&quot; class=&quot;headerlink&quot; title=&quot;添加远程库&quot;&gt;&lt;/a&gt;添加远程库&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;登录GitHub,点击右上角的”+”号—“New repository”，创建新的Git仓库。&lt;/li&gt;
-&lt;li&gt;把本地仓库的内容推送到GitHub仓库。&lt;br&gt;① 打开GitHub上新建的repository仓库，找到HTTPS/SSH地址并复制地址，如”&lt;a href=&quot;https://github.com/xifengxx/demo.git&amp;quot;是我的一个仓库https地址。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&amp;quot;是我的一个仓库https地址。&lt;/a&gt;&lt;br&gt;② 本地仓库下运行命令&lt;blockquote&gt;
-&lt;p&gt;$ git remote add origin &lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;&lt;br&gt;添加后，远程仓库的名字就是origin(这是Git默认叫法，可以将origin改成其他的名字)&lt;br&gt;③ 继续运行命令&lt;br&gt;$ git push -u origin master&lt;br&gt;把本地仓库内容推送到远程，用git push命令。实际上是把当前分支master推送到远程。&lt;br&gt;由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。&lt;br&gt;推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样。&lt;br&gt;此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改：&lt;br&gt;$ git push origin master&lt;br&gt;④ 推送时，会弹出需要输入github账号及密码框，输入即可。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;注意事项&lt;/strong&gt;&lt;br&gt;在第二步②时，输入命令”$ git remote add origin &lt;a href=&quot;https://github.com/xifengxx/demo.git&amp;quot;时，可能会报错。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&amp;quot;时，可能会报错。&lt;/a&gt;&lt;br&gt;错误信息：”fatal: remote origin already exists.……”&lt;br&gt;原因：远程仓库已经存在内容，与本地仓库推送内容冲突。&lt;br&gt;解决方法：&lt;br&gt; 1、先输入”$ git remote rm origin”命令，删除远程仓库内容。&lt;br&gt; 2、再输入”$ git remote add origin git@github.com:djqiang/gitdemo.git” 就不会报错了！&lt;br&gt;上述方法针对第一次将本地仓库推送到远程仓库时遇到这个问题的解决方法。&lt;br&gt;如果不想删除远程仓库内容，可以使用下面的方法，将本地仓库内容和远程仓库内容合并。&lt;br&gt;解决方法：&lt;br&gt; 1、先输入”$ git pull origin master”命令，将远程仓库内容pull到本地仓库。&lt;br&gt; 2、再输入”$ git push origin master”命令，即可。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;从远程库克隆&quot;&gt;&lt;a href=&quot;#从远程库克隆&quot; class=&quot;headerlink&quot; title=&quot;从远程库克隆&quot;&gt;&lt;/a&gt;从远程库克隆&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;登录GitHub,创建一个新的仓库，例如我的一个仓库，名字叫demo&lt;/li&gt;
-&lt;li&gt;找到新仓库的HTTPS/SSH地址并复制地址，如”git@github.com:xifengxx/demo.git”或”&lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;“&lt;/li&gt;
-&lt;li&gt;使用命令git clone克隆一个本地库&lt;blockquote&gt;
-&lt;p&gt;$ git clone git@github.com:xifengxx/demo.git&lt;br&gt;也可以使用命令：&lt;br&gt;$ git clone &lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;&lt;br&gt;Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。&lt;br&gt;使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;Git基础操作&quot;&gt;&lt;a href=&quot;#Git基础操作&quot; class=&quot;headerlink&quot; title=&quot;Git基础操作&quot;&gt;&lt;/a&gt;Git基础操作&lt;/h3&gt;&lt;h4 id=&quot;将文件添加到版本库&quot;&gt;&lt;a href=&quot;#将文件添加到版本库&quot; class=&quot;headerlink&quot; title=&quot;将文件添加到版本库&quot;&gt;&lt;/a&gt;将文件添加到版本库&lt;/h4&gt;&lt;p&gt;使用命令：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;git add:将文件添加到仓库。&lt;br&gt;命令：$ git add 文件名&lt;br&gt;将某个文件复制到当前目录，然后再使用这个命令。&lt;/li&gt;
-&lt;li&gt;git commit:将文件提交到仓库。&lt;br&gt;命令：$ git commit -m “xxx”&lt;br&gt;git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。&lt;br&gt;如：$ git commit -m “首次提交”&lt;br&gt;备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;注意事项&lt;/strong&gt;&lt;br&gt;将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。&lt;br&gt;关键是如何退出默认编辑器界面并重新返回到Git bash界面。&lt;br&gt;方法：&lt;br&gt;① 按ESC键，确定退出编辑模式。&lt;br&gt;② 然后输入”:wq”，即可返回Git界面。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;利用Github-Page-搭建网页Demo&quot;&gt;&lt;a href=&quot;#利用Github-Page-搭建网页Demo&quot; class=&quot;headerlink&quot; title=&quot;利用Github Page 搭建网页Demo&quot;&gt;&lt;/a&gt;利用Github Page 搭建网页Demo&lt;/h3&gt;&lt;p&gt;适用场景：&lt;br&gt;写了一些网页demo,想上传到网上查看效果，并做展示用途。不同于用Github搭建的个人博客。&lt;/p&gt;
-&lt;p&gt;方法：Github Page部署。&lt;br&gt;步骤：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;注册&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github账号&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;下载安装git.&lt;br&gt;msysgit是Windows版的Git。(下载地址)[&lt;a href=&quot;http://msysgit.github.io/]。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://msysgit.github.io/]。&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;登录Github，新建一个repository项目(这里使用project做项目名字)。&lt;/li&gt;
-&lt;li&gt;在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。&lt;br&gt;设置完成后，这个repository项目的展示地址变为：&lt;br&gt;&lt;a href=&quot;http://xifengxx.github.io/project&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;‘xifengxx’为我注册Github的账号名，project为repository项目名。&lt;br&gt;可以通过上面的网址来访问项目。&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;电脑里选定一个文件夹（这里是Git）放置Github上的项目project。&lt;br&gt;右键——“git bash here”,调出git命令界面，输入以下命令将project项目克隆到本地文件夹下。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git clone &lt;a href=&quot;https://github.com/xifengxx/project.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/project.git&lt;/a&gt;&lt;br&gt;这时本地Git文件夹下会多出一个文件夹Project。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;本地新建分支。&lt;br&gt;输入以下命令，在本地新建一个gh-pages分支并切换到gh-pages分支，这个分支是远程分支origin/gh-pages的镜像。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ cd project/&lt;br&gt;$ git checkout -b gh-pages origin/gh-pages&lt;br&gt;这时本地文件夹project里多出的文件，来自github上的gh-pages分支中的文件。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;执行以下命令，删除原有的gh-pages文件，并提交（commit）本次修改。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git rm -rf .&lt;br&gt;$ git add .&lt;br&gt;$ git commit -m “delete all files”&lt;br&gt;这时project里的文件都删除了。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;将自己的网页Demo文件复制粘贴到project文件夹里。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;将本地gh-pages中的网页文件同步到远程库的gh-pages中。&lt;br&gt;输入以下命令：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git add .&lt;br&gt;$ git commit -m “My design Demo”&lt;br&gt;$ git push origin gh-pages&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;输入第三行命令时，会有弹出框提示输入Github账号和密码，输入后等待片刻，当命令行提示”$”符号时，说明已经完成。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;浏览器输入网址访问：&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://xifengxx.github.io/project/index.html&quot;&gt;http://xifengxx.github.io/project/index.html&lt;/a&gt;&lt;br&gt;或 &lt;a href=&quot;http://xifengxx.github.io/project&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;此处的index.html为网页Demo中的文件。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/lijiayi/p/githubpages.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考资源&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;简明释义&quot;&gt;&lt;a href=&quot;#简明释义&quot; class=&quot;headerlink&quot; title=&quot;简明释义&quot;&gt;&lt;/a&gt;简明释义&lt;/h3&gt;&lt;h4 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Gi
-    
-    </summary>
-    
-      <category term="Git" scheme="http://xifengxx.github.io/categories/Git/"/>
-    
-    
-      <category term="Git实战" scheme="http://xifengxx.github.io/tags/Git%E5%AE%9E%E6%88%98/"/>
-    
-  </entry>
-  
-  <entry>
     <title>如何通过Github Pages + hexo 搭建个人博客</title>
     <link href="http://xifengxx.github.io/2016/03/13/%E9%80%9A%E8%BF%87Github%20Pages%20+%20Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://xifengxx.github.io/2016/03/13/通过Github Pages + Hexo搭建博客/</id>
@@ -417,7 +417,7 @@
     <link href="http://xifengxx.github.io/2016/03/03/HTTP%E5%8D%8F%E8%AE%AE%E7%9F%A5%E5%A4%9A%E5%B0%91/"/>
     <id>http://xifengxx.github.io/2016/03/03/HTTP协议知多少/</id>
     <published>2016-03-03T11:00:53.000Z</published>
-    <updated>2016-04-07T06:51:02.000Z</updated>
+    <updated>2016-04-07T14:24:48.000Z</updated>
     
     <content type="html">&lt;p&gt;HTTP，或者超文本传输协议，是上世纪80年代由蒂姆.伯纳斯.李发明的。&lt;br&gt;它是一个规则系统，是一种协议，把应用程序和超文本文档之间的传输联系起来。换句话说，HTTP 就是机器之间彼此沟通的一个协议，或者说一个消息格式。&lt;br&gt;HTTP 遵循一个简单的模型：从客户端发出请求到服务器并等待响应。因此它也被认为是一种“请求–响应协议”。请求和响应都是文本信息，或者说是字符串，信息写法遵循着一个规则，能保证其他机器能够理解上面的内容。&lt;/p&gt;
 &lt;h3 id=&quot;HTTP请求&quot;&gt;&lt;a href=&quot;#HTTP请求&quot; class=&quot;headerlink&quot; title=&quot;HTTP请求&quot;&gt;&lt;/a&gt;HTTP请求&lt;/h3&gt;&lt;p&gt;每一个HTTP请求都会得到一个响应，哪怕这响应是一个错误响应.(有时响应会超时)&lt;br&gt;GET请求：向服务器发起请求数据；&lt;br&gt;POST请求：给服务器提交数据&lt;/p&gt;
@@ -470,13 +470,13 @@
 &lt;p&gt;如果服务器端对于用户的输入不做任何无害处理的话，这些内容就会注入到网页的内容中去，然后浏览器就会解释执行这些 HTML 和 javascript 代码。&lt;br&gt;恶意用户可以使用 HTML 和 javascript 代码对服务器或者以后访问这个页面的用户发起毁灭性的攻击。举个例子，一个攻击者可以使用 javascript 代码去获取所有在他之后访问这个页面的用户的会话 id ，然后伪装成其他用户。而这一切都发生在受害者一无所知的情况下。而且要注意的是，这种攻击也能绕过同源策略，因为这段恶意代码是存在于当前这个网站上的。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;跨站脚本攻击的解决方案&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;总是对用户输入的内容做无害处理。消除有问题的输入，比如&lt;script&gt;标签，或者使用一个更安全的输入格式，比如 Markdown，这样就可以阻止 HTML 和 javascript 同时出现在用户的输入里。&lt;/li&gt;
+&lt;li&gt;总是对用户输入的内容做无害处理。消除有问题的输入，比如&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;标签，或者使用一个更安全的输入格式，比如 Markdown，这样就可以阻止 HTML 和 javascript 同时出现在用户的输入里。&lt;/li&gt;
 &lt;li&gt;在显示之前转义用户输入的所有数据.如果你需要用户能够输入 HTML 和 javascript 代码，那么当你显示这些输入内容的时候要确保它们被正确转义，这样浏览器就不会把它们当做代码给执行了。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;参考文献&quot;&gt;&lt;a href=&quot;#参考文献&quot; class=&quot;headerlink&quot; title=&quot;参考文献&quot;&gt;&lt;/a&gt;参考文献&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;http://book.haoduoshipin.com/tealeaf-http/&quot;&gt;HTTP下午茶&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://book.haoduoshipin.com/tealeaf-http/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HTTP下午茶&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/script&gt;&lt;/li&gt;&lt;/ul&gt;</content>
+</content>
     
     <summary type="html">
     
@@ -492,60 +492,70 @@
   </entry>
   
   <entry>
-    <title>前端知识之查漏补缺：HTML头部(head)标签</title>
-    <link href="http://xifengxx.github.io/2015/12/13/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E4%B9%8B%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA%EF%BC%9AHTML%E5%A4%B4%E9%83%A8(head)%E6%A0%87%E7%AD%BE/"/>
-    <id>http://xifengxx.github.io/2015/12/13/前端知识之查漏补缺：HTML头部(head)标签/</id>
+    <title>前端知识之查漏补缺:HTML头部(head)标签</title>
+    <link href="http://xifengxx.github.io/2015/12/13/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E4%B9%8B%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA-HTML%E5%A4%B4%E9%83%A8head%E6%A0%87%E7%AD%BE/"/>
+    <id>http://xifengxx.github.io/2015/12/13/前端知识之查漏补缺-HTML头部head标签/</id>
     <published>2015-12-13T05:01:23.000Z</published>
-    <updated>2016-04-07T08:02:28.000Z</updated>
+    <updated>2016-04-07T15:43:02.000Z</updated>
     
     <content type="html">&lt;p&gt;我们日常所浏览的网页，都是有HTML文档构成的。HTML文档的基本结构如下图：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/12/HTML文档结构.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/12/HTML文档结构.png&quot; alt=&quot;HTML文档结构&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;一个HTML文档由4个基本部分组成：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1、文档声明&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;!DOCTYPE HTML&amp;gt;声明这是一个HTML文档。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2、&amp;lt;HTML&amp;gt;标签&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&amp;lt;html&amp;gt;标签的作用相当于设计者在告诉浏览器，整个网页是从&amp;lt;html&amp;gt;这里开始的，然后到&amp;lt;/html&amp;gt;结束。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3、&amp;lt;head&amp;gt;标签&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span data-hover=&quot;head&quot;&gt;head&lt;/span&gt;标签是页面的“头部”，只能定义一些特殊的内容。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;4、&amp;lt;body&amp;gt;标签&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span data-hover=&quot;body&quot;&gt;body&lt;/span&gt;标签是页面的“身体”，一般网页绝大多数的标签代码都是在这里编写。&lt;/p&gt;
-&lt;p&gt;其他标签都好理解，这里主要介绍下&amp;lt;head&amp;gt;标签，因为其比较特殊，涉及到的东西还是蛮多的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/12/HTML文档结构.png&quot; alt=&quot;HTML文档结构&quot;&gt;&lt;/p&gt;
+&lt;p&gt;一个HTML文档由4个基本部分组成：&lt;br&gt;&lt;strong&gt;1、文档声明&lt;/strong&gt;&lt;br&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/code&gt;声明这是一个HTML文档。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2、&lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt;标签&lt;/strong&gt;&lt;br&gt;&lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt;标签的作用相当于设计者在告诉浏览器，整个网页是从&lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt;这里开始的，然后到&lt;code&gt;&amp;lt;/html&amp;gt;&lt;/code&gt;结束。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3、&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;标签&lt;/strong&gt;&lt;br&gt;head标签是页面的“头部”，只能定义一些特殊的内容。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4、&lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;标签&lt;/strong&gt;&lt;br&gt;body标签是页面的“身体”，一般网页绝大多数的标签代码都是在这里编写。&lt;/p&gt;
+&lt;p&gt;其他标签都好理解，这里主要介绍下&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;标签，因为其比较特殊，涉及到的东西还是蛮多的。&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;一般来说，只有6个标签能放在&amp;lt;head&amp;gt;标签内：&lt;/p&gt;
-&lt;table&gt;&lt;br&gt;&lt;tbody&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td colspan=&quot;2&quot; width=&quot;549&quot;&gt;&amp;lt;head&amp;gt;标签内部标签&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;180&quot;&gt;&amp;lt;head&amp;gt;内部标签&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;369&quot;&gt;说明&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;180&quot;&gt;&amp;lt;title&amp;gt;&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;369&quot;&gt;定义网页的标题&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;180&quot;&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;&amp;lt;meta&amp;gt;&lt;/span&gt;&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;369&quot;&gt;定义网页的基本信息（供搜索引擎）&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;180&quot;&gt;&amp;lt;style&amp;gt;&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;369&quot;&gt;定义CSS样式&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;180&quot;&gt;&amp;lt;link&amp;gt;&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;369&quot;&gt;链接外部CSS文件或脚本文件&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;180&quot;&gt;&amp;lt;script&amp;gt;&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;369&quot;&gt;定义脚本语言&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;180&quot;&gt;&amp;lt;base&amp;gt;&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;369&quot;&gt;定义页面所有链接的基础定位&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;/tbody&gt;&lt;br&gt;&lt;/table&gt;
-
-&lt;h2 id=&quot;一、-lt-head-gt-标签内的-lt-title-gt-标签&quot;&gt;&lt;a href=&quot;#一、-lt-head-gt-标签内的-lt-title-gt-标签&quot; class=&quot;headerlink&quot; title=&quot;一、&amp;lt;head&amp;gt;标签内的&amp;lt;title&amp;gt;标签&quot;&gt;&lt;/a&gt;&lt;strong&gt;一、&amp;lt;head&amp;gt;标签内的&amp;lt;title&amp;gt;标签&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&amp;lt;title&amp;gt;标签唯一的作用就是&lt;span style=&quot;color: #0000ff;&quot;&gt;定义网页的标题&lt;/span&gt;，标题的内容都是放在&amp;lt;title&amp;gt;标签内，如:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;lt;title&amp;gt;HTML head标签&lt;em&gt;HTML入门教程&lt;/em&gt;绿叶学习网&amp;lt;/title&amp;gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;二、-lt-head-gt-标签内的-lt-meta-gt-标签&quot;&gt;&lt;a href=&quot;#二、-lt-head-gt-标签内的-lt-meta-gt-标签&quot; class=&quot;headerlink&quot; title=&quot;二、&amp;lt;head&amp;gt;标签内的&amp;lt;meta&amp;gt;标签&quot;&gt;&lt;/a&gt;&lt;strong&gt;二、&amp;lt;head&amp;gt;标签内的&amp;lt;meta&amp;gt;标签&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;&amp;lt;meta&amp;gt;标签又叫“元信息标签”&lt;/span&gt;，是&amp;lt;head&amp;gt;标签内的一个辅助性标签。&amp;lt;meta&amp;gt;标签提供的信息不显示在页面中，一般用来定义页面的关键字、页面的描述等，以方便搜索引擎蜘蛛（如百度蜘蛛、谷歌蜘蛛）来搜索到你这个页面的信息。通俗点说，meta标签就是用来告诉“搜索蜘蛛”这个页面是干嘛的。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;meta标签有两个重要的属性name和http-equiv&lt;/span&gt;。&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&quot;1、meta标签name属性&quot;&gt;&lt;a href=&quot;#1、meta标签name属性&quot; class=&quot;headerlink&quot; title=&quot;1、meta标签name属性&quot;&gt;&lt;/a&gt;&lt;strong&gt;1、meta标签name属性&lt;/strong&gt;&lt;/h3&gt;&lt;table&gt;&lt;br&gt;&lt;tbody&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;180&quot;&gt;name属性值&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;376&quot;&gt;说明&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;180&quot;&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;keywords&lt;/span&gt;&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;376&quot;&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;网页的关键字（关键字可以是多个，而不仅仅是一个）&lt;/span&gt;&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;180&quot;&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;description&lt;/span&gt;&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;376&quot;&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;网页的描述&lt;/span&gt;&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;180&quot;&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;author&lt;/span&gt;&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;376&quot;&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;网页的作者&lt;/span&gt;&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;180&quot;&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;copyright&lt;/span&gt;&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;376&quot;&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;版权信息&lt;/span&gt;&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;/tbody&gt;&lt;br&gt;&lt;/table&gt;
-
-&lt;h3 id=&quot;2、-meta标签http-equiv属性&quot;&gt;&lt;a href=&quot;#2、-meta标签http-equiv属性&quot; class=&quot;headerlink&quot; title=&quot;2、**meta标签http-equiv属性**&quot;&gt;&lt;/a&gt;&lt;strong&gt;2、**&lt;/strong&gt;meta标签http-equiv属性**&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;常见的值有：&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;&lt;br&gt;&lt;tbody&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;284&quot;&gt;Content-type&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;284&quot;&gt;内容类型&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;284&quot;&gt;Expires&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;284&quot;&gt;过期时间&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;284&quot;&gt;Refresh&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;284&quot;&gt;页面刷新&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;284&quot;&gt;Set-cookie&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;284&quot;&gt;设定cookie&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;284&quot;&gt;X-UA-Compatible&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;284&quot;&gt;针对ie,设置浏览器优先使用什么模式来渲染页面&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;/tbody&gt;&lt;br&gt;&lt;/table&gt;&lt;br&gt;如：&amp;lt;meta http-equiv=”X-UA-Compatible”content=”ie=7”&amp;gt;&lt;br&gt;&lt;br&gt;ie浏览器都会用ie7来渲染；&lt;br&gt;&lt;br&gt;&amp;lt;meta http-equiv=”X-UA-Compatible”content=”IE=edge”&amp;gt;&lt;br&gt;&lt;br&gt;ie浏览器会用最高版本来渲染；&lt;br&gt;&lt;br&gt;&amp;lt;meta http-equiv=”X-UA-Compatible”content=”IE=Edge,chrome=1”&amp;gt;&lt;br&gt;&lt;br&gt;ie浏览器会用最高版本来渲染，如果安装了gcf(google chrome frame)可以使用chrome渲染。&lt;br&gt;&lt;br&gt;学习meta标签的http-equiv属性，我们只需要了解它的两个作用就行了：&lt;br&gt;&lt;br&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;一，定义页面所使用的语言&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;二，实现页面的自动刷新跳转&lt;/span&gt;&lt;br&gt;&lt;br&gt;#### &lt;strong&gt;（1）定义页面所使用的语言&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;语法：&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;br&gt;&lt;tbody&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;8&quot;&gt;123&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;545&quot;&gt;&amp;lt;head&amp;gt;&lt;br&gt;&amp;lt;meta  http-equiv=”content-type” content=”text/html; charset=gb2312”/&amp;gt;&lt;br&gt;&amp;lt;/head&amp;gt;&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;/tbody&gt;&lt;br&gt;&lt;/table&gt;&lt;br&gt;&lt;strong&gt;说明：&lt;/strong&gt;这段代码告诉浏览器该页面所使用的字符集是gb2312，即国际汉字码。我们不需要记住，只需要了解就行了。&lt;br&gt;&lt;br&gt;#### &lt;strong&gt;（2）页面自动跳转&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&lt;strong&gt;语法：&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;br&gt;&lt;tbody&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;8&quot;&gt;123&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;542&quot;&gt;&amp;lt;head&amp;gt;&lt;br&gt;&amp;lt;meta  http-equiv=”refresh” content=”6;url=http:/www.baidu.com”/&amp;gt;&lt;br&gt;&amp;lt;/head&amp;gt;&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;/tbody&gt;&lt;br&gt;&lt;/table&gt;&lt;br&gt;说明：这段代码作用：这个页面在6秒之后自动跳转到百度首页&lt;br&gt;&lt;br&gt;## &lt;strong&gt;三、&amp;lt;head&amp;gt;标签内的&amp;lt;style&amp;gt;标签&lt;/strong&gt;&lt;br&gt;&lt;br&gt;&amp;lt;head&amp;gt;标签内的&amp;lt;style&amp;gt;标签用于定义元素的CSS样式。&lt;strong&gt;语法：&lt;/strong&gt;&lt;br&gt;&lt;table&gt;&lt;br&gt;&lt;tbody&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;8&quot;&gt;12345&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;545&quot;&gt;&amp;lt;head&amp;gt;&lt;br&gt;&amp;lt;style type=”text/css”&amp;gt;&lt;br&gt;&amp;lt;!–这里写CSS样式–&amp;gt;&lt;br&gt;&amp;lt;/style&amp;gt;&lt;br&gt;&amp;lt;/head&amp;gt;&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;/tbody&gt;&lt;br&gt;&lt;/table&gt;
-
-&lt;h2 id=&quot;四、-lt-head-gt-标签内的-lt-script-gt-标签&quot;&gt;&lt;a href=&quot;#四、-lt-head-gt-标签内的-lt-script-gt-标签&quot; class=&quot;headerlink&quot; title=&quot;四、&amp;lt;head&amp;gt;标签内的&amp;lt;script&amp;gt;标签&quot;&gt;&lt;/a&gt;&lt;strong&gt;四、&amp;lt;head&amp;gt;标签内的&amp;lt;script&amp;gt;标签&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&amp;lt;head&amp;gt;标签内的&amp;lt;script&amp;gt;标签用于定义页面的脚本。&lt;strong&gt;语法：&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;&lt;br&gt;&lt;tbody&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;8&quot;&gt;12345&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;545&quot;&gt;&amp;lt;head&amp;gt;&lt;br&gt;&amp;lt;script type=”text/javascript”&amp;gt;&lt;br&gt;alert(“绿叶学习网HTML入门教程！”);&lt;br&gt;&amp;lt;/script&amp;gt;&lt;br&gt;&amp;lt;/head&amp;gt;&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;/tbody&gt;&lt;br&gt;&lt;/table&gt;
-
-&lt;h2 id=&quot;五、-lt-head-gt-标签内的-lt-link-gt-标签&quot;&gt;&lt;a href=&quot;#五、-lt-head-gt-标签内的-lt-link-gt-标签&quot; class=&quot;headerlink&quot; title=&quot;五、&amp;lt;head&amp;gt;标签内的&amp;lt;link&amp;gt;标签&quot;&gt;&lt;/a&gt;&lt;strong&gt;五、&amp;lt;head&amp;gt;标签内的&amp;lt;link&amp;gt;标签&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&amp;lt;head&amp;gt;标签内的&amp;lt;link&amp;gt;标签用于外部文件的链接，一般用于链接外部CSS样式表文件和JS文件。&lt;strong&gt;语法：&lt;/strong&gt;&lt;/p&gt;
-&lt;table&gt;&lt;br&gt;&lt;tbody&gt;&lt;br&gt;&lt;tr&gt;&lt;br&gt;&lt;td width=&quot;7&quot;&gt;123&lt;/td&gt;&lt;br&gt;&lt;td width=&quot;546&quot;&gt;&amp;lt;head&amp;gt;&lt;br&gt;&amp;lt;link  rel=”stylesheet”  type=”text/css”  title=”temp”  href=”/temp.css/“&amp;gt;&lt;br&gt;&amp;lt;/head&amp;gt;&lt;/td&gt;&lt;br&gt;&lt;/tr&gt;&lt;br&gt;&lt;/tbody&gt;&lt;br&gt;&lt;/table&gt;
-
-&lt;h2 id=&quot;六-、-lt-head-gt-标签内的-lt-base-gt-标签&quot;&gt;&lt;a href=&quot;#六-、-lt-head-gt-标签内的-lt-base-gt-标签&quot; class=&quot;headerlink&quot; title=&quot;六**、&amp;lt;head&amp;gt;标签内的&amp;lt;base&amp;gt;标签**&quot;&gt;&lt;/a&gt;&lt;strong&gt;六**&lt;/strong&gt;、&amp;lt;head&amp;gt;标签内的&amp;lt;base&amp;gt;标签**&lt;/h2&gt;&lt;p&gt;&amp;lt;head&amp;gt;标签内的&amp;lt;base&amp;gt;标签为整个页面定义所有链接的基础定位，其主要的作用是为了确保文档中所有的相对URL，都可以被分解成正确的文档地址，使在文档本身被移动或重命名的情况下也可以正确解析。&lt;/p&gt;
-&lt;p&gt;语法：&lt;/p&gt;
-&lt;p&gt;&lt;table&gt;&lt;/table&gt;&lt;/p&gt;
-&lt;p&gt;&lt;tbody&gt;&lt;/tbody&gt;&lt;/p&gt;
-&lt;p&gt;&lt;tr&gt;&lt;/tr&gt;&lt;/p&gt;
-&lt;p&gt;&lt;td width=&quot;8&quot;&gt;123&lt;/td&gt;&lt;/p&gt;
-&lt;p&gt;&lt;td width=&quot;545&quot;&gt;&amp;lt;head&amp;gt;&lt;br&gt;&amp;lt;base  href=”&lt;a href=&quot;http://lvyestudy/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://lvyestudy&lt;/a&gt;“/&amp;gt;&lt;br&gt;&amp;lt;/head&amp;gt;&lt;/td&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&amp;lt;base&amp;gt;标签经常使用在创建文档集合中，为了不破坏文档中任何链接，使用者通过在每个文档中放置正确的&amp;lt;base&amp;gt;标签，便可以再目录甚至服务器之间移动整个文档集合。&lt;/p&gt;
-&lt;p&gt;&amp;lt;base&amp;gt; 标签必须位于 head 元素内部。&lt;/p&gt;
-&lt;p&gt;(&amp;lt;head&amp;gt;标签介绍完。 部分内容来源于&lt;a href=&quot;http://www.lvyestudy.com/les_hj/hj_3.2.aspx&quot; title=&quot;&amp;lt;head&amp;gt;标签&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;绿叶学习网&lt;/a&gt;。)&lt;/p&gt;
+&lt;p&gt;一般来说，只有6个标签能放在&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;标签内：&lt;br&gt;| &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;内部标签 |  说明 |&lt;br&gt;|   — |    —  |&lt;br&gt;| &lt;code&gt;&amp;lt;title&amp;gt;&lt;/code&gt; | 定义网页的标题|&lt;br&gt;| &lt;code&gt;&amp;lt;meta&amp;gt;&lt;/code&gt;|  定义网页的基本信息（供搜索引擎）|&lt;br&gt;| &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt; | 定义CSS样式|&lt;br&gt;| &lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt; |  链接外部CSS文件或脚本文件|&lt;br&gt;| &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;   |  定义脚本语言|&lt;br&gt;| &lt;code&gt;&amp;lt;base&amp;gt;&lt;/code&gt; |  定义页面所有链接的基础定位| &lt;/p&gt;
+&lt;h2 id=&quot;一、title标签&quot;&gt;&lt;a href=&quot;#一、title标签&quot; class=&quot;headerlink&quot; title=&quot;一、title标签&quot;&gt;&lt;/a&gt;&lt;strong&gt;一、title标签&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;title标签唯一的作用就是&lt;span style=&quot;color: #0000ff;&quot;&gt;定义网页的标题&lt;/span&gt;，标题的内容都是放在&lt;code&gt;&amp;lt;title&amp;gt;&lt;/code&gt;标签内，如:&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;HTML head标签_HTML入门教程_绿叶学习网&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;二、meta签&quot;&gt;&lt;a href=&quot;#二、meta签&quot; class=&quot;headerlink&quot; title=&quot;二、meta签&quot;&gt;&lt;/a&gt;&lt;strong&gt;二、meta签&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;meta标签又叫“元信息标签”&lt;/span&gt;&lt;br&gt;meta标签提供的信息不显示在页面中，一般用来定义页面的关键字、页面的描述等，以方便搜索引擎蜘蛛（如百度蜘蛛、谷歌蜘蛛）来搜索到你这个页面的信息。通俗点说，meta标签就是用来告诉“搜索蜘蛛”这个页面是干嘛的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;meta标签有两个重要的属性name和http-equiv&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;1、meta标签name属性&quot;&gt;&lt;a href=&quot;#1、meta标签name属性&quot; class=&quot;headerlink&quot; title=&quot;1、meta标签name属性&quot;&gt;&lt;/a&gt;&lt;strong&gt;1、meta标签name属性&lt;/strong&gt;&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;name属性值&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;keywords&lt;/td&gt;
+&lt;td&gt;网页的关键字（关键字可以是多个，而不仅仅是一个）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td&gt;网页的描述&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;author&lt;/td&gt;
+&lt;td&gt;网页的作者&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;copyright&lt;/td&gt;
+&lt;td&gt;版权信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&quot;2、-meta标签http-equiv属性&quot;&gt;&lt;a href=&quot;#2、-meta标签http-equiv属性&quot; class=&quot;headerlink&quot; title=&quot;2、**meta标签http-equiv属性**&quot;&gt;&lt;/a&gt;&lt;strong&gt;2、**&lt;/strong&gt;meta标签http-equiv属性**&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;常见的值有：&lt;/strong&gt;&lt;br&gt;|   Content-type   |    内容类型  |&lt;br&gt;|  —   |  —   |&lt;br&gt;|   Expires |   过期时间  |&lt;br&gt;|   Refresh |   页面刷新  |&lt;br&gt;|   Set-cookie  |   设定cookie  |&lt;br&gt;|   X-UA-Compatible |   针对ie,设置浏览器优先使用什么模式来渲染页面  |&lt;br&gt;如：&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”X-UA-Compatible”content&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”ie&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;7”&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!--ie浏览器都会用ie7来渲染； --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”X-UA-Compatible”content&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”IE&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;edge”&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!--ie浏览器会用最高版本来渲染； --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”X-UA-Compatible”content&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”IE&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;Edge,chrome&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;1”&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!--ie浏览器会用最高版本来渲染，如果安装了gcf(google chrome frame)可以使用chrome渲染。 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;学习meta标签的http-equiv属性，我们只需要了解它的两个作用就行了：&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;一，定义页面所使用的语言&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;二，实现页面的自动刷新跳转&lt;/span&gt;&lt;/p&gt;
+&lt;h4 id=&quot;（1）定义页面所使用的语言&quot;&gt;&lt;a href=&quot;#（1）定义页面所使用的语言&quot; class=&quot;headerlink&quot; title=&quot;（1）定义页面所使用的语言&quot;&gt;&lt;/a&gt;&lt;strong&gt;（1）定义页面所使用的语言&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;语法：&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt;  &lt;span class=&quot;attr&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”content-type”&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”text/html;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;charset&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;gb2312″/&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;说明：&lt;/strong&gt;这段代码告诉浏览器该页面所使用的字符集是gb2312，即国际汉字码。我们不需要记住，只需要了解就行了。&lt;/p&gt;
+&lt;h4 id=&quot;（2）页面自动跳转&quot;&gt;&lt;a href=&quot;#（2）页面自动跳转&quot; class=&quot;headerlink&quot; title=&quot;（2）页面自动跳转&quot;&gt;&lt;/a&gt;&lt;strong&gt;（2）页面自动跳转&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;语法：&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt;  &lt;span class=&quot;attr&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”refresh”&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”6;url&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;http:/www.baidu.com”/&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;说明：这段代码作用：这个页面在6秒之后自动跳转到百度首页&lt;/p&gt;
+&lt;h2 id=&quot;三、style标签&quot;&gt;&lt;a href=&quot;#三、style标签&quot; class=&quot;headerlink&quot; title=&quot;三、style标签&quot;&gt;&lt;/a&gt;&lt;strong&gt;三、style标签&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;style标签用于定义元素的CSS样式。&lt;strong&gt;语法：&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”text/css”&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;xml&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;!–这里写CSS样式–&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;四、script标签&quot;&gt;&lt;a href=&quot;#四、script标签&quot; class=&quot;headerlink&quot; title=&quot;四、script标签&quot;&gt;&lt;/a&gt;&lt;strong&gt;四、script标签&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;script标签用于定义页面的脚本。&lt;strong&gt;语法：&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”text/javascript”&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;alert(“绿叶学习网HTML入门教程！”);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;五、link标签&quot;&gt;&lt;a href=&quot;#五、link标签&quot; class=&quot;headerlink&quot; title=&quot;五、link标签&quot;&gt;&lt;/a&gt;&lt;strong&gt;五、link标签&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;link标签用于外部文件的链接，一般用于链接外部CSS样式表文件和JS文件。&lt;strong&gt;语法：&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt;  &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”stylesheet”&lt;/span&gt;  &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”text/css”&lt;/span&gt;  &lt;span class=&quot;attr&quot;&gt;title&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”temp”&lt;/span&gt;  &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”/temp.css/”&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;六-、base标签&quot;&gt;&lt;a href=&quot;#六-、base标签&quot; class=&quot;headerlink&quot; title=&quot;六**、base标签**&quot;&gt;&lt;/a&gt;&lt;strong&gt;六**&lt;/strong&gt;、base标签**&lt;/h2&gt;&lt;p&gt;base标签为整个页面定义所有链接的基础定位，其主要的作用是为了确保文档中所有的相对URL，都可以被分解成正确的文档地址，使在文档本身被移动或重命名的情况下也可以正确解析。&lt;br&gt;语法：&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;base&lt;/span&gt;  &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”http://lvyestudy“/&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;base标签经常使用在创建文档集合中，为了不破坏文档中任何链接，使用者通过在每个文档中放置正确的base标签，便可以再目录甚至服务器之间移动整个文档集合。&lt;br&gt;base标签必须位于 head 元素内部。&lt;/p&gt;
+&lt;p&gt;(部分内容来源于&lt;a href=&quot;http://www.lvyestudy.com/les_hj/hj_3.2.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;绿叶学习网&lt;/a&gt;)&lt;/p&gt;
 </content>
     
     <summary type="html">
     
       &lt;p&gt;我们日常所浏览的网页，都是有HTML文档构成的。HTML文档的基本结构如下图：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/12/HTML文档结构.png&quot; target=&quot;_blank&quot; 
+&lt;p&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/12/HTML文档结构.png&quot; alt=&quot;HTML文档结构&quot;&gt;
     
     </summary>
     
@@ -592,7 +602,7 @@
     <link href="http://xifengxx.github.io/2015/12/10/%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F%E6%B5%85%E6%9E%90/"/>
     <id>http://xifengxx.github.io/2015/12/10/网页图片格式浅析/</id>
     <published>2015-12-10T15:06:47.000Z</published>
-    <updated>2016-04-07T07:55:32.000Z</updated>
+    <updated>2016-04-07T15:18:10.000Z</updated>
     
     <content type="html">&lt;p&gt;作为一名前端开发工程师，或是UI设计师，对网页图片格式需要有一定的了解。&lt;/p&gt;
 &lt;p&gt;网页图片格式分为2种：一种是&lt;strong&gt;位图&lt;/strong&gt;，另一种是&lt;strong&gt;矢量图&lt;/strong&gt;。&lt;/p&gt;
@@ -610,7 +620,7 @@
 &lt;p&gt;由于JPG格式容量较大，在保证图片清晰、逼真的前提下，网页中不可能大范围使用文件较大的jpg格式图片。PNG格式图片体积小，而且无损压缩，能保证网页的打开速度，所以PNG格式图片是很好的选择。&lt;/p&gt;
 &lt;p&gt;由于PNG优秀的特点，PNG格式图片可以称为“网页设计专用格式”。&lt;/p&gt;
 &lt;p&gt;我们在同一个网页中放入同样的jpg图片与png图片。为了明显区分，我们为每个图片加了一个边框，效果如下：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/12/网页图片格式2.jpg&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/12/网页图片格式2.jpg&quot; alt=&quot;网页图片格式2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/12/网页图片格式2.jpg&quot; alt=&quot;网页图片格式2&quot;&gt;&lt;/p&gt;
 &lt;h4 id=&quot;（3）GIF格式&quot;&gt;&lt;a href=&quot;#（3）GIF格式&quot; class=&quot;headerlink&quot; title=&quot;（3）GIF格式&quot;&gt;&lt;/a&gt;&lt;strong&gt;（3）GIF格式&lt;/strong&gt;&lt;/h4&gt;&lt;p&gt;GIF只支持256色以内的图像。所以，GIF格式的图片效果是很差的。但是，GIF有一个最大的特点，就是可以制作动画，图像作者利用图像处理软件，将静态的GIF图像设置为单帧画面，然后把这些单帧画面连在一起，设置好一个画面到下一个画面的间隔时间，最后保存为GIF格式就可以了。可以说，这就是简单的逐帧动画。目前这种格式的动画在互联网上广为流行。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;总结**&lt;/strong&gt;：当处理色调复杂、绚丽的图像时，如照片、图画等，&lt;strong&gt;&lt;strong&gt;适合&lt;/strong&gt;&lt;/strong&gt;使用JPG格式；而处理一些logo、banner、简单线条构图的时候，适合使用PNG格式；GIF格式通常只适合表达动画效果。**&lt;/p&gt;
 &lt;h2 id=&quot;二、矢量图&quot;&gt;&lt;a href=&quot;#二、矢量图&quot; class=&quot;headerlink&quot; title=&quot;二、矢量图&quot;&gt;&lt;/a&gt;&lt;strong&gt;二、矢量图&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;矢量图，又称为“向量图”。矢量图是计算机图形学中用点、直线或者多边形等基于数学方程的几何图元表示图像。&lt;/p&gt;
@@ -1136,7 +1146,7 @@
     <link href="http://xifengxx.github.io/2015/11/26/CSS3%20Flex%E5%B8%83%E5%B1%80%EF%BC%88%E4%BC%B8%E7%BC%A9%E5%B8%83%E5%B1%80%E7%9B%92%E6%A8%A1%E5%9E%8B%EF%BC%89%E5%AD%A6%E4%B9%A0/"/>
     <id>http://xifengxx.github.io/2015/11/26/CSS3 Flex布局（伸缩布局盒模型）学习/</id>
     <published>2015-11-26T08:27:04.000Z</published>
-    <updated>2016-04-07T07:42:14.000Z</updated>
+    <updated>2016-04-07T14:56:04.000Z</updated>
     
     <content type="html">&lt;p&gt;CSS2定义了四种布局：块布局、行内布局、表格布局盒定位布局。&lt;/p&gt;
 &lt;p&gt;CSS3引入了一种新的布局模式——Flexbox布局，即伸缩布局盒（Flexible Box）模型，此布局对于设计比较复杂的页面非常有用，特别是“垂直居中”布局，非常容易实现。&lt;/p&gt;
@@ -1149,52 +1159,17 @@
 &lt;p&gt;以下内容主要介绍Flexbox布局最新版本。（内容删减自&lt;a href=&quot;http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html&quot; title=&quot;Flex 布局教程：语法篇&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;阮一峰博客&lt;/a&gt;）&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;一、Flex布局是什么？&quot;&gt;&lt;a href=&quot;#一、Flex布局是什么？&quot; class=&quot;headerlink&quot; title=&quot;一、Flex布局是什么？&quot;&gt;&lt;/a&gt;一、Flex布局是什么？&lt;/h2&gt;&lt;p&gt;Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。&lt;/p&gt;
-&lt;p&gt;任何一个容器都可以指定为Flex布局。&lt;/p&gt;
+&lt;p&gt;任何一个容器都可以指定为Flex布局。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.box&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;行内元素也可以使用Flex布局。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.box&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: inline-flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Webkit内核的浏览器，必须加上-webkit前缀。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.box&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: -webkit-flex; &lt;span class=&quot;comment&quot;&gt;/* Safari */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;: flex;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。&lt;/p&gt;
+&lt;h2 id=&quot;二、基本概念&quot;&gt;&lt;a href=&quot;#二、基本概念&quot; class=&quot;headerlink&quot; title=&quot;二、基本概念&quot;&gt;&lt;/a&gt;二、基本概念&lt;/h2&gt;&lt;p&gt;采用Flex布局的元素，称为Flex容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称”项目”。&lt;br&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png&quot; alt=&quot;flex容器&quot;&gt;&lt;/p&gt;
+&lt;p&gt;容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。&lt;/p&gt;
+&lt;p&gt;项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。&lt;/p&gt;
+&lt;h2 id=&quot;三、容器的属性&quot;&gt;&lt;a href=&quot;#三、容器的属性&quot; class=&quot;headerlink&quot; title=&quot;三、容器的属性&quot;&gt;&lt;/a&gt;三、容器的属性&lt;/h2&gt;&lt;p&gt;以下6个属性设置在容器上。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;span class=&quot;token selector&quot;&gt;.box&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;display&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; flex&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-
-`&amp;lt;/pre&amp;gt;
-行内元素也可以使用Flex布局。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;pre class=&quot; language-css&quot;&gt;`&lt;/pre&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;token selector&amp;quot;&amp;gt;.box&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;display&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; inline-flex&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-
-`&amp;lt;/pre&amp;gt;
-Webkit内核的浏览器，必须加上-webkit前缀。
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;pre class=&quot; language-css&quot;&gt;`&lt;/pre&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;token selector&amp;quot;&amp;gt;.box&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;display&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; -webkit-flex&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;token comment&amp;quot; spellcheck=&amp;quot;true&amp;quot;&amp;gt;/* Safari */&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;display&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; flex&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-
-`&amp;lt;/pre&amp;gt;
-注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;## 二、基本概念
-
-采用Flex布局的元素，称为Flex容器（flex container），简称&amp;quot;容器&amp;quot;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&amp;quot;项目&amp;quot;。
-
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png)
-
-容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。
-
-项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
-
-## 三、容器的属性
-
-以下6个属性设置在容器上。
-&amp;gt; *   flex-direction
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
 &lt;ul&gt;
+&lt;li&gt;flex-direction&lt;/li&gt;
 &lt;li&gt;flex-wrap&lt;/li&gt;
 &lt;li&gt;flex-flow&lt;/li&gt;
 &lt;li&gt;justify-content&lt;/li&gt;
@@ -1202,136 +1177,51 @@ Webkit内核的浏览器，必须加上-webkit前缀。
 &lt;li&gt;align-content&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;### 3.1 flex-direction属性
-
-flex-direction属性决定主轴的方向（即项目的排列方向）。
-&amp;gt; &amp;lt;pre class=&amp;quot; language-css&amp;quot;&amp;gt;`
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;token selector&amp;quot;&amp;gt;.box &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;flex-direction&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; row | row-reverse | column | column-reverse&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-
-`&amp;lt;/pre&amp;gt;
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png)
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;它可能有4个值。
-&amp;gt; *   row（默认值）：主轴为水平方向，起点在左端。
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;h3 id=&quot;3-1-flex-direction属性&quot;&gt;&lt;a href=&quot;#3-1-flex-direction属性&quot; class=&quot;headerlink&quot; title=&quot;3.1 flex-direction属性&quot;&gt;&lt;/a&gt;3.1 flex-direction属性&lt;/h3&gt;&lt;p&gt;flex-direction属性决定主轴的方向（即项目的排列方向）。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.box&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;flex-direction&lt;/span&gt;: row | row-reverse | column | column-reverse;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;它可能有4个值。&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;ul&gt;
+&lt;li&gt;row（默认值）：主轴为水平方向，起点在左端。&lt;/li&gt;
 &lt;li&gt;row-reverse：主轴为水平方向，起点在右端。&lt;/li&gt;
 &lt;li&gt;column：主轴为垂直方向，起点在上沿。&lt;/li&gt;
 &lt;li&gt;column-reverse：主轴为垂直方向，起点在下沿。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;### 3.2 flex-wrap属性
-
-默认情况下，项目都排在一条线（又称&amp;quot;轴线&amp;quot;）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。
-
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png)
-&amp;gt; &amp;lt;pre class=&amp;quot; language-css&amp;quot;&amp;gt;`
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;token selector&amp;quot;&amp;gt;.box&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;flex-wrap&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; nowrap | wrap | wrap-reverse&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-
-`&amp;lt;/pre&amp;gt;
-它可能取三个值。
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;（1）nowrap（默认）：不换行。
-
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071007.png)
-
-（2）wrap：换行，第一行在上方。
-
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071008.jpg)
-
-（3）wrap-reverse：换行，第一行在下方。
-
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071009.jpg)
-
-### 3.3 flex-flow
-
-flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
-&amp;gt; &amp;lt;pre class=&amp;quot; language-css&amp;quot;&amp;gt;`
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;token selector&amp;quot;&amp;gt;.box &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;flex-flow&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;token ignore&amp;quot;&amp;gt;&amp;amp;lt;&amp;lt;/span&amp;gt;flex-direction&amp;amp;gt; || &amp;lt;span class=&amp;quot;token ignore&amp;quot;&amp;gt;&amp;amp;lt;&amp;lt;/span&amp;gt;flex-wrap&amp;amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-
-`&amp;lt;/pre&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;### 3.4 justify-content属性
-
-justify-content属性定义了项目在主轴上的对齐方式。
-&amp;gt; &amp;lt;pre class=&amp;quot; language-css&amp;quot;&amp;gt;`
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;token selector&amp;quot;&amp;gt;.box &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;justify-content&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; flex-start | flex-end | center | space-between | space-around&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-
-`&amp;lt;/pre&amp;gt;
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png)
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。
-&amp;gt; *   flex-start（默认值）：左对齐
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;h3 id=&quot;3-2-flex-wrap属性&quot;&gt;&lt;a href=&quot;#3-2-flex-wrap属性&quot; class=&quot;headerlink&quot; title=&quot;3.2 flex-wrap属性&quot;&gt;&lt;/a&gt;3.2 flex-wrap属性&lt;/h3&gt;&lt;p&gt;默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。&lt;br&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.box&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;flex-wrap&lt;/span&gt;: nowrap | wrap | wrap-reverse;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;它可能取三个值。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;nowrap（默认）：不换行。&lt;br&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071007.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;li&gt;wrap：换行，第一行在上方。&lt;br&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071008.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;3.wrap-reverse：换行，第一行在下方。&lt;br&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071009.jpg&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;3-3-flex-flow&quot;&gt;&lt;a href=&quot;#3-3-flex-flow&quot; class=&quot;headerlink&quot; title=&quot;3.3 flex-flow&quot;&gt;&lt;/a&gt;3.3 flex-flow&lt;/h3&gt;&lt;p&gt;flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.box&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;flex-flow&lt;/span&gt;: &amp;lt;flex-direction&amp;gt; || &amp;lt;flex-wrap&amp;gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;3-4-justify-content属性&quot;&gt;&lt;a href=&quot;#3-4-justify-content属性&quot; class=&quot;headerlink&quot; title=&quot;3.4 justify-content属性&quot;&gt;&lt;/a&gt;3.4 justify-content属性&lt;/h3&gt;&lt;p&gt;justify-content属性定义了项目在主轴上的对齐方式。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.box&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;justify-content&lt;/span&gt;: flex-start | flex-end | center | space-between | space-around;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;ul&gt;
+&lt;li&gt;flex-start（默认值）：左对齐&lt;/li&gt;
 &lt;li&gt;flex-end：右对齐&lt;/li&gt;
 &lt;li&gt;center： 居中&lt;/li&gt;
 &lt;li&gt;space-between：两端对齐，项目之间的间隔都相等。&lt;/li&gt;
 &lt;li&gt;space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;### 3.5 align-items属性
-
-align-items属性定义项目在交叉轴上如何对齐。
-&amp;gt; &amp;lt;pre class=&amp;quot; language-css&amp;quot;&amp;gt;`
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;token selector&amp;quot;&amp;gt;.box &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;align-items&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; flex-start | flex-end | center | baseline | stretch&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-
-`&amp;lt;/pre&amp;gt;
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png)
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;它可能取5个值。具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下。
-&amp;gt; *   flex-start：交叉轴的起点对齐。
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;h3 id=&quot;3-5-align-items属性&quot;&gt;&lt;a href=&quot;#3-5-align-items属性&quot; class=&quot;headerlink&quot; title=&quot;3.5 align-items属性&quot;&gt;&lt;/a&gt;3.5 align-items属性&lt;/h3&gt;&lt;p&gt;align-items属性定义项目在交叉轴上如何对齐。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.box&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;align-items&lt;/span&gt;: flex-start | flex-end | center | baseline | stretch;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;它可能取5个值。具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下。&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;ul&gt;
+&lt;li&gt;flex-start：交叉轴的起点对齐。&lt;/li&gt;
 &lt;li&gt;flex-end：交叉轴的终点对齐。&lt;/li&gt;
 &lt;li&gt;center：交叉轴的中点对齐。&lt;/li&gt;
 &lt;li&gt;baseline: 项目的第一行文字的基线对齐。&lt;/li&gt;
 &lt;li&gt;stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;### 3.6 align-content属性
-
-align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
-&amp;gt; &amp;lt;pre class=&amp;quot; language-css&amp;quot;&amp;gt;`
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;token selector&amp;quot;&amp;gt;.box &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;align-content&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; flex-start | flex-end | center | space-between | space-around | stretch&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-
-`&amp;lt;/pre&amp;gt;
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png)
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;该属性可能取6个值。
-&amp;gt; *   flex-start：与交叉轴的起点对齐。
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;h3 id=&quot;3-6-align-content属性&quot;&gt;&lt;a href=&quot;#3-6-align-content属性&quot; class=&quot;headerlink&quot; title=&quot;3.6 align-content属性&quot;&gt;&lt;/a&gt;3.6 align-content属性&lt;/h3&gt;&lt;p&gt;align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.box&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;align-items&lt;/span&gt;: flex-start | flex-end | center | baseline | stretch;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;该属性可能取6个值。&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;ul&gt;
+&lt;li&gt;flex-start：与交叉轴的起点对齐。&lt;/li&gt;
 &lt;li&gt;flex-end：与交叉轴的终点对齐。&lt;/li&gt;
 &lt;li&gt;center：与交叉轴的中点对齐。&lt;/li&gt;
 &lt;li&gt;space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。&lt;/li&gt;
@@ -1339,12 +1229,10 @@ align-content属性定义了多根轴线的对齐方式。如果项目只有一�
 &lt;li&gt;stretch（默认值）：轴线占满整个交叉轴。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;### 四、项目的属性
-
-以下6个属性设置在项目上。
-&amp;gt; *   order
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;h2 id=&quot;四、项目的属性&quot;&gt;&lt;a href=&quot;#四、项目的属性&quot; class=&quot;headerlink&quot; title=&quot;四、项目的属性&quot;&gt;&lt;/a&gt;四、项目的属性&lt;/h2&gt;&lt;p&gt;以下6个属性设置在项目上。&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;ul&gt;
+&lt;li&gt;order&lt;/li&gt;
 &lt;li&gt;flex-grow&lt;/li&gt;
 &lt;li&gt;flex-shrink&lt;/li&gt;
 &lt;li&gt;flex-basis&lt;/li&gt;
@@ -1352,100 +1240,19 @@ align-content属性定义了多根轴线的对齐方式。如果项目只有一�
 &lt;li&gt;align-self&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;### 4.1 order属性
-
-order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。
-&amp;gt; &amp;lt;pre class=&amp;quot; language-css&amp;quot;&amp;gt;`
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;token selector&amp;quot;&amp;gt;.item &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;order&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;token ignore&amp;quot;&amp;gt;&amp;amp;lt;&amp;lt;/span&amp;gt;integer&amp;amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-
-`&amp;lt;/pre&amp;gt;
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png)
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;### 4.2 flex-grow属性
-
-flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
-&amp;gt; &amp;lt;pre class=&amp;quot; language-css&amp;quot;&amp;gt;`
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;token selector&amp;quot;&amp;gt;.item &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;flex-grow&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;token ignore&amp;quot;&amp;gt;&amp;amp;lt;&amp;lt;/span&amp;gt;number&amp;amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;token comment&amp;quot; spellcheck=&amp;quot;true&amp;quot;&amp;gt;/* default 0 */&amp;lt;/span&amp;gt;
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-
-`&amp;lt;/pre&amp;gt;
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png)
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。
-
-### 4.3 flex-shrink属性
-
-flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
-&amp;gt; &amp;lt;pre class=&amp;quot; language-css&amp;quot;&amp;gt;`
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;token selector&amp;quot;&amp;gt;.item &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;flex-shrink&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;token ignore&amp;quot;&amp;gt;&amp;amp;lt;&amp;lt;/span&amp;gt;number&amp;amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;token comment&amp;quot; spellcheck=&amp;quot;true&amp;quot;&amp;gt;/* default 1 */&amp;lt;/span&amp;gt;
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-
-`&amp;lt;/pre&amp;gt;
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071015.jpg)
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。
-
-负值对该属性无效。
-
-### 4.4 flex-basis属性
-
-flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
-&amp;gt; &amp;lt;pre class=&amp;quot; language-css&amp;quot;&amp;gt;`
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;token selector&amp;quot;&amp;gt;.item &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;flex-basis&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;token ignore&amp;quot;&amp;gt;&amp;amp;lt;&amp;lt;/span&amp;gt;length&amp;amp;gt; | auto&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;quot;token comment&amp;quot; spellcheck=&amp;quot;true&amp;quot;&amp;gt;/* default auto */&amp;lt;/span&amp;gt;
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-
-`&amp;lt;/pre&amp;gt;
-它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;### 4.5 flex属性
-
-flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
-&amp;gt; &amp;lt;pre class=&amp;quot; language-css&amp;quot;&amp;gt;`
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;token selector&amp;quot;&amp;gt;.item &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;flex&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; none | [ &amp;lt;span class=&amp;quot;token ignore&amp;quot;&amp;gt;&amp;amp;lt;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token string&amp;quot;&amp;gt;&amp;apos;flex-grow&amp;apos;&amp;lt;/span&amp;gt;&amp;amp;gt; &amp;lt;span class=&amp;quot;token ignore&amp;quot;&amp;gt;&amp;amp;lt;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token string&amp;quot;&amp;gt;&amp;apos;flex-shrink&amp;apos;&amp;lt;/span&amp;gt;&amp;amp;gt;? || &amp;lt;span class=&amp;quot;token ignore&amp;quot;&amp;gt;&amp;amp;lt;&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token string&amp;quot;&amp;gt;&amp;apos;flex-basis&amp;apos;&amp;lt;/span&amp;gt;&amp;amp;gt; ]
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-
-`&amp;lt;/pre&amp;gt;
-该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。
-
-### 4.6 align-self属性
-
-align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
-&amp;gt; &amp;lt;pre class=&amp;quot; language-css&amp;quot;&amp;gt;`
-&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class=&amp;quot;token selector&amp;quot;&amp;gt;.item &amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;{&amp;lt;/span&amp;gt;
-
-  &amp;lt;span class=&amp;quot;token property&amp;quot;&amp;gt;align-self&amp;lt;/span&amp;gt;&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;:&amp;lt;/span&amp;gt; auto | flex-start | flex-end | center | baseline | stretch&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;;&amp;lt;/span&amp;gt;
-
-&amp;lt;span class=&amp;quot;token punctuation&amp;quot;&amp;gt;}&amp;lt;/span&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071016.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;该属性可能取6个值，除了auto，其他都与align-items属性完全一致。&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;备注：阮一峰博客上还有一篇文章，&lt;a href=&quot;http://www.ruanyifeng.com/blog/2015/07/flex-examples.html&quot; title=&quot;Flex 布局教程：实例篇&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Flex 布局教程：实例篇》&lt;/a&gt;，是用具体的案例来解说Flex布局，感兴趣的朋友，可以移步获取。我主要是对其中的“骰子案例”感兴趣：&lt;a href=&quot;http://codepen.io/LandonSchropp/pen/KpzzGo&quot; title=&quot;Flex骰子案例&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DEMO&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h3 id=&quot;4-1-order属性&quot;&gt;&lt;a href=&quot;#4-1-order属性&quot; class=&quot;headerlink&quot; title=&quot;4.1 order属性&quot;&gt;&lt;/a&gt;4.1 order属性&lt;/h3&gt;&lt;p&gt;order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.item&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;order&lt;/span&gt;: &amp;lt;integer&amp;gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;4-2-flex-grow属性&quot;&gt;&lt;a href=&quot;#4-2-flex-grow属性&quot; class=&quot;headerlink&quot; title=&quot;4.2 flex-grow属性&quot;&gt;&lt;/a&gt;4.2 flex-grow属性&lt;/h3&gt;&lt;p&gt;flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.item&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;flex-grow&lt;/span&gt;: &amp;lt;number&amp;gt;; &lt;span class=&quot;comment&quot;&gt;/* default 0 */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。&lt;/p&gt;
+&lt;h3 id=&quot;4-3-flex-shrink属性&quot;&gt;&lt;a href=&quot;#4-3-flex-shrink属性&quot; class=&quot;headerlink&quot; title=&quot;4.3 flex-shrink属性&quot;&gt;&lt;/a&gt;4.3 flex-shrink属性&lt;/h3&gt;&lt;p&gt;flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.item&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;flex-shrink&lt;/span&gt;: &amp;lt;number&amp;gt;; &lt;span class=&quot;comment&quot;&gt;/* default 1 */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071015.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。&lt;br&gt;负值对该属性无效。&lt;/p&gt;
+&lt;h3 id=&quot;4-4-flex-basis属性&quot;&gt;&lt;a href=&quot;#4-4-flex-basis属性&quot; class=&quot;headerlink&quot; title=&quot;4.4 flex-basis属性&quot;&gt;&lt;/a&gt;4.4 flex-basis属性&lt;/h3&gt;&lt;p&gt;flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.item&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;flex-basis&lt;/span&gt;: &amp;lt;length&amp;gt; | auto; &lt;span class=&quot;comment&quot;&gt;/* default auto */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。&lt;/p&gt;
+&lt;h3 id=&quot;4-5-flex属性&quot;&gt;&lt;a href=&quot;#4-5-flex属性&quot; class=&quot;headerlink&quot; title=&quot;4.5 flex属性&quot;&gt;&lt;/a&gt;4.5 flex属性&lt;/h3&gt;&lt;p&gt;flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.item&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;flex&lt;/span&gt;: none | [ &amp;lt;&lt;span class=&quot;string&quot;&gt;&#39;flex-grow&#39;&lt;/span&gt;&amp;gt; &amp;lt;&lt;span class=&quot;string&quot;&gt;&#39;flex-shrink&#39;&lt;/span&gt;&amp;gt;? || &amp;lt;&lt;span class=&quot;string&quot;&gt;&#39;flex-basis&#39;&lt;/span&gt;&amp;gt; ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。&lt;br&gt;建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。&lt;/p&gt;
+&lt;h3 id=&quot;4-6-align-self属性&quot;&gt;&lt;a href=&quot;#4-6-align-self属性&quot; class=&quot;headerlink&quot; title=&quot;4.6 align-self属性&quot;&gt;&lt;/a&gt;4.6 align-self属性&lt;/h3&gt;&lt;p&gt;align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.item&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;align-self&lt;/span&gt;: auto | flex-start | flex-end | center | baseline | stretch;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071016.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;该属性可能取6个值，除了auto，其他都与align-items属性完全一致。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;备注&lt;/strong&gt;：阮一峰博客上还有一篇文章，&lt;a href=&quot;http://www.ruanyifeng.com/blog/2015/07/flex-examples.html&quot; title=&quot;Flex 布局教程：实例篇&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Flex 布局教程：实例篇》&lt;/a&gt;，是用具体的案例来解说Flex布局，感兴趣的朋友，可以移步获取。我主要是对其中的“骰子案例”感兴趣：&lt;a href=&quot;http://codepen.io/LandonSchropp/pen/KpzzGo&quot; title=&quot;Flex骰子案例&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DEMO&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -1470,134 +1277,50 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
     <link href="http://xifengxx.github.io/2015/08/29/CSS3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E5%BD%A2transform/"/>
     <id>http://xifengxx.github.io/2015/08/29/CSS3学习笔记-变形transform/</id>
     <published>2015-08-29T14:04:44.000Z</published>
-    <updated>2016-04-07T08:09:28.000Z</updated>
+    <updated>2016-04-07T15:17:06.000Z</updated>
     
     <content type="html">&lt;p&gt;这节学习CSS3中的变形特性，主要涉及transform属性：&lt;/p&gt;
-&lt;h2 id=&quot;变形–旋转-rotate&quot;&gt;&lt;a href=&quot;#变形–旋转-rotate&quot; class=&quot;headerlink&quot; title=&quot;变形–旋转 rotate()&quot;&gt;&lt;/a&gt;&lt;strong&gt;变形–旋转 rotate()&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;旋转rotate()函数&lt;/strong&gt;通过指定的角度参数使元素相对原点进行旋转。它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为&lt;strong&gt;正值&lt;/strong&gt;，元素相对原点中心&lt;strong&gt;顺时针&lt;/strong&gt;旋转；如果这个值为&lt;strong&gt;负值&lt;/strong&gt;，元素相对原点中心&lt;strong&gt;逆时针&lt;/strong&gt;旋转。如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画1.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画1.png&quot; alt=&quot;变形与动画1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;HTML代码：&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;lt;div class=”wrapper”&amp;gt;  &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&lt;br&gt;&lt;strong&gt;CSS代码：&lt;/strong&gt;&lt;br&gt;.wrapper {&lt;/p&gt;
-&lt;p&gt;width: 200px;  height: 200px;&lt;/p&gt;
-&lt;p&gt;border: 1px dotted red;&lt;/p&gt;
-&lt;p&gt;margin: 100px auto;}&lt;/p&gt;
-&lt;p&gt;.wrapper div {&lt;/p&gt;
-&lt;p&gt;width: 200px;  height: 200px;  background: orange;&lt;/p&gt;
-&lt;p&gt;-webkit-transform: rotate(45deg);&lt;/p&gt;
-&lt;p&gt;transform: rotate(45deg);}&lt;br&gt;&lt;strong&gt;演示结果&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画2.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画2.png&quot; alt=&quot;变形与动画2&quot;&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h2 id=&quot;变形–旋转-rotate&quot;&gt;&lt;a href=&quot;#变形–旋转-rotate&quot; class=&quot;headerlink&quot; title=&quot;变形–旋转 rotate()&quot;&gt;&lt;/a&gt;&lt;strong&gt;变形–旋转 rotate()&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;旋转rotate()函数&lt;/strong&gt;通过指定的角度参数使元素相对原点进行旋转。它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为&lt;strong&gt;正值&lt;/strong&gt;，元素相对原点中心&lt;strong&gt;顺时针&lt;/strong&gt;旋转；如果这个值为&lt;strong&gt;负值&lt;/strong&gt;，元素相对原点中心&lt;strong&gt;逆时针&lt;/strong&gt;旋转。如下图所示：&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画1.png&quot; alt=&quot;变形与动画1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;HTML代码：&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”wrapper”&lt;/span&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;CSS代码：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;  &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1px&lt;/span&gt; dotted red;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;100px&lt;/span&gt; auto;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;div&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;  &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;  &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: orange;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;attribute&quot;&gt;-webkit-transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotate&lt;/span&gt;(45deg);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotate&lt;/span&gt;(45deg);&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;演示结果&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画2.png&quot; alt=&quot;变形与动画2&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;变形–扭曲-skew&quot;&gt;&lt;a href=&quot;#变形–扭曲-skew&quot; class=&quot;headerlink&quot; title=&quot;变形–扭曲 skew()&quot;&gt;&lt;/a&gt;&lt;strong&gt;变形–扭曲 skew()&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;扭曲skew()函数能够让元素&lt;strong&gt;倾斜显示&lt;/strong&gt;。它可以将一个对象以其中心位置围绕着&lt;strong&gt;X轴&lt;/strong&gt;和&lt;strong&gt;Y轴&lt;/strong&gt;按照一定的角度倾斜。这与rotate()函数的旋转不同，rotate()函数只是旋转，而不会改变元素的形状。skew()函数不会旋转，而只会改变元素的形状。&lt;/p&gt;
 &lt;p&gt;(如果不理解扭曲，可参考&lt;a href=&quot;http://www.zhangxinxu.com/study/201206/css3-transform-matrix-skew.html&quot; title=&quot;CSS扭曲解释&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;此处&lt;/a&gt;，加强理解。)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Skew()具有三种情况：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1、skew(x,y)使元素在水平和垂直方向同时扭曲&lt;/strong&gt;（X轴和Y轴同时按一定的角度值进行扭曲变形）；&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/skew-1.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/skew-1.png&quot; alt=&quot;skew-1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Skew()具有三种情况：&lt;/strong&gt;&lt;br&gt;1、skew(x,y)使元素在水平和垂直方向同时扭曲（X轴和Y轴同时按一定的角度值进行扭曲变形）；&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/skew-1.png&quot; alt=&quot;skew-1&quot;&gt;&lt;/p&gt;
 &lt;p&gt;第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则值为0，也就是Y轴方向上无斜切。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2、skewX(x)仅使元素在水平方向扭曲变形&lt;/strong&gt;（X轴扭曲变形）；&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/skew-2.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/skew-2.png&quot; alt=&quot;skew-2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3、skewY(y)仅使元素在垂直方向扭曲变形&lt;/strong&gt;（Y轴扭曲变形）&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/skew-3.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/skew-3.png&quot; alt=&quot;skew-3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2、skewX(x)仅使元素在水平方向扭曲变形（X轴扭曲变形）；&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/skew-2.png&quot; alt=&quot;skew-2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;3、skewY(y)仅使元素在垂直方向扭曲变形（Y轴扭曲变形）&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/skew-3.png&quot; alt=&quot;skew-3&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;示例演示：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;通过skew（）函数将长方形变成平行四边形。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;HTML代码：&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;lt;div class=”wrapper”&amp;gt;  &amp;lt;div&amp;gt;我变成平形四边形&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&lt;br&gt;&lt;strong&gt;CSS代码：&lt;/strong&gt;&lt;br&gt;.wrapper {&lt;/p&gt;
-&lt;p&gt;width: 300px;  height: 100px;&lt;/p&gt;
-&lt;p&gt;border: 2px dotted red;&lt;/p&gt;
-&lt;p&gt;margin: 30px auto;}&lt;/p&gt;
-&lt;p&gt;.wrapper div {&lt;/p&gt;
-&lt;p&gt;width: 300px;  height: 100px;&lt;/p&gt;
-&lt;p&gt;line-height: 100px;&lt;/p&gt;
-&lt;p&gt;text-align: center;&lt;/p&gt;
-&lt;p&gt;color: #fff;&lt;/p&gt;
-&lt;p&gt;background: orange;&lt;/p&gt;
-&lt;p&gt;-webkit-transform: skew(45deg);&lt;/p&gt;
-&lt;p&gt;-moz-transform:skew(45deg)&lt;/p&gt;
-&lt;p&gt;transform:skew(45deg);}&lt;br&gt;&lt;strong&gt;演示结果&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/skew-4.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/skew-4.png&quot; alt=&quot;skew-4&quot;&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;通过skew（）函数将长方形变成平行四边形。&lt;br&gt;HTML代码：&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”wrapper”&lt;/span&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;我变成平形四边形&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;CSS代码：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;300px&lt;/span&gt;;  &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;100px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;2px&lt;/span&gt; dotted red;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;30px&lt;/span&gt; auto;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;div&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;300px&lt;/span&gt;;  &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;100px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;line-height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;100px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;text-align&lt;/span&gt;: center;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;color&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;#fff&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: orange;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-webkit-transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;skew&lt;/span&gt;(45deg);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-moz-transform&lt;/span&gt;:&lt;span class=&quot;built_in&quot;&gt;skew&lt;/span&gt;(45deg)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    transform:&lt;span class=&quot;built_in&quot;&gt;skew&lt;/span&gt;(45deg);&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;演示结果&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/skew-4.png&quot; alt=&quot;skew-4&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;变形–缩放-scale&quot;&gt;&lt;a href=&quot;#变形–缩放-scale&quot; class=&quot;headerlink&quot; title=&quot;变形–缩放 scale()&quot;&gt;&lt;/a&gt;&lt;strong&gt;变形–缩放 scale()&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;缩放 scale()函数**&lt;/strong&gt; **让元素根据中心原点对对象进行缩放。&lt;/p&gt;
-&lt;p&gt;缩放 scale 具有三种情况：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1、 scale(X,Y)使元素水平方向和垂直方向同时缩放&lt;/strong&gt;（也就是X轴和Y轴同时缩放）&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/scale-1.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/scale-1.png&quot; alt=&quot;scale-1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;例如：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;div:hover {&lt;/p&gt;
-&lt;p&gt;-webkit-transform: scale(1.5,0.5);&lt;/p&gt;
-&lt;p&gt;-moz-transform:scale(1.5,0.5)&lt;/p&gt;
-&lt;p&gt;transform: scale(1.5,0.5);}&lt;br&gt;注意：Y是一个可选参数，如果没有设置Y值，则表示X，Y两个方向的缩放倍数是一样的。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;2、scaleX(x)元素仅水平方向缩放&lt;/strong&gt;（X轴缩放）&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/scale-2.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/scale-2.png&quot; alt=&quot;scale-2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3、scaleY(y)元素仅垂直方向缩放&lt;/strong&gt;（Y轴缩放）&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/scale-3.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/scale-3.png&quot; alt=&quot;scale-3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;HTML代码：&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;lt;div class=”wrapper”&amp;gt;  &amp;lt;div&amp;gt;我将放大1.5倍&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&lt;br&gt;&lt;strong&gt;CSS代码：&lt;/strong&gt;&lt;br&gt;.wrapper {&lt;/p&gt;
-&lt;p&gt;width: 200px;&lt;/p&gt;
-&lt;p&gt;height: 200px;&lt;/p&gt;
-&lt;p&gt;border:2px dashed red;&lt;/p&gt;
-&lt;p&gt;margin: 100px auto;}&lt;/p&gt;
-&lt;p&gt;.wrapper div {&lt;/p&gt;
-&lt;p&gt;width: 200px;&lt;/p&gt;
-&lt;p&gt;height: 200px;&lt;/p&gt;
-&lt;p&gt;line-height: 200px;&lt;/p&gt;
-&lt;p&gt;background: orange;&lt;/p&gt;
-&lt;p&gt;text-align: center;  color: #fff;}&lt;/p&gt;
-&lt;p&gt;.wrapper div:hover {&lt;/p&gt;
-&lt;p&gt;opacity: .5;  -webkit-transform: scale(1.5);&lt;/p&gt;
-&lt;p&gt;-moz-transform:scale(1.5)&lt;/p&gt;
-&lt;p&gt;transform: scale(1.5);}&lt;br&gt;&lt;strong&gt;演示结果&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/scale-4.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/scale-4.png&quot; alt=&quot;scale-4&quot;&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt; &lt;strong&gt;scale()&lt;/strong&gt;的取值默认的值为1，当值设置为&lt;strong&gt;0.01&lt;/strong&gt;到&lt;strong&gt;0.99&lt;/strong&gt;之间的任何值，作用使一个元素缩小；而任何大于或等于&lt;strong&gt;1.01&lt;/strong&gt;的值，作用是让元素放大。&lt;/p&gt;
+&lt;p&gt;缩放 scale 具有三种情况：&lt;br&gt;1、 scale(X,Y)使元素水平方向和垂直方向同时缩放**（也就是X轴和Y轴同时缩放）&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/scale-1.png&quot; alt=&quot;scale-1&quot;&gt;&lt;br&gt;例如：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:hover&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-webkit-transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;scale&lt;/span&gt;(1.5,0.5);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-moz-transform&lt;/span&gt;:&lt;span class=&quot;built_in&quot;&gt;scale&lt;/span&gt;(1.5,0.5)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    transform: &lt;span class=&quot;built_in&quot;&gt;scale&lt;/span&gt;(1.5,0.5);&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;注意：Y是一个可选参数，如果没有设置Y值，则表示X，Y两个方向的缩放倍数是一样的。&lt;/p&gt;
+&lt;p&gt;2、scaleX(x)元素仅水平方向缩放（X轴缩放）&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/scale-2.png&quot; alt=&quot;scale-2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;3、scaleY(y)元素仅垂直方向缩放**（Y轴缩放）&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/scale-3.png&quot; alt=&quot;scale-3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;HTML代码：&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”wrapper”&lt;/span&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;我将放大1.5倍&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;css代码：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;2px&lt;/span&gt; dashed red;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;100px&lt;/span&gt; auto;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;div&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;line-height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: orange;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;text-align&lt;/span&gt;: center;  &lt;span class=&quot;attribute&quot;&gt;color&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;#fff&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:hover&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;opacity&lt;/span&gt;: .&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;;  &lt;span class=&quot;attribute&quot;&gt;-webkit-transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;scale&lt;/span&gt;(1.5);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-moz-transform&lt;/span&gt;:&lt;span class=&quot;built_in&quot;&gt;scale&lt;/span&gt;(1.5)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    transform: &lt;span class=&quot;built_in&quot;&gt;scale&lt;/span&gt;(1.5);&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;演示结果&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/scale-4.png&quot; alt=&quot;scale-4&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt; scale()的取值默认的值为1，当值设置为0.01到0.99之间的任何值，作用使一个元素缩小；而任何大于或等于1.01的值，作用是让元素放大。&lt;/p&gt;
 &lt;h2 id=&quot;变形–位移-translate&quot;&gt;&lt;a href=&quot;#变形–位移-translate&quot; class=&quot;headerlink&quot; title=&quot;变形–位移 translate()&quot;&gt;&lt;/a&gt;&lt;strong&gt;变形–位移 translate()&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;translate()函数&lt;/strong&gt;可以将元素向指定的方向移动，类似于position中的&lt;strong&gt;relative&lt;/strong&gt;。或以简单的理解为，使用translate()函数，可以把元素从原来的位置移动，而不影响在X、Y轴上的任何Web组件。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;translate我们分为三种情况：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1、translate(x,y)水平方向和垂直方向同时移动&lt;/strong&gt;（也就是X轴和Y轴同时移动）&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/translate-1.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/translate-1.png&quot; alt=&quot;translate-1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2、translateX(x)仅水平方向移动&lt;/strong&gt;（X轴移动）&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/translate-2.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/translate-2.png&quot; alt=&quot;translate-2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3、translateY(Y)仅垂直方向移动&lt;/strong&gt;（Y轴移动）&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/translate-3.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/translate-3.png&quot; alt=&quot;translate-3&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;实例演示：&lt;/strong&gt;通过translate()函数将元素向Y轴下方移动100px,X轴右方移动50px。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;HTML代码：&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;lt;div class=”wrapper”&amp;gt;  &amp;lt;div&amp;gt;我向右向下移动&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&lt;br&gt;&lt;strong&gt;CSS代码：&lt;/strong&gt;&lt;br&gt;.wrapper {&lt;/p&gt;
-&lt;p&gt;width: 200px;  height: 200px;&lt;/p&gt;
-&lt;p&gt;border: 2px dotted red;&lt;/p&gt;
-&lt;p&gt;margin: 20px auto;}&lt;/p&gt;
-&lt;p&gt;.wrapper div {&lt;/p&gt;
-&lt;p&gt;width: 200px;  height: 200px;  line-height: 200px;&lt;/p&gt;
-&lt;p&gt;text-align: center;  background: orange;&lt;/p&gt;
-&lt;p&gt;color: #fff;  -webkit-transform:&lt;/p&gt;
-&lt;p&gt;translate(50px,100px);&lt;/p&gt;
-&lt;p&gt;-moz-transform:translate(50px,100px);&lt;/p&gt;
-&lt;p&gt;transform: translate(50px,100px);}&lt;br&gt;&lt;strong&gt;演示结果&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/translate-4.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/translate-4.png&quot; alt=&quot;translate-4&quot;&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;变形–矩阵-matrix&quot;&gt;&lt;a href=&quot;#变形–矩阵-matrix&quot; class=&quot;headerlink&quot; title=&quot;变形–矩阵 matrix()&quot;&gt;&lt;/a&gt;&lt;strong&gt;变形–矩阵 matrix()&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;matrix()**&lt;/strong&gt; **是一个含六个值的(a,b,c,d,e,f)变换矩阵，用来指定一个2D变换，相当于直接应用一个[a b c d e f]变换矩阵。就是基于水平方向（X轴）和垂直方向（Y轴）重新定位元素,此属性值使用涉及到数学中的矩阵，我在这里只是简单的说一下CSS3中的transform有这么一个属性值，如果需要深入了解，需要对数学矩阵有一定的知识。&lt;/p&gt;
-&lt;p&gt;（想对Matrix深入理解，请&lt;a href=&quot;http://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/&quot; title=&quot;Matrix矩阵深入理解&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击此处&lt;/a&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;示例演示：&lt;/strong&gt;通过matrix()函数来模拟transform中translate()位移的效果。&lt;br&gt;&lt;strong&gt;HTML代码：&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;lt;div class=”wrapper”&amp;gt;  &amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&lt;br&gt;&lt;strong&gt;CSS代码：&lt;/strong&gt;&lt;br&gt;.wrapper {&lt;/p&gt;
-&lt;p&gt;width: 300px;&lt;/p&gt;
-&lt;p&gt;height: 200px;&lt;/p&gt;
-&lt;p&gt;border: 2px dotted red;&lt;/p&gt;
-&lt;p&gt;margin: 40px auto;}&lt;/p&gt;
-&lt;p&gt;.wrapper div {&lt;/p&gt;
-&lt;p&gt;width:300px;&lt;/p&gt;
-&lt;p&gt;height: 200px;&lt;/p&gt;
-&lt;p&gt;background: orange;&lt;/p&gt;
-&lt;p&gt;-webkit-transform: matrix(1,0,0,1,50,50);&lt;/p&gt;
-&lt;p&gt;-moz-transform:matrix(1,0,0,1,50,50);&lt;/p&gt;
-&lt;p&gt;transform: matrix(1,0,0,1,50,50);}&lt;br&gt;&lt;strong&gt;演示结果：&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/matrix-1.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/matrix-1.png&quot; alt=&quot;matrix-1&quot;&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;变形–原点-transform-origin&quot;&gt;&lt;a href=&quot;#变形–原点-transform-origin&quot; class=&quot;headerlink&quot; title=&quot;变形–原点 transform-origin&quot;&gt;&lt;/a&gt;&lt;strong&gt;变形–原点 transform-origin&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;任何一个元素都有一个中心点，默认情况之下，其中心点是居于元素X轴和Y轴的50%处。如下图所示：&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-1.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-1.png&quot; alt=&quot;transform-origin-1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1、translate(x,y)水平方向和垂直方向同时移动（也就是X轴和Y轴同时移动）&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/translate-1.png&quot; alt=&quot;translate-1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;2、translateX(x)仅水平方向移动**（X轴移动）&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/translate-2.png&quot; alt=&quot;translate-2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;3、translateY(Y)仅垂直方向移动**（Y轴移动）&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/translate-3.png&quot; alt=&quot;translate-3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;实例演示：&lt;/strong&gt;通过translate()函数将元素向Y轴下方移动100px,X轴右方移动50px。&lt;br&gt;HTML代码：&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”wrapper”&lt;/span&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;我向右向下移动&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;css代码：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;  &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;2px&lt;/span&gt; dotted red;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;20px&lt;/span&gt; auto;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;div&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;  &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;  &lt;span class=&quot;attribute&quot;&gt;line-height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;text-align&lt;/span&gt;: center;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: orange;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;color&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;#fff&lt;/span&gt;;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-webkit-transform&lt;/span&gt;:&lt;span class=&quot;built_in&quot;&gt;translate&lt;/span&gt;(50px,100px);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-moz-transform&lt;/span&gt;:&lt;span class=&quot;built_in&quot;&gt;translate&lt;/span&gt;(50px,100px);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;translate&lt;/span&gt;(50px,100px);&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;**演示结果&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/translate-4.png&quot; alt=&quot;translate-4&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;变形–矩阵-matrix&quot;&gt;&lt;a href=&quot;#变形–矩阵-matrix&quot; class=&quot;headerlink&quot; title=&quot;变形–矩阵 matrix()&quot;&gt;&lt;/a&gt;&lt;strong&gt;变形–矩阵 matrix()&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;matrix()&lt;/strong&gt;是一个含六个值的(a,b,c,d,e,f)变换矩阵，用来指定一个2D变换，相当于直接应用一个[a b c d e f]变换矩阵。就是基于水平方向（X轴）和垂直方向（Y轴）重新定位元素,此属性值使用涉及到数学中的矩阵，我在这里只是简单的说一下CSS3中的transform有这么一个属性值，如果需要深入了解，需要对数学矩阵有一定的知识。&lt;br&gt;（想对Matrix深入理解，请&lt;a href=&quot;http://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/&quot; title=&quot;Matrix矩阵深入理解&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击此处&lt;/a&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例演示：&lt;/strong&gt;通过matrix()函数来模拟transform中translate()位移的效果。&lt;br&gt;HTML代码：&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”wrapper”&lt;/span&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;css代码：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;300px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;2px&lt;/span&gt; dotted red;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;40px&lt;/span&gt; auto;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;div&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;300px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: orange;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-webkit-transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;matrix&lt;/span&gt;(1,0,0,1,50,50);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-moz-transform&lt;/span&gt;:&lt;span class=&quot;built_in&quot;&gt;matrix&lt;/span&gt;(1,0,0,1,50,50);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;matrix&lt;/span&gt;(1,0,0,1,50,50);&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;演示结果：&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/matrix-1.png&quot; alt=&quot;matrix-1&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;变形–原点-transform-origin&quot;&gt;&lt;a href=&quot;#变形–原点-transform-origin&quot; class=&quot;headerlink&quot; title=&quot;变形–原点 transform-origin&quot;&gt;&lt;/a&gt;&lt;strong&gt;变形–原点 transform-origin&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;任何一个元素都有一个中心点，默认情况之下，其中心点是居于元素X轴和Y轴的50%处。如下图所示：&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-1.png&quot; alt=&quot;transform-origin-1&quot;&gt;&lt;/p&gt;
 &lt;p&gt;在没有重置transform-origin改变元素原点位置的情况下，CSS变形进行的旋转、位移、缩放，扭曲等操作都是&lt;strong&gt;以元素自己中心位置进行变形&lt;/strong&gt;。但很多时候，我们可以通过transform-origin来对元素进行原点位置改变，使元素原点不在元素的中心位置，以达到需要的原点位置。&lt;/p&gt;
-&lt;p&gt;transform-origin取值和元素设置背景中的background-position取值类似，如下表所示：&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-2.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-2.png&quot; alt=&quot;transform-origin-2&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;示例展示：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;通过transform-origin改变元素原点到左上角，然后进行顺时旋转45度。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;HTML代码：&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;lt;div class=”wrapper”&amp;gt;  &amp;lt;div&amp;gt;原点在默认位置处&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div class=”wrapper transform-origin”&amp;gt;  &amp;lt;div&amp;gt;原点重置到左上角&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&lt;br&gt;&lt;strong&gt;CSS代码：&lt;/strong&gt;&lt;br&gt;.wrapper {&lt;/p&gt;
-&lt;p&gt;width: 300px;  height: 300px;  float: left;&lt;/p&gt;
-&lt;p&gt;margin: 100px;  border: 2px dotted red;&lt;/p&gt;
-&lt;p&gt;line-height: 300px;  text-align: center;}&lt;/p&gt;
-&lt;p&gt;.wrapper div {&lt;/p&gt;
-&lt;p&gt;background: orange;&lt;/p&gt;
-&lt;p&gt;-webkit-transform: rotate(45deg);&lt;/p&gt;
-&lt;p&gt;transform: rotate(45deg);}&lt;/p&gt;
-&lt;p&gt;.transform-origin div {&lt;/p&gt;
-&lt;p&gt;-webkit-transform-origin: left top;&lt;/p&gt;
-&lt;p&gt;transform-origin: left top;}&lt;br&gt;&lt;strong&gt;演示结果：&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-3.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-3.png&quot; alt=&quot;transform-origin-3&quot;&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;transform-origin取值和元素设置背景中的background-position取值类似，如下表所示：&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-2.png&quot; alt=&quot;transform-origin-2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例展示：&lt;/strong&gt;&lt;br&gt;通过transform-origin改变元素原点到左上角，然后进行顺时旋转45度。&lt;br&gt;HTML代码：&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”wrapper”&lt;/span&gt;&amp;gt;&lt;/span&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;原点在默认位置处&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;”wrapper&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;transform-origin&lt;/span&gt;”&amp;gt;&lt;/span&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;原点重置到左上角&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;css代码：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;300px&lt;/span&gt;;  &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;300px&lt;/span&gt;;  &lt;span class=&quot;attribute&quot;&gt;float&lt;/span&gt;: left;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;100px&lt;/span&gt;;  &lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;2px&lt;/span&gt; dotted red;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;line-height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;300px&lt;/span&gt;;  &lt;span class=&quot;attribute&quot;&gt;text-align&lt;/span&gt;: center;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;div&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: orange;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-webkit-transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotate&lt;/span&gt;(45deg);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;rotate&lt;/span&gt;(45deg);&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.transform-origin&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;div&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;-webkit-transform-origin&lt;/span&gt;: left top;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;transform-origin&lt;/span&gt;: left top;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;演示结果：&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-3.png&quot; alt=&quot;transform-origin-3&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -1615,85 +1338,22 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
   </entry>
   
   <entry>
-    <title>HTML5学习笔记（1）元素与标签结构</title>
-    <link href="http://xifengxx.github.io/2015/08/22/HTML5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89%E5%85%83%E7%B4%A0%E4%B8%8E%E6%A0%87%E7%AD%BE%E7%BB%93%E6%9E%84/"/>
-    <id>http://xifengxx.github.io/2015/08/22/HTML5学习笔记（1）元素与标签结构/</id>
-    <published>2015-08-22T13:06:01.000Z</published>
-    <updated>2016-04-07T07:53:26.000Z</updated>
-    
-    <content type="html">&lt;p&gt;HTML5是用于取代1999年所制定的 HTML 4.01 和 XHTML 1.0 标准的 HTML [1]（标准通用标记语言下的一个应用）标准版本；现在仍处于发展阶段，但大部分浏览器已经支持某些 HTML5 技术。&lt;/p&gt;
-&lt;h4 id=&quot;HTML-5有两大特点：&quot;&gt;&lt;a href=&quot;#HTML-5有两大特点：&quot; class=&quot;headerlink&quot; title=&quot;HTML 5有两大特点：&quot;&gt;&lt;/a&gt;HTML 5有两大特点：&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;强化了 Web 网页的表现性能。&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;追加了本地数据库等 Web 应用的功能。&lt;/strong&gt;&lt;br&gt;广义论及HTML5时，实际指的是包括HTML、CSS和JavaScript在内的一套技术组合。它希望能够减少浏览器对于需要插件的丰富性网络应用服务（plug-in-based rich internet application，RIA)，如Adobe Flash、Microsoft Silverlight，与Oracle JavaFX的需求，并且提供更多能有效增强网络应用的标准集。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;HTML5语法&quot;&gt;&lt;a href=&quot;#HTML5语法&quot; class=&quot;headerlink&quot; title=&quot;HTML5语法&quot;&gt;&lt;/a&gt;HTML5语法&lt;/h3&gt;&lt;p&gt;沿用了HTML的语法(已往过去的语法，是SGML语法的一个子集)，更简洁，更人性化。&lt;br&gt;&lt;strong&gt;1.DOCTYPE及字符编码&lt;/strong&gt;&lt;br&gt;① DOCTYPE：&amp;lt;!doctype html&amp;gt;&lt;br&gt;② 字符编码：&amp;lt;meta charset=”utf-8”&amp;gt;&lt;br&gt;③ 给文档指定语言：&amp;lt;html lang=”zh-CN”&amp;gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2.大小写都可以&lt;/strong&gt;&lt;br&gt;① 目的是为了兼容更多的文档，在HTML5里不区分大小写&lt;br&gt;建议：写代码最好规范，最好小写(标签和属性)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3.布尔值&lt;/strong&gt;&lt;br&gt;① &amp;lt;input type=”checkbox” checked/&amp;gt;&lt;br&gt;在这里checked写上就表示true，如果不写就表示false。而不用像HTML4中要写成checked=”checked”了。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;4.省略引号&lt;/strong&gt;&lt;br&gt;① &amp;lt;input type=”text” /&amp;gt;&lt;br&gt;② &amp;lt;input type=’text’&amp;gt;&lt;br&gt;③ &amp;lt;input type=text&amp;gt;&lt;br&gt;上面三种写法都可以，当然如果属性值中出现空格，就必须写引号或双引号&lt;br&gt;建议：属性中，引号最好是双引号&lt;/p&gt;
-&lt;p&gt;1、不允许写结束符的标签：area , basebr , col， command , embed , hr , img , input , keygen , link , meta , param , source , track , wbr。格式&amp;lt;xx/&amp;gt;&lt;br&gt;2、可以省略结束符的标签：li , dt , dd , p , rt , optgroup , colgroup , thread , tbody , tr , td , th省略&amp;lt;/XXX&amp;gt;&lt;br&gt;3、可以完全省略的标签：html , head , body , colgroup , tbody&lt;/p&gt;
-&lt;h3 id=&quot;HTML5新增标签&quot;&gt;&lt;a href=&quot;#HTML5新增标签&quot; class=&quot;headerlink&quot; title=&quot;HTML5新增标签&quot;&gt;&lt;/a&gt;HTML5新增标签&lt;/h3&gt;&lt;p&gt;（1）结构标签&lt;br&gt;（2）表单标签&lt;br&gt;（3）媒体标签&lt;br&gt;（4）其他功能标签&lt;br&gt;&lt;strong&gt;&amp;lt;1&amp;gt;结构标签&lt;/strong&gt;——原来用div&lt;br&gt;（1）section元素——表示页面中一个内容区块，比如章节、页眉、页脚或页面的其他部分。可以和h1、h2等元素结合起来使用，表示文档结构。例：html5中&amp;lt;section&amp;gt;…&amp;lt;/section&amp;gt;html4中&amp;lt;div&amp;gt;…&amp;lt;/div&amp;gt;。&lt;br&gt;（2）article元素——表示页面中一块与上下文部相关的独立内容。比如一篇文章。&lt;br&gt;（3）aside元素——表示article元素内容之外的、与article元素内容相关的辅助信息。&lt;br&gt;（4）header元素——表示整个页面或页面中一个内容区块的标题。&lt;br&gt;（5）hgroup元素——表示整个页面或页面中一个内容区块的标题进行组合。&lt;br&gt;（6）footer元素——表示整个页面或页面中一个内容区块的脚注。一般来说，他会包含创作者的姓名、创作日期以及创作者的联系方式。&lt;br&gt;（7）nav标签——表示页面中导航链接的部分&lt;br&gt;（8）figure标签——表示一段独立的流内容，一般表示文档主体流内容中的一个独立单元，使用figcaption标签为figure标签组添加标题。例如：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;figure&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;figcaption&amp;amp;gt;PRC&amp;amp;lt;/figcaption&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;p&amp;amp;gt;the people&amp;apos;s republic of china was born in 1949&amp;amp;lt;/p&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;/figure&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&amp;lt;2&amp;gt;表单标签&lt;/strong&gt;&lt;br&gt;（1） email——必须输入email&lt;br&gt;（2） url——必须输入url地址&lt;br&gt;（3） number——必须输入数值&lt;br&gt;（4） range——必须输入一定范围内数值&lt;br&gt;（5） Date Pickers（日期选择器）&lt;br&gt;拥有多个可供选取日期和时间的新输入类型：&lt;br&gt;date-选择日、月、年&lt;br&gt;month-选择月、年&lt;br&gt;week-选择周、年&lt;br&gt;time-选取时间（小时和分钟）&lt;br&gt;datetime-选取时间、日、月、年（UTC时间）&lt;br&gt;datetime-local-选取时间、日、月、年（本地时间）&lt;br&gt;（6） search——用于搜索域，域显示为常规的文本域&lt;br&gt;（7） color&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&amp;lt;3&amp;gt;媒体标签&lt;/strong&gt;&lt;br&gt;（1） vedio标签——定义视频，像电影片段或其他视频流。例如：&lt;br&gt;&amp;lt;vedio src=”movie.ogg” controls=”controls”&amp;gt;vedio标签&amp;lt;/vedio&amp;gt;&lt;br&gt;（2） audio标签——定义音频，像音乐或其他音频流。例如：&lt;br&gt;&amp;lt;audio src=”someaudio.wav”&amp;gt;audio标签&amp;lt;/audio&amp;gt;&lt;br&gt;（3） embed标签——用来嵌入内容（包括各种媒体），格式可以是Mldl、Wav、AIFF、AU、MP3、flash等。例如：&lt;br&gt;&amp;lt;embed src=”flash.saf”/&amp;gt;;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&amp;lt;4&amp;gt;其他标签&lt;/strong&gt;&lt;br&gt;（1） mark标签——提亮文字&lt;br&gt;（2） progress标签——进度条&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;progress max=&amp;quot;100&amp;quot; value=&amp;quot;85&amp;quot;&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;span&amp;amp;gt;85&amp;amp;lt;/span&amp;amp;gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;quot;%&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;/progress&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;（3） time标签——属于语义标签，或者说是微数据标签，用来标注页面中的某一块内容，这个标注是给机器（搜索引擎）用的&lt;br&gt;time datetime=”2013-10-20T09:00Z”pubdate&amp;gt;9:00&amp;lt;/time&amp;gt;——发布时间&lt;br&gt;（4） ruby标签——对某个字进行注释&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;ruby&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; 漠&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;amp;lt;rt&amp;amp;gt;&amp;amp;lt;/rt&amp;amp;gt; //注释内容&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;amp;lt;rp&amp;amp;gt;(&amp;amp;lt;/rp&amp;amp;gt; //当浏览器不支持时显示&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; “厂马”&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;amp;lt;rp&amp;amp;gt;)&amp;amp;lt;/rp&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &amp;amp;lt;/ruby&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;（5） wbr标签——软换行&lt;br&gt;（6） canvas标签——与javascript配合进行图形绘制&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;canvas id=&amp;quot;mycanvas&amp;quot;&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;script &amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;…&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;/script&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;/canvas&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;(7)command标签&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;menu&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;command onclick=&amp;quot;alert(hello world)&amp;quot; label=&amp;quot;click&amp;quot;&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;quot;click me!&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;/menu&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;HTML5废除标签：&quot;&gt;&lt;a href=&quot;#HTML5废除标签：&quot; class=&quot;headerlink&quot; title=&quot;HTML5废除标签：&quot;&gt;&lt;/a&gt;HTML5&lt;strong&gt;废除标签：&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;1、能用css代替的元素&lt;br&gt;basefont、big、center、font、s、strike、tt、u。这些元素纯粹是为画面展示服务的，HTML5中提倡把画面展示性功能放在css中统一编辑。&lt;br&gt;2、不再使用frame框架。&lt;br&gt;frameset、frame、noframes。HTML5中不支持frame框架，只支持iframe框架，或者用服务器方创建的由多个页面组成的符合页面的形式，删除以上这三个标签。&lt;br&gt;3、只有部分浏览器支持的元素&lt;br&gt;applet、bgsound、blink、marquee等标签。&lt;br&gt;4、其他被废除的元素：废除rb，使用ruby替代。废除acronym使用abbr替代。废除dir使用ul替代。废除isindex使用form与input相结合的方式替代。废除listing使用pre替代。废除xmp使用code替代。废除nextid使用guids。废除plaintex使用“text/plian”（无格式正文）MIME类型替代。&lt;/p&gt;
-&lt;h3 id=&quot;HTMl5新增属性&quot;&gt;&lt;a href=&quot;#HTMl5新增属性&quot; class=&quot;headerlink&quot; title=&quot;HTMl5新增属性&quot;&gt;&lt;/a&gt;HTMl5新增属性&lt;/h3&gt;&lt;p&gt;新增属性：（表单属性、链接属性、其他属性）&lt;br&gt;1.&amp;lt;meta http-equiv=”pragma” content=”no-cache”&amp;gt;禁止页面缓存。&lt;br&gt;2.manifest:定义离线应用所需的文件。&amp;lt;html manifest=”cache.manifest”&amp;gt;&lt;br&gt;3.&amp;lt;meta charset=”utf-8”&amp;gt;指定页面的字符集&lt;br&gt;4.sizes：指定浏览器选项卡上显示的网页logo，使用方法如下：&lt;br&gt;&amp;lt;link rel=’icon’ href=’demo_icon.gif’ type=’image/gif’ sizes=’16*16’&amp;gt;&lt;br&gt;5.&amp;lt;base href=”&lt;a href=&quot;http://localhost/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost/&lt;/a&gt;“ target=”_blank”&amp;gt;超链接打开方式，在新窗口打开页面地址以&lt;a href=&quot;http://localhost/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost/&lt;/a&gt; 开头 + 相对地址&lt;br&gt;6.script：defer和async（加载方式）&lt;br&gt;defer–当浏览器读到&amp;lt;script src..&amp;gt; 脚本文件下载后不执行，等页面加载完成后才执行（推迟执行）&lt;br&gt;async–当浏览器读到&amp;lt;script src..&amp;gt; 脚本文件下载后立刻执行，但并不停止执行后续的代码（异步执行）&lt;br&gt;7、&amp;lt;a media=”” hreflang=”” href=”#”&amp;gt;对相应的设备进行优化，handheld（手持设备），tv(电视)&lt;br&gt;&amp;lt;a href=”&lt;a href=&quot;http://www.mukewang.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.mukewang.com/&lt;/a&gt;“ hreflang=”zh” ref=”external”&amp;gt;慕课网&amp;lt;/a&amp;gt;&lt;br&gt;a：hreflang=”zh”（设置语言，这里设置语言是中文,表示网址使用的网址是中文）&lt;br&gt;a：ref=”external”（设置超链接的引用，表示网址使用的是外部的）&lt;br&gt;8、start 起始值 reversed 倒序&lt;br&gt;如：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;ol start=&amp;quot;50&amp;quot; reversed&amp;amp;gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;li&amp;amp;gt;1&amp;amp;lt;/li&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;li&amp;amp;gt;2&amp;amp;lt;/li&amp;amp;gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;li&amp;amp;gt;3&amp;amp;lt;/li&amp;amp;gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;amp;lt;/ol&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;9、&amp;lt;menu type=””&amp;gt;type的三个类型contextmenu（上下文菜单），list（列表菜单），toolbar（工具栏）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;内嵌css新增的属性 &amp;lt;style type=”text/css” scoded&amp;gt;//scoded表示只对外部标签内部才有效&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;amp;lt;div&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;amp;lt;style type=&amp;quot;text/css&amp;quot; scoped&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; h1&amp;#123;color:red;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; p&amp;#123;color:blue;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;amp;lt;/style&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;amp;lt;h1&amp;amp;gt;this my name&amp;amp;lt;/h1&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;amp;lt;p&amp;amp;gt;this my name&amp;amp;lt;/p&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;amp;lt;div&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;11、&amp;lt;iframe &amp;gt;&amp;lt;/iframe&amp;gt;//内嵌框架&lt;br&gt;seamless属性—不会有边框、边距&lt;br&gt;srcdoc属性—指定内嵌框架的内容。有srcdoc 时，src 会被忽略，此时显示srcdoc中的内容，srcdoc的值可以是html代码&lt;br&gt;sandbox—规定内嵌框架的安全级别 （禁止提交表单、禁止执行javascript脚本、内嵌页面与外层页面不是相同的源）&lt;br&gt;①allow-forms:允许提交表单&lt;br&gt;②allow-scripts：允许执行脚本&lt;br&gt;③allow-same-origin：允许 iframe 内容被视为与包含文档有相同的来源&lt;br&gt;④allow-top-navigation：允许 iframe 内容从包含文档导航（加载）内容&lt;/p&gt;
-&lt;h3 id=&quot;HTML5删除属性&quot;&gt;&lt;a href=&quot;#HTML5删除属性&quot; class=&quot;headerlink&quot; title=&quot;HTML5删除属性&quot;&gt;&lt;/a&gt;HTML5删除属性&lt;/h3&gt;&lt;p&gt;在html5中，那些可以用css样式定义的标签和属性都被删除了！&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/HTML废除的属性.jpg&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/HTML废除的属性.jpg&quot; alt=&quot;HTML废除的属性&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;HTML5全局属性&quot;&gt;&lt;a href=&quot;#HTML5全局属性&quot; class=&quot;headerlink&quot; title=&quot;HTML5全局属性&quot;&gt;&lt;/a&gt;HTML5全局属性&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;data-yourvalue:自定义数据属性&lt;/li&gt;
-&lt;li&gt;hidden：可以对标签内容隐藏，代替之前需在CSS中输入的display：none&lt;/li&gt;
-&lt;li&gt;spellcheck：对输入内容进行语法标错&lt;/li&gt;
-&lt;li&gt;tabindex：通过设定值，按下tab后，按照标注的顺序进行切换&lt;br&gt;5.contenteditable：这部分页面内容可以编辑：可以配合JS对网页内容进行局部修改&lt;/li&gt;
-&lt;li&gt;designMode属性：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;amp;lt;sricpt&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; window.document.designMode=&amp;apos;on&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;amp;lt;/sricpt&amp;amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;designMode属性为on时，所有的文档属性都可以修改。off时只有上面的属性指定的区域可编辑。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;HTML5是用于取代1999年所制定的 HTML 4.01 和 XHTML 1.0 标准的 HTML [1]（标准通用标记语言下的一个应用）标准版本；现在仍处于发展阶段，但大部分浏览器已经支持某些 HTML5 技术。&lt;/p&gt;
-&lt;h4 id=&quot;HTML-5有两大特点：&quot;&gt;&lt;a
-    
-    </summary>
-    
-      <category term="Web前端" scheme="http://xifengxx.github.io/categories/Web%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="HTML5" scheme="http://xifengxx.github.io/tags/HTML5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何将Emmet安装到 Sublime text 3</title>
+    <title>如何将Emmet安装到Sublime text 3</title>
     <link href="http://xifengxx.github.io/2015/08/03/%E5%A6%82%E4%BD%95%E5%B0%86Emmet%E5%AE%89%E8%A3%85%E5%88%B0%20Sublime%20text%203/"/>
     <id>http://xifengxx.github.io/2015/08/03/如何将Emmet安装到 Sublime text 3/</id>
     <published>2015-08-03T15:33:41.000Z</published>
-    <updated>2016-04-07T07:58:08.000Z</updated>
+    <updated>2016-04-07T15:22:36.000Z</updated>
     
-    <content type="html">&lt;p&gt;学习慕课网&lt;a href=&quot;http://www.imooc.com/learn/40&quot; title=&quot;慕课网&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《前端开发工具技巧介绍—Sublime篇》&lt;/a&gt;时，提到一个前端开发工具“Sublime”。&lt;br&gt;它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度。&lt;/p&gt;
-&lt;p&gt;（查看这篇文章来了解Sublime具体用法：&lt;a href=&quot;http://www.iteye.com/news/27580&quot; title=&quot;Emmet：HTML/CSS代码快速编写神器&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt; Emmet：HTML/CSS代码快速编写神器&lt;/a&gt;）&lt;/p&gt;
+    <content type="html">&lt;p&gt;学习慕课网&lt;a href=&quot;http://www.imooc.com/learn/40&quot; title=&quot;慕课网&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《前端开发工具技巧介绍—Sublime篇》&lt;/a&gt;时，提到一个前端开发工具“Sublime”。&lt;br&gt;它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度。&lt;br&gt;（查看这篇文章来了解Sublime具体用法：&lt;a href=&quot;http://www.iteye.com/news/27580&quot; title=&quot;Emmet：HTML/CSS代码快速编写神器&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt; Emmet：HTML/CSS代码快速编写神器&lt;/a&gt;）&lt;/p&gt;
 &lt;p&gt;视频介绍Sublime插件Emmet非常实用，但我发现从官网下载的Sublime并不带Emmet插件，需要重新下载安装。&lt;/p&gt;
-&lt;p&gt;于是百度搜索，找到了这篇文章&lt;a href=&quot;http://www.cnblogs.com/tinyphp/p/3217457.html&quot; title=&quot;如何将Emmet安装到 Sublime text 3&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《如何将Emmet安装到 Sublime text 3》&lt;/a&gt;，按照步骤来下载安装：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;第一步：下载&lt;a href=&quot;http://files.cnblogs.com/tinyphp/sublime_package_control-master.zip&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sublime_package_control-master.zip&lt;/a&gt; ，解压命名文件夹为Package Control。(注意大小写)&lt;/p&gt;
+&lt;p&gt;于是百度搜索，找到了这篇文章&lt;a href=&quot;http://www.cnblogs.com/tinyphp/p/3217457.html&quot; title=&quot;如何将Emmet安装到 Sublime text 3&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《如何将Emmet安装到 Sublime text 3》&lt;/a&gt;，按照步骤来下载安装：&lt;br&gt;第一步：下载&lt;a href=&quot;http://files.cnblogs.com/tinyphp/sublime_package_control-master.zip&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sublime_package_control-master.zip&lt;/a&gt; ，解压命名文件夹为Package Control。(注意大小写)&lt;/p&gt;
 &lt;p&gt;第二步：下载&lt;a href=&quot;http://files.cnblogs.com/tinyphp/sublime_package_control-python3.zip&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sublime_package_control-python3.zip&lt;/a&gt;，解压后覆盖到刚刚的Package Control中，完成插件API函数的更新。&lt;/p&gt;
-&lt;p&gt;第三步：打开Sublime Text 3，选择菜单：Preference–&amp;gt;Browse Package… 浏览插件&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/002Cst8Aty6Pc89uuaa0e690.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;
-&lt;/a&gt; &lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-1.jpg&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-1.jpg&quot; alt=&quot;sublime text 1&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;第四步：把package control复制到此目录，重启 Sublime text 3。&lt;br&gt;然后菜单Preferences就会多了两个Package..的东西如下： Package Control 安装成功&lt;br&gt;&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-2.jpg&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-2.jpg&quot; alt=&quot;sublime text 2&quot;&gt;&lt;/a&gt;&lt;br&gt;第五步：点击菜单Preference–&amp;gt;Package Control，点击install Package：&lt;br&gt;&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-3.jpg&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-3.jpg&quot; alt=&quot;sublime text 3&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg&quot; alt=&quot;sublime text 4&quot;&gt;&lt;/a&gt;等待几秒后再弹出如下内容，敲键盘emmet,选择第一项安装。（网上的教程是选择“emment Css Snippets”安装，我试过2次，安装后都失败了，改为第一项安装则成功了。）&lt;/p&gt;
-&lt;p&gt;在 Emmet 安装完成后，屏幕下方会提示自动安装PyV8，安装完成，重启 Sublime Text 3。&lt;/p&gt;
-&lt;p&gt;自此，安装成功。&lt;br&gt;&lt;strong&gt;测试：&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;重启之后还会看到左下角再次呈现 Loading PyV8 的提示，待其载入完毕，打开一个新文档（CTRL+N）,最后测试，输入指令”!”，按“Tab”键即出现如下内容，即HTML5整体结构，而不用一个一个的输入字符，非常方便，极大的提高了码字的速度和效率，前端学习者们可以尝试下。&lt;br&gt;&lt;a href=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg&quot; alt=&quot;sublime text 4&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第三步：打开Sublime Text 3，选择菜单：Preference–&amp;gt;Browse Package… 浏览插件&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-1.jpg&quot; alt=&quot;sublime text 1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;第四步：把package control复制到此目录，重启 Sublime text 3。&lt;br&gt;然后菜单Preferences就会多了两个Package..的东西如下： Package Control 安装成功&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-2.jpg&quot; alt=&quot;sublime text 2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;第五步：点击菜单Preference–&amp;gt;Package Control，点击install Package：&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-3.jpg&quot; alt=&quot;sublime text 3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg&quot; alt=&quot;sublime text 4&quot;&gt;&lt;br&gt;等待几秒后再弹出如下内容，敲键盘emmet,选择第一项安装。（网上的教程是选择“emment Css Snippets”安装，我试过2次，安装后都失败了，改为第一项安装则成功了。）&lt;br&gt;在 Emmet 安装完成后，屏幕下方会提示自动安装PyV8，安装完成，重启 Sublime Text 3。&lt;br&gt;自此，安装成功。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;测试：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;重启之后还会看到左下角再次呈现 Loading PyV8 的提示，待其载入完毕，打开一个新文档（CTRL+N）,最后测试，输入指令”!”，按“Tab”键即出现如下内容，即HTML5整体结构，而不用一个一个的输入字符，非常方便，极大的提高了码字的速度和效率，前端学习者们可以尝试下。&lt;br&gt;&lt;img src=&quot;http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg&quot; alt=&quot;sublime text 4&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">

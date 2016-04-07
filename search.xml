@@ -37,6 +37,103 @@
     </entry>
     
     <entry>
+      <title><![CDATA[Git实战教程]]></title>
+      <url>http://xifengxx.github.io/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="简明释义"><a href="#简明释义" class="headerlink" title="简明释义"></a>简明释义</h3><h4 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h4><p>Git 是一个版本控制工具，是一个可以安装在你自己机器上的软件。<br>git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。</p>
+<h4 id="github"><a href="#github" class="headerlink" title="github"></a>github</h4><p>Git 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。<br>Github 首先是一个公司，<a href="https://github.com" target="_blank" rel="external">Github网站</a>是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。</p>
+<h3 id="安装及初始化"><a href="#安装及初始化" class="headerlink" title="安装及初始化"></a>安装及初始化</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p><strong>Windows上安装Git</strong><br>msysgit是Windows版的Git。<br><a href="http://msysgit.github.io/" target="_blank" rel="external">下载地址</a>。</p>
+<p>然后按默认选项安装即可。</p>
+<p>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！</p>
+<p>安装完成后，还需要最后一步设置，在命令行输入：</p>
+<blockquote>
+<p>$ git config –global user.name “Your Name”<br>$ git config –global user.email “email@example.com”</p>
+</blockquote>
+<p>git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
+<h4 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h4><p>版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。</p>
+<p>如何创建版本库？</p>
+<ol>
+<li><p>在电脑磁盘里的任意位置，创建一个空目录<br>方法1：直接在磁盘任意位置，右键-新建文件夹；<br>方法2：在git命令行里创建。<br>关于创建文件常用命令（Unix Linux命令）：<br>-mkdir<br>-cd        ：切换目录命令<br>–cd ..    : 切换到上一级目录。<br>如当前目录为e盘下的code目录，使用命令”cd ..”，会切换到e盘。<br>–cd e:    : 切换盘符。<br>如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。<br>–cd /     : 切换到根目录。<br>–cd 目录名：切换到具体目录。<br>如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。<br>如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。<br>-pwd       : 显示当前所在目录<br>-dir       : 显示当前目录下的所有文件<br>-mkdir     : 创建目录。<br>如当前在e盘下，需要在e盘下创建一个新目录”code1”,使用命令”mkdir code1”即可；<br>如果要在其他盘下创建目录，先使用cd命令定位到目标盘，然后再使用mkdir命令。</p>
+</li>
+<li><p>通过git init命名把这个目录变成Git可以管理的仓库。<br>创建完目录后，在磁盘中找到该目录，右键–Git Bash Here即可定位到当前目录，或是通过上面的Linux命令来定位到目标目录。<br>在命令行输入命令”git init”，即成功创建Git仓库。<br>这时在当前目录下，会多出一个.git目录（如果没有，说明被隐藏了，需要在”工具-文件夹选项-查看”里设置隐藏属性为显示所有文件）。这个目录是Git来跟踪管理版本库的。</p>
+</li>
+</ol>
+<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><h4 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h4><p>目的：本地Git仓库与GitHub网站仓库之间实现同步传输及存储。<br>步骤：</p>
+<ol>
+<li>需要注册一个GitHub账号。(注册地址)[<a href="https://github.com" target="_blank" rel="external">https://github.com</a>].</li>
+<li><p>设置SSH Key.(本地Git仓库和GitHub仓库之间的传输是通过SSH加密的)<br>打开Git Bash,创建SSH Key.<br>输入命令：$ ssh-keygen -t rsa -c “youremail@examle.com”<br>将邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。<br>成功的话，会在用户主目录（我的是在”C:\Documents and Settings\Administrator”）里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件。（这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。）</p>
+</li>
+<li><p>登录<a href="https://github.com" target="_blank" rel="external">GitHub网站</a>，打开”我的账号/Account settings”—“personal settings”—“SSH keys”，点击”New SSH key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。</p>
+</li>
+<li><p>打开Git Bash，输入命令以下命令检测是否成功连接本机与GitHub。</p>
+<blockquote>
+<p>ssh -T git@github.com<br>在遇到提示的情况下，输入”yes”即可。</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h4><ol>
+<li>登录GitHub,点击右上角的”+”号—“New repository”，创建新的Git仓库。</li>
+<li>把本地仓库的内容推送到GitHub仓库。<br>① 打开GitHub上新建的repository仓库，找到HTTPS/SSH地址并复制地址，如”<a href="https://github.com/xifengxx/demo.git&quot;是我的一个仓库https地址。" target="_blank" rel="external">https://github.com/xifengxx/demo.git&quot;是我的一个仓库https地址。</a><br>② 本地仓库下运行命令<blockquote>
+<p>$ git remote add origin <a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a><br>添加后，远程仓库的名字就是origin(这是Git默认叫法，可以将origin改成其他的名字)<br>③ 继续运行命令<br>$ git push -u origin master<br>把本地仓库内容推送到远程，用git push命令。实际上是把当前分支master推送到远程。<br>由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。<br>推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样。<br>此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改：<br>$ git push origin master<br>④ 推送时，会弹出需要输入github账号及密码框，输入即可。</p>
+</blockquote>
+</li>
+<li><strong>注意事项</strong><br>在第二步②时，输入命令”$ git remote add origin <a href="https://github.com/xifengxx/demo.git&quot;时，可能会报错。" target="_blank" rel="external">https://github.com/xifengxx/demo.git&quot;时，可能会报错。</a><br>错误信息：”fatal: remote origin already exists.……”<br>原因：远程仓库已经存在内容，与本地仓库推送内容冲突。<br>解决方法：<br> 1、先输入”$ git remote rm origin”命令，删除远程仓库内容。<br> 2、再输入”$ git remote add origin git@github.com:djqiang/gitdemo.git” 就不会报错了！<br>上述方法针对第一次将本地仓库推送到远程仓库时遇到这个问题的解决方法。<br>如果不想删除远程仓库内容，可以使用下面的方法，将本地仓库内容和远程仓库内容合并。<br>解决方法：<br> 1、先输入”$ git pull origin master”命令，将远程仓库内容pull到本地仓库。<br> 2、再输入”$ git push origin master”命令，即可。</li>
+</ol>
+<h4 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h4><ol>
+<li>登录GitHub,创建一个新的仓库，例如我的一个仓库，名字叫demo</li>
+<li>找到新仓库的HTTPS/SSH地址并复制地址，如”git@github.com:xifengxx/demo.git”或”<a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a>“</li>
+<li>使用命令git clone克隆一个本地库<blockquote>
+<p>$ git clone git@github.com:xifengxx/demo.git<br>也可以使用命令：<br>$ git clone <a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a><br>Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。<br>使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="Git基础操作"><a href="#Git基础操作" class="headerlink" title="Git基础操作"></a>Git基础操作</h3><h4 id="将文件添加到版本库"><a href="#将文件添加到版本库" class="headerlink" title="将文件添加到版本库"></a>将文件添加到版本库</h4><p>使用命令：</p>
+<ol>
+<li>git add:将文件添加到仓库。<br>命令：$ git add 文件名<br>将某个文件复制到当前目录，然后再使用这个命令。</li>
+<li>git commit:将文件提交到仓库。<br>命令：$ git commit -m “xxx”<br>git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。<br>如：$ git commit -m “首次提交”<br>备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.</li>
+<li><strong>注意事项</strong><br>将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。<br>关键是如何退出默认编辑器界面并重新返回到Git bash界面。<br>方法：<br>① 按ESC键，确定退出编辑模式。<br>② 然后输入”:wq”，即可返回Git界面。</li>
+</ol>
+<h3 id="利用Github-Page-搭建网页Demo"><a href="#利用Github-Page-搭建网页Demo" class="headerlink" title="利用Github Page 搭建网页Demo"></a>利用Github Page 搭建网页Demo</h3><p>适用场景：<br>写了一些网页demo,想上传到网上查看效果，并做展示用途。不同于用Github搭建的个人博客。</p>
+<p>方法：Github Page部署。<br>步骤：</p>
+<ol>
+<li>注册<a href="https://github.com" target="_blank" rel="external">Github账号</a>.</li>
+<li>下载安装git.<br>msysgit是Windows版的Git。(下载地址)[<a href="http://msysgit.github.io/]。" target="_blank" rel="external">http://msysgit.github.io/]。</a></li>
+<li>登录Github，新建一个repository项目(这里使用project做项目名字)。</li>
+<li>在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。<br>设置完成后，这个repository项目的展示地址变为：<br><a href="http://xifengxx.github.io/project">http://xifengxx.github.io/project</a><br>‘xifengxx’为我注册Github的账号名，project为repository项目名。<br>可以通过上面的网址来访问项目。</li>
+<li><p>电脑里选定一个文件夹（这里是Git）放置Github上的项目project。<br>右键——“git bash here”,调出git命令界面，输入以下命令将project项目克隆到本地文件夹下。</p>
+<blockquote>
+<p>$ git clone <a href="https://github.com/xifengxx/project.git" target="_blank" rel="external">https://github.com/xifengxx/project.git</a><br>这时本地Git文件夹下会多出一个文件夹Project。</p>
+</blockquote>
+</li>
+<li><p>本地新建分支。<br>输入以下命令，在本地新建一个gh-pages分支并切换到gh-pages分支，这个分支是远程分支origin/gh-pages的镜像。</p>
+<blockquote>
+<p>$ cd project/<br>$ git checkout -b gh-pages origin/gh-pages<br>这时本地文件夹project里多出的文件，来自github上的gh-pages分支中的文件。</p>
+</blockquote>
+</li>
+<li><p>执行以下命令，删除原有的gh-pages文件，并提交（commit）本次修改。</p>
+<blockquote>
+<p>$ git rm -rf .<br>$ git add .<br>$ git commit -m “delete all files”<br>这时project里的文件都删除了。</p>
+</blockquote>
+</li>
+<li><p>将自己的网页Demo文件复制粘贴到project文件夹里。</p>
+</li>
+<li><p>将本地gh-pages中的网页文件同步到远程库的gh-pages中。<br>输入以下命令：</p>
+<blockquote>
+<p>$ git add .<br>$ git commit -m “My design Demo”<br>$ git push origin gh-pages</p>
+</blockquote>
+</li>
+</ol>
+<p>输入第三行命令时，会有弹出框提示输入Github账号和密码，输入后等待片刻，当命令行提示”$”符号时，说明已经完成。</p>
+<ol>
+<li>浏览器输入网址访问：<blockquote>
+<p><a href="http://xifengxx.github.io/project/index.html">http://xifengxx.github.io/project/index.html</a><br>或 <a href="http://xifengxx.github.io/project">http://xifengxx.github.io/project</a><br>此处的index.html为网页Demo中的文件。</p>
+</blockquote>
+</li>
+</ol>
+<p><a href="http://www.cnblogs.com/lijiayi/p/githubpages.html" target="_blank" rel="external">参考资源</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hexo安装及部署]]></title>
       <url>http://xifengxx.github.io/2016/04/05/Hexo%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
       <content type="html"><![CDATA[<h3 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h3><p>用SSH Key将本地git项目与远程GitHub建立联系。<br>定位到目标文件夹，右键-Git Bash下输入命令：</p>
@@ -146,103 +243,6 @@
 <li><a href="http://sunwhut.com/2015/10/30/buildBlog/" target="_blank" rel="external">Sunwhut’s 博客</a> ☆☆☆☆☆推荐。</li>
 <li><a href="http://www.arao.me/2015/hexo-next-theme-optimize-seo/" target="_blank" rel="external">arao博客</a> :Hexo博客优化</li>
 </ol>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Git实战教程]]></title>
-      <url>http://xifengxx.github.io/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/</url>
-      <content type="html"><![CDATA[<h3 id="简明释义"><a href="#简明释义" class="headerlink" title="简明释义"></a>简明释义</h3><h4 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h4><p>Git 是一个版本控制工具，是一个可以安装在你自己机器上的软件。<br>git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。</p>
-<h4 id="github"><a href="#github" class="headerlink" title="github"></a>github</h4><p>Git 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。<br>Github 首先是一个公司，<a href="https://github.com" target="_blank" rel="external">Github网站</a>是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。</p>
-<h3 id="安装及初始化"><a href="#安装及初始化" class="headerlink" title="安装及初始化"></a>安装及初始化</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p><strong>Windows上安装Git</strong><br>msysgit是Windows版的Git。<br><a href="http://msysgit.github.io/" target="_blank" rel="external">下载地址</a>。</p>
-<p>然后按默认选项安装即可。</p>
-<p>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！</p>
-<p>安装完成后，还需要最后一步设置，在命令行输入：</p>
-<blockquote>
-<p>$ git config –global user.name “Your Name”<br>$ git config –global user.email “email@example.com”</p>
-</blockquote>
-<p>git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
-<h4 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h4><p>版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。</p>
-<p>如何创建版本库？</p>
-<ol>
-<li><p>在电脑磁盘里的任意位置，创建一个空目录<br>方法1：直接在磁盘任意位置，右键-新建文件夹；<br>方法2：在git命令行里创建。<br>关于创建文件常用命令（Unix Linux命令）：<br>-mkdir<br>-cd        ：切换目录命令<br>–cd ..    : 切换到上一级目录。<br>如当前目录为e盘下的code目录，使用命令”cd ..”，会切换到e盘。<br>–cd e:    : 切换盘符。<br>如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。<br>–cd /     : 切换到根目录。<br>–cd 目录名：切换到具体目录。<br>如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。<br>如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。<br>-pwd       : 显示当前所在目录<br>-dir       : 显示当前目录下的所有文件<br>-mkdir     : 创建目录。<br>如当前在e盘下，需要在e盘下创建一个新目录”code1”,使用命令”mkdir code1”即可；<br>如果要在其他盘下创建目录，先使用cd命令定位到目标盘，然后再使用mkdir命令。</p>
-</li>
-<li><p>通过git init命名把这个目录变成Git可以管理的仓库。<br>创建完目录后，在磁盘中找到该目录，右键–Git Bash Here即可定位到当前目录，或是通过上面的Linux命令来定位到目标目录。<br>在命令行输入命令”git init”，即成功创建Git仓库。<br>这时在当前目录下，会多出一个.git目录（如果没有，说明被隐藏了，需要在”工具-文件夹选项-查看”里设置隐藏属性为显示所有文件）。这个目录是Git来跟踪管理版本库的。</p>
-</li>
-</ol>
-<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><h4 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h4><p>目的：本地Git仓库与GitHub网站仓库之间实现同步传输及存储。<br>步骤：</p>
-<ol>
-<li>需要注册一个GitHub账号。(注册地址)[<a href="https://github.com" target="_blank" rel="external">https://github.com</a>].</li>
-<li><p>设置SSH Key.(本地Git仓库和GitHub仓库之间的传输是通过SSH加密的)<br>打开Git Bash,创建SSH Key.<br>输入命令：$ ssh-keygen -t rsa -c “youremail@examle.com”<br>将邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。<br>成功的话，会在用户主目录（我的是在”C:\Documents and Settings\Administrator”）里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件。（这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。）</p>
-</li>
-<li><p>登录<a href="https://github.com" target="_blank" rel="external">GitHub网站</a>，打开”我的账号/Account settings”—“personal settings”—“SSH keys”，点击”New SSH key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。</p>
-</li>
-<li><p>打开Git Bash，输入命令以下命令检测是否成功连接本机与GitHub。</p>
-<blockquote>
-<p>ssh -T git@github.com<br>在遇到提示的情况下，输入”yes”即可。</p>
-</blockquote>
-</li>
-</ol>
-<h4 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h4><ol>
-<li>登录GitHub,点击右上角的”+”号—“New repository”，创建新的Git仓库。</li>
-<li>把本地仓库的内容推送到GitHub仓库。<br>① 打开GitHub上新建的repository仓库，找到HTTPS/SSH地址并复制地址，如”<a href="https://github.com/xifengxx/demo.git&quot;是我的一个仓库https地址。" target="_blank" rel="external">https://github.com/xifengxx/demo.git&quot;是我的一个仓库https地址。</a><br>② 本地仓库下运行命令<blockquote>
-<p>$ git remote add origin <a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a><br>添加后，远程仓库的名字就是origin(这是Git默认叫法，可以将origin改成其他的名字)<br>③ 继续运行命令<br>$ git push -u origin master<br>把本地仓库内容推送到远程，用git push命令。实际上是把当前分支master推送到远程。<br>由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。<br>推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样。<br>此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改：<br>$ git push origin master<br>④ 推送时，会弹出需要输入github账号及密码框，输入即可。</p>
-</blockquote>
-</li>
-<li><strong>注意事项</strong><br>在第二步②时，输入命令”$ git remote add origin <a href="https://github.com/xifengxx/demo.git&quot;时，可能会报错。" target="_blank" rel="external">https://github.com/xifengxx/demo.git&quot;时，可能会报错。</a><br>错误信息：”fatal: remote origin already exists.……”<br>原因：远程仓库已经存在内容，与本地仓库推送内容冲突。<br>解决方法：<br> 1、先输入”$ git remote rm origin”命令，删除远程仓库内容。<br> 2、再输入”$ git remote add origin git@github.com:djqiang/gitdemo.git” 就不会报错了！<br>上述方法针对第一次将本地仓库推送到远程仓库时遇到这个问题的解决方法。<br>如果不想删除远程仓库内容，可以使用下面的方法，将本地仓库内容和远程仓库内容合并。<br>解决方法：<br> 1、先输入”$ git pull origin master”命令，将远程仓库内容pull到本地仓库。<br> 2、再输入”$ git push origin master”命令，即可。</li>
-</ol>
-<h4 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h4><ol>
-<li>登录GitHub,创建一个新的仓库，例如我的一个仓库，名字叫demo</li>
-<li>找到新仓库的HTTPS/SSH地址并复制地址，如”git@github.com:xifengxx/demo.git”或”<a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a>“</li>
-<li>使用命令git clone克隆一个本地库<blockquote>
-<p>$ git clone git@github.com:xifengxx/demo.git<br>也可以使用命令：<br>$ git clone <a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a><br>Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。<br>使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="Git基础操作"><a href="#Git基础操作" class="headerlink" title="Git基础操作"></a>Git基础操作</h3><h4 id="将文件添加到版本库"><a href="#将文件添加到版本库" class="headerlink" title="将文件添加到版本库"></a>将文件添加到版本库</h4><p>使用命令：</p>
-<ol>
-<li>git add:将文件添加到仓库。<br>命令：$ git add 文件名<br>将某个文件复制到当前目录，然后再使用这个命令。</li>
-<li>git commit:将文件提交到仓库。<br>命令：$ git commit -m “xxx”<br>git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。<br>如：$ git commit -m “首次提交”<br>备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.</li>
-<li><strong>注意事项</strong><br>将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。<br>关键是如何退出默认编辑器界面并重新返回到Git bash界面。<br>方法：<br>① 按ESC键，确定退出编辑模式。<br>② 然后输入”:wq”，即可返回Git界面。</li>
-</ol>
-<h3 id="利用Github-Page-搭建网页Demo"><a href="#利用Github-Page-搭建网页Demo" class="headerlink" title="利用Github Page 搭建网页Demo"></a>利用Github Page 搭建网页Demo</h3><p>适用场景：<br>写了一些网页demo,想上传到网上查看效果，并做展示用途。不同于用Github搭建的个人博客。</p>
-<p>方法：Github Page部署。<br>步骤：</p>
-<ol>
-<li>注册<a href="https://github.com" target="_blank" rel="external">Github账号</a>.</li>
-<li>下载安装git.<br>msysgit是Windows版的Git。(下载地址)[<a href="http://msysgit.github.io/]。" target="_blank" rel="external">http://msysgit.github.io/]。</a></li>
-<li>登录Github，新建一个repository项目(这里使用project做项目名字)。</li>
-<li>在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。<br>设置完成后，这个repository项目的展示地址变为：<br><a href="http://xifengxx.github.io/project">http://xifengxx.github.io/project</a><br>‘xifengxx’为我注册Github的账号名，project为repository项目名。<br>可以通过上面的网址来访问项目。</li>
-<li><p>电脑里选定一个文件夹（这里是Git）放置Github上的项目project。<br>右键——“git bash here”,调出git命令界面，输入以下命令将project项目克隆到本地文件夹下。</p>
-<blockquote>
-<p>$ git clone <a href="https://github.com/xifengxx/project.git" target="_blank" rel="external">https://github.com/xifengxx/project.git</a><br>这时本地Git文件夹下会多出一个文件夹Project。</p>
-</blockquote>
-</li>
-<li><p>本地新建分支。<br>输入以下命令，在本地新建一个gh-pages分支并切换到gh-pages分支，这个分支是远程分支origin/gh-pages的镜像。</p>
-<blockquote>
-<p>$ cd project/<br>$ git checkout -b gh-pages origin/gh-pages<br>这时本地文件夹project里多出的文件，来自github上的gh-pages分支中的文件。</p>
-</blockquote>
-</li>
-<li><p>执行以下命令，删除原有的gh-pages文件，并提交（commit）本次修改。</p>
-<blockquote>
-<p>$ git rm -rf .<br>$ git add .<br>$ git commit -m “delete all files”<br>这时project里的文件都删除了。</p>
-</blockquote>
-</li>
-<li><p>将自己的网页Demo文件复制粘贴到project文件夹里。</p>
-</li>
-<li><p>将本地gh-pages中的网页文件同步到远程库的gh-pages中。<br>输入以下命令：</p>
-<blockquote>
-<p>$ git add .<br>$ git commit -m “My design Demo”<br>$ git push origin gh-pages</p>
-</blockquote>
-</li>
-</ol>
-<p>输入第三行命令时，会有弹出框提示输入Github账号和密码，输入后等待片刻，当命令行提示”$”符号时，说明已经完成。</p>
-<ol>
-<li>浏览器输入网址访问：<blockquote>
-<p><a href="http://xifengxx.github.io/project/index.html">http://xifengxx.github.io/project/index.html</a><br>或 <a href="http://xifengxx.github.io/project">http://xifengxx.github.io/project</a><br>此处的index.html为网页Demo中的文件。</p>
-</blockquote>
-</li>
-</ol>
-<p><a href="http://www.cnblogs.com/lijiayi/p/githubpages.html" target="_blank" rel="external">参考资源</a></p>
 ]]></content>
     </entry>
     
@@ -387,60 +387,70 @@
 <p>如果服务器端对于用户的输入不做任何无害处理的话，这些内容就会注入到网页的内容中去，然后浏览器就会解释执行这些 HTML 和 javascript 代码。<br>恶意用户可以使用 HTML 和 javascript 代码对服务器或者以后访问这个页面的用户发起毁灭性的攻击。举个例子，一个攻击者可以使用 javascript 代码去获取所有在他之后访问这个页面的用户的会话 id ，然后伪装成其他用户。而这一切都发生在受害者一无所知的情况下。而且要注意的是，这种攻击也能绕过同源策略，因为这段恶意代码是存在于当前这个网站上的。</p>
 <p><strong>跨站脚本攻击的解决方案</strong></p>
 <ul>
-<li>总是对用户输入的内容做无害处理。消除有问题的输入，比如<script>标签，或者使用一个更安全的输入格式，比如 Markdown，这样就可以阻止 HTML 和 javascript 同时出现在用户的输入里。</li>
+<li>总是对用户输入的内容做无害处理。消除有问题的输入，比如<code>&lt;script&gt;</code>标签，或者使用一个更安全的输入格式，比如 Markdown，这样就可以阻止 HTML 和 javascript 同时出现在用户的输入里。</li>
 <li>在显示之前转义用户输入的所有数据.如果你需要用户能够输入 HTML 和 javascript 代码，那么当你显示这些输入内容的时候要确保它们被正确转义，这样浏览器就不会把它们当做代码给执行了。</li>
 </ul>
 <h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ol>
-<li><a href="http://book.haoduoshipin.com/tealeaf-http/">HTTP下午茶</a></li>
+<li><a href="http://book.haoduoshipin.com/tealeaf-http/" target="_blank" rel="external">HTTP下午茶</a></li>
 </ol>
-</script></li></ul>]]></content>
+]]></content>
     </entry>
     
     <entry>
-      <title><![CDATA[前端知识之查漏补缺：HTML头部(head)标签]]></title>
-      <url>http://xifengxx.github.io/2015/12/13/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E4%B9%8B%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA%EF%BC%9AHTML%E5%A4%B4%E9%83%A8(head)%E6%A0%87%E7%AD%BE/</url>
+      <title><![CDATA[前端知识之查漏补缺:HTML头部(head)标签]]></title>
+      <url>http://xifengxx.github.io/2015/12/13/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E4%B9%8B%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA-HTML%E5%A4%B4%E9%83%A8head%E6%A0%87%E7%AD%BE/</url>
       <content type="html"><![CDATA[<p>我们日常所浏览的网页，都是有HTML文档构成的。HTML文档的基本结构如下图：</p>
-<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/HTML文档结构.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/HTML文档结构.png" alt="HTML文档结构"></a></p>
-<p>一个HTML文档由4个基本部分组成：</p>
-<p><strong>1、文档声明</strong></p>
-<p>&lt;!DOCTYPE HTML&gt;声明这是一个HTML文档。</p>
-<p><strong>2、&lt;HTML&gt;标签</strong></p>
-<p>&lt;html&gt;标签的作用相当于设计者在告诉浏览器，整个网页是从&lt;html&gt;这里开始的，然后到&lt;/html&gt;结束。</p>
-<p><strong>3、&lt;head&gt;标签</strong></p>
-<p><span data-hover="head">head</span>标签是页面的“头部”，只能定义一些特殊的内容。</p>
-<p><strong>4、&lt;body&gt;标签</strong></p>
-<p><span data-hover="body">body</span>标签是页面的“身体”，一般网页绝大多数的标签代码都是在这里编写。</p>
-<p>其他标签都好理解，这里主要介绍下&lt;head&gt;标签，因为其比较特殊，涉及到的东西还是蛮多的。</p>
+<p><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/HTML文档结构.png" alt="HTML文档结构"></p>
+<p>一个HTML文档由4个基本部分组成：<br><strong>1、文档声明</strong><br><code>&lt;!DOCTYPE html&gt;</code>声明这是一个HTML文档。</p>
+<p><strong>2、<code>&lt;html&gt;</code>标签</strong><br><code>&lt;html&gt;</code>标签的作用相当于设计者在告诉浏览器，整个网页是从<code>&lt;html&gt;</code>这里开始的，然后到<code>&lt;/html&gt;</code>结束。</p>
+<p><strong>3、<code>&lt;head&gt;</code>标签</strong><br>head标签是页面的“头部”，只能定义一些特殊的内容。</p>
+<p><strong>4、<code>&lt;body&gt;</code>标签</strong><br>body标签是页面的“身体”，一般网页绝大多数的标签代码都是在这里编写。</p>
+<p>其他标签都好理解，这里主要介绍下<code>&lt;head&gt;</code>标签，因为其比较特殊，涉及到的东西还是蛮多的。</p>
 <hr>
-<p>一般来说，只有6个标签能放在&lt;head&gt;标签内：</p>
-<table><br><tbody><br><tr><br><td colspan="2" width="549">&lt;head&gt;标签内部标签</td><br></tr><br><tr><br><td width="180">&lt;head&gt;内部标签</td><br><td width="369">说明</td><br></tr><br><tr><br><td width="180">&lt;title&gt;</td><br><td width="369">定义网页的标题</td><br></tr><br><tr><br><td width="180"><span style="color: #0000ff;">&lt;meta&gt;</span></td><br><td width="369">定义网页的基本信息（供搜索引擎）</td><br></tr><br><tr><br><td width="180">&lt;style&gt;</td><br><td width="369">定义CSS样式</td><br></tr><br><tr><br><td width="180">&lt;link&gt;</td><br><td width="369">链接外部CSS文件或脚本文件</td><br></tr><br><tr><br><td width="180">&lt;script&gt;</td><br><td width="369">定义脚本语言</td><br></tr><br><tr><br><td width="180">&lt;base&gt;</td><br><td width="369">定义页面所有链接的基础定位</td><br></tr><br></tbody><br></table>
-
-<h2 id="一、-lt-head-gt-标签内的-lt-title-gt-标签"><a href="#一、-lt-head-gt-标签内的-lt-title-gt-标签" class="headerlink" title="一、&lt;head&gt;标签内的&lt;title&gt;标签"></a><strong>一、&lt;head&gt;标签内的&lt;title&gt;标签</strong></h2><p>&lt;title&gt;标签唯一的作用就是<span style="color: #0000ff;">定义网页的标题</span>，标题的内容都是放在&lt;title&gt;标签内，如:</p>
-<blockquote>
-<p>&lt;title&gt;HTML head标签<em>HTML入门教程</em>绿叶学习网&lt;/title&gt;</p>
-</blockquote>
-<h2 id="二、-lt-head-gt-标签内的-lt-meta-gt-标签"><a href="#二、-lt-head-gt-标签内的-lt-meta-gt-标签" class="headerlink" title="二、&lt;head&gt;标签内的&lt;meta&gt;标签"></a><strong>二、&lt;head&gt;标签内的&lt;meta&gt;标签</strong></h2><p><span style="color: #0000ff;">&lt;meta&gt;标签又叫“元信息标签”</span>，是&lt;head&gt;标签内的一个辅助性标签。&lt;meta&gt;标签提供的信息不显示在页面中，一般用来定义页面的关键字、页面的描述等，以方便搜索引擎蜘蛛（如百度蜘蛛、谷歌蜘蛛）来搜索到你这个页面的信息。通俗点说，meta标签就是用来告诉“搜索蜘蛛”这个页面是干嘛的。</p>
-<p><strong><span style="color: #0000ff;">meta标签有两个重要的属性name和http-equiv</span>。</strong></p>
-<h3 id="1、meta标签name属性"><a href="#1、meta标签name属性" class="headerlink" title="1、meta标签name属性"></a><strong>1、meta标签name属性</strong></h3><table><br><tbody><br><tr><br><td width="180">name属性值</td><br><td width="376">说明</td><br></tr><br><tr><br><td width="180"><span style="color: #0000ff;">keywords</span></td><br><td width="376"><span style="color: #0000ff;">网页的关键字（关键字可以是多个，而不仅仅是一个）</span></td><br></tr><br><tr><br><td width="180"><span style="color: #0000ff;">description</span></td><br><td width="376"><span style="color: #0000ff;">网页的描述</span></td><br></tr><br><tr><br><td width="180"><span style="color: #0000ff;">author</span></td><br><td width="376"><span style="color: #0000ff;">网页的作者</span></td><br></tr><br><tr><br><td width="180"><span style="color: #0000ff;">copyright</span></td><br><td width="376"><span style="color: #0000ff;">版权信息</span></td><br></tr><br></tbody><br></table>
-
-<h3 id="2、-meta标签http-equiv属性"><a href="#2、-meta标签http-equiv属性" class="headerlink" title="2、**meta标签http-equiv属性**"></a><strong>2、**</strong>meta标签http-equiv属性**</h3><p><strong>常见的值有：</strong></p>
-<table><br><tbody><br><tr><br><td width="284">Content-type</td><br><td width="284">内容类型</td><br></tr><br><tr><br><td width="284">Expires</td><br><td width="284">过期时间</td><br></tr><br><tr><br><td width="284">Refresh</td><br><td width="284">页面刷新</td><br></tr><br><tr><br><td width="284">Set-cookie</td><br><td width="284">设定cookie</td><br></tr><br><tr><br><td width="284">X-UA-Compatible</td><br><td width="284">针对ie,设置浏览器优先使用什么模式来渲染页面</td><br></tr><br></tbody><br></table><br>如：&lt;meta http-equiv=”X-UA-Compatible”content=”ie=7”&gt;<br><br>ie浏览器都会用ie7来渲染；<br><br>&lt;meta http-equiv=”X-UA-Compatible”content=”IE=edge”&gt;<br><br>ie浏览器会用最高版本来渲染；<br><br>&lt;meta http-equiv=”X-UA-Compatible”content=”IE=Edge,chrome=1”&gt;<br><br>ie浏览器会用最高版本来渲染，如果安装了gcf(google chrome frame)可以使用chrome渲染。<br><br>学习meta标签的http-equiv属性，我们只需要了解它的两个作用就行了：<br><br><span style="color: #0000ff;">一，定义页面所使用的语言</span><br><br><span style="color: #0000ff;">二，实现页面的自动刷新跳转</span><br><br>#### <strong>（1）定义页面所使用的语言</strong><br><br><strong>语法：</strong><br><table><br><tbody><br><tr><br><td width="8">123</td><br><td width="545">&lt;head&gt;<br>&lt;meta  http-equiv=”content-type” content=”text/html; charset=gb2312”/&gt;<br>&lt;/head&gt;</td><br></tr><br></tbody><br></table><br><strong>说明：</strong>这段代码告诉浏览器该页面所使用的字符集是gb2312，即国际汉字码。我们不需要记住，只需要了解就行了。<br><br>#### <strong>（2）页面自动跳转</strong><br><br><strong>语法：</strong><br><table><br><tbody><br><tr><br><td width="8">123</td><br><td width="542">&lt;head&gt;<br>&lt;meta  http-equiv=”refresh” content=”6;url=http:/www.baidu.com”/&gt;<br>&lt;/head&gt;</td><br></tr><br></tbody><br></table><br>说明：这段代码作用：这个页面在6秒之后自动跳转到百度首页<br><br>## <strong>三、&lt;head&gt;标签内的&lt;style&gt;标签</strong><br><br>&lt;head&gt;标签内的&lt;style&gt;标签用于定义元素的CSS样式。<strong>语法：</strong><br><table><br><tbody><br><tr><br><td width="8">12345</td><br><td width="545">&lt;head&gt;<br>&lt;style type=”text/css”&gt;<br>&lt;!–这里写CSS样式–&gt;<br>&lt;/style&gt;<br>&lt;/head&gt;</td><br></tr><br></tbody><br></table>
-
-<h2 id="四、-lt-head-gt-标签内的-lt-script-gt-标签"><a href="#四、-lt-head-gt-标签内的-lt-script-gt-标签" class="headerlink" title="四、&lt;head&gt;标签内的&lt;script&gt;标签"></a><strong>四、&lt;head&gt;标签内的&lt;script&gt;标签</strong></h2><p>&lt;head&gt;标签内的&lt;script&gt;标签用于定义页面的脚本。<strong>语法：</strong></p>
-<table><br><tbody><br><tr><br><td width="8">12345</td><br><td width="545">&lt;head&gt;<br>&lt;script type=”text/javascript”&gt;<br>alert(“绿叶学习网HTML入门教程！”);<br>&lt;/script&gt;<br>&lt;/head&gt;</td><br></tr><br></tbody><br></table>
-
-<h2 id="五、-lt-head-gt-标签内的-lt-link-gt-标签"><a href="#五、-lt-head-gt-标签内的-lt-link-gt-标签" class="headerlink" title="五、&lt;head&gt;标签内的&lt;link&gt;标签"></a><strong>五、&lt;head&gt;标签内的&lt;link&gt;标签</strong></h2><p>&lt;head&gt;标签内的&lt;link&gt;标签用于外部文件的链接，一般用于链接外部CSS样式表文件和JS文件。<strong>语法：</strong></p>
-<table><br><tbody><br><tr><br><td width="7">123</td><br><td width="546">&lt;head&gt;<br>&lt;link  rel=”stylesheet”  type=”text/css”  title=”temp”  href=”/temp.css/“&gt;<br>&lt;/head&gt;</td><br></tr><br></tbody><br></table>
-
-<h2 id="六-、-lt-head-gt-标签内的-lt-base-gt-标签"><a href="#六-、-lt-head-gt-标签内的-lt-base-gt-标签" class="headerlink" title="六**、&lt;head&gt;标签内的&lt;base&gt;标签**"></a><strong>六**</strong>、&lt;head&gt;标签内的&lt;base&gt;标签**</h2><p>&lt;head&gt;标签内的&lt;base&gt;标签为整个页面定义所有链接的基础定位，其主要的作用是为了确保文档中所有的相对URL，都可以被分解成正确的文档地址，使在文档本身被移动或重命名的情况下也可以正确解析。</p>
-<p>语法：</p>
-<p><table></table></p>
-<p><tbody></tbody></p>
-<p><tr></tr></p>
-<p><td width="8">123</td></p>
-<p><td width="545">&lt;head&gt;<br>&lt;base  href=”<a href="http://lvyestudy/" target="_blank" rel="external">http://lvyestudy</a>“/&gt;<br>&lt;/head&gt;</td><br><br><br><br>&lt;base&gt;标签经常使用在创建文档集合中，为了不破坏文档中任何链接，使用者通过在每个文档中放置正确的&lt;base&gt;标签，便可以再目录甚至服务器之间移动整个文档集合。</p>
-<p>&lt;base&gt; 标签必须位于 head 元素内部。</p>
-<p>(&lt;head&gt;标签介绍完。 部分内容来源于<a href="http://www.lvyestudy.com/les_hj/hj_3.2.aspx" title="&lt;head&gt;标签" target="_blank" rel="external">绿叶学习网</a>。)</p>
+<p>一般来说，只有6个标签能放在<code>&lt;head&gt;</code>标签内：<br>| <code>&lt;head&gt;</code>内部标签 |  说明 |<br>|   — |    —  |<br>| <code>&lt;title&gt;</code> | 定义网页的标题|<br>| <code>&lt;meta&gt;</code>|  定义网页的基本信息（供搜索引擎）|<br>| <code>&lt;style&gt;</code> | 定义CSS样式|<br>| <code>&lt;link&gt;</code> |  链接外部CSS文件或脚本文件|<br>| <code>&lt;script&gt;</code>   |  定义脚本语言|<br>| <code>&lt;base&gt;</code> |  定义页面所有链接的基础定位| </p>
+<h2 id="一、title标签"><a href="#一、title标签" class="headerlink" title="一、title标签"></a><strong>一、title标签</strong></h2><p>title标签唯一的作用就是<span style="color: #0000ff;">定义网页的标题</span>，标题的内容都是放在<code>&lt;title&gt;</code>标签内，如:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML head标签_HTML入门教程_绿叶学习网<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="二、meta签"><a href="#二、meta签" class="headerlink" title="二、meta签"></a><strong>二、meta签</strong></h2><p><span style="color: #0000ff;">meta标签又叫“元信息标签”</span><br>meta标签提供的信息不显示在页面中，一般用来定义页面的关键字、页面的描述等，以方便搜索引擎蜘蛛（如百度蜘蛛、谷歌蜘蛛）来搜索到你这个页面的信息。通俗点说，meta标签就是用来告诉“搜索蜘蛛”这个页面是干嘛的。</p>
+<p><strong><span style="color: #0000ff;">meta标签有两个重要的属性name和http-equiv</span></strong></p>
+<h3 id="1、meta标签name属性"><a href="#1、meta标签name属性" class="headerlink" title="1、meta标签name属性"></a><strong>1、meta标签name属性</strong></h3><table>
+<thead>
+<tr>
+<th>name属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>keywords</td>
+<td>网页的关键字（关键字可以是多个，而不仅仅是一个）</td>
+</tr>
+<tr>
+<td>description</td>
+<td>网页的描述</td>
+</tr>
+<tr>
+<td>author</td>
+<td>网页的作者</td>
+</tr>
+<tr>
+<td>copyright</td>
+<td>版权信息</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2、-meta标签http-equiv属性"><a href="#2、-meta标签http-equiv属性" class="headerlink" title="2、**meta标签http-equiv属性**"></a><strong>2、**</strong>meta标签http-equiv属性**</h3><p><strong>常见的值有：</strong><br>|   Content-type   |    内容类型  |<br>|  —   |  —   |<br>|   Expires |   过期时间  |<br>|   Refresh |   页面刷新  |<br>|   Set-cookie  |   设定cookie  |<br>|   X-UA-Compatible |   针对ie,设置浏览器优先使用什么模式来渲染页面  |<br>如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”X-UA-Compatible”content</span>=<span class="string">”ie</span>=<span class="string">7”</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--ie浏览器都会用ie7来渲染； --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”X-UA-Compatible”content</span>=<span class="string">”IE</span>=<span class="string">edge”</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--ie浏览器会用最高版本来渲染； --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”X-UA-Compatible”content</span>=<span class="string">”IE</span>=<span class="string">Edge,chrome</span>=<span class="string">1”</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--ie浏览器会用最高版本来渲染，如果安装了gcf(google chrome frame)可以使用chrome渲染。 --&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>学习meta标签的http-equiv属性，我们只需要了解它的两个作用就行了：</p>
+<p><span style="color: #0000ff;">一，定义页面所使用的语言</span></p>
+<p><span style="color: #0000ff;">二，实现页面的自动刷新跳转</span></p>
+<h4 id="（1）定义页面所使用的语言"><a href="#（1）定义页面所使用的语言" class="headerlink" title="（1）定义页面所使用的语言"></a><strong>（1）定义页面所使用的语言</strong></h4><p><strong>语法：</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span>  <span class="attr">http-equiv</span>=<span class="string">”content-type”</span> <span class="attr">content</span>=<span class="string">”text/html;</span> <span class="attr">charset</span>=<span class="string">gb2312″/</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>说明：</strong>这段代码告诉浏览器该页面所使用的字符集是gb2312，即国际汉字码。我们不需要记住，只需要了解就行了。</p>
+<h4 id="（2）页面自动跳转"><a href="#（2）页面自动跳转" class="headerlink" title="（2）页面自动跳转"></a><strong>（2）页面自动跳转</strong></h4><p><strong>语法：</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span>  <span class="attr">http-equiv</span>=<span class="string">”refresh”</span> <span class="attr">content</span>=<span class="string">”6;url</span>=<span class="string">http:/www.baidu.com”/</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>说明：这段代码作用：这个页面在6秒之后自动跳转到百度首页</p>
+<h2 id="三、style标签"><a href="#三、style标签" class="headerlink" title="三、style标签"></a><strong>三、style标签</strong></h2><p>style标签用于定义元素的CSS样式。<strong>语法：</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">”text/css”</span>&gt;</span><span class="xml"></span><br><span class="line"><span class="tag">&lt;<span class="name">!–这里写CSS样式–</span>&gt;</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="四、script标签"><a href="#四、script标签" class="headerlink" title="四、script标签"></a><strong>四、script标签</strong></h2><p>script标签用于定义页面的脚本。<strong>语法：</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">”text/javascript”</span>&gt;</span><span class="undefined"></span><br><span class="line">alert(“绿叶学习网HTML入门教程！”);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="五、link标签"><a href="#五、link标签" class="headerlink" title="五、link标签"></a><strong>五、link标签</strong></h2><p>link标签用于外部文件的链接，一般用于链接外部CSS样式表文件和JS文件。<strong>语法：</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span>  <span class="attr">rel</span>=<span class="string">”stylesheet”</span>  <span class="attr">type</span>=<span class="string">”text/css”</span>  <span class="attr">title</span>=<span class="string">”temp”</span>  <span class="attr">href</span>=<span class="string">”/temp.css/”</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="六-、base标签"><a href="#六-、base标签" class="headerlink" title="六**、base标签**"></a><strong>六**</strong>、base标签**</h2><p>base标签为整个页面定义所有链接的基础定位，其主要的作用是为了确保文档中所有的相对URL，都可以被分解成正确的文档地址，使在文档本身被移动或重命名的情况下也可以正确解析。<br>语法：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">base</span>  <span class="attr">href</span>=<span class="string">”http://lvyestudy“/</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>base标签经常使用在创建文档集合中，为了不破坏文档中任何链接，使用者通过在每个文档中放置正确的base标签，便可以再目录甚至服务器之间移动整个文档集合。<br>base标签必须位于 head 元素内部。</p>
+<p>(部分内容来源于<a href="http://www.lvyestudy.com/les_hj/hj_3.2.aspx" target="_blank" rel="external">绿叶学习网</a>)</p>
 ]]></content>
     </entry>
     
@@ -478,7 +488,7 @@
 <p>由于JPG格式容量较大，在保证图片清晰、逼真的前提下，网页中不可能大范围使用文件较大的jpg格式图片。PNG格式图片体积小，而且无损压缩，能保证网页的打开速度，所以PNG格式图片是很好的选择。</p>
 <p>由于PNG优秀的特点，PNG格式图片可以称为“网页设计专用格式”。</p>
 <p>我们在同一个网页中放入同样的jpg图片与png图片。为了明显区分，我们为每个图片加了一个边框，效果如下：</p>
-<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/网页图片格式2.jpg" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/网页图片格式2.jpg" alt="网页图片格式2"></a></p>
+<p><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/网页图片格式2.jpg" alt="网页图片格式2"></p>
 <h4 id="（3）GIF格式"><a href="#（3）GIF格式" class="headerlink" title="（3）GIF格式"></a><strong>（3）GIF格式</strong></h4><p>GIF只支持256色以内的图像。所以，GIF格式的图片效果是很差的。但是，GIF有一个最大的特点，就是可以制作动画，图像作者利用图像处理软件，将静态的GIF图像设置为单帧画面，然后把这些单帧画面连在一起，设置好一个画面到下一个画面的间隔时间，最后保存为GIF格式就可以了。可以说，这就是简单的逐帧动画。目前这种格式的动画在互联网上广为流行。</p>
 <p><strong>总结**</strong>：当处理色调复杂、绚丽的图像时，如照片、图画等，<strong><strong>适合</strong></strong>使用JPG格式；而处理一些logo、banner、简单线条构图的时候，适合使用PNG格式；GIF格式通常只适合表达动画效果。**</p>
 <h2 id="二、矢量图"><a href="#二、矢量图" class="headerlink" title="二、矢量图"></a><strong>二、矢量图</strong></h2><p>矢量图，又称为“向量图”。矢量图是计算机图形学中用点、直线或者多边形等基于数学方程的几何图元表示图像。</p>
@@ -982,52 +992,17 @@
 <p>以下内容主要介绍Flexbox布局最新版本。（内容删减自<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" title="Flex 布局教程：语法篇" target="_blank" rel="external">阮一峰博客</a>）</p>
 <hr>
 <h2 id="一、Flex布局是什么？"><a href="#一、Flex布局是什么？" class="headerlink" title="一、Flex布局是什么？"></a>一、Flex布局是什么？</h2><p>Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</p>
-<p>任何一个容器都可以指定为Flex布局。</p>
+<p>任何一个容器都可以指定为Flex布局。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>行内元素也可以使用Flex布局。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Webkit内核的浏览器，必须加上-webkit前缀。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-flex; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</p>
+<h2 id="二、基本概念"><a href="#二、基本概念" class="headerlink" title="二、基本概念"></a>二、基本概念</h2><p>采用Flex布局的元素，称为Flex容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称”项目”。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png" alt="flex容器"></p>
+<p>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。</p>
+<p>项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
+<h2 id="三、容器的属性"><a href="#三、容器的属性" class="headerlink" title="三、容器的属性"></a>三、容器的属性</h2><p>以下6个属性设置在容器上。</p>
 <blockquote>
-<p><span class="token selector">.box</span><span class="token punctuation">{</span></p>
-<pre><code>  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-`&lt;/pre&gt;
-行内元素也可以使用Flex布局。
-</code></pre><p><pre class=" language-css">`</pre></p>
-<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inline-flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-`&lt;/pre&gt;
-Webkit内核的浏览器，必须加上-webkit前缀。
-</code></pre><p><pre class=" language-css">`</pre></p>
-<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; -webkit-flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;/* Safari */&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-`&lt;/pre&gt;
-注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。
-</code></pre></blockquote>
-<pre><code>## 二、基本概念
-
-采用Flex布局的元素，称为Flex容器（flex container），简称&quot;容器&quot;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&quot;项目&quot;。
-
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png)
-
-容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。
-
-项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
-
-## 三、容器的属性
-
-以下6个属性设置在容器上。
-&gt; *   flex-direction
-</code></pre><blockquote>
 <ul>
+<li>flex-direction</li>
 <li>flex-wrap</li>
 <li>flex-flow</li>
 <li>justify-content</li>
@@ -1035,136 +1010,51 @@ Webkit内核的浏览器，必须加上-webkit前缀。
 <li>align-content</li>
 </ul>
 </blockquote>
-<pre><code>### 3.1 flex-direction属性
-
-flex-direction属性决定主轴的方向（即项目的排列方向）。
-&gt; &lt;pre class=&quot; language-css&quot;&gt;`
-</code></pre><blockquote>
-<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;flex-direction&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; row | row-reverse | column | column-reverse&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-`&lt;/pre&gt;
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png)
-</code></pre></blockquote>
-<pre><code>它可能有4个值。
-&gt; *   row（默认值）：主轴为水平方向，起点在左端。
-</code></pre><blockquote>
+<h3 id="3-1-flex-direction属性"><a href="#3-1-flex-direction属性" class="headerlink" title="3.1 flex-direction属性"></a>3.1 flex-direction属性</h3><p>flex-direction属性决定主轴的方向（即项目的排列方向）。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png" alt=""><br>它可能有4个值。</p>
+<blockquote>
 <ul>
+<li>row（默认值）：主轴为水平方向，起点在左端。</li>
 <li>row-reverse：主轴为水平方向，起点在右端。</li>
 <li>column：主轴为垂直方向，起点在上沿。</li>
 <li>column-reverse：主轴为垂直方向，起点在下沿。</li>
 </ul>
 </blockquote>
-<pre><code>### 3.2 flex-wrap属性
-
-默认情况下，项目都排在一条线（又称&quot;轴线&quot;）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。
-
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png)
-&gt; &lt;pre class=&quot; language-css&quot;&gt;`
-</code></pre><blockquote>
-<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;flex-wrap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; nowrap | wrap | wrap-reverse&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-`&lt;/pre&gt;
-它可能取三个值。
-</code></pre></blockquote>
-<pre><code>（1）nowrap（默认）：不换行。
-
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071007.png)
-
-（2）wrap：换行，第一行在上方。
-
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071008.jpg)
-
-（3）wrap-reverse：换行，第一行在下方。
-
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071009.jpg)
-
-### 3.3 flex-flow
-
-flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
-&gt; &lt;pre class=&quot; language-css&quot;&gt;`
-</code></pre><blockquote>
-<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;flex-flow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;flex-direction&amp;gt; || &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;flex-wrap&amp;gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-`&lt;/pre&gt;
-</code></pre></blockquote>
-<pre><code>### 3.4 justify-content属性
-
-justify-content属性定义了项目在主轴上的对齐方式。
-&gt; &lt;pre class=&quot; language-css&quot;&gt;`
-</code></pre><blockquote>
-<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;justify-content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex-start | flex-end | center | space-between | space-around&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-`&lt;/pre&gt;
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png)
-</code></pre></blockquote>
-<pre><code>它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。
-&gt; *   flex-start（默认值）：左对齐
-</code></pre><blockquote>
+<h3 id="3-2-flex-wrap属性"><a href="#3-2-flex-wrap属性" class="headerlink" title="3.2 flex-wrap属性"></a>3.2 flex-wrap属性</h3><p>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png" alt=""><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>它可能取三个值。</p>
+<ol>
+<li>nowrap（默认）：不换行。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071007.png" alt=""></li>
+<li>wrap：换行，第一行在上方。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071008.jpg" alt=""><br>3.wrap-reverse：换行，第一行在下方。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071009.jpg" alt=""></li>
+</ol>
+<h3 id="3-3-flex-flow"><a href="#3-3-flex-flow" class="headerlink" title="3.3 flex-flow"></a>3.3 flex-flow</h3><p>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-4-justify-content属性"><a href="#3-4-justify-content属性" class="headerlink" title="3.4 justify-content属性"></a>3.4 justify-content属性</h3><p>justify-content属性定义了项目在主轴上的对齐方式。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png" alt=""></p>
+<p>它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。</p>
+<blockquote>
 <ul>
+<li>flex-start（默认值）：左对齐</li>
 <li>flex-end：右对齐</li>
 <li>center： 居中</li>
 <li>space-between：两端对齐，项目之间的间隔都相等。</li>
 <li>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</li>
 </ul>
 </blockquote>
-<pre><code>### 3.5 align-items属性
-
-align-items属性定义项目在交叉轴上如何对齐。
-&gt; &lt;pre class=&quot; language-css&quot;&gt;`
-</code></pre><blockquote>
-<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;align-items&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex-start | flex-end | center | baseline | stretch&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-`&lt;/pre&gt;
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png)
-</code></pre></blockquote>
-<pre><code>它可能取5个值。具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下。
-&gt; *   flex-start：交叉轴的起点对齐。
-</code></pre><blockquote>
+<h3 id="3-5-align-items属性"><a href="#3-5-align-items属性" class="headerlink" title="3.5 align-items属性"></a>3.5 align-items属性</h3><p>align-items属性定义项目在交叉轴上如何对齐。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png" alt=""><br>它可能取5个值。具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下。</p>
+<blockquote>
 <ul>
+<li>flex-start：交叉轴的起点对齐。</li>
 <li>flex-end：交叉轴的终点对齐。</li>
 <li>center：交叉轴的中点对齐。</li>
 <li>baseline: 项目的第一行文字的基线对齐。</li>
 <li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
 </ul>
 </blockquote>
-<pre><code>### 3.6 align-content属性
-
-align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
-&gt; &lt;pre class=&quot; language-css&quot;&gt;`
-</code></pre><blockquote>
-<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;align-content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex-start | flex-end | center | space-between | space-around | stretch&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-`&lt;/pre&gt;
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png)
-</code></pre></blockquote>
-<pre><code>该属性可能取6个值。
-&gt; *   flex-start：与交叉轴的起点对齐。
-</code></pre><blockquote>
+<h3 id="3-6-align-content属性"><a href="#3-6-align-content属性" class="headerlink" title="3.6 align-content属性"></a>3.6 align-content属性</h3><p>align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt=""><br>该属性可能取6个值。</p>
+<blockquote>
 <ul>
+<li>flex-start：与交叉轴的起点对齐。</li>
 <li>flex-end：与交叉轴的终点对齐。</li>
 <li>center：与交叉轴的中点对齐。</li>
 <li>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</li>
@@ -1172,12 +1062,10 @@ align-content属性定义了多根轴线的对齐方式。如果项目只有一�
 <li>stretch（默认值）：轴线占满整个交叉轴。</li>
 </ul>
 </blockquote>
-<pre><code>### 四、项目的属性
-
-以下6个属性设置在项目上。
-&gt; *   order
-</code></pre><blockquote>
+<h2 id="四、项目的属性"><a href="#四、项目的属性" class="headerlink" title="四、项目的属性"></a>四、项目的属性</h2><p>以下6个属性设置在项目上。</p>
+<blockquote>
 <ul>
+<li>order</li>
 <li>flex-grow</li>
 <li>flex-shrink</li>
 <li>flex-basis</li>
@@ -1185,100 +1073,19 @@ align-content属性定义了多根轴线的对齐方式。如果项目只有一�
 <li>align-self</li>
 </ul>
 </blockquote>
-<pre><code>### 4.1 order属性
-
-order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。
-&gt; &lt;pre class=&quot; language-css&quot;&gt;`
-</code></pre><blockquote>
-<pre><code>&lt;span class=&quot;token selector&quot;&gt;.item &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;order&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;integer&amp;gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-`&lt;/pre&gt;
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png)
-</code></pre></blockquote>
-<pre><code>### 4.2 flex-grow属性
-
-flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
-&gt; &lt;pre class=&quot; language-css&quot;&gt;`
-</code></pre><blockquote>
-<pre><code>&lt;span class=&quot;token selector&quot;&gt;.item &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;flex-grow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;number&amp;gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;/* default 0 */&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-`&lt;/pre&gt;
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png)
-</code></pre></blockquote>
-<pre><code>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。
-
-### 4.3 flex-shrink属性
-
-flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
-&gt; &lt;pre class=&quot; language-css&quot;&gt;`
-</code></pre><blockquote>
-<pre><code>&lt;span class=&quot;token selector&quot;&gt;.item &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;flex-shrink&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;number&amp;gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;/* default 1 */&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-`&lt;/pre&gt;
-![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071015.jpg)
-</code></pre></blockquote>
-<pre><code>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。
-
-负值对该属性无效。
-
-### 4.4 flex-basis属性
-
-flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
-&gt; &lt;pre class=&quot; language-css&quot;&gt;`
-</code></pre><blockquote>
-<pre><code>&lt;span class=&quot;token selector&quot;&gt;.item &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;flex-basis&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;length&amp;gt; | auto&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;/* default auto */&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-`&lt;/pre&gt;
-它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。
-</code></pre></blockquote>
-<pre><code>### 4.5 flex属性
-
-flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
-&gt; &lt;pre class=&quot; language-css&quot;&gt;`
-</code></pre><blockquote>
-<pre><code>&lt;span class=&quot;token selector&quot;&gt;.item &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none | [ &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;flex-grow&apos;&lt;/span&gt;&amp;gt; &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;flex-shrink&apos;&lt;/span&gt;&amp;gt;? || &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;flex-basis&apos;&lt;/span&gt;&amp;gt; ]
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-
-`&lt;/pre&gt;
-该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。
-</code></pre></blockquote>
-<pre><code>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。
-
-### 4.6 align-self属性
-
-align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
-&gt; &lt;pre class=&quot; language-css&quot;&gt;`
-</code></pre><blockquote>
-<pre><code>&lt;span class=&quot;token selector&quot;&gt;.item &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-
-  &lt;span class=&quot;token property&quot;&gt;align-self&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; auto | flex-start | flex-end | center | baseline | stretch&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071016.png" alt=""></p>
-</blockquote>
-<p>该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</p>
-<p>&nbsp;</p>
-<p>备注：阮一峰博客上还有一篇文章，<a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" title="Flex 布局教程：实例篇" target="_blank" rel="external">《Flex 布局教程：实例篇》</a>，是用具体的案例来解说Flex布局，感兴趣的朋友，可以移步获取。我主要是对其中的“骰子案例”感兴趣：<a href="http://codepen.io/LandonSchropp/pen/KpzzGo" title="Flex骰子案例" target="_blank" rel="external">DEMO</a></p>
-<p>&nbsp;</p>
+<h3 id="4-1-order属性"><a href="#4-1-order属性" class="headerlink" title="4.1 order属性"></a>4.1 order属性</h3><p>order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: &lt;integer&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png" alt=""></p>
+<h3 id="4-2-flex-grow属性"><a href="#4-2-flex-grow属性" class="headerlink" title="4.2 flex-grow属性"></a>4.2 flex-grow属性</h3><p>flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: &lt;number&gt;; <span class="comment">/* default 0 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png" alt=""><br>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
+<h3 id="4-3-flex-shrink属性"><a href="#4-3-flex-shrink属性" class="headerlink" title="4.3 flex-shrink属性"></a>4.3 flex-shrink属性</h3><p>flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: &lt;number&gt;; <span class="comment">/* default 1 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071015.jpg" alt=""><br>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。<br>负值对该属性无效。</p>
+<h3 id="4-4-flex-basis属性"><a href="#4-4-flex-basis属性" class="headerlink" title="4.4 flex-basis属性"></a>4.4 flex-basis属性</h3><p>flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: &lt;length&gt; | auto; <span class="comment">/* default auto */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。</p>
+<h3 id="4-5-flex属性"><a href="#4-5-flex属性" class="headerlink" title="4.5 flex属性"></a>4.5 flex属性</h3><p>flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: none | [ &lt;<span class="string">'flex-grow'</span>&gt; &lt;<span class="string">'flex-shrink'</span>&gt;? || &lt;<span class="string">'flex-basis'</span>&gt; ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。<br>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
+<h3 id="4-6-align-self属性"><a href="#4-6-align-self属性" class="headerlink" title="4.6 align-self属性"></a>4.6 align-self属性</h3><p>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">align-self</span>: auto | flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071016.png" alt=""><br>该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</p>
+<p><strong>备注</strong>：阮一峰博客上还有一篇文章，<a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" title="Flex 布局教程：实例篇" target="_blank" rel="external">《Flex 布局教程：实例篇》</a>，是用具体的案例来解说Flex布局，感兴趣的朋友，可以移步获取。我主要是对其中的“骰子案例”感兴趣：<a href="http://codepen.io/LandonSchropp/pen/KpzzGo" title="Flex骰子案例" target="_blank" rel="external">DEMO</a></p>
 ]]></content>
     </entry>
     
@@ -1286,193 +1093,63 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
       <title><![CDATA[CSS3学习笔记:变形transform]]></title>
       <url>http://xifengxx.github.io/2015/08/29/CSS3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E5%BD%A2transform/</url>
       <content type="html"><![CDATA[<p>这节学习CSS3中的变形特性，主要涉及transform属性：</p>
-<h2 id="变形–旋转-rotate"><a href="#变形–旋转-rotate" class="headerlink" title="变形–旋转 rotate()"></a><strong>变形–旋转 rotate()</strong></h2><p><strong>旋转rotate()函数</strong>通过指定的角度参数使元素相对原点进行旋转。它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为<strong>正值</strong>，元素相对原点中心<strong>顺时针</strong>旋转；如果这个值为<strong>负值</strong>，元素相对原点中心<strong>逆时针</strong>旋转。如下图所示：</p>
-<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画1.png" alt="变形与动画1"></a></p>
-<p><strong>HTML代码：</strong></p>
-<blockquote>
-<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
-<p>width: 200px;  height: 200px;</p>
-<p>border: 1px dotted red;</p>
-<p>margin: 100px auto;}</p>
-<p>.wrapper div {</p>
-<p>width: 200px;  height: 200px;  background: orange;</p>
-<p>-webkit-transform: rotate(45deg);</p>
-<p>transform: rotate(45deg);}<br><strong>演示结果<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画2.png" alt="变形与动画2"></a></strong></p>
-</blockquote>
+<h2 id="变形–旋转-rotate"><a href="#变形–旋转-rotate" class="headerlink" title="变形–旋转 rotate()"></a><strong>变形–旋转 rotate()</strong></h2><p><strong>旋转rotate()函数</strong>通过指定的角度参数使元素相对原点进行旋转。它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为<strong>正值</strong>，元素相对原点中心<strong>顺时针</strong>旋转；如果这个值为<strong>负值</strong>，元素相对原点中心<strong>逆时针</strong>旋转。如下图所示：<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画1.png" alt="变形与动画1"></p>
+<p>HTML代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">”wrapper”</span>&gt;</span>  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>CSS代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> dotted red;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">100px</span> auto;&#125;</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">     <span class="attribute">width</span>: <span class="number">200px</span>;  <span class="attribute">height</span>: <span class="number">200px</span>;  <span class="attribute">background</span>: orange;</span><br><span class="line">     <span class="attribute">-webkit-transform</span>: <span class="built_in">rotate</span>(45deg);</span><br><span class="line">     <span class="attribute">transform</span>: <span class="built_in">rotate</span>(45deg);&#125;</span><br></pre></td></tr></table></figure></p>
+<p>演示结果<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画2.png" alt="变形与动画2"></p>
 <h2 id="变形–扭曲-skew"><a href="#变形–扭曲-skew" class="headerlink" title="变形–扭曲 skew()"></a><strong>变形–扭曲 skew()</strong></h2><p>扭曲skew()函数能够让元素<strong>倾斜显示</strong>。它可以将一个对象以其中心位置围绕着<strong>X轴</strong>和<strong>Y轴</strong>按照一定的角度倾斜。这与rotate()函数的旋转不同，rotate()函数只是旋转，而不会改变元素的形状。skew()函数不会旋转，而只会改变元素的形状。</p>
 <p>(如果不理解扭曲，可参考<a href="http://www.zhangxinxu.com/study/201206/css3-transform-matrix-skew.html" title="CSS扭曲解释" target="_blank" rel="external">此处</a>，加强理解。)</p>
-<p><strong>Skew()具有三种情况：</strong></p>
-<p><strong>1、skew(x,y)使元素在水平和垂直方向同时扭曲</strong>（X轴和Y轴同时按一定的角度值进行扭曲变形）；<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-1.png" alt="skew-1"></a></p>
+<p><strong>Skew()具有三种情况：</strong><br>1、skew(x,y)使元素在水平和垂直方向同时扭曲（X轴和Y轴同时按一定的角度值进行扭曲变形）；<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-1.png" alt="skew-1"></p>
 <p>第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则值为0，也就是Y轴方向上无斜切。</p>
-<p><strong>2、skewX(x)仅使元素在水平方向扭曲变形</strong>（X轴扭曲变形）；<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-2.png" alt="skew-2"></a></p>
-<p><strong>3、skewY(y)仅使元素在垂直方向扭曲变形</strong>（Y轴扭曲变形）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-3.png" alt="skew-3"></a></p>
+<p>2、skewX(x)仅使元素在水平方向扭曲变形（X轴扭曲变形）；<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-2.png" alt="skew-2"></p>
+<p>3、skewY(y)仅使元素在垂直方向扭曲变形（Y轴扭曲变形）<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-3.png" alt="skew-3"></p>
 <p><strong>示例演示：</strong></p>
-<p>通过skew（）函数将长方形变成平行四边形。</p>
-<p><strong>HTML代码：</strong></p>
-<blockquote>
-<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;我变成平形四边形&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
-<p>width: 300px;  height: 100px;</p>
-<p>border: 2px dotted red;</p>
-<p>margin: 30px auto;}</p>
-<p>.wrapper div {</p>
-<p>width: 300px;  height: 100px;</p>
-<p>line-height: 100px;</p>
-<p>text-align: center;</p>
-<p>color: #fff;</p>
-<p>background: orange;</p>
-<p>-webkit-transform: skew(45deg);</p>
-<p>-moz-transform:skew(45deg)</p>
-<p>transform:skew(45deg);}<br><strong>演示结果<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-4.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-4.png" alt="skew-4"></a></strong></p>
-</blockquote>
+<p>通过skew（）函数将长方形变成平行四边形。<br>HTML代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">”wrapper”</span>&gt;</span>  <span class="tag">&lt;<span class="name">div</span>&gt;</span>我变成平形四边形<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>CSS代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> dotted red;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">30px</span> auto;&#125;</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">skew</span>(45deg);</span><br><span class="line">    <span class="attribute">-moz-transform</span>:<span class="built_in">skew</span>(45deg)</span><br><span class="line">    transform:<span class="built_in">skew</span>(45deg);&#125;</span><br></pre></td></tr></table></figure></p>
+<p>演示结果<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-4.png" alt="skew-4"></p>
 <h2 id="变形–缩放-scale"><a href="#变形–缩放-scale" class="headerlink" title="变形–缩放 scale()"></a><strong>变形–缩放 scale()</strong></h2><p><strong>缩放 scale()函数**</strong> **让元素根据中心原点对对象进行缩放。</p>
-<p>缩放 scale 具有三种情况：</p>
-<p><strong>1、 scale(X,Y)使元素水平方向和垂直方向同时缩放</strong>（也就是X轴和Y轴同时缩放）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-1.png" alt="scale-1"></a></p>
-<p>例如：</p>
-<blockquote>
-<p>div:hover {</p>
-<p>-webkit-transform: scale(1.5,0.5);</p>
-<p>-moz-transform:scale(1.5,0.5)</p>
-<p>transform: scale(1.5,0.5);}<br>注意：Y是一个可选参数，如果没有设置Y值，则表示X，Y两个方向的缩放倍数是一样的。</p>
-</blockquote>
-<p><strong>2、scaleX(x)元素仅水平方向缩放</strong>（X轴缩放）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-2.png" alt="scale-2"></a></p>
-<p><strong>3、scaleY(y)元素仅垂直方向缩放</strong>（Y轴缩放）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-3.png" alt="scale-3"></a></p>
-<p><strong>HTML代码：</strong></p>
-<blockquote>
-<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;我将放大1.5倍&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
-<p>width: 200px;</p>
-<p>height: 200px;</p>
-<p>border:2px dashed red;</p>
-<p>margin: 100px auto;}</p>
-<p>.wrapper div {</p>
-<p>width: 200px;</p>
-<p>height: 200px;</p>
-<p>line-height: 200px;</p>
-<p>background: orange;</p>
-<p>text-align: center;  color: #fff;}</p>
-<p>.wrapper div:hover {</p>
-<p>opacity: .5;  -webkit-transform: scale(1.5);</p>
-<p>-moz-transform:scale(1.5)</p>
-<p>transform: scale(1.5);}<br><strong>演示结果<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-4.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-4.png" alt="scale-4"></a></strong></p>
-</blockquote>
-<p><strong>注意：</strong> <strong>scale()</strong>的取值默认的值为1，当值设置为<strong>0.01</strong>到<strong>0.99</strong>之间的任何值，作用使一个元素缩小；而任何大于或等于<strong>1.01</strong>的值，作用是让元素放大。</p>
+<p>缩放 scale 具有三种情况：<br>1、 scale(X,Y)使元素水平方向和垂直方向同时缩放**（也就是X轴和Y轴同时缩放）<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-1.png" alt="scale-1"><br>例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">scale</span>(1.5,0.5);</span><br><span class="line">    <span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(1.5,0.5)</span><br><span class="line">    transform: <span class="built_in">scale</span>(1.5,0.5);&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意：Y是一个可选参数，如果没有设置Y值，则表示X，Y两个方向的缩放倍数是一样的。</p>
+<p>2、scaleX(x)元素仅水平方向缩放（X轴缩放）<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-2.png" alt="scale-2"></p>
+<p>3、scaleY(y)元素仅垂直方向缩放**（Y轴缩放）<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-3.png" alt="scale-3"></p>
+<p>HTML代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">”wrapper”</span>&gt;</span>  <span class="tag">&lt;<span class="name">div</span>&gt;</span>我将放大1.5倍<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>css代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">2px</span> dashed red;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">100px</span> auto;&#125;</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">    <span class="attribute">text-align</span>: center;  <span class="attribute">color</span>: <span class="number">#fff</span>;&#125;</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: .<span class="number">5</span>;  <span class="attribute">-webkit-transform</span>: <span class="built_in">scale</span>(1.5);</span><br><span class="line">    <span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(1.5)</span><br><span class="line">    transform: <span class="built_in">scale</span>(1.5);&#125;</span><br></pre></td></tr></table></figure></p>
+<p>演示结果<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-4.png" alt="scale-4"></p>
+<p><strong>注意：</strong> scale()的取值默认的值为1，当值设置为0.01到0.99之间的任何值，作用使一个元素缩小；而任何大于或等于1.01的值，作用是让元素放大。</p>
 <h2 id="变形–位移-translate"><a href="#变形–位移-translate" class="headerlink" title="变形–位移 translate()"></a><strong>变形–位移 translate()</strong></h2><p><strong>translate()函数</strong>可以将元素向指定的方向移动，类似于position中的<strong>relative</strong>。或以简单的理解为，使用translate()函数，可以把元素从原来的位置移动，而不影响在X、Y轴上的任何Web组件。</p>
 <p><strong>translate我们分为三种情况：</strong></p>
-<p><strong>1、translate(x,y)水平方向和垂直方向同时移动</strong>（也就是X轴和Y轴同时移动）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-1.png" alt="translate-1"></a></p>
-<p><strong>2、translateX(x)仅水平方向移动</strong>（X轴移动）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-2.png" alt="translate-2"></a></p>
-<p><strong>3、translateY(Y)仅垂直方向移动</strong>（Y轴移动）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-3.png" alt="translate-3"></a></p>
-<p><strong>实例演示：</strong>通过translate()函数将元素向Y轴下方移动100px,X轴右方移动50px。</p>
-<p><strong>HTML代码：</strong></p>
-<blockquote>
-<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;我向右向下移动&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
-<p>width: 200px;  height: 200px;</p>
-<p>border: 2px dotted red;</p>
-<p>margin: 20px auto;}</p>
-<p>.wrapper div {</p>
-<p>width: 200px;  height: 200px;  line-height: 200px;</p>
-<p>text-align: center;  background: orange;</p>
-<p>color: #fff;  -webkit-transform:</p>
-<p>translate(50px,100px);</p>
-<p>-moz-transform:translate(50px,100px);</p>
-<p>transform: translate(50px,100px);}<br><strong>演示结果<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-4.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-4.png" alt="translate-4"></a></strong></p>
-</blockquote>
-<h2 id="变形–矩阵-matrix"><a href="#变形–矩阵-matrix" class="headerlink" title="变形–矩阵 matrix()"></a><strong>变形–矩阵 matrix()</strong></h2><p><strong>matrix()**</strong> **是一个含六个值的(a,b,c,d,e,f)变换矩阵，用来指定一个2D变换，相当于直接应用一个[a b c d e f]变换矩阵。就是基于水平方向（X轴）和垂直方向（Y轴）重新定位元素,此属性值使用涉及到数学中的矩阵，我在这里只是简单的说一下CSS3中的transform有这么一个属性值，如果需要深入了解，需要对数学矩阵有一定的知识。</p>
-<p>（想对Matrix深入理解，请<a href="http://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/" title="Matrix矩阵深入理解" target="_blank" rel="external">点击此处</a>：</p>
-<p><strong>示例演示：</strong>通过matrix()函数来模拟transform中translate()位移的效果。<br><strong>HTML代码：</strong></p>
-<blockquote>
-<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
-<p>width: 300px;</p>
-<p>height: 200px;</p>
-<p>border: 2px dotted red;</p>
-<p>margin: 40px auto;}</p>
-<p>.wrapper div {</p>
-<p>width:300px;</p>
-<p>height: 200px;</p>
-<p>background: orange;</p>
-<p>-webkit-transform: matrix(1,0,0,1,50,50);</p>
-<p>-moz-transform:matrix(1,0,0,1,50,50);</p>
-<p>transform: matrix(1,0,0,1,50,50);}<br><strong>演示结果：<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/matrix-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/matrix-1.png" alt="matrix-1"></a></strong></p>
-</blockquote>
-<h2 id="变形–原点-transform-origin"><a href="#变形–原点-transform-origin" class="headerlink" title="变形–原点 transform-origin"></a><strong>变形–原点 transform-origin</strong></h2><p>任何一个元素都有一个中心点，默认情况之下，其中心点是居于元素X轴和Y轴的50%处。如下图所示：<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-1.png" alt="transform-origin-1"></a></p>
+<p>1、translate(x,y)水平方向和垂直方向同时移动（也就是X轴和Y轴同时移动）<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-1.png" alt="translate-1"></p>
+<p>2、translateX(x)仅水平方向移动**（X轴移动）<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-2.png" alt="translate-2"></p>
+<p>3、translateY(Y)仅垂直方向移动**（Y轴移动）<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-3.png" alt="translate-3"></p>
+<p><strong>实例演示：</strong>通过translate()函数将元素向Y轴下方移动100px,X轴右方移动50px。<br>HTML代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">”wrapper”</span>&gt;</span>  <span class="tag">&lt;<span class="name">div</span>&gt;</span>我向右向下移动<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>css代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> dotted red;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span> auto;&#125;</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;  <span class="attribute">height</span>: <span class="number">200px</span>;  <span class="attribute">line-height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;  </span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;  </span><br><span class="line">    <span class="attribute">-webkit-transform</span>:<span class="built_in">translate</span>(50px,100px);</span><br><span class="line">    <span class="attribute">-moz-transform</span>:<span class="built_in">translate</span>(50px,100px);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(50px,100px);&#125;</span><br></pre></td></tr></table></figure></p>
+<p>**演示结果<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-4.png" alt="translate-4"></p>
+<h2 id="变形–矩阵-matrix"><a href="#变形–矩阵-matrix" class="headerlink" title="变形–矩阵 matrix()"></a><strong>变形–矩阵 matrix()</strong></h2><p><strong>matrix()</strong>是一个含六个值的(a,b,c,d,e,f)变换矩阵，用来指定一个2D变换，相当于直接应用一个[a b c d e f]变换矩阵。就是基于水平方向（X轴）和垂直方向（Y轴）重新定位元素,此属性值使用涉及到数学中的矩阵，我在这里只是简单的说一下CSS3中的transform有这么一个属性值，如果需要深入了解，需要对数学矩阵有一定的知识。<br>（想对Matrix深入理解，请<a href="http://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/" title="Matrix矩阵深入理解" target="_blank" rel="external">点击此处</a>：</p>
+<p><strong>示例演示：</strong>通过matrix()函数来模拟transform中translate()位移的效果。<br>HTML代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">”wrapper”</span>&gt;</span>  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>css代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> dotted red;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">40px</span> auto;&#125;</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">matrix</span>(1,0,0,1,50,50);</span><br><span class="line">    <span class="attribute">-moz-transform</span>:<span class="built_in">matrix</span>(1,0,0,1,50,50);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">matrix</span>(1,0,0,1,50,50);&#125;</span><br></pre></td></tr></table></figure></p>
+<p>演示结果：<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/matrix-1.png" alt="matrix-1"></p>
+<h2 id="变形–原点-transform-origin"><a href="#变形–原点-transform-origin" class="headerlink" title="变形–原点 transform-origin"></a><strong>变形–原点 transform-origin</strong></h2><p>任何一个元素都有一个中心点，默认情况之下，其中心点是居于元素X轴和Y轴的50%处。如下图所示：<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-1.png" alt="transform-origin-1"></p>
 <p>在没有重置transform-origin改变元素原点位置的情况下，CSS变形进行的旋转、位移、缩放，扭曲等操作都是<strong>以元素自己中心位置进行变形</strong>。但很多时候，我们可以通过transform-origin来对元素进行原点位置改变，使元素原点不在元素的中心位置，以达到需要的原点位置。</p>
-<p>transform-origin取值和元素设置背景中的background-position取值类似，如下表所示：<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-2.png" alt="transform-origin-2"></a></p>
-<p><strong>示例展示：</strong></p>
-<p>通过transform-origin改变元素原点到左上角，然后进行顺时旋转45度。</p>
-<p><strong>HTML代码：</strong></p>
-<blockquote>
-<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;原点在默认位置处&lt;/div&gt;&lt;/div&gt;&lt;div class=”wrapper transform-origin”&gt;  &lt;div&gt;原点重置到左上角&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
-<p>width: 300px;  height: 300px;  float: left;</p>
-<p>margin: 100px;  border: 2px dotted red;</p>
-<p>line-height: 300px;  text-align: center;}</p>
-<p>.wrapper div {</p>
-<p>background: orange;</p>
-<p>-webkit-transform: rotate(45deg);</p>
-<p>transform: rotate(45deg);}</p>
-<p>.transform-origin div {</p>
-<p>-webkit-transform-origin: left top;</p>
-<p>transform-origin: left top;}<br><strong>演示结果：<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-3.png" alt="transform-origin-3"></a></strong></p>
-</blockquote>
+<p>transform-origin取值和元素设置背景中的background-position取值类似，如下表所示：<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-2.png" alt="transform-origin-2"></p>
+<p><strong>示例展示：</strong><br>通过transform-origin改变元素原点到左上角，然后进行顺时旋转45度。<br>HTML代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">”wrapper”</span>&gt;</span>  <span class="tag">&lt;<span class="name">div</span>&gt;</span>原点在默认位置处<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">”wrapper</span> <span class="attr">transform-origin</span>”&gt;</span>  <span class="tag">&lt;<span class="name">div</span>&gt;</span>原点重置到左上角<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>css代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;  <span class="attribute">height</span>: <span class="number">300px</span>;  <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">100px</span>;  <span class="attribute">border</span>: <span class="number">2px</span> dotted red;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">300px</span>;  <span class="attribute">text-align</span>: center;&#125;</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">rotate</span>(45deg);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(45deg);&#125;</span><br><span class="line"><span class="selector-class">.transform-origin</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">-webkit-transform-origin</span>: left top;</span><br><span class="line">    <span class="attribute">transform-origin</span>: left top;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>演示结果：<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-3.png" alt="transform-origin-3"></p>
 ]]></content>
     </entry>
     
     <entry>
-      <title><![CDATA[HTML5学习笔记（1）元素与标签结构]]></title>
-      <url>http://xifengxx.github.io/2015/08/22/HTML5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89%E5%85%83%E7%B4%A0%E4%B8%8E%E6%A0%87%E7%AD%BE%E7%BB%93%E6%9E%84/</url>
-      <content type="html"><![CDATA[<p>HTML5是用于取代1999年所制定的 HTML 4.01 和 XHTML 1.0 标准的 HTML [1]（标准通用标记语言下的一个应用）标准版本；现在仍处于发展阶段，但大部分浏览器已经支持某些 HTML5 技术。</p>
-<h4 id="HTML-5有两大特点："><a href="#HTML-5有两大特点：" class="headerlink" title="HTML 5有两大特点："></a>HTML 5有两大特点：</h4><ol>
-<li><strong>强化了 Web 网页的表现性能。</strong></li>
-<li><strong>追加了本地数据库等 Web 应用的功能。</strong><br>广义论及HTML5时，实际指的是包括HTML、CSS和JavaScript在内的一套技术组合。它希望能够减少浏览器对于需要插件的丰富性网络应用服务（plug-in-based rich internet application，RIA)，如Adobe Flash、Microsoft Silverlight，与Oracle JavaFX的需求，并且提供更多能有效增强网络应用的标准集。</li>
-</ol>
-<h3 id="HTML5语法"><a href="#HTML5语法" class="headerlink" title="HTML5语法"></a>HTML5语法</h3><p>沿用了HTML的语法(已往过去的语法，是SGML语法的一个子集)，更简洁，更人性化。<br><strong>1.DOCTYPE及字符编码</strong><br>① DOCTYPE：&lt;!doctype html&gt;<br>② 字符编码：&lt;meta charset=”utf-8”&gt;<br>③ 给文档指定语言：&lt;html lang=”zh-CN”&gt;</p>
-<p><strong>2.大小写都可以</strong><br>① 目的是为了兼容更多的文档，在HTML5里不区分大小写<br>建议：写代码最好规范，最好小写(标签和属性)</p>
-<p><strong>3.布尔值</strong><br>① &lt;input type=”checkbox” checked/&gt;<br>在这里checked写上就表示true，如果不写就表示false。而不用像HTML4中要写成checked=”checked”了。</p>
-<p><strong>4.省略引号</strong><br>① &lt;input type=”text” /&gt;<br>② &lt;input type=’text’&gt;<br>③ &lt;input type=text&gt;<br>上面三种写法都可以，当然如果属性值中出现空格，就必须写引号或双引号<br>建议：属性中，引号最好是双引号</p>
-<p>1、不允许写结束符的标签：area , basebr , col， command , embed , hr , img , input , keygen , link , meta , param , source , track , wbr。格式&lt;xx/&gt;<br>2、可以省略结束符的标签：li , dt , dd , p , rt , optgroup , colgroup , thread , tbody , tr , td , th省略&lt;/XXX&gt;<br>3、可以完全省略的标签：html , head , body , colgroup , tbody</p>
-<h3 id="HTML5新增标签"><a href="#HTML5新增标签" class="headerlink" title="HTML5新增标签"></a>HTML5新增标签</h3><p>（1）结构标签<br>（2）表单标签<br>（3）媒体标签<br>（4）其他功能标签<br><strong>&lt;1&gt;结构标签</strong>——原来用div<br>（1）section元素——表示页面中一个内容区块，比如章节、页眉、页脚或页面的其他部分。可以和h1、h2等元素结合起来使用，表示文档结构。例：html5中&lt;section&gt;…&lt;/section&gt;html4中&lt;div&gt;…&lt;/div&gt;。<br>（2）article元素——表示页面中一块与上下文部相关的独立内容。比如一篇文章。<br>（3）aside元素——表示article元素内容之外的、与article元素内容相关的辅助信息。<br>（4）header元素——表示整个页面或页面中一个内容区块的标题。<br>（5）hgroup元素——表示整个页面或页面中一个内容区块的标题进行组合。<br>（6）footer元素——表示整个页面或页面中一个内容区块的脚注。一般来说，他会包含创作者的姓名、创作日期以及创作者的联系方式。<br>（7）nav标签——表示页面中导航链接的部分<br>（8）figure标签——表示一段独立的流内容，一般表示文档主体流内容中的一个独立单元，使用figcaption标签为figure标签组添加标题。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;figure&amp;gt;</span><br><span class="line">&amp;lt;figcaption&amp;gt;PRC&amp;lt;/figcaption&amp;gt;</span><br><span class="line">&amp;lt;p&amp;gt;the people&apos;s republic of china was born in 1949&amp;lt;/p&amp;gt;</span><br><span class="line">&amp;lt;/figure&amp;gt;</span><br></pre></td></tr></table></figure></p>
-<p><strong>&lt;2&gt;表单标签</strong><br>（1） email——必须输入email<br>（2） url——必须输入url地址<br>（3） number——必须输入数值<br>（4） range——必须输入一定范围内数值<br>（5） Date Pickers（日期选择器）<br>拥有多个可供选取日期和时间的新输入类型：<br>date-选择日、月、年<br>month-选择月、年<br>week-选择周、年<br>time-选取时间（小时和分钟）<br>datetime-选取时间、日、月、年（UTC时间）<br>datetime-local-选取时间、日、月、年（本地时间）<br>（6） search——用于搜索域，域显示为常规的文本域<br>（7） color</p>
-<p><strong>&lt;3&gt;媒体标签</strong><br>（1） vedio标签——定义视频，像电影片段或其他视频流。例如：<br>&lt;vedio src=”movie.ogg” controls=”controls”&gt;vedio标签&lt;/vedio&gt;<br>（2） audio标签——定义音频，像音乐或其他音频流。例如：<br>&lt;audio src=”someaudio.wav”&gt;audio标签&lt;/audio&gt;<br>（3） embed标签——用来嵌入内容（包括各种媒体），格式可以是Mldl、Wav、AIFF、AU、MP3、flash等。例如：<br>&lt;embed src=”flash.saf”/&gt;;</p>
-<p><strong>&lt;4&gt;其他标签</strong><br>（1） mark标签——提亮文字<br>（2） progress标签——进度条<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;progress max=&quot;100&quot; value=&quot;85&quot;&amp;gt;</span><br><span class="line">&amp;lt;span&amp;gt;85&amp;lt;/span&amp;gt; </span><br><span class="line"> &quot;%&quot;</span><br><span class="line">&amp;lt;/progress&amp;gt;</span><br></pre></td></tr></table></figure></p>
-<p>（3） time标签——属于语义标签，或者说是微数据标签，用来标注页面中的某一块内容，这个标注是给机器（搜索引擎）用的<br>time datetime=”2013-10-20T09:00Z”pubdate&gt;9:00&lt;/time&gt;——发布时间<br>（4） ruby标签——对某个字进行注释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;ruby&amp;gt;</span><br><span class="line"> 漠</span><br><span class="line"> &amp;lt;rt&amp;gt;&amp;lt;/rt&amp;gt; //注释内容</span><br><span class="line"> &amp;lt;rp&amp;gt;(&amp;lt;/rp&amp;gt; //当浏览器不支持时显示</span><br><span class="line"> “厂马”</span><br><span class="line"> &amp;lt;rp&amp;gt;)&amp;lt;/rp&amp;gt;</span><br><span class="line"> &amp;lt;/ruby&amp;gt;</span><br></pre></td></tr></table></figure></p>
-<p>（5） wbr标签——软换行<br>（6） canvas标签——与javascript配合进行图形绘制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;canvas id=&quot;mycanvas&quot;&amp;gt;</span><br><span class="line">&amp;lt;script &amp;gt;</span><br><span class="line">…</span><br><span class="line">&amp;lt;/script&amp;gt;</span><br><span class="line">&amp;lt;/canvas&amp;gt;</span><br></pre></td></tr></table></figure></p>
-<p>(7)command标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;menu&amp;gt;</span><br><span class="line">&amp;lt;command onclick=&quot;alert(hello world)&quot; label=&quot;click&quot;&amp;gt;</span><br><span class="line">&quot;click me!&quot;</span><br><span class="line">&amp;lt;/menu&amp;gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="HTML5废除标签："><a href="#HTML5废除标签：" class="headerlink" title="HTML5废除标签："></a>HTML5<strong>废除标签：</strong></h3><p>1、能用css代替的元素<br>basefont、big、center、font、s、strike、tt、u。这些元素纯粹是为画面展示服务的，HTML5中提倡把画面展示性功能放在css中统一编辑。<br>2、不再使用frame框架。<br>frameset、frame、noframes。HTML5中不支持frame框架，只支持iframe框架，或者用服务器方创建的由多个页面组成的符合页面的形式，删除以上这三个标签。<br>3、只有部分浏览器支持的元素<br>applet、bgsound、blink、marquee等标签。<br>4、其他被废除的元素：废除rb，使用ruby替代。废除acronym使用abbr替代。废除dir使用ul替代。废除isindex使用form与input相结合的方式替代。废除listing使用pre替代。废除xmp使用code替代。废除nextid使用guids。废除plaintex使用“text/plian”（无格式正文）MIME类型替代。</p>
-<h3 id="HTMl5新增属性"><a href="#HTMl5新增属性" class="headerlink" title="HTMl5新增属性"></a>HTMl5新增属性</h3><p>新增属性：（表单属性、链接属性、其他属性）<br>1.&lt;meta http-equiv=”pragma” content=”no-cache”&gt;禁止页面缓存。<br>2.manifest:定义离线应用所需的文件。&lt;html manifest=”cache.manifest”&gt;<br>3.&lt;meta charset=”utf-8”&gt;指定页面的字符集<br>4.sizes：指定浏览器选项卡上显示的网页logo，使用方法如下：<br>&lt;link rel=’icon’ href=’demo_icon.gif’ type=’image/gif’ sizes=’16*16’&gt;<br>5.&lt;base href=”<a href="http://localhost/" target="_blank" rel="external">http://localhost/</a>“ target=”_blank”&gt;超链接打开方式，在新窗口打开页面地址以<a href="http://localhost/" target="_blank" rel="external">http://localhost/</a> 开头 + 相对地址<br>6.script：defer和async（加载方式）<br>defer–当浏览器读到&lt;script src..&gt; 脚本文件下载后不执行，等页面加载完成后才执行（推迟执行）<br>async–当浏览器读到&lt;script src..&gt; 脚本文件下载后立刻执行，但并不停止执行后续的代码（异步执行）<br>7、&lt;a media=”” hreflang=”” href=”#”&gt;对相应的设备进行优化，handheld（手持设备），tv(电视)<br>&lt;a href=”<a href="http://www.mukewang.com/" target="_blank" rel="external">http://www.mukewang.com/</a>“ hreflang=”zh” ref=”external”&gt;慕课网&lt;/a&gt;<br>a：hreflang=”zh”（设置语言，这里设置语言是中文,表示网址使用的网址是中文）<br>a：ref=”external”（设置超链接的引用，表示网址使用的是外部的）<br>8、start 起始值 reversed 倒序<br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;ol start=&quot;50&quot; reversed&amp;gt; </span><br><span class="line">&amp;lt;li&amp;gt;1&amp;lt;/li&amp;gt;</span><br><span class="line">&amp;lt;li&amp;gt;2&amp;lt;/li&amp;gt; </span><br><span class="line">&amp;lt;li&amp;gt;3&amp;lt;/li&amp;gt; </span><br><span class="line">&amp;lt;/ol&amp;gt;</span><br></pre></td></tr></table></figure></p>
-<p>9、&lt;menu type=””&gt;type的三个类型contextmenu（上下文菜单），list（列表菜单），toolbar（工具栏）</p>
-<ul>
-<li>内嵌css新增的属性 &lt;style type=”text/css” scoded&gt;//scoded表示只对外部标签内部才有效<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; &amp;lt;div&amp;gt;</span><br><span class="line">&gt; &amp;lt;style type=&quot;text/css&quot; scoped&amp;gt;</span><br><span class="line">&gt; h1&#123;color:red;&#125;</span><br><span class="line">&gt; p&#123;color:blue;&#125;</span><br><span class="line">&gt; &amp;lt;/style&amp;gt;</span><br><span class="line">&gt; &amp;lt;h1&amp;gt;this my name&amp;lt;/h1&amp;gt;</span><br><span class="line">&gt; &amp;lt;p&amp;gt;this my name&amp;lt;/p&amp;gt;</span><br><span class="line">&gt; &amp;lt;div&amp;gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>11、&lt;iframe &gt;&lt;/iframe&gt;//内嵌框架<br>seamless属性—不会有边框、边距<br>srcdoc属性—指定内嵌框架的内容。有srcdoc 时，src 会被忽略，此时显示srcdoc中的内容，srcdoc的值可以是html代码<br>sandbox—规定内嵌框架的安全级别 （禁止提交表单、禁止执行javascript脚本、内嵌页面与外层页面不是相同的源）<br>①allow-forms:允许提交表单<br>②allow-scripts：允许执行脚本<br>③allow-same-origin：允许 iframe 内容被视为与包含文档有相同的来源<br>④allow-top-navigation：允许 iframe 内容从包含文档导航（加载）内容</p>
-<h3 id="HTML5删除属性"><a href="#HTML5删除属性" class="headerlink" title="HTML5删除属性"></a>HTML5删除属性</h3><p>在html5中，那些可以用css样式定义的标签和属性都被删除了！</p>
-<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/08/HTML废除的属性.jpg" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/HTML废除的属性.jpg" alt="HTML废除的属性"></a></p>
-<h3 id="HTML5全局属性"><a href="#HTML5全局属性" class="headerlink" title="HTML5全局属性"></a>HTML5全局属性</h3><ol>
-<li>data-yourvalue:自定义数据属性</li>
-<li>hidden：可以对标签内容隐藏，代替之前需在CSS中输入的display：none</li>
-<li>spellcheck：对输入内容进行语法标错</li>
-<li>tabindex：通过设定值，按下tab后，按照标注的顺序进行切换<br>5.contenteditable：这部分页面内容可以编辑：可以配合JS对网页内容进行局部修改</li>
-<li>designMode属性：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; &amp;lt;sricpt&amp;gt;</span><br><span class="line">&gt; window.document.designMode=&apos;on&apos;;</span><br><span class="line">&gt; &amp;lt;/sricpt&amp;gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>designMode属性为on时，所有的文档属性都可以修改。off时只有上面的属性指定的区域可编辑。</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[如何将Emmet安装到 Sublime text 3]]></title>
+      <title><![CDATA[如何将Emmet安装到Sublime text 3]]></title>
       <url>http://xifengxx.github.io/2015/08/03/%E5%A6%82%E4%BD%95%E5%B0%86Emmet%E5%AE%89%E8%A3%85%E5%88%B0%20Sublime%20text%203/</url>
-      <content type="html"><![CDATA[<p>学习慕课网<a href="http://www.imooc.com/learn/40" title="慕课网" target="_blank" rel="external">《前端开发工具技巧介绍—Sublime篇》</a>时，提到一个前端开发工具“Sublime”。<br>它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度。</p>
-<p>（查看这篇文章来了解Sublime具体用法：<a href="http://www.iteye.com/news/27580" title="Emmet：HTML/CSS代码快速编写神器" target="_blank" rel="external"> Emmet：HTML/CSS代码快速编写神器</a>）</p>
+      <content type="html"><![CDATA[<p>学习慕课网<a href="http://www.imooc.com/learn/40" title="慕课网" target="_blank" rel="external">《前端开发工具技巧介绍—Sublime篇》</a>时，提到一个前端开发工具“Sublime”。<br>它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度。<br>（查看这篇文章来了解Sublime具体用法：<a href="http://www.iteye.com/news/27580" title="Emmet：HTML/CSS代码快速编写神器" target="_blank" rel="external"> Emmet：HTML/CSS代码快速编写神器</a>）</p>
 <p>视频介绍Sublime插件Emmet非常实用，但我发现从官网下载的Sublime并不带Emmet插件，需要重新下载安装。</p>
-<p>于是百度搜索，找到了这篇文章<a href="http://www.cnblogs.com/tinyphp/p/3217457.html" title="如何将Emmet安装到 Sublime text 3" target="_blank" rel="external">《如何将Emmet安装到 Sublime text 3》</a>，按照步骤来下载安装：</p>
-<blockquote>
-<p>第一步：下载<a href="http://files.cnblogs.com/tinyphp/sublime_package_control-master.zip" target="_blank" rel="external">sublime_package_control-master.zip</a> ，解压命名文件夹为Package Control。(注意大小写)</p>
+<p>于是百度搜索，找到了这篇文章<a href="http://www.cnblogs.com/tinyphp/p/3217457.html" title="如何将Emmet安装到 Sublime text 3" target="_blank" rel="external">《如何将Emmet安装到 Sublime text 3》</a>，按照步骤来下载安装：<br>第一步：下载<a href="http://files.cnblogs.com/tinyphp/sublime_package_control-master.zip" target="_blank" rel="external">sublime_package_control-master.zip</a> ，解压命名文件夹为Package Control。(注意大小写)</p>
 <p>第二步：下载<a href="http://files.cnblogs.com/tinyphp/sublime_package_control-python3.zip" target="_blank" rel="external">sublime_package_control-python3.zip</a>，解压后覆盖到刚刚的Package Control中，完成插件API函数的更新。</p>
-<p>第三步：打开Sublime Text 3，选择菜单：Preference–&gt;Browse Package… 浏览插件<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/002Cst8Aty6Pc89uuaa0e690.png" target="_blank" rel="external">
-</a> <a href="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-1.jpg" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-1.jpg" alt="sublime text 1"></a></p>
-<p>第四步：把package control复制到此目录，重启 Sublime text 3。<br>然后菜单Preferences就会多了两个Package..的东西如下： Package Control 安装成功<br><a href="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-2.jpg" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-2.jpg" alt="sublime text 2"></a><br>第五步：点击菜单Preference–&gt;Package Control，点击install Package：<br><a href="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-3.jpg" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-3.jpg" alt="sublime text 3"></a><br><a href="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg" alt="sublime text 4"></a>等待几秒后再弹出如下内容，敲键盘emmet,选择第一项安装。（网上的教程是选择“emment Css Snippets”安装，我试过2次，安装后都失败了，改为第一项安装则成功了。）</p>
-<p>在 Emmet 安装完成后，屏幕下方会提示自动安装PyV8，安装完成，重启 Sublime Text 3。</p>
-<p>自此，安装成功。<br><strong>测试：</strong></p>
-</blockquote>
-<p>重启之后还会看到左下角再次呈现 Loading PyV8 的提示，待其载入完毕，打开一个新文档（CTRL+N）,最后测试，输入指令”!”，按“Tab”键即出现如下内容，即HTML5整体结构，而不用一个一个的输入字符，非常方便，极大的提高了码字的速度和效率，前端学习者们可以尝试下。<br><a href="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg" alt="sublime text 4"></a></p>
+<p>第三步：打开Sublime Text 3，选择菜单：Preference–&gt;Browse Package… 浏览插件<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-1.jpg" alt="sublime text 1"></p>
+<p>第四步：把package control复制到此目录，重启 Sublime text 3。<br>然后菜单Preferences就会多了两个Package..的东西如下： Package Control 安装成功<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-2.jpg" alt="sublime text 2"></p>
+<p>第五步：点击菜单Preference–&gt;Package Control，点击install Package：<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-3.jpg" alt="sublime text 3"></p>
+<p><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg" alt="sublime text 4"><br>等待几秒后再弹出如下内容，敲键盘emmet,选择第一项安装。（网上的教程是选择“emment Css Snippets”安装，我试过2次，安装后都失败了，改为第一项安装则成功了。）<br>在 Emmet 安装完成后，屏幕下方会提示自动安装PyV8，安装完成，重启 Sublime Text 3。<br>自此，安装成功。</p>
+<p><strong>测试：</strong></p>
+<p>重启之后还会看到左下角再次呈现 Loading PyV8 的提示，待其载入完毕，打开一个新文档（CTRL+N）,最后测试，输入指令”!”，按“Tab”键即出现如下内容，即HTML5整体结构，而不用一个一个的输入字符，非常方便，极大的提高了码字的速度和效率，前端学习者们可以尝试下。<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg" alt="sublime text 4"></p>
 ]]></content>
     </entry>
     
