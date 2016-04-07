@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-07T02:52:36.000Z</updated>
+  <updated>2016-04-07T03:21:20.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,144 +20,52 @@
     <link href="http://yoursite.com/2016/04/07/hexo-%E5%86%85%E7%BD%AE%E6%A0%87%E7%AD%BE/"/>
     <id>http://yoursite.com/2016/04/07/hexo-内置标签/</id>
     <published>2016-04-07T01:47:25.000Z</published>
-    <updated>2016-04-07T02:52:36.000Z</updated>
+    <updated>2016-04-07T03:21:20.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;标签(Tag Plugin)&lt;/strong&gt; 是 Hexo 提供的一种快速生成特定内容的方式。 在标准 Markdown 中，我们无法指定图片的大小，在这种情景下，我们即可使用标签来解决。 Hexo 内置来许多标签来帮助写作者可以更快的书写， 完整的标签列表 可以参考 &lt;a href=&quot;https://hexo.io/docs/tag-plugins.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo 官网&lt;/a&gt;。 另外，Hexo 也开放来接口给主题，使主题有可能提供给写作者更简便的写作方法。&lt;/p&gt;
-&lt;h3 id=&quot;文字引用&quot;&gt;&lt;a href=&quot;#文字引用&quot; class=&quot;headerlink&quot; title=&quot;文字引用&quot;&gt;&lt;/a&gt;文字引用&lt;/h3&gt;&lt;blockquote&gt;
-&lt;blockquote&gt;&lt;blockquote&gt;
-&lt;p&gt;content&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;footer&gt;&lt;strong&gt;[author[&lt;/strong&gt;&lt;cite&gt;source]] [link] [source_link_title]&lt;/cite&gt;&lt;/footer&gt;&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;以下为文字引用&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;&lt;blockquote&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscin……(中间为文本内容)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;以下为书籍引用：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;&lt;blockquote&gt;
-&lt;p&gt;Do not just seek happiness for yourself. Seek happiness hrough mercy.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;footer&gt;&lt;strong&gt;David Levithan&lt;/strong&gt;&lt;cite&gt;Wide Awake&lt;/cite&gt;&lt;/footer&gt;&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;以下为网页文字引用：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;&lt;blockquote&gt;
-&lt;p&gt;Every interaction is both precious and an opportunity to delight.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;footer&gt;&lt;strong&gt;Seth Godin&lt;/strong&gt;&lt;cite&gt;&lt;a href=&quot;http://sethgodin.typepad.com/seths_blog/welcome-to-island-marketing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Welcome to Island Marketing&lt;/a&gt;&lt;/cite&gt;&lt;/footer&gt;&lt;/blockquote&gt;
-&lt;/blockquote&gt;
+&lt;h3 id=&quot;文字引用&quot;&gt;&lt;a href=&quot;#文字引用&quot; class=&quot;headerlink&quot; title=&quot;文字引用&quot;&gt;&lt;/a&gt;文字引用&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote [author[, source]] [link] [source_link_title] %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;content&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;以下为文字引用&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscin……(中间为文本内容)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;以下为书籍引用：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote David Levithan, Wide Awake %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Do not just seek happiness for yourself. Seek happiness hrough mercy.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;以下为网页文字引用：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/welcome-to-island-marketing.html Welcome to Island Marketing %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Every interaction is both precious and an opportunity to delight.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h3 id=&quot;文本居中引用&quot;&gt;&lt;a href=&quot;#文本居中引用&quot; class=&quot;headerlink&quot; title=&quot;文本居中引用&quot;&gt;&lt;/a&gt;文本居中引用&lt;/h3&gt;&lt;p&gt;此标签将生成一个带上下分割线的引用，同时引用内文本将自动居中。 文本居中时，多行文本若长度不等，视觉上会显得不对称，因此建议在引用单行文本的场景下使用。 例如作为文章开篇引用 或者 结束语之前的总结引用。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;使用方式&lt;/strong&gt;&lt;br&gt;HTML方式：使用这种方式时，给 img 添加属性 class=”blockquote-center” 即可。&lt;br&gt;标签方式：使用 centerquote 或者 简写 cq。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;
-&lt;!-- 其中 class=&quot;blockquote-center&quot; 是必须的 --&gt;
-  &lt;blockquote class=&quot;blockquote-center&quot;&gt;blah blah blah&lt;/blockquote&gt;
-
-  &lt;!-- 标签 方式，要求NexT版本在0.4.5或以上 --&gt;
-&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;blah blah blah&lt;/p&gt;
-&lt;/blockquote&gt;
-  &lt;!-- 标签别名 --&gt;
-&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;blah blah blah &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;使用方式&lt;/strong&gt;&lt;br&gt;HTML方式：使用这种方式时，给 img 添加属性 class=”blockquote-center” 即可。&lt;br&gt;标签方式：使用 centerquote 或者 简写 cq。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 其中 class=&amp;quot;blockquote-center&amp;quot; 是必须的 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;blockquote class=&amp;quot;blockquote-center&amp;quot;&amp;gt;blah blah blah&amp;lt;/blockquote&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 标签 方式，要求NexT版本在0.4.5或以上 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% centerquote %&amp;#125;blah blah blah&amp;#123;% endcenterquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 标签别名 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% cq %&amp;#125; blah blah blah &amp;#123;% endcq %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;效果示例：&lt;br&gt;&lt;img src=&quot;http://theme-next.iissnan.com/uploads/tags/blockquote-center.png&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
 &lt;h3 id=&quot;图片容器宽度限制的图片&quot;&gt;&lt;a href=&quot;#图片容器宽度限制的图片&quot; class=&quot;headerlink&quot; title=&quot;图片容器宽度限制的图片&quot;&gt;&lt;/a&gt;图片容器宽度限制的图片&lt;/h3&gt;&lt;p&gt;当使用此标签引用图片时，图片将自动扩大 26%，并突破文章容器的宽度。 此标签使用于需要突出显示的图片, 图片的扩大与容器的偏差从视觉上提升图片的吸引力。 此标签有两种调用方式（详细参看底下示例）：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;使用方式&lt;/strong&gt;&lt;br&gt;HTML方式：使用这种方式时，为 img 添加属性 class=”full-image”即可。&lt;br&gt;标签方式：使用 fullimage 或者 简写 fi， 并传递图片地址、 alt 和 title 属性即可。 属性之间以逗号分隔。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;
-&lt;!-- 其中 class=&quot;full-image&quot; 是必须的 --&gt;
-&lt;p&gt;&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
-   &lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;
-&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; alt=&quot;alt&quot; title=&quot;title&quot;&gt;
-&lt;!-- 别名 --&gt;
-&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; alt=&quot;alt&quot; title=&quot;title&quot;&gt;
+&lt;p&gt;&lt;strong&gt;使用方式&lt;/strong&gt;&lt;br&gt;HTML方式：使用这种方式时，为 img 添加属性 class=”full-image”即可。&lt;br&gt;标签方式：使用 fullimage 或者 简写 fi， 并传递图片地址、 alt 和 title 属性即可。 属性之间以逗号分隔。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!-- 其中 class=&amp;quot;full-image&amp;quot; 是必须的 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;img src=&amp;quot;/image-url&amp;quot; class=&amp;quot;full-image&amp;quot; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!-- 标签 方式，要求版本在0.4.5或以上 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;#123;% fullimage /image-url, alt, title %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!-- 别名 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;#123;% fi /image-url, alt, title %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;效果示例：&lt;br&gt;&lt;img src=&quot;http://theme-next.iissnan.com/uploads/tags/full-image.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;###如何设置阅读全文&lt;br&gt;在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。 NexT 提供三种方式来控制文章在首页的显示方式。 也就是说，在首页显示文章的摘录并显示&lt;strong&gt;阅读全文&lt;/strong&gt;按钮，可以通过以下方法：&lt;/p&gt;
+&lt;h3 id=&quot;如何设置阅读全文&quot;&gt;&lt;a href=&quot;#如何设置阅读全文&quot; class=&quot;headerlink&quot; title=&quot;如何设置阅读全文&quot;&gt;&lt;/a&gt;如何设置阅读全文&lt;/h3&gt;&lt;p&gt;在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。 NexT 提供三种方式来控制文章在首页的显示方式。 也就是说，在首页显示文章的摘录并显示&lt;strong&gt;阅读全文&lt;/strong&gt;按钮，可以通过以下方法：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;在文章中使用 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt; 手动进行截断，Hexo 提供的方式 推荐&lt;blockquote&gt;
-&lt;p&gt;以上是文章摘要&lt;/p&gt;
-&lt;!--more--&gt;
-&lt;p&gt;以下是余下全文&lt;/p&gt;
-&lt;p&gt;more以上內容即是文章摘要，在主页显示，more以下內容点击”Read More”链接打开全文才显示。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;在文章的 front-matter 中添加 description，并提供文章摘录&lt;/li&gt;
-&lt;li&gt;自动形成摘要，在 主题配置文件 中添加：&lt;blockquote&gt;
-&lt;p&gt;auto_excerpt:&lt;br&gt;enable: true&lt;br&gt;length: 150&lt;br&gt;默认截取的长度为 150 字符，可以根据需要自行设定&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;li&gt;在文章中使用&lt;code&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/code&gt;手动进行截断，Hexo 提供的方式 推荐&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; 以上是文章摘要&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!--more--&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; 以下是余下全文&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;建议使用 &lt;!-- more --&gt;（即第一种方式），除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。&lt;/p&gt;
-&lt;h3 id=&quot;插入视频&quot;&gt;&lt;a href=&quot;#插入视频&quot; class=&quot;headerlink&quot; title=&quot;插入视频&quot;&gt;&lt;/a&gt;插入视频&lt;/h3&gt;&lt;p&gt;如插人YouTube视频&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/video_id&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;more以上內容即是文章摘要，在主页显示，more以下內容点击”Read More”链接打开全文才显示。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在文章的 front-matter 中添加 description，并提供文章摘录&lt;/li&gt;
+&lt;li&gt;自动形成摘要，在 主题配置文件 中添加：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;auto_excerpt:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;enable: true&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;length: 150&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;默认截取的长度为 150 字符，可以根据需要自行设定&lt;/p&gt;
+&lt;p&gt;建议使用第一种方式，除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。&lt;/p&gt;
+&lt;h3 id=&quot;插入视频&quot;&gt;&lt;a href=&quot;#插入视频&quot; class=&quot;headerlink&quot; title=&quot;插入视频&quot;&gt;&lt;/a&gt;插入视频&lt;/h3&gt;&lt;p&gt;如插人YouTube视频&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% youtube video_id %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;示例：&lt;br&gt;&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/video_id&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
       &lt;p&gt;&lt;strong&gt;标签(Tag Plugin)&lt;/strong&gt; 是 Hexo 提供的一种快速生成特定内容的方式。 在标准 Markdown 中，我们无法指定图片的大小，在这种情景下，我们即可使用标签来解决。 Hexo 内置来许多标签来帮助写作者可以更快的书写， 完整的标签列表 可以参考 &lt;a href=&quot;https://hexo.io/docs/tag-plugins.html&quot;&gt;Hexo 官网&lt;/a&gt;。 另外，Hexo 也开放来接口给主题，使主题有可能提供给写作者更简便的写作方法。&lt;/p&gt;
-&lt;h3 id=&quot;文字引用&quot;&gt;&lt;a href=&quot;#文字引用&quot; class=&quot;headerlink&quot; title=&quot;文字引用&quot;&gt;&lt;/a&gt;文字引用&lt;/h3&gt;&lt;blockquote&gt;
-&lt;blockquote&gt;&lt;blockquote&gt;
-&lt;p&gt;content&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;footer&gt;&lt;strong&gt;[author[&lt;/strong&gt;&lt;cite&gt;source]] [link] [source_link_title]&lt;/cite&gt;&lt;/footer&gt;&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;以下为文字引用&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;&lt;blockquote&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscin……(中间为文本内容)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;以下为书籍引用：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;&lt;blockquote&gt;
-&lt;p&gt;Do not just seek happiness for yourself. Seek happiness hrough mercy.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;footer&gt;&lt;strong&gt;David Levithan&lt;/strong&gt;&lt;cite&gt;Wide Awake&lt;/cite&gt;&lt;/footer&gt;&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;以下为网页文字引用：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;blockquote&gt;&lt;blockquote&gt;
-&lt;p&gt;Every interaction is both precious and an opportunity to delight.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;footer&gt;&lt;strong&gt;Seth Godin&lt;/strong&gt;&lt;cite&gt;&lt;a href=&quot;http://sethgodin.typepad.com/seths_blog/welcome-to-island-marketing.html&quot;&gt;Welcome to Island Marketing&lt;/a&gt;&lt;/cite&gt;&lt;/footer&gt;&lt;/blockquote&gt;
-&lt;/blockquote&gt;
+&lt;h3 id=&quot;文字引用&quot;&gt;&lt;a href=&quot;#文字引用&quot; class=&quot;headerlink&quot; title=&quot;文字引用&quot;&gt;&lt;/a&gt;文字引用&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote [author[, source]] [link] [source_link_title] %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;content&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;以下为文字引用&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscin……(中间为文本内容)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;以下为书籍引用：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote David Levithan, Wide Awake %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Do not just seek happiness for yourself. Seek happiness hrough mercy.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;以下为网页文字引用：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/welcome-to-island-marketing.html Welcome to Island Marketing %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Every interaction is both precious and an opportunity to delight.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h3 id=&quot;文本居中引用&quot;&gt;&lt;a href=&quot;#文本居中引用&quot; class=&quot;headerlink&quot; title=&quot;文本居中引用&quot;&gt;&lt;/a&gt;文本居中引用&lt;/h3&gt;&lt;p&gt;此标签将生成一个带上下分割线的引用，同时引用内文本将自动居中。 文本居中时，多行文本若长度不等，视觉上会显得不对称，因此建议在引用单行文本的场景下使用。 例如作为文章开篇引用 或者 结束语之前的总结引用。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;使用方式&lt;/strong&gt;&lt;br&gt;HTML方式：使用这种方式时，给 img 添加属性 class=”blockquote-center” 即可。&lt;br&gt;标签方式：使用 centerquote 或者 简写 cq。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;
-&lt;!-- 其中 class=&quot;blockquote-center&quot; 是必须的 --&gt;
-  &lt;blockquote class=&quot;blockquote-center&quot;&gt;blah blah blah&lt;/blockquote&gt;
-
-  &lt;!-- 标签 方式，要求NexT版本在0.4.5或以上 --&gt;
-&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;blah blah blah&lt;/p&gt;
-&lt;/blockquote&gt;
-  &lt;!-- 标签别名 --&gt;
-&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;blah blah blah &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;使用方式&lt;/strong&gt;&lt;br&gt;HTML方式：使用这种方式时，给 img 添加属性 class=”blockquote-center” 即可。&lt;br&gt;标签方式：使用 centerquote 或者 简写 cq。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 其中 class=&amp;quot;blockquote-center&amp;quot; 是必须的 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;blockquote class=&amp;quot;blockquote-center&amp;quot;&amp;gt;blah blah blah&amp;lt;/blockquote&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 标签 方式，要求NexT版本在0.4.5或以上 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% centerquote %&amp;#125;blah blah blah&amp;#123;% endcenterquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 标签别名 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% cq %&amp;#125; blah blah blah &amp;#123;% endcq %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;效果示例：&lt;br&gt;&lt;img src=&quot;http://theme-next.iissnan.com/uploads/tags/blockquote-center.png&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
 &lt;h3 id=&quot;图片容器宽度限制的图片&quot;&gt;&lt;a href=&quot;#图片容器宽度限制的图片&quot; class=&quot;headerlink&quot; title=&quot;图片容器宽度限制的图片&quot;&gt;&lt;/a&gt;图片容器宽度限制的图片&lt;/h3&gt;&lt;p&gt;当使用此标签引用图片时，图片将自动扩大 26%，并突破文章容器的宽度。 此标签使用于需要突出显示的图片, 图片的扩大与容器的偏差从视觉上提升图片的吸引力。 此标签有两种调用方式（详细参看底下示例）：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;使用方式&lt;/strong&gt;&lt;br&gt;HTML方式：使用这种方式时，为 img 添加属性 class=”full-image”即可。&lt;br&gt;标签方式：使用 fullimage 或者 简写 fi， 并传递图片地址、 alt 和 title 属性即可。 属性之间以逗号分隔。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;
-&lt;!-- 其中 class=&quot;full-image&quot; 是必须的 --&gt;
-&lt;p&gt;&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; /&gt;&lt;/p&gt;
-   &lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;
-&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; alt=&quot;alt&quot; title=&quot;title&quot; /&gt;
-&lt;!-- 别名 --&gt;
-&lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; alt=&quot;alt&quot; title=&quot;title&quot; /&gt;
+&lt;p&gt;&lt;strong&gt;使用方式&lt;/strong&gt;&lt;br&gt;HTML方式：使用这种方式时，为 img 添加属性 class=”full-image”即可。&lt;br&gt;标签方式：使用 fullimage 或者 简写 fi， 并传递图片地址、 alt 和 title 属性即可。 属性之间以逗号分隔。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!-- 其中 class=&amp;quot;full-image&amp;quot; 是必须的 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;img src=&amp;quot;/image-url&amp;quot; class=&amp;quot;full-image&amp;quot; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!-- 标签 方式，要求版本在0.4.5或以上 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;#123;% fullimage /image-url, alt, title %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!-- 别名 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;#123;% fi /image-url, alt, title %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;效果示例：&lt;br&gt;&lt;img src=&quot;http://theme-next.iissnan.com/uploads/tags/full-image.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;###如何设置阅读全文&lt;br&gt;在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。 NexT 提供三种方式来控制文章在首页的显示方式。 也就是说，在首页显示文章的摘录并显示&lt;strong&gt;阅读全文&lt;/strong&gt;按钮，可以通过以下方法：&lt;/p&gt;
+&lt;h3 id=&quot;如何设置阅读全文&quot;&gt;&lt;a href=&quot;#如何设置阅读全文&quot; class=&quot;headerlink&quot; title=&quot;如何设置阅读全文&quot;&gt;&lt;/a&gt;如何设置阅读全文&lt;/h3&gt;&lt;p&gt;在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。 NexT 提供三种方式来控制文章在首页的显示方式。 也就是说，在首页显示文章的摘录并显示&lt;strong&gt;阅读全文&lt;/strong&gt;按钮，可以通过以下方法：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;在文章中使用
+&lt;li&gt;在文章中使用&lt;code&gt;
     
     </summary>
     
@@ -283,119 +191,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Git实战教程</title>
-    <link href="http://yoursite.com/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/"/>
-    <id>http://yoursite.com/2016/04/05/git实战教程/</id>
-    <published>2016-04-05T11:09:51.000Z</published>
-    <updated>2016-04-07T01:13:28.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;简明释义&quot;&gt;&lt;a href=&quot;#简明释义&quot; class=&quot;headerlink&quot; title=&quot;简明释义&quot;&gt;&lt;/a&gt;简明释义&lt;/h3&gt;&lt;h4 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Git&lt;/h4&gt;&lt;p&gt;Git 是一个版本控制工具，是一个可以安装在你自己机器上的软件。&lt;br&gt;git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。&lt;/p&gt;
-&lt;h4 id=&quot;github&quot;&gt;&lt;a href=&quot;#github&quot; class=&quot;headerlink&quot; title=&quot;github&quot;&gt;&lt;/a&gt;github&lt;/h4&gt;&lt;p&gt;Git 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。&lt;br&gt;Github 首先是一个公司，&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github网站&lt;/a&gt;是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。&lt;/p&gt;
-&lt;h3 id=&quot;安装及初始化&quot;&gt;&lt;a href=&quot;#安装及初始化&quot; class=&quot;headerlink&quot; title=&quot;安装及初始化&quot;&gt;&lt;/a&gt;安装及初始化&lt;/h3&gt;&lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Windows上安装Git&lt;/strong&gt;&lt;br&gt;msysgit是Windows版的Git。&lt;br&gt;&lt;a href=&quot;http://msysgit.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;然后按默认选项安装即可。&lt;/p&gt;
-&lt;p&gt;安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！&lt;/p&gt;
-&lt;p&gt;安装完成后，还需要最后一步设置，在命令行输入：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git config –global user.name “Your Name”&lt;br&gt;$ git config –global user.email “email@example.com”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。&lt;/p&gt;
-&lt;h4 id=&quot;创建版本库&quot;&gt;&lt;a href=&quot;#创建版本库&quot; class=&quot;headerlink&quot; title=&quot;创建版本库&quot;&gt;&lt;/a&gt;创建版本库&lt;/h4&gt;&lt;p&gt;版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。&lt;/p&gt;
-&lt;p&gt;如何创建版本库？&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;在电脑磁盘里的任意位置，创建一个空目录&lt;br&gt;方法1：直接在磁盘任意位置，右键-新建文件夹；&lt;br&gt;方法2：在git命令行里创建。&lt;br&gt;关于创建文件常用命令（Unix Linux命令）：&lt;br&gt;-mkdir&lt;br&gt;-cd        ：切换目录命令&lt;br&gt;–cd ..    : 切换到上一级目录。&lt;br&gt;如当前目录为e盘下的code目录，使用命令”cd ..”，会切换到e盘。&lt;br&gt;–cd e:    : 切换盘符。&lt;br&gt;如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。&lt;br&gt;–cd /     : 切换到根目录。&lt;br&gt;–cd 目录名：切换到具体目录。&lt;br&gt;如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。&lt;br&gt;如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。&lt;br&gt;-pwd       : 显示当前所在目录&lt;br&gt;-dir       : 显示当前目录下的所有文件&lt;br&gt;-mkdir     : 创建目录。&lt;br&gt;如当前在e盘下，需要在e盘下创建一个新目录”code1”,使用命令”mkdir code1”即可；&lt;br&gt;如果要在其他盘下创建目录，先使用cd命令定位到目标盘，然后再使用mkdir命令。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;通过git init命名把这个目录变成Git可以管理的仓库。&lt;br&gt;创建完目录后，在磁盘中找到该目录，右键–Git Bash Here即可定位到当前目录，或是通过上面的Linux命令来定位到目标目录。&lt;br&gt;在命令行输入命令”git init”，即成功创建Git仓库。&lt;br&gt;这时在当前目录下，会多出一个.git目录（如果没有，说明被隐藏了，需要在”工具-文件夹选项-查看”里设置隐藏属性为显示所有文件）。这个目录是Git来跟踪管理版本库的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;远程仓库&quot;&gt;&lt;a href=&quot;#远程仓库&quot; class=&quot;headerlink&quot; title=&quot;远程仓库&quot;&gt;&lt;/a&gt;远程仓库&lt;/h3&gt;&lt;h4 id=&quot;配置SSH-Key&quot;&gt;&lt;a href=&quot;#配置SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;配置SSH Key&quot;&gt;&lt;/a&gt;配置SSH Key&lt;/h4&gt;&lt;p&gt;目的：本地Git仓库与GitHub网站仓库之间实现同步传输及存储。&lt;br&gt;步骤：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;需要注册一个GitHub账号。(注册地址)[&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com&lt;/a&gt;].&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;设置SSH Key.(本地Git仓库和GitHub仓库之间的传输是通过SSH加密的)&lt;br&gt;打开Git Bash,创建SSH Key.&lt;br&gt;输入命令：$ ssh-keygen -t rsa -c “youremail@examle.com”&lt;br&gt;将邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。&lt;br&gt;成功的话，会在用户主目录（我的是在”C:\Documents and Settings\Administrator”）里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件。（这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;登录&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub网站&lt;/a&gt;，打开”我的账号/Account settings”—“personal settings”—“SSH keys”，点击”New SSH key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;打开Git Bash，输入命令以下命令检测是否成功连接本机与GitHub。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ssh -T git@github.com&lt;br&gt;在遇到提示的情况下，输入”yes”即可。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;添加远程库&quot;&gt;&lt;a href=&quot;#添加远程库&quot; class=&quot;headerlink&quot; title=&quot;添加远程库&quot;&gt;&lt;/a&gt;添加远程库&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;登录GitHub,点击右上角的”+”号—“New repository”，创建新的Git仓库。&lt;/li&gt;
-&lt;li&gt;把本地仓库的内容推送到GitHub仓库。&lt;br&gt;① 打开GitHub上新建的repository仓库，找到HTTPS/SSH地址并复制地址，如”&lt;a href=&quot;https://github.com/xifengxx/demo.git&amp;quot;是我的一个仓库https地址。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&amp;quot;是我的一个仓库https地址。&lt;/a&gt;&lt;br&gt;② 本地仓库下运行命令&lt;blockquote&gt;
-&lt;p&gt;$ git remote add origin &lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;&lt;br&gt;添加后，远程仓库的名字就是origin(这是Git默认叫法，可以将origin改成其他的名字)&lt;br&gt;③ 继续运行命令&lt;br&gt;$ git push -u origin master&lt;br&gt;把本地仓库内容推送到远程，用git push命令。实际上是把当前分支master推送到远程。&lt;br&gt;由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。&lt;br&gt;推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样。&lt;br&gt;此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改：&lt;br&gt;$ git push origin master&lt;br&gt;④ 推送时，会弹出需要输入github账号及密码框，输入即可。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;注意事项&lt;/strong&gt;&lt;br&gt;在第二步②时，输入命令”$ git remote add origin &lt;a href=&quot;https://github.com/xifengxx/demo.git&amp;quot;时，可能会报错。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&amp;quot;时，可能会报错。&lt;/a&gt;&lt;br&gt;错误信息：”fatal: remote origin already exists.……”&lt;br&gt;原因：远程仓库已经存在内容，与本地仓库推送内容冲突。&lt;br&gt;解决方法：&lt;br&gt; 1、先输入”$ git remote rm origin”命令，删除远程仓库内容。&lt;br&gt; 2、再输入”$ git remote add origin git@github.com:djqiang/gitdemo.git” 就不会报错了！&lt;br&gt;上述方法针对第一次将本地仓库推送到远程仓库时遇到这个问题的解决方法。&lt;br&gt;如果不想删除远程仓库内容，可以使用下面的方法，将本地仓库内容和远程仓库内容合并。&lt;br&gt;解决方法：&lt;br&gt; 1、先输入”$ git pull origin master”命令，将远程仓库内容pull到本地仓库。&lt;br&gt; 2、再输入”$ git push origin master”命令，即可。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;从远程库克隆&quot;&gt;&lt;a href=&quot;#从远程库克隆&quot; class=&quot;headerlink&quot; title=&quot;从远程库克隆&quot;&gt;&lt;/a&gt;从远程库克隆&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;登录GitHub,创建一个新的仓库，例如我的一个仓库，名字叫demo&lt;/li&gt;
-&lt;li&gt;找到新仓库的HTTPS/SSH地址并复制地址，如”git@github.com:xifengxx/demo.git”或”&lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;“&lt;/li&gt;
-&lt;li&gt;使用命令git clone克隆一个本地库&lt;blockquote&gt;
-&lt;p&gt;$ git clone git@github.com:xifengxx/demo.git&lt;br&gt;也可以使用命令：&lt;br&gt;$ git clone &lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;&lt;br&gt;Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。&lt;br&gt;使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;Git基础操作&quot;&gt;&lt;a href=&quot;#Git基础操作&quot; class=&quot;headerlink&quot; title=&quot;Git基础操作&quot;&gt;&lt;/a&gt;Git基础操作&lt;/h3&gt;&lt;h4 id=&quot;将文件添加到版本库&quot;&gt;&lt;a href=&quot;#将文件添加到版本库&quot; class=&quot;headerlink&quot; title=&quot;将文件添加到版本库&quot;&gt;&lt;/a&gt;将文件添加到版本库&lt;/h4&gt;&lt;p&gt;使用命令：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;git add:将文件添加到仓库。&lt;br&gt;命令：$ git add 文件名&lt;br&gt;将某个文件复制到当前目录，然后再使用这个命令。&lt;/li&gt;
-&lt;li&gt;git commit:将文件提交到仓库。&lt;br&gt;命令：$ git commit -m “xxx”&lt;br&gt;git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。&lt;br&gt;如：$ git commit -m “首次提交”&lt;br&gt;备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;注意事项&lt;/strong&gt;&lt;br&gt;将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。&lt;br&gt;关键是如何退出默认编辑器界面并重新返回到Git bash界面。&lt;br&gt;方法：&lt;br&gt;① 按ESC键，确定退出编辑模式。&lt;br&gt;② 然后输入”:wq”，即可返回Git界面。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;利用Github-Page-搭建网页Demo&quot;&gt;&lt;a href=&quot;#利用Github-Page-搭建网页Demo&quot; class=&quot;headerlink&quot; title=&quot;利用Github Page 搭建网页Demo&quot;&gt;&lt;/a&gt;利用Github Page 搭建网页Demo&lt;/h3&gt;&lt;p&gt;适用场景：&lt;br&gt;写了一些网页demo,想上传到网上查看效果，并做展示用途。不同于用Github搭建的个人博客。&lt;/p&gt;
-&lt;p&gt;方法：Github Page部署。&lt;br&gt;步骤：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;注册&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github账号&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;下载安装git.&lt;br&gt;msysgit是Windows版的Git。(下载地址)[&lt;a href=&quot;http://msysgit.github.io/]。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://msysgit.github.io/]。&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;登录Github，新建一个repository项目(这里使用project做项目名字)。&lt;/li&gt;
-&lt;li&gt;在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。&lt;br&gt;设置完成后，这个repository项目的展示地址变为：&lt;br&gt;&lt;a href=&quot;http://xifengxx.github.io/project&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;‘xifengxx’为我注册Github的账号名，project为repository项目名。&lt;br&gt;可以通过上面的网址来访问项目。&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;电脑里选定一个文件夹（这里是Git）放置Github上的项目project。&lt;br&gt;右键——“git bash here”,调出git命令界面，输入以下命令将project项目克隆到本地文件夹下。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git clone &lt;a href=&quot;https://github.com/xifengxx/project.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/project.git&lt;/a&gt;&lt;br&gt;这时本地Git文件夹下会多出一个文件夹Project。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;本地新建分支。&lt;br&gt;输入以下命令，在本地新建一个gh-pages分支并切换到gh-pages分支，这个分支是远程分支origin/gh-pages的镜像。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ cd project/&lt;br&gt;$ git checkout -b gh-pages origin/gh-pages&lt;br&gt;这时本地文件夹project里多出的文件，来自github上的gh-pages分支中的文件。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;执行以下命令，删除原有的gh-pages文件，并提交（commit）本次修改。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git rm -rf .&lt;br&gt;$ git add .&lt;br&gt;$ git commit -m “delete all files”&lt;br&gt;这时project里的文件都删除了。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;将自己的网页Demo文件复制粘贴到project文件夹里。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;将本地gh-pages中的网页文件同步到远程库的gh-pages中。&lt;br&gt;输入以下命令：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git add .&lt;br&gt;$ git commit -m “My design Demo”&lt;br&gt;$ git push origin gh-pages&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;输入第三行命令时，会有弹出框提示输入Github账号和密码，输入后等待片刻，当命令行提示”$”符号时，说明已经完成。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;浏览器输入网址访问：&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://xifengxx.github.io/project/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xifengxx.github.io/project/index.html&lt;/a&gt;&lt;br&gt;或 &lt;a href=&quot;http://xifengxx.github.io/project&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;此处的index.html为网页Demo中的文件。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/lijiayi/p/githubpages.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考资源&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;简明释义&quot;&gt;&lt;a href=&quot;#简明释义&quot; class=&quot;headerlink&quot; title=&quot;简明释义&quot;&gt;&lt;/a&gt;简明释义&lt;/h3&gt;&lt;h4 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Gi
-    
-    </summary>
-    
-      <category term="Git" scheme="http://yoursite.com/categories/Git/"/>
-    
-    
-      <category term="Git实战" scheme="http://yoursite.com/tags/Git%E5%AE%9E%E6%88%98/"/>
     
   </entry>
   
@@ -538,6 +333,119 @@
   </entry>
   
   <entry>
+    <title>Git实战教程</title>
+    <link href="http://yoursite.com/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/"/>
+    <id>http://yoursite.com/2016/04/05/git实战教程/</id>
+    <published>2016-04-05T11:09:51.000Z</published>
+    <updated>2016-04-07T01:13:28.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;简明释义&quot;&gt;&lt;a href=&quot;#简明释义&quot; class=&quot;headerlink&quot; title=&quot;简明释义&quot;&gt;&lt;/a&gt;简明释义&lt;/h3&gt;&lt;h4 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Git&lt;/h4&gt;&lt;p&gt;Git 是一个版本控制工具，是一个可以安装在你自己机器上的软件。&lt;br&gt;git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。&lt;/p&gt;
+&lt;h4 id=&quot;github&quot;&gt;&lt;a href=&quot;#github&quot; class=&quot;headerlink&quot; title=&quot;github&quot;&gt;&lt;/a&gt;github&lt;/h4&gt;&lt;p&gt;Git 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。&lt;br&gt;Github 首先是一个公司，&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github网站&lt;/a&gt;是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。&lt;/p&gt;
+&lt;h3 id=&quot;安装及初始化&quot;&gt;&lt;a href=&quot;#安装及初始化&quot; class=&quot;headerlink&quot; title=&quot;安装及初始化&quot;&gt;&lt;/a&gt;安装及初始化&lt;/h3&gt;&lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Windows上安装Git&lt;/strong&gt;&lt;br&gt;msysgit是Windows版的Git。&lt;br&gt;&lt;a href=&quot;http://msysgit.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;然后按默认选项安装即可。&lt;/p&gt;
+&lt;p&gt;安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！&lt;/p&gt;
+&lt;p&gt;安装完成后，还需要最后一步设置，在命令行输入：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git config –global user.name “Your Name”&lt;br&gt;$ git config –global user.email “email@example.com”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。&lt;/p&gt;
+&lt;h4 id=&quot;创建版本库&quot;&gt;&lt;a href=&quot;#创建版本库&quot; class=&quot;headerlink&quot; title=&quot;创建版本库&quot;&gt;&lt;/a&gt;创建版本库&lt;/h4&gt;&lt;p&gt;版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。&lt;/p&gt;
+&lt;p&gt;如何创建版本库？&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在电脑磁盘里的任意位置，创建一个空目录&lt;br&gt;方法1：直接在磁盘任意位置，右键-新建文件夹；&lt;br&gt;方法2：在git命令行里创建。&lt;br&gt;关于创建文件常用命令（Unix Linux命令）：&lt;br&gt;-mkdir&lt;br&gt;-cd        ：切换目录命令&lt;br&gt;–cd ..    : 切换到上一级目录。&lt;br&gt;如当前目录为e盘下的code目录，使用命令”cd ..”，会切换到e盘。&lt;br&gt;–cd e:    : 切换盘符。&lt;br&gt;如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。&lt;br&gt;–cd /     : 切换到根目录。&lt;br&gt;–cd 目录名：切换到具体目录。&lt;br&gt;如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。&lt;br&gt;如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。&lt;br&gt;-pwd       : 显示当前所在目录&lt;br&gt;-dir       : 显示当前目录下的所有文件&lt;br&gt;-mkdir     : 创建目录。&lt;br&gt;如当前在e盘下，需要在e盘下创建一个新目录”code1”,使用命令”mkdir code1”即可；&lt;br&gt;如果要在其他盘下创建目录，先使用cd命令定位到目标盘，然后再使用mkdir命令。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;通过git init命名把这个目录变成Git可以管理的仓库。&lt;br&gt;创建完目录后，在磁盘中找到该目录，右键–Git Bash Here即可定位到当前目录，或是通过上面的Linux命令来定位到目标目录。&lt;br&gt;在命令行输入命令”git init”，即成功创建Git仓库。&lt;br&gt;这时在当前目录下，会多出一个.git目录（如果没有，说明被隐藏了，需要在”工具-文件夹选项-查看”里设置隐藏属性为显示所有文件）。这个目录是Git来跟踪管理版本库的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;远程仓库&quot;&gt;&lt;a href=&quot;#远程仓库&quot; class=&quot;headerlink&quot; title=&quot;远程仓库&quot;&gt;&lt;/a&gt;远程仓库&lt;/h3&gt;&lt;h4 id=&quot;配置SSH-Key&quot;&gt;&lt;a href=&quot;#配置SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;配置SSH Key&quot;&gt;&lt;/a&gt;配置SSH Key&lt;/h4&gt;&lt;p&gt;目的：本地Git仓库与GitHub网站仓库之间实现同步传输及存储。&lt;br&gt;步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;需要注册一个GitHub账号。(注册地址)[&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com&lt;/a&gt;].&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;设置SSH Key.(本地Git仓库和GitHub仓库之间的传输是通过SSH加密的)&lt;br&gt;打开Git Bash,创建SSH Key.&lt;br&gt;输入命令：$ ssh-keygen -t rsa -c “youremail@examle.com”&lt;br&gt;将邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。&lt;br&gt;成功的话，会在用户主目录（我的是在”C:\Documents and Settings\Administrator”）里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件。（这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;登录&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub网站&lt;/a&gt;，打开”我的账号/Account settings”—“personal settings”—“SSH keys”，点击”New SSH key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;打开Git Bash，输入命令以下命令检测是否成功连接本机与GitHub。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ssh -T git@github.com&lt;br&gt;在遇到提示的情况下，输入”yes”即可。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;添加远程库&quot;&gt;&lt;a href=&quot;#添加远程库&quot; class=&quot;headerlink&quot; title=&quot;添加远程库&quot;&gt;&lt;/a&gt;添加远程库&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;登录GitHub,点击右上角的”+”号—“New repository”，创建新的Git仓库。&lt;/li&gt;
+&lt;li&gt;把本地仓库的内容推送到GitHub仓库。&lt;br&gt;① 打开GitHub上新建的repository仓库，找到HTTPS/SSH地址并复制地址，如”&lt;a href=&quot;https://github.com/xifengxx/demo.git&amp;quot;是我的一个仓库https地址。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&amp;quot;是我的一个仓库https地址。&lt;/a&gt;&lt;br&gt;② 本地仓库下运行命令&lt;blockquote&gt;
+&lt;p&gt;$ git remote add origin &lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;&lt;br&gt;添加后，远程仓库的名字就是origin(这是Git默认叫法，可以将origin改成其他的名字)&lt;br&gt;③ 继续运行命令&lt;br&gt;$ git push -u origin master&lt;br&gt;把本地仓库内容推送到远程，用git push命令。实际上是把当前分支master推送到远程。&lt;br&gt;由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。&lt;br&gt;推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样。&lt;br&gt;此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改：&lt;br&gt;$ git push origin master&lt;br&gt;④ 推送时，会弹出需要输入github账号及密码框，输入即可。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注意事项&lt;/strong&gt;&lt;br&gt;在第二步②时，输入命令”$ git remote add origin &lt;a href=&quot;https://github.com/xifengxx/demo.git&amp;quot;时，可能会报错。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&amp;quot;时，可能会报错。&lt;/a&gt;&lt;br&gt;错误信息：”fatal: remote origin already exists.……”&lt;br&gt;原因：远程仓库已经存在内容，与本地仓库推送内容冲突。&lt;br&gt;解决方法：&lt;br&gt; 1、先输入”$ git remote rm origin”命令，删除远程仓库内容。&lt;br&gt; 2、再输入”$ git remote add origin git@github.com:djqiang/gitdemo.git” 就不会报错了！&lt;br&gt;上述方法针对第一次将本地仓库推送到远程仓库时遇到这个问题的解决方法。&lt;br&gt;如果不想删除远程仓库内容，可以使用下面的方法，将本地仓库内容和远程仓库内容合并。&lt;br&gt;解决方法：&lt;br&gt; 1、先输入”$ git pull origin master”命令，将远程仓库内容pull到本地仓库。&lt;br&gt; 2、再输入”$ git push origin master”命令，即可。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;从远程库克隆&quot;&gt;&lt;a href=&quot;#从远程库克隆&quot; class=&quot;headerlink&quot; title=&quot;从远程库克隆&quot;&gt;&lt;/a&gt;从远程库克隆&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;登录GitHub,创建一个新的仓库，例如我的一个仓库，名字叫demo&lt;/li&gt;
+&lt;li&gt;找到新仓库的HTTPS/SSH地址并复制地址，如”git@github.com:xifengxx/demo.git”或”&lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;“&lt;/li&gt;
+&lt;li&gt;使用命令git clone克隆一个本地库&lt;blockquote&gt;
+&lt;p&gt;$ git clone git@github.com:xifengxx/demo.git&lt;br&gt;也可以使用命令：&lt;br&gt;$ git clone &lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;&lt;br&gt;Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。&lt;br&gt;使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Git基础操作&quot;&gt;&lt;a href=&quot;#Git基础操作&quot; class=&quot;headerlink&quot; title=&quot;Git基础操作&quot;&gt;&lt;/a&gt;Git基础操作&lt;/h3&gt;&lt;h4 id=&quot;将文件添加到版本库&quot;&gt;&lt;a href=&quot;#将文件添加到版本库&quot; class=&quot;headerlink&quot; title=&quot;将文件添加到版本库&quot;&gt;&lt;/a&gt;将文件添加到版本库&lt;/h4&gt;&lt;p&gt;使用命令：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;git add:将文件添加到仓库。&lt;br&gt;命令：$ git add 文件名&lt;br&gt;将某个文件复制到当前目录，然后再使用这个命令。&lt;/li&gt;
+&lt;li&gt;git commit:将文件提交到仓库。&lt;br&gt;命令：$ git commit -m “xxx”&lt;br&gt;git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。&lt;br&gt;如：$ git commit -m “首次提交”&lt;br&gt;备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;注意事项&lt;/strong&gt;&lt;br&gt;将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。&lt;br&gt;关键是如何退出默认编辑器界面并重新返回到Git bash界面。&lt;br&gt;方法：&lt;br&gt;① 按ESC键，确定退出编辑模式。&lt;br&gt;② 然后输入”:wq”，即可返回Git界面。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;利用Github-Page-搭建网页Demo&quot;&gt;&lt;a href=&quot;#利用Github-Page-搭建网页Demo&quot; class=&quot;headerlink&quot; title=&quot;利用Github Page 搭建网页Demo&quot;&gt;&lt;/a&gt;利用Github Page 搭建网页Demo&lt;/h3&gt;&lt;p&gt;适用场景：&lt;br&gt;写了一些网页demo,想上传到网上查看效果，并做展示用途。不同于用Github搭建的个人博客。&lt;/p&gt;
+&lt;p&gt;方法：Github Page部署。&lt;br&gt;步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;注册&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github账号&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;下载安装git.&lt;br&gt;msysgit是Windows版的Git。(下载地址)[&lt;a href=&quot;http://msysgit.github.io/]。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://msysgit.github.io/]。&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;登录Github，新建一个repository项目(这里使用project做项目名字)。&lt;/li&gt;
+&lt;li&gt;在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。&lt;br&gt;设置完成后，这个repository项目的展示地址变为：&lt;br&gt;&lt;a href=&quot;http://xifengxx.github.io/project&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;‘xifengxx’为我注册Github的账号名，project为repository项目名。&lt;br&gt;可以通过上面的网址来访问项目。&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;电脑里选定一个文件夹（这里是Git）放置Github上的项目project。&lt;br&gt;右键——“git bash here”,调出git命令界面，输入以下命令将project项目克隆到本地文件夹下。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git clone &lt;a href=&quot;https://github.com/xifengxx/project.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/project.git&lt;/a&gt;&lt;br&gt;这时本地Git文件夹下会多出一个文件夹Project。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;本地新建分支。&lt;br&gt;输入以下命令，在本地新建一个gh-pages分支并切换到gh-pages分支，这个分支是远程分支origin/gh-pages的镜像。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ cd project/&lt;br&gt;$ git checkout -b gh-pages origin/gh-pages&lt;br&gt;这时本地文件夹project里多出的文件，来自github上的gh-pages分支中的文件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;执行以下命令，删除原有的gh-pages文件，并提交（commit）本次修改。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git rm -rf .&lt;br&gt;$ git add .&lt;br&gt;$ git commit -m “delete all files”&lt;br&gt;这时project里的文件都删除了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将自己的网页Demo文件复制粘贴到project文件夹里。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;将本地gh-pages中的网页文件同步到远程库的gh-pages中。&lt;br&gt;输入以下命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ git add .&lt;br&gt;$ git commit -m “My design Demo”&lt;br&gt;$ git push origin gh-pages&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;输入第三行命令时，会有弹出框提示输入Github账号和密码，输入后等待片刻，当命令行提示”$”符号时，说明已经完成。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;浏览器输入网址访问：&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://xifengxx.github.io/project/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xifengxx.github.io/project/index.html&lt;/a&gt;&lt;br&gt;或 &lt;a href=&quot;http://xifengxx.github.io/project&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;此处的index.html为网页Demo中的文件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/lijiayi/p/githubpages.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考资源&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;简明释义&quot;&gt;&lt;a href=&quot;#简明释义&quot; class=&quot;headerlink&quot; title=&quot;简明释义&quot;&gt;&lt;/a&gt;简明释义&lt;/h3&gt;&lt;h4 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Gi
+    
+    </summary>
+    
+      <category term="Git" scheme="http://yoursite.com/categories/Git/"/>
+    
+    
+      <category term="Git实战" scheme="http://yoursite.com/tags/Git%E5%AE%9E%E6%88%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>如何通过Github Pages + hexo 搭建个人博客</title>
     <link href="http://yoursite.com/2016/03/13/%E9%80%9A%E8%BF%87Github%20Pages%20+%20Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://yoursite.com/2016/03/13/通过Github Pages + Hexo搭建博客/</id>
@@ -637,9 +545,9 @@
       <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Github Pages" scheme="http://yoursite.com/tags/Github-Pages/"/>
-    
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="Github Pages" scheme="http://yoursite.com/tags/Github-Pages/"/>
     
   </entry>
   
