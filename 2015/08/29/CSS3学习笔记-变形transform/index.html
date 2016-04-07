@@ -1,0 +1,917 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS3," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风Web前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="这节学习CSS3中的变形特性，主要涉及transform属性：
+变形–旋转 rotate()旋转rotate()函数通过指定的角度参数使元素相对原点进行旋转。它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为正值，元素相对原点中心顺时针旋转；如果这个值为负值，元素相对原点中心逆时针旋转。如下图所示：
+
+HTML代码：
+
+&amp;lt;div class=”wrapper”&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3学习笔记:变形transform">
+<meta property="og:url" content="http://yoursite.com/2015/08/29/CSS3学习笔记-变形transform/index.html">
+<meta property="og:site_name" content="西风Web前端">
+<meta property="og:description" content="这节学习CSS3中的变形特性，主要涉及transform属性：
+变形–旋转 rotate()旋转rotate()函数通过指定的角度参数使元素相对原点进行旋转。它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为正值，元素相对原点中心顺时针旋转；如果这个值为负值，元素相对原点中心逆时针旋转。如下图所示：
+
+HTML代码：
+
+&amp;lt;div class=”wrapper”&amp;gt">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画1.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画2.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-1.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-2.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-3.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-4.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-1.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-2.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-3.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-4.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-1.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-2.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-3.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-4.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/matrix-1.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-1.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-2.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-3.png">
+<meta property="og:updated_time" content="2016-04-07T08:09:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3学习笔记:变形transform">
+<meta name="twitter:description" content="这节学习CSS3中的变形特性，主要涉及transform属性：
+变形–旋转 rotate()旋转rotate()函数通过指定的角度参数使元素相对原点进行旋转。它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为正值，元素相对原点中心顺时针旋转；如果这个值为负值，元素相对原点中心逆时针旋转。如下图所示：
+
+HTML代码：
+
+&amp;lt;div class=”wrapper”&amp;gt">
+<meta name="twitter:image" content="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> CSS3学习笔记:变形transform | 西风Web前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风Web前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/demo" rel="section">
+            
+            作品DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS3学习笔记:变形transform
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-08-29T22:04:44+08:00" content="2015-08-29">
+              2015-08-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">Web前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/08/29/CSS3学习笔记-变形transform/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/29/CSS3学习笔记-变形transform/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/08/29/CSS3学习笔记-变形transform/" class="leancloud_visitors" data-flag-title="CSS3学习笔记:变形transform">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这节学习CSS3中的变形特性，主要涉及transform属性：</p>
+<h2 id="变形–旋转-rotate"><a href="#变形–旋转-rotate" class="headerlink" title="变形–旋转 rotate()"></a><strong>变形–旋转 rotate()</strong></h2><p><strong>旋转rotate()函数</strong>通过指定的角度参数使元素相对原点进行旋转。它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为<strong>正值</strong>，元素相对原点中心<strong>顺时针</strong>旋转；如果这个值为<strong>负值</strong>，元素相对原点中心<strong>逆时针</strong>旋转。如下图所示：</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画1.png" alt="变形与动画1"></a></p>
+<p><strong>HTML代码：</strong></p>
+<blockquote>
+<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
+<p>width: 200px;  height: 200px;</p>
+<p>border: 1px dotted red;</p>
+<p>margin: 100px auto;}</p>
+<p>.wrapper div {</p>
+<p>width: 200px;  height: 200px;  background: orange;</p>
+<p>-webkit-transform: rotate(45deg);</p>
+<p>transform: rotate(45deg);}<br><strong>演示结果<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画2.png" alt="变形与动画2"></a></strong></p>
+</blockquote>
+<h2 id="变形–扭曲-skew"><a href="#变形–扭曲-skew" class="headerlink" title="变形–扭曲 skew()"></a><strong>变形–扭曲 skew()</strong></h2><p>扭曲skew()函数能够让元素<strong>倾斜显示</strong>。它可以将一个对象以其中心位置围绕着<strong>X轴</strong>和<strong>Y轴</strong>按照一定的角度倾斜。这与rotate()函数的旋转不同，rotate()函数只是旋转，而不会改变元素的形状。skew()函数不会旋转，而只会改变元素的形状。</p>
+<p>(如果不理解扭曲，可参考<a href="http://www.zhangxinxu.com/study/201206/css3-transform-matrix-skew.html" title="CSS扭曲解释" target="_blank" rel="external">此处</a>，加强理解。)</p>
+<p><strong>Skew()具有三种情况：</strong></p>
+<p><strong>1、skew(x,y)使元素在水平和垂直方向同时扭曲</strong>（X轴和Y轴同时按一定的角度值进行扭曲变形）；<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-1.png" alt="skew-1"></a></p>
+<p>第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则值为0，也就是Y轴方向上无斜切。</p>
+<p><strong>2、skewX(x)仅使元素在水平方向扭曲变形</strong>（X轴扭曲变形）；<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-2.png" alt="skew-2"></a></p>
+<p><strong>3、skewY(y)仅使元素在垂直方向扭曲变形</strong>（Y轴扭曲变形）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-3.png" alt="skew-3"></a></p>
+<p><strong>示例演示：</strong></p>
+<p>通过skew（）函数将长方形变成平行四边形。</p>
+<p><strong>HTML代码：</strong></p>
+<blockquote>
+<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;我变成平形四边形&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
+<p>width: 300px;  height: 100px;</p>
+<p>border: 2px dotted red;</p>
+<p>margin: 30px auto;}</p>
+<p>.wrapper div {</p>
+<p>width: 300px;  height: 100px;</p>
+<p>line-height: 100px;</p>
+<p>text-align: center;</p>
+<p>color: #fff;</p>
+<p>background: orange;</p>
+<p>-webkit-transform: skew(45deg);</p>
+<p>-moz-transform:skew(45deg)</p>
+<p>transform:skew(45deg);}<br><strong>演示结果<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-4.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-4.png" alt="skew-4"></a></strong></p>
+</blockquote>
+<h2 id="变形–缩放-scale"><a href="#变形–缩放-scale" class="headerlink" title="变形–缩放 scale()"></a><strong>变形–缩放 scale()</strong></h2><p><strong>缩放 scale()函数**</strong> **让元素根据中心原点对对象进行缩放。</p>
+<p>缩放 scale 具有三种情况：</p>
+<p><strong>1、 scale(X,Y)使元素水平方向和垂直方向同时缩放</strong>（也就是X轴和Y轴同时缩放）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-1.png" alt="scale-1"></a></p>
+<p>例如：</p>
+<blockquote>
+<p>div:hover {</p>
+<p>-webkit-transform: scale(1.5,0.5);</p>
+<p>-moz-transform:scale(1.5,0.5)</p>
+<p>transform: scale(1.5,0.5);}<br>注意：Y是一个可选参数，如果没有设置Y值，则表示X，Y两个方向的缩放倍数是一样的。</p>
+</blockquote>
+<p><strong>2、scaleX(x)元素仅水平方向缩放</strong>（X轴缩放）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-2.png" alt="scale-2"></a></p>
+<p><strong>3、scaleY(y)元素仅垂直方向缩放</strong>（Y轴缩放）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-3.png" alt="scale-3"></a></p>
+<p><strong>HTML代码：</strong></p>
+<blockquote>
+<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;我将放大1.5倍&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
+<p>width: 200px;</p>
+<p>height: 200px;</p>
+<p>border:2px dashed red;</p>
+<p>margin: 100px auto;}</p>
+<p>.wrapper div {</p>
+<p>width: 200px;</p>
+<p>height: 200px;</p>
+<p>line-height: 200px;</p>
+<p>background: orange;</p>
+<p>text-align: center;  color: #fff;}</p>
+<p>.wrapper div:hover {</p>
+<p>opacity: .5;  -webkit-transform: scale(1.5);</p>
+<p>-moz-transform:scale(1.5)</p>
+<p>transform: scale(1.5);}<br><strong>演示结果<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-4.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-4.png" alt="scale-4"></a></strong></p>
+</blockquote>
+<p><strong>注意：</strong> <strong>scale()</strong>的取值默认的值为1，当值设置为<strong>0.01</strong>到<strong>0.99</strong>之间的任何值，作用使一个元素缩小；而任何大于或等于<strong>1.01</strong>的值，作用是让元素放大。</p>
+<h2 id="变形–位移-translate"><a href="#变形–位移-translate" class="headerlink" title="变形–位移 translate()"></a><strong>变形–位移 translate()</strong></h2><p><strong>translate()函数</strong>可以将元素向指定的方向移动，类似于position中的<strong>relative</strong>。或以简单的理解为，使用translate()函数，可以把元素从原来的位置移动，而不影响在X、Y轴上的任何Web组件。</p>
+<p><strong>translate我们分为三种情况：</strong></p>
+<p><strong>1、translate(x,y)水平方向和垂直方向同时移动</strong>（也就是X轴和Y轴同时移动）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-1.png" alt="translate-1"></a></p>
+<p><strong>2、translateX(x)仅水平方向移动</strong>（X轴移动）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-2.png" alt="translate-2"></a></p>
+<p><strong>3、translateY(Y)仅垂直方向移动</strong>（Y轴移动）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-3.png" alt="translate-3"></a></p>
+<p><strong>实例演示：</strong>通过translate()函数将元素向Y轴下方移动100px,X轴右方移动50px。</p>
+<p><strong>HTML代码：</strong></p>
+<blockquote>
+<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;我向右向下移动&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
+<p>width: 200px;  height: 200px;</p>
+<p>border: 2px dotted red;</p>
+<p>margin: 20px auto;}</p>
+<p>.wrapper div {</p>
+<p>width: 200px;  height: 200px;  line-height: 200px;</p>
+<p>text-align: center;  background: orange;</p>
+<p>color: #fff;  -webkit-transform:</p>
+<p>translate(50px,100px);</p>
+<p>-moz-transform:translate(50px,100px);</p>
+<p>transform: translate(50px,100px);}<br><strong>演示结果<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-4.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-4.png" alt="translate-4"></a></strong></p>
+</blockquote>
+<h2 id="变形–矩阵-matrix"><a href="#变形–矩阵-matrix" class="headerlink" title="变形–矩阵 matrix()"></a><strong>变形–矩阵 matrix()</strong></h2><p><strong>matrix()**</strong> **是一个含六个值的(a,b,c,d,e,f)变换矩阵，用来指定一个2D变换，相当于直接应用一个[a b c d e f]变换矩阵。就是基于水平方向（X轴）和垂直方向（Y轴）重新定位元素,此属性值使用涉及到数学中的矩阵，我在这里只是简单的说一下CSS3中的transform有这么一个属性值，如果需要深入了解，需要对数学矩阵有一定的知识。</p>
+<p>（想对Matrix深入理解，请<a href="http://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/" title="Matrix矩阵深入理解" target="_blank" rel="external">点击此处</a>：</p>
+<p><strong>示例演示：</strong>通过matrix()函数来模拟transform中translate()位移的效果。<br><strong>HTML代码：</strong></p>
+<blockquote>
+<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
+<p>width: 300px;</p>
+<p>height: 200px;</p>
+<p>border: 2px dotted red;</p>
+<p>margin: 40px auto;}</p>
+<p>.wrapper div {</p>
+<p>width:300px;</p>
+<p>height: 200px;</p>
+<p>background: orange;</p>
+<p>-webkit-transform: matrix(1,0,0,1,50,50);</p>
+<p>-moz-transform:matrix(1,0,0,1,50,50);</p>
+<p>transform: matrix(1,0,0,1,50,50);}<br><strong>演示结果：<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/matrix-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/matrix-1.png" alt="matrix-1"></a></strong></p>
+</blockquote>
+<h2 id="变形–原点-transform-origin"><a href="#变形–原点-transform-origin" class="headerlink" title="变形–原点 transform-origin"></a><strong>变形–原点 transform-origin</strong></h2><p>任何一个元素都有一个中心点，默认情况之下，其中心点是居于元素X轴和Y轴的50%处。如下图所示：<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-1.png" alt="transform-origin-1"></a></p>
+<p>在没有重置transform-origin改变元素原点位置的情况下，CSS变形进行的旋转、位移、缩放，扭曲等操作都是<strong>以元素自己中心位置进行变形</strong>。但很多时候，我们可以通过transform-origin来对元素进行原点位置改变，使元素原点不在元素的中心位置，以达到需要的原点位置。</p>
+<p>transform-origin取值和元素设置背景中的background-position取值类似，如下表所示：<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-2.png" alt="transform-origin-2"></a></p>
+<p><strong>示例展示：</strong></p>
+<p>通过transform-origin改变元素原点到左上角，然后进行顺时旋转45度。</p>
+<p><strong>HTML代码：</strong></p>
+<blockquote>
+<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;原点在默认位置处&lt;/div&gt;&lt;/div&gt;&lt;div class=”wrapper transform-origin”&gt;  &lt;div&gt;原点重置到左上角&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
+<p>width: 300px;  height: 300px;  float: left;</p>
+<p>margin: 100px;  border: 2px dotted red;</p>
+<p>line-height: 300px;  text-align: center;}</p>
+<p>.wrapper div {</p>
+<p>background: orange;</p>
+<p>-webkit-transform: rotate(45deg);</p>
+<p>transform: rotate(45deg);}</p>
+<p>.transform-origin div {</p>
+<p>-webkit-transform-origin: left top;</p>
+<p>transform-origin: left top;}<br><strong>演示结果：<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-3.png" alt="transform-origin-3"></a></strong></p>
+</blockquote>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechatpay.png" alt="Xifengxx wechat" style="width: 200px; max-width: 100%;"/>
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS3/" rel="tag">#CSS3</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/22/HTML5学习笔记（1）元素与标签结构/" rel="next" title="HTML5学习笔记（1）元素与标签结构">
+                <i class="fa fa-chevron-left"></i> HTML5学习笔记（1）元素与标签结构
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/26/CSS3 Flex布局（伸缩布局盒模型）学习/" rel="prev" title="CSS3 Flex布局（伸缩布局盒模型）学习">
+                CSS3 Flex布局（伸缩布局盒模型）学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/08/29/CSS3学习笔记-变形transform/"
+           data-title="CSS3学习笔记:变形transform" data-url="http://yoursite.com/2015/08/29/CSS3学习笔记-变形transform/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Xifengxx" />
+          <p class="site-author-name" itemprop="name">Xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变形–旋转-rotate"><span class="nav-number">1.</span> <span class="nav-text">变形–旋转 rotate()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变形–扭曲-skew"><span class="nav-number">2.</span> <span class="nav-text">变形–扭曲 skew()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变形–缩放-scale"><span class="nav-number">3.</span> <span class="nav-text">变形–缩放 scale()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变形–位移-translate"><span class="nav-number">4.</span> <span class="nav-text">变形–位移 translate()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变形–矩阵-matrix"><span class="nav-number">5.</span> <span class="nav-text">变形–矩阵 matrix()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变形–原点-transform-origin"><span class="nav-number">6.</span> <span class="nav-text">变形–原点 transform-origin</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

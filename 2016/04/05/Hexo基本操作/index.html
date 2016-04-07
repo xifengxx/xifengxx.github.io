@@ -89,7 +89,7 @@ npm install hexo-cli -g
 hexo -v
 
 如果出现">
-<meta property="og:updated_time" content="2016-04-07T03:56:08.000Z">
+<meta property="og:updated_time" content="2016-04-07T07:39:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo安装及部署">
 <meta name="twitter:description" content="配置SSH Key用SSH Key将本地git项目与远程GitHub建立联系。定位到目标文件夹，右键-Git Bash下输入命令：
@@ -434,6 +434,27 @@ hexo -v
 <li>hexo n == hexo new<br>还能组合使用，如：</li>
 <li>hexo d -g</li>
 </ul>
+<h3 id="将Wordpress博客文章迁移到Hexo"><a href="#将Wordpress博客文章迁移到Hexo" class="headerlink" title="将Wordpress博客文章迁移到Hexo"></a>将Wordpress博客文章迁移到Hexo</h3><p>如果您曾经是Wordpress 的用戶，可以使用hexo的插件把之前的文章转换成md 的无格式文件，从而迁移到Hexo博客上。<br>具体步骤如下：</p>
+<ol>
+<li>先从Wordpress后台导出需要的文章为XML格式。<br>具体位置：wordpress仪表盘—工具—导出—下载导出的文件<br>将下载后的xml格式文件保存到本地放置Hexo博客的文件夹下。</li>
+<li><p>安装hexo插件：hexo-migrator-wordpress<br>使用命令：</p>
+<blockquote>
+<p>$ npm install hexo-migrator-wordpress –save</p>
+</blockquote>
+</li>
+<li><p>使用hexo-migrator-wordpress插件将xml文件转换为md文件，使用命令：</p>
+<blockquote>
+<p>$ hexo migrate wordpress export.xml<br>(export.xml为从Wordpress里导出的xml文件名)</p>
+</blockquote>
+</li>
+</ol>
+<p>执行上述命令后，在本地hexo博客根目录下的source/_post目录内可以看到转换完成的博客文章。</p>
+<ol>
+<li>执行Hexo博客发布命令，将其发布的网站上。<blockquote>
+<p>hexo clean<br>hexo g<br>hexo d</p>
+</blockquote>
+</li>
+</ol>
 <h3 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h3><ol>
 <li><a href="http://sunwhut.com/2015/10/30/buildBlog/" target="_blank" rel="external">Sunwhut’s 博客</a> ☆☆☆☆☆推荐。</li>
 <li><a href="http://www.arao.me/2015/hexo-next-theme-optimize-seo/" target="_blank" rel="external">arao博客</a> :Hexo博客优化</li>
@@ -472,16 +493,16 @@ hexo -v
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/13/通过Github Pages + Hexo搭建博客/" rel="next" title="如何通过Github Pages + hexo 搭建个人博客">
-                <i class="fa fa-chevron-left"></i> 如何通过Github Pages + hexo 搭建个人博客
+              <a href="/2016/04/05/git实战教程/" rel="next" title="Git实战教程">
+                <i class="fa fa-chevron-left"></i> Git实战教程
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/05/git实战教程/" rel="prev" title="Git实战教程">
-                Git实战教程 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/06/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -554,7 +575,7 @@ hexo -v
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -562,7 +583,7 @@ hexo -v
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -571,7 +592,7 @@ hexo -v
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -647,7 +668,7 @@ hexo -v
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置SSH-Key"><span class="nav-number">1.</span> <span class="nav-text">配置SSH Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo安装"><span class="nav-number">2.</span> <span class="nav-text">Hexo安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo部署"><span class="nav-number">3.</span> <span class="nav-text">Hexo部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建博客文章："><span class="nav-number">4.</span> <span class="nav-text">新建博客文章：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建页面："><span class="nav-number">5.</span> <span class="nav-text">新建页面：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客文章页面预览"><span class="nav-number">6.</span> <span class="nav-text">博客文章页面预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将本地文件部署到GitHub"><span class="nav-number">7.</span> <span class="nav-text">将本地文件部署到GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-config-yml文件"><span class="nav-number">7.1.</span> <span class="nav-text">修改_config.yml文件</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deployment"><span class="nav-number"></span> <span class="nav-text">Deployment</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docs-https-hexo-io-docs-deployment-html"><span class="nav-number"></span> <span class="nav-text">Docs: https://hexo.io/docs/deployment.html</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将其deploy到仓库"><span class="nav-number">0.1.</span> <span class="nav-text">将其deploy到仓库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资源"><span class="nav-number">1.</span> <span class="nav-text">参考资源</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置SSH-Key"><span class="nav-number">1.</span> <span class="nav-text">配置SSH Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo安装"><span class="nav-number">2.</span> <span class="nav-text">Hexo安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo部署"><span class="nav-number">3.</span> <span class="nav-text">Hexo部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建博客文章："><span class="nav-number">4.</span> <span class="nav-text">新建博客文章：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建页面："><span class="nav-number">5.</span> <span class="nav-text">新建页面：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客文章页面预览"><span class="nav-number">6.</span> <span class="nav-text">博客文章页面预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将本地文件部署到GitHub"><span class="nav-number">7.</span> <span class="nav-text">将本地文件部署到GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-config-yml文件"><span class="nav-number">7.1.</span> <span class="nav-text">修改_config.yml文件</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deployment"><span class="nav-number"></span> <span class="nav-text">Deployment</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docs-https-hexo-io-docs-deployment-html"><span class="nav-number"></span> <span class="nav-text">Docs: https://hexo.io/docs/deployment.html</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将其deploy到仓库"><span class="nav-number">0.1.</span> <span class="nav-text">将其deploy到仓库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将Wordpress博客文章迁移到Hexo"><span class="nav-number">1.</span> <span class="nav-text">将Wordpress博客文章迁移到Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资源"><span class="nav-number">2.</span> <span class="nav-text">参考资源</span></a></li></ol></div>
             
           </div>
         </section>
