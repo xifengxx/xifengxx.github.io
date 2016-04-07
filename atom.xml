@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>西风Web前端</title>
-  <subtitle>在梦想面前，一切都是借口。</subtitle>
+  <subtitle>Web前端学习博客。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-07T03:21:20.000Z</updated>
+  <updated>2016-04-07T04:07:02.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://yoursite.com/2016/04/07/hexo-%E5%86%85%E7%BD%AE%E6%A0%87%E7%AD%BE/"/>
     <id>http://yoursite.com/2016/04/07/hexo-内置标签/</id>
     <published>2016-04-07T01:47:25.000Z</published>
-    <updated>2016-04-07T03:21:20.000Z</updated>
+    <updated>2016-04-07T04:07:02.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;标签(Tag Plugin)&lt;/strong&gt; 是 Hexo 提供的一种快速生成特定内容的方式。 在标准 Markdown 中，我们无法指定图片的大小，在这种情景下，我们即可使用标签来解决。 Hexo 内置来许多标签来帮助写作者可以更快的书写， 完整的标签列表 可以参考 &lt;a href=&quot;https://hexo.io/docs/tag-plugins.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo 官网&lt;/a&gt;。 另外，Hexo 也开放来接口给主题，使主题有可能提供给写作者更简便的写作方法。&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;strong&gt;标签(Tag Plugin)&lt;/strong&gt; 是 Hexo 提供的一种快速生成特定内容的方式。 在标准 Markdown 中，我们无法指定图片的大小，在这种情景下，我们即可使用标签来解决。 Hexo 内置来许多标签来帮助写作者可以更快的书写， 完整的标签列表 可以参考 &lt;a href=&quot;https://hexo.io/docs/tag-plugins.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo 官网&lt;/a&gt;。 另外，Hexo 也开放来接口给主题，使主题有可能提供给写作者更简便的写作方法。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;文字引用&quot;&gt;&lt;a href=&quot;#文字引用&quot; class=&quot;headerlink&quot; title=&quot;文字引用&quot;&gt;&lt;/a&gt;文字引用&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote [author[, source]] [link] [source_link_title] %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;content&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;以下为文字引用&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscin……(中间为文本内容)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;以下为书籍引用：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote David Levithan, Wide Awake %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Do not just seek happiness for yourself. Seek happiness hrough mercy.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -35,7 +35,7 @@
 &lt;p&gt;效果示例：&lt;br&gt;&lt;img src=&quot;http://theme-next.iissnan.com/uploads/tags/full-image.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;如何设置阅读全文&quot;&gt;&lt;a href=&quot;#如何设置阅读全文&quot; class=&quot;headerlink&quot; title=&quot;如何设置阅读全文&quot;&gt;&lt;/a&gt;如何设置阅读全文&lt;/h3&gt;&lt;p&gt;在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。 NexT 提供三种方式来控制文章在首页的显示方式。 也就是说，在首页显示文章的摘录并显示&lt;strong&gt;阅读全文&lt;/strong&gt;按钮，可以通过以下方法：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;在文章中使用&lt;code&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/code&gt;手动进行截断，Hexo 提供的方式 推荐&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; 以上是文章摘要&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!--more--&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; 以下是余下全文&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;li&gt;在文章中使用’’more’’手动进行截断，Hexo 提供的方式 推荐&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; 以上是文章摘要&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!--more--&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; 以下是余下全文&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;more以上內容即是文章摘要，在主页显示，more以下內容点击”Read More”链接打开全文才显示。&lt;/p&gt;
@@ -47,25 +47,13 @@
 &lt;p&gt;默认截取的长度为 150 字符，可以根据需要自行设定&lt;/p&gt;
 &lt;p&gt;建议使用第一种方式，除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。&lt;/p&gt;
 &lt;h3 id=&quot;插入视频&quot;&gt;&lt;a href=&quot;#插入视频&quot; class=&quot;headerlink&quot; title=&quot;插入视频&quot;&gt;&lt;/a&gt;插入视频&lt;/h3&gt;&lt;p&gt;如插人YouTube视频&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% youtube video_id %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;示例：&lt;br&gt;&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/video_id&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
-</content>
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;HTML&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;iframe height=&quot;498&quot; width=&quot;510&quot; src=&quot;http://player.youku.com/embed/XMTMyMzc4OTIxNg==&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;标签(Tag Plugin)&lt;/strong&gt; 是 Hexo 提供的一种快速生成特定内容的方式。 在标准 Markdown 中，我们无法指定图片的大小，在这种情景下，我们即可使用标签来解决。 Hexo 内置来许多标签来帮助写作者可以更快的书写， 完整的标签列表 可以参考 &lt;a href=&quot;https://hexo.io/docs/tag-plugins.html&quot;&gt;Hexo 官网&lt;/a&gt;。 另外，Hexo 也开放来接口给主题，使主题有可能提供给写作者更简便的写作方法。&lt;/p&gt;
-&lt;h3 id=&quot;文字引用&quot;&gt;&lt;a href=&quot;#文字引用&quot; class=&quot;headerlink&quot; title=&quot;文字引用&quot;&gt;&lt;/a&gt;文字引用&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote [author[, source]] [link] [source_link_title] %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;content&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;以下为文字引用&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscin……(中间为文本内容)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;以下为书籍引用：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote David Levithan, Wide Awake %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Do not just seek happiness for yourself. Seek happiness hrough mercy.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;以下为网页文字引用：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/welcome-to-island-marketing.html Welcome to Island Marketing %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Every interaction is both precious and an opportunity to delight.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% endblockquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;文本居中引用&quot;&gt;&lt;a href=&quot;#文本居中引用&quot; class=&quot;headerlink&quot; title=&quot;文本居中引用&quot;&gt;&lt;/a&gt;文本居中引用&lt;/h3&gt;&lt;p&gt;此标签将生成一个带上下分割线的引用，同时引用内文本将自动居中。 文本居中时，多行文本若长度不等，视觉上会显得不对称，因此建议在引用单行文本的场景下使用。 例如作为文章开篇引用 或者 结束语之前的总结引用。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;使用方式&lt;/strong&gt;&lt;br&gt;HTML方式：使用这种方式时，给 img 添加属性 class=”blockquote-center” 即可。&lt;br&gt;标签方式：使用 centerquote 或者 简写 cq。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 其中 class=&amp;quot;blockquote-center&amp;quot; 是必须的 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;blockquote class=&amp;quot;blockquote-center&amp;quot;&amp;gt;blah blah blah&amp;lt;/blockquote&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 标签 方式，要求NexT版本在0.4.5或以上 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% centerquote %&amp;#125;blah blah blah&amp;#123;% endcenterquote %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!-- 标签别名 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;% cq %&amp;#125; blah blah blah &amp;#123;% endcq %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;效果示例：&lt;br&gt;&lt;img src=&quot;http://theme-next.iissnan.com/uploads/tags/blockquote-center.png&quot; alt=&quot;&quot;&gt; &lt;/p&gt;
-&lt;h3 id=&quot;图片容器宽度限制的图片&quot;&gt;&lt;a href=&quot;#图片容器宽度限制的图片&quot; class=&quot;headerlink&quot; title=&quot;图片容器宽度限制的图片&quot;&gt;&lt;/a&gt;图片容器宽度限制的图片&lt;/h3&gt;&lt;p&gt;当使用此标签引用图片时，图片将自动扩大 26%，并突破文章容器的宽度。 此标签使用于需要突出显示的图片, 图片的扩大与容器的偏差从视觉上提升图片的吸引力。 此标签有两种调用方式（详细参看底下示例）：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;使用方式&lt;/strong&gt;&lt;br&gt;HTML方式：使用这种方式时，为 img 添加属性 class=”full-image”即可。&lt;br&gt;标签方式：使用 fullimage 或者 简写 fi， 并传递图片地址、 alt 和 title 属性即可。 属性之间以逗号分隔。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!-- 其中 class=&amp;quot;full-image&amp;quot; 是必须的 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;img src=&amp;quot;/image-url&amp;quot; class=&amp;quot;full-image&amp;quot; /&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!-- 标签 方式，要求版本在0.4.5或以上 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;#123;% fullimage /image-url, alt, title %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;lt;!-- 别名 --&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; &amp;#123;% fi /image-url, alt, title %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;效果示例：&lt;br&gt;&lt;img src=&quot;http://theme-next.iissnan.com/uploads/tags/full-image.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;如何设置阅读全文&quot;&gt;&lt;a href=&quot;#如何设置阅读全文&quot; class=&quot;headerlink&quot; title=&quot;如何设置阅读全文&quot;&gt;&lt;/a&gt;如何设置阅读全文&lt;/h3&gt;&lt;p&gt;在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。 NexT 提供三种方式来控制文章在首页的显示方式。 也就是说，在首页显示文章的摘录并显示&lt;strong&gt;阅读全文&lt;/strong&gt;按钮，可以通过以下方法：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在文章中使用&lt;code&gt;
+      &lt;p&gt;&lt;strong&gt;标签(Tag Plugin)&lt;/strong&gt; 是 Hexo 提供的一种快速生成特定内容的方式。 在标准 Markdown 中，我们无法指定图片的大小，在这种情景下，我们即可使用标签来解决。 Hexo 内置来许多标签来帮助写作者可以更快的书写， 完整的标签列表 可以参考 &lt;a href=&quot;https://hexo.io/docs/tag-plugins.html&quot;&gt;Hexo 官网&lt;/a&gt;。 另外，Hexo 也开放来接口给主题，使主题有可能提供给写作者更简便的写作方法。&lt;br&gt;
     
     </summary>
     
@@ -199,7 +187,7 @@
     <link href="http://yoursite.com/2016/04/05/Hexo%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
     <id>http://yoursite.com/2016/04/05/Hexo基本操作/</id>
     <published>2016-04-05T11:09:51.000Z</published>
-    <updated>2016-04-07T02:52:38.000Z</updated>
+    <updated>2016-04-07T03:56:08.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;配置SSH-Key&quot;&gt;&lt;a href=&quot;#配置SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;配置SSH Key&quot;&gt;&lt;/a&gt;配置SSH Key&lt;/h3&gt;&lt;p&gt;用SSH Key将本地git项目与远程GitHub建立联系。&lt;br&gt;定位到目标文件夹，右键-Git Bash下输入命令：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -230,9 +218,8 @@
 &lt;li&gt;etc…&lt;br&gt;categories: hexo&lt;br&gt;description: #你对文章的描述，可省略&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;此处为正文内容&lt;br&gt;以上为文章摘要&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;以下是余下全文&lt;/p&gt;
+&lt;p&gt;此处为正文内容&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;more以上內容即是文章摘要，在主页显示，more以下內容点击”Read More”链接打开全文才显示。&lt;/p&gt;
 &lt;h3 id=&quot;新建页面：&quot;&gt;&lt;a href=&quot;#新建页面：&quot; class=&quot;headerlink&quot; title=&quot;新建页面：&quot;&gt;&lt;/a&gt;新建页面：&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;hexo new page “页面名称”&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -292,36 +279,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;配置SSH-Key&quot;&gt;&lt;a href=&quot;#配置SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;配置SSH Key&quot;&gt;&lt;/a&gt;配置SSH Key&lt;/h3&gt;&lt;p&gt;用SSH Key将本地git项目与远程GitHub建立联系。&lt;br&gt;定位到目标文件夹，右键-Git Bash下输入命令：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ssh -T git@github.com&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;Hexo安装&quot;&gt;&lt;a href=&quot;#Hexo安装&quot; class=&quot;headerlink&quot; title=&quot;Hexo安装&quot;&gt;&lt;/a&gt;Hexo安装&lt;/h3&gt;&lt;p&gt;首先要安装好Git 和Node.js软件。&lt;br&gt;安装完后，打开Git Bash，输入命令：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;npm install hexo-cli -g&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;通过以下命令来确认Hexo是否安装成功：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;hexo -v&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;如果出现类似内容，则说明安装成功：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;hexo-cli: 1.0.1&lt;br&gt;os: Windows_NT 5.1.2600 win32 ia32&lt;br&gt;http_parser: 2.5.0&lt;br&gt;node: 4.2.4&lt;br&gt;v8: 4.5.103.35&lt;br&gt;uv: 1.7.5&lt;br&gt;zlib: 1.2.8&lt;br&gt;ares: 1.10.1-DEV&lt;br&gt;icu: 56.1&lt;br&gt;modules: 46&lt;br&gt;openssl: 1.0.2e&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;Hexo部署&quot;&gt;&lt;a href=&quot;#Hexo部署&quot; class=&quot;headerlink&quot; title=&quot;Hexo部署&quot;&gt;&lt;/a&gt;Hexo部署&lt;/h3&gt;&lt;p&gt;在目标文件夹下，Git Bash命令：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;hexo init&lt;br&gt;npm install&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;新建博客文章：&quot;&gt;&lt;a href=&quot;#新建博客文章：&quot; class=&quot;headerlink&quot; title=&quot;新建博客文章：&quot;&gt;&lt;/a&gt;新建博客文章：&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;hexo new “文章标题”&lt;br&gt;一个博文内容包括以下几部分：&lt;br&gt;title: 如何通过Github Pages + hexo 搭建个人博客&lt;br&gt;date: 2016-03-13 00:09:51&lt;br&gt;tags: &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;标签1&lt;/li&gt;
-&lt;li&gt;标签2&lt;/li&gt;
-&lt;li&gt;标签3&lt;/li&gt;
-&lt;li&gt;etc…&lt;br&gt;categories: hexo&lt;br&gt;description: #你对文章的描述，可省略&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;此处为正文内容&lt;br&gt;以上为文章摘要&lt;br&gt;
+      &lt;h3 id=&quot;配置SSH-Key&quot;&gt;&lt;a href=&quot;#配置SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;配置SSH Key&quot;&gt;&lt;/a&gt;配置SSH Key&lt;/h3&gt;&lt;p&gt;用SSH Key将本地git项目与远程GitHub建立联系。&lt;br&gt;定位到目标文件夹
     
     </summary>
     

@@ -59,15 +59,15 @@
 
 
 
-<meta name="description" content="西风潇潇">
+<meta name="description" content="在梦想面前，一切都是借口。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="西风Web前端">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="西风Web前端">
-<meta property="og:description" content="西风潇潇">
+<meta property="og:description" content="在梦想面前，一切都是借口。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="西风Web前端">
-<meta name="twitter:description" content="西风潇潇">
+<meta name="twitter:description" content="在梦想面前，一切都是借口。">
 
 
 
@@ -132,7 +132,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">在梦想面前，一切都是借口。</p>
+  <p class="site-subtitle">Web前端学习博客。</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -321,20 +321,7 @@
 
       
         
-          <p><strong>标签(Tag Plugin)</strong> 是 Hexo 提供的一种快速生成特定内容的方式。 在标准 Markdown 中，我们无法指定图片的大小，在这种情景下，我们即可使用标签来解决。 Hexo 内置来许多标签来帮助写作者可以更快的书写， 完整的标签列表 可以参考 <a href="https://hexo.io/docs/tag-plugins.html">Hexo 官网</a>。 另外，Hexo 也开放来接口给主题，使主题有可能提供给写作者更简便的写作方法。</p>
-<h3 id="文字引用"><a href="#文字引用" class="headerlink" title="文字引用"></a>文字引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-<p>以下为文字引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote %&#125;</span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipiscin……(中间为文本内容)</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以下为书籍引用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote David Levithan, Wide Awake %&#125;</span><br><span class="line">Do not just seek happiness for yourself. Seek happiness hrough mercy.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以下为网页文字引用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/welcome-to-island-marketing.html Welcome to Island Marketing %&#125;</span><br><span class="line">Every interaction is both precious and an opportunity to delight.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="文本居中引用"><a href="#文本居中引用" class="headerlink" title="文本居中引用"></a>文本居中引用</h3><p>此标签将生成一个带上下分割线的引用，同时引用内文本将自动居中。 文本居中时，多行文本若长度不等，视觉上会显得不对称，因此建议在引用单行文本的场景下使用。 例如作为文章开篇引用 或者 结束语之前的总结引用。</p>
-<p><strong>使用方式</strong><br>HTML方式：使用这种方式时，给 img 添加属性 class=”blockquote-center” 即可。<br>标签方式：使用 centerquote 或者 简写 cq。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;</span><br><span class="line">&lt;!-- 其中 class=&quot;blockquote-center&quot; 是必须的 --&gt;</span><br><span class="line">&lt;blockquote class=&quot;blockquote-center&quot;&gt;blah blah blah&lt;/blockquote&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 标签 方式，要求NexT版本在0.4.5或以上 --&gt;</span><br><span class="line">&#123;% centerquote %&#125;blah blah blah&#123;% endcenterquote %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 标签别名 --&gt;</span><br><span class="line">&#123;% cq %&#125; blah blah blah &#123;% endcq %&#125;</span><br></pre></td></tr></table></figure></p>
-<p>效果示例：<br><img src="http://theme-next.iissnan.com/uploads/tags/blockquote-center.png" alt=""> </p>
-<h3 id="图片容器宽度限制的图片"><a href="#图片容器宽度限制的图片" class="headerlink" title="图片容器宽度限制的图片"></a>图片容器宽度限制的图片</h3><p>当使用此标签引用图片时，图片将自动扩大 26%，并突破文章容器的宽度。 此标签使用于需要突出显示的图片, 图片的扩大与容器的偏差从视觉上提升图片的吸引力。 此标签有两种调用方式（详细参看底下示例）：</p>
-<p><strong>使用方式</strong><br>HTML方式：使用这种方式时，为 img 添加属性 class=”full-image”即可。<br>标签方式：使用 fullimage 或者 简写 fi， 并传递图片地址、 alt 和 title 属性即可。 属性之间以逗号分隔。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;</span><br><span class="line">&gt; &lt;!-- 其中 class=&quot;full-image&quot; 是必须的 --&gt;</span><br><span class="line">&gt; &lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&gt; &lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;</span><br><span class="line">&gt; &#123;% fullimage /image-url, alt, title %&#125;</span><br><span class="line"></span><br><span class="line">&gt; &lt;!-- 别名 --&gt;</span><br><span class="line">&gt; &#123;% fi /image-url, alt, title %&#125;</span><br></pre></td></tr></table></figure></p>
-<p>效果示例：<br><img src="http://theme-next.iissnan.com/uploads/tags/full-image.jpg" alt=""></p>
-<h3 id="如何设置阅读全文"><a href="#如何设置阅读全文" class="headerlink" title="如何设置阅读全文"></a>如何设置阅读全文</h3><p>在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。 NexT 提供三种方式来控制文章在首页的显示方式。 也就是说，在首页显示文章的摘录并显示<strong>阅读全文</strong>按钮，可以通过以下方法：</p>
-<ol>
-<li>在文章中使用<code>
+          <p><strong>标签(Tag Plugin)</strong> 是 Hexo 提供的一种快速生成特定内容的方式。 在标准 Markdown 中，我们无法指定图片的大小，在这种情景下，我们即可使用标签来解决。 Hexo 内置来许多标签来帮助写作者可以更快的书写， 完整的标签列表 可以参考 <a href="https://hexo.io/docs/tag-plugins.html">Hexo 官网</a>。 另外，Hexo 也开放来接口给主题，使主题有可能提供给写作者更简便的写作方法。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/07/hexo-内置标签/#more" rel="contents">
               阅读全文 &raquo;
@@ -806,36 +793,16 @@
 
       
         
-          <h3 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h3><p>用SSH Key将本地git项目与远程GitHub建立联系。<br>定位到目标文件夹，右键-Git Bash下输入命令：</p>
-<blockquote>
-<p>ssh -T git@github.com</p>
-</blockquote>
-<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p>首先要安装好Git 和Node.js软件。<br>安装完后，打开Git Bash，输入命令：</p>
-<blockquote>
-<p>npm install hexo-cli -g</p>
-</blockquote>
-<p>通过以下命令来确认Hexo是否安装成功：</p>
-<blockquote>
-<p>hexo -v</p>
-</blockquote>
-<p>如果出现类似内容，则说明安装成功：</p>
-<blockquote>
-<p>hexo-cli: 1.0.1<br>os: Windows_NT 5.1.2600 win32 ia32<br>http_parser: 2.5.0<br>node: 4.2.4<br>v8: 4.5.103.35<br>uv: 1.7.5<br>zlib: 1.2.8<br>ares: 1.10.1-DEV<br>icu: 56.1<br>modules: 46<br>openssl: 1.0.2e</p>
-</blockquote>
-<h3 id="Hexo部署"><a href="#Hexo部署" class="headerlink" title="Hexo部署"></a>Hexo部署</h3><p>在目标文件夹下，Git Bash命令：</p>
-<blockquote>
-<p>hexo init<br>npm install</p>
-</blockquote>
-<h3 id="新建博客文章："><a href="#新建博客文章：" class="headerlink" title="新建博客文章："></a>新建博客文章：</h3><blockquote>
-<p>hexo new “文章标题”<br>一个博文内容包括以下几部分：<br>title: 如何通过Github Pages + hexo 搭建个人博客<br>date: 2016-03-13 00:09:51<br>tags: </p>
-<ul>
-<li>标签1</li>
-<li>标签2</li>
-<li>标签3</li>
-<li>etc…<br>categories: hexo<br>description: #你对文章的描述，可省略</li>
-</ul>
-<hr>
-<p>此处为正文内容<br>以上为文章摘要<br>
+          
+          配置SSH Key用SSH Key将本地git项目与远程GitHub建立联系。定位到目标文件夹，右键-Git Bash下输入命令：
+
+ssh -T git@github.com
+
+Hexo安装首先要安装好Git 和Node.js软件。安装完后，打开Git Bash，输入命令：
+
+npm instal
+          ...
+
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/05/Hexo基本操作/#more" rel="contents">
               阅读全文 &raquo;
@@ -1172,7 +1139,7 @@ githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作
                src="/uploads/avatar.png"
                alt="Xifengxx" />
           <p class="site-author-name" itemprop="name">Xifengxx</p>
-          <p class="site-description motion-element" itemprop="description">西风潇潇</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
