@@ -1,0 +1,1529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[hexo 内置标签]]></title>
+      <url>http://xifengxx.github.io/2016/04/07/hexo-%E5%86%85%E7%BD%AE%E6%A0%87%E7%AD%BE/</url>
+      <content type="html"><![CDATA[<p><strong>标签(Tag Plugin)</strong> 是 Hexo 提供的一种快速生成特定内容的方式。 在标准 Markdown 中，我们无法指定图片的大小，在这种情景下，我们即可使用标签来解决。 Hexo 内置来许多标签来帮助写作者可以更快的书写， 完整的标签列表 可以参考 <a href="https://hexo.io/docs/tag-plugins.html" target="_blank" rel="external">Hexo 官网</a>。 另外，Hexo 也开放来接口给主题，使主题有可能提供给写作者更简便的写作方法。<br><a id="more"></a></p>
+<h3 id="文字引用"><a href="#文字引用" class="headerlink" title="文字引用"></a>文字引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+<p>以下为文字引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote %&#125;</span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipiscin……(中间为文本内容)</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以下为书籍引用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote David Levithan, Wide Awake %&#125;</span><br><span class="line">Do not just seek happiness for yourself. Seek happiness hrough mercy.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>以下为网页文字引用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/welcome-to-island-marketing.html Welcome to Island Marketing %&#125;</span><br><span class="line">Every interaction is both precious and an opportunity to delight.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="文本居中引用"><a href="#文本居中引用" class="headerlink" title="文本居中引用"></a>文本居中引用</h3><p>此标签将生成一个带上下分割线的引用，同时引用内文本将自动居中。 文本居中时，多行文本若长度不等，视觉上会显得不对称，因此建议在引用单行文本的场景下使用。 例如作为文章开篇引用 或者 结束语之前的总结引用。</p>
+<p><strong>使用方式</strong><br>HTML方式：使用这种方式时，给 img 添加属性 class=”blockquote-center” 即可。<br>标签方式：使用 centerquote 或者 简写 cq。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;</span><br><span class="line">&lt;!-- 其中 class=&quot;blockquote-center&quot; 是必须的 --&gt;</span><br><span class="line">&lt;blockquote class=&quot;blockquote-center&quot;&gt;blah blah blah&lt;/blockquote&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 标签 方式，要求NexT版本在0.4.5或以上 --&gt;</span><br><span class="line">&#123;% centerquote %&#125;blah blah blah&#123;% endcenterquote %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 标签别名 --&gt;</span><br><span class="line">&#123;% cq %&#125; blah blah blah &#123;% endcq %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>效果示例：<br><img src="http://theme-next.iissnan.com/uploads/tags/blockquote-center.png" alt=""> </p>
+<h3 id="图片容器宽度限制的图片"><a href="#图片容器宽度限制的图片" class="headerlink" title="图片容器宽度限制的图片"></a>图片容器宽度限制的图片</h3><p>当使用此标签引用图片时，图片将自动扩大 26%，并突破文章容器的宽度。 此标签使用于需要突出显示的图片, 图片的扩大与容器的偏差从视觉上提升图片的吸引力。 此标签有两种调用方式（详细参看底下示例）：</p>
+<p><strong>使用方式</strong><br>HTML方式：使用这种方式时，为 img 添加属性 class=”full-image”即可。<br>标签方式：使用 fullimage 或者 简写 fi， 并传递图片地址、 alt 和 title 属性即可。 属性之间以逗号分隔。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 --&gt;</span><br><span class="line">&gt; &lt;!-- 其中 class=&quot;full-image&quot; 是必须的 --&gt;</span><br><span class="line">&gt; &lt;img src=&quot;/image-url&quot; class=&quot;full-image&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&gt; &lt;!-- 标签 方式，要求版本在0.4.5或以上 --&gt;</span><br><span class="line">&gt; &#123;% fullimage /image-url, alt, title %&#125;</span><br><span class="line"></span><br><span class="line">&gt; &lt;!-- 别名 --&gt;</span><br><span class="line">&gt; &#123;% fi /image-url, alt, title %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>效果示例：<br><img src="http://theme-next.iissnan.com/uploads/tags/full-image.jpg" alt=""></p>
+<h3 id="如何设置阅读全文"><a href="#如何设置阅读全文" class="headerlink" title="如何设置阅读全文"></a>如何设置阅读全文</h3><p>在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。 NexT 提供三种方式来控制文章在首页的显示方式。 也就是说，在首页显示文章的摘录并显示<strong>阅读全文</strong>按钮，可以通过以下方法：</p>
+<ol>
+<li>在文章中使用’’more’’手动进行截断，Hexo 提供的方式 推荐<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; 以上是文章摘要</span><br><span class="line">&gt; &lt;!--more--&gt;</span><br><span class="line">&gt; 以下是余下全文</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>more以上內容即是文章摘要，在主页显示，more以下內容点击”Read More”链接打开全文才显示。</p>
+<ol>
+<li>在文章的 front-matter 中添加 description，并提供文章摘录</li>
+<li>自动形成摘要，在 主题配置文件 中添加：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">enable: true</span><br><span class="line">length: 150</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>默认截取的长度为 150 字符，可以根据需要自行设定</p>
+<p>建议使用第一种方式，除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。</p>
+<h3 id="插入视频"><a href="#插入视频" class="headerlink" title="插入视频"></a>插入视频</h3><p>如插人YouTube视频<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% youtube video_id %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如需插入其他视频网站视频，直接插入其分享代码即可。<br>如插入一个优酷视频的分享代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;embed src=&quot;http://player.youku.com/player.php/sid/XMTMyMzc4OTIxNg==/v.swf&quot; allowFullScreen=&quot;true&quot; quality=&quot;high&quot; width=&quot;480&quot; height=&quot;400&quot; align=&quot;middle&quot; allowScriptAccess=&quot;always&quot; type=&quot;application/x-shockwave-flash&quot;&gt;&lt;/embed&gt;</span><br></pre></td></tr></table></figure></p>
+<p>效果如下：</p>
+<embed src="http://player.youku.com/player.php/sid/XMTMyMzc4OTIxNg==/v.swf" allowfullscreen="true" quality="high" width="480" height="400" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo安装及部署]]></title>
+      <url>http://xifengxx.github.io/2016/04/05/Hexo%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+      <content type="html"><![CDATA[<h3 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h3><p>用SSH Key将本地git项目与远程GitHub建立联系。<br>定位到目标文件夹，右键-Git Bash下输入命令：</p>
+<blockquote>
+<p>ssh -T git@github.com</p>
+</blockquote>
+<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p>首先要安装好Git 和Node.js软件。<br>安装完后，打开Git Bash，输入命令：</p>
+<blockquote>
+<p>npm install hexo-cli -g</p>
+</blockquote>
+<p>通过以下命令来确认Hexo是否安装成功：</p>
+<blockquote>
+<p>hexo -v</p>
+</blockquote>
+<p>如果出现类似内容，则说明安装成功：</p>
+<blockquote>
+<p>hexo-cli: 1.0.1<br>os: Windows_NT 5.1.2600 win32 ia32<br>http_parser: 2.5.0<br>node: 4.2.4<br>v8: 4.5.103.35<br>uv: 1.7.5<br>zlib: 1.2.8<br>ares: 1.10.1-DEV<br>icu: 56.1<br>modules: 46<br>openssl: 1.0.2e</p>
+</blockquote>
+<h3 id="Hexo部署"><a href="#Hexo部署" class="headerlink" title="Hexo部署"></a>Hexo部署</h3><p>在目标文件夹下，Git Bash命令：</p>
+<blockquote>
+<p>hexo init<br>npm install</p>
+</blockquote>
+<h3 id="新建博客文章："><a href="#新建博客文章：" class="headerlink" title="新建博客文章："></a>新建博客文章：</h3><blockquote>
+<p>hexo new “文章标题”<br>一个博文内容包括以下几部分：<br>title: 如何通过Github Pages + hexo 搭建个人博客<br>date: 2016-03-13 00:09:51<br>tags: </p>
+<ul>
+<li>标签1</li>
+<li>标签2</li>
+<li>标签3</li>
+<li>etc…<br>categories: hexo<br>description: #你对文章的描述，可省略</li>
+</ul>
+<hr>
+<p>此处为正文内容</p>
+</blockquote>
+<h3 id="新建页面："><a href="#新建页面：" class="headerlink" title="新建页面："></a>新建页面：</h3><blockquote>
+<p>hexo new page “页面名称”</p>
+</blockquote>
+<h3 id="博客文章页面预览"><a href="#博客文章页面预览" class="headerlink" title="博客文章页面预览"></a>博客文章页面预览</h3><p>使用以下命令启动本地服务器</p>
+<blockquote>
+<p>hexo server</p>
+</blockquote>
+<p>提示信息：</p>
+<blockquote>
+<p>INFO  Start processing<br>INFO  Hexo is running at <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>. Press Ctrl+C to stop.</p>
+</blockquote>
+<p>在浏览器访问：<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> 访问页面</p>
+<h3 id="将本地文件部署到GitHub"><a href="#将本地文件部署到GitHub" class="headerlink" title="将本地文件部署到GitHub"></a>将本地文件部署到GitHub</h3><h4 id="修改-config-yml文件"><a href="#修改-config-yml文件" class="headerlink" title="修改_config.yml文件"></a>修改_config.yml文件</h4><blockquote>
+<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><h2 id="Docs-https-hexo-io-docs-deployment-html"><a href="#Docs-https-hexo-io-docs-deployment-html" class="headerlink" title="Docs: https://hexo.io/docs/deployment.html"></a>Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">https://hexo.io/docs/deployment.html</a></h2><p>deploy:<br>  type: git<br>  repository: <a href="https://github.com/xifengxx/xifengxx.github.io.git" target="_blank" rel="external">https://github.com/xifengxx/xifengxx.github.io.git</a><br>  branch: master</p>
+</blockquote>
+<h4 id="将其deploy到仓库"><a href="#将其deploy到仓库" class="headerlink" title="将其deploy到仓库"></a>将其deploy到仓库</h4><p>打开Git Bash，依次输入以下命令：</p>
+<blockquote>
+<p>hexo clean<br>hexo generate<br>hexo deploy</p>
+</blockquote>
+<p>此时有可能出现错误，如：</p>
+<blockquote>
+<p>$ hexo d<br>ERROR Deployer not found: git</p>
+</blockquote>
+<p><strong>此时需要在Git Bash中运行以下命令：</strong></p>
+<blockquote>
+<p>npm install hexo-deployer-git –save</p>
+</blockquote>
+<p>然后重新再输入命令：</p>
+<blockquote>
+<p>hexo clean<br>hexo generate<br>hexo deploy</p>
+</blockquote>
+<p>hexo clean (清除缓存)<br>hexo generate (生成静态网页)<br>hexo deploy (开始部署)</p>
+<p>这时出现如下提示表示正确：</p>
+<blockquote>
+<p>…………（省略内容）<br>Branch master set up to track remote branch master from <a href="https://github.com/xifengxx/xifengxx.github.io.git" target="_blank" rel="external">https://github.com/xifengxx/xifengxx.github.io.git</a>.<br>To <a href="https://github.com/xifengxx/xifengxx.github.io.git" target="_blank" rel="external">https://github.com/xifengxx/xifengxx.github.io.git</a></p>
+<ul>
+<li>fb62809…9b7c22e HEAD -&gt; master (forced update)<br>INFO  Deploy done: git</li>
+</ul>
+</blockquote>
+<p>到这里，个人博客已经部署到GitHub上了。可以输入网址查看博客：</p>
+<blockquote>
+<p>xifengxx.github.io</p>
+</blockquote>
+<p><strong>快捷键</strong></p>
+<ul>
+<li>hexo g == hexo generate</li>
+<li>hexo d == hexo deploy</li>
+<li>hexo s == hexo server</li>
+<li>hexo n == hexo new<br>还能组合使用，如：</li>
+<li>hexo d -g</li>
+</ul>
+<h3 id="将Wordpress博客文章迁移到Hexo"><a href="#将Wordpress博客文章迁移到Hexo" class="headerlink" title="将Wordpress博客文章迁移到Hexo"></a>将Wordpress博客文章迁移到Hexo</h3><p>如果您曾经是Wordpress 的用戶，可以使用hexo的插件把之前的文章转换成md 的无格式文件，从而迁移到Hexo博客上。<br>具体步骤如下：</p>
+<ol>
+<li>先从Wordpress后台导出需要的文章为XML格式。<br>具体位置：wordpress仪表盘—工具—导出—下载导出的文件<br>将下载后的xml格式文件保存到本地放置Hexo博客的文件夹下。</li>
+<li><p>安装hexo插件：hexo-migrator-wordpress<br>使用命令：</p>
+<blockquote>
+<p>$ npm install hexo-migrator-wordpress –save</p>
+</blockquote>
+</li>
+<li><p>使用hexo-migrator-wordpress插件将xml文件转换为md文件，使用命令：</p>
+<blockquote>
+<p>$ hexo migrate wordpress export.xml<br>(export.xml为从Wordpress里导出的xml文件名)</p>
+</blockquote>
+</li>
+</ol>
+<p>执行上述命令后，在本地hexo博客根目录下的source/_post目录内可以看到转换完成的博客文章。</p>
+<ol>
+<li>执行Hexo博客发布命令，将其发布的网站上。<blockquote>
+<p>hexo clean<br>hexo g<br>hexo d</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h3><ol>
+<li><a href="http://sunwhut.com/2015/10/30/buildBlog/" target="_blank" rel="external">Sunwhut’s 博客</a> ☆☆☆☆☆推荐。</li>
+<li><a href="http://www.arao.me/2015/hexo-next-theme-optimize-seo/" target="_blank" rel="external">arao博客</a> :Hexo博客优化</li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Git实战教程]]></title>
+      <url>http://xifengxx.github.io/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="简明释义"><a href="#简明释义" class="headerlink" title="简明释义"></a>简明释义</h3><h4 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h4><p>Git 是一个版本控制工具，是一个可以安装在你自己机器上的软件。<br>git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。</p>
+<h4 id="github"><a href="#github" class="headerlink" title="github"></a>github</h4><p>Git 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。<br>Github 首先是一个公司，<a href="https://github.com" target="_blank" rel="external">Github网站</a>是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。</p>
+<h3 id="安装及初始化"><a href="#安装及初始化" class="headerlink" title="安装及初始化"></a>安装及初始化</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p><strong>Windows上安装Git</strong><br>msysgit是Windows版的Git。<br><a href="http://msysgit.github.io/" target="_blank" rel="external">下载地址</a>。</p>
+<p>然后按默认选项安装即可。</p>
+<p>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！</p>
+<p>安装完成后，还需要最后一步设置，在命令行输入：</p>
+<blockquote>
+<p>$ git config –global user.name “Your Name”<br>$ git config –global user.email “email@example.com”</p>
+</blockquote>
+<p>git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
+<h4 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h4><p>版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。</p>
+<p>如何创建版本库？</p>
+<ol>
+<li><p>在电脑磁盘里的任意位置，创建一个空目录<br>方法1：直接在磁盘任意位置，右键-新建文件夹；<br>方法2：在git命令行里创建。<br>关于创建文件常用命令（Unix Linux命令）：<br>-mkdir<br>-cd        ：切换目录命令<br>–cd ..    : 切换到上一级目录。<br>如当前目录为e盘下的code目录，使用命令”cd ..”，会切换到e盘。<br>–cd e:    : 切换盘符。<br>如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。<br>–cd /     : 切换到根目录。<br>–cd 目录名：切换到具体目录。<br>如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。<br>如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。<br>-pwd       : 显示当前所在目录<br>-dir       : 显示当前目录下的所有文件<br>-mkdir     : 创建目录。<br>如当前在e盘下，需要在e盘下创建一个新目录”code1”,使用命令”mkdir code1”即可；<br>如果要在其他盘下创建目录，先使用cd命令定位到目标盘，然后再使用mkdir命令。</p>
+</li>
+<li><p>通过git init命名把这个目录变成Git可以管理的仓库。<br>创建完目录后，在磁盘中找到该目录，右键–Git Bash Here即可定位到当前目录，或是通过上面的Linux命令来定位到目标目录。<br>在命令行输入命令”git init”，即成功创建Git仓库。<br>这时在当前目录下，会多出一个.git目录（如果没有，说明被隐藏了，需要在”工具-文件夹选项-查看”里设置隐藏属性为显示所有文件）。这个目录是Git来跟踪管理版本库的。</p>
+</li>
+</ol>
+<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><h4 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h4><p>目的：本地Git仓库与GitHub网站仓库之间实现同步传输及存储。<br>步骤：</p>
+<ol>
+<li>需要注册一个GitHub账号。(注册地址)[<a href="https://github.com" target="_blank" rel="external">https://github.com</a>].</li>
+<li><p>设置SSH Key.(本地Git仓库和GitHub仓库之间的传输是通过SSH加密的)<br>打开Git Bash,创建SSH Key.<br>输入命令：$ ssh-keygen -t rsa -c “youremail@examle.com”<br>将邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。<br>成功的话，会在用户主目录（我的是在”C:\Documents and Settings\Administrator”）里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件。（这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。）</p>
+</li>
+<li><p>登录<a href="https://github.com" target="_blank" rel="external">GitHub网站</a>，打开”我的账号/Account settings”—“personal settings”—“SSH keys”，点击”New SSH key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。</p>
+</li>
+<li><p>打开Git Bash，输入命令以下命令检测是否成功连接本机与GitHub。</p>
+<blockquote>
+<p>ssh -T git@github.com<br>在遇到提示的情况下，输入”yes”即可。</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h4><ol>
+<li>登录GitHub,点击右上角的”+”号—“New repository”，创建新的Git仓库。</li>
+<li>把本地仓库的内容推送到GitHub仓库。<br>① 打开GitHub上新建的repository仓库，找到HTTPS/SSH地址并复制地址，如”<a href="https://github.com/xifengxx/demo.git&quot;是我的一个仓库https地址。" target="_blank" rel="external">https://github.com/xifengxx/demo.git&quot;是我的一个仓库https地址。</a><br>② 本地仓库下运行命令<blockquote>
+<p>$ git remote add origin <a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a><br>添加后，远程仓库的名字就是origin(这是Git默认叫法，可以将origin改成其他的名字)<br>③ 继续运行命令<br>$ git push -u origin master<br>把本地仓库内容推送到远程，用git push命令。实际上是把当前分支master推送到远程。<br>由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。<br>推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样。<br>此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改：<br>$ git push origin master<br>④ 推送时，会弹出需要输入github账号及密码框，输入即可。</p>
+</blockquote>
+</li>
+<li><strong>注意事项</strong><br>在第二步②时，输入命令”$ git remote add origin <a href="https://github.com/xifengxx/demo.git&quot;时，可能会报错。" target="_blank" rel="external">https://github.com/xifengxx/demo.git&quot;时，可能会报错。</a><br>错误信息：”fatal: remote origin already exists.……”<br>原因：远程仓库已经存在内容，与本地仓库推送内容冲突。<br>解决方法：<br> 1、先输入”$ git remote rm origin”命令，删除远程仓库内容。<br> 2、再输入”$ git remote add origin git@github.com:djqiang/gitdemo.git” 就不会报错了！<br>上述方法针对第一次将本地仓库推送到远程仓库时遇到这个问题的解决方法。<br>如果不想删除远程仓库内容，可以使用下面的方法，将本地仓库内容和远程仓库内容合并。<br>解决方法：<br> 1、先输入”$ git pull origin master”命令，将远程仓库内容pull到本地仓库。<br> 2、再输入”$ git push origin master”命令，即可。</li>
+</ol>
+<h4 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h4><ol>
+<li>登录GitHub,创建一个新的仓库，例如我的一个仓库，名字叫demo</li>
+<li>找到新仓库的HTTPS/SSH地址并复制地址，如”git@github.com:xifengxx/demo.git”或”<a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a>“</li>
+<li>使用命令git clone克隆一个本地库<blockquote>
+<p>$ git clone git@github.com:xifengxx/demo.git<br>也可以使用命令：<br>$ git clone <a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a><br>Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。<br>使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="Git基础操作"><a href="#Git基础操作" class="headerlink" title="Git基础操作"></a>Git基础操作</h3><h4 id="将文件添加到版本库"><a href="#将文件添加到版本库" class="headerlink" title="将文件添加到版本库"></a>将文件添加到版本库</h4><p>使用命令：</p>
+<ol>
+<li>git add:将文件添加到仓库。<br>命令：$ git add 文件名<br>将某个文件复制到当前目录，然后再使用这个命令。</li>
+<li>git commit:将文件提交到仓库。<br>命令：$ git commit -m “xxx”<br>git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。<br>如：$ git commit -m “首次提交”<br>备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.</li>
+<li><strong>注意事项</strong><br>将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。<br>关键是如何退出默认编辑器界面并重新返回到Git bash界面。<br>方法：<br>① 按ESC键，确定退出编辑模式。<br>② 然后输入”:wq”，即可返回Git界面。</li>
+</ol>
+<h3 id="利用Github-Page-搭建网页Demo"><a href="#利用Github-Page-搭建网页Demo" class="headerlink" title="利用Github Page 搭建网页Demo"></a>利用Github Page 搭建网页Demo</h3><p>适用场景：<br>写了一些网页demo,想上传到网上查看效果，并做展示用途。不同于用Github搭建的个人博客。</p>
+<p>方法：Github Page部署。<br>步骤：</p>
+<ol>
+<li>注册<a href="https://github.com" target="_blank" rel="external">Github账号</a>.</li>
+<li>下载安装git.<br>msysgit是Windows版的Git。(下载地址)[<a href="http://msysgit.github.io/]。" target="_blank" rel="external">http://msysgit.github.io/]。</a></li>
+<li>登录Github，新建一个repository项目(这里使用project做项目名字)。</li>
+<li>在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。<br>设置完成后，这个repository项目的展示地址变为：<br><a href="http://xifengxx.github.io/project">http://xifengxx.github.io/project</a><br>‘xifengxx’为我注册Github的账号名，project为repository项目名。<br>可以通过上面的网址来访问项目。</li>
+<li><p>电脑里选定一个文件夹（这里是Git）放置Github上的项目project。<br>右键——“git bash here”,调出git命令界面，输入以下命令将project项目克隆到本地文件夹下。</p>
+<blockquote>
+<p>$ git clone <a href="https://github.com/xifengxx/project.git" target="_blank" rel="external">https://github.com/xifengxx/project.git</a><br>这时本地Git文件夹下会多出一个文件夹Project。</p>
+</blockquote>
+</li>
+<li><p>本地新建分支。<br>输入以下命令，在本地新建一个gh-pages分支并切换到gh-pages分支，这个分支是远程分支origin/gh-pages的镜像。</p>
+<blockquote>
+<p>$ cd project/<br>$ git checkout -b gh-pages origin/gh-pages<br>这时本地文件夹project里多出的文件，来自github上的gh-pages分支中的文件。</p>
+</blockquote>
+</li>
+<li><p>执行以下命令，删除原有的gh-pages文件，并提交（commit）本次修改。</p>
+<blockquote>
+<p>$ git rm -rf .<br>$ git add .<br>$ git commit -m “delete all files”<br>这时project里的文件都删除了。</p>
+</blockquote>
+</li>
+<li><p>将自己的网页Demo文件复制粘贴到project文件夹里。</p>
+</li>
+<li><p>将本地gh-pages中的网页文件同步到远程库的gh-pages中。<br>输入以下命令：</p>
+<blockquote>
+<p>$ git add .<br>$ git commit -m “My design Demo”<br>$ git push origin gh-pages</p>
+</blockquote>
+</li>
+</ol>
+<p>输入第三行命令时，会有弹出框提示输入Github账号和密码，输入后等待片刻，当命令行提示”$”符号时，说明已经完成。</p>
+<ol>
+<li>浏览器输入网址访问：<blockquote>
+<p><a href="http://xifengxx.github.io/project/index.html">http://xifengxx.github.io/project/index.html</a><br>或 <a href="http://xifengxx.github.io/project">http://xifengxx.github.io/project</a><br>此处的index.html为网页Demo中的文件。</p>
+</blockquote>
+</li>
+</ol>
+<p><a href="http://www.cnblogs.com/lijiayi/p/githubpages.html" target="_blank" rel="external">参考资源</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[如何通过Github Pages + hexo 搭建个人博客]]></title>
+      <url>http://xifengxx.github.io/2016/03/13/%E9%80%9A%E8%BF%87Github%20Pages%20+%20Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+      <content type="html"><![CDATA[<p>这是在github page上建立的个人博客站点，专注WEB前端开发技术知识，有别于个人独立博客站点：<a href="http://www.xifengxx.com/" target="_blank" rel="external">西风博客</a>.</p>
+<h3 id="为什么要搭建个人博客呢？"><a href="#为什么要搭建个人博客呢？" class="headerlink" title="为什么要搭建个人博客呢？"></a>为什么要搭建个人博客呢？</h3><ol>
+<li><p>个人知识积累。<br>经历过那么多，是不是想把自己的经历、想法观点给记录下来，网站是个不错的选择。<br>俗话说得好，好记性不如烂笔头。你不写出来，是会遗忘的，那是一笔多么宝贵的财富啊。同时，你在写的过程中，你会思考、会反思自己的过往经历，更能理性的认清生活，了解自己，积累经验教训。</p>
+</li>
+<li><p>自由无拘束。<br>你可能会说，我通过新浪微博、网易博客、QQ空间，照样可以写日记啊，何必多此一举，建自己的网站呢？<br>的却可以，但使用这些空间或服务的时候，必定会受到诸多限制，敏感词汇会被屏蔽，甚至你的博客都有可能被封。而自己的网站，自己想干啥就干啥，自由度很高。</p>
+</li>
+<li><p>交流分享。<br>人与人之间是需要交流学习的，而通过网站这种形式，将自己的思想、经历、生活等展现出来，与别人分享，能让他人更加认识你，成为朋友的几率便更好，如此，你能找到志同道合的朋友，形成所谓的圈子。</p>
+</li>
+<li><p>工作机会。<br>通过网站，你可以积累各方面的经验，让别人认识你，如果有合适的工作机会，别人考虑你的几率是不是会增大很多？<br>因为通过你的网站、你的文章，别人能更深刻认识你这个人，和你的专业度。<br>同时，你的网站相当于你的精彩简历，实力的证明，找工作时附上个人网站，有兴趣的HR会更看重你，因为仅通过面谈是会遗漏很多信息的，透过文字更能全面的了解一个人的过往经历。</p>
+</li>
+</ol>
+<h3 id="如何搭建个人博客？"><a href="#如何搭建个人博客？" class="headerlink" title="如何搭建个人博客？"></a>如何搭建个人博客？</h3><p>可以参看我写过的两篇文章：</p>
+<ul>
+<li><a href="http://www.xifengxx.com/web-front-end/wordpress/161.html" target="_blank" rel="external">如何搭建个人博客网站？</a></li>
+<li><a href="http://www.xifengxx.com/wordpress-study" target="_blank" rel="external">利用WordPress快速搭建个人网站教程</a></li>
+</ul>
+<h3 id="关于本博客"><a href="#关于本博客" class="headerlink" title="关于本博客"></a>关于本博客</h3><p><strong>基于Github Page搭建，主要记录个人学习Web前端开发技术过程中记录、总结、学习的各类知识、经验。</strong></p>
+<p>阮一峰 <a href="http://www.ruanyifeng.com/" target="_blank" rel="external">阮一峰博客</a>曾说过：</p>
+<blockquote>
+<p>喜欢写Blog的人，会经历三个阶段:</p>
+<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
+<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
+<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
+</blockquote>
+<p>我现在正在向第三阶段过渡，待完全掌握前端技术后，会重新制作个人博客，然后将其迁移到github上来。</p>
+<h3 id="Github-Page-个人博客如何搭建？"><a href="#Github-Page-个人博客如何搭建？" class="headerlink" title="Github Page 个人博客如何搭建？"></a>Github Page 个人博客如何搭建？</h3><p>使用Github Page搭建个人博客有3种方式（个人了解的就这么多，也可能有其他方式）</p>
+<ol>
+<li><p>Github Pages + Jekyll (需下载Ruby+Devkit) <a href="http://cnfeat.com/" target="_blank" rel="external"></a></p>
+</li>
+<li><p>Github Pages + Hexo   <a href="http://wsgzao.github.io/" target="_blank" rel="external"></a></p>
+</li>
+<li><p>Github Pages + Hugo   <a href="http://blog.coderzh.com/" target="_blank" rel="external"></a></p>
+</li>
+</ol>
+<p>互联网上关于这类教程非常多，其中很多作者写的非常好，堪称傻瓜式教程，只要按照其步骤便可以快速搭建起个人博客。<br>这里便引用他人的详细教程。</p>
+<ul>
+<li><p>方法1：<br><a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">阮一峰博客</a><br><a href="http://www.cnblogs.com/purediy/archive/2013/03/07/2948892.html" target="_blank" rel="external">雨知博客</a><br><a href="http://beiyuu.com/github-pages/" target="_blank" rel="external">BeiYuu</a></p>
+</li>
+<li><p>方法2：<br><a href="http://zipperary.com/2013/05/28/hexo-guide-2/" target="_blank" rel="external">Zippera博客</a><br><a href="http://sunwhut.com/2015/10/30/buildBlog/" target="_blank" rel="external">sunwhut博客</a></p>
+</li>
+<li><p>方法3：<br><a href="http://blog.coderzh.com/2015/08/29/hugo/" target="_blank" rel="external">CoderZh博客</a></p>
+</li>
+</ul>
+<h4 id="Github-Page-hexo搭建博客"><a href="#Github-Page-hexo搭建博客" class="headerlink" title="Github Page + hexo搭建博客"></a>Github Page + hexo搭建博客</h4><p>我的这个博客是使用方法2搭建的，基于Github Page + hexo搭建的。（原本最开始是准备用方法1的，结果测试后发现Jeky11好像不支持XP系统，无奈只能选用其他方法。）<br>以下详细介绍这种方法搭建博客注意点：</p>
+<p><strong>工具：Github + Node.JS + Hexo</strong></p>
+<ul>
+<li><p><a href="https://desktop.github.com/" target="_blank" rel="external">Github</a> ——Win7及以上系统适用</p>
+</li>
+<li><p><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.JS</a></p>
+</li>
+<li><p><a href="http://git-scm.com/" target="_blank" rel="external">Git</a>   ——XP/Win7及以上系统皆适用</p>
+</li>
+</ul>
+<p>Github和Git这两个工具，任选其一即可。</p>
+<ul>
+<li><p><strong>XP系统适用教程：</strong><br>此文章使用的Git工具是：Github(工具下载见上面链接)<br>教程链接：<a href="http://zipperary.com/2013/05/28/hexo-guide-2/" target="_blank" rel="external">Zippera博客</a></p>
+</li>
+<li><p><strong>Win7及以上系统适用教程：</strong><br>此文章使用的Git工具是：Git(工具下载见上面链接)<br>教程链接：<a href="http://wsgzao.github.io/post/hexo-guide/" target="_blank" rel="external">Hello Dog博客</a></p>
+</li>
+</ul>
+<p><strong>可能出现的问题：（以下问题是我搭建时碰到的）</strong></p>
+<blockquote>
+<p>$ hexo deploy<br>ERROR Deployer not found: git</p>
+</blockquote>
+<p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy.png" alt="图片"></p>
+<p><strong>解决方法：</strong></p>
+<ul>
+<li>方法1：</li>
+</ul>
+<p>在_config.yml 中设置 deploy中的type一项为git。(我测试过这种方法，<em>失败</em>)<br>（deploy下的”type”/“repository”/“branch”三项冒号后面需要空一格输入，正确格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/xifengxx/xifengxx.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>方法2：</li>
+</ul>
+<p>在git中运行：图片1-4，解决问题。</p>
+<p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy%201.png" alt="1"></p>
+<p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy%202.png" alt="2"></p>
+<p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy%203.png" alt="3"></p>
+<p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/git-hexo%20deploy%204.png" alt="4"></p>
+<p>输入github博客网站：xifengxx.github.io.git，成功创建。</p>
+<h3 id="引申阅读："><a href="#引申阅读：" class="headerlink" title="引申阅读："></a>引申阅读：</h3><p>FarBox、Jekyll、Octopress、ghost、marboo、Hexo、Medium、Logdown、prose.io，这些博客程序有什么特点？</p>
+<p><a href="http://www.zhihu.com/question/21981094" target="_blank" rel="external">知乎</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[HTTP协议及相关知识]]></title>
+      <url>http://xifengxx.github.io/2016/03/03/HTTP%E5%8D%8F%E8%AE%AE%E7%9F%A5%E5%A4%9A%E5%B0%91/</url>
+      <content type="html"><![CDATA[<p>HTTP，或者超文本传输协议，是上世纪80年代由蒂姆.伯纳斯.李发明的。<br>它是一个规则系统，是一种协议，把应用程序和超文本文档之间的传输联系起来。换句话说，HTTP 就是机器之间彼此沟通的一个协议，或者说一个消息格式。<br>HTTP 遵循一个简单的模型：从客户端发出请求到服务器并等待响应。因此它也被认为是一种“请求–响应协议”。请求和响应都是文本信息，或者说是字符串，信息写法遵循着一个规则，能保证其他机器能够理解上面的内容。</p>
+<h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><p>每一个HTTP请求都会得到一个响应，哪怕这响应是一个错误响应.(有时响应会超时)<br>GET请求：向服务器发起请求数据；<br>POST请求：给服务器提交数据</p>
+<h4 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h4><p>GET 请求一般出现在超链接或者浏览器的地址栏里。当你在你的浏览器地址栏里输入类似 <a href="http://www.reddit.com" target="_blank" rel="external">http://www.reddit.com</a> 这样的地址的时候，你就是在发起一个 GET 请求。你让浏览器去取这个地址上的资源，这就意味着我们在整本书里一直在使用GET请求。在你点击 web 应用上的超链接的时候也会发生同样的事情。超链接的默认行为就是向一个 URL 发送GET请求。</p>
+<ol>
+<li>GET 请求经常用于取得一个资源，而且大部分超链接都是 GET 请求。</li>
+<li>一个 GET 请求的响应可以是任何东西，但是如果响应是一个 HTML 并且里面引用了其他资源，你的浏览器会自动对这些资源发起请求，而一个纯粹的 HTTP 工具则不会。</li>
+<li>使用 GET 请求的时候在大小和安全性上有一些限制。</li>
+</ol>
+<h4 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h4><p>浏览器里的典型 POST 使用案例就是你提交一个表单的时候。POST 请求允许我们向服务器发送更大或者敏感的数据，比如图片或者视频。<br>POST 请求也能避免你使用 GET 请求时的查询字符串长度限制问题。通过 POST 请求，我们可以给服务器发送更大的数据。</p>
+<h4 id="HTTP头部"><a href="#HTTP头部" class="headerlink" title="HTTP头部"></a>HTTP头部</h4><p>HTTP 头部允许客户端和服务器在请求/响应的 HTTP 周期里发送额外的信息。头部，通常是以冒号分隔的键值对儿，一般是纯文本格式的。</p>
+<h4 id="请求头部-Request-Headers"><a href="#请求头部-Request-Headers" class="headerlink" title="请求头部 Request Headers"></a>请求头部 Request Headers</h4><p>请求头部提供更多关于服务器和要获取的资源的信息。一些有用的请求头部是:</p>
+<p>字段名          |  描述                    |    举例<br>Host            |  服务器域名              |    Host:www.reddit.com<br>—————-|————————- | ————————-<br>Accept-Language |  可接受的语言            |    Accept-Language: en-US，en;q=0.8<br>User-Agent      |  一个标识客户端的字符串  |    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML，like Gecko) Chrome/38.0.2125.101 Safari/537.36<br>Connection      |   客户端连接的类型       |    Connection: keep-alive</p>
+<h3 id="处理响应"><a href="#处理响应" class="headerlink" title="处理响应"></a>处理响应</h3><p>服务器返回的原始数据就是所谓的响应。</p>
+<h4 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h4><p>状态码是服务器接收到请求后返回的标识请求状态的三位数.在状态码的旁边，就是描述这个状态码的状态文本.<br>常见的状态码有：<br>状态码     |   状态文本                 |     含义<br>———–|—————————-|—————————<br>200        |    OK                      |     请求被正确处理<br>302        |    Found                   |     所请求的资源已暂时更改.通常会重定向到另一个 URL<br>404        |    Not Found               |     所请求的资源无法找到<br>500        |    Internal Server Error   |       服务器出现一般性错误</p>
+<p><strong>302 Redirect（重定向）</strong></p>
+<p>当一个资源的位置移动了会发生什么呢？ 最通用的解决方案是把对旧 URL 的请求重新引导到新 URL 上.这种重新引导请求的行为有一个术语叫重定向（ redirect ）。当你的浏览器看到一个 302 响应状态码的时候，他就知道这个资源已经移动到别处了，然后就会自动跳转到 Location 响应头部里指定的 URL 。<br>例子：<br>比如说你想要看 GitHub 上的账户配置，你就要访问这个链接 <a href="https://github.com/settings/profile" target="_blank" rel="external">https://github.com/settings/profile</a> 。但是，要有访问账户配置页面的权限，你必须先登录。如果你没有登录就访问这个链接，浏览器会把你送到登录页面去。当你填写正确的登录信息后，你就会被重定向到你最早想访问的页面。这个是大多数 web 应用的通用工作流程。<br>当你在浏览器里输入 <a href="https://github.com/settings/profile时，浏览器会直接按照重定向的指示给你展示出" target="_blank" rel="external">https://github.com/settings/profile时，浏览器会直接按照重定向的指示给你展示出</a> GitHub 的登录页面:<br>其Location响应头部如下：</p>
+<blockquote>
+<p>Location: <a href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fprofile" target="_blank" rel="external">https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fprofile</a><br>这个 URL 里有一个 return_to 参数，它的值就是在登录之后客户端要重定向到的 URL。</p>
+</blockquote>
+<h4 id="响应头部"><a href="#响应头部" class="headerlink" title="响应头部"></a>响应头部</h4><p>响应头部提供了更多关于服务器返回的资源的信息。让我们来看看一些常见的响应头部:<br>头部名称            |   描述                   |  举例<br>——————–|————————–|————————-<br>Content-Encoding    |   数据的编码类型         |  Content-Encoding: gzip<br>Server              |   服务器的名称           |  Server:thin 1.5.0 codename Knife<br>Location            |   通知客户端新的资源位置 | Location: <a href="http://www.github.com/login" target="_blank" rel="external">http://www.github.com/login</a><br>Content-Type        |   响应数据的类型         |  Content-Type:text/html; charset=UTF-8</p>
+<h4 id="消息正文"><a href="#消息正文" class="headerlink" title="消息正文"></a>消息正文</h4><p>HTTP响应中的原始数据。</p>
+<h3 id="有状态的WEB应用"><a href="#有状态的WEB应用" class="headerlink" title="有状态的WEB应用"></a>有状态的WEB应用</h3><p>HTTP 协议是无状态的。换句话说，在你的各次请求之间，服务器是不会保留你的 “状态” 信息。<br><img src="http://book.haoduoshipin.com/tealeaf-http/images/http_client_server.png" alt=""><br>每一次请求都被认为是一次全新的请求，不同的请求之间并不知道对方的存在.这种” 无状态性 “使得 HTTP 和互联网都是 “去中心化” 的，不会轻易被人掌控。</p>
+<p>web 开发者常用的实现 “有状态” 体验的技术手段,主要包括：</p>
+<ol>
+<li>会话（ session ）</li>
+<li>Cookies</li>
+<li>异步 javascript 调用（ AJAX ）</li>
+</ol>
+<h4 id="会话（session）"><a href="#会话（session）" class="headerlink" title="会话（session）"></a>会话（session）</h4><p>人们可以把这个无状态的HTTP 协议通过某种方式保持状态。<br>在客户端（一般就是指浏览器）的帮助下，HTTP 的行为会让人觉得它会在客户端与服务器之间维护一个有状态的连接，尽管实际并没有。达到这种效果的一个办法就是， 服务器在发送响应数据给客户端的时候带一个唯一的令牌（英文叫 token，就是一串数）。随后不论何时客户端向服务器发起请求的时候都把这个令牌附加在后面，让服务器能够辨识这个客户端。在 web 开发领域我们把这个来回传递的令牌叫做会话标识符（ session identifier ）。</p>
+<p>这种在客户端与服务器之间传递会话 id的机制，能让服务器创建一种各次请求之间的持续连接状态。Web 开发人员利用这种人造的状态，来构建复杂的应用程序。即使这样，每一个请求严格上来说还是无状态的，各次请求之间并不知道彼此的存在。</p>
+<p>这种人造状态，会有几个后果。第一，必须检查每个请求，查看它是否包含会话标识符。第二，如果请求有会话标识符，也就是有一个会话 id，服务器必须检查每一个会话 id ，确保这些会话 id 是没有过期的，也就是服务器需要维护一些关于如何处理会话过期，如何存储会话数据的规则。第三，服务器要基于这个会话 id 取出这个会话的数据。最后，服务器要根据取出的会话数据重新创建应用程序的状态（ 比如，一个请求对应的 HTML )，然后将其作为响应返回给客户端。</p>
+<p>这就意味着服务器必须非常辛勤的工作，来模拟这个有状态的用户体验。每一个请求都会有一个独立的响应，哪怕这次的响应跟前一个响应没有任何区别。<br>举个例子，如果你登录到 Facebook 上，服务器会给你一个响应，生成你看到的主页。这个响应是一个十分复杂的 HTML 页面。Facebook 的服务器会把页面上所有照片和留言的赞和评论都组合起来，然后显示在你的时间线上。生成这样一个页面的成本非常高。现在，如果你点了某个照片下面的” 赞 “链接，理论上，Facebook 会重新生成整个页面，它会把你赞过的照片的被赞数加 1，然后把整个 HTML 作为响应返回给你，尽管除了这个赞数以外大部分内容都没有改变。 庆幸的是，实际中 Facebook 使用 Ajax 代替了全页面刷新。不然的话，刷新一个页面会花费很长时间。</p>
+<p>服务器使用了很多先进的技术来优化会话和实现安全机制，不过这些话题都超出了本书的范围，暂且放下。现在我们来聊一个常用的存储会话信息的方法: 浏览器 cookie 。</p>
+<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><p>cookie 就是在一个请求/响应周期内，服务器发送给客户端（通常就是浏览器），并存储在客户端的一段数据。Cookies 或者 HTTP cookies，就是存储在浏览器里包含着会话信息的小文件。<br>默认情况下，大部分浏览器的 cookies 都是启用的。当你第一次访问一个网站的时候，服务器会给你发送会话信息并将其存储在你本地电脑浏览器的 cookie 里。要注意的是真正的会话数据是存在服务器上的。在客户端发起每一个请求的时候，服务器就会比对客户端的 cookie 和服务器上的会话数据，用来标识当前的会话。通过这种方法，当你再次访问同一个网站的时候，服务器就会通过 cookie 和里面的信息来认出你的会话。<br><strong>会话数据是由服务器生成并存储在服务器上，会话 id 以 cookie 的形式发送到客户端上。</strong></p>
+<h4 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h4><p>AJAX 是”异步 javascript 和 XML “ 的简称（ Asynchronous JavaScript and XML ）。它的主要特点就是允许浏览器发送请求和处理响应的时候不用刷新整个页面。<br>举个例子，如果你登录到 Facebook 上，服务器会给你一个响应，生成你看到的主页。 这个响应是一个十分复杂的 HTML 页面。Facebook 的服务器会把各种信息组合起来，显示在你的时间线上。在前面的讨论中，我们知道，为每一个请求都重新生成一次页面的成本是非常高的（记住，你的每一个动作，点个链接，提交个表单，都会发起一个新的请求）。<br>当使用 AJAX 的时候，所有客户端发送的请求都是异步的，就是说页面不会刷新。<br>AJAX 请求就像是普通请求：发送到服务器的请求依然跟普通请求一样有着一个 HTTP 请求该有的所有组成部分，并且服务器处理 AJAX 请求的方法跟处理普通请求也是一样的。唯一不同就是，不是通过浏览器刷新来处理响应，而通常由客户端的一些 javascript 代码来处理。</p>
+<h3 id="HTTP安全相关"><a href="#HTTP安全相关" class="headerlink" title="HTTP安全相关"></a>HTTP安全相关</h3><h4 id="HTTPS-安全的HTTP"><a href="#HTTPS-安全的HTTP" class="headerlink" title="HTTPS(安全的HTTP)"></a>HTTPS(安全的HTTP)</h4><p>在客户端和服务器互相发送请求和响应的时候，所有的请求和响应里的信息都是通过明文字符串发送的。如果一个恶意的黑客连接到同一网络，他就可以利用数据包嗅探技术来读取来回发送的消息。<br>正如我们已知道的，请求可以包含会话 id ，它唯一地标识你到服务器之间的联系，所以如果别人复制了这个会话 id ，他们可以手动创建到服务器的请求，伪装成你的客户端，甚至都不需要你的用户名和密码就可以自动登陆。</p>
+<p>这种情况就需要安全的 HTTP 也就是 HTTPS 来帮忙啦。通过 HTTPS 访问资源的时候，通常以 https:// 开头而不是 http:// ，而且通常在边上都会有个小锁子的图标：<br><img src="http://book.haoduoshipin.com/tealeaf-http/images/https_address_bar.png" alt=""><br>通过 HTTPS 发送的请求和响应在发送前都会被加密。这意味着如果一个恶意的黑客监听 HTTP 通信，他得到的信息都是加密的和无用的。HTTPS 通过一个叫做 TLS 的加密协议来加密消息。在 TLS 开发完成前，早期 HTTPS 使用 SSL （ Secure Sockets Layer ）。这些加密协议在加密数据之前，需要先使用证书来与远程服务器进行通信来交换安全密钥。</p>
+<h4 id="同源策略（-Same-origin-policy-）"><a href="#同源策略（-Same-origin-policy-）" class="headerlink" title="同源策略（ Same-origin policy ）"></a>同源策略（ Same-origin policy ）</h4><p>同源策略是一个重要的概念，它允许来自同一站点的资源进行互相访问而不受限制，但是会阻止其他不同站点对文档/资源的访问。换句话说它可以阻止另一个站点通过脚本来操纵本站点的文档。<br><strong>同源的文档必须有相同的协议，主机名和端口号。</strong><br>举个例子，<a href="http://www.test.com/aboutus.html" target="_blank" rel="external">http://www.test.com/aboutus.html</a> 上的 HTML 文档可以嵌入 <a href="http://www.test.com/fancy.js" target="_blank" rel="external">http://www.test.com/fancy.js</a> 这个 javascript 文件，因为它们是同源的，有相同的协议，主机名和端口号(默认的 80) 。<br>反过来说，这就意味着 <a href="http://www.test.com" target="_blank" rel="external">http://www.test.com</a> 上的文档不能嵌入 <a href="http://www.example.com" target="_blank" rel="external">http://www.example.com</a> 上的文档，因为它们不是同源的。<br>同源策略是防范会话劫持的重要手段，并作为 web 应用安全的基石。<br><strong>同源策略涉及的是访问文件内容，而不是链接，你可以随意链接到任何 URL。</strong><br>虽然这样很安全，但是有时 web 开发人员需要进行跨域的内容访问就会很麻烦，所以就有了跨域资源共享技术CORS 。 </p>
+<h4 id="跨域资源共享技术-CORS"><a href="#跨域资源共享技术-CORS" class="headerlink" title="跨域资源共享技术 CORS"></a>跨域资源共享技术 CORS</h4><p>CORS是一种机制，允许我们绕过同源策略，从一个域名向另一个域名的资源发起请求。CORS的原理是添加新的 HTTP头部，来对一些域名授权，那这些域名就可以发起对本页面资源的请求。</p>
+<h4 id="会话劫持（-Session-Hijacking-）"><a href="#会话劫持（-Session-Hijacking-）" class="headerlink" title="会话劫持（ Session Hijacking ）"></a>会话劫持（ Session Hijacking ）</h4><p>会话在维持 HTTP 的状态上扮演着重要的角色。我们也知道会话 id 作为一个唯一的令牌来唯一标识一个会话。通常，会话 id 是作为 cookie 存储在计算机上的一个随机字符串. 会话 id 随着每一个到服务器的请求被送往服务器用于唯一标识这个会话。<br>事实上，这也就是很多 web 应用的用户认证系统所在做的事情，当用户的用户名和密码匹配之后，会话 id 会存储在用户的浏览器里，这样他们的下一个请求就不用重新认证了。</p>
+<p>不幸的是，如果一个攻击者拿到了这个会话 id ，他就会跟用户共享这一个会话，同时也就能访问这个 web 应用了。在会话劫持攻击中，用户根本意识不到一个攻击者甚至不用知道她的用户名和密码就可以访问她的会话了。</p>
+<p><strong>会话劫持的对策</strong></p>
+<ul>
+<li>重置会话。也就是对于一个用户认证系统来说，一次成功的登录包括验证旧的会话 id 和生成一个新的会话id完成此步骤后，在下一个请求里，会要求受害者进行身份验证。然后会话 id 就会改变，这样攻击者就无法访问到这个会话了。很多网站都采取这种办法，当用户在进行敏感操作的时候保证用户身份的正确性，比如给信用卡充值或者删除账户的时候。</li>
+<li>给会话设置过期时间。那些不会过期的会话给了攻击者太多的时间去伪装成一个合法用户。如果设置了过期时间，比如 30 分钟，这样一来攻击者就不会那么从容的进行攻击了。</li>
+<li>整站使用 HTTPS 把攻击者能得到会话 id 的可能性降至最低。</li>
+</ul>
+<h4 id="跨站脚本攻击-XSS"><a href="#跨站脚本攻击-XSS" class="headerlink" title="跨站脚本攻击 (XSS)"></a>跨站脚本攻击 (XSS)</h4><p>当你允许用户输入的 HTML 和 javascript 在你自己的网站上直接显示的时候，就有可能遭受这种攻击。</p>
+<p>如果服务器端对于用户的输入不做任何无害处理的话，这些内容就会注入到网页的内容中去，然后浏览器就会解释执行这些 HTML 和 javascript 代码。<br>恶意用户可以使用 HTML 和 javascript 代码对服务器或者以后访问这个页面的用户发起毁灭性的攻击。举个例子，一个攻击者可以使用 javascript 代码去获取所有在他之后访问这个页面的用户的会话 id ，然后伪装成其他用户。而这一切都发生在受害者一无所知的情况下。而且要注意的是，这种攻击也能绕过同源策略，因为这段恶意代码是存在于当前这个网站上的。</p>
+<p><strong>跨站脚本攻击的解决方案</strong></p>
+<ul>
+<li>总是对用户输入的内容做无害处理。消除有问题的输入，比如<script>标签，或者使用一个更安全的输入格式，比如 Markdown，这样就可以阻止 HTML 和 javascript 同时出现在用户的输入里。</li>
+<li>在显示之前转义用户输入的所有数据.如果你需要用户能够输入 HTML 和 javascript 代码，那么当你显示这些输入内容的时候要确保它们被正确转义，这样浏览器就不会把它们当做代码给执行了。</li>
+</ul>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ol>
+<li><a href="http://book.haoduoshipin.com/tealeaf-http/">HTTP下午茶</a></li>
+</ol>
+</script></li></ul>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[前端知识之查漏补缺：HTML头部(head)标签]]></title>
+      <url>http://xifengxx.github.io/2015/12/13/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E4%B9%8B%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA%EF%BC%9AHTML%E5%A4%B4%E9%83%A8(head)%E6%A0%87%E7%AD%BE/</url>
+      <content type="html"><![CDATA[<p>我们日常所浏览的网页，都是有HTML文档构成的。HTML文档的基本结构如下图：</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/HTML文档结构.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/HTML文档结构.png" alt="HTML文档结构"></a></p>
+<p>一个HTML文档由4个基本部分组成：</p>
+<p><strong>1、文档声明</strong></p>
+<p>&lt;!DOCTYPE HTML&gt;声明这是一个HTML文档。</p>
+<p><strong>2、&lt;HTML&gt;标签</strong></p>
+<p>&lt;html&gt;标签的作用相当于设计者在告诉浏览器，整个网页是从&lt;html&gt;这里开始的，然后到&lt;/html&gt;结束。</p>
+<p><strong>3、&lt;head&gt;标签</strong></p>
+<p><span data-hover="head">head</span>标签是页面的“头部”，只能定义一些特殊的内容。</p>
+<p><strong>4、&lt;body&gt;标签</strong></p>
+<p><span data-hover="body">body</span>标签是页面的“身体”，一般网页绝大多数的标签代码都是在这里编写。</p>
+<p>其他标签都好理解，这里主要介绍下&lt;head&gt;标签，因为其比较特殊，涉及到的东西还是蛮多的。</p>
+<hr>
+<p>一般来说，只有6个标签能放在&lt;head&gt;标签内：</p>
+<table><br><tbody><br><tr><br><td colspan="2" width="549">&lt;head&gt;标签内部标签</td><br></tr><br><tr><br><td width="180">&lt;head&gt;内部标签</td><br><td width="369">说明</td><br></tr><br><tr><br><td width="180">&lt;title&gt;</td><br><td width="369">定义网页的标题</td><br></tr><br><tr><br><td width="180"><span style="color: #0000ff;">&lt;meta&gt;</span></td><br><td width="369">定义网页的基本信息（供搜索引擎）</td><br></tr><br><tr><br><td width="180">&lt;style&gt;</td><br><td width="369">定义CSS样式</td><br></tr><br><tr><br><td width="180">&lt;link&gt;</td><br><td width="369">链接外部CSS文件或脚本文件</td><br></tr><br><tr><br><td width="180">&lt;script&gt;</td><br><td width="369">定义脚本语言</td><br></tr><br><tr><br><td width="180">&lt;base&gt;</td><br><td width="369">定义页面所有链接的基础定位</td><br></tr><br></tbody><br></table>
+
+<h2 id="一、-lt-head-gt-标签内的-lt-title-gt-标签"><a href="#一、-lt-head-gt-标签内的-lt-title-gt-标签" class="headerlink" title="一、&lt;head&gt;标签内的&lt;title&gt;标签"></a><strong>一、&lt;head&gt;标签内的&lt;title&gt;标签</strong></h2><p>&lt;title&gt;标签唯一的作用就是<span style="color: #0000ff;">定义网页的标题</span>，标题的内容都是放在&lt;title&gt;标签内，如:</p>
+<blockquote>
+<p>&lt;title&gt;HTML head标签<em>HTML入门教程</em>绿叶学习网&lt;/title&gt;</p>
+</blockquote>
+<h2 id="二、-lt-head-gt-标签内的-lt-meta-gt-标签"><a href="#二、-lt-head-gt-标签内的-lt-meta-gt-标签" class="headerlink" title="二、&lt;head&gt;标签内的&lt;meta&gt;标签"></a><strong>二、&lt;head&gt;标签内的&lt;meta&gt;标签</strong></h2><p><span style="color: #0000ff;">&lt;meta&gt;标签又叫“元信息标签”</span>，是&lt;head&gt;标签内的一个辅助性标签。&lt;meta&gt;标签提供的信息不显示在页面中，一般用来定义页面的关键字、页面的描述等，以方便搜索引擎蜘蛛（如百度蜘蛛、谷歌蜘蛛）来搜索到你这个页面的信息。通俗点说，meta标签就是用来告诉“搜索蜘蛛”这个页面是干嘛的。</p>
+<p><strong><span style="color: #0000ff;">meta标签有两个重要的属性name和http-equiv</span>。</strong></p>
+<h3 id="1、meta标签name属性"><a href="#1、meta标签name属性" class="headerlink" title="1、meta标签name属性"></a><strong>1、meta标签name属性</strong></h3><table><br><tbody><br><tr><br><td width="180">name属性值</td><br><td width="376">说明</td><br></tr><br><tr><br><td width="180"><span style="color: #0000ff;">keywords</span></td><br><td width="376"><span style="color: #0000ff;">网页的关键字（关键字可以是多个，而不仅仅是一个）</span></td><br></tr><br><tr><br><td width="180"><span style="color: #0000ff;">description</span></td><br><td width="376"><span style="color: #0000ff;">网页的描述</span></td><br></tr><br><tr><br><td width="180"><span style="color: #0000ff;">author</span></td><br><td width="376"><span style="color: #0000ff;">网页的作者</span></td><br></tr><br><tr><br><td width="180"><span style="color: #0000ff;">copyright</span></td><br><td width="376"><span style="color: #0000ff;">版权信息</span></td><br></tr><br></tbody><br></table>
+
+<h3 id="2、-meta标签http-equiv属性"><a href="#2、-meta标签http-equiv属性" class="headerlink" title="2、**meta标签http-equiv属性**"></a><strong>2、**</strong>meta标签http-equiv属性**</h3><p><strong>常见的值有：</strong></p>
+<table><br><tbody><br><tr><br><td width="284">Content-type</td><br><td width="284">内容类型</td><br></tr><br><tr><br><td width="284">Expires</td><br><td width="284">过期时间</td><br></tr><br><tr><br><td width="284">Refresh</td><br><td width="284">页面刷新</td><br></tr><br><tr><br><td width="284">Set-cookie</td><br><td width="284">设定cookie</td><br></tr><br><tr><br><td width="284">X-UA-Compatible</td><br><td width="284">针对ie,设置浏览器优先使用什么模式来渲染页面</td><br></tr><br></tbody><br></table><br>如：&lt;meta http-equiv=”X-UA-Compatible”content=”ie=7”&gt;<br><br>ie浏览器都会用ie7来渲染；<br><br>&lt;meta http-equiv=”X-UA-Compatible”content=”IE=edge”&gt;<br><br>ie浏览器会用最高版本来渲染；<br><br>&lt;meta http-equiv=”X-UA-Compatible”content=”IE=Edge,chrome=1”&gt;<br><br>ie浏览器会用最高版本来渲染，如果安装了gcf(google chrome frame)可以使用chrome渲染。<br><br>学习meta标签的http-equiv属性，我们只需要了解它的两个作用就行了：<br><br><span style="color: #0000ff;">一，定义页面所使用的语言</span><br><br><span style="color: #0000ff;">二，实现页面的自动刷新跳转</span><br><br>#### <strong>（1）定义页面所使用的语言</strong><br><br><strong>语法：</strong><br><table><br><tbody><br><tr><br><td width="8">123</td><br><td width="545">&lt;head&gt;<br>&lt;meta  http-equiv=”content-type” content=”text/html; charset=gb2312”/&gt;<br>&lt;/head&gt;</td><br></tr><br></tbody><br></table><br><strong>说明：</strong>这段代码告诉浏览器该页面所使用的字符集是gb2312，即国际汉字码。我们不需要记住，只需要了解就行了。<br><br>#### <strong>（2）页面自动跳转</strong><br><br><strong>语法：</strong><br><table><br><tbody><br><tr><br><td width="8">123</td><br><td width="542">&lt;head&gt;<br>&lt;meta  http-equiv=”refresh” content=”6;url=http:/www.baidu.com”/&gt;<br>&lt;/head&gt;</td><br></tr><br></tbody><br></table><br>说明：这段代码作用：这个页面在6秒之后自动跳转到百度首页<br><br>## <strong>三、&lt;head&gt;标签内的&lt;style&gt;标签</strong><br><br>&lt;head&gt;标签内的&lt;style&gt;标签用于定义元素的CSS样式。<strong>语法：</strong><br><table><br><tbody><br><tr><br><td width="8">12345</td><br><td width="545">&lt;head&gt;<br>&lt;style type=”text/css”&gt;<br>&lt;!–这里写CSS样式–&gt;<br>&lt;/style&gt;<br>&lt;/head&gt;</td><br></tr><br></tbody><br></table>
+
+<h2 id="四、-lt-head-gt-标签内的-lt-script-gt-标签"><a href="#四、-lt-head-gt-标签内的-lt-script-gt-标签" class="headerlink" title="四、&lt;head&gt;标签内的&lt;script&gt;标签"></a><strong>四、&lt;head&gt;标签内的&lt;script&gt;标签</strong></h2><p>&lt;head&gt;标签内的&lt;script&gt;标签用于定义页面的脚本。<strong>语法：</strong></p>
+<table><br><tbody><br><tr><br><td width="8">12345</td><br><td width="545">&lt;head&gt;<br>&lt;script type=”text/javascript”&gt;<br>alert(“绿叶学习网HTML入门教程！”);<br>&lt;/script&gt;<br>&lt;/head&gt;</td><br></tr><br></tbody><br></table>
+
+<h2 id="五、-lt-head-gt-标签内的-lt-link-gt-标签"><a href="#五、-lt-head-gt-标签内的-lt-link-gt-标签" class="headerlink" title="五、&lt;head&gt;标签内的&lt;link&gt;标签"></a><strong>五、&lt;head&gt;标签内的&lt;link&gt;标签</strong></h2><p>&lt;head&gt;标签内的&lt;link&gt;标签用于外部文件的链接，一般用于链接外部CSS样式表文件和JS文件。<strong>语法：</strong></p>
+<table><br><tbody><br><tr><br><td width="7">123</td><br><td width="546">&lt;head&gt;<br>&lt;link  rel=”stylesheet”  type=”text/css”  title=”temp”  href=”/temp.css/“&gt;<br>&lt;/head&gt;</td><br></tr><br></tbody><br></table>
+
+<h2 id="六-、-lt-head-gt-标签内的-lt-base-gt-标签"><a href="#六-、-lt-head-gt-标签内的-lt-base-gt-标签" class="headerlink" title="六**、&lt;head&gt;标签内的&lt;base&gt;标签**"></a><strong>六**</strong>、&lt;head&gt;标签内的&lt;base&gt;标签**</h2><p>&lt;head&gt;标签内的&lt;base&gt;标签为整个页面定义所有链接的基础定位，其主要的作用是为了确保文档中所有的相对URL，都可以被分解成正确的文档地址，使在文档本身被移动或重命名的情况下也可以正确解析。</p>
+<p>语法：</p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td width="8">123</td></p>
+<p><td width="545">&lt;head&gt;<br>&lt;base  href=”<a href="http://lvyestudy/" target="_blank" rel="external">http://lvyestudy</a>“/&gt;<br>&lt;/head&gt;</td><br><br><br><br>&lt;base&gt;标签经常使用在创建文档集合中，为了不破坏文档中任何链接，使用者通过在每个文档中放置正确的&lt;base&gt;标签，便可以再目录甚至服务器之间移动整个文档集合。</p>
+<p>&lt;base&gt; 标签必须位于 head 元素内部。</p>
+<p>(&lt;head&gt;标签介绍完。 部分内容来源于<a href="http://www.lvyestudy.com/les_hj/hj_3.2.aspx" title="&lt;head&gt;标签" target="_blank" rel="external">绿叶学习网</a>。)</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://xifengxx.github.io/2015/12/13/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[网页图片格式浅析]]></title>
+      <url>http://xifengxx.github.io/2015/12/10/%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F%E6%B5%85%E6%9E%90/</url>
+      <content type="html"><![CDATA[<p>作为一名前端开发工程师，或是UI设计师，对网页图片格式需要有一定的了解。</p>
+<p>网页图片格式分为2种：一种是<strong>位图</strong>，另一种是<strong>矢量图</strong>。</p>
+<h2 id="一、位图"><a href="#一、位图" class="headerlink" title="一、位图"></a><strong>一、位图</strong></h2><p>位图3种格式：“.jpg”、“.png”、“.gif”。</p>
+<p>位图，又称为点阵图像，是由称作像素（图片元素）的单个点组成的。</p>
+<p>通常位图又分为8位、16位、24位和32位。</p>
+<ul>
+<li>8位图并不是图像只有8种颜色，而是28（即256）种颜色，8位图指的是用8个bits来表示颜色。从人眼的感觉来说，16位色基本能满足需要了。</li>
+<li>24位色又称为“真彩色”。224，大概是1600万之多，这个数字差不多是人眼可以分辨颜色的极限了。</li>
+<li>32位色并不是232的发色数，其实也是224种颜色，不过它增加了28阶颜色的灰度，也就是8位透明度，因此就规定它为32位色。</li>
+<li>在制作页面的时候，设计者一般选择24位图像。32位图像虽然质量好，但同时也带来更大的图像容量。如果一个页面使用体积过大的画，会使得浏览器加载页面速度变慢，事实上，一般肉眼也很难分辨24位图和32位图的区别。</li>
+</ul>
+<h4 id="（1）JPG格式"><a href="#（1）JPG格式" class="headerlink" title="（1）JPG格式"></a><strong>（1）JPG格式</strong></h4><p>JPG可以很好处理大面积色调的图像，如相片、网页一般的图片。</p>
+<h4 id="（2）PNG格式"><a href="#（2）PNG格式" class="headerlink" title="（2）PNG格式"></a><strong>（2）PNG格式</strong></h4><p>PNG支持透明信息。所谓透明，即图像可以浮现在其他页面文件或页面图像之上，如图1。可以说，PNG是专门为web创造的图像，通常大部分页面设计者在页面中加入Logo或者是一些点缀的小图像时，都会选择使用PNG格式。</p>
+<p>由于JPG格式容量较大，在保证图片清晰、逼真的前提下，网页中不可能大范围使用文件较大的jpg格式图片。PNG格式图片体积小，而且无损压缩，能保证网页的打开速度，所以PNG格式图片是很好的选择。</p>
+<p>由于PNG优秀的特点，PNG格式图片可以称为“网页设计专用格式”。</p>
+<p>我们在同一个网页中放入同样的jpg图片与png图片。为了明显区分，我们为每个图片加了一个边框，效果如下：</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/网页图片格式2.jpg" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/网页图片格式2.jpg" alt="网页图片格式2"></a></p>
+<h4 id="（3）GIF格式"><a href="#（3）GIF格式" class="headerlink" title="（3）GIF格式"></a><strong>（3）GIF格式</strong></h4><p>GIF只支持256色以内的图像。所以，GIF格式的图片效果是很差的。但是，GIF有一个最大的特点，就是可以制作动画，图像作者利用图像处理软件，将静态的GIF图像设置为单帧画面，然后把这些单帧画面连在一起，设置好一个画面到下一个画面的间隔时间，最后保存为GIF格式就可以了。可以说，这就是简单的逐帧动画。目前这种格式的动画在互联网上广为流行。</p>
+<p><strong>总结**</strong>：当处理色调复杂、绚丽的图像时，如照片、图画等，<strong><strong>适合</strong></strong>使用JPG格式；而处理一些logo、banner、简单线条构图的时候，适合使用PNG格式；GIF格式通常只适合表达动画效果。**</p>
+<h2 id="二、矢量图"><a href="#二、矢量图" class="headerlink" title="二、矢量图"></a><strong>二、矢量图</strong></h2><p>矢量图，又称为“向量图”。矢量图是计算机图形学中用点、直线或者多边形等基于数学方程的几何图元表示图像。</p>
+<p>矢量图是以一种数学描述的方式来记录图像内容的图像格式。如一个方程y=kx，当这个小方程体现在坐标系上的时候，设置不同的参数可以绘制不同角度的直线，这就是矢量图的构图原理。</p>
+<p>矢量图最大的优点是无论放大、缩小或旋转等不会失真；最大的缺点是难以表现色彩层次丰富的逼真图像效果（图片效果差）。</p>
+<p>在网页中，比较少用到矢量图，一般在网页logo和矢量插图我们才有可能用到矢量图。矢量图主要用于印刷行业，因为矢量图放大并不会失真，这样在印刷时就不会出现毛边或者模糊的情况，这一点是Photoshop都比不上的。随着3D和Flash发展，我们主要利用矢量图来造型，然后导入到3D MAX放样或者在Flash动画中使用。</p>
+<h3 id="矢量图格式"><a href="#矢量图格式" class="headerlink" title="矢量图格式"></a><strong>矢量图格式</strong></h3><p>矢量图的后缀一般有“.ai”、“.cdf”、“.fh”、“.swf”。“.ai”后缀的文件是一种静帧的矢量文件格式，“.cdf”后缀的文件多以工程图为常见。而“.swf”格式文件其实指的是flash，flash也是页面中最常见的一种动画。</p>
+<h3 id="三、位图与矢量图的区别"><a href="#三、位图与矢量图的区别" class="headerlink" title="三、位图与矢量图的区别"></a><strong>三、位图与矢量图的区别</strong></h3><p>1、位图受分辨率的影响，而矢量图不受分辨率影响。因此，当图片放大时，位图清晰度会变低，而矢量图清晰度不变。</p>
+<p>2、位图组成单位是“像素”，而矢量图组成单位是“数学向量”；</p>
+<p>3、位图适用于色彩丰富的图片，而矢量图却不适用于色彩丰富的图片；</p>
+<p>4、位图常用于网页中的照片等，容量较大；矢量图常用于印刷行业、网页logo或矢量插图。</p>
+<p>（备注：文章内容摘自<a href="http://www.lvyestudy.com/les_hj/hj_7.3.aspx" title="网页图片格式" target="_blank" rel="external">绿叶学习网</a>）</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[初入前端必看的前端开发知识、术语]]></title>
+      <url>http://xifengxx.github.io/2015/12/10/%E5%88%9D%E5%85%A5%E5%89%8D%E7%AB%AF%E5%BF%85%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86%E3%80%81%E6%9C%AF%E8%AF%AD/</url>
+      <content type="html"><![CDATA[<p>作为初入前端，或是对前端感兴趣的网友，最迷茫而又迫切的问题便是：前端开发包含哪些内容，如何快速学习前端知识？</p>
+<p>《前端开发者手册》，便是一本不错的启蒙读物。它介绍了前端开发岗位、前端开发相关的知识术语，前端开发的相关资源，以及如何学习前端开发。看完后，你会对前端有一个整体的了解。</p>
+<p>花了一个下午的时间看完这本前端开发者手册，感觉还是蛮有收获的，拓宽了我对前端的认知。不过该手册是翻译版本，读起来不是那么顺溜，会有些枯燥。</p>
+<p>另外手册中所提供的链接资源，大多数都是国外网址，网页内容是英文的，让人头疼，初学者了解下即可，不必深入纠结，否则会增加对前端的畏惧心理。等学习一段时间后，再查阅国外资源会是不错的选择。</p>
+<p>下面的内容是我整理的的知识点：《前端开发者手册》-来自ido321博友的翻译分享，点此<a href="https://dwqs.gitbooks.io/frontenddevhandbook/content/" title="前端开发者手册" target="_blank" rel="external">链接原文</a>。</p>
+<h2 id="第一部分：前端开发实践"><a href="#第一部分：前端开发实践" class="headerlink" title="**第一部分：前端开发实践"></a>**<span style="color: #0000ff;">第一部分：前端开发实践</span></h2><p>**</p>
+<h3 id="什么是前端开发者"><a href="#什么是前端开发者" class="headerlink" title="什么是前端开发者?"></a><strong>什么是前端开发者?</strong></h3><p>一个前端开发者, 要会使用Web技术(如：HTML,CSS,DOM和JavaScript)设计和开发网站应用. 网站应用, 或运行于Web平台 之上, 或用于编译非Web平台环境的输入(如：NativeScript).</p>
+<h3 id="前端的工作职称"><a href="#前端的工作职称" class="headerlink" title="前端的工作职称"></a><strong>前端的工作职称</strong></h3><p>对于前端开发者最普遍的职称是 “前端开发者” 或者 “前端工程师”, 可以根据任何包含 “前端”, “客户端”, “web UI”, “CSS”, “HTML” 和 “JavaScript” 的职称推断一个人对 HTML, CSS 和 JavaScript 的了解程度.</p>
+<p><strong>前端开发者/工程师</strong> (又称作 Web前端开发者/工程师, 客户端开发者/工程师, 前端软件开发者/工程师 或 UI 工程师)</p>
+<p>这是通用的职称, 用于描述一个开发者对 HTML, CSS, JavaScript 有很熟练的掌握, 并能在Web平台上应用这些技术.</p>
+<p><strong>CSS/HTML开发者</strong></p>
+<p>这个职称用于描述一个开发者精通于 CSS 和 HTML, 但是对 JavaScript 和应用不熟悉.</p>
+<p><strong>前端JavaScript(可选, 应用程序)开发人员</strong></p>
+<p>当职称中包含 “JavaScript应用程序” 时, 这就表示此开发人员是一个拥有高级编程, 软件开发和应用程序开发技能(如: 有构建前端应用程序的实践经验)的高级 JavaScript 开发者.</p>
+<p><strong>前端Web设计师</strong></p>
+<p>当职称中包含 “设计师” 时, 这就表示此设计师不仅拥有前端技能(如: HTML &amp; CSS), 还拥有专业的设计技能(视觉设计和交互设计).</p>
+<p><strong>Web/前端用户界面(又称 UI)开发者/工程师</strong></p>
+<p>当职称中包含 “界面” 或者 “UI” 时, 这就表示此开发人员除了掌握前端技能, 还拥有交互设计技能.</p>
+<p><strong>移动/平板前端开发者</strong></p>
+<p>当职称中包含 “移动” 或者 “平板” 时, 这就表示此开发人员在开发运行在移动或平板设备上的前端应用(或本机程序, 或运行在Web平台, 例如浏览器)很有经验.</p>
+<p><strong>前端 SEO 专家</strong></p>
+<p>当职称中包含 “SEO” 时, 这就表示此开发者对一个 SEO 策略定制前端技术有着丰富的经验.</p>
+<p><strong>前端可访问性专家</strong></p>
+<p>当职称中包含 “可访问性” 时, 这就表示此开发者对定制支持可访问性要求和标准的前端技术有着丰富的经验.</p>
+<p><strong>前端开发运维</strong></p>
+<p>当职称中包含 “开发运维” 时, 这就表示此开发者对软件开发实践与合作, 集成, 部署, 自动化和测量有着丰富的经验.</p>
+<p><strong>前端测试/QA</strong></p>
+<p>当职称中包含 “测试” 或 “QA” 时, 这就表示此开发者对测试和软件管理, 包括单元测试, 功能测试, 用户测试和 A/B 测试有着丰富的经验.</p>
+<p><strong>前端全栈工程师</strong></p>
+<p>若你在职称中碰到 “全栈” 或 类似于 “Web开发者” 一样的职位, 这些可能是雇主用来描述这个角色负责 Web/应用程序 开发的各个方面, 即包括前端和后端(还可能包括设计).</p>
+<h3 id="前端开发者常用的网络技术"><a href="#前端开发者常用的网络技术" class="headerlink" title="前端开发者常用的网络技术"></a><strong>前端开发者常用的网络技术</strong></h3><ul>
+<li>Hyper Text Markup Language(超文本标记语言, 又称 HTML)</li>
+<li>Cascading Style Sheets (层叠式样式表, 又称 CSS)</li>
+<li>Document Object Model (文档对象模型, 又称 DOM)</li>
+<li>JavaScript Programming Language (JavaScript编程语言, 又称: ECMAScript 6, ES6, JavaScript 2015)</li>
+<li>Web API’s (Web应用程序接口, 又称 HTML5 API 或浏览器 API)</li>
+<li>Hypertext Transfer Protocol (超文本传输协议, 又称 HTTP)</li>
+<li>Uniform Resource Locator’s (统一资源定位符, 又称 URL)</li>
+<li>JavaScript Object Notation (JavaScript对象表示, 又称 JSON)</li>
+<li>Web Content Accessibility Guidelines (网页内容无障碍设计指南, 又称 WCAG) &amp; Accessible Rich Internet Applications (富Internet应用程序的无障碍设计, 又称 ARIA)</li>
+</ul>
+<h3 id="前端开发的技术栈"><a href="#前端开发的技术栈" class="headerlink" title="前端开发的技术栈"></a><strong>前端开发的技术栈</strong></h3><p>对于任何类型的前端开发人员, HTML, CSS, DOM, JavaScript, HTTP/URL 和浏览器利用是基本的技术要求.</p>
+<p>对于HTML, CSS, DOM, JavaScript, HTTP/URL 和浏览器开发之外的, 一个前端开发者还应该掌握下面技术列表中的一个或多个:</p>
+<ul>
+<li>Content Management System (内容管理系统, 又称 CMS)</li>
+<li>js</li>
+<li>Cross-browser testing (跨浏览器测试)</li>
+<li>Cross-platform testing (跨平台测试)</li>
+<li>Unit Testing (单元测试)</li>
+<li>Cross-device testing (跨设备测试)</li>
+<li>Accessibility / WAI-ARIA (无障碍访问/无障碍富Internet应用程序)</li>
+<li>Search Engine Optimization (搜索引擎优化, 又称 SEO)</li>
+<li>Interaction or User Interface design (交互或用户设计)</li>
+<li>User Experience (用户体验)</li>
+<li>Usability (可用性/易用性)</li>
+<li>E-commerce Systems (电子商务系统)</li>
+<li>Portal Systems (门户系统)</li>
+<li>Wireframing (框架)</li>
+<li>CSS layout / Grids (CSS 布局/栅格系统)</li>
+<li>DOM manipulation (e.g. jQuery) (DOM 操作)</li>
+<li>Mobile Web Performance (移动Web性能)</li>
+<li>Load Testing (载荷测试)</li>
+<li>Performance Testing (性能测试)</li>
+<li>Progressive Enhancement / Graceful Degradation (渐进增强/优雅降级)</li>
+<li>Version Control (e.g. GIT) (版本控制)</li>
+<li>MVC / MVVM / MV (MV框架)</li>
+<li>Functional Programming (函数式编程)</li>
+<li>Data Formats (e.g. JSON, XML) (数据格式)</li>
+<li>Data API’s (e.g Restful API) (数据API)</li>
+<li>Web Font Embedding (Web字体嵌入)</li>
+<li>Scalable Vector Graphics (可伸缩向量图形, 又称 SVG)</li>
+<li>Regular Expressions (正则表达式)</li>
+<li>Content Strategy (内容策略)</li>
+<li>Microdata / Microformats (微数据/微格式)</li>
+<li>Task Runners, Build Tools, Process Automation Tools (任务管道, 构建工具, 过程自动化工具)</li>
+<li>Responsive Web Design (响应式设计)</li>
+<li>Object Oriented Programming (面向对象编程)</li>
+<li>Application Architecture (应用架构)</li>
+<li>Modules (模块)</li>
+<li>Dependency Managers (依赖关系管理)</li>
+<li>Package Managers (包管理)</li>
+<li>JavaScript Animation (JavaScript 动画)</li>
+<li>CSS Animation (CSS 动画)</li>
+<li>Charts / Graphs (图表/图形)</li>
+<li>UI widgets (UI工具集)</li>
+<li>Code Quality Testing (代码质量测试)</li>
+<li>Code Coverage Testing (代码覆盖测试)</li>
+<li>Code Complexity Analysis (代码复杂度测试)</li>
+<li>Integration Testing (集成测试)</li>
+<li>Command Line / CLI (命令行/命令行界面)</li>
+<li>Templating Strategies (模板策略)</li>
+<li>Templating Engines (模板引擎)</li>
+<li>Single Page Applications (单页应用)</li>
+<li>XHR Requests (aka AJAX) (XHR 请求, 又称 AJAX)</li>
+<li>Web/Browser Security (Web/浏览器安全)</li>
+<li>HTML Semantics (HTML 语义化)</li>
+<li>Browser Developer Tools (浏览器开发者工具)</li>
+</ul>
+<h3 id="团队中的前端"><a href="#团队中的前端" class="headerlink" title="团队中的前端"></a><strong>团队中的前端</strong></h3><p>一个构建专业的Web网站或软件的最小化团队也应该包含下列角色:</p>
+<ul>
+<li>视觉设计 (字体, 颜色, 字距, 视觉概念&amp;主题)</li>
+<li>UI/交互设计/信息架构师 (制定框架, 指定所有用户交互, UI功能和结构信息)</li>
+<li>前端开发者 (写能够在客户端/设备上运行的代码)</li>
+<li>后端开发者 (写能够在服务端运行的代码)<br>这些角色是根据技能的覆盖排序的(后面的角色的技能会覆盖前面的). 一个前端开发者很擅长处理 UI/交互设计, 后端开发者也一样. 团队成员承担多个角色是很少见的.</li>
+</ul>
+<p>一个大的团队可能包含下列角色, 而不是如上面所展示的:</p>
+<ul>
+<li>视觉设计</li>
+<li>UI/交互设计/信息架构师</li>
+<li><strong>SEO 策略师</strong></li>
+<li>前端开发者</li>
+<li><strong>开发-运维工程师</strong></li>
+<li>后端开发者</li>
+<li><strong>API 开发者</strong></li>
+<li><strong>数据库管理员</strong></li>
+<li><strong>QA 工程师/测试人员</strong></li>
+</ul>
+<h3 id="如何成为前端开发者"><a href="#如何成为前端开发者" class="headerlink" title="如何成为前端开发者?"></a><strong>如何成为前端开发者?</strong></h3><p>如果我从现在开始决定成为一名前端开发人员, 我会努力按照下面所概括的过程进行学习. 学习过程中, 我会假设你是自己最好的老师.</p>
+<ul>
+<li>粗略了解 Web 是怎么工作的, 确保你知道域名, DNS, URL, HTTP, 网络, 浏览器, 服务器/服务托管, 数据库, JSON, API, HTML, CSS DOM 和 JavaScript. 了解这些的目的是确保你知道它们如何一起工作以及每部分用于做什么. 专注于高水平的前端架构概述. 从简单的网页 制作开始, 并简单学习一下本机 Web 应用(又称 SPA).</li>
+<li>学习 HTML, CSS, 可访问性和 SEO.</li>
+<li>学习 UI 设计模式的基本原理, 交互设计, 用户体验设计和可用性</li>
+<li>学习编程的基本原理</li>
+<li>学习 JavaScript</li>
+<li>学习 JSON 和 API</li>
+<li>学习 CLI/命令行</li>
+<li>学习软件工程实践(如: 应用设计/架构, 模板, Git, 测试, 监控, 自动化, 代码质量, 开发方法学)</li>
+<li>定制自己的工具箱</li>
+<li>学习 Node.js</li>
+</ul>
+<h3 id="Internet-web"><a href="#Internet-web" class="headerlink" title="Internet/web"></a><strong>Internet/web</strong></h3><p>互联网使用网络协议套件(TCP / IP)链接全球数十亿的设备, 是一个从区域到全球, 由数以百万计的私人, 公共, 学术, 商业, 和政府网络组成的全球性网络系统, 并通过一系列广泛的电子, 无线, 光纤网络技术相互链接. 互联网提供了广泛的信息资源和服务, 如早期的超文本文档和应用万维网(WWW), 电子邮件, 电话和点对点文件共享网络.</p>
+<h2 id="第二部分：前端开发学习—自主学习"><a href="#第二部分：前端开发学习—自主学习" class="headerlink" title="第二部分：前端开发学习—自主学习"></a><span style="color: #0000ff;">第二部分：前端开发学习—自主学习</span></h2><p>（原文主要是解释一些前端相关的专业术语，并提供很多资源链接。但链接内容大多都是英文网站，让人头疼，所以就没有添加链接。不过，在文章结尾，我会附上我收藏的<span style="color: #ff0000;"><strong>前端资源收藏夹</strong></span>，里面资源非常多，而且都是中文的，非常大的福利哦！）</p>
+<h3 id="Web浏览器"><a href="#Web浏览器" class="headerlink" title="Web浏览器"></a><strong>Web浏览器</strong></h3><p>web 浏览器(通常被称为浏览器)是一个用于检索、展示和遍历在万维网上的信息资源的软件应用程序. 信息资源被定义成统一资源定位符(URI/URL). 它可能是网页, 图片, 视频或者一个内容片断. 超链接的出现使用户能轻松的将浏览器导航到相关的资源, 尽管浏览器主要是为了使用万维网, 但它们还可以用来访问 Web服务器在私人网络所提供的信息或文件在文件系统.</p>
+<p><a href="http://www.sitepoint.com/browser-trends-april-2015-statcounter-vs-netmarketshare/" target="_blank" rel="external">主流的浏览器</a> 如下:</p>
+<ol>
+<li><a href="http://www.google.com/chrome/" target="_blank" rel="external">Chrome</a>(引擎: <a href="https://en.wikipedia.org/wiki/Blink_(layout_engine" target="_blank" rel="external">Blink</a>) + <a href="https://en.wikipedia.org/wiki/V8_(JavaScript_engine" target="_blank" rel="external">V8</a>))</li>
+<li><a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank" rel="external">Firefox</a>(引擎: <a href="https://en.wikipedia.org/wiki/Gecko_(software" target="_blank" rel="external">Gecko</a>) + <a href="https://en.wikipedia.org/wiki/SpiderMonkey_(software" target="_blank" rel="external">SpiderMonkey</a>))</li>
+<li><a href="http://www.frontendhandbook.com/learning/Internet Explorer" target="_blank" rel="external">Internet Exploere</a>(引擎: <a href="https://en.wikipedia.org/wiki/Trident_(layout_engine" target="_blank" rel="external">Trident</a>) + <a href="https://en.wikipedia.org/wiki/Chakra_(JScript_engine" target="_blank" rel="external">Chakra</a>))</li>
+<li><a href="https://www.apple.com/safari/" target="_blank" rel="external">Safari</a>(引擎: <a href="https://en.wikipedia.org/wiki/WebKit" target="_blank" rel="external">Webkit</a> + <a href="https://trac.webkit.org/wiki/SquirrelFish" target="_blank" rel="external">SquirrelFish</a>)<br><strong>最常用的无壳浏览器:</strong></li>
+</ol>
+<ul>
+<li><a href="http://phantomjs.org/" target="_blank" rel="external">PhantomJS</a>(引擎: <a href="https://en.wikipedia.org/wiki/WebKit" target="_blank" rel="external">Webkit</a> + <a href="https://trac.webkit.org/wiki/SquirrelFish" target="_blank" rel="external">SquirrelFish</a>)</li>
+<li><a href="http://slimerjs.org/" target="_blank" rel="external">slimerjs</a>(引擎: <a href="https://en.wikipedia.org/wiki/Gecko_(software" target="_blank" rel="external">Gecko</a>) + <a href="https://en.wikipedia.org/wiki/SpiderMonkey_(software" target="_blank" rel="external">SpiderMonkey</a>))</li>
+<li><a href="http://triflejs.org/" target="_blank" rel="external">TrifleJS</a>(引擎: <a href="https://en.wikipedia.org/wiki/Trident_(layout_engine" target="_blank" rel="external">Trident</a>) + <a href="https://en.wikipedia.org/wiki/Chakra_(JScript_engine" target="_blank" rel="external">Chakra</a>))</li>
+</ul>
+<h3 id="域名系统-又称-DNS"><a href="#域名系统-又称-DNS" class="headerlink" title="域名系统(又称 DNS)"></a><strong>域名系统(又称 DNS)</strong></h3><p>对于个人电脑、服务器或连接到互联网任何资源, 或专用网络而言, 域名系统(DNS)是一个分层分布式命名系统, 用给每个参与的实体分配域名的方式将各种信息联系起来, 更重要的是, 为能访问全球的计算机服务和设备, DNS 将所需的数字 IP 地址转变为人类容易记住的域名. DNS 是大多数互联网服务的必要功能, 因为这是主要的 IP 地址服务.</p>
+<h3 id="HTTP-网络-包括-CORS-和-WebSockets"><a href="#HTTP-网络-包括-CORS-和-WebSockets" class="headerlink" title="HTTP/网络(包括 CORS 和 WebSockets)"></a><strong>HTTP/网络(包括 CORS 和 WebSockets)</strong></h3><p><strong>HTTP</strong>, The Hypertext Transfer Protocol, 即超文本传输协议, 是一个用于分布式, 协作和超媒体信息系统的应用协议, 是 WWW 数据通信的基础. - Wikipedia</p>
+<p><strong>CROS</strong>, Cross-origin resource sharing, 即跨域资源共享, 是一种允许网页上受限制的资源(如: 字体)可以从该资源所在域之外的另一个域被请求. - Wikipedia</p>
+<p><strong>WebSockets</strong>, WebSocket 是一种协议, 提供了在一个 TCP 连接上进行全双工通信的渠道. 在 2011 年, IETF 将 WebSocket 协议标准化为 RFC 6455, 并且 W3C 正在标准化 Web IDL 的WebSocket API.</p>
+<h3 id="Web-主机"><a href="#Web-主机" class="headerlink" title="Web 主机"></a><strong>Web 主机</strong></h3><p>Web 主机是一种网络托管服务, 允许万维网访问个人和组织他们的网站, 由拥有服务器的企业提供空间, 或者租赁给客户使用, 并提供网络连接. Web 主机也能提供数据中心空间和连接到互联网上位于数据中心的其他服务器, 称为主机托管</p>
+<h3 id="用户界面和交互设计"><a href="#用户界面和交互设计" class="headerlink" title="用户界面和交互设计"></a><strong>用户界面和交互设计</strong></h3><p><strong>用户界面设计:</strong> 用户界面设计(UI)或用户界面工程师是为机器或者软件做用户界面设计的, 如: 计算机, 家用器具, 移动设备和其它电子设备, 专注于最大限度地提高用户体验. 用户界面设计的目标是尽可能是使用户交互变得简单有效, 实现用户的操作目标(设计是以用户为中心的). - wikipedia</p>
+<p><strong>交互设计模式:</strong> 设计模式是一种记录解决常见设计问题解决方案的形式化方式. 建筑师 Christopher Alexander 在城市规划和建设体系结构中已经介绍了这种方式, 并已用于其他学科, 包括教学, 教育学和软件架构和设计. - wikipedia</p>
+<p><strong>用户体验设计:</strong> 用户体验设计(又称 UXD 或 UED 或 XD), 是通过提高可用性、可访问性以及在用户跟产品交互时的愉悦来提高用户体验的过程. 用户体验设计从完成传统的人机交互(HCI), 已经扩展到要处理产品或服务中能被用户感知的所有方面. - wikipedia</p>
+<p><strong>人机交互:</strong> 人机交互(HCI)不仅特别关注人和计算之间的界面, 也会研究设计和使用 Web 技术. 人机交互领域的研究人员都会去关注当前人类与计算机交互的方式和为人类与计算机提供新的交互方式的设计技术.</p>
+<h3 id="HTML-amp-CSS"><a href="#HTML-amp-CSS" class="headerlink" title="HTML &amp; CSS"></a><strong>HTML &amp; CSS</strong></h3><p><strong>HTML</strong> - 超文本标记语言, 通常被称为 HTML, 是被用于创建网页的标准标记语言. Web浏览器能将 HTML 文件渲染成可见的或者可听到的. HTML 随着线索提示, 语义化地描述了网站的结构, 使它成为一种标记语言, 而不是编程语言.</p>
+<p><strong>CSS</strong> - 层叠式样式表(CSS)是用于描述外观和格式化标记语言编写的文档的样式表语言. 尽管经常被用来改变用 HTML 和 XHTML 编写的网页和用户界面的样式, 但也可用于任何 XML 文档, 包括纯 XML, SVG 和 XUL. 跟 JavaScript 和 HTML 一样, CSS是被大多数网站用于为Web应用程序创建富有吸引力的网页, 用户界面的一种基础技术, 也为许多移动应用程序创建用户界面.</p>
+<h3 id="SEO-搜索引擎优化"><a href="#SEO-搜索引擎优化" class="headerlink" title="SEO: 搜索引擎优化"></a><strong>SEO: 搜索引擎优化</strong></h3><p>搜索引擎优化(SEO)是在自然的搜索结果中, 影响一个网站或者网页可见性的过程. 一般来说, 越靠前出现(或在搜索结果页中权重高的网页)的网页, 和频繁出现在搜索结果列表中的网站, 就能获取更多来自搜索引擎的用户. SEO 会定位于不同类型的搜索, 包括图片搜索, 本地搜索, 视频搜索, 学术搜索, 新闻搜索和特定行业的垂直搜索引擎.</p>
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a><strong>JavaScript</strong></h3><p>JavaScript 是一种高级的, 动态的, 无类型的和解释型的编程语言, 它已经在 ECMAScript 语言规范中被标准化. 跟 HTML 和 CSS 一样, JavaScript 是 WWW 内容生成的第三种必不可少的技术; 大多数的网会使用Javascript, 并且 Javascript 被所有现在Web浏览器支持. JavaScript 基于原型和函数优先的特点, 使它成为多范型的语言, 支持面向对象的, 命令式的, 和函数式编程风格. JavaScript 能提供 API 来处理文本, 数组, 日期和正则表达式, 但不包括任何 I/O, 如网络, 存储或图形工具, 对这些的依赖取决于宿主环境中嵌入了什么.</p>
+<h3 id="DOM-BOM-amp-JQuery"><a href="#DOM-BOM-amp-JQuery" class="headerlink" title="DOM, BOM &amp; JQuery"></a><strong>DOM, BOM &amp; JQuery</strong></h3><p><strong>DOM</strong> - 文档对象模型(DOM)用于代表和对象交互的HTML, XHTML 和 XML 文档, 是一种跨平台和语言无关性的约定. 每一份文档的所有节点被组织成一种树结构, 称为 DOM 树. DOM 对象通过使用对象上的方法被处理和操作, 一个 DOM 对象的公共接口被指定为它的应用程序编程接口(API). - wikipedia.org</p>
+<p><strong>BOM</strong> - 浏览器对象模型(BOM)是一种浏览器规范, 代指 Web 浏览器暴露出的对象. 与文档对象模型不同的是, 目前并没有关于浏览器对象模型的标准和严格定义, 因而浏览器厂商可以按照他们的意愿, 采取任何方式来实现 BOM. - wikipedia.org</p>
+<p><strong>JQuery</strong> - JQuery 是一个跨平台的 JavaScript 库, 其设计目的是简化客户端的 HTML 脚本操作. JQuery 也是目前最流行的 JavaScript 库, 在目前排名前1000万的网站中, 65% 的网站安装了 JQuery. JQuery 是免费的, 基于 MIT 协议的开源软件.</p>
+<h3 id="Web-字体-amp-图标"><a href="#Web-字体-amp-图标" class="headerlink" title="Web 字体 &amp; 图标"></a><strong>Web 字体 &amp; 图标</strong></h3><p>Web 字体是指在 WWW 上使用的字体. 当 HTML 文档第一次被创建时, 字体风格和样式会被每个 Web 浏览器的设置所控制, 因为直到 1995 年网景介绍了&lt;font&gt;标记之前, 个人网页没有控制字体显示的方式, 而&lt;font&gt;标记在 HTML 3.2 规范中被标准化. 然而, 被标记指定的字体必须安装在用户的电脑上, 或者是一种可以依赖的字体, 如: 浏览器默认的 sans-serif 字体或 monospace 字体. 在1996 年 发布的 CSS 1.0 规范也提供指定使用字体的功能.</p>
+<p>1998 年, CSS 2.0 规范发布, 意图通过字体匹配, 合成和下载技术, 改善字体的选择过程, 但这些技术并没有得到使用, 并在 CSS2.1 规范中被移除了. 然而, 在 1997 年发布的 IE 4.0 增加了对字体下载的支持, 随后, CSS 3 的字体模块变包含了字体下载, 并且 Safari 3.1, Opera 10 和 Mozilla Firefox 3.5 实现了这一功能, 随后便增加了 Web 字体和所使用字体的下载. -</p>
+<h3 id="无障碍设计"><a href="#无障碍设计" class="headerlink" title="无障碍设计"></a><strong>无障碍设计</strong></h3><p>无障碍设计是指产品, 设备, 服务, 或者环境是为残疾人设计的. 无障碍设计的概念意味着与一个人的辅助技术(例如, 电脑屏幕阅读器)相兼容, 确保直接访问(即独立)和”间接访问”.</p>
+<p>无障碍设计可以理解为 “能够访问”, 并对一个系统或实体是有利的, 其侧重于使身体残障, 或有特殊需要, 或要依赖辅助技术的人群能够访问 Web. 然后, 研究和开发无障碍设计对每个人都带来了好处.</p>
+<p>无障碍设计不应该和可用性混淆. 大多数情况下, 可用性是指产品(如: 设备, 服务, 或者环境)能在特定的环境下被特定的用户使用, 来高效地实现制定目标.</p>
+<p>无障碍设计和通用性设计是息息相关的. 通用型设计是指产品的创造过程中, 产品对人们是可用的, 并尽可能最大范围覆盖各能力范围内的人群和各种情形下的操作, 即对所有人是可访问的(无论他们访问 Web 是否有障碍).</p>
+<h3 id="Web-浏览器-API"><a href="#Web-浏览器-API" class="headerlink" title="Web/浏览器 API"></a><strong>Web/浏览器 API</strong></h3><p>BOM 和 DOM 并不是唯一的浏览器 API, 在浏览器内部的 Web 平台上, 它们是可用的. DOM 和 BOM 并不是一切, 但是一个用于浏览器编程的接口可以被认识一个 Web 或者 浏览器 API(悲剧的是, 这些 API 曾被称为 HTML 5 API, 这会和 HTML 5 自身的规范/标准混淆, 因为 HTML 5 规范特指 HTML 5 标记语言). Web 或浏览器 API 也会包括访问设备的 API(如: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getBattery" target="_blank" rel="external">Navigator.getBattery()</a>), 通过平板和手机设备上的浏览器可以利用这些 API.</p>
+<h3 id="JSON-JavaScript-Object-Notation"><a href="#JSON-JavaScript-Object-Notation" class="headerlink" title="JSON(JavaScript Object Notation)"></a><strong>JSON(JavaScript Object Notation)</strong></h3><p>JSON, 有时也称 JavaScript 对象表示, 是一种使用人类可读的文本传输由键值对组成的数据对象的开放格式. 对于异步浏览器/服务器通信(AJAJ), JSON 是主要的数据格式, 很大程度上代替了 XML(AJAX).</p>
+<p>尽管最初是从 JavaScript 脚本语言衍生而来, 但是 JSON 是语言无关性的数据格式, 在许多编程语言中, 代码解析和生成 JSON 是很容易的.</p>
+<p>JSON 的格式最初是由 Douglas Crockford 指定的, 但目前却被描述成两种标准: RFC 7159 和 ECMA-404. ECMA 标准只允许被合法的语法语句描述, 而 RFC 则提供了一些语义化描述和安全考虑. JSON 的官方网络媒体类型 application / JSON, 扩展名是 .json.</p>
+<h3 id="静态网页生成器"><a href="#静态网页生成器" class="headerlink" title="静态网页生成器"></a><strong>静态网页生成器</strong></h3><p>静态网页生成器, 是使用服务器端代码编写(如: ruby, php, python, nodeJS 等…), 用静态文本数据 + 模板, 生成从服务器发送到客户端的静态 HTML 文件.</p>
+<h3 id="Web-开发者工具"><a href="#Web-开发者工具" class="headerlink" title="Web 开发者工具"></a><strong>Web 开发者工具</strong></h3><p>Web 开发者工具允许开发者测试和调试代码, 它们不同于网站生成器和 IDE, 因为 Web 开发者工具不直接参与网页的创建, 而是用于测试网站或 Web 应用的用户界面接口的工具.</p>
+<p>Web 开发者工具是浏览器的加载项或内置功能. 当今最流行的web浏览器, Google Chrome, Firefox, Opera, Internet Explorer, 和 Safari 都内置工具用于帮助开发者, 并且在各自的插件下载中心, 还提供很多额外的加载项.</p>
+<p>Web 开发者工具允许开发者使用各种各样的 Web 技术, 包括 HTML, CSS, DOM, JavaScript 和 其它浏览器能够处理的组件. 由于日益增长的需求, 更多流行的 Web 浏览器包括了更多面向开发人员的功能.</p>
+<p>尽管大多数浏览器都配备了开发者工具, 但是 <a href="https://developers.google.com/web/tools/chrome-devtools/" target="_blank" rel="external">谷歌开发者工具</a> 是目前谈论最多, 应用最广泛的开发者工具.</p>
+<h3 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a><strong>命令行</strong></h3><p>命令行接口或命令语言解译器(CLI), 也称命令行用户界面, 控制台用户界面和字符用户界面(CUI), 是一种用户以连续的文本(命令行)的形式向程序提出需求, 与计算机程序交互的方式.</p>
+<h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a><strong>Node.js</strong></h3><p>Node.js 用于开发服务端 Web 应用, 是一个开源的, 跨平台的运行时环境. Node.js 应用由 JavaScript 编写, 可以在 OS X, Microsoft Windows, Linux, FreeBSD, NonStop, IBM AIX, IBM System z and IBM i 上的 Node.js 运行时环境运行. Node.js 的开发和维护有 Node.js 基金会提供支持, 这是 Linux 基金会的一个合作项目.</p>
+<p>Node.js 提供一个事件驱动的体系架构和非阻塞的 I/O 设计来优化应用程序的吞吐量和实时web应用程序的可伸缩性, 它使用谷歌的 V8 JavaScript 引擎来执行代码, 并有大量的由 JavaScript 编写的基础模块. Node.js 包含内置的模块, 允许应用程序作为一个web服务器而不依赖类似 Apache HTTP Server, Nginx 或 IIS 的软件.</p>
+<h3 id="React"><a href="#React" class="headerlink" title="React"></a><strong>React</strong></h3><p><strong>React</strong> - 用于构建用户界面的JAVASCRIPT库</p>
+<p><strong>仅仅是UI</strong> - 许多人使用React作为MVC架构的V层。 尽管React并没有假设过你的其余技术栈， 但它仍可以作为一个小特征轻易地在已有项目中使用</p>
+<p><strong>虚拟DOM</strong> - React为了更高超的性能而使用虚拟DOM作为其不同的实现。 它同时也可以由服务端Node.js渲染 － 而不需要过重的浏览器DOM支持</p>
+<p><strong>数据流</strong> - React实现了单向响应的数据流，从而减少了重复代码，这也是它为什么比传统数据绑定更简单。</p>
+<h3 id="包管理器"><a href="#包管理器" class="headerlink" title="包管理器"></a><strong>包管理器</strong></h3><p>包管理器或包管理系统是一系列软件工具的集合, 这些软件工具用和电脑操作系统一致的方式, 使应用的安装, 升级, 配置和删除软件包的过程自动化, 它通常维护一个数据库软件的依赖和版本信息, 防止软件不匹配和无法跟踪.</p>
+<h3 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a><strong>版本控制</strong></h3><p>软件配置管理, 版本控制的一个组成部分, 也称为校正控制或源码控制, 用于管理文档, 计算机程序, 大型网站和其它信息集合的变化. 变化通常被定义为一串数字或字母代码, 被称为 “版本编号”, “版本标识”, 或简称”版本”. 举个例子, 初始的文件集合是”版本1”, 当第一个改变文件时, 就变成了”版本2”等等. 每一个版本都和一个时间戳和做出改变的人联系在一起. 版本可以被比较, 恢复和跟其它文件合并.</p>
+<h3 id="构建和任务自动化"><a href="#构建和任务自动化" class="headerlink" title="构建和任务自动化"></a><strong>构建和任务自动化</strong></h3><p>构建自动化是软件构建和相关流程的自动化过程, 包括: 将计算机源码编译成二进制代码, 打包二进制代码和运行自动化测试. -</p>
+<h3 id="网站性能优化"><a href="#网站性能优化" class="headerlink" title="网站性能优化"></a><strong>网站性能优化</strong></h3><p>Web 性能优化, WPO, 或网站优化是提高用户浏览器的网站加载和显示速度的知识领域. 由于网速整体提高了, 很适合网站的管理者和维护者去考虑网站呈现给访问者所花费的时间了.</p>
+<h3 id="JS-测试"><a href="#JS-测试" class="headerlink" title="JS 测试"></a><strong>JS 测试</strong></h3><p><strong>单元测试</strong> -  在计算机程序中, 单元测试是一种软件测试方法, 通过独立的代码单元, 一个或多个计算机程序模块的集合, 和相关联的控制数据, 使用程序和操作过程进行测试, 以确定它们是否适合使用. 直观地说, 可以将一个单元视为应用程序最小的, 可测试的一部分. - Wikipedia</p>
+<p><strong>功能测试</strong> - 功能测试是一个质量保证(QA)的过程, 也是一种基于在软件组件测试规范之下的测试案例的黑盒子测试. 功能测试会检查程序的输入和输出, 但很少去考虑内部地程序结构(跟白盒子测试不同). 功能测试通常描述了系统”做什么”. - Wikipedia</p>
+<p><strong>集成测试</strong> - 在软件测试中, 集成测试(也称集成和测试, 缩写为 I&amp;T)是各个软件模块结合起来, 作为一个整体进行测试的阶段, 之后便是单元测试和验证测试. 集成测试把已经通过的单元测试作为输入模块, 将它们组织成更大的聚集, 在集成测试中应用计划用于这些聚集而被定义的测试, 并提供为集成测试做好准备的集成系统作为其输出.</p>
+<h3 id="无壳浏览器"><a href="#无壳浏览器" class="headerlink" title="无壳浏览器"></a><strong>无壳浏览器</strong></h3><p>无壳浏览器是指没有图形用户界面的 Web 浏览器.</p>
+<p>无壳浏览器拥有一个和受欢迎的 Web 浏览器相似的环境, 并提供了网页的自动化控制, 但要通过命令行接口或使用网络通信工具执行. 对于测试网页, 无壳浏览器是非常有用的, 因为和普通浏览器一样, 它们能渲染和理解 HTML, 包括样式元素, 如: 页面布局, 颜色, 字体选择, JavaScript 的执行和 AJAX, 但是当使用其它方法时, Ajax 通常就不可用了. 在 2009 年, 谷歌声称使用无壳浏览器有助于搜索引擎使用 Ajax 从其它网站索引内容.</p>
+<h3 id="离线开发"><a href="#离线开发" class="headerlink" title="离线开发"></a><strong>离线开发</strong></h3><p>离线开发(又称离线优先)是一个领域常识和围绕设备并不总是连接到互联网或电源的开发实践的讨论.</p>
+<h3 id="多平台开发"><a href="#多平台开发" class="headerlink" title="多平台开发"></a><strong>多平台开发</strong></h3><p>一个网站或应用不仅能运行在各种台式机, 笔记本电脑, 平板和手机, 还能运行于少部分其它设备(手表, 温控器, 电冰箱等等). 你将怎么决定支持哪些平台和为支持这些平台, 怎么去开发, 这被称为多平台开发策略. 接下来, 我会列出常见的多平台开发策略:</p>
+<ul>
+<li>创建<a href="https://en.wikipedia.org/wiki/Responsive_web_design" target="_blank" rel="external">响应式 Web 设计</a> (RWD) 网站/APP</li>
+<li>创建<a href="http://www.lukew.com/ff/entry.asp?1392" target="_blank" rel="external">RESS</a> (基于服务端组件的响应式 Web 设计) 网站/APP</li>
+<li>创建<a href="https://en.wikipedia.org/wiki/Adaptive_web_design" target="_blank" rel="external">自适应/渐进增强地</a> 网站/APP</li>
+<li>对每一个或每一组平台建立一套网站, Web 应用, 本地应用或混合应用</li>
+<li>尝试修改你用策略1, 策略2或策略创建的应用. 这可能和点缀与屏幕大小无关的部分 UI 一样简单, 也可以试图完全支持其他平台与整个</li>
+</ul>
+<h2 id="第三部分：前端开发工具"><a href="#第三部分：前端开发工具" class="headerlink" title="第三部分：前端开发工具"></a><span style="color: #0000ff;">第三部分：前端开发工具</span></h2><p>（这部分，我摘取的就更少了，对于初学者大概扫一下即可，等到具体学习的时候，再回过来选择自己需要的开发工具。）</p>
+<h3 id="常用前端开发工具"><a href="#常用前端开发工具" class="headerlink" title="常用前端开发工具"></a><strong>常用前端开发工具</strong></h3><p><strong>开发工具:</strong></p>
+<ul>
+<li><a href="http://screensiz.es/" target="_blank" rel="external">es</a></li>
+<li><a href="http://placehold.it/" target="_blank" rel="external">it</a></li>
+<li><a href="http://incident57.com/codekit/" target="_blank" rel="external">codeKit</a></li>
+<li><a href="https://prepros.io/" target="_blank" rel="external">prepros</a></li>
+<li><a href="http://www.browsersync.io/" target="_blank" rel="external">Browsersync</a></li>
+<li><a href="https://github.com/bradfrost/ish." target="_blank" rel="external">2.0.</a></li>
+<li><p><a href="http://bbc-news.github.io/wraith/index.html" target="_blank" rel="external">Wraith</a><br><strong>在线代码编辑:</strong></p>
+</li>
+<li><p><a href="http://jsbin.com/" target="_blank" rel="external">com</a></p>
+</li>
+<li><a href="http://jsfiddle.net/" target="_blank" rel="external">net</a></li>
+<li><a href="http://liveweave.com/" target="_blank" rel="external">com</a></li>
+<li><a href="http://www.es6fiddle.net/" target="_blank" rel="external">net</a></li>
+<li><a href="http://codepen.io/" target="_blank" rel="external">io</a></li>
+<li><p><a href="http://plnkr.co/" target="_blank" rel="external">Plunker</a><br><strong>查找工具:</strong></p>
+</li>
+<li><p><a href="http://stackshare.io/" target="_blank" rel="external">io</a></p>
+</li>
+<li><a href="http://www.javascripting.com/" target="_blank" rel="external">com</a></li>
+<li><a href="http://builtwith.com/" target="_blank" rel="external">built with</a></li>
+<li><a href="http://microjs.com/" target="_blank" rel="external">com</a></li>
+<li><a href="http://thetoolbox.cc/" target="_blank" rel="external">The Tool Box</a></li>
+<li><a href="http://www.unheap.com/" target="_blank" rel="external">com</a></li>
+<li><a href="https://stylesheets.co/" target="_blank" rel="external">co</a></li>
+</ul>
+<h3 id="了解代码编辑器"><a href="#了解代码编辑器" class="headerlink" title="了解代码编辑器"></a><strong>了解代码编辑器</strong></h3><p>源代码编辑器是一个文本编辑程序, 专门为编辑计算机程序源代码的程序员而设计的, 它可能是一个独立的应用程序或内置在集成开发环境(IDE)或web浏览器中. 源代码编辑器是最基本的编程工具, ,作为程序员的基本工作就是编写和编辑源代码.</p>
+<p>代码编辑器应该有如下特点:</p>
+<ul>
+<li>一份不错的关于如何使用编辑器的文档</li>
+<li>报告 HTML, CSS 和 JavaScript 代码的质量</li>
+<li>为 HTML, CSS 和 JavaScript 提供语法高亮</li>
+<li>为 HTML, CSS 和 JavaScript 提供代码自动完成</li>
+<li>通过插件的方式自定义编辑器架构</li>
+<li>有大量的第三方仓库/插件社区, 能够用于自定义编辑器</li>
+<li>轻量, 简单, 不耦合代码(不需要编辑代码等等)<br>推荐使用sublime_text/notepad++代码编辑器。</li>
+</ul>
+<h3 id="浏览工具"><a href="#浏览工具" class="headerlink" title="浏览工具"></a><strong>浏览工具</strong></h3><p><strong>JS 浏览工具:</strong></p>
+<ul>
+<li><a href="http://medialize.github.io/URI.js/" target="_blank" rel="external">js</a></li>
+<li><a href="https://github.com/bestiejs/platform.js" target="_blank" rel="external">js</a></li>
+<li><a href="https://github.com/browserstate/history.js" target="_blank" rel="external">js</a></li>
+<li><p><a href="https://github.com/niklasvh/html2canvas" target="_blank" rel="external">html2canvas</a><br><strong>参考工具(查看浏览器是否支持某特性)</strong></p>
+</li>
+<li><p><a href="http://caniuse.com/" target="_blank" rel="external">com</a></p>
+</li>
+<li><a href="http://html5please.com/" target="_blank" rel="external">HTML5 Please</a></li>
+<li><a href="https://html5test.com/" target="_blank" rel="external">HTML5 test</a></li>
+<li><a href="http://www.browserscope.org/" target="_blank" rel="external">Browserscope</a></li>
+<li><a href="http://www.webbrowsercompatibility.com/" target="_blank" rel="external">com</a></li>
+<li><a href="http://www.iwanttouse.com/" target="_blank" rel="external">com/</a></li>
+<li><a href="https://dev.modern.ie/platform/status/" target="_blank" rel="external">Platform status</a></li>
+<li><a href="http://codepen.io/bartveneman/full/qzCte/" target="_blank" rel="external">Browser support for broken/missing images</a></li>
+<li><a href="http://compatibility.shwups-cms.ch/en/home" target="_blank" rel="external">Big JS-Compatibility-Table</a></li>
+<li><a href="http://jscc.info/" target="_blank" rel="external">info</a></li>
+<li><p><a href="https://whatwebcando.today/" target="_blank" rel="external">What Web Can Do Today</a><br><strong>浏览器开发/调试工具:</strong></p>
+</li>
+<li><p><a href="http://www.opera.com/dragonfly/" target="_blank" rel="external">Opera Dragonfly</a></p>
+</li>
+<li><a href="https://developer.apple.com/safari/tools/" target="_blank" rel="external">Safari Web Inspector</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Tools" target="_blank" rel="external">Firefox Developer Tools</a></li>
+<li><p><a href="https://developers.google.com/web/tools/?hl=en" target="_blank" rel="external">Chrome Developer Tools(aka DevTools)</a></p>
+<ul>
+<li><a href="#docs">Per-Panel Documentation</a></li>
+<li><a href="https://developers.google.com/web/tools/javascript/command-line/command-line-reference?hl=en" target="_blank" rel="external">Command Line API Reference</a></li>
+<li><a href="https://developers.google.com/web/tools/iterate/inspect-styles/shortcuts" target="_blank" rel="external">Keyboard &amp; UI Shortcuts Reference</a></li>
+<li><a href="https://developer.chrome.com/devtools/docs/settings" target="_blank" rel="external">Settings</a></li>
+</ul>
+</li>
+<li><p><a href="https://dev.modern.ie/platform/documentation/f12-devtools-guide/" target="_blank" rel="external">IE Developer tools(aka F12)</a></p>
+</li>
+<li><p><a href="http://vorlonjs.com/" target="_blank" rel="external">js</a><br><strong>同步浏览工具:</strong></p>
+</li>
+<li><p><a href="http://www.browsersync.io/" target="_blank" rel="external">Browsersync</a><br><strong>浏览器编码工具(判断用户的浏览器是否支持某特性):</strong></p>
+</li>
+<li><p><a href="https://modernizr.com/" target="_blank" rel="external">Modernizr</a></p>
+</li>
+<li><p><a href="https://featuretests.io/" target="_blank" rel="external">ES Feature Tests</a><br><strong>浏览器的各种 polyfills/shims:</strong></p>
+</li>
+<li><p><a href="https://github.com/WebComponents/webcomponentsjs" target="_blank" rel="external">js</a></p>
+</li>
+<li><a href="https://afarkas.github.io/webshim/demos/" target="_blank" rel="external">webshim</a></li>
+<li><a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills" target="_blank" rel="external">HTML5 Cross Browser Polyfills</a></li>
+<li><a href="https://github.com/paulmillr/console-polyfill" target="_blank" rel="external">console-polyfill</a></li>
+<li><a href="http://socket.io/" target="_blank" rel="external">io</a></li>
+<li><p><a href="https://github.com/sockjs/sockjs-client" target="_blank" rel="external">sockjs</a><br><strong>浏览器承载测试/自动化:</strong></p>
+</li>
+<li><p><a href="https://www.browserstack.com/" target="_blank" rel="external">browserstack</a>[$]</p>
+</li>
+<li><a href="https://www.browserling.com/" target="_blank" rel="external">browserling</a>[$]</li>
+<li><a href="https://saucelabs.com/" target="_blank" rel="external">Sauce labs</a>[$]</li>
+<li><a href="http://www.seleniumhq.org/" target="_blank" rel="external">Selenium</a></li>
+<li><p><a href="http://crossbrowsertesting.com/" target="_blank" rel="external">com</a><br><strong>无壳浏览器:</strong></p>
+</li>
+<li><p><a href="http://phantomjs.org/" target="_blank" rel="external">PhantomJS</a></p>
+</li>
+<li><a href="http://slimerjs.org/" target="_blank" rel="external">slimerjd</a></li>
+<li><p><a href="http://triflejs.org/" target="_blank" rel="external">TrifleJS</a><br><strong>无壳浏览器的自动化工具:</strong></p>
+</li>
+<li><p><a href="http://nightwatchjs.org/" target="_blank" rel="external">nightwatchjs</a></p>
+</li>
+<li><a href="http://casperjs.org/" target="_blank" rel="external">casperJS</a></li>
+<li><a href="https://github.com/segmentio/nightmare" target="_blank" rel="external">Nightmare</a></li>
+<li><p><a href="https://github.com/marmelab/gremlins.js" target="_blank" rel="external">js</a><br><strong>浏览器 hacks:</strong></p>
+</li>
+<li><p><a href="http://browserhacks.com/" target="_blank" rel="external">com</a></p>
+</li>
+</ul>
+<h3 id="CSS-工具"><a href="#CSS-工具" class="headerlink" title="CSS 工具"></a><strong>CSS 工具</strong></h3><p><strong>桌面 &amp; 移动应用 CSS 框架:</strong></p>
+<ul>
+<li><a href="http://semantic-ui.com/" target="_blank" rel="external">Semantic UI</a></li>
+<li><a href="http://foundation.zurb.com/" target="_blank" rel="external">Foundation</a></li>
+<li><a href="http://getbootstrap.com/" target="_blank" rel="external">Bootstrap</a></li>
+<li><a href="http://metroui.org.ua/" target="_blank" rel="external">Metro UI</a></li>
+<li><a href="http://purecss.io/" target="_blank" rel="external">css</a></li>
+<li><a href="http://concisecss.com/" target="_blank" rel="external">Concise</a></li>
+<li><a href="http://materializecss.com/" target="_blank" rel="external">Materialize</a></li>
+<li><a href="http://www.getmdl.io/index.html" target="_blank" rel="external">Material Design Lite(MDL)</a></li>
+<li><p><a href="http://getbase.org/" target="_blank" rel="external">Base</a><br><strong>移动应用 CSS 框架:</strong></p>
+</li>
+<li><p><a href="http://goratchet.com/" target="_blank" rel="external">Ratchet</a></p>
+</li>
+</ul>
+<h3 id="DOM-工具"><a href="#DOM-工具" class="headerlink" title="DOM 工具"></a><strong>DOM 工具</strong></h3><p><strong>DOM 库/框架:</strong></p>
+<ul>
+<li><a href="http://jquery.com/" target="_blank" rel="external">jQuery</a></li>
+<li><a href="http://zeptojs.com/" target="_blank" rel="external">js</a></li>
+<li><a href="http://dmauro.github.io/Keypress/" target="_blank" rel="external">keypress</a></li>
+<li><a href="http://zenorocha.github.io/clipboard.js/" target="_blank" rel="external">js</a></li>
+<li><p><a href="http://tether.io/docs/welcome/" target="_blank" rel="external">io</a><br><strong>DOM 性能分析:</strong></p>
+</li>
+<li><p><a href="http://mir.aculo.us/dom-monster/" target="_blank" rel="external">DOMMonster</a></p>
+</li>
+</ul>
+<h3 id="JavaScript-工具"><a href="#JavaScript-工具" class="headerlink" title="JavaScript 工具"></a><strong>JavaScript 工具</strong></h3><p><strong>JS 库:</strong></p>
+<ul>
+<li><a href="http://lodash.com/" target="_blank" rel="external">lodash</a></li>
+<li><a href="http://underscorejs.org/" target="_blank" rel="external">js</a></li>
+<li><a href="http://momentjs.com/" target="_blank" rel="external">js</a></li>
+<li><a href="http://stringjs.com/" target="_blank" rel="external">js</a></li>
+<li><a href="http://numeraljs.com/" target="_blank" rel="external">js</a></li>
+<li><a href="http://openexchangerates.github.io/accounting.js/" target="_blank" rel="external">js</a></li>
+<li><a href="http://xregexp.com/" target="_blank" rel="external">com</a></li>
+<li><a href="http://mathjs.org/" target="_blank" rel="external">js</a></li>
+<li><a href="https://github.com/elving/wait" target="_blank" rel="external">wait</a></li>
+<li><a href="https://github.com/caolan/async" target="_blank" rel="external">async</a></li>
+<li><p><a href="http://formatjs.io/" target="_blank" rel="external">js</a><br><strong>编译转换 (ESX to ESX):</strong></p>
+</li>
+<li><p><a href="https://babeljs.io/" target="_blank" rel="external">Babel</a><br><strong>JavaScript 兼容性检查:</strong></p>
+</li>
+<li><p><a href="http://jscc.info/" target="_blank" rel="external">info</a><br><strong>代码检查:</strong></p>
+</li>
+<li><p><a href="http://jshint.com/" target="_blank" rel="external">jshint</a></p>
+</li>
+<li><a href="http://eslint.org/" target="_blank" rel="external">eshint</a></li>
+<li><p><a href="http://www.jslint.com/" target="_blank" rel="external">JSlint</a></p>
+<ul>
+<li><a href="http://jslinterrors.com/" target="_blank" rel="external">com</a><br><strong>单元测试:</strong></li>
+</ul>
+</li>
+<li><p><a href="http://mochajs.org/" target="_blank" rel="external">Mocha</a></p>
+</li>
+<li><a href="http://qunitjs.com/" target="_blank" rel="external">QUnit</a></li>
+<li><p><a href="http://jasmine.github.io/" target="_blank" rel="external">Jasmine</a></p>
+<ul>
+<li><a href="http://facebook.github.io/jest/" target="_blank" rel="external">Jest</a><br><strong>单元测试的断言库:</strong></li>
+</ul>
+</li>
+<li><p><a href="http://shouldjs.github.io/" target="_blank" rel="external">js</a></p>
+</li>
+<li><a href="http://chaijs.com/" target="_blank" rel="external">Chai</a></li>
+<li><p><a href="https://github.com/Automattic/expect.js" target="_blank" rel="external">js</a><br><strong>单元测试监控, 存根和模拟:</strong></p>
+</li>
+<li><p><a href="http://sinonjs.org/" target="_blank" rel="external">js</a><br><strong>编码规范检查:</strong></p>
+</li>
+<li><p><a href="http://jscs.info/" target="_blank" rel="external">JSCS</a><br><strong>代码格式化/美化:</strong></p>
+</li>
+<li><p><a href="http://rdio.github.io/jsfmt/" target="_blank" rel="external">jsfmt</a></p>
+</li>
+<li><a href="#esformatterformatstr-optsstring">esformatter</a></li>
+<li><p><a href="http://jsbeautifier.org/" target="_blank" rel="external">js-beautify</a><br><strong>性能测试:</strong></p>
+</li>
+<li><p><a href="http://jsperf.com/" target="_blank" rel="external">jsperf</a></p>
+</li>
+<li><p><a href="http://benchmarkjs.com/" target="_blank" rel="external">js</a><br><strong>可视化, 静态分析, 复杂性, 覆盖工具:</strong></p>
+</li>
+<li><p><a href="http://jscomplexity.org/" target="_blank" rel="external">org</a></p>
+</li>
+<li><a href="https://github.com/gotwarlost/istanbul" target="_blank" rel="external">istanbul</a></li>
+<li><a href="http://blanketjs.org/" target="_blank" rel="external">js</a></li>
+<li><a href="https://coveralls.io/" target="_blank" rel="external">Coveralls</a>[$]</li>
+<li><a href="https://github.com/es-analysis/plato" target="_blank" rel="external">Plato</a></li>
+<li><a href="https://github.com/jared-stilwell/escomplex" target="_blank" rel="external">escomplex</a></li>
+<li><p><a href="http://esprima.org/" target="_blank" rel="external">Esprima</a><br><strong>优化:</strong></p>
+</li>
+<li><p><a href="https://github.com/mishoo/UglifyJS2" target="_blank" rel="external">UglifyJS 2</a><br><strong>混淆:</strong></p>
+</li>
+<li><p><a href="http://www.javascriptobfuscator.com/" target="_blank" rel="external">Javascript 混淆器</a></p>
+</li>
+<li><p><a href="https://jscrambler.com/" target="_blank" rel="external">JScrambler</a>[$]<br><strong>在线代码编辑器:</strong></p>
+</li>
+<li><p><a href="http://jsbin.com/" target="_blank" rel="external">com</a></p>
+</li>
+<li><a href="http://jsfiddle.net/" target="_blank" rel="external">net</a></li>
+<li><a href="http://www.es6fiddle.net/" target="_blank" rel="external">net</a></li>
+<li><p><a href="http://plnkr.co/" target="_blank" rel="external">co</a><br><strong>在线正则表达式编辑器/可视化工具:</strong></p>
+</li>
+<li><p><a href="https://regex101.com/" target="_blank" rel="external">regex101</a></p>
+</li>
+<li><a href="http://regexper.com/" target="_blank" rel="external">regexper</a></li>
+<li><a href="https://www.debuggex.com/" target="_blank" rel="external">debuggex</a></li>
+<li><p><a href="http://regexr.com/" target="_blank" rel="external">RegExr</a><br><strong>编码规范:</strong></p>
+</li>
+<li><p><a href="https://github.com/felixge/node-style-guide" target="_blank" rel="external">js 规范指南</a></p>
+</li>
+<li><a href="https://github.com/rwaldron/idiomatic.js" target="_blank" rel="external">JavaScript 编码原则</a></li>
+<li><a href="http://airbnb.io/javascript/" target="_blank" rel="external">JavaScript 规范指南</a></li>
+</ul>
+<h3 id="静态网页生成器工具"><a href="#静态网页生成器工具" class="headerlink" title="静态网页生成器工具"></a><strong>静态网页生成器工具</strong></h3><p><strong>JS 网页生成器:</strong></p>
+<ul>
+<li><a href="http://www.metalsmith.io/" target="_blank" rel="external">Metalsmith</a></li>
+<li><p><a href="http://harpjs.com/" target="_blank" rel="external">harp</a><br><strong>JS 博客网站生成器:</strong></p>
+</li>
+<li><p><a href="http://hubpress.io/" target="_blank" rel="external">io</a></p>
+</li>
+<li><p><a href="http://hexo.io/" target="_blank" rel="external">io</a><br><strong>网站生成器列表:</strong></p>
+</li>
+<li><p><a href="https://staticsitegenerators.net/" target="_blank" rel="external">net</a></p>
+</li>
+<li><a href="https://www.staticgen.com/" target="_blank" rel="external">staticgen.com</a></li>
+</ul>
+<h3 id="APP-桌面-移动-平板等-工具"><a href="#APP-桌面-移动-平板等-工具" class="headerlink" title="APP(桌面, 移动, 平板等) 工具"></a><strong>APP(桌面, 移动, 平板等) 工具</strong></h3><p><strong>前端 App 框架:</strong></p>
+<ul>
+<li><a href="https://angularjs.org/" target="_blank" rel="external">AngularJS</a>&amp; <a href="https://github.com/angular/angularjs-batarang" target="_blank" rel="external">Batarang</a></li>
+<li><a href="http://backbonejs.org/" target="_blank" rel="external">Backbone</a>&amp; <a href="http://marionettejs.com/" target="_blank" rel="external">Marionette</a></li>
+<li><a href="http://facebook.github.io/react/" target="_blank" rel="external">React</a>&amp; <a href="https://github.com/rackt/react-router" target="_blank" rel="external">React-router</a> &amp; <a href="http://facebook.github.io/flux/" target="_blank" rel="external">Flux</a> &amp; <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi" target="_blank" rel="external">React Developer Tools</a></li>
+<li><a href="http://vuejs.org/" target="_blank" rel="external">js</a>&amp; <a href="https://github.com/vuejs/vue-loader" target="_blank" rel="external">vue-loader</a> &amp; <a href="https://github.com/vuejs/vue-router" target="_blank" rel="external">vue-router</a></li>
+<li><a href="http://emberjs.com/" target="_blank" rel="external">Ember</a>&amp; <a href="https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi?hl=en" target="_blank" rel="external">Ember Inspector</a></li>
+<li><a href="http://aurelia.io/" target="_blank" rel="external">Aurelia</a></li>
+<li><p><a href="https://www.polymer-project.org/1.0/" target="_blank" rel="external">Polymer</a>&amp; <a href="https://elements.polymer-project.org/browse?package=iron-elements" target="_blank" rel="external">Iron Elements</a> &amp; <a href="https://elements.polymer-project.org/browse?package=paper-elements" target="_blank" rel="external">Paper Elements</a><br><strong>全栈 JS App 平台:</strong></p>
+</li>
+<li><p><a href="https://www.meteor.com/" target="_blank" rel="external">Meteor</a></p>
+</li>
+<li><a href="http://hood.ie/intro/" target="_blank" rel="external">ie</a></li>
+<li><a href="http://meanjs.org/" target="_blank" rel="external">MEAN</a><br><strong>移动 Web UI/网站/App 框架:</strong></li>
+</ul>
+<p>这些解决方案可以被用到任何地方, 包括 Web 视图(Web 平台和浏览器引擎等) APP.</p>
+<ul>
+<li><a href="http://goratchet.com/getting-started/" target="_blank" rel="external">Ratchet</a></li>
+<li><a href="http://demos.telerik.com/kendo-ui/m/index" target="_blank" rel="external">Kendo UI Mobile</a></li>
+<li><a href="http://mobileangularui.com/" target="_blank" rel="external">Mobile Angular UI</a></li>
+<li><a href="http://www.idangero.us/framework7" target="_blank" rel="external">Framework7</a><br><strong>本机混合移动 webview 框架:</strong></li>
+</ul>
+<p>典型解决方案是使用 <a href="https://cordova.apache.org/" target="_blank" rel="external">Cordova</a>, <a href="https://crosswalk-project.org/" target="_blank" rel="external">crosswalk</a>, 或者自定义 Webview 作为本机 API 的桥梁.</p>
+<ul>
+<li><a href="http://ionicframework.com/" target="_blank" rel="external">ionic</a></li>
+<li><a href="http://onsen.io/" target="_blank" rel="external">io</a><br><strong>本机混合移动开发 webview 环境/平台/工具:</strong></li>
+</ul>
+<p>典型解决方案是使用 <a href="https://cordova.apache.org/" target="_blank" rel="external">Cordova</a>, <a href="https://crosswalk-project.org/" target="_blank" rel="external">crosswalk</a>, 或者自定义 Webview 作为本机 API 的桥梁.</p>
+<p>&nbsp;</p>
+<p>最后，奉上本文的福利，供认真学习的孩子参考：</p>
+<p><a href="http://pan.baidu.com/s/1c1lbToG" title="前端资源收藏夹" target="_blank" rel="external">前端资源收藏夹</a></p>
+<p>直接点击下载，或百度网盘链接： <a href="http://pan.baidu.com/s/1c1lbToG" target="_blank" rel="external">http://pan.baidu.com/s/1c1lbToG</a></p>
+<p>&nbsp;</p>
+<p>（我是一个资源控，这个收藏夹包含内容非常多，包含：前端资源、公开课、外贸电商、IT资讯、SEO、Wordpress建站、网站运营、时间管理、商业营销、创业、投资理财、互联网、智能硬件、自媒体等，绝对够你学习的了。）</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[CSS3 Flex布局（伸缩布局盒模型）学习]]></title>
+      <url>http://xifengxx.github.io/2015/11/26/CSS3%20Flex%E5%B8%83%E5%B1%80%EF%BC%88%E4%BC%B8%E7%BC%A9%E5%B8%83%E5%B1%80%E7%9B%92%E6%A8%A1%E5%9E%8B%EF%BC%89%E5%AD%A6%E4%B9%A0/</url>
+      <content type="html"><![CDATA[<p>CSS2定义了四种布局：块布局、行内布局、表格布局盒定位布局。</p>
+<p>CSS3引入了一种新的布局模式——Flexbox布局，即伸缩布局盒（Flexible Box）模型，此布局对于设计比较复杂的页面非常有用，特别是“垂直居中”布局，非常容易实现。</p>
+<p>Flexbox布局语法有三种：</p>
+<p>旧版本：2009年版本，使用display:box或者display:inline-box;  [目前仅Safari浏览器支持]</p>
+<p>混合版本：2011年版本，使用display:flexbox或者display:inline-flexbox;  [仅IE10支持]</p>
+<p>最新版本：使用display:flex或者display:inline-flex. [目前的主流浏览器均支持，不过在Webkit内核浏览器需要使用前缀“-webkit-”]</p>
+<p>对于Flex布局，最初是通过看绿叶学习网，学的是flexbox旧版本，感觉很简单；然后又看了大漠老师的《图解CSS3-核心技术与案例实战》，其中详细介绍了三种布局，但我理解的不深，有些迷糊。最后通过网上找到了阮一峰翻译的一篇文章，直观易懂，终于明晰了Flex布局。</p>
+<p>关于Flexbox布局旧版本（display:box/inline-box）版本，请参考<a href="http://www.lvyestudy.com/css3/css3_13.1.aspx" title="弹性盒子模型" target="_blank" rel="external">绿叶学习网教程</a>。</p>
+<p>以下内容主要介绍Flexbox布局最新版本。（内容删减自<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" title="Flex 布局教程：语法篇" target="_blank" rel="external">阮一峰博客</a>）</p>
+<hr>
+<h2 id="一、Flex布局是什么？"><a href="#一、Flex布局是什么？" class="headerlink" title="一、Flex布局是什么？"></a>一、Flex布局是什么？</h2><p>Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</p>
+<p>任何一个容器都可以指定为Flex布局。</p>
+<blockquote>
+<p><span class="token selector">.box</span><span class="token punctuation">{</span></p>
+<pre><code>  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+`&lt;/pre&gt;
+行内元素也可以使用Flex布局。
+</code></pre><p><pre class=" language-css">`</pre></p>
+<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; inline-flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+`&lt;/pre&gt;
+Webkit内核的浏览器，必须加上-webkit前缀。
+</code></pre><p><pre class=" language-css">`</pre></p>
+<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; -webkit-flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;/* Safari */&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+`&lt;/pre&gt;
+注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。
+</code></pre></blockquote>
+<pre><code>## 二、基本概念
+
+采用Flex布局的元素，称为Flex容器（flex container），简称&quot;容器&quot;。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称&quot;项目&quot;。
+
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png)
+
+容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。
+
+项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。
+
+## 三、容器的属性
+
+以下6个属性设置在容器上。
+&gt; *   flex-direction
+</code></pre><blockquote>
+<ul>
+<li>flex-wrap</li>
+<li>flex-flow</li>
+<li>justify-content</li>
+<li>align-items</li>
+<li>align-content</li>
+</ul>
+</blockquote>
+<pre><code>### 3.1 flex-direction属性
+
+flex-direction属性决定主轴的方向（即项目的排列方向）。
+&gt; &lt;pre class=&quot; language-css&quot;&gt;`
+</code></pre><blockquote>
+<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;flex-direction&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; row | row-reverse | column | column-reverse&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+`&lt;/pre&gt;
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071005.png)
+</code></pre></blockquote>
+<pre><code>它可能有4个值。
+&gt; *   row（默认值）：主轴为水平方向，起点在左端。
+</code></pre><blockquote>
+<ul>
+<li>row-reverse：主轴为水平方向，起点在右端。</li>
+<li>column：主轴为垂直方向，起点在上沿。</li>
+<li>column-reverse：主轴为垂直方向，起点在下沿。</li>
+</ul>
+</blockquote>
+<pre><code>### 3.2 flex-wrap属性
+
+默认情况下，项目都排在一条线（又称&quot;轴线&quot;）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。
+
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png)
+&gt; &lt;pre class=&quot; language-css&quot;&gt;`
+</code></pre><blockquote>
+<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;flex-wrap&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; nowrap | wrap | wrap-reverse&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+`&lt;/pre&gt;
+它可能取三个值。
+</code></pre></blockquote>
+<pre><code>（1）nowrap（默认）：不换行。
+
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071007.png)
+
+（2）wrap：换行，第一行在上方。
+
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071008.jpg)
+
+（3）wrap-reverse：换行，第一行在下方。
+
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071009.jpg)
+
+### 3.3 flex-flow
+
+flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
+&gt; &lt;pre class=&quot; language-css&quot;&gt;`
+</code></pre><blockquote>
+<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;flex-flow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;flex-direction&amp;gt; || &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;flex-wrap&amp;gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+`&lt;/pre&gt;
+</code></pre></blockquote>
+<pre><code>### 3.4 justify-content属性
+
+justify-content属性定义了项目在主轴上的对齐方式。
+&gt; &lt;pre class=&quot; language-css&quot;&gt;`
+</code></pre><blockquote>
+<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;justify-content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex-start | flex-end | center | space-between | space-around&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+`&lt;/pre&gt;
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png)
+</code></pre></blockquote>
+<pre><code>它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。
+&gt; *   flex-start（默认值）：左对齐
+</code></pre><blockquote>
+<ul>
+<li>flex-end：右对齐</li>
+<li>center： 居中</li>
+<li>space-between：两端对齐，项目之间的间隔都相等。</li>
+<li>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</li>
+</ul>
+</blockquote>
+<pre><code>### 3.5 align-items属性
+
+align-items属性定义项目在交叉轴上如何对齐。
+&gt; &lt;pre class=&quot; language-css&quot;&gt;`
+</code></pre><blockquote>
+<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;align-items&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex-start | flex-end | center | baseline | stretch&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+`&lt;/pre&gt;
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png)
+</code></pre></blockquote>
+<pre><code>它可能取5个值。具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下。
+&gt; *   flex-start：交叉轴的起点对齐。
+</code></pre><blockquote>
+<ul>
+<li>flex-end：交叉轴的终点对齐。</li>
+<li>center：交叉轴的中点对齐。</li>
+<li>baseline: 项目的第一行文字的基线对齐。</li>
+<li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
+</ul>
+</blockquote>
+<pre><code>### 3.6 align-content属性
+
+align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+&gt; &lt;pre class=&quot; language-css&quot;&gt;`
+</code></pre><blockquote>
+<pre><code>&lt;span class=&quot;token selector&quot;&gt;.box &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;align-content&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; flex-start | flex-end | center | space-between | space-around | stretch&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+`&lt;/pre&gt;
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png)
+</code></pre></blockquote>
+<pre><code>该属性可能取6个值。
+&gt; *   flex-start：与交叉轴的起点对齐。
+</code></pre><blockquote>
+<ul>
+<li>flex-end：与交叉轴的终点对齐。</li>
+<li>center：与交叉轴的中点对齐。</li>
+<li>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</li>
+<li>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li>
+<li>stretch（默认值）：轴线占满整个交叉轴。</li>
+</ul>
+</blockquote>
+<pre><code>### 四、项目的属性
+
+以下6个属性设置在项目上。
+&gt; *   order
+</code></pre><blockquote>
+<ul>
+<li>flex-grow</li>
+<li>flex-shrink</li>
+<li>flex-basis</li>
+<li>flex</li>
+<li>align-self</li>
+</ul>
+</blockquote>
+<pre><code>### 4.1 order属性
+
+order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。
+&gt; &lt;pre class=&quot; language-css&quot;&gt;`
+</code></pre><blockquote>
+<pre><code>&lt;span class=&quot;token selector&quot;&gt;.item &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;order&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;integer&amp;gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+`&lt;/pre&gt;
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png)
+</code></pre></blockquote>
+<pre><code>### 4.2 flex-grow属性
+
+flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+&gt; &lt;pre class=&quot; language-css&quot;&gt;`
+</code></pre><blockquote>
+<pre><code>&lt;span class=&quot;token selector&quot;&gt;.item &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;flex-grow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;number&amp;gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;/* default 0 */&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+`&lt;/pre&gt;
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png)
+</code></pre></blockquote>
+<pre><code>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。
+
+### 4.3 flex-shrink属性
+
+flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+&gt; &lt;pre class=&quot; language-css&quot;&gt;`
+</code></pre><blockquote>
+<pre><code>&lt;span class=&quot;token selector&quot;&gt;.item &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;flex-shrink&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;number&amp;gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;/* default 1 */&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+`&lt;/pre&gt;
+![](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071015.jpg)
+</code></pre></blockquote>
+<pre><code>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。
+
+负值对该属性无效。
+
+### 4.4 flex-basis属性
+
+flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
+&gt; &lt;pre class=&quot; language-css&quot;&gt;`
+</code></pre><blockquote>
+<pre><code>&lt;span class=&quot;token selector&quot;&gt;.item &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;flex-basis&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;length&amp;gt; | auto&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;/* default auto */&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+`&lt;/pre&gt;
+它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。
+</code></pre></blockquote>
+<pre><code>### 4.5 flex属性
+
+flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+&gt; &lt;pre class=&quot; language-css&quot;&gt;`
+</code></pre><blockquote>
+<pre><code>&lt;span class=&quot;token selector&quot;&gt;.item &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; none | [ &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;flex-grow&apos;&lt;/span&gt;&amp;gt; &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;flex-shrink&apos;&lt;/span&gt;&amp;gt;? || &lt;span class=&quot;token ignore&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;flex-basis&apos;&lt;/span&gt;&amp;gt; ]
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+`&lt;/pre&gt;
+该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。
+</code></pre></blockquote>
+<pre><code>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。
+
+### 4.6 align-self属性
+
+align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
+&gt; &lt;pre class=&quot; language-css&quot;&gt;`
+</code></pre><blockquote>
+<pre><code>&lt;span class=&quot;token selector&quot;&gt;.item &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;token property&quot;&gt;align-self&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; auto | flex-start | flex-end | center | baseline | stretch&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071016.png" alt=""></p>
+</blockquote>
+<p>该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</p>
+<p>&nbsp;</p>
+<p>备注：阮一峰博客上还有一篇文章，<a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" title="Flex 布局教程：实例篇" target="_blank" rel="external">《Flex 布局教程：实例篇》</a>，是用具体的案例来解说Flex布局，感兴趣的朋友，可以移步获取。我主要是对其中的“骰子案例”感兴趣：<a href="http://codepen.io/LandonSchropp/pen/KpzzGo" title="Flex骰子案例" target="_blank" rel="external">DEMO</a></p>
+<p>&nbsp;</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[CSS3学习笔记:变形transform]]></title>
+      <url>http://xifengxx.github.io/2015/08/29/CSS3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E5%BD%A2transform/</url>
+      <content type="html"><![CDATA[<p>这节学习CSS3中的变形特性，主要涉及transform属性：</p>
+<h2 id="变形–旋转-rotate"><a href="#变形–旋转-rotate" class="headerlink" title="变形–旋转 rotate()"></a><strong>变形–旋转 rotate()</strong></h2><p><strong>旋转rotate()函数</strong>通过指定的角度参数使元素相对原点进行旋转。它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为<strong>正值</strong>，元素相对原点中心<strong>顺时针</strong>旋转；如果这个值为<strong>负值</strong>，元素相对原点中心<strong>逆时针</strong>旋转。如下图所示：</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画1.png" alt="变形与动画1"></a></p>
+<p><strong>HTML代码：</strong></p>
+<blockquote>
+<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
+<p>width: 200px;  height: 200px;</p>
+<p>border: 1px dotted red;</p>
+<p>margin: 100px auto;}</p>
+<p>.wrapper div {</p>
+<p>width: 200px;  height: 200px;  background: orange;</p>
+<p>-webkit-transform: rotate(45deg);</p>
+<p>transform: rotate(45deg);}<br><strong>演示结果<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画2.png" alt="变形与动画2"></a></strong></p>
+</blockquote>
+<h2 id="变形–扭曲-skew"><a href="#变形–扭曲-skew" class="headerlink" title="变形–扭曲 skew()"></a><strong>变形–扭曲 skew()</strong></h2><p>扭曲skew()函数能够让元素<strong>倾斜显示</strong>。它可以将一个对象以其中心位置围绕着<strong>X轴</strong>和<strong>Y轴</strong>按照一定的角度倾斜。这与rotate()函数的旋转不同，rotate()函数只是旋转，而不会改变元素的形状。skew()函数不会旋转，而只会改变元素的形状。</p>
+<p>(如果不理解扭曲，可参考<a href="http://www.zhangxinxu.com/study/201206/css3-transform-matrix-skew.html" title="CSS扭曲解释" target="_blank" rel="external">此处</a>，加强理解。)</p>
+<p><strong>Skew()具有三种情况：</strong></p>
+<p><strong>1、skew(x,y)使元素在水平和垂直方向同时扭曲</strong>（X轴和Y轴同时按一定的角度值进行扭曲变形）；<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-1.png" alt="skew-1"></a></p>
+<p>第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则值为0，也就是Y轴方向上无斜切。</p>
+<p><strong>2、skewX(x)仅使元素在水平方向扭曲变形</strong>（X轴扭曲变形）；<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-2.png" alt="skew-2"></a></p>
+<p><strong>3、skewY(y)仅使元素在垂直方向扭曲变形</strong>（Y轴扭曲变形）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-3.png" alt="skew-3"></a></p>
+<p><strong>示例演示：</strong></p>
+<p>通过skew（）函数将长方形变成平行四边形。</p>
+<p><strong>HTML代码：</strong></p>
+<blockquote>
+<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;我变成平形四边形&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
+<p>width: 300px;  height: 100px;</p>
+<p>border: 2px dotted red;</p>
+<p>margin: 30px auto;}</p>
+<p>.wrapper div {</p>
+<p>width: 300px;  height: 100px;</p>
+<p>line-height: 100px;</p>
+<p>text-align: center;</p>
+<p>color: #fff;</p>
+<p>background: orange;</p>
+<p>-webkit-transform: skew(45deg);</p>
+<p>-moz-transform:skew(45deg)</p>
+<p>transform:skew(45deg);}<br><strong>演示结果<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-4.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-4.png" alt="skew-4"></a></strong></p>
+</blockquote>
+<h2 id="变形–缩放-scale"><a href="#变形–缩放-scale" class="headerlink" title="变形–缩放 scale()"></a><strong>变形–缩放 scale()</strong></h2><p><strong>缩放 scale()函数**</strong> **让元素根据中心原点对对象进行缩放。</p>
+<p>缩放 scale 具有三种情况：</p>
+<p><strong>1、 scale(X,Y)使元素水平方向和垂直方向同时缩放</strong>（也就是X轴和Y轴同时缩放）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-1.png" alt="scale-1"></a></p>
+<p>例如：</p>
+<blockquote>
+<p>div:hover {</p>
+<p>-webkit-transform: scale(1.5,0.5);</p>
+<p>-moz-transform:scale(1.5,0.5)</p>
+<p>transform: scale(1.5,0.5);}<br>注意：Y是一个可选参数，如果没有设置Y值，则表示X，Y两个方向的缩放倍数是一样的。</p>
+</blockquote>
+<p><strong>2、scaleX(x)元素仅水平方向缩放</strong>（X轴缩放）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-2.png" alt="scale-2"></a></p>
+<p><strong>3、scaleY(y)元素仅垂直方向缩放</strong>（Y轴缩放）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-3.png" alt="scale-3"></a></p>
+<p><strong>HTML代码：</strong></p>
+<blockquote>
+<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;我将放大1.5倍&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
+<p>width: 200px;</p>
+<p>height: 200px;</p>
+<p>border:2px dashed red;</p>
+<p>margin: 100px auto;}</p>
+<p>.wrapper div {</p>
+<p>width: 200px;</p>
+<p>height: 200px;</p>
+<p>line-height: 200px;</p>
+<p>background: orange;</p>
+<p>text-align: center;  color: #fff;}</p>
+<p>.wrapper div:hover {</p>
+<p>opacity: .5;  -webkit-transform: scale(1.5);</p>
+<p>-moz-transform:scale(1.5)</p>
+<p>transform: scale(1.5);}<br><strong>演示结果<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-4.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-4.png" alt="scale-4"></a></strong></p>
+</blockquote>
+<p><strong>注意：</strong> <strong>scale()</strong>的取值默认的值为1，当值设置为<strong>0.01</strong>到<strong>0.99</strong>之间的任何值，作用使一个元素缩小；而任何大于或等于<strong>1.01</strong>的值，作用是让元素放大。</p>
+<h2 id="变形–位移-translate"><a href="#变形–位移-translate" class="headerlink" title="变形–位移 translate()"></a><strong>变形–位移 translate()</strong></h2><p><strong>translate()函数</strong>可以将元素向指定的方向移动，类似于position中的<strong>relative</strong>。或以简单的理解为，使用translate()函数，可以把元素从原来的位置移动，而不影响在X、Y轴上的任何Web组件。</p>
+<p><strong>translate我们分为三种情况：</strong></p>
+<p><strong>1、translate(x,y)水平方向和垂直方向同时移动</strong>（也就是X轴和Y轴同时移动）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-1.png" alt="translate-1"></a></p>
+<p><strong>2、translateX(x)仅水平方向移动</strong>（X轴移动）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-2.png" alt="translate-2"></a></p>
+<p><strong>3、translateY(Y)仅垂直方向移动</strong>（Y轴移动）<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-3.png" alt="translate-3"></a></p>
+<p><strong>实例演示：</strong>通过translate()函数将元素向Y轴下方移动100px,X轴右方移动50px。</p>
+<p><strong>HTML代码：</strong></p>
+<blockquote>
+<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;我向右向下移动&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
+<p>width: 200px;  height: 200px;</p>
+<p>border: 2px dotted red;</p>
+<p>margin: 20px auto;}</p>
+<p>.wrapper div {</p>
+<p>width: 200px;  height: 200px;  line-height: 200px;</p>
+<p>text-align: center;  background: orange;</p>
+<p>color: #fff;  -webkit-transform:</p>
+<p>translate(50px,100px);</p>
+<p>-moz-transform:translate(50px,100px);</p>
+<p>transform: translate(50px,100px);}<br><strong>演示结果<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-4.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-4.png" alt="translate-4"></a></strong></p>
+</blockquote>
+<h2 id="变形–矩阵-matrix"><a href="#变形–矩阵-matrix" class="headerlink" title="变形–矩阵 matrix()"></a><strong>变形–矩阵 matrix()</strong></h2><p><strong>matrix()**</strong> **是一个含六个值的(a,b,c,d,e,f)变换矩阵，用来指定一个2D变换，相当于直接应用一个[a b c d e f]变换矩阵。就是基于水平方向（X轴）和垂直方向（Y轴）重新定位元素,此属性值使用涉及到数学中的矩阵，我在这里只是简单的说一下CSS3中的transform有这么一个属性值，如果需要深入了解，需要对数学矩阵有一定的知识。</p>
+<p>（想对Matrix深入理解，请<a href="http://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/" title="Matrix矩阵深入理解" target="_blank" rel="external">点击此处</a>：</p>
+<p><strong>示例演示：</strong>通过matrix()函数来模拟transform中translate()位移的效果。<br><strong>HTML代码：</strong></p>
+<blockquote>
+<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
+<p>width: 300px;</p>
+<p>height: 200px;</p>
+<p>border: 2px dotted red;</p>
+<p>margin: 40px auto;}</p>
+<p>.wrapper div {</p>
+<p>width:300px;</p>
+<p>height: 200px;</p>
+<p>background: orange;</p>
+<p>-webkit-transform: matrix(1,0,0,1,50,50);</p>
+<p>-moz-transform:matrix(1,0,0,1,50,50);</p>
+<p>transform: matrix(1,0,0,1,50,50);}<br><strong>演示结果：<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/matrix-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/matrix-1.png" alt="matrix-1"></a></strong></p>
+</blockquote>
+<h2 id="变形–原点-transform-origin"><a href="#变形–原点-transform-origin" class="headerlink" title="变形–原点 transform-origin"></a><strong>变形–原点 transform-origin</strong></h2><p>任何一个元素都有一个中心点，默认情况之下，其中心点是居于元素X轴和Y轴的50%处。如下图所示：<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-1.png" alt="transform-origin-1"></a></p>
+<p>在没有重置transform-origin改变元素原点位置的情况下，CSS变形进行的旋转、位移、缩放，扭曲等操作都是<strong>以元素自己中心位置进行变形</strong>。但很多时候，我们可以通过transform-origin来对元素进行原点位置改变，使元素原点不在元素的中心位置，以达到需要的原点位置。</p>
+<p>transform-origin取值和元素设置背景中的background-position取值类似，如下表所示：<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-2.png" alt="transform-origin-2"></a></p>
+<p><strong>示例展示：</strong></p>
+<p>通过transform-origin改变元素原点到左上角，然后进行顺时旋转45度。</p>
+<p><strong>HTML代码：</strong></p>
+<blockquote>
+<p>&lt;div class=”wrapper”&gt;  &lt;div&gt;原点在默认位置处&lt;/div&gt;&lt;/div&gt;&lt;div class=”wrapper transform-origin”&gt;  &lt;div&gt;原点重置到左上角&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>.wrapper {</p>
+<p>width: 300px;  height: 300px;  float: left;</p>
+<p>margin: 100px;  border: 2px dotted red;</p>
+<p>line-height: 300px;  text-align: center;}</p>
+<p>.wrapper div {</p>
+<p>background: orange;</p>
+<p>-webkit-transform: rotate(45deg);</p>
+<p>transform: rotate(45deg);}</p>
+<p>.transform-origin div {</p>
+<p>-webkit-transform-origin: left top;</p>
+<p>transform-origin: left top;}<br><strong>演示结果：<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/transform-origin-3.png" alt="transform-origin-3"></a></strong></p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[HTML5学习笔记（1）元素与标签结构]]></title>
+      <url>http://xifengxx.github.io/2015/08/22/HTML5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89%E5%85%83%E7%B4%A0%E4%B8%8E%E6%A0%87%E7%AD%BE%E7%BB%93%E6%9E%84/</url>
+      <content type="html"><![CDATA[<p>HTML5是用于取代1999年所制定的 HTML 4.01 和 XHTML 1.0 标准的 HTML [1]（标准通用标记语言下的一个应用）标准版本；现在仍处于发展阶段，但大部分浏览器已经支持某些 HTML5 技术。</p>
+<h4 id="HTML-5有两大特点："><a href="#HTML-5有两大特点：" class="headerlink" title="HTML 5有两大特点："></a>HTML 5有两大特点：</h4><ol>
+<li><strong>强化了 Web 网页的表现性能。</strong></li>
+<li><strong>追加了本地数据库等 Web 应用的功能。</strong><br>广义论及HTML5时，实际指的是包括HTML、CSS和JavaScript在内的一套技术组合。它希望能够减少浏览器对于需要插件的丰富性网络应用服务（plug-in-based rich internet application，RIA)，如Adobe Flash、Microsoft Silverlight，与Oracle JavaFX的需求，并且提供更多能有效增强网络应用的标准集。</li>
+</ol>
+<h3 id="HTML5语法"><a href="#HTML5语法" class="headerlink" title="HTML5语法"></a>HTML5语法</h3><p>沿用了HTML的语法(已往过去的语法，是SGML语法的一个子集)，更简洁，更人性化。<br><strong>1.DOCTYPE及字符编码</strong><br>① DOCTYPE：&lt;!doctype html&gt;<br>② 字符编码：&lt;meta charset=”utf-8”&gt;<br>③ 给文档指定语言：&lt;html lang=”zh-CN”&gt;</p>
+<p><strong>2.大小写都可以</strong><br>① 目的是为了兼容更多的文档，在HTML5里不区分大小写<br>建议：写代码最好规范，最好小写(标签和属性)</p>
+<p><strong>3.布尔值</strong><br>① &lt;input type=”checkbox” checked/&gt;<br>在这里checked写上就表示true，如果不写就表示false。而不用像HTML4中要写成checked=”checked”了。</p>
+<p><strong>4.省略引号</strong><br>① &lt;input type=”text” /&gt;<br>② &lt;input type=’text’&gt;<br>③ &lt;input type=text&gt;<br>上面三种写法都可以，当然如果属性值中出现空格，就必须写引号或双引号<br>建议：属性中，引号最好是双引号</p>
+<p>1、不允许写结束符的标签：area , basebr , col， command , embed , hr , img , input , keygen , link , meta , param , source , track , wbr。格式&lt;xx/&gt;<br>2、可以省略结束符的标签：li , dt , dd , p , rt , optgroup , colgroup , thread , tbody , tr , td , th省略&lt;/XXX&gt;<br>3、可以完全省略的标签：html , head , body , colgroup , tbody</p>
+<h3 id="HTML5新增标签"><a href="#HTML5新增标签" class="headerlink" title="HTML5新增标签"></a>HTML5新增标签</h3><p>（1）结构标签<br>（2）表单标签<br>（3）媒体标签<br>（4）其他功能标签<br><strong>&lt;1&gt;结构标签</strong>——原来用div<br>（1）section元素——表示页面中一个内容区块，比如章节、页眉、页脚或页面的其他部分。可以和h1、h2等元素结合起来使用，表示文档结构。例：html5中&lt;section&gt;…&lt;/section&gt;html4中&lt;div&gt;…&lt;/div&gt;。<br>（2）article元素——表示页面中一块与上下文部相关的独立内容。比如一篇文章。<br>（3）aside元素——表示article元素内容之外的、与article元素内容相关的辅助信息。<br>（4）header元素——表示整个页面或页面中一个内容区块的标题。<br>（5）hgroup元素——表示整个页面或页面中一个内容区块的标题进行组合。<br>（6）footer元素——表示整个页面或页面中一个内容区块的脚注。一般来说，他会包含创作者的姓名、创作日期以及创作者的联系方式。<br>（7）nav标签——表示页面中导航链接的部分<br>（8）figure标签——表示一段独立的流内容，一般表示文档主体流内容中的一个独立单元，使用figcaption标签为figure标签组添加标题。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;figure&amp;gt;</span><br><span class="line">&amp;lt;figcaption&amp;gt;PRC&amp;lt;/figcaption&amp;gt;</span><br><span class="line">&amp;lt;p&amp;gt;the people&apos;s republic of china was born in 1949&amp;lt;/p&amp;gt;</span><br><span class="line">&amp;lt;/figure&amp;gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>&lt;2&gt;表单标签</strong><br>（1） email——必须输入email<br>（2） url——必须输入url地址<br>（3） number——必须输入数值<br>（4） range——必须输入一定范围内数值<br>（5） Date Pickers（日期选择器）<br>拥有多个可供选取日期和时间的新输入类型：<br>date-选择日、月、年<br>month-选择月、年<br>week-选择周、年<br>time-选取时间（小时和分钟）<br>datetime-选取时间、日、月、年（UTC时间）<br>datetime-local-选取时间、日、月、年（本地时间）<br>（6） search——用于搜索域，域显示为常规的文本域<br>（7） color</p>
+<p><strong>&lt;3&gt;媒体标签</strong><br>（1） vedio标签——定义视频，像电影片段或其他视频流。例如：<br>&lt;vedio src=”movie.ogg” controls=”controls”&gt;vedio标签&lt;/vedio&gt;<br>（2） audio标签——定义音频，像音乐或其他音频流。例如：<br>&lt;audio src=”someaudio.wav”&gt;audio标签&lt;/audio&gt;<br>（3） embed标签——用来嵌入内容（包括各种媒体），格式可以是Mldl、Wav、AIFF、AU、MP3、flash等。例如：<br>&lt;embed src=”flash.saf”/&gt;;</p>
+<p><strong>&lt;4&gt;其他标签</strong><br>（1） mark标签——提亮文字<br>（2） progress标签——进度条<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;progress max=&quot;100&quot; value=&quot;85&quot;&amp;gt;</span><br><span class="line">&amp;lt;span&amp;gt;85&amp;lt;/span&amp;gt; </span><br><span class="line"> &quot;%&quot;</span><br><span class="line">&amp;lt;/progress&amp;gt;</span><br></pre></td></tr></table></figure></p>
+<p>（3） time标签——属于语义标签，或者说是微数据标签，用来标注页面中的某一块内容，这个标注是给机器（搜索引擎）用的<br>time datetime=”2013-10-20T09:00Z”pubdate&gt;9:00&lt;/time&gt;——发布时间<br>（4） ruby标签——对某个字进行注释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;ruby&amp;gt;</span><br><span class="line"> 漠</span><br><span class="line"> &amp;lt;rt&amp;gt;&amp;lt;/rt&amp;gt; //注释内容</span><br><span class="line"> &amp;lt;rp&amp;gt;(&amp;lt;/rp&amp;gt; //当浏览器不支持时显示</span><br><span class="line"> “厂马”</span><br><span class="line"> &amp;lt;rp&amp;gt;)&amp;lt;/rp&amp;gt;</span><br><span class="line"> &amp;lt;/ruby&amp;gt;</span><br></pre></td></tr></table></figure></p>
+<p>（5） wbr标签——软换行<br>（6） canvas标签——与javascript配合进行图形绘制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;canvas id=&quot;mycanvas&quot;&amp;gt;</span><br><span class="line">&amp;lt;script &amp;gt;</span><br><span class="line">…</span><br><span class="line">&amp;lt;/script&amp;gt;</span><br><span class="line">&amp;lt;/canvas&amp;gt;</span><br></pre></td></tr></table></figure></p>
+<p>(7)command标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;menu&amp;gt;</span><br><span class="line">&amp;lt;command onclick=&quot;alert(hello world)&quot; label=&quot;click&quot;&amp;gt;</span><br><span class="line">&quot;click me!&quot;</span><br><span class="line">&amp;lt;/menu&amp;gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="HTML5废除标签："><a href="#HTML5废除标签：" class="headerlink" title="HTML5废除标签："></a>HTML5<strong>废除标签：</strong></h3><p>1、能用css代替的元素<br>basefont、big、center、font、s、strike、tt、u。这些元素纯粹是为画面展示服务的，HTML5中提倡把画面展示性功能放在css中统一编辑。<br>2、不再使用frame框架。<br>frameset、frame、noframes。HTML5中不支持frame框架，只支持iframe框架，或者用服务器方创建的由多个页面组成的符合页面的形式，删除以上这三个标签。<br>3、只有部分浏览器支持的元素<br>applet、bgsound、blink、marquee等标签。<br>4、其他被废除的元素：废除rb，使用ruby替代。废除acronym使用abbr替代。废除dir使用ul替代。废除isindex使用form与input相结合的方式替代。废除listing使用pre替代。废除xmp使用code替代。废除nextid使用guids。废除plaintex使用“text/plian”（无格式正文）MIME类型替代。</p>
+<h3 id="HTMl5新增属性"><a href="#HTMl5新增属性" class="headerlink" title="HTMl5新增属性"></a>HTMl5新增属性</h3><p>新增属性：（表单属性、链接属性、其他属性）<br>1.&lt;meta http-equiv=”pragma” content=”no-cache”&gt;禁止页面缓存。<br>2.manifest:定义离线应用所需的文件。&lt;html manifest=”cache.manifest”&gt;<br>3.&lt;meta charset=”utf-8”&gt;指定页面的字符集<br>4.sizes：指定浏览器选项卡上显示的网页logo，使用方法如下：<br>&lt;link rel=’icon’ href=’demo_icon.gif’ type=’image/gif’ sizes=’16*16’&gt;<br>5.&lt;base href=”<a href="http://localhost/" target="_blank" rel="external">http://localhost/</a>“ target=”_blank”&gt;超链接打开方式，在新窗口打开页面地址以<a href="http://localhost/" target="_blank" rel="external">http://localhost/</a> 开头 + 相对地址<br>6.script：defer和async（加载方式）<br>defer–当浏览器读到&lt;script src..&gt; 脚本文件下载后不执行，等页面加载完成后才执行（推迟执行）<br>async–当浏览器读到&lt;script src..&gt; 脚本文件下载后立刻执行，但并不停止执行后续的代码（异步执行）<br>7、&lt;a media=”” hreflang=”” href=”#”&gt;对相应的设备进行优化，handheld（手持设备），tv(电视)<br>&lt;a href=”<a href="http://www.mukewang.com/" target="_blank" rel="external">http://www.mukewang.com/</a>“ hreflang=”zh” ref=”external”&gt;慕课网&lt;/a&gt;<br>a：hreflang=”zh”（设置语言，这里设置语言是中文,表示网址使用的网址是中文）<br>a：ref=”external”（设置超链接的引用，表示网址使用的是外部的）<br>8、start 起始值 reversed 倒序<br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;ol start=&quot;50&quot; reversed&amp;gt; </span><br><span class="line">&amp;lt;li&amp;gt;1&amp;lt;/li&amp;gt;</span><br><span class="line">&amp;lt;li&amp;gt;2&amp;lt;/li&amp;gt; </span><br><span class="line">&amp;lt;li&amp;gt;3&amp;lt;/li&amp;gt; </span><br><span class="line">&amp;lt;/ol&amp;gt;</span><br></pre></td></tr></table></figure></p>
+<p>9、&lt;menu type=””&gt;type的三个类型contextmenu（上下文菜单），list（列表菜单），toolbar（工具栏）</p>
+<ul>
+<li>内嵌css新增的属性 &lt;style type=”text/css” scoded&gt;//scoded表示只对外部标签内部才有效<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; &amp;lt;div&amp;gt;</span><br><span class="line">&gt; &amp;lt;style type=&quot;text/css&quot; scoped&amp;gt;</span><br><span class="line">&gt; h1&#123;color:red;&#125;</span><br><span class="line">&gt; p&#123;color:blue;&#125;</span><br><span class="line">&gt; &amp;lt;/style&amp;gt;</span><br><span class="line">&gt; &amp;lt;h1&amp;gt;this my name&amp;lt;/h1&amp;gt;</span><br><span class="line">&gt; &amp;lt;p&amp;gt;this my name&amp;lt;/p&amp;gt;</span><br><span class="line">&gt; &amp;lt;div&amp;gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>11、&lt;iframe &gt;&lt;/iframe&gt;//内嵌框架<br>seamless属性—不会有边框、边距<br>srcdoc属性—指定内嵌框架的内容。有srcdoc 时，src 会被忽略，此时显示srcdoc中的内容，srcdoc的值可以是html代码<br>sandbox—规定内嵌框架的安全级别 （禁止提交表单、禁止执行javascript脚本、内嵌页面与外层页面不是相同的源）<br>①allow-forms:允许提交表单<br>②allow-scripts：允许执行脚本<br>③allow-same-origin：允许 iframe 内容被视为与包含文档有相同的来源<br>④allow-top-navigation：允许 iframe 内容从包含文档导航（加载）内容</p>
+<h3 id="HTML5删除属性"><a href="#HTML5删除属性" class="headerlink" title="HTML5删除属性"></a>HTML5删除属性</h3><p>在html5中，那些可以用css样式定义的标签和属性都被删除了！</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/08/HTML废除的属性.jpg" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/HTML废除的属性.jpg" alt="HTML废除的属性"></a></p>
+<h3 id="HTML5全局属性"><a href="#HTML5全局属性" class="headerlink" title="HTML5全局属性"></a>HTML5全局属性</h3><ol>
+<li>data-yourvalue:自定义数据属性</li>
+<li>hidden：可以对标签内容隐藏，代替之前需在CSS中输入的display：none</li>
+<li>spellcheck：对输入内容进行语法标错</li>
+<li>tabindex：通过设定值，按下tab后，按照标注的顺序进行切换<br>5.contenteditable：这部分页面内容可以编辑：可以配合JS对网页内容进行局部修改</li>
+<li>designMode属性：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; &amp;lt;sricpt&amp;gt;</span><br><span class="line">&gt; window.document.designMode=&apos;on&apos;;</span><br><span class="line">&gt; &amp;lt;/sricpt&amp;gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>designMode属性为on时，所有的文档属性都可以修改。off时只有上面的属性指定的区域可编辑。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[如何将Emmet安装到 Sublime text 3]]></title>
+      <url>http://xifengxx.github.io/2015/08/03/%E5%A6%82%E4%BD%95%E5%B0%86Emmet%E5%AE%89%E8%A3%85%E5%88%B0%20Sublime%20text%203/</url>
+      <content type="html"><![CDATA[<p>学习慕课网<a href="http://www.imooc.com/learn/40" title="慕课网" target="_blank" rel="external">《前端开发工具技巧介绍—Sublime篇》</a>时，提到一个前端开发工具“Sublime”。<br>它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度。</p>
+<p>（查看这篇文章来了解Sublime具体用法：<a href="http://www.iteye.com/news/27580" title="Emmet：HTML/CSS代码快速编写神器" target="_blank" rel="external"> Emmet：HTML/CSS代码快速编写神器</a>）</p>
+<p>视频介绍Sublime插件Emmet非常实用，但我发现从官网下载的Sublime并不带Emmet插件，需要重新下载安装。</p>
+<p>于是百度搜索，找到了这篇文章<a href="http://www.cnblogs.com/tinyphp/p/3217457.html" title="如何将Emmet安装到 Sublime text 3" target="_blank" rel="external">《如何将Emmet安装到 Sublime text 3》</a>，按照步骤来下载安装：</p>
+<blockquote>
+<p>第一步：下载<a href="http://files.cnblogs.com/tinyphp/sublime_package_control-master.zip" target="_blank" rel="external">sublime_package_control-master.zip</a> ，解压命名文件夹为Package Control。(注意大小写)</p>
+<p>第二步：下载<a href="http://files.cnblogs.com/tinyphp/sublime_package_control-python3.zip" target="_blank" rel="external">sublime_package_control-python3.zip</a>，解压后覆盖到刚刚的Package Control中，完成插件API函数的更新。</p>
+<p>第三步：打开Sublime Text 3，选择菜单：Preference–&gt;Browse Package… 浏览插件<a href="http://www.xifengxx.com/wp-content/uploads/2015/08/002Cst8Aty6Pc89uuaa0e690.png" target="_blank" rel="external">
+</a> <a href="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-1.jpg" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-1.jpg" alt="sublime text 1"></a></p>
+<p>第四步：把package control复制到此目录，重启 Sublime text 3。<br>然后菜单Preferences就会多了两个Package..的东西如下： Package Control 安装成功<br><a href="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-2.jpg" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-2.jpg" alt="sublime text 2"></a><br>第五步：点击菜单Preference–&gt;Package Control，点击install Package：<br><a href="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-3.jpg" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-3.jpg" alt="sublime text 3"></a><br><a href="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg" alt="sublime text 4"></a>等待几秒后再弹出如下内容，敲键盘emmet,选择第一项安装。（网上的教程是选择“emment Css Snippets”安装，我试过2次，安装后都失败了，改为第一项安装则成功了。）</p>
+<p>在 Emmet 安装完成后，屏幕下方会提示自动安装PyV8，安装完成，重启 Sublime Text 3。</p>
+<p>自此，安装成功。<br><strong>测试：</strong></p>
+</blockquote>
+<p>重启之后还会看到左下角再次呈现 Loading PyV8 的提示，待其载入完毕，打开一个新文档（CTRL+N）,最后测试，输入指令”!”，按“Tab”键即出现如下内容，即HTML5整体结构，而不用一个一个的输入字符，非常方便，极大的提高了码字的速度和效率，前端学习者们可以尝试下。<br><a href="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-4.jpg" alt="sublime text 4"></a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[个人网站学习实践（wordpress教程）]]></title>
+      <url>http://xifengxx.github.io/2015/07/29/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%B7%B5%EF%BC%88wordpress%E6%95%99%E7%A8%8B%EF%BC%89/</url>
+      <content type="html"><![CDATA[<h2 id="序："><a href="#序：" class="headerlink" title="序："></a><strong>序：</strong></h2><p>还在上大学的时候，便有建立个人网站的想法。</p>
+<p>那时清闲，去图书馆找了好多网站建设的书籍，诸如Dreamweaver、Fireworks、Flash、Fontpage等，边看边学，看不懂代码，不会操作，最终放弃了，没能建立起个人网站。</p>
+<p>从那之后，我一直以为建网站是项技术活，门槛挺高的。</p>
+<p>直到去年（2014）年9月份，偶然在网上发现了WordPress网站制作教程，想建立网站的欲望又复苏了，于是边看边学习，个人网站终于建成了。</p>
+<p>正所谓，外行看热闹，内行看门道。看着建立个人网站觉得挺难得，但一路走来，觉得非常简单。你所要做的，便是行动而已，而不是仅仅停留在想的阶段。</p>
+<hr>
+<p>建立个人网站，最简单直接的方式是套用现有的建站程序，比如Wordpress。</p>
+<p>如何用Wordpress建立个人网站呢？以下列举了些我写的文章来介绍个人网站建立，通过边看文章边实践学习，一周的时间，你就可以学会建立自己的个人网站。<br><a id="more"></a></p>
+<h4 id="基础篇："><a href="#基础篇：" class="headerlink" title="基础篇："></a>基础篇：</h4><p><a href="http://www.xifengxx.com/seo/wordpress/161.html" title="如何建立个人网站" target="_blank" rel="external">《如何建立个人网站》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/205.html" title="Wordpress自主建站建议教程" target="_blank" rel="external">《WordPress自主建站建议教程》</a></p>
+<p><a href="http://http://www.xifengxx.com/seo/wordpress/35.html" title="使用PHPnow快速搭建本地php+Mysql建站环境" target="_blank" rel="external">《使用PHPnow快速搭建本地php+Mysql建站环境》</a></p>
+<h4 id="WordPress学习篇"><a href="#WordPress学习篇" class="headerlink" title="WordPress学习篇"></a>WordPress学习篇</h4><p><a href="http://www.xifengxx.com/seo/wordpress/232.html" title="Wordpress基础教程1" target="_blank" rel="external">《WordPress教程（1）:如何本地搭建WordPress程序？》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/243.html" title="wordpress基础教程2" target="_blank" rel="external">《WordPress教程（2）：初识WordPress网站后台仪表盘》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/280.html" title="Wordpress基础教程3" target="_blank" rel="external">《WordPress教程（3）：WordPress网站后台之文章管理》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/297.html" title="Wordpress基础教程4" target="_blank" rel="external">《WordPress教程（4）：WordPress网站后台之页面、外观、插件、多媒体、链接、评论》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/318.html" title="Wordpress基础教程5" target="_blank" rel="external">《WordPress教程（5）：WordPress网站后台之基本设置》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/373.html" title="Wordpress基础教程6" target="_blank" rel="external">《WordPress教程（6）：WordPress如何备份数据库及进行网站搬家？》</a></p>
+<h4 id="WordPress进阶篇"><a href="#WordPress进阶篇" class="headerlink" title="WordPress进阶篇"></a>WordPress进阶篇</h4><p><a href="http://www.xifengxx.com/seo/wordpress/449.html" title="WordPress网站侧边栏（小工具）如何添加图片？" target="_blank" rel="external">《WordPress网站侧边栏（小工具）如何添加图片？》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/570.html" title="WordPress主题模板结构概述" target="_blank" rel="external">《WordPress主题模板结构概述》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/1174.html" title="如何备份WordPress网站数据到本地？" target="_blank" rel="external">《如何备份WordPress网站数据到本地？》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/488.html" title="wordpress如何利用sql语句批量更换域名？" target="_blank" rel="external">《wordpress如何利用sql语句批量更换域名？》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/190.html" title="wordpress中如何修改robots.txt文件" target="_blank" rel="external">《wordpress中如何修改robots.txt文件》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/213.html" title="解决wordpress最近打开速度很慢的方法" target="_blank" rel="external">《解决wordpress最近打开速度很慢的方法》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/422.html" title="WordPress升级（最新4.0.1版本）的方法" target="_blank" rel="external">《WordPress升级（最新4.0.1版本）的方法》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/504.html" title="Wordpress程序网站维护" target="_blank" rel="external">《WordPress程序网站安全维护》</a></p>
+<h4 id="网站建设-拓展篇"><a href="#网站建设-拓展篇" class="headerlink" title="网站建设-拓展篇"></a>网站建设-拓展篇</h4><p><a href="http://www.xifengxx.com/seo/wordpress/519.html" title="网页基础教程（1）HTML概述" target="_blank" rel="external">《网页基础教程（1）HTML</a><a href="http://www.xifengxx.com/seo/wordpress/519.html" title="网页基础教程（1）HTML概述" target="_blank" rel="external">概述》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/547.html" title="网页基础教程（2）CSS概述" target="_blank" rel="external">《网页基础教程（2）CSS概述》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/809.html" title="Web开发初学指南" target="_blank" rel="external">《Web开发初学指南》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/1209.html" title="CSS学习笔记（1）：控制文字只显示一行，超出部分显示省略号" target="_blank" rel="external">《CSS学习笔记（1）：控制文字只显示一行，超出部分显示省略号》</a></p>
+<p><a href="http://www.xifengxx.com/seo/wordpress/1217.html" title="CSS学习笔记（2）wordpress首页文章摘要字数设置" target="_blank" rel="external">《CSS学习笔记（2）wordpress首页文章摘要字数设置》</a></p>
+<h4 id="学习资源："><a href="#学习资源：" class="headerlink" title="学习资源："></a>学习资源：</h4><p>Wordpress视频教程：<a href="http://www.liweihui.net/course" title="WP百科网教程" target="_blank" rel="external">WP百科网建站培训教程</a></p>
+<p><a href="http://edu.51cto.com/course/course_id-260-page-2.html" title="wordpress入门" target="_blank" rel="external">Wordpress0基础入门教程</a></p>
+<p>WordPress主题教程：<a href="http://blog.wpjam.com/article/wp-theme-lessons/" title="我爱水煮鱼-WordPress主题教程" target="_blank" rel="external">《我爱水煮鱼-WordPress 主题教程》</a></p>
+<p>Html/CSS教程：       <a href="http://www.w3school.com.cn/" title="W3school在线教程" target="_blank" rel="external">W3School在线教程</a></p>
+<p><a href="http://www.w3chtml.com/" title="w3chtml" target="_blank" rel="external">W3Chtml教程</a></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>任何一门知识（技能），只要你想学，你就可以学会。</p>
+<p>如果你花费了时间，却没有学会，只能从自己是否用心的角度来剖析，不要找借口。</p>
+<p>在学习的道路上，我们需要尽量避免“拖延症”、“半途而废”，几乎所有的失败，都可以从这两个词中找到原因。</p>
+<p>在学习之前，你需要首先弄懂一个问题：<strong>你为什么要学习它？</strong></p>
+<p>只有弄懂了这个问题，学习才有动力。</p>
+<p>最后，一句话共勉：</p>
+<p>每天进步1%！</p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>

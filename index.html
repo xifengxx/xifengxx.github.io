@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Web前端, 西风博客, Hexo博客" />
 
 
 
@@ -62,7 +62,7 @@
 <meta name="description" content="在梦想面前，一切都是借口。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="西风Web前端">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://xifengxx.github.io/index.html">
 <meta property="og:site_name" content="西风Web前端">
 <meta property="og:description" content="在梦想面前，一切都是借口。">
 <meta name="twitter:card" content="summary">
@@ -207,9 +207,30 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -458,7 +479,13 @@ ssh -T git@github.com
 
 Hexo安装首先要安装好Git 和Node.js软件。安装完后，打开Git Bash，输入命令：
 
-npm instal
+npm install hexo-cli -g
+
+通过以下命令来确认Hexo是否安装成功：
+
+hexo -v
+
+如果出现
           ...
 
           <div class="post-more-link text-center">
@@ -592,7 +619,7 @@ npm instal
         
           
           简明释义GitGit 是一个版本控制工具，是一个可以安装在你自己机器上的软件。git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。
-githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Githu
+githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。Github 首先是一个公司，Github网站是他们的产品，提供 Gi
           ...
 
           <div class="post-more-link text-center">
@@ -727,7 +754,7 @@ githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作
           
           这是在github page上建立的个人博客站点，专注WEB前端开发技术知识，有别于个人独立博客站点：西风博客.
 为什么要搭建个人博客呢？
-个人知识积累。经历过那么多，是不是想把自己的经历、想法观点给记录下来，网站是个不错的选择。俗话说得好，好记性不如烂笔头。你不写出来，是会遗忘的，那是一笔多么宝贵
+个人知识积累。经历过那么多，是不是想把自己的经历、想法观点给记录下来，网站是个不错的选择。俗话说得好，好记性不如烂笔头。你不写出来，是会遗忘的，那是一笔多么宝贵的财富啊。同时，你在写的过程中，你会思考、会反思自己的过往经历，更能理性的认清生活，了解自己，积累经
           ...
 
           <div class="post-more-link text-center">
@@ -860,7 +887,7 @@ githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作
       
         
           
-          HTTP，或者超文本传输协议，是上世纪80年代由蒂姆.伯纳斯.李发明的。它是一个规则系统，是一种协议，把应用程序和超文本文档之间的传输联系起来。换句话说，HTTP 就是机器之间彼此沟通的一个协议，或者说一个消息格式。HTTP 遵循一个简单的模型：从客户端发出请求到服务器并等待响应。因此它也被认为是一
+          HTTP，或者超文本传输协议，是上世纪80年代由蒂姆.伯纳斯.李发明的。它是一个规则系统，是一种协议，把应用程序和超文本文档之间的传输联系起来。换句话说，HTTP 就是机器之间彼此沟通的一个协议，或者说一个消息格式。HTTP 遵循一个简单的模型：从客户端发出请求到服务器并等待响应。因此它也被认为是一种“请求–响应协议”。请求和响应都是文本信息，或者说是字符串，信息写法遵循着一个规则，能保证其他机器
           ...
 
           <div class="post-more-link text-center">
@@ -999,7 +1026,8 @@ githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作
 1、文档声明
 &lt;!DOCTYPE HTML&gt;声明这是一个HTML文档。
 2、&lt;HTML&gt;标签
-&lt;html&gt;标签的作用相当于设计者在告诉浏览器，整
+&lt;html&gt;标签的作用相当于设计者在告诉浏览器，整个网页是从&lt;html&gt;这里开始的，然后到&lt;/html&gt;结束。
+3、&lt;h
           ...
 
           <div class="post-more-link text-center">
@@ -1132,7 +1160,8 @@ githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作
       
         
           
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick
           ...
 
           <div class="post-more-link text-center">
@@ -1270,6 +1299,8 @@ githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作
 一、位图位图3种格式：“.jpg”、“.png”、“.gif”。
 位图，又称为点阵图像，是由称作像素（图片元素）的单个点组成的。
 通常位图又分为8位、16位、24位和32位。
+
+8位图并不是图像只有8种颜色，而是28（即256）种颜色，8位图指的是用8个bits来表示颜色。
           ...
 
           <div class="post-more-link text-center">
@@ -1404,7 +1435,7 @@ githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作
           
           作为初入前端，或是对前端感兴趣的网友，最迷茫而又迫切的问题便是：前端开发包含哪些内容，如何快速学习前端知识？
 《前端开发者手册》，便是一本不错的启蒙读物。它介绍了前端开发岗位、前端开发相关的知识术语，前端开发的相关资源，以及如何学习前端开发。看完后，你会对前端有一个整体的了解。
-花了一个下午的时间看
+花了一个下午的时间看完这本前端开发者手册，感觉还是蛮有收获的，拓宽了我对前端的认知。不过该手册是翻译版本，读起来不是那么
           ...
 
           <div class="post-more-link text-center">
@@ -1540,7 +1571,7 @@ githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作
           CSS2定义了四种布局：块布局、行内布局、表格布局盒定位布局。
 CSS3引入了一种新的布局模式——Flexbox布局，即伸缩布局盒（Flexible Box）模型，此布局对于设计比较复杂的页面非常有用，特别是“垂直居中”布局，非常容易实现。
 Flexbox布局语法有三种：
-旧版本：2009年版本，使
+旧版本：2009年版本，使用display:box或者display:inline-box;  [目前仅Safari浏览器支持
           ...
 
           <div class="post-more-link text-center">
@@ -1688,6 +1719,12 @@ Flexbox布局语法有三种：
 
         
         
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
 
         
         <div class="links-of-blogroll motion-element">
@@ -1826,6 +1863,135 @@ Flexbox布局语法有三种：
 
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   

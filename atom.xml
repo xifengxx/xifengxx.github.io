@@ -4,9 +4,9 @@
   <subtitle>Web前端学习博客。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://xifengxx.github.io/"/>
   <updated>2016-04-07T08:37:08.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://xifengxx.github.io/</id>
   
   <author>
     <name>Xifengxx</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>hexo 内置标签</title>
-    <link href="http://yoursite.com/2016/04/07/hexo-%E5%86%85%E7%BD%AE%E6%A0%87%E7%AD%BE/"/>
-    <id>http://yoursite.com/2016/04/07/hexo-内置标签/</id>
+    <link href="http://xifengxx.github.io/2016/04/07/hexo-%E5%86%85%E7%BD%AE%E6%A0%87%E7%AD%BE/"/>
+    <id>http://xifengxx.github.io/2016/04/07/hexo-内置标签/</id>
     <published>2016-04-07T01:47:25.000Z</published>
     <updated>2016-04-07T08:37:08.000Z</updated>
     
@@ -57,17 +57,17 @@
     
     </summary>
     
-      <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+      <category term="博客搭建" scheme="http://xifengxx.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://xifengxx.github.io/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Hexo安装及部署</title>
-    <link href="http://yoursite.com/2016/04/05/Hexo%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
-    <id>http://yoursite.com/2016/04/05/Hexo基本操作/</id>
+    <link href="http://xifengxx.github.io/2016/04/05/Hexo%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
+    <id>http://xifengxx.github.io/2016/04/05/Hexo基本操作/</id>
     <published>2016-04-05T11:09:51.000Z</published>
     <updated>2016-04-07T07:39:24.000Z</updated>
     
@@ -186,17 +186,17 @@
     
     </summary>
     
-      <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+      <category term="博客搭建" scheme="http://xifengxx.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://xifengxx.github.io/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Git实战教程</title>
-    <link href="http://yoursite.com/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/"/>
-    <id>http://yoursite.com/2016/04/05/git实战教程/</id>
+    <link href="http://xifengxx.github.io/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/"/>
+    <id>http://xifengxx.github.io/2016/04/05/git实战教程/</id>
     <published>2016-04-05T11:09:51.000Z</published>
     <updated>2016-04-07T01:13:28.000Z</updated>
     
@@ -259,7 +259,7 @@
 &lt;li&gt;注册&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github账号&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;下载安装git.&lt;br&gt;msysgit是Windows版的Git。(下载地址)[&lt;a href=&quot;http://msysgit.github.io/]。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://msysgit.github.io/]。&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;登录Github，新建一个repository项目(这里使用project做项目名字)。&lt;/li&gt;
-&lt;li&gt;在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。&lt;br&gt;设置完成后，这个repository项目的展示地址变为：&lt;br&gt;&lt;a href=&quot;http://xifengxx.github.io/project&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;‘xifengxx’为我注册Github的账号名，project为repository项目名。&lt;br&gt;可以通过上面的网址来访问项目。&lt;/li&gt;
+&lt;li&gt;在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。&lt;br&gt;设置完成后，这个repository项目的展示地址变为：&lt;br&gt;&lt;a href=&quot;http://xifengxx.github.io/project&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;‘xifengxx’为我注册Github的账号名，project为repository项目名。&lt;br&gt;可以通过上面的网址来访问项目。&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;电脑里选定一个文件夹（这里是Git）放置Github上的项目project。&lt;br&gt;右键——“git bash here”,调出git命令界面，输入以下命令将project项目克隆到本地文件夹下。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;$ git clone &lt;a href=&quot;https://github.com/xifengxx/project.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/project.git&lt;/a&gt;&lt;br&gt;这时本地Git文件夹下会多出一个文件夹Project。&lt;/p&gt;
@@ -286,7 +286,7 @@
 &lt;p&gt;输入第三行命令时，会有弹出框提示输入Github账号和密码，输入后等待片刻，当命令行提示”$”符号时，说明已经完成。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;浏览器输入网址访问：&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://xifengxx.github.io/project/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xifengxx.github.io/project/index.html&lt;/a&gt;&lt;br&gt;或 &lt;a href=&quot;http://xifengxx.github.io/project&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;此处的index.html为网页Demo中的文件。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://xifengxx.github.io/project/index.html&quot;&gt;http://xifengxx.github.io/project/index.html&lt;/a&gt;&lt;br&gt;或 &lt;a href=&quot;http://xifengxx.github.io/project&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;此处的index.html为网页Demo中的文件。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -299,17 +299,17 @@
     
     </summary>
     
-      <category term="Git" scheme="http://yoursite.com/categories/Git/"/>
+      <category term="Git" scheme="http://xifengxx.github.io/categories/Git/"/>
     
     
-      <category term="Git实战" scheme="http://yoursite.com/tags/Git%E5%AE%9E%E6%88%98/"/>
+      <category term="Git实战" scheme="http://xifengxx.github.io/tags/Git%E5%AE%9E%E6%88%98/"/>
     
   </entry>
   
   <entry>
     <title>如何通过Github Pages + hexo 搭建个人博客</title>
-    <link href="http://yoursite.com/2016/03/13/%E9%80%9A%E8%BF%87Github%20Pages%20+%20Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://yoursite.com/2016/03/13/通过Github Pages + Hexo搭建博客/</id>
+    <link href="http://xifengxx.github.io/2016/03/13/%E9%80%9A%E8%BF%87Github%20Pages%20+%20Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://xifengxx.github.io/2016/03/13/通过Github Pages + Hexo搭建博客/</id>
     <published>2016-03-12T16:09:51.000Z</published>
     <updated>2016-04-07T01:13:28.000Z</updated>
     
@@ -403,19 +403,19 @@
     
     </summary>
     
-      <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+      <category term="博客搭建" scheme="http://xifengxx.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://xifengxx.github.io/tags/Hexo/"/>
     
-      <category term="Github Pages" scheme="http://yoursite.com/tags/Github-Pages/"/>
+      <category term="Github Pages" scheme="http://xifengxx.github.io/tags/Github-Pages/"/>
     
   </entry>
   
   <entry>
     <title>HTTP协议及相关知识</title>
-    <link href="http://yoursite.com/2016/03/03/HTTP%E5%8D%8F%E8%AE%AE%E7%9F%A5%E5%A4%9A%E5%B0%91/"/>
-    <id>http://yoursite.com/2016/03/03/HTTP协议知多少/</id>
+    <link href="http://xifengxx.github.io/2016/03/03/HTTP%E5%8D%8F%E8%AE%AE%E7%9F%A5%E5%A4%9A%E5%B0%91/"/>
+    <id>http://xifengxx.github.io/2016/03/03/HTTP协议知多少/</id>
     <published>2016-03-03T11:00:53.000Z</published>
     <updated>2016-04-07T06:51:02.000Z</updated>
     
@@ -484,17 +484,17 @@
     
     </summary>
     
-      <category term="HTTP协议" scheme="http://yoursite.com/categories/HTTP%E5%8D%8F%E8%AE%AE/"/>
+      <category term="HTTP协议" scheme="http://xifengxx.github.io/categories/HTTP%E5%8D%8F%E8%AE%AE/"/>
     
     
-      <category term="HTTP" scheme="http://yoursite.com/tags/HTTP/"/>
+      <category term="HTTP" scheme="http://xifengxx.github.io/tags/HTTP/"/>
     
   </entry>
   
   <entry>
     <title>前端知识之查漏补缺：HTML头部(head)标签</title>
-    <link href="http://yoursite.com/2015/12/13/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E4%B9%8B%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA%EF%BC%9AHTML%E5%A4%B4%E9%83%A8(head)%E6%A0%87%E7%AD%BE/"/>
-    <id>http://yoursite.com/2015/12/13/前端知识之查漏补缺：HTML头部(head)标签/</id>
+    <link href="http://xifengxx.github.io/2015/12/13/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E4%B9%8B%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA%EF%BC%9AHTML%E5%A4%B4%E9%83%A8(head)%E6%A0%87%E7%AD%BE/"/>
+    <id>http://xifengxx.github.io/2015/12/13/前端知识之查漏补缺：HTML头部(head)标签/</id>
     <published>2015-12-13T05:01:23.000Z</published>
     <updated>2016-04-07T08:02:28.000Z</updated>
     
@@ -549,17 +549,17 @@
     
     </summary>
     
-      <category term="Web前端" scheme="http://yoursite.com/categories/Web%E5%89%8D%E7%AB%AF/"/>
+      <category term="Web前端" scheme="http://xifengxx.github.io/categories/Web%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="HTML" scheme="http://yoursite.com/tags/HTML/"/>
+      <category term="HTML" scheme="http://xifengxx.github.io/tags/HTML/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2015/12/13/hello-world/"/>
-    <id>http://yoursite.com/2015/12/13/hello-world/</id>
+    <link href="http://xifengxx.github.io/2015/12/13/hello-world/"/>
+    <id>http://xifengxx.github.io/2015/12/13/hello-world/</id>
     <published>2015-12-12T16:09:51.000Z</published>
     <updated>2016-04-07T08:38:00.000Z</updated>
     
@@ -580,17 +580,17 @@
     
     </summary>
     
-      <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+      <category term="博客搭建" scheme="http://xifengxx.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://xifengxx.github.io/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>网页图片格式浅析</title>
-    <link href="http://yoursite.com/2015/12/10/%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F%E6%B5%85%E6%9E%90/"/>
-    <id>http://yoursite.com/2015/12/10/网页图片格式浅析/</id>
+    <link href="http://xifengxx.github.io/2015/12/10/%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F%E6%B5%85%E6%9E%90/"/>
+    <id>http://xifengxx.github.io/2015/12/10/网页图片格式浅析/</id>
     <published>2015-12-10T15:06:47.000Z</published>
     <updated>2016-04-07T07:55:32.000Z</updated>
     
@@ -633,17 +633,17 @@
     
     </summary>
     
-      <category term="Web前端" scheme="http://yoursite.com/categories/Web%E5%89%8D%E7%AB%AF/"/>
+      <category term="Web前端" scheme="http://xifengxx.github.io/categories/Web%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="图片格式" scheme="http://yoursite.com/tags/%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F/"/>
+      <category term="图片格式" scheme="http://xifengxx.github.io/tags/%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>初入前端必看的前端开发知识、术语</title>
-    <link href="http://yoursite.com/2015/12/10/%E5%88%9D%E5%85%A5%E5%89%8D%E7%AB%AF%E5%BF%85%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86%E3%80%81%E6%9C%AF%E8%AF%AD/"/>
-    <id>http://yoursite.com/2015/12/10/初入前端必看的前端开发知识、术语/</id>
+    <link href="http://xifengxx.github.io/2015/12/10/%E5%88%9D%E5%85%A5%E5%89%8D%E7%AB%AF%E5%BF%85%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86%E3%80%81%E6%9C%AF%E8%AF%AD/"/>
+    <id>http://xifengxx.github.io/2015/12/10/初入前端必看的前端开发知识、术语/</id>
     <published>2015-12-09T16:00:34.000Z</published>
     <updated>2016-04-07T08:05:36.000Z</updated>
     
@@ -1124,17 +1124,17 @@
     
     </summary>
     
-      <category term="Web前端" scheme="http://yoursite.com/categories/Web%E5%89%8D%E7%AB%AF/"/>
+      <category term="Web前端" scheme="http://xifengxx.github.io/categories/Web%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="Web前端" scheme="http://yoursite.com/tags/Web%E5%89%8D%E7%AB%AF/"/>
+      <category term="Web前端" scheme="http://xifengxx.github.io/tags/Web%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>CSS3 Flex布局（伸缩布局盒模型）学习</title>
-    <link href="http://yoursite.com/2015/11/26/CSS3%20Flex%E5%B8%83%E5%B1%80%EF%BC%88%E4%BC%B8%E7%BC%A9%E5%B8%83%E5%B1%80%E7%9B%92%E6%A8%A1%E5%9E%8B%EF%BC%89%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://yoursite.com/2015/11/26/CSS3 Flex布局（伸缩布局盒模型）学习/</id>
+    <link href="http://xifengxx.github.io/2015/11/26/CSS3%20Flex%E5%B8%83%E5%B1%80%EF%BC%88%E4%BC%B8%E7%BC%A9%E5%B8%83%E5%B1%80%E7%9B%92%E6%A8%A1%E5%9E%8B%EF%BC%89%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://xifengxx.github.io/2015/11/26/CSS3 Flex布局（伸缩布局盒模型）学习/</id>
     <published>2015-11-26T08:27:04.000Z</published>
     <updated>2016-04-07T07:42:14.000Z</updated>
     
@@ -1456,19 +1456,19 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
     
     </summary>
     
-      <category term="Web前端" scheme="http://yoursite.com/categories/Web%E5%89%8D%E7%AB%AF/"/>
+      <category term="Web前端" scheme="http://xifengxx.github.io/categories/Web%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="CSS3" scheme="http://yoursite.com/tags/CSS3/"/>
+      <category term="CSS3" scheme="http://xifengxx.github.io/tags/CSS3/"/>
     
-      <category term="Flex布局" scheme="http://yoursite.com/tags/Flex%E5%B8%83%E5%B1%80/"/>
+      <category term="Flex布局" scheme="http://xifengxx.github.io/tags/Flex%E5%B8%83%E5%B1%80/"/>
     
   </entry>
   
   <entry>
     <title>CSS3学习笔记:变形transform</title>
-    <link href="http://yoursite.com/2015/08/29/CSS3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E5%BD%A2transform/"/>
-    <id>http://yoursite.com/2015/08/29/CSS3学习笔记-变形transform/</id>
+    <link href="http://xifengxx.github.io/2015/08/29/CSS3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E5%BD%A2transform/"/>
+    <id>http://xifengxx.github.io/2015/08/29/CSS3学习笔记-变形transform/</id>
     <published>2015-08-29T14:04:44.000Z</published>
     <updated>2016-04-07T08:09:28.000Z</updated>
     
@@ -1607,17 +1607,17 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
     
     </summary>
     
-      <category term="Web前端" scheme="http://yoursite.com/categories/Web%E5%89%8D%E7%AB%AF/"/>
+      <category term="Web前端" scheme="http://xifengxx.github.io/categories/Web%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="CSS3" scheme="http://yoursite.com/tags/CSS3/"/>
+      <category term="CSS3" scheme="http://xifengxx.github.io/tags/CSS3/"/>
     
   </entry>
   
   <entry>
     <title>HTML5学习笔记（1）元素与标签结构</title>
-    <link href="http://yoursite.com/2015/08/22/HTML5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89%E5%85%83%E7%B4%A0%E4%B8%8E%E6%A0%87%E7%AD%BE%E7%BB%93%E6%9E%84/"/>
-    <id>http://yoursite.com/2015/08/22/HTML5学习笔记（1）元素与标签结构/</id>
+    <link href="http://xifengxx.github.io/2015/08/22/HTML5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89%E5%85%83%E7%B4%A0%E4%B8%8E%E6%A0%87%E7%AD%BE%E7%BB%93%E6%9E%84/"/>
+    <id>http://xifengxx.github.io/2015/08/22/HTML5学习笔记（1）元素与标签结构/</id>
     <published>2015-08-22T13:06:01.000Z</published>
     <updated>2016-04-07T07:53:26.000Z</updated>
     
@@ -1666,17 +1666,17 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
     
     </summary>
     
-      <category term="Web前端" scheme="http://yoursite.com/categories/Web%E5%89%8D%E7%AB%AF/"/>
+      <category term="Web前端" scheme="http://xifengxx.github.io/categories/Web%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="HTML5" scheme="http://yoursite.com/tags/HTML5/"/>
+      <category term="HTML5" scheme="http://xifengxx.github.io/tags/HTML5/"/>
     
   </entry>
   
   <entry>
     <title>如何将Emmet安装到 Sublime text 3</title>
-    <link href="http://yoursite.com/2015/08/03/%E5%A6%82%E4%BD%95%E5%B0%86Emmet%E5%AE%89%E8%A3%85%E5%88%B0%20Sublime%20text%203/"/>
-    <id>http://yoursite.com/2015/08/03/如何将Emmet安装到 Sublime text 3/</id>
+    <link href="http://xifengxx.github.io/2015/08/03/%E5%A6%82%E4%BD%95%E5%B0%86Emmet%E5%AE%89%E8%A3%85%E5%88%B0%20Sublime%20text%203/"/>
+    <id>http://xifengxx.github.io/2015/08/03/如何将Emmet安装到 Sublime text 3/</id>
     <published>2015-08-03T15:33:41.000Z</published>
     <updated>2016-04-07T07:58:08.000Z</updated>
     
@@ -1702,19 +1702,19 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
     
     </summary>
     
-      <category term="前端工具" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+      <category term="前端工具" scheme="http://xifengxx.github.io/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="Sublime" scheme="http://yoursite.com/tags/Sublime/"/>
+      <category term="Sublime" scheme="http://xifengxx.github.io/tags/Sublime/"/>
     
-      <category term="前端工具" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+      <category term="前端工具" scheme="http://xifengxx.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>个人网站学习实践（wordpress教程）</title>
-    <link href="http://yoursite.com/2015/07/29/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%B7%B5%EF%BC%88wordpress%E6%95%99%E7%A8%8B%EF%BC%89/"/>
-    <id>http://yoursite.com/2015/07/29/个人网站学习实践（wordpress教程）/</id>
+    <link href="http://xifengxx.github.io/2015/07/29/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%B7%B5%EF%BC%88wordpress%E6%95%99%E7%A8%8B%EF%BC%89/"/>
+    <id>http://xifengxx.github.io/2015/07/29/个人网站学习实践（wordpress教程）/</id>
     <published>2015-07-29T15:26:50.000Z</published>
     <updated>2016-04-07T08:18:04.000Z</updated>
     
@@ -1775,10 +1775,10 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
     
     </summary>
     
-      <category term="博客搭建" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+      <category term="博客搭建" scheme="http://xifengxx.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="wordpress教程" scheme="http://yoursite.com/tags/wordpress%E6%95%99%E7%A8%8B/"/>
+      <category term="wordpress教程" scheme="http://xifengxx.github.io/tags/wordpress%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   

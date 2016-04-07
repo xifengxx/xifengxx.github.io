@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Web前端, 西风博客, Hexo博客" />
 
 
 
@@ -69,7 +69,7 @@
 此博客主要涉及Web前端">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于博主">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta property="og:url" content="http://xifengxx.github.io/about/index.html">
 <meta property="og:site_name" content="西风Web前端">
 <meta property="og:description" content="80后，文科男，互联网爱好者，暂居羊城。
 曾是外贸大家庭中的一员，精通Alibaba平台操作、产品排名优化、付费推广(P4P)、SEO优化等……
@@ -231,9 +231,30 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
   
 </nav>
 
@@ -257,7 +278,7 @@
 <p>业余时间：生活，旅行，爬山，追书。</p>
 <p>此博客主要涉及Web前端开发相关内容，记录个人学习Web前端路上的点滴经历与实践。</p>
 <p>创立博客的目的：一方面是记录学习笔记，作知识储备积累，另一方面是吸引志同道合的你，探讨交流，追逐星辰大海的梦想。</p>
-<p>个人邮箱：<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#x78;&#105;&#102;&#x65;&#110;&#103;&#120;&#120;&#x40;&#49;&#54;&#x33;&#46;&#x63;&#x6f;&#x6d;">&#x78;&#105;&#102;&#x65;&#110;&#103;&#120;&#120;&#x40;&#49;&#54;&#x33;&#46;&#x63;&#x6f;&#x6d;</a> ； <a href="/uploads/wechat.jpg">微信号</a>：xifengxiaoxiao</p>
+<p>个人邮箱：<a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#58;&#x78;&#105;&#x66;&#101;&#110;&#x67;&#120;&#120;&#x40;&#49;&#54;&#51;&#x2e;&#99;&#111;&#109;">&#x78;&#105;&#x66;&#101;&#110;&#x67;&#120;&#120;&#x40;&#49;&#54;&#51;&#x2e;&#99;&#111;&#109;</a> ； <a href="/uploads/wechat.jpg">微信号</a>：xifengxiaoxiao</p>
 <p>欢迎留言！</p>
 </blockquote>
     
@@ -272,7 +293,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="about/index.html"
-           data-title="关于博主" data-url="http://yoursite.com/about/index.html">
+           data-title="关于博主" data-url="http://xifengxx.github.io/about/index.html">
       </div>
     
   </div>
@@ -376,6 +397,12 @@
         </div>
 
         
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
         
 
         
@@ -515,6 +542,135 @@
 
   
   
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
   
 
   
