@@ -1,0 +1,886 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端开发工程师学习笔记," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风Web前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="以下内容为《前端开发工程师》微专业的第一门课《网页制作》的第五章学习笔记。
+《网页制作》之CSS—CSS变形（2d/3d）变形transform-2d变形在CSS3中，我们可以使用transform属性来实现文字或图像的的各种变形效果，如位移、缩放、旋转、倾斜等。
+transform属性变形方法方法或属性说明translate()位移scale()缩放rotate()旋转skew()倾斜trans">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网易微专业之《前端开发工程师》学习笔记（11）-CSS">
+<meta property="og:url" content="http://yoursite.com/2015/12/26/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8811-ef-bc-89-css/index.html">
+<meta property="og:site_name" content="西风Web前端">
+<meta property="og:description" content="以下内容为《前端开发工程师》微专业的第一门课《网页制作》的第五章学习笔记。
+《网页制作》之CSS—CSS变形（2d/3d）变形transform-2d变形在CSS3中，我们可以使用transform属性来实现文字或图像的的各种变形效果，如位移、缩放、旋转、倾斜等。
+transform属性变形方法方法或属性说明translate()位移scale()缩放rotate()旋转skew()倾斜trans">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/变形rotate.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/translatex.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/translatey.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/transition坐标.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/transitionxy.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/scalex.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/scarey.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/scarexy.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/skewX.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/skewY.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/skewxy.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/transform-origin.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/transform-matrix.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/translate3d.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/scale3d.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/rotate3d.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/transform-style.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/backface-visibility.png">
+<meta property="og:updated_time" content="2016-04-07T06:47:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网易微专业之《前端开发工程师》学习笔记（11）-CSS">
+<meta name="twitter:description" content="以下内容为《前端开发工程师》微专业的第一门课《网页制作》的第五章学习笔记。
+《网页制作》之CSS—CSS变形（2d/3d）变形transform-2d变形在CSS3中，我们可以使用transform属性来实现文字或图像的的各种变形效果，如位移、缩放、旋转、倾斜等。
+transform属性变形方法方法或属性说明translate()位移scale()缩放rotate()旋转skew()倾斜trans">
+<meta name="twitter:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/变形rotate.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 网易微专业之《前端开发工程师》学习笔记（11）-CSS | 西风Web前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风Web前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/demo" rel="section">
+            
+            作品DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                网易微专业之《前端开发工程师》学习笔记（11）-CSS
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-26T15:55:40+08:00" content="2015-12-26">
+              2015-12-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/网易微专业·前端开发工程师/" itemprop="url" rel="index">
+                    <span itemprop="name">网易微专业·前端开发工程师</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/26/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8811-ef-bc-89-css/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/26/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8811-ef-bc-89-css/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/12/26/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8811-ef-bc-89-css/" class="leancloud_visitors" data-flag-title="网易微专业之《前端开发工程师》学习笔记（11）-CSS">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>以下内容为《前端开发工程师》微专业的第一门课《网页制作》的第五章学习笔记。</p>
+<h2 id="《网页制作》之CSS—CSS变形（2d-3d）"><a href="#《网页制作》之CSS—CSS变形（2d-3d）" class="headerlink" title="《网页制作》之CSS—CSS变形（2d/3d）"></a>《网页制作》之CSS—CSS变形（2d/3d）</h2><h3 id="变形transform-2d变形"><a href="#变形transform-2d变形" class="headerlink" title="变形transform-2d变形"></a><strong>变形transform-2d变形</strong></h3><p>在CSS3中，我们可以使用transform属性来实现文字或图像的的各种变形效果，如<strong>位移、缩放、旋转、倾斜</strong>等。</p>
+<table><br><tbody><br><tr><br><td colspan="2" width="529">transform属性变形方法</td><br></tr><br><tr><br><td width="180">方法或属性</td><br><td width="349">说明</td><br></tr><br><tr><br><td width="180">translate()</td><br><td width="349">位移</td><br></tr><br><tr><br><td width="180">scale()</td><br><td width="349">缩放</td><br></tr><br><tr><br><td width="180">rotate()</td><br><td width="349">旋转</td><br></tr><br><tr><br><td width="180">skew()</td><br><td width="349">倾斜</td><br></tr><br><tr><br><td width="180">transform-origin</td><br><td width="349">中心原点</td><br></tr><br></tbody><br></table>
+
+<h3 id="旋转-rotate-方法"><a href="#旋转-rotate-方法" class="headerlink" title="旋转**rotate()方法**"></a><strong>旋转**</strong>rotate()方法**</h3><p>在CSS3中，我们可以使用rotate()方法来将元素相对中心原点进行旋转。</p>
+<p><strong>语法：</strong>transform：rotate(度数);</p>
+<p><strong>说明：</strong>度数指的是元素相对中心原点进行旋转的度数，单位为deg。其中，deg是degree（度数）的缩写。</p>
+<p>它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为<strong>正值</strong>，元素相对原点中心<strong>顺时针</strong>旋转；如果这个值为<strong>负值</strong>，元素相对原点中心<strong>逆时针</strong>旋转。如下图所示：</p>
+<p><strong><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/变形rotate.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/变形rotate.png" alt="变形rotate"></a></strong></p>
+<h3 id="位移-translate-方法"><a href="#位移-translate-方法" class="headerlink" title="位移**translate()方法**"></a><strong>位移**</strong>translate()方法**</h3><p>在CSS3中，我们可以使用translate()方法将元素沿着水平方向（X轴）和垂直方向（Y轴）移动。</p>
+<p>对于位移translate()方法，我们分为3种情况：</p>
+<ul>
+<li><strong>translateX(x)：</strong>元素仅在水平方向移动（X轴移动）；<br><strong>语法：</strong>transform:translateX(x);</li>
+</ul>
+<p><strong>说明：</strong>在CSS3中，<strong>所有变形方法都是属于transform属性，因此所有关于变形的方法前面都要加上“tranform:</strong>”，以表示“变形”处理。x表示元素在水平方向（X轴）的移动距离，单位为px、em或百分比等。</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/translatex.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/translatex.png" alt="translate(x)"></a></p>
+<ul>
+<li><strong>translateY(y)：</strong>元素仅在垂直方向移动（Y轴移动）；<br><strong>语法：</strong>tranform:translateY(y)</li>
+</ul>
+<p><strong>说明：</strong>y表示元素在水平方向（y轴）的移动距离，单位为px、em或百分比等。</p>
+<p>当y为正时，表示元素在垂直方向向下移动；当y为负时，表示元素在垂直方向向上移动。</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/translatey.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/translatey.png" alt="translate(y)"></a></p>
+<p>&nbsp;</p>
+<p><span style="color: #ff0000;"> <strong>在W3C规定中，出于人的习惯是从上到下阅读，所选取的坐标系为下图中的第2种坐标系，因此x轴正方向向右，而y轴正方向向下。而你所想到的坐标系应该是下图中的第1种坐标系，这种坐标系是“数学形式”的坐标系，只适合在数学应用上。大家一定要搞清楚这一点！</strong></span></p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/transition坐标.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/transition坐标.png" alt="transition坐标"></a></p>
+<p><strong>（3）transklate(x,y)：</strong>元素在水平方向和垂直方向同时移动（X轴和Y轴同时移动）；</p>
+<p><strong>语法：</strong>tranform:translate(x,y)</p>
+<p><strong>说明：</strong>x表示元素在水平方向（x轴）的移动距离，y表示元素在水平方向（y轴）的移动距离。注意，Y是一个可选参数，如果没有设置Y值，则表示元素仅仅沿着X轴正方形移动。</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/transitionxy.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/transitionxy.png" alt="transition(x,y)"></a></p>
+<h3 id="缩放-scale-方法"><a href="#缩放-scale-方法" class="headerlink" title="缩放**scale()方法**"></a><strong>缩放**</strong>scale()方法**</h3><p>缩放，指的是“缩小”和“放大”。在CSS3中，我们可以使用scale()方法来将元素根据中心原点进行缩放。</p>
+<p>缩放scale()方法也有3种情况：</p>
+<ul>
+<li>scaleX(x)：元素仅水平方向缩放（X轴缩放）；<br><strong>语法：</strong>transform:scaleX(x)</li>
+</ul>
+<p><strong>说明：</strong>x表示元素沿着水平方向（X轴）缩放的倍数，如果大于1就代表放大；如果小于1就代表缩小。</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/scalex.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/scalex.png" alt="scalex()"></a></p>
+<ul>
+<li>scaleY(y)：元素仅垂直方向缩放（Y轴缩放）；<br><strong>语法：</strong>transform:scaleY(y)</li>
+</ul>
+<p><strong>说明：</strong>y表示元素沿着垂直方向（Y轴）缩放的倍数，如果大于1就代表放大；如果小于1就代表缩小。</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/scarey.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/scarey.png" alt="scarey()"></a></p>
+<p>（3）scale(x,y)：元素水平方向和垂直方向同时缩放（X轴和Y轴同时缩放）；</p>
+<p><strong>语法：</strong>transform:scale(x,y)</p>
+<p><strong>说明：</strong>x表示元素沿着水平方向（X轴）缩放的倍数，y表示元素沿着垂直方向（Y轴）缩放的倍数。</p>
+<p>注意，<span style="color: #ff0000;">Y是一个可选参数，如果没有设置Y值，则表示X、Y两个方向的缩放倍数是一样的（同时放大相同倍数）</span>。</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/scarexy.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/scarexy.png" alt="scare(x,y)"></a></p>
+<h3 id="倾斜-skew-方法"><a href="#倾斜-skew-方法" class="headerlink" title="倾斜**skew()方法**"></a><strong>倾斜**</strong>skew()方法**</h3><p>它可以将一个对象以其中心位置围绕着<strong>X轴</strong>和<strong>Y轴</strong>按照一定的角度倾斜。这与rotate()函数的旋转不同，rotate()函数只是旋转，而不会改变元素的形状。skew()函数不会旋转，而只会改变元素的形状。</p>
+<p>在CSS3中，我们可以使用skew()方法将元素倾斜显示。</p>
+<p>skew()方法跟translate()方法、scale()方法一样，也有3种情况：</p>
+<p>（1）skewX(x)：使元素在水平方向倾斜（X轴倾斜）；transform:skewX(x);</p>
+<p>（2）skewY(y)：使元素在垂直方向倾斜（Y轴倾斜）；transform:skewY(y);</p>
+<p>（3）skew(x,y)：使元素在水平方向和垂直方向同时倾斜（X轴和Y轴同时倾斜）；transform:skew(x,y);</p>
+<p><strong>说明：</strong>第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则值为0，也就是Y轴方向上无斜切。</p>
+<p><strong>理解：</strong>skew的默认原点transform-origin是这个物件的中心点</p>
+<p>skewX(30deg) 如下图：（沿着X轴倾斜，沿着Y轴呈逆时针旋转30度。）</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/skewX.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/skewX.png" alt="skewX()"></a></p>
+<p>skewY(10deg) 如下图：（沿着y轴倾斜，沿着X轴呈顺时针旋转10度。）</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/skewY.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/skewY.png" alt="skewY()"></a></p>
+<p>skew(30deg, 10deg) 如下图：</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/skewxy.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/skewxy.png" alt="skew(x,y)"></a></p>
+<h3 id="transform-origin属性"><a href="#transform-origin属性" class="headerlink" title="transform-origin属性"></a><strong>transform-origin属性</strong></h3><p>任何一个元素都有一个中心原点，默认情况下，元素的中心原点位于X轴和Y轴的50%处,如下图所示：</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/transform-origin.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/transform-origin.png" alt="transform-origin"></a></p>
+<p><span style="color: #ff0000;"><strong>默认情况下，CSS3变形进行的位移、缩放、旋转、倾斜都是以元素的中心原点**</strong>(50%,50%)<strong>**进行变形。</strong></span>但很多时候，我们可以通过transform-origin属性来改变元素变形时的中心原点位置。</p>
+<p><strong>语法：</strong></p>
+<p><strong>transform-origin</strong>：[ <a href="mk:@MSITStore:D:\前端开发\css参考手册.chm::/properties/transform/../../values/numeric/percentage.htm" target="_blank" rel="external">&lt;percentage&gt;</a> | <a href="mk:@MSITStore:D:\前端开发\css参考手册.chm::/properties/transform/../../values/length/index.htm" target="_blank" rel="external">&lt;length&gt;</a> | left | center① | right ] [ <a href="mk:@MSITStore:D:\前端开发\css参考手册.chm::/properties/transform/../../values/numeric/percentage.htm" target="_blank" rel="external">&lt;percentage&gt;</a> | <a href="mk:@MSITStore:D:\前端开发\css参考手册.chm::/properties/transform/../../values/length/index.htm" target="_blank" rel="external">&lt;length&gt;</a> | top | center② | bottom ]?</p>
+<p>默认值：50% 50%，效果等同于center center</p>
+<p>不管transform-origin取值为长度值还是关键字，都需要设置水平方向和垂直方向的值。</p>
+<table><br><tbody><br><tr><br><td colspan="3" width="577">transform-origin属性取值</td><br></tr><br><tr><br><td width="224">关键字</td><br><td width="224">百分比</td><br><td width="128">说明</td><br></tr><br><tr><br><td width="224">top left</td><br><td width="224">0 0</td><br><td width="128">左上</td><br></tr><br><tr><br><td width="224">top center</td><br><td width="224">50% 0</td><br><td width="128">靠上居中</td><br></tr><br><tr><br><td width="224">top right</td><br><td width="224">100% 0</td><br><td width="128">右上</td><br></tr><br><tr><br><td width="224">left center</td><br><td width="224">0 50%</td><br><td width="128">靠左居中</td><br></tr><br><tr><br><td width="224">center center</td><br><td width="224">50% 50%</td><br><td width="128">正中</td><br></tr><br><tr><br><td width="224">right center</td><br><td width="224">100% 50%</td><br><td width="128">靠右居中</td><br></tr><br><tr><br><td width="224">bottom left</td><br><td width="224">0 100%</td><br><td width="128">左下</td><br></tr><br><tr><br><td width="224">bottom center</td><br><td width="224">50% 100%</td><br><td width="128">靠下居中</td><br></tr><br><tr><br><td width="224">bottom right</td><br><td width="224">100% 100%</td><br><td width="128">右下</td><br></tr><br></tbody><br></table><br>&nbsp;<br><br>### <strong>参考知识：</strong><br><br>1.  <a href="http://www.zhangxinxu.com/study/201206/css3-transform-matrix-skew.html" target="_blank" rel="external">http://www.zhangxinxu.com/study/201206/css3-transform-matrix-skew.html</a><br><br>### <strong>2. **</strong>变形–矩阵 matrix()<strong>
+
+</strong>matrix()<strong>** </strong>是一个含六个值的(a,b,c,d,e,f)变换矩阵，用来指定一个2D变换，相当于直接应用一个[a b c d e f]变换矩阵。就是基于水平方向（X轴）和垂直方向（Y轴）重新定位元素,此属性值使用涉及到数学中的矩阵，我在这里只是简单的说一下CSS3中的transform有这么一个属性值，如果需要深入了解，需要对数学矩阵有一定的知识。<br><br>Matrix深入理解：<br><br><a href="http://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/" target="_blank" rel="external">http://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/</a><br><br><strong>示例演示：</strong>通过matrix()函数来模拟transform中translate()位移的效果。<br><strong>HTML代码：</strong><br>&gt; &lt;div class=”wrapper”&gt;  &lt;div&gt;&lt;/div&gt;&lt;/div&gt;<br><strong>CSS代码：</strong><br>&gt; .wrapper {  width: 300px;  height: 200px;  border: 2px dotted red;  margin: 40px auto;}<br>&gt;<br>&gt;<br>&gt; .wrapper div {  width:300px;  height: 200px;  background: orange;<br>&gt;<br>&gt;<br>&gt; -webkit-transform: matrix(1,0,0,1,50,50);<br>&gt;<br>&gt;<br>&gt; -moz-transform:matrix(1,0,0,1,50,50);<br>&gt;<br>&gt;<br>&gt; transform: matrix(1,0,0,1,50,50);}<br><strong>演示结果：</strong><br><br><strong><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/transform-matrix.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/transform-matrix.png" alt="transform-matrix()"></a></strong><br><br>## <strong>transform-3d变形</strong><br><br>### <strong>P**</strong>erspective属性-透视<strong><br><br>语法：Perspective:none | &lt;length&gt;
+
+</strong>perspective 属性定义 3D 元素距视图的距离<strong>，以像素计。<br><br>该属性允许改变 3D 元素查看 3D 元素的视图。当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。
+
+</strong>理解：<strong><br>当perspective:none/0;时，相当于没有设perspective(length)。比如要建立一个小立方体，长宽高都是200px。如果perspective &lt; 200px ，那就相当于站在盒子里面看的结果，如果perspective 非常大那就是站在非常远的地方看（立方体已经成了小正方形了）。<br>当元素没有设置perspective(length)时，所有后代元素被压缩在同一个二维平面上，不存在景深的效果。如果设置perspective(length)后，将会看到三维的效果。默认的透视视角中心在容器(是perspective所在的元素，不是他的后代元素)的中点，也就是perspective-origin: 50% 50%。当然你也可以自己设置，比如：左上角-webkit-perspective-origin: 0px 0px；。<br><br>### </strong>P<strong>**erspective-origin属性</strong><br><br>perspective-origin 属性定义 3D 元素所基于的 X 轴和 Y 轴。该属性允许您改变 3D 元素的底部位置。<br><br>定义时的perspective -Origin属性，它是一个元素的子元素，透视图，而不是元素本身。<br><br>语法：perspective-origin: x-axis y-axis;<br><table><br><tbody><br><tr><br><td width="139">值</td><br><td width="419">描述</td><br></tr><br><tr><br><td width="139">x-axis</td><br><td width="419">定义该视图在 x 轴上的位置。默认值：50%。可能的值：<br><br>left<br><br>center<br><br>right<br><br>length<br><br>%</td><br></tr><br><tr><br><td width="139">y-axis</td><br><td width="419">定义该视图在 y 轴上的位置。默认值：50%。可能的值：<br><br>top<br><br>center<br><br>bottom<br><br>length<br><br>%</td><br></tr><br></tbody><br></table>
+
+<h3 id="Translate3d-指定对象的3D位移。"><a href="#Translate3d-指定对象的3D位移。" class="headerlink" title="Translate3d-指定对象的3D位移。"></a><strong>Translate3d-指定对象的3D位移。</strong></h3><p><strong>语法：</strong>translate3d(&lt;translation-value&gt;,&lt;translation-value&gt;,&lt;length&gt;)</p>
+<p>第1个参数对应X轴，第2个参数对应Y轴，第3个参数对应Z轴，参数不允许省略 。</p>
+<p><strong><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/translate3d.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/translate3d.png" alt="translate3d"></a></strong></p>
+<h3 id="Scale3d-指定对象的3D缩放"><a href="#Scale3d-指定对象的3D缩放" class="headerlink" title="Scale3d()-指定对象的3D缩放"></a><strong>Scale3d()-指定对象的3D缩放</strong></h3><p><strong>语法：</strong>scale3d(&lt;number&gt;,&lt;number&gt;,&lt;number&gt;)</p>
+<p>第1个参数对应X轴，第2个参数对应Y轴，第3个参数对应Z轴，参数不允许省略</p>
+<p><strong><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/scale3d.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/scale3d.png" alt="scale3d"></a></strong></p>
+<h3 id="Rotate3d-指定对象的3D旋转角度。"><a href="#Rotate3d-指定对象的3D旋转角度。" class="headerlink" title="Rotate3d()-指定对象的3D旋转角度。"></a><strong>Rotate3d()-指定对象的3D旋转角度。</strong></h3><p>语法：rotate3d（&lt;number&gt;,&lt;number&gt;,&lt;number&gt;,&lt;angle&gt;）</p>
+<p>其中前3个参数分别表示旋转的方向x,y,z，第4个参数表示旋转的角度，参数不允许省略</p>
+<p><strong><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/rotate3d.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/rotate3d.png" alt="rotate3d"></a></strong></p>
+<h3 id="Transform-style"><a href="#Transform-style" class="headerlink" title="Transform-style"></a><strong>Transform-style</strong></h3><p>transform–style属性指定嵌套元素是怎样在三维空间中呈现。</p>
+<p><strong>语法</strong>:transform-style: flat|preserve-3d;</p>
+<ul>
+<li>flat值为默认值，表示所有子元素在2D平面呈现。</li>
+<li>preserve-3d表示所有子元素在3D空间中呈现。<br><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/transform-style.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/transform-style.png" alt="transform-style"></a></li>
+</ul>
+<p>也就是说，如果对一个元素设置了transform-style的值为flat，则该元素的所有子元素都将被平展到该元素的2D平面中进行呈现。沿着X轴或Y轴方向旋转该元素将导致位于正或负Z轴位置的子元素显示在该元素的平面上，而不是它的前面或者后面。如果对一个元素设置了transform-style的值为preserve-3d，它表示不执行平展操作，他的所有子元素位于3D空间中。</p>
+<h3 id="Backface-visibility"><a href="#Backface-visibility" class="headerlink" title="Backface-visibility"></a><strong>Backface-visibility</strong></h3><p>backface-visibility 属性定义当元素不面向屏幕时是否可见。</p>
+<p>如果在旋转元素不希望看到其背面时，该属性很有用。</p>
+<p><strong>语法**</strong>:**backface-visibility: visible|hidden;</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/backface-visibility.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/backface-visibility.png" alt="backface-visibility"></a></p>
+<h3 id="参考资源："><a href="#参考资源：" class="headerlink" title="参考资源："></a><strong>参考资源：</strong></h3><ol>
+<li><strong>CSS 3D transform变换：</strong><br><a href="http://www.zhangxinxu.com/wordpress/2012/09/css3-3d-transform-perspective-animate-transition/" target="_blank" rel="external">http://www.zhangxinxu.com/wordpress/2012/09/css3-3d-transform-perspective-animate-transition/</a></li>
+</ol>
+<p><a href="http://www.zhangxinxu.com/wordpress/2010/11/css3-transitions-transforms%E5%92%8Canimation%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B%E4%B8%8E%E5%BA%94%E7%94%A8%E5%B1%95%E7%A4%BA/" target="_blank" rel="external">http://www.zhangxinxu.com/wordpress/2010/11/css3-transitions-transforms%E5%92%8Canimation%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B%E4%B8%8E%E5%BA%94%E7%94%A8%E5%B1%95%E7%A4%BA/</a></p>
+<p><a href="http://www.787866.com/2083.html" target="_blank" rel="external">http://www.787866.com/2083.html</a></p>
+<ol>
+<li><strong>CSS动画视图在线工具：</strong><br><a href="http://www.w3cways.com/css3-animation-tool" target="_blank" rel="external">http://www.w3cways.com/css3-animation-tool</a></li>
+</ol>
+<p>&nbsp;</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechatpay.png" alt="Xifengxx wechat" style="width: 200px; max-width: 100%;"/>
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端开发工程师学习笔记/" rel="tag">#前端开发工程师学习笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/25/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8810-ef-bc-89-css/" rel="next" title="网易微专业之《前端开发工程师》学习笔记（10）-CSS">
+                <i class="fa fa-chevron-left"></i> 网易微专业之《前端开发工程师》学习笔记（10）-CSS
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/27/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8812-ef-bc-89-css/" rel="prev" title="网易微专业之《前端开发工程师》学习笔记（12）-CSS">
+                网易微专业之《前端开发工程师》学习笔记（12）-CSS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/26/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8811-ef-bc-89-css/"
+           data-title="网易微专业之《前端开发工程师》学习笔记（11）-CSS" data-url="http://yoursite.com/2015/12/26/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8811-ef-bc-89-css/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Xifengxx" />
+          <p class="site-author-name" itemprop="name">Xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#《网页制作》之CSS—CSS变形（2d-3d）"><span class="nav-number">1.</span> <span class="nav-text">《网页制作》之CSS—CSS变形（2d/3d）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变形transform-2d变形"><span class="nav-number">1.1.</span> <span class="nav-text">变形transform-2d变形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#旋转-rotate-方法"><span class="nav-number">1.2.</span> <span class="nav-text">旋转**rotate()方法**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位移-translate-方法"><span class="nav-number">1.3.</span> <span class="nav-text">位移**translate()方法**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缩放-scale-方法"><span class="nav-number">1.4.</span> <span class="nav-text">缩放**scale()方法**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#倾斜-skew-方法"><span class="nav-number">1.5.</span> <span class="nav-text">倾斜**skew()方法**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transform-origin属性"><span class="nav-number">1.6.</span> <span class="nav-text">transform-origin属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Translate3d-指定对象的3D位移。"><span class="nav-number">1.7.</span> <span class="nav-text">Translate3d-指定对象的3D位移。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scale3d-指定对象的3D缩放"><span class="nav-number">1.8.</span> <span class="nav-text">Scale3d()-指定对象的3D缩放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rotate3d-指定对象的3D旋转角度。"><span class="nav-number">1.9.</span> <span class="nav-text">Rotate3d()-指定对象的3D旋转角度。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transform-style"><span class="nav-number">1.10.</span> <span class="nav-text">Transform-style</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Backface-visibility"><span class="nav-number">1.11.</span> <span class="nav-text">Backface-visibility</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资源："><span class="nav-number">1.12.</span> <span class="nav-text">参考资源：</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

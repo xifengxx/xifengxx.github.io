@@ -1,0 +1,996 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端开发工程师学习笔记,JavaScript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风Web前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="以下内容为《前端开发工程师》微专业的第二门课《JavaScript程序设计》基础篇部分学习笔记。
+《JavaScript程序设计》之基础篇（四）五、JS操作符与表达式（一）JS操作符（运算符）
+
+一元操作符：自增运算符**：**++
+
+“++”是自增运算符，它指的是在原来值的基础上加1，i++表示“i=i+1”。该运算符有2种情况：
+u （1）i++：“i++”指的是在使用i之后，使i的值加1。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网易微专业之《前端开发工程师》学习笔记（16）-JS操作符与表达式">
+<meta property="og:url" content="http://yoursite.com/2016/01/25/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8816-ef-bc-89-js/index.html">
+<meta property="og:site_name" content="西风Web前端">
+<meta property="og:description" content="以下内容为《前端开发工程师》微专业的第二门课《JavaScript程序设计》基础篇部分学习笔记。
+《JavaScript程序设计》之基础篇（四）五、JS操作符与表达式（一）JS操作符（运算符）
+
+一元操作符：自增运算符**：**++
+
+“++”是自增运算符，它指的是在原来值的基础上加1，i++表示“i=i+1”。该运算符有2种情况：
+u （1）i++：“i++”指的是在使用i之后，使i的值加1。">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式1.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式2.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式3.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式4.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式5.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式6.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式7.png">
+<meta property="og:updated_time" content="2016-04-07T06:47:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网易微专业之《前端开发工程师》学习笔记（16）-JS操作符与表达式">
+<meta name="twitter:description" content="以下内容为《前端开发工程师》微专业的第二门课《JavaScript程序设计》基础篇部分学习笔记。
+《JavaScript程序设计》之基础篇（四）五、JS操作符与表达式（一）JS操作符（运算符）
+
+一元操作符：自增运算符**：**++
+
+“++”是自增运算符，它指的是在原来值的基础上加1，i++表示“i=i+1”。该运算符有2种情况：
+u （1）i++：“i++”指的是在使用i之后，使i的值加1。">
+<meta name="twitter:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 网易微专业之《前端开发工程师》学习笔记（16）-JS操作符与表达式 | 西风Web前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风Web前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/demo" rel="section">
+            
+            作品DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                网易微专业之《前端开发工程师》学习笔记（16）-JS操作符与表达式
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-25T19:00:29+08:00" content="2016-01-25">
+              2016-01-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/网易微专业·前端开发工程师/" itemprop="url" rel="index">
+                    <span itemprop="name">网易微专业·前端开发工程师</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/25/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8816-ef-bc-89-js/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/25/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8816-ef-bc-89-js/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/01/25/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8816-ef-bc-89-js/" class="leancloud_visitors" data-flag-title="网易微专业之《前端开发工程师》学习笔记（16）-JS操作符与表达式">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>以下内容为《前端开发工程师》微专业的第二门课《JavaScript程序设计》基础篇部分学习笔记。</p>
+<h3 id="《JavaScript程序设计》之基础篇（四）"><a href="#《JavaScript程序设计》之基础篇（四）" class="headerlink" title="《JavaScript程序设计》之基础篇（四）"></a>《JavaScript程序设计》之基础篇（四）</h3><h3 id="五、JS操作符与表达式"><a href="#五、JS操作符与表达式" class="headerlink" title="五、JS操作符与表达式"></a><strong>五、JS操作符与表达式</strong></h3><h4 id="（一）JS操作符（运算符）"><a href="#（一）JS操作符（运算符）" class="headerlink" title="（一）JS操作符（运算符）"></a><strong>（一）JS操作符（运算符）</strong></h4><p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式1.png" alt="JS操作符与表达式1"></a></p>
+<ul>
+<li><strong>一元操作符：<a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式2.png" alt="JS操作符与表达式2"></a></strong><br><strong>自增运算符**</strong>：<strong>**++</strong></li>
+</ul>
+<p>“++”是自增运算符，它指的是在原来值的基础上加1，i++表示“i=i+1”。该运算符有2种情况：</p>
+<p>u （1）i++：“i++”指的是在使用i之后，使i的值加1。</p>
+<p>举例：</p>
+<p>i=1;  j=i++;</p>
+<p>上面执行的结果：j的值为1，i的值为2。</p>
+<p>其实上面代码等价于下面这一段代码：</p>
+<p>i=1;j=i;i++;</p>
+<p><strong>u （2）++i：“++i”指的是在使用i之前，先使i的值加1。</strong></p>
+<p>举例：</p>
+<p>i=1;j=++i;</p>
+<p>上面的执行结果：j的值为2，i的值为2。</p>
+<p>其实上面代码等价于下面这一段代码：</p>
+<p>i=1;i++;j=i;</p>
+<p><strong>自减运算符</strong></p>
+<p>“–”是自减运算符，它指的是在原来值的基础上减1，i–表示“i=i-1”。该运算符同样有2种情况：</p>
+<p>（1）i–</p>
+<p>（2）–i</p>
+<p>举例：</p>
+<p>i=6;j=i–;//j的值为6，i的值为5</p>
+<p>i=6;j=–i;//j的值为5，i的值为5</p>
+<p>&nbsp;</p>
+<ul>
+<li><p><strong>算术操作符</strong><br><table><br><tbody><br><tr><br><td width="83">+</td><br><td width="94">加</td><br><td width="333">4+6 //返回值10</td><br></tr><br><tr><br><td width="83">-</td><br><td width="94">减</td><br><td width="333">7-2 //返回值5</td><br></tr><br><tr><br><td width="83"><em></em></td><br><td width="94">乘</td><br><td width="333">23 //返回值6</td><br></tr><br><tr><br><td width="83">/</td><br><td width="94">除</td><br><td width="333">12/3 //返回值4</td><br></tr><br><tr><br><td width="83"><span style="color: #ff6600;">%</span></td><br><td width="94"><span style="color: #ff6600;">求余</span></td><br><td width="333"><span style="color: #ff6600;">7%4 //返回值3</span></td><br></tr><br></tbody><br></table><br>&nbsp;</p>
+</li>
+<li><p><strong>关系操作符</strong><br><table><br><tbody><br><tr><br><td width="79"><strong>运算符</strong></td><br><td width="97"><strong>描述</strong></td><br><td width="334"><strong>示例</strong></td><br></tr><br><tr><br><td width="79">&lt;</td><br><td width="97">小于</td><br><td width="334">1&lt;4 //返回true</td><br></tr><br><tr><br><td width="79">&gt;</td><br><td width="97">大于</td><br><td width="334">2&gt;5 //返回false</td><br></tr><br><tr><br><td width="79">&lt;=</td><br><td width="97">小于等于</td><br><td width="334">8&lt;=8 //返回true</td><br></tr><br><tr><br><td width="79">&gt;=</td><br><td width="97">大于等于</td><br><td width="334">3&gt;=5 //返回false</td><br></tr><br></tbody><br></table><br>&nbsp;</p>
+</li>
+<li><p><strong>相等操作符</strong><br><table><br><tbody><br><tr><br><td width="118">==</td><br><td width="94">是否等于</td><br><td width="357">0==false;//true;2==true;//false; “==0;//true</td><br></tr><br><tr><br><td width="118">!=</td><br><td width="94">是否不等于</td><br><td width="357">5!=6 //返回true</td><br></tr><br><tr><br><td width="118">=== 和  !==</td><br><td width="94"></td><br><td width="357">var num=”4”;</td></tr></tbody></table></p>
+</li>
+</ul>
+<p>num===4; //返回false;  num!==4; //返回true<br><br><br><br>案例：</p>
+<blockquote>
+<p>var a=5;var b=’5’;</p>
+<p>alert(a==b); //true 先转换类型，然后比较</p>
+<p>//alert(a===b); //false 不转换类型，直接比</p>
+<p>var a=’12’;</p>
+<p>var b=’5’;</p>
+<p>alert(a+b); //结果为125，不是17          1.字符串连接 2.数字相加</p>
+<p>alert(a-b);  //结果为7                      1.数字相减</p>
+</blockquote>
+<ul>
+<li><strong>逻辑操作符</strong><br>逻辑运算符通常用于执行布尔运算，它们常常和比较运算符一起使用来表示复杂比较运算，这些运算涉及的变量通常不止一个，而且常用于if、while和for语句中。<br><table><br><tbody><br><tr><br><td colspan="3" width="594"><strong>JavaScript中常用的算术运算符</strong></td><br></tr><br><tr><br><td width="66"><strong>运算符</strong></td><br><td width="294"><strong>描述</strong></td><br><td width="233"><strong>示例</strong></td><br></tr><br><tr><br><td width="66">&amp;&amp;</td><br><td width="294">逻辑与，若两边表达式的值都为true，则返回true；任意一个值为false，则返回false</td><br><td width="233">(8&gt;5)&amp;&amp;(4&lt;6)，返回true；(8&lt;5)&amp;&amp;(4&lt;6)，返回false</td><br></tr><br><tr><br><td width="66">||</td><br><td width="294">逻辑或，只有表达式的值都为false，才返回false，其他情况返回true</td><br><td width="233">(8&lt;5)||(4&lt;6)，返回true；(8&lt;5)&amp;&amp;(4&gt;6)，返回false</td><br></tr><br><tr><br><td width="66">!</td><br><td width="294">逻辑非，若表达式的值为true，则返回false；若表达式的值为false，则返回true</td><br><td width="233">!(9&gt;2)，返回false；!(9&lt;2)，返回true</td><br></tr><br></tbody><br></table><br><strong>案例：</strong><br><table><br><tbody><br><tr><br><td width="284"><strong>！</strong></td><br><td width="284">Var flag=true; alert(!flag);//false;</td></tr></tbody></table></li>
+</ul>
+<p>Alert(!0);//true</p>
+<p>Alert(![]);//false</p>
+<p>Alert(!””);//true</p>
+<p>Alert(!!1);//true<br></p>
+<p><tr></tr></p>
+<p><td width="284"><strong>&amp;&amp;</strong></td></p>
+<p><td width="284">Var result=true &amp;&amp; false;</td></p>
+<p>Var result=true &amp;&amp; 3; //3</p>
+<p>Var result=1&amp;&amp;3; //3</p>
+<p>Var result=[] &amp;&amp; ””; //””</p>
+<p>Var result=false &amp;&amp; 3; //false</p>
+<p>Var result=””&amp;&amp; 3; //””</p>
+<p>Var result=null &amp;&amp; true; //null</p>
+<p>Var num=0; var result=””&amp;&amp; num++;//num0<br></p>
+<p><tr></tr></p>
+<p><td width="284"><strong>||</strong></td></p>
+<p><td width="284">Var result=true || false;</td></p>
+<p>Var result=1 || 3;//1</p>
+<p>Var result=[] || ””;//[]</p>
+<p>Var result=false || 0;//0</p>
+<p>Var result=””|| 3;//3</p>
+<p>Var result=null || true;//true</p>
+<p>Var num=0;var result=3 || num++;//num 0<br><br><br></p>
+<ul>
+<li><strong>赋值操作符</strong><br>JavaScript中的赋值运算可以分为2种：简单赋值运算和复合赋值运算。</li>
+</ul>
+<p>简单赋值运算是将赋值运算符（=）右边表达式的值保存到左边的变量中。</p>
+<p>复合赋值运算结合了其他操作（如算术运算操作）和赋值操作。</p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td width="100"><strong>运算符</strong></td></p>
+<p><td width="431"><strong>示例</strong></td><br></p>
+<p><tr></tr></p>
+<p><td width="100">=</td></p>
+<p><td width="431">author=”helicopter”</td><br></p>
+<p><tr></tr></p>
+<p><td width="100">+=</td></p>
+<p><td width="431">a+=b等价于a=a+b</td><br></p>
+<p><tr></tr></p>
+<p><td width="100">-=</td></p>
+<p><td width="431">a-=b等价于a=a-b</td><br></p>
+<p><tr></tr></p>
+<p><td width="100">*=</td></p>
+<p><td width="431">a<em>=b等价于a=a</em>b</td><br></p>
+<p><tr></tr></p>
+<p><td width="100">/=</td></p>
+<p><td width="431">a/=b等价于a=a/b</td><br></p>
+<p><tr></tr></p>
+<p><td width="100">%=</td></p>
+<p><td width="431">a%=b等价于a=a%b</td><br></p>
+<p><tr></tr></p>
+<p><td width="100">&amp;=</td></p>
+<p><td width="431">a&amp;=b等价于a=a&amp;b（&amp;是逻辑与运算）</td><br></p>
+<p><tr></tr></p>
+<p><td width="100">|=</td></p>
+<p><td width="431">a|=b等价于a=a|b（|是逻辑或运算）</td><br></p>
+<p><tr></tr></p>
+<p><td width="100">^=</td></p>
+<p><td width="431">a^=b等价于a=a^b（^是逻辑异或运算）</td><br><br><br><br>&nbsp;</p>
+<ul>
+<li><strong>条件操作符</strong><br>条件运算符是JavaScript支持的一种特殊的运算符。</li>
+</ul>
+<p>“？：”又被称作“三目运算符”、“三元运算符”，类似于if…else…条件语句。</p>
+<p><strong>语法：</strong></p>
+<p><span style="color: #ff6600;">条件 ? 表达式1 : 表达式2;</span></p>
+<p><strong>说明：</strong>如果“条件”为true，则表达式的值使用“表达式1”的值；如果“条件”为false，则表达式的值使用“表达式2”的值。</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式3.png" alt="JS操作符与表达式3"></a></p>
+<ul>
+<li><p><strong>逗号操作符</strong><br><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式4.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式4.png" alt="JS操作符与表达式4"></a></p>
+</li>
+<li><p><strong>对象操作符</strong><br><table><br><tbody><br><tr><br><td width="167"><strong>New</strong></td><br><td width="336">Var cat=new Object();</td><br></tr><br><tr><br><td width="167"><strong>delete</strong></td><br><td width="336">Var cat={name:’kitty’,age:2};</td></tr></tbody></table></p>
+</li>
+</ul>
+<p>Alert(cat.name);//’kitty’</p>
+<p>Delete cat.name;</p>
+<p>Alert(cat.name);//undefined<br></p>
+<p><tr></tr></p>
+<p><td width="167"><strong>.</strong></td></p>
+<p><td rowspan="2" width="336">获取对象的值</td></p>
+<p>Var cat={name:’kitty’,age:2};</p>
+<p>Alert(cat.name);//’kitty’</p>
+<p>Alert(cat[‘name’]);//’kitty’<br></p>
+<p><tr></tr></p>
+<p><td width="167"><strong>[]</strong></td><br></p>
+<p><tr></tr></p>
+<p><td width="167"><strong>instanceof</strong></td></p>
+<p><td width="336">判断某个变量是否是某个对象的实例：</td></p>
+<p>Var cat={name:’kitty’,age:2};</p>
+<p>Alert(cat instanceof Object);//true</p>
+<p>Alert(cat instanceof Number);//false<br></p>
+<p><tr></tr></p>
+<p><td width="167"><strong>in</strong></td></p>
+<p><td width="336">判断某个属性是否在对象中：</td></p>
+<p>Var cat={name:’kitty’,age:2};</p>
+<p>Alert(‘name’ in cat);//true</p>
+<p>Alert(‘run’ in cat);//false<br><br><br><br>&nbsp;</p>
+<ul>
+<li><strong>位操作符</strong><br><table><br><tbody><br><tr><br><td width="54">操作符</td><br><td width="57">用法</td><br><td width="387">描述</td><br></tr><br><tr><br><td width="54">按位与</td><br><td width="57">a &amp; b</td><br><td width="387">如果两个操作数对应位都是 1 的话则在该位返回 1。</td><br></tr><br><tr><br><td width="54">按位或</td><br><td width="57">a | b</td><br><td width="387">如果两个操作数对应位都是 0 的话则在该位返回 0。</td><br></tr><br><tr><br><td width="54">按位异或</td><br><td width="57">a ^ b</td><br><td width="387">如果两个操作数对应位只有一个 1 的话则在该位返回 1。</td><br></tr><br><tr><br><td width="54">求反</td><br><td width="57">~ a</td><br><td width="387">反转操作数的每一位。</td><br></tr><br><tr><br><td width="54">左移</td><br><td width="57">a &lt;&lt; b</td><br><td width="387">将 a 的二进制形式左移 b 位。右面的空位补零。</td><br></tr><br><tr><br><td width="54">算术右移</td><br><td width="57">a &gt;&gt; b</td><br><td width="387">将 a 的二进制形式右移 b 位。忽略被移出的位。</td><br></tr><br><tr><br><td width="54">逻辑右移</td><br><td width="57">a &gt;&gt;&gt; b</td><br><td width="387">将 a 的二进制形式右移 b 位。忽略被移出的位，左侧补入 0。</td><br></tr><br></tbody><br></table><br><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式5.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式5.png" alt="JS操作符与表达式5"></a></li>
+</ul>
+<p><strong>位操作符：</strong></p>
+<p>执行位操作时，操作符会将操作数看作一串二进制位(1和0)，而不是十进制、十六进制或八进制数字。例如，十进制的 9 就是二进制的 1001。位操作符在执行的时候会以二进制形式进行操作，但返回的值仍是标准的 JavaScript 数值。</p>
+<p>从原理上讲，位逻辑操作符的工作流程是这样的：</p>
+<p>将操作数转换为 32 位的整型数值并用二进制表示。</p>
+<p>第一操作数的每一位与第二操作数的对应位配对：第一位对第一位，第二位对第二位，以此类推。</p>
+<p>对每一对位应用操作符，最终结果按位组合起来。</p>
+<p>例如，9 的二进制表示为 1001，15 的二进制表示为 1111。所以如果对这两个数应用位逻辑操作符，结果应该像下面这样：</p>
+<p>15 &amp; 9 结果为 9 (1111 &amp; 1001 = 1001)</p>
+<p>15 | 9 为 15 (1111 | 1001 = 1111)</p>
+<p>15 ^ 9 为 6 (1111 ^ 1001 = 0110)</p>
+<p><strong>移位操作符 </strong><br>移位操作符需要两个操作数：第一个是要进行移位的数值，第二个指定要对第一个数移位的数目。移位的方向由使用的操作符决定。<br>移位操作符将把两个操作符转换为 32 位整型数值，并返回与左操作数类型相同的结果。<br><strong>&lt;&lt; (左移)</strong><br>该操作符将把第一个操作数向左移若干位。移出的位将被忽略。右侧空位补零。<br>例如，9&lt;&lt;2 结果为 36，因为 1001 向左移两位变成 100100，这是 36。<br><strong>&gt;&gt; (算术右移)</strong><br>该操作符将把第一个操作数享有移若干位。移出的位将被忽略。左侧的空位补上与原来最左面位相同的值。<br>例如，9&gt;&gt;2 结果为 2，因为 1001 右移两位变成 10，这是 2。反之，-9&gt;&gt;2 结果为 -3，因为要考虑到符号位。<br><strong>&gt;&gt;&gt; (逻辑右移)</strong><br>该操作符将把第一个操作数享有移若干位。移出的位将被忽略。左侧的空位补零。<br>例如，19&gt;&gt;&gt;2 结果为 4，因为 10011 右移两位变成 100，这是 4。对于非负数，算术右移和逻辑右移结果相同。</p>
+<ul>
+<li><strong>操作符优先级</strong><br>下表列出了 JavaScript 运算符，并按优先级顺序从高到低排列。具有相同优先级的运算符按从左至右的顺序计算。<br><table><br><tbody><br><tr><br><td width="276"><strong>运算符</strong></td><br><td width="357"><strong>说明</strong></td><br></tr><br><tr><br><td width="276">.[ ] ( )</td><br><td width="357">字段访问、数组索引、函数调用和表达式分组</td><br></tr><br><tr><br><td width="276">++ – - ~ ! delete new typeof void</td><br><td width="357">一元运算符、返回数据类型、对象创建、未定义的值</td><br></tr><br><tr><br><td width="276">* / %</td><br><td width="357">相乘、相除、求余数</td><br></tr><br><tr><br><td width="276">+ - +</td><br><td width="357">相加、相减、字符串串联</td><br></tr><br><tr><br><td width="276">&lt;&lt; &gt;&gt; &gt;&gt;&gt;</td><br><td width="357">移位</td><br></tr><br><tr><br><td width="276">&lt; &lt;= &gt; &gt;= instanceof</td><br><td width="357">小于、小于或等于、大于、大于或等于、是否为特定类的实例</td><br></tr><br><tr><br><td width="276">== != === !==</td><br><td width="357">相等、不相等、全等，不全等</td><br></tr><br><tr><br><td width="276">&amp;</td><br><td width="357">按位“与”</td><br></tr><br><tr><br><td width="276">^</td><br><td width="357">按位“异或”</td><br></tr><br><tr><br><td width="276">|</td><br><td width="357">按位“或”</td><br></tr><br><tr><br><td width="276">&amp;&amp;</td><br><td width="357">逻辑“与”</td><br></tr><br><tr><br><td width="276">||</td><br><td width="357">逻辑“或”</td><br></tr><br><tr><br><td width="276">?:</td><br><td width="357">条件运算</td><br></tr><br><tr><br><td width="276">= OP=</td><br><td width="357">赋值、赋值运算（如 += 和 &amp;=）</td><br></tr><br><tr><br><td width="276">,</td><br><td width="357">多个计算</td><br></tr><br></tbody><br></table><br>圆括号用于改变由运算符优先级确定的计算顺序。这就是说，先计算完圆括号内的表达式，然后再将它的值用于表达式的其余部分。</li>
+</ul>
+<h4 id="（二）表达式"><a href="#（二）表达式" class="headerlink" title="（二）表达式"></a><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式6.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式6.png" alt="JS操作符与表达式6"></a><strong>（二）表达式</strong></h4><p>表达式是一个语句的集合，计算结果是个单一值。</p>
+<p>在JavaScript中，常见的表达式有4种：</p>
+<ul>
+<li>（1）赋值表达式；</li>
+<li>（2）算术表达式；</li>
+<li>（3）布尔表达式；</li>
+<li>（4）字符串表达式；<br><strong>赋值表达式</strong></li>
+</ul>
+<p>在JavaScript种，赋值表达式的语法格式一般如下：</p>
+<p>变量 赋值运算符 表达式;</p>
+<p>赋值表达式在计算过程中是按照自右而左结合的。其中有简单的赋值表达式，如n=1；也有定义变量时，给变量赋初始值的赋值表达式，如var str=”我爱Javascript”;还有使用比较复杂的赋值运算符连接的赋值表达式，如n+=6。<br><strong>算术表达式</strong></p>
+<p>算术表达式就是用算术运算符连接的JavaScript语句。如a+b+c、20-12、m*n、m/n、sum%3等，都是合法的算术运算符的表达式。</p>
+<p>算术运算符的两边必须都是数值，若在“+”运算中存在字符或字符串，则该表达式将是字符串表达式.因为JavaScript会自动将数值型数据转换成字符串型数据。</p>
+<p><strong>布尔表达式</strong></p>
+<p>布尔表达式一般用来判断某个条件或者表达式是否成立，其结果只能为true或false。</p>
+<p><strong>字符串表达式</strong></p>
+<p>字符串表达式指的就是操作字符串的语句。</p>
+<p>“数字+字符串”返回值一定是字符串，因为JavaScript会自动将数值型数据转换成字符串型数据。</p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td width="553"></td></p>
+<blockquote>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p>&lt;html xmlns=”<a href="http://www.w3.org/1999/xhtml" target="_blank" rel="external">http://www.w3.org/1999/xhtml</a>“&gt;</p>
+<p>&lt;head&gt;</p>
+<p>&lt;title&gt;&lt;/title&gt;</p>
+<p>&lt;script type=”text/javascript”&gt;</p>
+<p>var a=”绿叶学习网”;</p>
+<p>var b=”JavaScript”;</p>
+<p>var c=”入门教程”;</p>
+<p>var str = a+b+c;</p>
+<p>document.write(str);</p>
+<p>&lt;/script&gt;</p>
+<p>&lt;/head&gt;</p>
+<p>&lt;body&gt;</p>
+<p>&lt;/body&gt;</p>
+<p>&lt;/html&gt;<br><br><br><br><br>在浏览器预览效果如下：</p>
+</blockquote>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式7.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS操作符与表达式7.png" alt="JS操作符与表达式7"></a></p>
+<h4 id="参考资源："><a href="#参考资源：" class="headerlink" title="参考资源："></a><strong>参考资源：</strong></h4><ol>
+<li><p>JavaScript 中的相等性判断<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Equality_comparisons_and_sameness" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Equality_comparisons_and_sameness</a></p>
+</li>
+<li><p>运算符优先级：<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence</a></p>
+</li>
+<li><p>JS操作符、运算符汇总表格：<br><a href="http://www.jb51.net/article/31518.htm" target="_blank" rel="external">http://www.jb51.net/article/31518.htm</a></p>
+</li>
+<li><p>JS运算符优先级：<br><a href="https://technet.microsoft.com/zh-cn/library/z3ks45k7" target="_blank" rel="external">https://technet.microsoft.com/zh-cn/library/z3ks45k7</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechatpay.png" alt="Xifengxx wechat" style="width: 200px; max-width: 100%;"/>
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端开发工程师学习笔记/" rel="tag">#前端开发工程师学习笔记</a>
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/23/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8815-ef-bc-89-js/" rel="next" title="网易微专业之《前端开发工程师》学习笔记（15）-JS基本类型">
+                <i class="fa fa-chevron-left"></i> 网易微专业之《前端开发工程师》学习笔记（15）-JS基本类型
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/03/HTTP协议知多少/" rel="prev" title="HTTP协议及相关知识">
+                HTTP协议及相关知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/01/25/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8816-ef-bc-89-js/"
+           data-title="网易微专业之《前端开发工程师》学习笔记（16）-JS操作符与表达式" data-url="http://yoursite.com/2016/01/25/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8816-ef-bc-89-js/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Xifengxx" />
+          <p class="site-author-name" itemprop="name">Xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#《JavaScript程序设计》之基础篇（四）"><span class="nav-number">1.</span> <span class="nav-text">《JavaScript程序设计》之基础篇（四）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、JS操作符与表达式"><span class="nav-number">2.</span> <span class="nav-text">五、JS操作符与表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（一）JS操作符（运算符）"><span class="nav-number">2.1.</span> <span class="nav-text">（一）JS操作符（运算符）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（二）表达式"><span class="nav-number">2.2.</span> <span class="nav-text">（二）表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考资源："><span class="nav-number">2.3.</span> <span class="nav-text">参考资源：</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

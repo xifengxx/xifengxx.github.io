@@ -1,0 +1,817 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HTTP," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风Web前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="HTTP，或者超文本传输协议，是上世纪80年代由蒂姆.伯纳斯.李发明的。它是一个规则系统，是一种协议，把应用程序和超文本文档之间的传输联系起来。换句话说，HTTP 就是机器之间彼此沟通的一个协议，或者说一个消息格式。HTTP 遵循一个简单的模型：从客户端发出请求到服务器并等待响应。因此它也被认为是一种“请求–响应协议”。请求和响应都是文本信息，或者说是字符串，信息写法遵循着一个规则，能保证其他机器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP协议及相关知识">
+<meta property="og:url" content="http://yoursite.com/2016/03/03/HTTP协议知多少/index.html">
+<meta property="og:site_name" content="西风Web前端">
+<meta property="og:description" content="HTTP，或者超文本传输协议，是上世纪80年代由蒂姆.伯纳斯.李发明的。它是一个规则系统，是一种协议，把应用程序和超文本文档之间的传输联系起来。换句话说，HTTP 就是机器之间彼此沟通的一个协议，或者说一个消息格式。HTTP 遵循一个简单的模型：从客户端发出请求到服务器并等待响应。因此它也被认为是一种“请求–响应协议”。请求和响应都是文本信息，或者说是字符串，信息写法遵循着一个规则，能保证其他机器">
+<meta property="og:image" content="http://book.haoduoshipin.com/tealeaf-http/images/http_client_server.png">
+<meta property="og:image" content="http://book.haoduoshipin.com/tealeaf-http/images/https_address_bar.png">
+<meta property="og:updated_time" content="2016-04-07T06:51:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP协议及相关知识">
+<meta name="twitter:description" content="HTTP，或者超文本传输协议，是上世纪80年代由蒂姆.伯纳斯.李发明的。它是一个规则系统，是一种协议，把应用程序和超文本文档之间的传输联系起来。换句话说，HTTP 就是机器之间彼此沟通的一个协议，或者说一个消息格式。HTTP 遵循一个简单的模型：从客户端发出请求到服务器并等待响应。因此它也被认为是一种“请求–响应协议”。请求和响应都是文本信息，或者说是字符串，信息写法遵循着一个规则，能保证其他机器">
+<meta name="twitter:image" content="http://book.haoduoshipin.com/tealeaf-http/images/http_client_server.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> HTTP协议及相关知识 | 西风Web前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风Web前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/demo" rel="section">
+            
+            作品DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTTP协议及相关知识
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-03T19:00:53+08:00" content="2016-03-03">
+              2016-03-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/HTTP协议/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP协议</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/03/HTTP协议知多少/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/03/HTTP协议知多少/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/03/03/HTTP协议知多少/" class="leancloud_visitors" data-flag-title="HTTP协议及相关知识">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>HTTP，或者超文本传输协议，是上世纪80年代由蒂姆.伯纳斯.李发明的。<br>它是一个规则系统，是一种协议，把应用程序和超文本文档之间的传输联系起来。换句话说，HTTP 就是机器之间彼此沟通的一个协议，或者说一个消息格式。<br>HTTP 遵循一个简单的模型：从客户端发出请求到服务器并等待响应。因此它也被认为是一种“请求–响应协议”。请求和响应都是文本信息，或者说是字符串，信息写法遵循着一个规则，能保证其他机器能够理解上面的内容。</p>
+<h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><p>每一个HTTP请求都会得到一个响应，哪怕这响应是一个错误响应.(有时响应会超时)<br>GET请求：向服务器发起请求数据；<br>POST请求：给服务器提交数据</p>
+<h4 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h4><p>GET 请求一般出现在超链接或者浏览器的地址栏里。当你在你的浏览器地址栏里输入类似 <a href="http://www.reddit.com" target="_blank" rel="external">http://www.reddit.com</a> 这样的地址的时候，你就是在发起一个 GET 请求。你让浏览器去取这个地址上的资源，这就意味着我们在整本书里一直在使用GET请求。在你点击 web 应用上的超链接的时候也会发生同样的事情。超链接的默认行为就是向一个 URL 发送GET请求。</p>
+<ol>
+<li>GET 请求经常用于取得一个资源，而且大部分超链接都是 GET 请求。</li>
+<li>一个 GET 请求的响应可以是任何东西，但是如果响应是一个 HTML 并且里面引用了其他资源，你的浏览器会自动对这些资源发起请求，而一个纯粹的 HTTP 工具则不会。</li>
+<li>使用 GET 请求的时候在大小和安全性上有一些限制。</li>
+</ol>
+<h4 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h4><p>浏览器里的典型 POST 使用案例就是你提交一个表单的时候。POST 请求允许我们向服务器发送更大或者敏感的数据，比如图片或者视频。<br>POST 请求也能避免你使用 GET 请求时的查询字符串长度限制问题。通过 POST 请求，我们可以给服务器发送更大的数据。</p>
+<h4 id="HTTP头部"><a href="#HTTP头部" class="headerlink" title="HTTP头部"></a>HTTP头部</h4><p>HTTP 头部允许客户端和服务器在请求/响应的 HTTP 周期里发送额外的信息。头部，通常是以冒号分隔的键值对儿，一般是纯文本格式的。</p>
+<h4 id="请求头部-Request-Headers"><a href="#请求头部-Request-Headers" class="headerlink" title="请求头部 Request Headers"></a>请求头部 Request Headers</h4><p>请求头部提供更多关于服务器和要获取的资源的信息。一些有用的请求头部是:</p>
+<p>字段名          |  描述                    |    举例<br>Host            |  服务器域名              |    Host:www.reddit.com<br>—————-|————————- | ————————-<br>Accept-Language |  可接受的语言            |    Accept-Language: en-US，en;q=0.8<br>User-Agent      |  一个标识客户端的字符串  |    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML，like Gecko) Chrome/38.0.2125.101 Safari/537.36<br>Connection      |   客户端连接的类型       |    Connection: keep-alive</p>
+<h3 id="处理响应"><a href="#处理响应" class="headerlink" title="处理响应"></a>处理响应</h3><p>服务器返回的原始数据就是所谓的响应。</p>
+<h4 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h4><p>状态码是服务器接收到请求后返回的标识请求状态的三位数.在状态码的旁边，就是描述这个状态码的状态文本.<br>常见的状态码有：<br>状态码     |   状态文本                 |     含义<br>———–|—————————-|—————————<br>200        |    OK                      |     请求被正确处理<br>302        |    Found                   |     所请求的资源已暂时更改.通常会重定向到另一个 URL<br>404        |    Not Found               |     所请求的资源无法找到<br>500        |    Internal Server Error   |       服务器出现一般性错误</p>
+<p><strong>302 Redirect（重定向）</strong></p>
+<p>当一个资源的位置移动了会发生什么呢？ 最通用的解决方案是把对旧 URL 的请求重新引导到新 URL 上.这种重新引导请求的行为有一个术语叫重定向（ redirect ）。当你的浏览器看到一个 302 响应状态码的时候，他就知道这个资源已经移动到别处了，然后就会自动跳转到 Location 响应头部里指定的 URL 。<br>例子：<br>比如说你想要看 GitHub 上的账户配置，你就要访问这个链接 <a href="https://github.com/settings/profile" target="_blank" rel="external">https://github.com/settings/profile</a> 。但是，要有访问账户配置页面的权限，你必须先登录。如果你没有登录就访问这个链接，浏览器会把你送到登录页面去。当你填写正确的登录信息后，你就会被重定向到你最早想访问的页面。这个是大多数 web 应用的通用工作流程。<br>当你在浏览器里输入 <a href="https://github.com/settings/profile时，浏览器会直接按照重定向的指示给你展示出" target="_blank" rel="external">https://github.com/settings/profile时，浏览器会直接按照重定向的指示给你展示出</a> GitHub 的登录页面:<br>其Location响应头部如下：</p>
+<blockquote>
+<p>Location: <a href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fprofile" target="_blank" rel="external">https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fprofile</a><br>这个 URL 里有一个 return_to 参数，它的值就是在登录之后客户端要重定向到的 URL。</p>
+</blockquote>
+<h4 id="响应头部"><a href="#响应头部" class="headerlink" title="响应头部"></a>响应头部</h4><p>响应头部提供了更多关于服务器返回的资源的信息。让我们来看看一些常见的响应头部:<br>头部名称            |   描述                   |  举例<br>——————–|————————–|————————-<br>Content-Encoding    |   数据的编码类型         |  Content-Encoding: gzip<br>Server              |   服务器的名称           |  Server:thin 1.5.0 codename Knife<br>Location            |   通知客户端新的资源位置 | Location: <a href="http://www.github.com/login" target="_blank" rel="external">http://www.github.com/login</a><br>Content-Type        |   响应数据的类型         |  Content-Type:text/html; charset=UTF-8</p>
+<h4 id="消息正文"><a href="#消息正文" class="headerlink" title="消息正文"></a>消息正文</h4><p>HTTP响应中的原始数据。</p>
+<h3 id="有状态的WEB应用"><a href="#有状态的WEB应用" class="headerlink" title="有状态的WEB应用"></a>有状态的WEB应用</h3><p>HTTP 协议是无状态的。换句话说，在你的各次请求之间，服务器是不会保留你的 “状态” 信息。<br><img src="http://book.haoduoshipin.com/tealeaf-http/images/http_client_server.png" alt=""><br>每一次请求都被认为是一次全新的请求，不同的请求之间并不知道对方的存在.这种” 无状态性 “使得 HTTP 和互联网都是 “去中心化” 的，不会轻易被人掌控。</p>
+<p>web 开发者常用的实现 “有状态” 体验的技术手段,主要包括：</p>
+<ol>
+<li>会话（ session ）</li>
+<li>Cookies</li>
+<li>异步 javascript 调用（ AJAX ）</li>
+</ol>
+<h4 id="会话（session）"><a href="#会话（session）" class="headerlink" title="会话（session）"></a>会话（session）</h4><p>人们可以把这个无状态的HTTP 协议通过某种方式保持状态。<br>在客户端（一般就是指浏览器）的帮助下，HTTP 的行为会让人觉得它会在客户端与服务器之间维护一个有状态的连接，尽管实际并没有。达到这种效果的一个办法就是， 服务器在发送响应数据给客户端的时候带一个唯一的令牌（英文叫 token，就是一串数）。随后不论何时客户端向服务器发起请求的时候都把这个令牌附加在后面，让服务器能够辨识这个客户端。在 web 开发领域我们把这个来回传递的令牌叫做会话标识符（ session identifier ）。</p>
+<p>这种在客户端与服务器之间传递会话 id的机制，能让服务器创建一种各次请求之间的持续连接状态。Web 开发人员利用这种人造的状态，来构建复杂的应用程序。即使这样，每一个请求严格上来说还是无状态的，各次请求之间并不知道彼此的存在。</p>
+<p>这种人造状态，会有几个后果。第一，必须检查每个请求，查看它是否包含会话标识符。第二，如果请求有会话标识符，也就是有一个会话 id，服务器必须检查每一个会话 id ，确保这些会话 id 是没有过期的，也就是服务器需要维护一些关于如何处理会话过期，如何存储会话数据的规则。第三，服务器要基于这个会话 id 取出这个会话的数据。最后，服务器要根据取出的会话数据重新创建应用程序的状态（ 比如，一个请求对应的 HTML )，然后将其作为响应返回给客户端。</p>
+<p>这就意味着服务器必须非常辛勤的工作，来模拟这个有状态的用户体验。每一个请求都会有一个独立的响应，哪怕这次的响应跟前一个响应没有任何区别。<br>举个例子，如果你登录到 Facebook 上，服务器会给你一个响应，生成你看到的主页。这个响应是一个十分复杂的 HTML 页面。Facebook 的服务器会把页面上所有照片和留言的赞和评论都组合起来，然后显示在你的时间线上。生成这样一个页面的成本非常高。现在，如果你点了某个照片下面的” 赞 “链接，理论上，Facebook 会重新生成整个页面，它会把你赞过的照片的被赞数加 1，然后把整个 HTML 作为响应返回给你，尽管除了这个赞数以外大部分内容都没有改变。 庆幸的是，实际中 Facebook 使用 Ajax 代替了全页面刷新。不然的话，刷新一个页面会花费很长时间。</p>
+<p>服务器使用了很多先进的技术来优化会话和实现安全机制，不过这些话题都超出了本书的范围，暂且放下。现在我们来聊一个常用的存储会话信息的方法: 浏览器 cookie 。</p>
+<h4 id="Cookies"><a href="#Cookies" class="headerlink" title="Cookies"></a>Cookies</h4><p>cookie 就是在一个请求/响应周期内，服务器发送给客户端（通常就是浏览器），并存储在客户端的一段数据。Cookies 或者 HTTP cookies，就是存储在浏览器里包含着会话信息的小文件。<br>默认情况下，大部分浏览器的 cookies 都是启用的。当你第一次访问一个网站的时候，服务器会给你发送会话信息并将其存储在你本地电脑浏览器的 cookie 里。要注意的是真正的会话数据是存在服务器上的。在客户端发起每一个请求的时候，服务器就会比对客户端的 cookie 和服务器上的会话数据，用来标识当前的会话。通过这种方法，当你再次访问同一个网站的时候，服务器就会通过 cookie 和里面的信息来认出你的会话。<br><strong>会话数据是由服务器生成并存储在服务器上，会话 id 以 cookie 的形式发送到客户端上。</strong></p>
+<h4 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h4><p>AJAX 是”异步 javascript 和 XML “ 的简称（ Asynchronous JavaScript and XML ）。它的主要特点就是允许浏览器发送请求和处理响应的时候不用刷新整个页面。<br>举个例子，如果你登录到 Facebook 上，服务器会给你一个响应，生成你看到的主页。 这个响应是一个十分复杂的 HTML 页面。Facebook 的服务器会把各种信息组合起来，显示在你的时间线上。在前面的讨论中，我们知道，为每一个请求都重新生成一次页面的成本是非常高的（记住，你的每一个动作，点个链接，提交个表单，都会发起一个新的请求）。<br>当使用 AJAX 的时候，所有客户端发送的请求都是异步的，就是说页面不会刷新。<br>AJAX 请求就像是普通请求：发送到服务器的请求依然跟普通请求一样有着一个 HTTP 请求该有的所有组成部分，并且服务器处理 AJAX 请求的方法跟处理普通请求也是一样的。唯一不同就是，不是通过浏览器刷新来处理响应，而通常由客户端的一些 javascript 代码来处理。</p>
+<h3 id="HTTP安全相关"><a href="#HTTP安全相关" class="headerlink" title="HTTP安全相关"></a>HTTP安全相关</h3><h4 id="HTTPS-安全的HTTP"><a href="#HTTPS-安全的HTTP" class="headerlink" title="HTTPS(安全的HTTP)"></a>HTTPS(安全的HTTP)</h4><p>在客户端和服务器互相发送请求和响应的时候，所有的请求和响应里的信息都是通过明文字符串发送的。如果一个恶意的黑客连接到同一网络，他就可以利用数据包嗅探技术来读取来回发送的消息。<br>正如我们已知道的，请求可以包含会话 id ，它唯一地标识你到服务器之间的联系，所以如果别人复制了这个会话 id ，他们可以手动创建到服务器的请求，伪装成你的客户端，甚至都不需要你的用户名和密码就可以自动登陆。</p>
+<p>这种情况就需要安全的 HTTP 也就是 HTTPS 来帮忙啦。通过 HTTPS 访问资源的时候，通常以 https:// 开头而不是 http:// ，而且通常在边上都会有个小锁子的图标：<br><img src="http://book.haoduoshipin.com/tealeaf-http/images/https_address_bar.png" alt=""><br>通过 HTTPS 发送的请求和响应在发送前都会被加密。这意味着如果一个恶意的黑客监听 HTTP 通信，他得到的信息都是加密的和无用的。HTTPS 通过一个叫做 TLS 的加密协议来加密消息。在 TLS 开发完成前，早期 HTTPS 使用 SSL （ Secure Sockets Layer ）。这些加密协议在加密数据之前，需要先使用证书来与远程服务器进行通信来交换安全密钥。</p>
+<h4 id="同源策略（-Same-origin-policy-）"><a href="#同源策略（-Same-origin-policy-）" class="headerlink" title="同源策略（ Same-origin policy ）"></a>同源策略（ Same-origin policy ）</h4><p>同源策略是一个重要的概念，它允许来自同一站点的资源进行互相访问而不受限制，但是会阻止其他不同站点对文档/资源的访问。换句话说它可以阻止另一个站点通过脚本来操纵本站点的文档。<br><strong>同源的文档必须有相同的协议，主机名和端口号。</strong><br>举个例子，<a href="http://www.test.com/aboutus.html" target="_blank" rel="external">http://www.test.com/aboutus.html</a> 上的 HTML 文档可以嵌入 <a href="http://www.test.com/fancy.js" target="_blank" rel="external">http://www.test.com/fancy.js</a> 这个 javascript 文件，因为它们是同源的，有相同的协议，主机名和端口号(默认的 80) 。<br>反过来说，这就意味着 <a href="http://www.test.com" target="_blank" rel="external">http://www.test.com</a> 上的文档不能嵌入 <a href="http://www.example.com" target="_blank" rel="external">http://www.example.com</a> 上的文档，因为它们不是同源的。<br>同源策略是防范会话劫持的重要手段，并作为 web 应用安全的基石。<br><strong>同源策略涉及的是访问文件内容，而不是链接，你可以随意链接到任何 URL。</strong><br>虽然这样很安全，但是有时 web 开发人员需要进行跨域的内容访问就会很麻烦，所以就有了跨域资源共享技术CORS 。 </p>
+<h4 id="跨域资源共享技术-CORS"><a href="#跨域资源共享技术-CORS" class="headerlink" title="跨域资源共享技术 CORS"></a>跨域资源共享技术 CORS</h4><p>CORS是一种机制，允许我们绕过同源策略，从一个域名向另一个域名的资源发起请求。CORS的原理是添加新的 HTTP头部，来对一些域名授权，那这些域名就可以发起对本页面资源的请求。</p>
+<h4 id="会话劫持（-Session-Hijacking-）"><a href="#会话劫持（-Session-Hijacking-）" class="headerlink" title="会话劫持（ Session Hijacking ）"></a>会话劫持（ Session Hijacking ）</h4><p>会话在维持 HTTP 的状态上扮演着重要的角色。我们也知道会话 id 作为一个唯一的令牌来唯一标识一个会话。通常，会话 id 是作为 cookie 存储在计算机上的一个随机字符串. 会话 id 随着每一个到服务器的请求被送往服务器用于唯一标识这个会话。<br>事实上，这也就是很多 web 应用的用户认证系统所在做的事情，当用户的用户名和密码匹配之后，会话 id 会存储在用户的浏览器里，这样他们的下一个请求就不用重新认证了。</p>
+<p>不幸的是，如果一个攻击者拿到了这个会话 id ，他就会跟用户共享这一个会话，同时也就能访问这个 web 应用了。在会话劫持攻击中，用户根本意识不到一个攻击者甚至不用知道她的用户名和密码就可以访问她的会话了。</p>
+<p><strong>会话劫持的对策</strong></p>
+<ul>
+<li>重置会话。也就是对于一个用户认证系统来说，一次成功的登录包括验证旧的会话 id 和生成一个新的会话id完成此步骤后，在下一个请求里，会要求受害者进行身份验证。然后会话 id 就会改变，这样攻击者就无法访问到这个会话了。很多网站都采取这种办法，当用户在进行敏感操作的时候保证用户身份的正确性，比如给信用卡充值或者删除账户的时候。</li>
+<li>给会话设置过期时间。那些不会过期的会话给了攻击者太多的时间去伪装成一个合法用户。如果设置了过期时间，比如 30 分钟，这样一来攻击者就不会那么从容的进行攻击了。</li>
+<li>整站使用 HTTPS 把攻击者能得到会话 id 的可能性降至最低。</li>
+</ul>
+<h4 id="跨站脚本攻击-XSS"><a href="#跨站脚本攻击-XSS" class="headerlink" title="跨站脚本攻击 (XSS)"></a>跨站脚本攻击 (XSS)</h4><p>当你允许用户输入的 HTML 和 javascript 在你自己的网站上直接显示的时候，就有可能遭受这种攻击。</p>
+<p>如果服务器端对于用户的输入不做任何无害处理的话，这些内容就会注入到网页的内容中去，然后浏览器就会解释执行这些 HTML 和 javascript 代码。<br>恶意用户可以使用 HTML 和 javascript 代码对服务器或者以后访问这个页面的用户发起毁灭性的攻击。举个例子，一个攻击者可以使用 javascript 代码去获取所有在他之后访问这个页面的用户的会话 id ，然后伪装成其他用户。而这一切都发生在受害者一无所知的情况下。而且要注意的是，这种攻击也能绕过同源策略，因为这段恶意代码是存在于当前这个网站上的。</p>
+<p><strong>跨站脚本攻击的解决方案</strong></p>
+<ul>
+<li>总是对用户输入的内容做无害处理。消除有问题的输入，比如<script>标签，或者使用一个更安全的输入格式，比如 Markdown，这样就可以阻止 HTML 和 javascript 同时出现在用户的输入里。</li>
+<li>在显示之前转义用户输入的所有数据.如果你需要用户能够输入 HTML 和 javascript 代码，那么当你显示这些输入内容的时候要确保它们被正确转义，这样浏览器就不会把它们当做代码给执行了。</li>
+</ul>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ol>
+<li><a href="http://book.haoduoshipin.com/tealeaf-http/">HTTP下午茶</a></li>
+</ol>
+</script></li></ul>
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechatpay.png" alt="Xifengxx wechat" style="width: 200px; max-width: 100%;"/>
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTTP/" rel="tag">#HTTP</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/25/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8816-ef-bc-89-js/" rel="next" title="网易微专业之《前端开发工程师》学习笔记（16）-JS操作符与表达式">
+                <i class="fa fa-chevron-left"></i> 网易微专业之《前端开发工程师》学习笔记（16）-JS操作符与表达式
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/03/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-e5-8f-8a-e6-80-bb-e7-bb-93/" rel="prev" title="网易微专业之《前端开发工程师》学习笔记及总结（终）">
+                网易微专业之《前端开发工程师》学习笔记及总结（终） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/03/HTTP协议知多少/"
+           data-title="HTTP协议及相关知识" data-url="http://yoursite.com/2016/03/03/HTTP协议知多少/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Xifengxx" />
+          <p class="site-author-name" itemprop="name">Xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP请求"><span class="nav-number">1.</span> <span class="nav-text">HTTP请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#GET请求"><span class="nav-number">1.1.</span> <span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#POST请求"><span class="nav-number">1.2.</span> <span class="nav-text">POST请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP头部"><span class="nav-number">1.3.</span> <span class="nav-text">HTTP头部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求头部-Request-Headers"><span class="nav-number">1.4.</span> <span class="nav-text">请求头部 Request Headers</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理响应"><span class="nav-number">2.</span> <span class="nav-text">处理响应</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#状态码"><span class="nav-number">2.1.</span> <span class="nav-text">状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应头部"><span class="nav-number">2.2.</span> <span class="nav-text">响应头部</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#消息正文"><span class="nav-number">2.3.</span> <span class="nav-text">消息正文</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有状态的WEB应用"><span class="nav-number">3.</span> <span class="nav-text">有状态的WEB应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#会话（session）"><span class="nav-number">3.1.</span> <span class="nav-text">会话（session）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cookies"><span class="nav-number">3.2.</span> <span class="nav-text">Cookies</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AJAX"><span class="nav-number">3.3.</span> <span class="nav-text">AJAX</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP安全相关"><span class="nav-number">4.</span> <span class="nav-text">HTTP安全相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTPS-安全的HTTP"><span class="nav-number">4.1.</span> <span class="nav-text">HTTPS(安全的HTTP)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同源策略（-Same-origin-policy-）"><span class="nav-number">4.2.</span> <span class="nav-text">同源策略（ Same-origin policy ）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域资源共享技术-CORS"><span class="nav-number">4.3.</span> <span class="nav-text">跨域资源共享技术 CORS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#会话劫持（-Session-Hijacking-）"><span class="nav-number">4.4.</span> <span class="nav-text">会话劫持（ Session Hijacking ）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨站脚本攻击-XSS"><span class="nav-number">4.5.</span> <span class="nav-text">跨站脚本攻击 (XSS)</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

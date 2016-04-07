@@ -1,0 +1,842 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端开发工程师学习笔记,JavaScript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风Web前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="以下内容为《前端开发工程师》微专业的第二门课《JavaScript程序设计》基础篇部分学习笔记。
+《JavaScript程序设计》之基础篇（二）三、JS基本语法每一种计算机编程语言都有自己的数据结构，JavaScript脚本语言的数据结构包括：标识符、常量、变量、保留字等。
+（一）**JS数据结构**
+直接量（常量）常量，顾名思义就是指不能改变的量。常量的指从定义开始就是固定的，一直到程序结束。常">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网易微专业之《前端开发工程师》学习笔记（14）-JS基本语法">
+<meta property="og:url" content="http://yoursite.com/2016/01/22/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8814-ef-bc-89-js/index.html">
+<meta property="og:site_name" content="西风Web前端">
+<meta property="og:description" content="以下内容为《前端开发工程师》微专业的第二门课《JavaScript程序设计》基础篇部分学习笔记。
+《JavaScript程序设计》之基础篇（二）三、JS基本语法每一种计算机编程语言都有自己的数据结构，JavaScript脚本语言的数据结构包括：标识符、常量、变量、保留字等。
+（一）**JS数据结构**
+直接量（常量）常量，顾名思义就是指不能改变的量。常量的指从定义开始就是固定的，一直到程序结束。常">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-1.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-2.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-3.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-4.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-5.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-6.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-7.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-8.png">
+<meta property="og:updated_time" content="2016-04-07T06:47:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网易微专业之《前端开发工程师》学习笔记（14）-JS基本语法">
+<meta name="twitter:description" content="以下内容为《前端开发工程师》微专业的第二门课《JavaScript程序设计》基础篇部分学习笔记。
+《JavaScript程序设计》之基础篇（二）三、JS基本语法每一种计算机编程语言都有自己的数据结构，JavaScript脚本语言的数据结构包括：标识符、常量、变量、保留字等。
+（一）**JS数据结构**
+直接量（常量）常量，顾名思义就是指不能改变的量。常量的指从定义开始就是固定的，一直到程序结束。常">
+<meta name="twitter:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 网易微专业之《前端开发工程师》学习笔记（14）-JS基本语法 | 西风Web前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风Web前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/demo" rel="section">
+            
+            作品DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                网易微专业之《前端开发工程师》学习笔记（14）-JS基本语法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-22T23:47:47+08:00" content="2016-01-22">
+              2016-01-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/网易微专业·前端开发工程师/" itemprop="url" rel="index">
+                    <span itemprop="name">网易微专业·前端开发工程师</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/22/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8814-ef-bc-89-js/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/22/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8814-ef-bc-89-js/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/01/22/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8814-ef-bc-89-js/" class="leancloud_visitors" data-flag-title="网易微专业之《前端开发工程师》学习笔记（14）-JS基本语法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>以下内容为《前端开发工程师》微专业的第二门课《JavaScript程序设计》基础篇部分学习笔记。</p>
+<h3 id="《JavaScript程序设计》之基础篇（二）"><a href="#《JavaScript程序设计》之基础篇（二）" class="headerlink" title="《JavaScript程序设计》之基础篇（二）"></a>《JavaScript程序设计》之基础篇（二）</h3><h3 id="三、JS基本语法"><a href="#三、JS基本语法" class="headerlink" title="三、JS基本语法"></a><strong>三、JS基本语法</strong></h3><p>每一种计算机编程语言都有自己的数据结构，JavaScript脚本语言的数据结构包括：<span style="color: #ff9900;">标识符、常量、变量、保留字</span>等。</p>
+<h4 id="（一）-JS数据结构"><a href="#（一）-JS数据结构" class="headerlink" title="（一）**JS数据结构**"></a><strong>（一）**</strong>JS数据结构**</h4><ol>
+<li><strong>直接量（常量）</strong><br>常量，顾名思义就是指不能改变的量。常量的指从定义开始就是固定的，一直到程序结束。常量主要用于为程序提供固定和精确的值，包括<span style="color: #ff9900;">数值和字符串，如数字、逻辑值真（true）、逻辑值假（false）等都是常量。</span></li>
+</ol>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-1.png" alt="JS数据结构 1"></a></p>
+<ol>
+<li><strong>变量</strong><br>变量，顾名思义，就是指在程序运行过程中，其值是可以改变的。</li>
+</ol>
+<ul>
+<li>变量的命名：变量的名称实际上是一个标识符，因此命名一个变量时也要遵循标识符的命名规则。</li>
+<li>变量的声明与赋值：在JavaScript中，使用变量之前需要先声明变量。<br><strong><span style="color: #ff9900;">  “所有的JavaScript变量都由关键字var声明。”</span></strong></li>
+</ul>
+<p><strong>声明变量：</strong>var 变量名；</p>
+<p>在声明变量的同时，也可以对变量进行赋值。一个关键字var也可以同时声明多个变量名，变量名之间必须用英文逗号“,”隔开。</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-2.png" alt="JS数据结构 2"></a></p>
+<ol>
+<li><strong>标识符：</strong><br>标识符，说白了，就是一个名字。在JavaScript中，变量和函数等都需要定义一个名字，这个名字就可以称为“标识符”。</li>
+</ol>
+<p>JavaScript语言中标识符最重要的3点就是：</p>
+<ul>
+<li>以字母、下划线或者美元符合（$）开头</li>
+<li>由字母、下划线、美元符合（$）和数字组成</li>
+<li><strong>变量名不能包含空格、加号、减号等符号；</strong></li>
+<li>不能使用JS关键字和保留字<br>以下图片中的age、add、num1、num2、name等都是标识符。</li>
+</ul>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-3.png" alt="JS数据结构 3"></a></p>
+<ol>
+<li><strong>关键字和保留字</strong><br>JavaScript关键字是指在JavaScript语言中有特定含义，成为JavaScript语法中一部分的那些字。JavaScript关键字是不能作为变量名和函数名使用的，也就是说变量的名称或者函数的名称不能跟系统的关键字重名。使用JavaScript关键字作为变量名或函数名，会使JavaScript在载入过程中出现编译错误。</li>
+</ol>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-4.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-4.png" alt="JS数据结构 4"></a></p>
+<h4 id="（二）-JS基本语法"><a href="#（二）-JS基本语法" class="headerlink" title="（二）**JS基本语法**"></a><strong>（二）**</strong>JS基本语法**</h4><ol>
+<li><strong>大小写敏感</strong><br>JavaScript是严格区分大小写的。</li>
+</ol>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-5.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-5.png" alt="JS数据结构 5"></a></p>
+<ol>
+<li><strong>语句：</strong><br>赋值语句，条件语句，循环语句</li>
+</ol>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-6.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-6.png" alt="JS数据结构 6"></a></p>
+<p>共同点：</p>
+<ul>
+<li>以分号结尾；</li>
+<li>语句可以嵌套；</li>
+<li>多个语句可以放在一个代码块中，以{}符合包括起来。</li>
+</ul>
+<ol>
+<li><strong>注释</strong><br>在编写JavaScript代码时，我们经常要在一些关键代码旁做一下注释，这样做的好处很多，比如：方便理解、方便查找或方便项目组里的其它程序员了解你的代码，而且可以方便以后你对自己代码进行修改。</li>
+</ol>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-7.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-7.png" alt="JS数据结构 7"></a></p>
+<p>总结：</p>
+<p><strong>HTML注释：&lt;!–  –&gt;</strong></p>
+<p><strong>CSS注释：/<em>  </em>/</strong></p>
+<ol>
+<li><strong>命名规范</strong></li>
+</ol>
+<ul>
+<li>可读性——能看懂</li>
+<li><p>规范性——符合规则<br><strong>匈牙利命名法</strong></p>
+</li>
+<li><p>类型前缀</p>
+</li>
+<li>首字母大写<br><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-8.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/JS数据结构-8.png" alt="JS数据结构 8"></a></li>
+</ul>
+<p>如aDiv[]，表示数组；oDiv，表示一个对象；sDiv,表示一个字符串。通过这样的“类型前缀+首字母大写”的命名方式，提高代码可读性。</p>
+<p><span style="color: #ff9900;">&lt;……未完待续……&gt;</span></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechatpay.png" alt="Xifengxx wechat" style="width: 200px; max-width: 100%;"/>
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端开发工程师学习笔记/" rel="tag">#前端开发工程师学习笔记</a>
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/21/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8813-ef-bc-89-js/" rel="next" title="网易微专业之《前端开发工程师》学习笔记（13）-JS介绍">
+                <i class="fa fa-chevron-left"></i> 网易微专业之《前端开发工程师》学习笔记（13）-JS介绍
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/23/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8815-ef-bc-89-js/" rel="prev" title="网易微专业之《前端开发工程师》学习笔记（15）-JS基本类型">
+                网易微专业之《前端开发工程师》学习笔记（15）-JS基本类型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/01/22/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8814-ef-bc-89-js/"
+           data-title="网易微专业之《前端开发工程师》学习笔记（14）-JS基本语法" data-url="http://yoursite.com/2016/01/22/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8814-ef-bc-89-js/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Xifengxx" />
+          <p class="site-author-name" itemprop="name">Xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#《JavaScript程序设计》之基础篇（二）"><span class="nav-number">1.</span> <span class="nav-text">《JavaScript程序设计》之基础篇（二）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、JS基本语法"><span class="nav-number">2.</span> <span class="nav-text">三、JS基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（一）-JS数据结构"><span class="nav-number">2.1.</span> <span class="nav-text">（一）**JS数据结构**</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（二）-JS基本语法"><span class="nav-number">2.2.</span> <span class="nav-text">（二）**JS基本语法**</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

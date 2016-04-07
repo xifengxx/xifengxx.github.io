@@ -1,0 +1,913 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端开发工程师学习笔记," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风Web前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="以下内容为《前端开发工程师》微专业的第一门课《网页制作》的第五章，学习视频课程后自己整理的学习笔记，会持续更新内容。
+《网页制作》之CSS—CSS盒模型&amp;nbsp;
+盒模型在“CSS盒子模型”理论中，所有页面中的元素都可以看成一个盒子，并且占据着一定的页面空间。一个页面由很多这样的盒子组成，这些盒子之间会互相影响，因此掌握盒子模型需要从两个方面来理解：一是理解单独一个盒子的内部结构，二是理解多个盒">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网易微专业之《前端开发工程师》学习笔记（8）-CSS">
+<meta property="og:url" content="http://yoursite.com/2015/12/24/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-888-ef-bc-89-css/index.html">
+<meta property="og:site_name" content="西风Web前端">
+<meta property="og:description" content="以下内容为《前端开发工程师》微专业的第一门课《网页制作》的第五章，学习视频课程后自己整理的学习笔记，会持续更新内容。
+《网页制作》之CSS—CSS盒模型&amp;nbsp;
+盒模型在“CSS盒子模型”理论中，所有页面中的元素都可以看成一个盒子，并且占据着一定的页面空间。一个页面由很多这样的盒子组成，这些盒子之间会互相影响，因此掌握盒子模型需要从两个方面来理解：一是理解单独一个盒子的内部结构，二是理解多个盒">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS盒模型.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS盒模型宽度-高度.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS盒模型-参考图.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS外边距合并.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS外边距合并2.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS外边距合并3.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS外边距合并4.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/overflow属性.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/box-sizing属性.png">
+<meta property="og:updated_time" content="2016-04-07T06:47:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网易微专业之《前端开发工程师》学习笔记（8）-CSS">
+<meta name="twitter:description" content="以下内容为《前端开发工程师》微专业的第一门课《网页制作》的第五章，学习视频课程后自己整理的学习笔记，会持续更新内容。
+《网页制作》之CSS—CSS盒模型&amp;nbsp;
+盒模型在“CSS盒子模型”理论中，所有页面中的元素都可以看成一个盒子，并且占据着一定的页面空间。一个页面由很多这样的盒子组成，这些盒子之间会互相影响，因此掌握盒子模型需要从两个方面来理解：一是理解单独一个盒子的内部结构，二是理解多个盒">
+<meta name="twitter:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS盒模型.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 网易微专业之《前端开发工程师》学习笔记（8）-CSS | 西风Web前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风Web前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/demo" rel="section">
+            
+            作品DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                网易微专业之《前端开发工程师》学习笔记（8）-CSS
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-24T12:51:03+08:00" content="2015-12-24">
+              2015-12-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/网易微专业·前端开发工程师/" itemprop="url" rel="index">
+                    <span itemprop="name">网易微专业·前端开发工程师</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/24/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-888-ef-bc-89-css/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/24/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-888-ef-bc-89-css/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/12/24/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-888-ef-bc-89-css/" class="leancloud_visitors" data-flag-title="网易微专业之《前端开发工程师》学习笔记（8）-CSS">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>以下内容为《前端开发工程师》微专业的第一门课《网页制作》的第五章，学习视频课程后自己整理的学习笔记，会持续更新内容。</p>
+<h2 id="《网页制作》之CSS—CSS盒模型"><a href="#《网页制作》之CSS—CSS盒模型" class="headerlink" title="《网页制作》之CSS—CSS盒模型"></a>《网页制作》之CSS—CSS盒模型</h2><p>&nbsp;</p>
+<h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a><strong>盒模型</strong></h2><p>在“CSS盒子模型”理论中，所有页面中的元素都可以看成一个盒子，并且占据着一定的页面空间。一个页面由很多这样的盒子组成，这些盒子之间会互相影响，因此掌握盒子模型需要从两个方面来理解：一是理解单独一个盒子的内部结构，二是理解多个盒子之间的相互关系。</p>
+<p>每个元素都看成一个盒子，盒子模型是由content（内容）、<a href="http://www.lvyestudy.com/les_cj/cj_.11.4aspx" target="_blank" rel="external">padding</a>（内边距）、<a href="http://www.lvyestudy.com/les_cj/cj_11.5.aspx" target="_blank" rel="external">margin</a>（外边距）和border（边框）这四个属性组成的。此外，在盒子模型中，还有宽度width和高度height两大辅助性属性。</p>
+<p>在 CSS 中，width 和 height 指的是内容区域的宽度和高度。增加内边距、边框和外边距不会影响内容区域的尺寸，但是会增加元素框的总尺寸。</p>
+<p>记住，<strong><span style="color: #ff0000;">是所有的元素都可以看做一个盒子！</span></strong></p>
+<p>下图为一个<strong>CSS盒子模型的内部结构：</strong></p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS盒模型.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS盒模型.png" alt="CSS盒模型"></a></p>
+<p><strong>图1 CSS盒子模型</strong></p>
+<p>从上图中我们可以得出盒子模型的属性如下：</p>
+<table><br><tbody><br><tr><br><td colspan="2" width="556"><br><br><strong>盒子模型4个属性</strong><br><br></td><br></tr><br><tr><br><td width="137"><strong>属性</strong></td><br><td width="419"><strong>说明</strong></td><br></tr><br><tr><br><td width="137">border</td><br><td width="419">（边框）元素边框</td><br></tr><br><tr><br><td width="137">margin</td><br><td width="419">（外边距）用于定义页面中元素与元素之间的距离</td><br></tr><br><tr><br><td width="137">padding</td><br><td width="419">（内边距）用于定义内容与边框之间的距离</td><br></tr><br><tr><br><td width="137">content</td><br><td width="419">（内容）可以是文字或图片</td><br></tr><br></tbody><br></table>
+
+<h3 id="盒模型–宽度-width-和高度-height"><a href="#盒模型–宽度-width-和高度-height" class="headerlink" title="盒模型–宽度**(width)和高度(height)**"></a><strong>盒模型–宽度**</strong>(width)<strong><strong>和高度</strong></strong>(height)**</h3><p>盒模型宽度和高度和我们平常所说的物体的宽度和高度理解是不一样的，css内定义的宽（width）和高（height），指的是填充以里的内容范围。</p>
+<p>因此一个元素实际宽度（盒子的宽度）=左边界+左边框+左填充+内容宽度+右填充+右边框+右边界。</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS盒模型宽度-高度.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS盒模型宽度-高度.png" alt="CSS盒模型宽度-高度"></a></p>
+<p>元素的高度也是同理。</p>
+<p>元素盒模型参考图：</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS盒模型-参考图.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS盒模型-参考图.png" alt="CSS盒模型-参考图"></a></p>
+<h3 id="盒模型–填充-padding"><a href="#盒模型–填充-padding" class="headerlink" title="盒模型–填充**(padding)**"></a><strong>盒模型–填充**</strong>(padding)**</h3><p>元素内容与边框之间是可以设置距离的，称之为“填充”。padding 属性接受长度值或百分比值，但<strong>不允许使用负值</strong>。填充也可分为上、右、下、左(顺时针)。如下代码：</p>
+<blockquote>
+<p>div{padding:20px 10px 15px 30px;}<br>顺序一定不要搞混。可以分开写上面代码：<br>div{</p>
+<p>padding-top:20px;</p>
+<p>padding-right:10px;</p>
+<p>padding-bottom:15px;</p>
+<p>padding-left:30px;</p>
+<p>}<br>如果上、右、下、左的填充都为10px;可以这么写<br>div{padding:10px;}<br>如果上下填充一样为10px，左右一样为20px，可以这么写：<br>div{padding:10px 20px;}</p>
+</blockquote>
+<h3 id="CSS-内边距属性"><a href="#CSS-内边距属性" class="headerlink" title="CSS 内边距属性"></a><strong>CSS 内边距属性</strong></h3><table><br><tbody><br><tr><br><td width="162"><strong>属性</strong></td><br><td width="459"><strong>描述</strong></td><br></tr><br><tr><br><td width="162"><a href="http://www.w3school.com.cn/cssref/pr_padding.asp" target="_blank" rel="external">padding</a></td><br><td width="459">简写属性。作用是在一个声明中设置元素的所内边距属性。</td><br></tr><br><tr><br><td width="162"><a href="http://www.w3school.com.cn/cssref/pr_padding-bottom.asp" target="_blank" rel="external">padding-bottom</a></td><br><td width="459">设置元素的下内边距。</td><br></tr><br><tr><br><td width="162"><a href="http://www.w3school.com.cn/cssref/pr_padding-left.asp" target="_blank" rel="external">padding-left</a></td><br><td width="459">设置元素的左内边距。</td><br></tr><br><tr><br><td width="162"><a href="http://www.w3school.com.cn/cssref/pr_padding-right.asp" target="_blank" rel="external">padding-right</a></td><br><td width="459">设置元素的右内边距。</td><br></tr><br><tr><br><td width="162"><a href="http://www.w3school.com.cn/cssref/pr_padding-top.asp" target="_blank" rel="external">padding-top</a></td><br><td width="459">设置元素的上内边距。</td><br></tr><br></tbody><br></table><br>&nbsp;<br><br>### <strong>盒模型–边框**</strong>(border)<strong><br><br>盒子模型的边框就是围绕着内容及补白的线，这条线你可以设置它的粗细、样式和颜色(边框三个属性)。<br><br>如下面代码为 div 来设置边框粗细为 2px、样式为实心的、颜色为红色的边框：<br>&gt; div{<br>&gt;<br>&gt;<br>&gt; border:2px  solid  red;}<br><br><em>   border-style（边框样式）常见样式有:<br>dashed（虚线）| dotted（点线）| solid（实线）。
+
+</em>   border-color（边框颜色）中的颜色可设置为十六进制颜色，如:border-color:#888;<br>*   border-width（边框宽度）中的宽度也可以设置为：thin | medium | thick（但不是很常用），最常还是用象素（px）。<br><br>### </strong>CSS 边框属性<strong><br><br><table><br><tbody><br><tr><br><td width="164"></td></tr></tbody></table></strong>属性<strong><br><td width="450"></td></strong>描述<strong><br><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border.asp" target="_blank" rel="external">border</a></td><br><td width="450">简写属性，用于把针对四个边的属性设置在一个声明。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-style.asp" target="_blank" rel="external">border-style</a></td><br><td width="450">用于设置元素所有边框的样式，或者单独地为各边设置边框样式。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-width.asp" target="_blank" rel="external">border-width</a></td><br><td width="450">简写属性，用于为元素的所有边框设置宽度，或者单独地为各边边框设置宽度。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-color.asp" target="_blank" rel="external">border-color</a></td><br><td width="450">简写属性，设置元素的所有边框中可见部分的颜色，或为 4 个边分别设置颜色。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-bottom.asp" target="_blank" rel="external">border-bottom</a></td><br><td width="450">简写属性，用于把下边框的所有属性设置到一个声明中。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-bottom_color.asp" target="_blank" rel="external">border-bottom-color</a></td><br><td width="450">设置元素的下边框的颜色。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-bottom_style.asp" target="_blank" rel="external">border-bottom-style</a></td><br><td width="450">设置元素的下边框的样式。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-bottom_width.asp" target="_blank" rel="external">border-bottom-width</a></td><br><td width="450">设置元素的下边框的宽度。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-left.asp" target="_blank" rel="external">border-left</a></td><br><td width="450">简写属性，用于把左边框的所有属性设置到一个声明中。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-left_color.asp" target="_blank" rel="external">border-left-color</a></td><br><td width="450">设置元素的左边框的颜色。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-left_style.asp" target="_blank" rel="external">border-left-style</a></td><br><td width="450">设置元素的左边框的样式。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-left_width.asp" target="_blank" rel="external">border-left-width</a></td><br><td width="450">设置元素的左边框的宽度。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-right.asp" target="_blank" rel="external">border-right</a></td><br><td width="450">简写属性，用于把右边框的所有属性设置到一个声明中。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-right_color.asp" target="_blank" rel="external">border-right-color</a></td><br><td width="450">设置元素的右边框的颜色。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-right_style.asp" target="_blank" rel="external">border-right-style</a></td><br><td width="450">设置元素的右边框的样式。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-right_width.asp" target="_blank" rel="external">border-right-width</a></td><br><td width="450">设置元素的右边框的宽度。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-top.asp" target="_blank" rel="external">border-top</a></td><br><td width="450">简写属性，用于把上边框的所有属性设置到一个声明中。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-top_color.asp" target="_blank" rel="external">border-top-color</a></td><br><td width="450">设置元素的上边框的颜色。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-top_style.asp" target="_blank" rel="external">border-top-style</a></td><br><td width="450">设置元素的上边框的样式。</td><br></tr><br><tr><br><td width="164"><a href="http://www.w3school.com.cn/cssref/pr_border-top_width.asp" target="_blank" rel="external">border-top-width</a></td><br><td width="450">设置元素的上边框的宽度。</td><br></tr><br><br><br>&nbsp;<br><br>### </strong>盒模型–边界<strong>**(margin)</strong><br><br>元素与其它元素之间的距离可以使用边界（margin）来设置。<br><br><strong>这个属性接受任何长度单位、百分数值甚至**</strong>负值<strong>**。</strong><br><table><br><tbody><br><tr><br><td width="184">属性</td><br><td width="430">描述</td><br></tr><br><tr><br><td width="184"><a href="http://www.w3school.com.cn/cssref/pr_margin.asp" target="_blank" rel="external">margin</a></td><br><td width="430">简写属性。在一个声明中设置所有外边距属性。</td><br></tr><br><tr><br><td width="184"><a href="http://www.w3school.com.cn/cssref/pr_margin-bottom.asp" target="_blank" rel="external">margin-bottom</a></td><br><td width="430">设置元素的下外边距。</td><br></tr><br><tr><br><td width="184"><a href="http://www.w3school.com.cn/cssref/pr_margin-left.asp" target="_blank" rel="external">margin-left</a></td><br><td width="430">设置元素的左外边距。</td><br></tr><br><tr><br><td width="184"><a href="http://www.w3school.com.cn/cssref/pr_margin-right.asp" target="_blank" rel="external">margin-right</a></td><br><td width="430">设置元素的右外边距。</td><br></tr><br><tr><br><td width="184"><a href="http://www.w3school.com.cn/cssref/pr_margin-top.asp" target="_blank" rel="external">margin-top</a></td><br><td width="430">设置元素的上外边距。</td><br></tr><br></tbody><br></table><br>边界也是可分为上、右、下、左。如下代码：<br>&gt; div{margin:20px 10px 15px 30px;}<br>padding和margin的区别，padding在边框里，margin在边框外。<br><br>Margin在布局中的一个巧用是水平居中。<br><br>设置margin:0 auto, 可以使元素实现水平居中效果。<br><br>### <strong>CSS 外边距合并</strong><br><br>外边距合并（叠加）是一个相当简单的概念。但是，在实践中对网页进行布局时，它会造成许多混淆。<br><br>简单地说，外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。<strong>合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。</strong><br><br>当一个元素出现在另一个元素上面时，第一个元素的下外边距与第二个元素的上外边距会发生合并。请看下图：<br><br><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS外边距合并.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS外边距合并.png" alt="CSS外边距合并"></a><br><br><span style="color: #ff0000;">当一个元素包含在另一个元素中时（假设没有内边距或边框把外边距分隔开），它们的上和/或下外边距也会发生合并。</span>请看下图：<br><br><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS外边距合并2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS外边距合并2.png" alt="CSS外边距合并2"></a><br><br>尽管看上去有些奇怪，但是外边距甚至可以与自身发生合并。<br><br>假设有一个空元素，它有外边距，但是没有边框或填充。在这种情况下，上外边距与下外边距就碰到了一起，它们会发生合并：<br><br><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS外边距合并3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS外边距合并3.png" alt="CSS外边距合并3"></a><br><br>如果这个外边距遇到另一个元素的外边距，它还会发生合并：<br><br><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS外边距合并4.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/CSS外边距合并4.png" alt="CSS外边距合并4"></a><br><br>这就是一系列的段落元素占用空间非常小的原因，因为它们的所有外边距都合并到一起，形成了一个小的外边距。<br><br><strong>注释：</strong><span style="color: #ff0000;">只有普通文档流中块框的垂直外边距才会发生外边距合并。<strong>行内框、浮动框或绝对定位之间的外边距不会合并。</strong></span><br><br><strong>参考资料：</strong><br><br>外边距margin合并（塌陷），请查看以下资料：<br><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin_collapsing" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/CSS/margin_collapsing</a><br><br><a href="http://www.w3help.org/zh-cn/kb/006/" target="_blank" rel="external">http://www.w3help.org/zh-cn/kb/006/</a><br><br>### <strong>Border-radius—圆角边框</strong><br><br>在CSS3中，针对边框，增加了丰富的修饰效果，使得网页更加美观舒服。下面列出了常用的CSS3边框属性：<br><table><br><tbody><br><tr><br><td colspan="2" width="495">CSS3边框属性</td><br></tr><br><tr><br><td width="180">属性</td><br><td width="315">说明</td><br></tr><br><tr><br><td width="180">border-radius</td><br><td width="315">圆角效果</td><br></tr><br><tr><br><td width="180">border-colors</td><br><td width="315">多色边框</td><br></tr><br><tr><br><td width="180">border-image</td><br><td width="315">边框背景</td><br></tr><br><tr><br><td width="180">box-shadow</td><br><td width="315">边框阴影</td><br></tr><br></tbody><br></table>
+
+<h4 id="border-radius属性"><a href="#border-radius属性" class="headerlink" title="border-radius属性"></a><strong>border-radius属性</strong></h4><p><strong>语法：</strong>border-radius:长度值;</p>
+<p><strong>说明：</strong>长度值可以是px、百分比、em等。</p>
+<p><strong>Border-radius属性设置长度值顺序：**</strong>“左上角、右上角、右下角和左下角**”。</p>
+<h4 id="border-radius画实心半圆和实心圆"><a href="#border-radius画实心半圆和实心圆" class="headerlink" title="border-radius画实心半圆和实心圆"></a><strong>border-radius画实心半圆和实心圆</strong></h4><p><strong>1、实心半圆</strong></p>
+<p>实心半圆分为：实心上半圆、实心下半圆、实心左半圆、实心右半圆。我们只要掌握制作一个方向的实心半圆的方法，其他方向的实心半圆就可以轻松实现，因为原理都一样。</p>
+<p>假如我们要制作<strong>实现上半圆</strong>，实现方法：把高度(height)设为宽度（width）的一半，并且只设置左上角和右上角的圆角半径与元素的高度一致，而右下角和左下角的圆角半径设置为0。</p>
+<blockquote>
+<p>width:200px;</p>
+<p>height:100px;</p>
+<p>border:1px solid red;</p>
+<p>border-radius:100px 100px 0 0;<br><strong>2、实心圆</strong></p>
+</blockquote>
+<p>在CSS3中，使用border-radius属性实现实心圆方法：把宽度（width）与高度(height)值设置为一致（也就是正方形），并且四个圆角值都设置为它们值的一半。</p>
+<blockquote>
+<p>width:100px;</p>
+<p>height:100px;</p>
+<p>border:1px solid red;</p>
+<p>border-radius:50px;</p>
+</blockquote>
+<h4 id="border-radius属性派生子属性"><a href="#border-radius属性派生子属性" class="headerlink" title="border-radius属性派生子属性"></a><strong>border-radius属性派生子属性</strong></h4><p>border-radius属性可以分开，分别为四个角设置相应的圆角值，分别是：</p>
+<p>（1）border-top-right-radius：右上角；</p>
+<p>（2）border-bottom-right-radius：右下角；</p>
+<p>（3）border-bottom-left-radius：左下角；</p>
+<p>（4）border-top-left-radius：左上角；</p>
+<h3 id="边框阴影-box-shadow"><a href="#边框阴影-box-shadow" class="headerlink" title="边框阴影**box-shadow**"></a><strong>边框阴影**</strong>box-shadow**</h3><p>在CSS3中，我们可以使用box-shadow属性轻松地为元素添加阴影效果。</p>
+<p>语法：box-shadow：x-shadow  y-shadow  blur  spread  color  inset;</p>
+<p>说明：</p>
+<ul>
+<li>x-shadow：设置水平阴影的位置（X轴），可以使用负值；</li>
+<li>y-shadow：设置垂直阴影的位置（y轴），可以使用负值；</li>
+<li>blur：设置阴影模糊半径；</li>
+<li>spread：阴影扩展半径，设置阴影的尺寸；这个参数可选，缺省时值为0。</li>
+<li>color：设置阴影的颜色；</li>
+<li>inset：这个参数默认不设置。默认情况下为外阴影，inset表示内阴影。（这个值可以放在开头位置。）</li>
+</ul>
+<h4 id="外阴影outset与内阴影inset"><a href="#外阴影outset与内阴影inset" class="headerlink" title="外阴影outset与内阴影inset"></a><strong>外阴影outset与内阴影inset</strong></h4><p>box-shadow属性最后一个参数用于设置阴影是否是内阴影，还是外阴影。</p>
+<p>取值有2种：</p>
+<p>（1）outset：默认值，外阴影；</p>
+<p>（2）inset：内阴影；</p>
+<p>技巧：当水平阴影位置x-shadow和垂直阴影位置y-shadow都为0时，阴影都向外发散或者都向内发散。</p>
+<h3 id="CSS-轮廓"><a href="#CSS-轮廓" class="headerlink" title="CSS 轮廓"></a><strong>CSS 轮廓</strong></h3><p>轮廓（outline）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。</p>
+<p>CSS outline 属性规定元素轮廓的样式、颜色和宽度。</p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td width="182">属性</td></p>
+<p><td width="420">描述</td></p>
+<p><td width="45">CSS</td><br></p>
+<p><tr></tr></p>
+<p><td width="182"><a href="http://www.w3school.com.cn/cssref/pr_outline.asp" target="_blank" rel="external">outline</a></td></p>
+<p><td width="420">在一个声明中设置所有的轮廓属性。</td></p>
+<p><td width="45">2</td><br></p>
+<p><tr></tr></p>
+<p><td width="182"><a href="http://www.w3school.com.cn/cssref/pr_outline-color.asp" target="_blank" rel="external">outline-color</a></td></p>
+<p><td width="420">设置轮廓的颜色。</td></p>
+<p><td width="45">2</td><br></p>
+<p><tr></tr></p>
+<p><td width="182"><a href="http://www.w3school.com.cn/cssref/pr_outline-style.asp" target="_blank" rel="external">outline-style</a></td></p>
+<p><td width="420">设置轮廓的样式。</td></p>
+<p><td width="45">2</td><br></p>
+<p><tr></tr></p>
+<p><td width="182"><a href="http://www.w3school.com.cn/cssref/pr_outline-width.asp" target="_blank" rel="external">outline-width</a></td></p>
+<p><td width="420">设置轮廓的宽度。</td></p>
+<p><td width="45">2</td><br><br><br><br>&nbsp;</p>
+<h3 id="Overflow属性"><a href="#Overflow属性" class="headerlink" title="Overflow属性"></a><strong>Overflow属性</strong></h3><p>overflow 属性规定当内容溢出元素框时发生的事情.</p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td width="91"><strong>值</strong></td></p>
+<p><td width="531"><strong>描述</strong></td><br></p>
+<p><tr></tr></p>
+<p><td width="91">visible</td></p>
+<p><td width="531">默认值。内容不会被修剪，会呈现在元素框之外。</td><br></p>
+<p><tr></tr></p>
+<p><td width="91">hidden</td></p>
+<p><td width="531">内容会被修剪，并且其余内容是不可见的。</td><br></p>
+<p><tr></tr></p>
+<p><td width="91">scroll</td></p>
+<p><td width="531">内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。</td><br></p>
+<p><tr></tr></p>
+<p><td width="91">auto</td></p>
+<p><td width="531">如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。</td><br></p>
+<p><tr></tr></p>
+<p><td width="91">inherit</td></p>
+<p><td width="531">规定应该从父元素继承 overflow 属性的值。</td><br><br><br><br>示例：</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/overflow属性.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/overflow属性.png" alt="overflow属性"></a></p>
+<h3 id="Box-sizing属性"><a href="#Box-sizing属性" class="headerlink" title="Box-sizing属性"></a><strong>Box-sizing属性</strong></h3><p><strong>box-sizing</strong>是CSS3的box属性之一。</p>
+<p>语法：</p>
+<p>box-sizing: content-box|border-box|inherit;</p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td width="146"><strong>属性值</strong></td></p>
+<p><td width="407"><strong>属性值说明</strong></td><br></p>
+<p><tr></tr></p>
+<p><td width="146">content-box</td></p>
+<p><td width="407">默认值，其让元素维持W3C的标准盒模型，也就是说元素的宽度和高度（width/height）等于元素边框宽度（border）加上元素内距（padding）加上元素内容宽度或高度（content width/ height），也就是element width/height = border + padding + content width / height</td><br></p>
+<p><tr></tr></p>
+<p><td width="146">border-box</td></p>
+<p><td width="407">重新定义CSS2.1中盒模型组成的模式，让元素维持IE传统的盒模型（IE6以下版本和IE6-7怪异模式），也就是说元素的宽度或高度等于元素内容的宽度或高度。从上面盒模型介绍可知，这里的内容宽度或高度包含了元素的border、padding、内容的宽度或高度（此处的内容宽度或高度＝盒子的宽度或高度—边框—内距）。</td><br></p>
+<p><tr></tr></p>
+<p><td width="146">inherit</td></p>
+<p><td width="407">使元素继承父元素的盒模型模式</td><br><br><br><br>其中最为关键的是box-sizing中content-box和border-box两者的区别，他们之间的区别可以通过下图来展示，其对盒模型的不同解析：</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/box-sizing属性.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/box-sizing属性.png" alt="box-sizing属性"></a></p>
+<p><strong>参考资料：</strong></p>
+<p>1.box-sizing理解： <a href="http://www.w3cplus.com/content/css3-box-sizing" target="_blank" rel="external">http://www.w3cplus.com/content/css3-box-sizing</a></p>
+<ol>
+<li>CSS属性的浏览器兼容性：<a href="http://caniuse.com/" target="_blank" rel="external">http://caniuse.com/</a></li>
+</ol>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechatpay.png" alt="Xifengxx wechat" style="width: 200px; max-width: 100%;"/>
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端开发工程师学习笔记/" rel="tag">#前端开发工程师学习笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/24/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-887-ef-bc-89-css/" rel="next" title="网易微专业之《前端开发工程师》学习笔记（7）-CSS">
+                <i class="fa fa-chevron-left"></i> 网易微专业之《前端开发工程师》学习笔记（7）-CSS
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/24/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-889-ef-bc-89-css/" rel="prev" title="网易微专业之《前端开发工程师》学习笔记（9）-CSS">
+                网易微专业之《前端开发工程师》学习笔记（9）-CSS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/24/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-888-ef-bc-89-css/"
+           data-title="网易微专业之《前端开发工程师》学习笔记（8）-CSS" data-url="http://yoursite.com/2015/12/24/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-888-ef-bc-89-css/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Xifengxx" />
+          <p class="site-author-name" itemprop="name">Xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#《网页制作》之CSS—CSS盒模型"><span class="nav-number">1.</span> <span class="nav-text">《网页制作》之CSS—CSS盒模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型"><span class="nav-number">2.</span> <span class="nav-text">盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#盒模型–宽度-width-和高度-height"><span class="nav-number">2.1.</span> <span class="nav-text">盒模型–宽度**(width)和高度(height)**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#盒模型–填充-padding"><span class="nav-number">2.2.</span> <span class="nav-text">盒模型–填充**(padding)**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-内边距属性"><span class="nav-number">2.3.</span> <span class="nav-text">CSS 内边距属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#border-radius属性"><span class="nav-number">2.3.1.</span> <span class="nav-text">border-radius属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#border-radius画实心半圆和实心圆"><span class="nav-number">2.3.2.</span> <span class="nav-text">border-radius画实心半圆和实心圆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#border-radius属性派生子属性"><span class="nav-number">2.3.3.</span> <span class="nav-text">border-radius属性派生子属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边框阴影-box-shadow"><span class="nav-number">2.4.</span> <span class="nav-text">边框阴影**box-shadow**</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#外阴影outset与内阴影inset"><span class="nav-number">2.4.1.</span> <span class="nav-text">外阴影outset与内阴影inset</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-轮廓"><span class="nav-number">2.5.</span> <span class="nav-text">CSS 轮廓</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Overflow属性"><span class="nav-number">2.6.</span> <span class="nav-text">Overflow属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Box-sizing属性"><span class="nav-number">2.7.</span> <span class="nav-text">Box-sizing属性</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

@@ -1,0 +1,838 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端开发工程师学习笔记,JavaScript," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风Web前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="《JavaScript程序设计》这门课在2015年12.21日就已经开课了，但当时我还在学习《网页制作》这门课的CSS部分，加上写测试，耽搁了1个星期。
+话说12.28日开始学习JavaScript课程部分，才学了不到1天，我便中断了，因为听不懂，视频课程中的内容有50%都不懂，更别提理解消化了。以前完全没有接触过编程语言，只是大学的时候学过一阵子C++、VB程序设计，对于JS而已，之前只看过一遍">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网易微专业之《前端开发工程师》学习笔记（13）-JS介绍">
+<meta property="og:url" content="http://yoursite.com/2016/01/21/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8813-ef-bc-89-js/index.html">
+<meta property="og:site_name" content="西风Web前端">
+<meta property="og:description" content="《JavaScript程序设计》这门课在2015年12.21日就已经开课了，但当时我还在学习《网页制作》这门课的CSS部分，加上写测试，耽搁了1个星期。
+话说12.28日开始学习JavaScript课程部分，才学了不到1天，我便中断了，因为听不懂，视频课程中的内容有50%都不懂，更别提理解消化了。以前完全没有接触过编程语言，只是大学的时候学过一阵子C++、VB程序设计，对于JS而已，之前只看过一遍">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/js-1.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/js-2.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/js-3.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/js-4.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/js-5.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/js-6.png">
+<meta property="og:updated_time" content="2016-04-07T06:47:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网易微专业之《前端开发工程师》学习笔记（13）-JS介绍">
+<meta name="twitter:description" content="《JavaScript程序设计》这门课在2015年12.21日就已经开课了，但当时我还在学习《网页制作》这门课的CSS部分，加上写测试，耽搁了1个星期。
+话说12.28日开始学习JavaScript课程部分，才学了不到1天，我便中断了，因为听不懂，视频课程中的内容有50%都不懂，更别提理解消化了。以前完全没有接触过编程语言，只是大学的时候学过一阵子C++、VB程序设计，对于JS而已，之前只看过一遍">
+<meta name="twitter:image" content="http://www.xifengxx.com/wp-content/uploads/2016/01/js-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 网易微专业之《前端开发工程师》学习笔记（13）-JS介绍 | 西风Web前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风Web前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/demo" rel="section">
+            
+            作品DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                网易微专业之《前端开发工程师》学习笔记（13）-JS介绍
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-21T23:49:22+08:00" content="2016-01-21">
+              2016-01-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/网易微专业·前端开发工程师/" itemprop="url" rel="index">
+                    <span itemprop="name">网易微专业·前端开发工程师</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/21/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8813-ef-bc-89-js/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/21/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8813-ef-bc-89-js/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/01/21/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8813-ef-bc-89-js/" class="leancloud_visitors" data-flag-title="网易微专业之《前端开发工程师》学习笔记（13）-JS介绍">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>《JavaScript程序设计》这门课在2015年12.21日就已经开课了，但当时我还在学习《网页制作》这门课的CSS部分，加上写测试，耽搁了1个星期。</p>
+<p>话说12.28日开始学习JavaScript课程部分，才学了不到1天，我便中断了，因为听不懂，视频课程中的内容有50%都不懂，更别提理解消化了。以前完全没有接触过编程语言，只是大学的时候学过一阵子C++、VB程序设计，对于JS而已，之前只看过一遍<a href="http://www.imooc.com/learn/36" title="慕课网JS入门" target="_blank" rel="external">慕课网的JavaScript入门篇</a>，不过现在都忘干净了，可以说是真正的零基础，因此只能找一些更基础的JS课程先学习下。</p>
+<p>因此，我的0基础JavaScript学习计划预计是这样的：</p>
+<p>1.<a href="http://www.lvyestudy.com/les_js/js_list.aspx" title="绿叶学习网" target="_blank" rel="external">绿叶学习网《JavaScript初级教程》</a>；</p>
+<p>2.<a href="http://www.imooc.com/learn/36" title="慕课网JS基础" target="_blank" rel="external">慕课网JavaScript基础</a>；</p>
+<p>3.<a href="http://www.zhinengshe.com/video.html" title="智能社JavaScript视频课程" target="_blank" rel="external">智能社JavaScript视频</a>；</p>
+<p>4.<a href="http://study.163.com/course/courseMain.htm?courseId=195001" title="翁恺JavaScript" target="_blank" rel="external">翁恺-JavaScript</a>视频</p>
+<p>5.<a href="http://www.imooc.com/learn/10" title="慕课网JavaScript进阶" target="_blank" rel="external">慕课网JavaScript进阶</a>；</p>
+<p>6.<a href="http://www.runoob.com/js/js-tutorial.html" title="菜鸟教程-JS" target="_blank" rel="external">菜鸟教程-JavaScript教程</a>；（这个和<a href="http://www.w3school.com.cn/js/index.asp" title="w3School-JS" target="_blank" rel="external">W3School.com.cn上JS教程</a>类似）</p>
+<p>7.<a href="http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000" title="廖雪峰JS教程" target="_blank" rel="external">廖雪峰JavaScript教程</a>；</p>
+<p>8.<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript" title="MDN-JS" target="_blank" rel="external">MDN-JavaScript文档</a>。</p>
+<p>按照上面的学习计划，折腾到1月20号，断断续续看完了1、2、4、5，以及3的前10个视频（智能社JS视频共34个视频）。</p>
+<p>上面的步骤是循序渐进的，由简单到深入，学习起来，衔接的刚好，能够保证认真学下来能够入门。绿叶学习网的JS，是博主精心编辑的JS基础，0基础的人都可以看得懂，学完对JS有了一个大概的认识；</p>
+<p>慕课网的JS教程也是蛮不错的，边学习边实践的方法真的很不错，缺点是它的习题比较难，涉及的点很多，对于初学者而言不会做。</p>
+<p>网易云课堂上的翁恺老师主讲的JavaScript视频也是不错的，声音特有磁性，听着很悦耳。</p>
+<p>智能社的JS视频，讲的真不错，是非常不错，生动形象，让人对JS学习的兴趣大增。</p>
+<p>如果你还没有开始学习网易微专业《JavaScript程序设计》，而且JS基础很差，建议先看下智能社JS视频中的《初探javascript魅力》内容，然后，按照我上面的JS学习计划看到5（1-5的顺序），然后再来学习网易JS课程，这时，你会发现微专业《JavaScript程序设计》中的视频内容，也不是那么难懂，应该能听懂80%以上了吧。</p>
+<p>说了这么多，下面来写学习笔记：</p>
+<p>以下内容为《前端开发工程师》微专业的第二门课《JavaScript程序设计》基础篇部分学习笔记。</p>
+<hr>
+<h2 id="《JavaScript程序设计》之基础篇（一）"><a href="#《JavaScript程序设计》之基础篇（一）" class="headerlink" title="《JavaScript程序设计》之基础篇（一）"></a>《JavaScript程序设计》之基础篇（一）</h2><h3 id="一、JS介绍"><a href="#一、JS介绍" class="headerlink" title="一、JS介绍"></a><strong>一、JS介绍</strong></h3><p>JavaScript，就是我们通常所说的JS，是一种嵌入到HTML页面中的脚本语言，由浏览器一边解释一边执行。</p>
+<p>HTML、CSS和JavaScript的关系如下：</p>
+<p><span style="color: #ff0000;">“HTML是网页的结构，CSS是网页的外观，而JavaScript是页面的行为。”</span></p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/js-1.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/js-1.png" alt="js 1"></a></p>
+<p><strong>JS特性：</strong></p>
+<ul>
+<li>运行环境：Chrome,Firefox,IE……</li>
+<li>解释型。<br><strong>如何写程序**</strong>（以写文章相类比）**</li>
+</ul>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/js-2.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/js-2.png" alt="js 2"></a></p>
+<p><strong>浏览器中的**</strong>JS**</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/js-3.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/js-3.png" alt="js 3"></a></p>
+<p>JavaScript是由ECMAScript，DOM和BOM三者组成的。</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/js-4.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/js-4.png" alt="js 4"></a></p>
+<p><strong>JavaScript 的核心 ECMAScript 描述了该语言的语法和基本对象；</strong></p>
+<p><strong>ECMAScript**</strong>:**实际上是一种脚本在语法和语义上的标准,它描述（语法、类型、语句、关键字、保留字、运算符、对象），定义脚本语言的所有属性、方法和对象。</p>
+<p><strong>DOM 描述了处理网页内容的方法和接口；</strong></p>
+<p>DOM（文档对象模型,<strong>Document Object Model</strong>）是 HTML 和 XML 的应用程序接口（API）。DOM 将把整个页面规划成由节点层级构成的文档。HTML 或 XML 页面的每个部分都是一个节点的衍生物。</p>
+<p>DOM 通过创建树来表示文档，从而使开发者对文档的内容和结构具有空前的控制力。用 DOM API 可以轻松地删除、添加和替换节点。</p>
+<p><strong>BOM 描述了与浏览器进行交互的方法和接口。</strong></p>
+<p>BOM（浏览器对象模型,<strong>Browser Object Model</strong>），可以对浏览器窗口进行访问和操作。使用 BOM，开发者可以移动窗口、改变状态栏中的文本以及执行其他与页面内容不直接相关的动作。</p>
+<p>BOM 主要处理浏览器窗口和框架，不过通常浏览器特定的 JavaScript 扩展都被看做 BOM 的一部分。这些扩展包括：</p>
+<ul>
+<li>弹出新的浏览器窗口</li>
+<li>移动、关闭浏览器窗口以及调整窗口大小</li>
+<li>提供 Web 浏览器详细信息的定位对象</li>
+<li>提供用户屏幕分辨率详细信息的屏幕对象</li>
+<li>对 cookie 的支持</li>
+<li>IE 扩展了 BOM，加入了 ActiveXObject 类，可以通过 JavaScript 实例化 ActiveX 对象<br>由于没有相关的 BOM 标准，每种浏览器都有自己的 BOM 实现。有一些事实上的标准，如具有一个窗口对象和一个导航对象，不过每种浏览器可以为这些对象或其他对象定义自己的属性和方法。</li>
+</ul>
+<p><strong>ECMA/DOM/BOM三者浏览器兼容性：</strong></p>
+<ul>
+<li>ECMA 几乎没有兼容性问题</li>
+<li>DOM 有一些操作不兼容</li>
+<li>BOM 没有兼容问题（完全不兼容）<br>&nbsp;</li>
+</ul>
+<p><strong>历史：</strong></p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/js-5.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/js-5.png" alt="js 5"></a></p>
+<h3 id="二、JS调试"><a href="#二、JS调试" class="headerlink" title="二、JS调试"></a>二、<strong>JS调试</strong></h3><p>javascript调试最常用的是全局方法console.log()，可以用它输出想要跟踪查看的变量，或者单纯地输出一些字符串说明调试语句所在的代码段有没有被执行到。</p>
+<p>浏览器的开发者工具，在控制台中可以查看到当前页面的输出信息（通过console.log()），以及javascript错误。错误信息还会说明错误位置（文件名，行，列），错误类别，错误说明。</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2016/01/js-6.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2016/01/js-6.png" alt="js 6"></a></p>
+<p><strong>如何打开浏览器调试面板？</strong></p>
+<p>F12/Ctrl+Shift+!/右键“审查元素”</p>
+<p>变量输出：alert(变量)；或者：console.log(变量)；</p>
+<p>Ctrl+Shift+O:查找函数；</p>
+<p>Ctrl+O:查找文件</p>
+<p>ESC:调出Console面板；</p>
+<p>FireFox调试工具：firebug</p>
+<p><span style="color: #ff0000;">（……未完待续……）</span></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechatpay.png" alt="Xifengxx wechat" style="width: 200px; max-width: 100%;"/>
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端开发工程师学习笔记/" rel="tag">#前端开发工程师学习笔记</a>
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/27/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8812-ef-bc-89-css/" rel="next" title="网易微专业之《前端开发工程师》学习笔记（12）-CSS">
+                <i class="fa fa-chevron-left"></i> 网易微专业之《前端开发工程师》学习笔记（12）-CSS
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/22/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8814-ef-bc-89-js/" rel="prev" title="网易微专业之《前端开发工程师》学习笔记（14）-JS基本语法">
+                网易微专业之《前端开发工程师》学习笔记（14）-JS基本语法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/01/21/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8813-ef-bc-89-js/"
+           data-title="网易微专业之《前端开发工程师》学习笔记（13）-JS介绍" data-url="http://yoursite.com/2016/01/21/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8813-ef-bc-89-js/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Xifengxx" />
+          <p class="site-author-name" itemprop="name">Xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#《JavaScript程序设计》之基础篇（一）"><span class="nav-number">1.</span> <span class="nav-text">《JavaScript程序设计》之基础篇（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、JS介绍"><span class="nav-number">1.1.</span> <span class="nav-text">一、JS介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、JS调试"><span class="nav-number">1.2.</span> <span class="nav-text">二、JS调试</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

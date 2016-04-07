@@ -1,0 +1,959 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端开发工程师学习笔记," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风Web前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="以下内容为《前端开发工程师》微专业的第一门课《网页制作》的第五章学习笔记。
+《网页制作》之CSS—CSS过渡、动画T**ransition过渡**在CSS3中，我们可以使用transition属性来将元素的某一个属性从“一个属性值”在指定的时间内平滑地过渡到“另外一个属性值”来实现动画效果。
+CSS transform属性所实现的元素变形，呈现的仅仅是一个“结果”，而CSS transition呈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网易微专业之《前端开发工程师》学习笔记（12）-CSS">
+<meta property="og:url" content="http://yoursite.com/2015/12/27/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8812-ef-bc-89-css/index.html">
+<meta property="og:site_name" content="西风Web前端">
+<meta property="og:description" content="以下内容为《前端开发工程师》微专业的第一门课《网页制作》的第五章学习笔记。
+《网页制作》之CSS—CSS过渡、动画T**ransition过渡**在CSS3中，我们可以使用transition属性来将元素的某一个属性从“一个属性值”在指定的时间内平滑地过渡到“另外一个属性值”来实现动画效果。
+CSS transform属性所实现的元素变形，呈现的仅仅是一个“结果”，而CSS transition呈">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/过渡动画属性.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/transition-timing-function.png">
+<meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/transition-timing-function.png">
+<meta property="og:updated_time" content="2016-04-07T06:47:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网易微专业之《前端开发工程师》学习笔记（12）-CSS">
+<meta name="twitter:description" content="以下内容为《前端开发工程师》微专业的第一门课《网页制作》的第五章学习笔记。
+《网页制作》之CSS—CSS过渡、动画T**ransition过渡**在CSS3中，我们可以使用transition属性来将元素的某一个属性从“一个属性值”在指定的时间内平滑地过渡到“另外一个属性值”来实现动画效果。
+CSS transform属性所实现的元素变形，呈现的仅仅是一个“结果”，而CSS transition呈">
+<meta name="twitter:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/过渡动画属性.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 网易微专业之《前端开发工程师》学习笔记（12）-CSS | 西风Web前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风Web前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/demo" rel="section">
+            
+            作品DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                网易微专业之《前端开发工程师》学习笔记（12）-CSS
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-27T15:58:35+08:00" content="2015-12-27">
+              2015-12-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/网易微专业·前端开发工程师/" itemprop="url" rel="index">
+                    <span itemprop="name">网易微专业·前端开发工程师</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/27/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8812-ef-bc-89-css/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/27/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8812-ef-bc-89-css/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/12/27/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8812-ef-bc-89-css/" class="leancloud_visitors" data-flag-title="网易微专业之《前端开发工程师》学习笔记（12）-CSS">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>以下内容为《前端开发工程师》微专业的第一门课《网页制作》的第五章学习笔记。</p>
+<h2 id="《网页制作》之CSS—CSS过渡、动画"><a href="#《网页制作》之CSS—CSS过渡、动画" class="headerlink" title="《网页制作》之CSS—CSS过渡、动画"></a>《网页制作》之CSS—CSS过渡、动画</h2><h3 id="T-ransition过渡"><a href="#T-ransition过渡" class="headerlink" title="T**ransition过渡**"></a><strong>T**</strong>ransition过渡**</h3><p>在CSS3中，我们可以使用<span style="color: #ff0000;">transition属性来将元素的某一个属性从“一个属性值”在指定的时间内平滑地过渡到“另外一个属性值”来实现动画效果。</span></p>
+<p>CSS transform属性所实现的元素变形，呈现的仅仅是一个“结果”，而CSS transition呈现的是一种过渡“过程”，通俗点说就是一种动画转换过程，如渐显、渐隐、动画快慢等。</p>
+<p><strong>语法：**</strong>transition:属性 持续时间 过渡方法 延迟时间;**</p>
+<p>在CSS中创建简单的过渡效果可以从以下几个步骤来实现：</p>
+<ol>
+<li>在默认样式中声明元素的初始状态样式；2. 声明过渡元素最终状态样式，比如悬浮状态；3. 在默认样式中通过添加过渡函数，添加一些不同的样式。<br>CSS3的过度transition属性是一个复合属性，主要包含4个子属性：</li>
+</ol>
+<h4 id="transition-property：对元素的哪一个属性进行操作；"><a href="#transition-property：对元素的哪一个属性进行操作；" class="headerlink" title="transition-property：对元素的哪一个属性进行操作；"></a><strong>transition-property</strong>：对元素的哪一个属性进行操作；</h4><p>使用transition-property属性来单独设定过渡动画所要操作的那个属性。</p>
+<p><strong>语法：</strong></p>
+<p>transition-property：none |<a href="#single-transition-property">&lt;single-transition-property&gt;</a>[ ,<a href="#single-transition-property">&lt;single-transition-property&gt;</a> ]*</p>
+<p>&lt;single-transition-property&gt; = all | <a href="#properties">&lt;IDENT&gt;</a></p>
+<p>默认值：all。 默认为所有可以进行过渡的css属性。</p>
+<p><strong>说明：</strong>transition-property属性的取值是一个“CSS属性名”。</p>
+<p>对于CSS3过渡动画，大多数情况下都是配合<span style="color: #ff0000;"><strong>:**</strong>hover伪类<strong>** </strong>来</span>使用。其对应具有过渡的CSS属性主要有：</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/过渡动画属性.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/过渡动画属性.png" alt="过渡动画属性"></a></p>
+<h4 id="transition-duration：过渡的持续时间；"><a href="#transition-duration：过渡的持续时间；" class="headerlink" title="transition-duration：过渡的持续时间；"></a><strong>transition-duration：</strong>过渡的持续时间；</h4><p><strong>语法：</strong>transition-duration：时间;</p>
+<p>说明：transition-duration属性取值是一个时间，单位为s（秒），可以为小数如0.5s。如果提供多个属性值，以逗号进行分隔。</p>
+<h4 id="transition-timing-function：过渡使用的方法（函数）；"><a href="#transition-timing-function：过渡使用的方法（函数）；" class="headerlink" title="transition-timing-function：过渡使用的方法（函数）；"></a><strong>transition-timing-function：</strong>过渡使用的方法（函数）；</h4><p>使用transition-timing-function属性来定义过渡方式。所谓的“过渡方式”主要用来指定动画在过渡时间内的速率。</p>
+<p><strong>语法：</strong></p>
+<p>transition-timing-function：<a href="#single-transition-timing-function">&lt;single-transition-timing-function&gt;</a>[,<a href="#single-transition-timing-function">&lt;single-transition-timing-function&gt;</a>]*</p>
+<p>&lt;single-transition-timing-function&gt; = ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | steps(<a href="mk:@MSITStore:D:\前端开发\css参考手册.chm::/properties/transition/../../values/numeric/integer.htm" target="_blank" rel="external">&lt;integer&gt;</a>[, [ start | end ] ]?) | cubic-bezier(<a href="mk:@MSITStore:D:\前端开发\css参考手册.chm::/properties/transition/../../values/numeric/number.htm" target="_blank" rel="external">&lt;number&gt;</a>, <a href="mk:@MSITStore:D:\前端开发\css参考手册.chm::/properties/transition/../../values/numeric/number.htm" target="_blank" rel="external">&lt;number&gt;</a>, <a href="mk:@MSITStore:D:\前端开发\css参考手册.chm::/properties/transition/../../values/numeric/number.htm" target="_blank" rel="external">&lt;number&gt;</a>, <a href="mk:@MSITStore:D:\前端开发\css参考手册.chm::/properties/transition/../../values/numeric/number.htm" target="_blank" rel="external">&lt;number&gt;</a>)</p>
+<p>默认值：ease</p>
+<p>transition-timing-function属性取值共有5种，具体如下：</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/transition-timing-function.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/transition-timing-function.png" alt="transition-timing-function"></a></p>
+<p><strong>取值：</strong></p>
+<ul>
+<li>linear： 线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0)</li>
+<li>ease： 平滑过渡。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0)</li>
+<li>ease-in： 由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0)</li>
+<li>ease-out： 由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0)</li>
+<li>ease-in-out：由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)</li>
+<li>step-start： 等同于 steps(1, start)</li>
+<li>step-end： 等同于 steps(1, end)</li>
+<li>steps(&lt;integer&gt;[, [ start | end ] ]?)：接受两个参数的步进函数。第一个参数必须为正整数，指定函数的步数。第二个参数取值可以是start或end，指定每一步的值发生变化的时间点。第二个参数是可选的，默认值为end。</li>
+<li>cubic-bezier(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;number&gt;)： 特定的贝塞尔曲线类型，4个数值需在[0, 1]区间内</li>
+</ul>
+<h4 id="transition-delay：可选属性，指定过渡开始出现的延迟时间；"><a href="#transition-delay：可选属性，指定过渡开始出现的延迟时间；" class="headerlink" title="transition-delay：可选属性，指定过渡开始出现的延迟时间；"></a><strong>transition-delay</strong>：可选属性，指定过渡开始出现的延迟时间；</h4><p><strong>语法：</strong>transition-delay:时间;</p>
+<p><strong>说明：</strong>transition-delay属性取值是一个时间，单位为s（秒），可以为小数如0.5s。</p>
+<p>transition-delay属性默认值为0，也就是说当我们没有设置transition-delay属性时，过渡动画就没有延迟时间。如果提供多个属性值，以逗号进行分隔。</p>
+<p><strong>案例：</strong></p>
+<blockquote>
+<p>&lt;style type=”text/css”&gt;</p>
+<p>div{</p>
+<p>display:inline-block;</p>
+<p>width:100px;</p>
+<p>height:100px;</p>
+<p>border-radius:0;</p>
+<p>background-color:#14C7F3;</p>
+<p>transition-property:border-radius,background-color;</p>
+<p>transition-duration:1s ;</p>
+<p>transition-timing-function:linear;</p>
+<p>transition-delay:2s;</p>
+<p>}</p>
+<p>div:hover</p>
+<p>{</p>
+<p>border-radius:50px;</p>
+<p>background-color:red;</p>
+<p>}</p>
+<p>&lt;/style&gt;</p>
+<p>&lt;/head&gt;</p>
+<p>&lt;body&gt;</p>
+<p>&lt;div&gt;&lt;/div&gt;</p>
+</blockquote>
+<h4 id="transition"><a href="#transition" class="headerlink" title="transition"></a><strong>transition</strong></h4><p>如果想要使用<a href="http://www.lvyestudy.com/css3/css3_10.1.aspx" target="_blank" rel="external">transition属性</a>同时对多个属性进行实现平滑过渡效果，只需要在<a href="http://www.lvyestudy.com/css3/css3_10.2.aspx" target="_blank" rel="external">transition-property属性</a>添加多个属性名即可，其中属性名之间用英文逗号隔开。然后各自可以有各自不同的延续时间和其时间的速率变换方式。但需要值得注意的一点：第一个时间的值为 transition-duration，第二个为transition-delay。</p>
+<p>例如：a{ transition: background 0.8s ease-in 0.3,color 0.6s ease-out 0.3;}</p>
+<h2 id="Animation动画"><a href="#Animation动画" class="headerlink" title="Animation动画"></a><strong>Animation动画</strong></h2><p>在CSS3中，动画效果使用animation属性来实现。animation属性和transition属性功能是相同的，都是通过改变元素的“属性值”来实现动画效果。但是这两者又有很大的区别：transition属性只能通过指定属性的开始值与结束值，然后在这两个属性值之间进行平滑过渡来实现动画效果，因此只能实现简单的动画效果。animation属性则通过定义多个关键帧以及定义每个关键帧中元素的属性值来实现复杂的动画效果。</p>
+<p>transition属性只能实现简单的动画（一个），而animation属性却可以实现复杂的动画（一系列）。</p>
+<h3 id="定义动画-keyframes-keyframes-关键帧"><a href="#定义动画-keyframes-keyframes-关键帧" class="headerlink" title="定义动画**@keyframes**   (keyframes:关键帧)"></a><strong>定义动画**</strong>@keyframes<strong>**   (keyframes:关键帧)</strong></h3><p>使用animation属性定义CSS3动画需要2步：</p>
+<p>（1）定义动画；</p>
+<p>（2）调用动画；</p>
+<p>在CSS3中，在使用动画之前，我们必须使用@keyframes规则定义动画。</p>
+<p><strong>语法：</strong></p>
+<p>@keyframes &lt;identifier&gt; ‘{‘ &lt;keyframes-blocks&gt; ‘}’;</p>
+<p>&lt;keyframes-blocks&gt;：[ [ from | to | &lt;percentage&gt; ]{ sRules } ] [ [ , from | to | &lt;percentage&gt; ]{ sRules } ]*</p>
+<p><strong>取值：</strong></p>
+<ul>
+<li>&lt;identifier&gt;： identifier定义一个动画名称</li>
+<li>&lt;keyframes-blocks&gt;： 定义动画在每个阶段的样式，即帧动画。</li>
+</ul>
+<ol>
+<li><p>定义动画时，简单的动画可以直接使用关键字from和to，即从一种状态过渡到另一种状态：<br>示例代码：</p>
+<blockquote>
+<p>@keyframes testanimations {</p>
+<p>from { opacity: 1; }</p>
+<p>to { opacity: 0; }</p>
+<p>}<br>其中testanimations是该动画的名字，该动画表示某个东西将逐渐消失。</p>
+</blockquote>
+</li>
+<li><p>如果复杂的动画，可以混合&lt;percentage&gt;去设置某个时间段内的任意时间点的样式：<br>示例代码：</p>
+<blockquote>
+<p>@keyframes testanimations {</p>
+<p>from { transform: translate(0, 0); }</p>
+<p>20% { transform: translate(20px, 20px); }</p>
+<p>40% { transform: translate(40px, 0); }</p>
+<p>60% { transform: translate(60px, 20); }</p>
+<p>80% { transform: translate(80px, 0); }</p>
+<p>to { transform: translate(100px, 20px); }</p>
+<p>}</p>
+</blockquote>
+</li>
+<li><p>当然，也可以不使用关键字from和to，而都使用&lt;percentage&gt;：<br>示例代码：</p>
+<blockquote>
+<p>@keyframes testanimations{</p>
+<p>0% { transform: translate(0, 0); }</p>
+<p>20% { transform: translate(20px, 20px); }</p>
+<p>40% { transform: translate(40px, 0); }</p>
+<p>60% { transform: translate(60px, 20px); }</p>
+<p>80% { transform: translate(80px, 0); }</p>
+<p>100% { transform: translate(100px, 20px); }</p>
+<p>}<br>注意，这里的0%不能简写成0。</p>
+</blockquote>
+</li>
+</ol>
+<p>使用@keyframes规则时，如果仅仅只有0%和100%这两个百分比的话，这时0%和100%还可以使用关键词from和to来代表，其中0%对应的是from，100%对应的是to。</p>
+<h3 id="调用动画-animation-name属性"><a href="#调用动画-animation-name属性" class="headerlink" title="调用动画**animation-name属性**"></a><strong>调用动画**</strong>animation-name属性**</h3><p>在CSS3中，使用@keyframes规则定义的动画并不会自动执行，我们还需要使用animation-name属性来调用动画，之后动画才会生效。</p>
+<p><strong>语法：</strong>animation-name：动画名;</p>
+<p><strong>说明：</strong>注意，animation-name 调用的动画名需要和@keyframes规则定义的动画名称完全一致（区分大小写），如果不一致将不具有任何动画效果。为了浏览器兼容性，针对Chrome和Safari浏览器需要加上-webkit-前缀，而针对Firefox浏览器需要加上-moz-。</p>
+<h3 id="持续时间-animation-duration属性"><a href="#持续时间-animation-duration属性" class="headerlink" title="持续时间**animation-duration属性**"></a><strong>持续时间**</strong>animation-duration属性**</h3><p>在CSS3中，我们可以使用animation-duration属性来设置动画的持续时间，也就是完成从0%到100%所使用的总时间。</p>
+<p><strong>语法</strong>：animation-duration: &lt;time&gt;[,&lt;time&gt;]*</p>
+<p><strong>说明：</strong>animation-duration属性取值是一个时间，单位为s（秒），可以为小数如0.5s。</p>
+<h3 id="播放方式-animation-timing-function属性"><a href="#播放方式-animation-timing-function属性" class="headerlink" title="播放方式**animation-timing-function属性**"></a><strong>播放方式**</strong>animation-timing-function属性**</h3><p>在CSS3中，我们可以使用animation-timing-function属性来设置动画的播放方式，所谓的“播放方式”主要用来指定动画在播放时间内的速率。其中，</p>
+<p><strong>语法：</strong></p>
+<p>animation-timing-function：&lt;single-animation-timing-function&gt;[,&lt;single-animation-timing-function&gt;]*</p>
+<p>&lt;single-animation-timing-function&gt; = ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | steps(&lt;integer&gt;[, [ start | end ] ]?) | cubic-bezier(&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;number&gt;)</p>
+<p>默认值：ease</p>
+<p><strong>说明：</strong>animation-timing-function 属性取值跟transition-timing-function属性取值一样，共有5种，具体如下：</p>
+<p><a href="http://www.xifengxx.com/wp-content/uploads/2015/12/transition-timing-function.png" target="_blank" rel="external"><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/transition-timing-function.png" alt="transition-timing-function"></a></p>
+<h3 id="延迟时间-animation-delay属性"><a href="#延迟时间-animation-delay属性" class="headerlink" title="延迟时间**animation-delay属性**"></a><strong>延迟时间**</strong>animation-delay属性**</h3><p>在CSS3中，我们可以使用animation-delay属性来定义动画播放的延迟时间。</p>
+<p><strong>语法：</strong>animation-delay:时间;</p>
+<p><strong>说明：</strong>animation-delay属性取值是一个时间，单位为s（秒），可以为小数如0.5s。</p>
+<p>animation-delay属性默认值为0，也就是说当我们没有设置animation-delay属性时，CSS3动画就没有延迟时间。</p>
+<h3 id="播放次数-animation-iteration-count属性"><a href="#播放次数-animation-iteration-count属性" class="headerlink" title="播放次数**animation-iteration-count属性**"></a><strong>播放次数**</strong>animation-iteration-count属性**</h3><p>在CSS3中，我们可以使用animation-iteration-count属性来定义动画的播放次数。</p>
+<p><strong>语法：</strong>animation-iteration-count: infinite | &lt;number&gt; [, infinite | &lt;number&gt;]*</p>
+<p><strong>说明：</strong>animation-iteration-count属性取值有2种：</p>
+<ul>
+<li>正整数；</li>
+<li>infinite；<br>animation-iteration-count属性默认值为1。也就是默认情况下，动画从开始到结束只播放一次。“animation-iteration-count:n”表示动画播放n次，n为正整数；</li>
+</ul>
+<p>当animation-iteration-count属性取值为infinite时，动画会无限次地循环播放。</p>
+<h3 id="播放方向-animation-direction属性"><a href="#播放方向-animation-direction属性" class="headerlink" title="播放方向**animation-direction属性**"></a><strong>播放方向**</strong>animation-direction属性**</h3><p>在CSS3中，我们可以使用animation-direction属性定义动画的播放方向。</p>
+<p><strong>语法：</strong>animation-direction：&lt;single-animation-direction&gt;[,&lt;single-animation-direction&gt;]*</p>
+<p>&lt;single-animation-direction&gt; = normal | reverse | alternate | alternate-reverse</p>
+<table><br><tbody><br><tr><br><td colspan="2" width="661">animation-direction属性取值</td><br></tr><br><tr><br><td width="180">属性值</td><br><td width="481">说明</td><br></tr><br><tr><br><td width="180">normal</td><br><td width="481">每次循环都向正方向播放（默认值）</td><br></tr><br><tr><br><td width="180">reverse</td><br><td width="481">每次循环都向反方向播放</td><br></tr><br><tr><br><td width="180">alternate</td><br><td width="481">播放次数是奇数时，动画向原方向播放；播放次数是偶数时，动画向反方向播放</td><br></tr><br><tr><br><td width="180">alternate-reverse</td><br><td width="481">动画先反运行再正方向运行，并持续交替运行</td><br></tr><br></tbody><br></table>
+
+<h3 id="播放状态-animation-play-state属性"><a href="#播放状态-animation-play-state属性" class="headerlink" title="播放状态**animation-play-state属性**"></a><strong>播放状态**</strong>animation-play-state属性**</h3><p>在CSS3中，我们可以使用animation-play-state属性来定义动画的播放状态。</p>
+<p><strong>语法：</strong>animation-play-state：取值;</p>
+<p><strong>说明：</strong>animation-play-state属性取值只有2个：running和paused。</p>
+<table><br><tbody><br><tr><br><td width="180">属性值</td><br><td width="392">说明</td><br></tr><br><tr><br><td width="180">running</td><br><td width="392">播放动画（默认值）</td><br></tr><br><tr><br><td width="180">paused</td><br><td width="392">暂停动画</td><br></tr><br></tbody><br></table>
+
+<h3 id="时间外属性-animation-fill-mode属性"><a href="#时间外属性-animation-fill-mode属性" class="headerlink" title="时间外属性**animation-fill-mode属性**"></a><strong>时间外属性**</strong>animation-fill-mode属性**</h3><p>在CSS3中，我们可以使用animation-fill-mode属性定义在动画开始之前和动画结束之后发生的事情。</p>
+<p><strong>语法：</strong>animation-fill-mode:取值;</p>
+<p><table></table></p>
+<p><tbody></tbody></p>
+<p><tr></tr></p>
+<p><td colspan="2" width="570">animation-fill-mode属性取值</td><br></p>
+<p><tr></tr></p>
+<p><td width="180">属性值</td></p>
+<p><td width="390">说明</td><br></p>
+<p><tr></tr></p>
+<p><td width="180">none</td></p>
+<p><td width="390">动画完成最后一帧时会反转到初始帧处（默认值）</td><br></p>
+<p><tr></tr></p>
+<p><td width="180">forwards</td></p>
+<p><td width="390">动画结束之后继续应用最后的关键帧位置</td><br></p>
+<p><tr></tr></p>
+<p><td width="180">backwards</td></p>
+<p><td width="390">会在向元素应用动画样式时迅速应用动画的初始帧</td><br></p>
+<p><tr></tr></p>
+<p><td width="180">both</td></p>
+<p><td width="390">元素动画同时具有forwards和backwards效果</td><br><br><br><br>在默认情况之下，动画不会影响它的关键帧之外的属性，使用animation-fill-mode属性可以修改动画的默认行为。简单的说就是告诉动画在第一关键帧上等待动画开始，或者在动画结束时停在最后一个关键帧上而不回到动画的第一帧上。或者同时具有这两个效果。</p>
+<p>例如：让动画停在最一帧处。代码如下：</p>
+<blockquote>
+<p>animation-fill-mode:forwards;</p>
+</blockquote>
+<h3 id="animation"><a href="#animation" class="headerlink" title="animation"></a><strong>animation</strong></h3><p><strong>语法：**</strong>animation<em>*：&lt;single-animation&gt;[,&lt;single-animation&gt;]</em></p>
+<p><strong>&lt;single-animation&gt;</strong> = &lt;single-animation-name&gt; || &lt;time&gt; || &lt;single-animation-timing-function&gt; || &lt;time&gt; || &lt;single-animation-iteration-count&gt; || &lt;single-animation-direction&gt; || &lt;single-animation-fill-mode&gt; || &lt;single-animation-play-state&gt;</p>
+<ul>
+<li>如果提供多组属性值，以逗号进行分隔。</li>
+<li>如果只提供一个&lt;time&gt;参数，则为 &lt;’ animation-duration ‘&gt; 的值定义；</li>
+<li>如果提供二个&lt;time&gt;参数，则第一个为 &lt;’ animation-duration ‘&gt; 的值定义，第二个为 &lt;’ animation-delay ‘&gt; 的值定义<br>案例：<blockquote>
+<p>animation:animations 2s ease-out forwards;</p>
+<p>@keyframes animations{</p>
+<p>0%{transform:translate(0);opacity:0;}</p>
+<p>50%{transform:translate(30px);opacity:1;}</p>
+<p>70%{transform:translate(35px);opacity:1;}</p>
+<p>100%{transform:translate(60px);opacity:0;}</p>
+<p>}</p>
+<p>……</p>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechatpay.png" alt="Xifengxx wechat" style="width: 200px; max-width: 100%;"/>
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端开发工程师学习笔记/" rel="tag">#前端开发工程师学习笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/26/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8811-ef-bc-89-css/" rel="next" title="网易微专业之《前端开发工程师》学习笔记（11）-CSS">
+                <i class="fa fa-chevron-left"></i> 网易微专业之《前端开发工程师》学习笔记（11）-CSS
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/21/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8813-ef-bc-89-js/" rel="prev" title="网易微专业之《前端开发工程师》学习笔记（13）-JS介绍">
+                网易微专业之《前端开发工程师》学习笔记（13）-JS介绍 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/27/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8812-ef-bc-89-css/"
+           data-title="网易微专业之《前端开发工程师》学习笔记（12）-CSS" data-url="http://yoursite.com/2015/12/27/e7-bd-91-e6-98-93-e5-be-ae-e4-b8-93-e4-b8-9a-e4-b9-8b-e3-80-8a-e5-89-8d-e7-ab-af-e5-bc-80-e5-8f-91-e5-b7-a5-e7-a8-8b-e5-b8-88-e3-80-8b-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-ef-bc-8812-ef-bc-89-css/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Xifengxx" />
+          <p class="site-author-name" itemprop="name">Xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#《网页制作》之CSS—CSS过渡、动画"><span class="nav-number">1.</span> <span class="nav-text">《网页制作》之CSS—CSS过渡、动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#T-ransition过渡"><span class="nav-number">1.1.</span> <span class="nav-text">T**ransition过渡**</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#transition-property：对元素的哪一个属性进行操作；"><span class="nav-number">1.1.1.</span> <span class="nav-text">transition-property：对元素的哪一个属性进行操作；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transition-duration：过渡的持续时间；"><span class="nav-number">1.1.2.</span> <span class="nav-text">transition-duration：过渡的持续时间；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transition-timing-function：过渡使用的方法（函数）；"><span class="nav-number">1.1.3.</span> <span class="nav-text">transition-timing-function：过渡使用的方法（函数）；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transition-delay：可选属性，指定过渡开始出现的延迟时间；"><span class="nav-number">1.1.4.</span> <span class="nav-text">transition-delay：可选属性，指定过渡开始出现的延迟时间；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transition"><span class="nav-number">1.1.5.</span> <span class="nav-text">transition</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Animation动画"><span class="nav-number">2.</span> <span class="nav-text">Animation动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义动画-keyframes-keyframes-关键帧"><span class="nav-number">2.1.</span> <span class="nav-text">定义动画**@keyframes**   (keyframes:关键帧)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用动画-animation-name属性"><span class="nav-number">2.2.</span> <span class="nav-text">调用动画**animation-name属性**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#持续时间-animation-duration属性"><span class="nav-number">2.3.</span> <span class="nav-text">持续时间**animation-duration属性**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#播放方式-animation-timing-function属性"><span class="nav-number">2.4.</span> <span class="nav-text">播放方式**animation-timing-function属性**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延迟时间-animation-delay属性"><span class="nav-number">2.5.</span> <span class="nav-text">延迟时间**animation-delay属性**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#播放次数-animation-iteration-count属性"><span class="nav-number">2.6.</span> <span class="nav-text">播放次数**animation-iteration-count属性**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#播放方向-animation-direction属性"><span class="nav-number">2.7.</span> <span class="nav-text">播放方向**animation-direction属性**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#播放状态-animation-play-state属性"><span class="nav-number">2.8.</span> <span class="nav-text">播放状态**animation-play-state属性**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间外属性-animation-fill-mode属性"><span class="nav-number">2.9.</span> <span class="nav-text">时间外属性**animation-fill-mode属性**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#animation"><span class="nav-number">2.10.</span> <span class="nav-text">animation</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
