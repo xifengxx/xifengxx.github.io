@@ -37,103 +37,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Git实战教程]]></title>
-      <url>http://xifengxx.github.io/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/</url>
-      <content type="html"><![CDATA[<h3 id="简明释义"><a href="#简明释义" class="headerlink" title="简明释义"></a>简明释义</h3><h4 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h4><p>Git 是一个版本控制工具，是一个可以安装在你自己机器上的软件。<br>git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。</p>
-<h4 id="github"><a href="#github" class="headerlink" title="github"></a>github</h4><p>Git 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。<br>Github 首先是一个公司，<a href="https://github.com" target="_blank" rel="external">Github网站</a>是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。</p>
-<h3 id="安装及初始化"><a href="#安装及初始化" class="headerlink" title="安装及初始化"></a>安装及初始化</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p><strong>Windows上安装Git</strong><br>msysgit是Windows版的Git。<br><a href="http://msysgit.github.io/" target="_blank" rel="external">下载地址</a>。</p>
-<p>然后按默认选项安装即可。</p>
-<p>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！</p>
-<p>安装完成后，还需要最后一步设置，在命令行输入：</p>
-<blockquote>
-<p>$ git config –global user.name “Your Name”<br>$ git config –global user.email “email@example.com”</p>
-</blockquote>
-<p>git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
-<h4 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h4><p>版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。</p>
-<p>如何创建版本库？</p>
-<ol>
-<li><p>在电脑磁盘里的任意位置，创建一个空目录<br>方法1：直接在磁盘任意位置，右键-新建文件夹；<br>方法2：在git命令行里创建。<br>关于创建文件常用命令（Unix Linux命令）：<br>-mkdir<br>-cd        ：切换目录命令<br>–cd ..    : 切换到上一级目录。<br>如当前目录为e盘下的code目录，使用命令”cd ..”，会切换到e盘。<br>–cd e:    : 切换盘符。<br>如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。<br>–cd /     : 切换到根目录。<br>–cd 目录名：切换到具体目录。<br>如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。<br>如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。<br>-pwd       : 显示当前所在目录<br>-dir       : 显示当前目录下的所有文件<br>-mkdir     : 创建目录。<br>如当前在e盘下，需要在e盘下创建一个新目录”code1”,使用命令”mkdir code1”即可；<br>如果要在其他盘下创建目录，先使用cd命令定位到目标盘，然后再使用mkdir命令。</p>
-</li>
-<li><p>通过git init命名把这个目录变成Git可以管理的仓库。<br>创建完目录后，在磁盘中找到该目录，右键–Git Bash Here即可定位到当前目录，或是通过上面的Linux命令来定位到目标目录。<br>在命令行输入命令”git init”，即成功创建Git仓库。<br>这时在当前目录下，会多出一个.git目录（如果没有，说明被隐藏了，需要在”工具-文件夹选项-查看”里设置隐藏属性为显示所有文件）。这个目录是Git来跟踪管理版本库的。</p>
-</li>
-</ol>
-<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><h4 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h4><p>目的：本地Git仓库与GitHub网站仓库之间实现同步传输及存储。<br>步骤：</p>
-<ol>
-<li>需要注册一个GitHub账号。(注册地址)[<a href="https://github.com" target="_blank" rel="external">https://github.com</a>].</li>
-<li><p>设置SSH Key.(本地Git仓库和GitHub仓库之间的传输是通过SSH加密的)<br>打开Git Bash,创建SSH Key.<br>输入命令：$ ssh-keygen -t rsa -c “youremail@examle.com”<br>将邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。<br>成功的话，会在用户主目录（我的是在”C:\Documents and Settings\Administrator”）里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件。（这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。）</p>
-</li>
-<li><p>登录<a href="https://github.com" target="_blank" rel="external">GitHub网站</a>，打开”我的账号/Account settings”—“personal settings”—“SSH keys”，点击”New SSH key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。</p>
-</li>
-<li><p>打开Git Bash，输入命令以下命令检测是否成功连接本机与GitHub。</p>
-<blockquote>
-<p>ssh -T git@github.com<br>在遇到提示的情况下，输入”yes”即可。</p>
-</blockquote>
-</li>
-</ol>
-<h4 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h4><ol>
-<li>登录GitHub,点击右上角的”+”号—“New repository”，创建新的Git仓库。</li>
-<li>把本地仓库的内容推送到GitHub仓库。<br>① 打开GitHub上新建的repository仓库，找到HTTPS/SSH地址并复制地址，如”<a href="https://github.com/xifengxx/demo.git&quot;是我的一个仓库https地址。" target="_blank" rel="external">https://github.com/xifengxx/demo.git&quot;是我的一个仓库https地址。</a><br>② 本地仓库下运行命令<blockquote>
-<p>$ git remote add origin <a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a><br>添加后，远程仓库的名字就是origin(这是Git默认叫法，可以将origin改成其他的名字)<br>③ 继续运行命令<br>$ git push -u origin master<br>把本地仓库内容推送到远程，用git push命令。实际上是把当前分支master推送到远程。<br>由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。<br>推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样。<br>此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改：<br>$ git push origin master<br>④ 推送时，会弹出需要输入github账号及密码框，输入即可。</p>
-</blockquote>
-</li>
-<li><strong>注意事项</strong><br>在第二步②时，输入命令”$ git remote add origin <a href="https://github.com/xifengxx/demo.git&quot;时，可能会报错。" target="_blank" rel="external">https://github.com/xifengxx/demo.git&quot;时，可能会报错。</a><br>错误信息：”fatal: remote origin already exists.……”<br>原因：远程仓库已经存在内容，与本地仓库推送内容冲突。<br>解决方法：<br> 1、先输入”$ git remote rm origin”命令，删除远程仓库内容。<br> 2、再输入”$ git remote add origin git@github.com:djqiang/gitdemo.git” 就不会报错了！<br>上述方法针对第一次将本地仓库推送到远程仓库时遇到这个问题的解决方法。<br>如果不想删除远程仓库内容，可以使用下面的方法，将本地仓库内容和远程仓库内容合并。<br>解决方法：<br> 1、先输入”$ git pull origin master”命令，将远程仓库内容pull到本地仓库。<br> 2、再输入”$ git push origin master”命令，即可。</li>
-</ol>
-<h4 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h4><ol>
-<li>登录GitHub,创建一个新的仓库，例如我的一个仓库，名字叫demo</li>
-<li>找到新仓库的HTTPS/SSH地址并复制地址，如”git@github.com:xifengxx/demo.git”或”<a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a>“</li>
-<li>使用命令git clone克隆一个本地库<blockquote>
-<p>$ git clone git@github.com:xifengxx/demo.git<br>也可以使用命令：<br>$ git clone <a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a><br>Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。<br>使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="Git基础操作"><a href="#Git基础操作" class="headerlink" title="Git基础操作"></a>Git基础操作</h3><h4 id="将文件添加到版本库"><a href="#将文件添加到版本库" class="headerlink" title="将文件添加到版本库"></a>将文件添加到版本库</h4><p>使用命令：</p>
-<ol>
-<li>git add:将文件添加到仓库。<br>命令：$ git add 文件名<br>将某个文件复制到当前目录，然后再使用这个命令。</li>
-<li>git commit:将文件提交到仓库。<br>命令：$ git commit -m “xxx”<br>git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。<br>如：$ git commit -m “首次提交”<br>备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.</li>
-<li><strong>注意事项</strong><br>将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。<br>关键是如何退出默认编辑器界面并重新返回到Git bash界面。<br>方法：<br>① 按ESC键，确定退出编辑模式。<br>② 然后输入”:wq”，即可返回Git界面。</li>
-</ol>
-<h3 id="利用Github-Page-搭建网页Demo"><a href="#利用Github-Page-搭建网页Demo" class="headerlink" title="利用Github Page 搭建网页Demo"></a>利用Github Page 搭建网页Demo</h3><p>适用场景：<br>写了一些网页demo,想上传到网上查看效果，并做展示用途。不同于用Github搭建的个人博客。</p>
-<p>方法：Github Page部署。<br>步骤：</p>
-<ol>
-<li>注册<a href="https://github.com" target="_blank" rel="external">Github账号</a>.</li>
-<li>下载安装git.<br>msysgit是Windows版的Git。(下载地址)[<a href="http://msysgit.github.io/]。" target="_blank" rel="external">http://msysgit.github.io/]。</a></li>
-<li>登录Github，新建一个repository项目(这里使用project做项目名字)。</li>
-<li>在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。<br>设置完成后，这个repository项目的展示地址变为：<br><a href="http://xifengxx.github.io/project">http://xifengxx.github.io/project</a><br>‘xifengxx’为我注册Github的账号名，project为repository项目名。<br>可以通过上面的网址来访问项目。</li>
-<li><p>电脑里选定一个文件夹（这里是Git）放置Github上的项目project。<br>右键——“git bash here”,调出git命令界面，输入以下命令将project项目克隆到本地文件夹下。</p>
-<blockquote>
-<p>$ git clone <a href="https://github.com/xifengxx/project.git" target="_blank" rel="external">https://github.com/xifengxx/project.git</a><br>这时本地Git文件夹下会多出一个文件夹Project。</p>
-</blockquote>
-</li>
-<li><p>本地新建分支。<br>输入以下命令，在本地新建一个gh-pages分支并切换到gh-pages分支，这个分支是远程分支origin/gh-pages的镜像。</p>
-<blockquote>
-<p>$ cd project/<br>$ git checkout -b gh-pages origin/gh-pages<br>这时本地文件夹project里多出的文件，来自github上的gh-pages分支中的文件。</p>
-</blockquote>
-</li>
-<li><p>执行以下命令，删除原有的gh-pages文件，并提交（commit）本次修改。</p>
-<blockquote>
-<p>$ git rm -rf .<br>$ git add .<br>$ git commit -m “delete all files”<br>这时project里的文件都删除了。</p>
-</blockquote>
-</li>
-<li><p>将自己的网页Demo文件复制粘贴到project文件夹里。</p>
-</li>
-<li><p>将本地gh-pages中的网页文件同步到远程库的gh-pages中。<br>输入以下命令：</p>
-<blockquote>
-<p>$ git add .<br>$ git commit -m “My design Demo”<br>$ git push origin gh-pages</p>
-</blockquote>
-</li>
-</ol>
-<p>输入第三行命令时，会有弹出框提示输入Github账号和密码，输入后等待片刻，当命令行提示”$”符号时，说明已经完成。</p>
-<ol>
-<li>浏览器输入网址访问：<blockquote>
-<p><a href="http://xifengxx.github.io/project/index.html">http://xifengxx.github.io/project/index.html</a><br>或 <a href="http://xifengxx.github.io/project">http://xifengxx.github.io/project</a><br>此处的index.html为网页Demo中的文件。</p>
-</blockquote>
-</li>
-</ol>
-<p><a href="http://www.cnblogs.com/lijiayi/p/githubpages.html" target="_blank" rel="external">参考资源</a></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Hexo安装及部署]]></title>
       <url>http://xifengxx.github.io/2016/04/05/Hexo%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
       <content type="html"><![CDATA[<h3 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h3><p>用SSH Key将本地git项目与远程GitHub建立联系。<br>定位到目标文件夹，右键-Git Bash下输入命令：</p>
@@ -243,6 +146,103 @@
 <li><a href="http://sunwhut.com/2015/10/30/buildBlog/" target="_blank" rel="external">Sunwhut’s 博客</a> ☆☆☆☆☆推荐。</li>
 <li><a href="http://www.arao.me/2015/hexo-next-theme-optimize-seo/" target="_blank" rel="external">arao博客</a> :Hexo博客优化</li>
 </ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Git实战教程]]></title>
+      <url>http://xifengxx.github.io/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="简明释义"><a href="#简明释义" class="headerlink" title="简明释义"></a>简明释义</h3><h4 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h4><p>Git 是一个版本控制工具，是一个可以安装在你自己机器上的软件。<br>git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。</p>
+<h4 id="github"><a href="#github" class="headerlink" title="github"></a>github</h4><p>Git 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。<br>Github 首先是一个公司，<a href="https://github.com" target="_blank" rel="external">Github网站</a>是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。</p>
+<h3 id="安装及初始化"><a href="#安装及初始化" class="headerlink" title="安装及初始化"></a>安装及初始化</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p><strong>Windows上安装Git</strong><br>msysgit是Windows版的Git。<br><a href="http://msysgit.github.io/" target="_blank" rel="external">下载地址</a>。</p>
+<p>然后按默认选项安装即可。</p>
+<p>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！</p>
+<p>安装完成后，还需要最后一步设置，在命令行输入：</p>
+<blockquote>
+<p>$ git config –global user.name “Your Name”<br>$ git config –global user.email “email@example.com”</p>
+</blockquote>
+<p>git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
+<h4 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h4><p>版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。</p>
+<p>如何创建版本库？</p>
+<ol>
+<li><p>在电脑磁盘里的任意位置，创建一个空目录<br>方法1：直接在磁盘任意位置，右键-新建文件夹；<br>方法2：在git命令行里创建。<br>关于创建文件常用命令（Unix Linux命令）：<br>-mkdir<br>-cd        ：切换目录命令<br>–cd ..    : 切换到上一级目录。<br>如当前目录为e盘下的code目录，使用命令”cd ..”，会切换到e盘。<br>–cd e:    : 切换盘符。<br>如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。<br>–cd /     : 切换到根目录。<br>–cd 目录名：切换到具体目录。<br>如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。<br>如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。<br>-pwd       : 显示当前所在目录<br>-dir       : 显示当前目录下的所有文件<br>-mkdir     : 创建目录。<br>如当前在e盘下，需要在e盘下创建一个新目录”code1”,使用命令”mkdir code1”即可；<br>如果要在其他盘下创建目录，先使用cd命令定位到目标盘，然后再使用mkdir命令。</p>
+</li>
+<li><p>通过git init命名把这个目录变成Git可以管理的仓库。<br>创建完目录后，在磁盘中找到该目录，右键–Git Bash Here即可定位到当前目录，或是通过上面的Linux命令来定位到目标目录。<br>在命令行输入命令”git init”，即成功创建Git仓库。<br>这时在当前目录下，会多出一个.git目录（如果没有，说明被隐藏了，需要在”工具-文件夹选项-查看”里设置隐藏属性为显示所有文件）。这个目录是Git来跟踪管理版本库的。</p>
+</li>
+</ol>
+<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><h4 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h4><p>目的：本地Git仓库与GitHub网站仓库之间实现同步传输及存储。<br>步骤：</p>
+<ol>
+<li>需要注册一个GitHub账号。(注册地址)[<a href="https://github.com" target="_blank" rel="external">https://github.com</a>].</li>
+<li><p>设置SSH Key.(本地Git仓库和GitHub仓库之间的传输是通过SSH加密的)<br>打开Git Bash,创建SSH Key.<br>输入命令：$ ssh-keygen -t rsa -c “youremail@examle.com”<br>将邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。<br>成功的话，会在用户主目录（我的是在”C:\Documents and Settings\Administrator”）里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件。（这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。）</p>
+</li>
+<li><p>登录<a href="https://github.com" target="_blank" rel="external">GitHub网站</a>，打开”我的账号/Account settings”—“personal settings”—“SSH keys”，点击”New SSH key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。</p>
+</li>
+<li><p>打开Git Bash，输入命令以下命令检测是否成功连接本机与GitHub。</p>
+<blockquote>
+<p>ssh -T git@github.com<br>在遇到提示的情况下，输入”yes”即可。</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h4><ol>
+<li>登录GitHub,点击右上角的”+”号—“New repository”，创建新的Git仓库。</li>
+<li>把本地仓库的内容推送到GitHub仓库。<br>① 打开GitHub上新建的repository仓库，找到HTTPS/SSH地址并复制地址，如”<a href="https://github.com/xifengxx/demo.git&quot;是我的一个仓库https地址。" target="_blank" rel="external">https://github.com/xifengxx/demo.git&quot;是我的一个仓库https地址。</a><br>② 本地仓库下运行命令<blockquote>
+<p>$ git remote add origin <a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a><br>添加后，远程仓库的名字就是origin(这是Git默认叫法，可以将origin改成其他的名字)<br>③ 继续运行命令<br>$ git push -u origin master<br>把本地仓库内容推送到远程，用git push命令。实际上是把当前分支master推送到远程。<br>由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。<br>推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样。<br>此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改：<br>$ git push origin master<br>④ 推送时，会弹出需要输入github账号及密码框，输入即可。</p>
+</blockquote>
+</li>
+<li><strong>注意事项</strong><br>在第二步②时，输入命令”$ git remote add origin <a href="https://github.com/xifengxx/demo.git&quot;时，可能会报错。" target="_blank" rel="external">https://github.com/xifengxx/demo.git&quot;时，可能会报错。</a><br>错误信息：”fatal: remote origin already exists.……”<br>原因：远程仓库已经存在内容，与本地仓库推送内容冲突。<br>解决方法：<br> 1、先输入”$ git remote rm origin”命令，删除远程仓库内容。<br> 2、再输入”$ git remote add origin git@github.com:djqiang/gitdemo.git” 就不会报错了！<br>上述方法针对第一次将本地仓库推送到远程仓库时遇到这个问题的解决方法。<br>如果不想删除远程仓库内容，可以使用下面的方法，将本地仓库内容和远程仓库内容合并。<br>解决方法：<br> 1、先输入”$ git pull origin master”命令，将远程仓库内容pull到本地仓库。<br> 2、再输入”$ git push origin master”命令，即可。</li>
+</ol>
+<h4 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h4><ol>
+<li>登录GitHub,创建一个新的仓库，例如我的一个仓库，名字叫demo</li>
+<li>找到新仓库的HTTPS/SSH地址并复制地址，如”git@github.com:xifengxx/demo.git”或”<a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a>“</li>
+<li>使用命令git clone克隆一个本地库<blockquote>
+<p>$ git clone git@github.com:xifengxx/demo.git<br>也可以使用命令：<br>$ git clone <a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a><br>Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。<br>使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="Git基础操作"><a href="#Git基础操作" class="headerlink" title="Git基础操作"></a>Git基础操作</h3><h4 id="将文件添加到版本库"><a href="#将文件添加到版本库" class="headerlink" title="将文件添加到版本库"></a>将文件添加到版本库</h4><p>使用命令：</p>
+<ol>
+<li>git add:将文件添加到仓库。<br>命令：$ git add 文件名<br>将某个文件复制到当前目录，然后再使用这个命令。</li>
+<li>git commit:将文件提交到仓库。<br>命令：$ git commit -m “xxx”<br>git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。<br>如：$ git commit -m “首次提交”<br>备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.</li>
+<li><strong>注意事项</strong><br>将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。<br>关键是如何退出默认编辑器界面并重新返回到Git bash界面。<br>方法：<br>① 按ESC键，确定退出编辑模式。<br>② 然后输入”:wq”，即可返回Git界面。</li>
+</ol>
+<h3 id="利用Github-Page-搭建网页Demo"><a href="#利用Github-Page-搭建网页Demo" class="headerlink" title="利用Github Page 搭建网页Demo"></a>利用Github Page 搭建网页Demo</h3><p>适用场景：<br>写了一些网页demo,想上传到网上查看效果，并做展示用途。不同于用Github搭建的个人博客。</p>
+<p>方法：Github Page部署。<br>步骤：</p>
+<ol>
+<li>注册<a href="https://github.com" target="_blank" rel="external">Github账号</a>.</li>
+<li>下载安装git.<br>msysgit是Windows版的Git。(下载地址)[<a href="http://msysgit.github.io/]。" target="_blank" rel="external">http://msysgit.github.io/]。</a></li>
+<li>登录Github，新建一个repository项目(这里使用project做项目名字)。</li>
+<li>在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。<br>设置完成后，这个repository项目的展示地址变为：<br><a href="http://xifengxx.github.io/project">http://xifengxx.github.io/project</a><br>‘xifengxx’为我注册Github的账号名，project为repository项目名。<br>可以通过上面的网址来访问项目。</li>
+<li><p>电脑里选定一个文件夹（这里是Git）放置Github上的项目project。<br>右键——“git bash here”,调出git命令界面，输入以下命令将project项目克隆到本地文件夹下。</p>
+<blockquote>
+<p>$ git clone <a href="https://github.com/xifengxx/project.git" target="_blank" rel="external">https://github.com/xifengxx/project.git</a><br>这时本地Git文件夹下会多出一个文件夹Project。</p>
+</blockquote>
+</li>
+<li><p>本地新建分支。<br>输入以下命令，在本地新建一个gh-pages分支并切换到gh-pages分支，这个分支是远程分支origin/gh-pages的镜像。</p>
+<blockquote>
+<p>$ cd project/<br>$ git checkout -b gh-pages origin/gh-pages<br>这时本地文件夹project里多出的文件，来自github上的gh-pages分支中的文件。</p>
+</blockquote>
+</li>
+<li><p>执行以下命令，删除原有的gh-pages文件，并提交（commit）本次修改。</p>
+<blockquote>
+<p>$ git rm -rf .<br>$ git add .<br>$ git commit -m “delete all files”<br>这时project里的文件都删除了。</p>
+</blockquote>
+</li>
+<li><p>将自己的网页Demo文件复制粘贴到project文件夹里。</p>
+</li>
+<li><p>将本地gh-pages中的网页文件同步到远程库的gh-pages中。<br>输入以下命令：</p>
+<blockquote>
+<p>$ git add .<br>$ git commit -m “My design Demo”<br>$ git push origin gh-pages</p>
+</blockquote>
+</li>
+</ol>
+<p>输入第三行命令时，会有弹出框提示输入Github账号和密码，输入后等待片刻，当命令行提示”$”符号时，说明已经完成。</p>
+<ol>
+<li>浏览器输入网址访问：<blockquote>
+<p><a href="http://xifengxx.github.io/project/index.html">http://xifengxx.github.io/project/index.html</a><br>或 <a href="http://xifengxx.github.io/project">http://xifengxx.github.io/project</a><br>此处的index.html为网页Demo中的文件。</p>
+</blockquote>
+</li>
+</ol>
+<p><a href="http://www.cnblogs.com/lijiayi/p/githubpages.html" target="_blank" rel="external">参考资源</a></p>
 ]]></content>
     </entry>
     
