@@ -67,7 +67,7 @@
 <meta property="og:site_name" content="西风Web前端">
 <meta property="og:description" content="jQuery事件jQuery封装了JavaScript中所有的事件，使得其操作更加简单方便，并且使得这些事件能够兼容各大浏览器，减少我们大量代码的编写。在jQuery中，我们需要学习9种事件操作：（1）页面载入事件；（2）鼠标事件；（3）键盘事件；（4）表单事件；（5）滚动事件；（6）绑定事件；（7）解绑事件；（8）合成事件；（9）一次事件；
 页面载入事件在jQuery中，对于页面载入事件，我们使">
-<meta property="og:updated_time" content="2016-05-03T00:10:48.000Z">
+<meta property="og:updated_time" content="2016-05-03T00:46:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery学习笔记3">
 <meta name="twitter:description" content="jQuery事件jQuery封装了JavaScript中所有的事件，使得其操作更加简单方便，并且使得这些事件能够兼容各大浏览器，减少我们大量代码的编写。在jQuery中，我们需要学习9种事件操作：（1）页面载入事件；（2）鼠标事件；（3）键盘事件；（4）表单事件；（5）滚动事件；（6）绑定事件；（7）解绑事件；（8）合成事件；（9）一次事件；
@@ -361,7 +361,46 @@
 <li>在jQuery中，$(document).ready()却可以多次执行。</li>
 </ul>
 <p><strong>ready()方法的4种写法</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法1：</span></span><br><span class="line">$(<span class="built_in">document</span>).ready(functin()&#123;</span><br><span class="line">    <span class="comment">//代码部分</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//其中$(document)表示“选取document”，然后调用jQuery对象的ready()方法。 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法2：</span></span><br><span class="line">jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//代码部分</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//方法3：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//代码部分</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//方法4：</span></span><br><span class="line">jQuery(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//代码部分</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h4 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h4><p>jQuery常见鼠标事件如下：<br>| 鼠标事件 |    说明 |<br>| —- | ——– |<br>| click |   鼠标单击事件 |<br>| dbclick | 双击事件 |<br>| mouseover |   移入事件 |<br>| mouseout |    移出事件 |<br>| mousemove |   移动事件 |<br>| mousedown |   按下事件 |<br>| mouseup | 松开事件 |<br>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">"表单提交成功！"</span>);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h4><p>jQuery常见鼠标事件如下：</p>
+<table>
+<thead>
+<tr>
+<th>鼠标事件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>click</td>
+<td>鼠标单击事件</td>
+</tr>
+<tr>
+<td>dbclick</td>
+<td>双击事件</td>
+</tr>
+<tr>
+<td>mouseover</td>
+<td>移入事件</td>
+</tr>
+<tr>
+<td>mouseout</td>
+<td>移出事件</td>
+</tr>
+<tr>
+<td>mousemove</td>
+<td>移动事件</td>
+</tr>
+<tr>
+<td>mousedown</td>
+<td>按下事件</td>
+</tr>
+<tr>
+<td>mouseup</td>
+<td>松开事件</td>
+</tr>
+</tbody>
+</table>
+<p>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">"表单提交成功！"</span>);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
 <p><strong>在jQuery中，任何元素都可以添加单击事件。</strong></p>
 <p><strong>mouseenter和mouseleave</strong></p>
 <ul>
@@ -374,7 +413,29 @@
 <li>mouseout事件在鼠标移出“所选元素及其后代子元素”时都会触发；</li>
 <li>mouseleave事件只有鼠标移出“所选元素”才会触发，如果鼠标仅仅移入“所选元素的后代子元素”的时候，并不会触发。</li>
 </ul>
-<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h4><p>jQuery键盘事件只有3个：<br>| 事件 |  说明 |<br>| — | ——- |<br>| keydown | 按下键事件（包括数字键、功能键） |<br>| keypress |    按下键事件（只包含数字键） |<br>| keyup |   放开键事件（包括数字键、功能键） |</p>
+<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h4><p>jQuery键盘事件只有3个：</p>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>keydown</td>
+<td>按下键事件（包括数字键、功能键）</td>
+</tr>
+<tr>
+<td>keypress</td>
+<td>按下键事件（只包含数字键）</td>
+</tr>
+<tr>
+<td>keyup</td>
+<td>放开键事件（包括数字键、功能键）</td>
+</tr>
+</tbody>
+</table>
 <p>三个事件的执行顺序如下：keydown → keypress → keyup；</p>
 <p>如果想要在jQuery中使用组合键，可以分别利用event事件对象中的event.ctrlKey、event.shiftKey、event.altKey判断是否按下了Ctrl键、Shift键或Alt键。</p>
 <h4 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h4><p>在jQuery中，常用的表单事件有4种：<br>（1） focus()事件；<br>（2） blur()事件；<br>（3） change()事件；<br>（4） select()事件；</p>
@@ -438,8 +499,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/22/jQuery学习笔记2/" rel="next" title="jQuery学习笔记2">
-                <i class="fa fa-chevron-left"></i> jQuery学习笔记2
+              <a href="/2016/04/22/jQuery学习笔记4/" rel="next" title="jQuery学习笔记4">
+                <i class="fa fa-chevron-left"></i> jQuery学习笔记4
               </a>
             
           </div>

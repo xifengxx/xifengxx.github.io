@@ -74,7 +74,7 @@ attr">
 删除元素属性： $().removeAttr(&amp;quot;属性名&amp;quot;) $().removeProp(&amp;quot;属性名&amp;quot;)
 attr">
 <meta property="og:image" content="http://www.lvyestudy.com/App_images/lesson/jq/5-3-1.png">
-<meta property="og:updated_time" content="2016-05-03T00:44:02.000Z">
+<meta property="og:updated_time" content="2016-05-03T00:46:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery学习笔记2">
 <meta name="twitter:description" content="jQuery操作元素属性操作
@@ -385,7 +385,30 @@ attr">
 </ul>
 <p><strong>使用jQuery操作CSS类名的作用：</strong><br>我们把一大块CSS代码封装到一个类中，这样使得我们每次只需要对类名进行操作即可，而无需在jQuery中使用css()方法编写大量的样式控制代码，使得我们的jQuery代码精简便于维护。</p>
 <h4 id="元素的宽度width-和高度height"><a href="#元素的宽度width-和高度height" class="headerlink" title="元素的宽度width() 和高度height()"></a>元素的宽度width() 和高度height()</h4><p>在jQuery中，想要获取或者设置某一个元素的宽度和高度，我们可以使用css()方法来实现。但是jQuery为我们提供了更多方便快速的方法，使得我们更加灵活地操作元素的宽度和高度。</p>
-<h5 id="元素的宽度"><a href="#元素的宽度" class="headerlink" title="元素的宽度"></a>元素的宽度</h5><p><img src="http://www.lvyestudy.com/App_images/lesson/jq/5-3-1.png" alt="盒模型"><br>| 方法 | 宽度范围 |<br>| — | — |<br>| width() | width |<br>| innerWidth() | width + padding |<br>| outerWidth() | width + padding + border |<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$().width()      //获取元素的宽度</span><br><span class="line">$().width(n)     //设置元素的宽度，n是一个整数，表示npx</span><br></pre></td></tr></table></figure></p>
+<h5 id="元素的宽度"><a href="#元素的宽度" class="headerlink" title="元素的宽度"></a>元素的宽度</h5><p><img src="http://www.lvyestudy.com/App_images/lesson/jq/5-3-1.png" alt="盒模型"></p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>宽度范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width()</td>
+<td>width</td>
+</tr>
+<tr>
+<td>innerWidth()</td>
+<td>width + padding</td>
+</tr>
+<tr>
+<td>outerWidth()</td>
+<td>width + padding + border</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$().width()      //获取元素的宽度</span><br><span class="line">$().width(n)     //设置元素的宽度，n是一个整数，表示npx</span><br></pre></td></tr></table></figure>
 <p><strong>说明</strong><br>width()方法和css(“width”)方法类似，不过width()方法获得的宽度值不带单位（仅仅是数字），而css(“width”)获取的宽度值带“px”作为单位</p>
 <h5 id="元素的高度"><a href="#元素的高度" class="headerlink" title="元素的高度"></a>元素的高度</h5><table>
 <thead>
@@ -495,16 +518,16 @@ attr">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/22/jQuery学习笔记4/" rel="next" title="jQuery学习笔记4">
-                <i class="fa fa-chevron-left"></i> jQuery学习笔记4
+              <a href="/2016/04/19/jQuery学习笔记/" rel="next" title="jQuery学习笔记">
+                <i class="fa fa-chevron-left"></i> jQuery学习笔记
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/25/jQuery学习笔记3/" rel="prev" title="jQuery学习笔记3">
-                jQuery学习笔记3 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/22/jQuery学习笔记4/" rel="prev" title="jQuery学习笔记4">
+                jQuery学习笔记4 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
