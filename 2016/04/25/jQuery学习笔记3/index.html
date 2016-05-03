@@ -1,0 +1,976 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="jQuery学习笔记," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风Web前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="jQuery事件jQuery封装了JavaScript中所有的事件，使得其操作更加简单方便，并且使得这些事件能够兼容各大浏览器，减少我们大量代码的编写。在jQuery中，我们需要学习9种事件操作：（1）页面载入事件；（2）鼠标事件；（3）键盘事件；（4）表单事件；（5）滚动事件；（6）绑定事件；（7）解绑事件；（8）合成事件；（9）一次事件；
+页面载入事件在jQuery中，对于页面载入事件，我们使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery学习笔记">
+<meta property="og:url" content="http://xifengxx.github.io/2016/04/25/jQuery学习笔记3/index.html">
+<meta property="og:site_name" content="西风Web前端">
+<meta property="og:description" content="jQuery事件jQuery封装了JavaScript中所有的事件，使得其操作更加简单方便，并且使得这些事件能够兼容各大浏览器，减少我们大量代码的编写。在jQuery中，我们需要学习9种事件操作：（1）页面载入事件；（2）鼠标事件；（3）键盘事件；（4）表单事件；（5）滚动事件；（6）绑定事件；（7）解绑事件；（8）合成事件；（9）一次事件；
+页面载入事件在jQuery中，对于页面载入事件，我们使">
+<meta property="og:updated_time" content="2016-04-25T08:08:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery学习笔记">
+<meta name="twitter:description" content="jQuery事件jQuery封装了JavaScript中所有的事件，使得其操作更加简单方便，并且使得这些事件能够兼容各大浏览器，减少我们大量代码的编写。在jQuery中，我们需要学习9种事件操作：（1）页面载入事件；（2）鼠标事件；（3）键盘事件；（4）表单事件；（5）滚动事件；（6）绑定事件；（7）解绑事件；（8）合成事件；（9）一次事件；
+页面载入事件在jQuery中，对于页面载入事件，我们使">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> jQuery学习笔记 | 西风Web前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风Web前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/demo" rel="section">
+            
+            作品DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                jQuery学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-25T15:23:01+08:00" content="2016-04-25">
+              2016-04-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/25/jQuery学习笔记3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/25/jQuery学习笔记3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/25/jQuery学习笔记3/" class="leancloud_visitors" data-flag-title="jQuery学习笔记">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="jQuery事件"><a href="#jQuery事件" class="headerlink" title="jQuery事件"></a>jQuery事件</h3><p>jQuery封装了JavaScript中所有的事件，使得其操作更加简单方便，并且使得这些事件能够兼容各大浏览器，减少我们大量代码的编写。在jQuery中，我们需要学习9种事件操作：<br>（1）页面载入事件；<br>（2）鼠标事件；<br>（3）键盘事件；<br>（4）表单事件；<br>（5）滚动事件；<br>（6）绑定事件；<br>（7）解绑事件；<br>（8）合成事件；<br>（9）一次事件；</p>
+<h4 id="页面载入事件"><a href="#页面载入事件" class="headerlink" title="页面载入事件"></a>页面载入事件</h4><p>在jQuery中，对于页面载入事件，我们使用<code>$(document).ready()</code>方法来替代JavaScript中的<code>window.onload</code>方法</p>
+<p><strong>window.onload与$(document).ready()区别：</strong></p>
+<ol>
+<li>加载方式不一样：</li>
+</ol>
+<ul>
+<li><p>window.onload方法：在页面所有DOM元素（包括图片等外部文件）加载完成之后才执行，此时我们才可以操作DOM。也就是说，除了元素加载完成（说白了就是HTML代码），元素所关联的文件（如img元素就关联了图片）也必须加载完成之后，才会执行window.onload方法。</p>
+</li>
+<li><p>$(document).ready()方法：在页面所有DOM元素（不包括图片等外部文件）加载完成就可以执行，此时我们就可以操作DOM。<br><strong>$(document).ready()仅仅是DOM元素加载完成就可以执行，而window.onload除了DOM元素加载完成外还需要等待所有外部文件加载完成才可以执行。</strong></p>
+</li>
+</ul>
+<p>使用$(document).ready()相对window.onload来说，可以极大地提高页面的响应速度，执行效率非常高。</p>
+<ol>
+<li>调用次数不一样：</li>
+</ol>
+<ul>
+<li>在JavaScript中，window.onload方法只能调用1次，如果多次调用，则执行最后一个window.onload方法中的代码。如果想要实现多个window.onload方法的同时调用，还需要写上一段兼容性代码。</li>
+<li>在jQuery中，$(document).ready()却可以多次执行。</li>
+</ul>
+<p><strong>ready()方法的4种写法</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法1：</span></span><br><span class="line">$(<span class="built_in">document</span>).ready(functin()&#123;</span><br><span class="line">    <span class="comment">//代码部分</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//其中$(document)表示“选取document”，然后调用jQuery对象的ready()方法。 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法2：</span></span><br><span class="line">jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//代码部分</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//方法3：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//代码部分</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//方法4：</span></span><br><span class="line">jQuery(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//代码部分</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h4><p>jQuery常见鼠标事件如下：<br>| 鼠标事件 |    说明 |<br>| —- | ——– |<br>| click |   鼠标单击事件 |<br>| dbclick | 双击事件 |<br>| mouseover |   移入事件 |<br>| mouseout |    移出事件 |<br>| mousemove |   移动事件 |<br>| mousedown |   按下事件 |<br>| mouseup | 松开事件 |<br>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">"表单提交成功！"</span>);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
+<p><strong>在jQuery中，任何元素都可以添加单击事件。</strong></p>
+<p><strong>mouseenter和mouseleave</strong></p>
+<ul>
+<li>mouseenter事件在鼠标进入某个元素的时候就会触发，这个跟mouseover事件相似。但是这两者也有区别：</li>
+<li>mouseover事件在鼠标移入“所选元素及其后代子元素”时都会触发；</li>
+<li><p>mouseenter事件只有鼠标移入“所选元素”才会触发，如果鼠标仅仅移入“所选元素的后代子元素”的时候，并不会触发。</p>
+</li>
+<li><p>mouseleave事件在鼠标移出某个元素的时候就会触发，这个跟mouseout事件相似。但是这两者也有区别：</p>
+</li>
+<li>mouseout事件在鼠标移出“所选元素及其后代子元素”时都会触发；</li>
+<li>mouseleave事件只有鼠标移出“所选元素”才会触发，如果鼠标仅仅移入“所选元素的后代子元素”的时候，并不会触发。</li>
+</ul>
+<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h4><p>jQuery键盘事件只有3个：<br>| 事件 |  说明 |<br>| — | ——- |<br>| keydown | 按下键事件（包括数字键、功能键） |<br>| keypress |    按下键事件（只包含数字键） |<br>| keyup |   放开键事件（包括数字键、功能键） |</p>
+<p>三个事件的执行顺序如下：keydown → keypress → keyup；</p>
+<p>如果想要在jQuery中使用组合键，可以分别利用event事件对象中的event.ctrlKey、event.shiftKey、event.altKey判断是否按下了Ctrl键、Shift键或Alt键。</p>
+<h4 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h4><p>在jQuery中，常用的表单事件有4种：<br>（1） focus()事件；<br>（2） blur()事件；<br>（3） change()事件；<br>（4） select()事件；</p>
+<h5 id="focus-事件和blur-事件"><a href="#focus-事件和blur-事件" class="headerlink" title="focus()事件和blur()事件"></a>focus()事件和blur()事件</h5><p>具有获得焦点和失去焦点事件的元素有3个：<br>（1） 单行文本框text；<br>（2） 多行文本框textarea；<br>（3） 下拉列表select；</p>
+<h5 id="change-事件；"><a href="#change-事件；" class="headerlink" title="change()事件；"></a>change()事件；</h5><p>在jQuery中，当用户在单行文本框text和多行文本框textarea输入文本时，由于文本框内字符串的改变将会触发onchange事件。此外，在下拉列表select中一个选项的状态改变后也会触发onchange事件。</p>
+<p>具有获得onchange事件的元素有3个：<br>（1）单行文本框text；<br>（2）多行文本框textarea；<br>（3）下拉列表select；</p>
+<h5 id="select-事件；"><a href="#select-事件；" class="headerlink" title="select()事件；"></a>select()事件；</h5><p>在jQuery中，当用户选中单行文本框text或多行文本框textarea的文本时，会触发select事件。<br>select事件的具体过程是从鼠标按键被按下，到鼠标开始移动并选中内容的过程。这个过程并不包括鼠标键的放开。</p>
+<p><strong>下拉列表列表项的选中触发的事件是change而不是select。</strong></p>
+<h4 id="滚动事件"><a href="#滚动事件" class="headerlink" title="滚动事件"></a>滚动事件</h4><p>滚动事件，指的是当滚动条位置发生改变时触发的事件。滚动事件很有用，在“回顶部特效”以及现在扁平化网页中的动画中大量涉及到。<br><code>$().scroll(fn)</code><br>参数fn表示事件处理函数，也就是function(){}。<br>scroll()滚动事件常常和scrollTop()和scrollLeft()这两个方法结合使用。</p>
+<h4 id="绑定事件"><a href="#绑定事件" class="headerlink" title="绑定事件"></a>绑定事件</h4><p>在jQuery中，如果我们想要为某些元素添加某个事件来完成操作，可以有2种方法：<br>（1）基本事件；<br>（2）绑定事件；<br>基本事件，指的是使用click()、dbclick()这种“事件方法”。而绑定事件，指的是使用on()方法。</p>
+<p><strong>on()方法</strong><br>在文档加载完成后，如果我们想要为元素绑定某个事件来完成某些操作，可以使用on()方法来实现。<br>在jQuery中，我们可以使用on()方法为某些元素绑定一个事件或者多个事件。<br><code>$().on(type , fn)</code><br>说明：</p>
+<ul>
+<li>type为必选参数，表示事件类型，例如单击事件是“click”，双击事件是“dbclick”，以此类推。注意一下，这里type是一个字符串。</li>
+<li>fn为必选参数，表示事件的处理函数。</li>
+</ul>
+<p>1、为“已经存在的元素”绑定事件<br>在jQuery中，on()方法可以为“已经存在的元素”添加绑定事件。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#btn"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"绿叶学习网jQuery入门教程！"</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line"><span class="comment">//上述代码等价于下面的代码：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"绿叶学习网jQuery入门教程！"</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure></p>
+<p>2、为“未来创建的元素”绑定事件<br>在jQuery中，on()方法不仅可以为“已经存在的元素”添加绑定事件，还可以为“未来创建的元素”添加绑定事件。所谓的“未来创建的元素”指的是使用jQuery创建的元素。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> $btn = $(<span class="string">'&lt;input id="btn" type="button" value="按钮"/&gt;'</span>);</span><br><span class="line">            $($btn).appendTo(<span class="string">"body"</span>);</span><br><span class="line">            $(<span class="string">"#btn"</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"绿叶学习网jQuery入门教程！"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>“基本事件”无法为“未来创建的元素”添加绑定事件，而“绑定事件”却可以为“未来创建的元素”添加绑定事件。</strong></p>
+<h4 id="解绑事件"><a href="#解绑事件" class="headerlink" title="解绑事件"></a>解绑事件</h4><p>在jQuery中，我们可以通过off()方法解除绑定的某一指定的事件或者所有事件。<br><code>$().off(type)</code><br>type为必选参数，表示事件类型，例如单击事件是“click”，双击事件是“dbclick”，以此类推。(<strong>type为字符串</strong>)<br>案例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">//为btn添加click事件</span></span><br><span class="line">            $(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"绿叶学习网jQuery入门教程！"</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">            <span class="comment">//点击btn-off后，为btn解除click事件</span></span><br><span class="line">            $(<span class="string">"#btn-off"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">"#btn"</span>).off(<span class="string">"click"</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure></p>
+<p>off()方法不仅可以解绑“使用绑定事件所添加的事件”，还可以解绑“使用基本事件所添加的事件”。</p>
+<h4 id="合成事件"><a href="#合成事件" class="headerlink" title="合成事件"></a>合成事件</h4><p>鼠标移入和鼠标移出这2个事件往往都是同时使用的，因此我们必须分别对“鼠标移入”和“鼠标移出”这2个事件分别定义。<br>但是在jQuery中，我们可以使用hover()方法一次性地定义这2个事件，这就是所谓的合成事件。<br><code>$().hover(fn1,fn2)</code><br><strong>说明：</strong><br>参数fn1表示“鼠标移入”时触发的事件处理函数，参数fn2表示“鼠标移出”时触发的事件处理函数。<br>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"h3"</span>).hover(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">"#content"</span>).css(<span class="string">"display"</span>,<span class="string">"block"</span>);</span><br><span class="line">            &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">"#content"</span>).css(<span class="string">"display"</span>, <span class="string">"none"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure></p>
+<p>hover()方法，准确来说是替代jQuery中的mouseenter()和mouseleave()，而不是替代mouseover()和mouseout()。</p>
+<h4 id="一次事件"><a href="#一次事件" class="headerlink" title="一次事件"></a>一次事件</h4><p>在jQuery中，我们可以使用one()方法为所选元素绑定一个“只触发一次”的处理函数。<br><code>$().one(type , fn)</code><br><strong>说明：</strong></p>
+<ul>
+<li>type表示事件类型，例如单击事件是“click”，双击事件是“dbclick”，以此类推。</li>
+<li>fn表示事件的处理函数。<br>示例：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#btn"</span>).one(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert(<span class="string">"只能弹出一次！"</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>分析：<br>使用one()方法为按钮绑定了一个“只触发一次”的click事件。当我们第一次点击按钮之后会弹出对话框，但是第二次点击按钮就不会有任何反应。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat.jpg" alt="Xifengxx wechat" style="width: 200px; max-width: 100%;"/>
+    <div>坚持原创技术分享，每天进步1%！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery学习笔记/" rel="tag">#jQuery学习笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/22/jQuery学习笔记4/" rel="next" title="jQuery学习笔记">
+                <i class="fa fa-chevron-left"></i> jQuery学习笔记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/25/jQuery学习笔记3/"
+           data-title="jQuery学习笔记" data-url="http://xifengxx.github.io/2016/04/25/jQuery学习笔记3/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Xifengxx" />
+          <p class="site-author-name" itemprop="name">Xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery事件"><span class="nav-number">1.</span> <span class="nav-text">jQuery事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#页面载入事件"><span class="nav-number">1.1.</span> <span class="nav-text">页面载入事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#鼠标事件"><span class="nav-number">1.2.</span> <span class="nav-text">鼠标事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#键盘事件"><span class="nav-number">1.3.</span> <span class="nav-text">键盘事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表单事件"><span class="nav-number">1.4.</span> <span class="nav-text">表单事件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#focus-事件和blur-事件"><span class="nav-number">1.4.1.</span> <span class="nav-text">focus()事件和blur()事件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#change-事件；"><span class="nav-number">1.4.2.</span> <span class="nav-text">change()事件；</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#select-事件；"><span class="nav-number">1.4.3.</span> <span class="nav-text">select()事件；</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#滚动事件"><span class="nav-number">1.5.</span> <span class="nav-text">滚动事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定事件"><span class="nav-number">1.6.</span> <span class="nav-text">绑定事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解绑事件"><span class="nav-number">1.7.</span> <span class="nav-text">解绑事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合成事件"><span class="nav-number">1.8.</span> <span class="nav-text">合成事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一次事件"><span class="nav-number">1.9.</span> <span class="nav-text">一次事件</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
