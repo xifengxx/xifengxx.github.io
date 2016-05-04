@@ -1,0 +1,1023 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="jQuery学习笔记," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风Web前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="jQuery过滤方法除了选择器之外，jQuery还为我们提供了以“方法”（类似于函数方法）形式存在的2种方式：（1）过滤方法；（2）查找方法。
+过滤和查找这2类方法与之前所学到的“选择器”是相互补充的关系。过滤和查找补充了很多使用选择器无法进行的操作，例如选取某一个元素的父元素、获取当前点击位置下的子元素、判断当前元素是否处于动画状态等等。这些都是很常见的操作。
+在jQuery中，常见的过滤方法如">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery学习笔记5">
+<meta property="og:url" content="http://xifengxx.github.io/2016/04/29/jQuery学习笔记5/index.html">
+<meta property="og:site_name" content="西风Web前端">
+<meta property="og:description" content="jQuery过滤方法除了选择器之外，jQuery还为我们提供了以“方法”（类似于函数方法）形式存在的2种方式：（1）过滤方法；（2）查找方法。
+过滤和查找这2类方法与之前所学到的“选择器”是相互补充的关系。过滤和查找补充了很多使用选择器无法进行的操作，例如选取某一个元素的父元素、获取当前点击位置下的子元素、判断当前元素是否处于动画状态等等。这些都是很常见的操作。
+在jQuery中，常见的过滤方法如">
+<meta property="og:updated_time" content="2016-05-04T08:02:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery学习笔记5">
+<meta name="twitter:description" content="jQuery过滤方法除了选择器之外，jQuery还为我们提供了以“方法”（类似于函数方法）形式存在的2种方式：（1）过滤方法；（2）查找方法。
+过滤和查找这2类方法与之前所学到的“选择器”是相互补充的关系。过滤和查找补充了很多使用选择器无法进行的操作，例如选取某一个元素的父元素、获取当前点击位置下的子元素、判断当前元素是否处于动画状态等等。这些都是很常见的操作。
+在jQuery中，常见的过滤方法如">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> jQuery学习笔记5 | 西风Web前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风Web前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/demo" rel="section">
+            
+            作品DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                jQuery学习笔记5
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-29T15:23:01+08:00" content="2016-04-29">
+              2016-04-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/29/jQuery学习笔记5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/29/jQuery学习笔记5/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/04/29/jQuery学习笔记5/" class="leancloud_visitors" data-flag-title="jQuery学习笔记5">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="jQuery过滤方法"><a href="#jQuery过滤方法" class="headerlink" title="jQuery过滤方法"></a>jQuery过滤方法</h3><p>除了选择器之外，jQuery还为我们提供了以“方法”（类似于函数方法）形式存在的2种方式：（1）过滤方法；（2）查找方法。</p>
+<p>过滤和查找这2类方法与之前所学到的“选择器”是相互补充的关系。过滤和查找补充了很多使用选择器无法进行的操作，例如选取某一个元素的父元素、获取当前点击位置下的子元素、判断当前元素是否处于动画状态等等。这些都是很常见的操作。</p>
+<p>在jQuery中，常见的过滤方法如下：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hasClass()</td>
+<td>判断所选元素是否含有某个类，返回值为true或false</td>
+</tr>
+<tr>
+<td>eq(n)</td>
+<td>选择元素集合中指定下标元素，下标从0开始（选择器作用）</td>
+</tr>
+<tr>
+<td>is()</td>
+<td>判断所选元素是否有符合某个条件的元素，返回值为true或false</td>
+</tr>
+<tr>
+<td>not()</td>
+<td>选择元素集合中不符合条件的元素（选择器作用）</td>
+</tr>
+<tr>
+<td>filter()</td>
+<td>使用“自定义表达式”来选择符合条件的元素（功能多）</td>
+</tr>
+<tr>
+<td>has()</td>
+<td>使用“自定义表达式”来选择符合条件的元素（功能少）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="类过滤hasClass"><a href="#类过滤hasClass" class="headerlink" title="类过滤hasClass()"></a>类过滤hasClass()</h4><p>类过滤，就是根据元素的类名进行过滤操作。在jQuery中，我们可以使用hasClass()方法实现。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$().hasClass(<span class="string">"类名"</span>)</span><br><span class="line">&lt;!-- hasClass()方法往往用于执行判断操作，判断当前jQuery对象中的某个元素是否包含了指定类名。如果包含，则返回<span class="literal">true</span>；如果不包含，则返回<span class="literal">false</span>。 --&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//案例</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"ul li"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>($(<span class="keyword">this</span>).hasClass(<span class="string">"red"</span>))&#123;</span><br><span class="line">                    $(<span class="keyword">this</span>).css(<span class="string">"color"</span>,<span class="string">"red"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="下标过滤eq"><a href="#下标过滤eq" class="headerlink" title="下标过滤eq()"></a>下标过滤eq()</h4><p>下标过滤，就是使用过滤方法来选取“元素集合”中指定下标位置的某一个元素。在jQuery中，我们使用eq()方法来实现下标过滤。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$().eq(n)</span><br><span class="line">&lt;!-- n是一个正整数，从<span class="number">0</span>开始计算，表示用来选取“元素集合”中下标为n的的某一个元素。这个有点类似于JavaScript中的数组下标。 --&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//案例</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"li"</span>).eq(<span class="number">4</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="keyword">this</span>).css(<span class="string">"color"</span>, <span class="string">"yellow"</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure></p>
+<h4 id="判断过滤is"><a href="#判断过滤is" class="headerlink" title="判断过滤is()"></a>判断过滤is()</h4><p>判断过滤，指的是根据某些条件进行判断来选取符合条件的元素。在jQuery中，我们使用is()方法来实现判断过滤。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$().is(expression)</span><br><span class="line"><span class="comment">/*</span><br><span class="line">参数expression是一个jQuery选择器表达式。</span><br><span class="line"></span><br><span class="line">is()方法用于判断当前选择的元素集合中，是否含有符合条件的元素。如果含有，则返回true；如果不含有，则返回false。</span><br><span class="line"></span><br><span class="line">is()方法跟hasClass()方法类似，也是用来做判断，并不能直接过滤元素。实际上，filter()方法内部也是在调用这个函数。所以，filter()方法原有的规则在这里也适用。</span><br><span class="line">*/</span></span><br><span class="line"><span class="comment">//案例</span></span><br><span class="line"><span class="comment">//判断元素是否隐藏</span></span><br><span class="line">$().is(<span class="string">":visible"</span>)</span><br><span class="line"><span class="comment">//判断元素是否处在动画中（非常重要）</span></span><br><span class="line">$().is(<span class="string">":animated"</span>)</span><br><span class="line"><span class="comment">//判断复选框是否被选中</span></span><br><span class="line">$(<span class="string">"input[type=checkbox]"</span>).is(<span class="string">":checked"</span>)</span><br><span class="line"><span class="comment">//判断是否第1个子元素</span></span><br><span class="line">$(<span class="keyword">this</span>).is(<span class="string">":first-child"</span>)</span><br><span class="line"><span class="comment">//判断文本中是否包含helicopter这个词</span></span><br><span class="line">$().is(<span class="string">":contains('helicopter')"</span>)</span><br><span class="line"><span class="comment">//判断是否包含某些类名</span></span><br><span class="line">$().is(<span class="string">".red,.blue"</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="反向过滤not"><a href="#反向过滤not" class="headerlink" title="反向过滤not()"></a>反向过滤not()</h4><p>使用not()方法来过滤jQuery对象中“不符合条件”的元素，并且返回剩下的元素。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$().not(expression)</span><br><span class="line"><span class="comment">//参数expression是一个jQuery选择器表达式。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//案例</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"ul li"</span>).not(<span class="string">"#red"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">            <span class="comment">/* 等价于代码：</span><br><span class="line">            $("ul li:not(#red)").css("color", "red");</span><br><span class="line">            */</span></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 反向过滤not()方法类似于jQuery的:not()选择器,not()方法也是对jQuery选择器的一种补充，使得我们更加方便灵活地操作元素。*/</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="表达式过滤filter-和has"><a href="#表达式过滤filter-和has" class="headerlink" title="表达式过滤filter()和has()"></a>表达式过滤filter()和has()</h4><p>表达式过滤，就是根据需要使用“自定义表达式”的方式来选取符合条件的元素。这种自定义的表达式，可以是简单的选择器表达式，也可以是复杂的选择器表达式。</p>
+<h5 id="filter-方法"><a href="#filter-方法" class="headerlink" title="filter()方法"></a>filter()方法</h5><p>filter()方法是jQuery中功能最为强大的过滤方法。它可以使用表达式进行过滤，也可以使用函数返回值进行过滤。</p>
+<ol>
+<li><p>表达式过滤</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">filter(expression) <span class="comment">//参数expression是一个jQuery选择器表达式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//案例：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"ul li"</span>).filter(<span class="string">"#red,#yellow"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="keyword">this</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数过滤</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">filter(fn)  <span class="comment">//fn表示函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//案例：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"ul li"</span>)</span><br><span class="line">            .filter(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="keyword">return</span> $(<span class="string">"span"</span>, <span class="keyword">this</span>).length == <span class="number">1</span>;&#125;)</span><br><span class="line">            .css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">        &#125;)</span><br><span class="line"><span class="comment">//filter(function () &#123;return $("span", this).length == 1;&#125;)表示选择在内部子元素中span长度为1的li元素。</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="has-方法"><a href="#has-方法" class="headerlink" title="has()方法"></a>has()方法</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$().has(expression) <span class="comment">//参数expression是一个jQuery选择器表达式。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//案例：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"ul li"</span>).has(<span class="string">"span"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="jQuery查找方法"><a href="#jQuery查找方法" class="headerlink" title="jQuery查找方法"></a>jQuery查找方法</h3><p>在jQuery中查找方法，主要以“当前所选元素”为基点，查找它的父元素、子元素或者兄弟元素等。过滤方法和查找方法的出现，其实就是对jQuery选择器的一种补充，提供更多的方法使得我们更加方便灵活地操作元素。</p>
+<p>过滤方法，就是对所选元素进行进一步地筛选。查找方法，主要以“当前所选元素”为基点，查找它的父元素、子元素或者兄弟元素等。过滤方法和查找方法的出现，其实就是对jQuery选择器的一种补充，提供更多的方法以便我们更加方便灵活地操作元素。</p>
+<p>在jQuery中，常见的查找方法共有5种：<br>（1）查找祖先元素；<br>（2）查找后代元素；<br>（3）向前查找兄弟元素；<br>（4）向后查找兄弟元素；<br>（5）查找所有兄弟元素；</p>
+<h4 id="查找祖先元素"><a href="#查找祖先元素" class="headerlink" title="查找祖先元素"></a>查找祖先元素</h4><p>在jQuery中，为我们提供3种查找祖先元素的方法：<br>（1）parent()；<br>（2）parents()；<br>（3）parentsUntil()；</p>
+<ol>
+<li><p><strong>parent()</strong><br>在jQuery中，我们可以使用parent()方法来查找当前元素的“父元素”。记住，元素只有一个父元素。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">parent(expression)</span><br><span class="line"><span class="comment">//参数expression表示jQuery选择器表达式，用来过滤父元素。当参数省略时，则选择所有的父元素。如果参数不省略，则选择符合条件的父元素。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//案例:</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"p"</span>).parent(<span class="string">".lvye"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">            <span class="comment">//$("p").parent(".lvye")表示选择p元素的父元素，并且这个父元素必须含有类名lvye，不然不会被选中。</span></span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>parents()</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">parents(expression)</span><br><span class="line"><span class="comment">//参数expression表示jQuery选择器表达式字符串，用来过滤祖先元素。当参数省略时，则选择所有的祖先元素。如果参数不省略，则选择符合条件的祖先元素。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//案例:</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> parents = $(<span class="string">"span"</span>).parents()</span><br><span class="line">                              .map(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.tagName; &#125;)</span><br><span class="line">                              .get().join(<span class="string">","</span>);</span><br><span class="line">                alert(<span class="string">"span元素的所有祖先元素为："</span> + parents.toLowerCase());</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>parentsUntil()</strong><br>parentsUntil()方法是对parents()方法的一个补充，它可以查找指定范围的所有祖先元素，相当于在parents()方法返回集合中截取部分祖先元素。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.parentsUntil(selector,filter)</span><br><span class="line"><span class="comment">/*</span><br><span class="line">selector  可选。字符串值，规定在何处停止对祖先元素进行匹配的选择器表达式。</span><br><span class="line">filter  可选。字符串值，包含用于匹配元素的选择器表达式。</span><br><span class="line">*/</span></span><br><span class="line">.parentsUntil(element,filter)</span><br><span class="line"><span class="comment">/*</span><br><span class="line">element 可选。DOM 节点或 jQuery 对象，指示在何处停止对祖先元素的匹配。</span><br><span class="line">filter  可选。字符串值，包含用于匹配元素的选择器表达式。</span><br><span class="line">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//案例：</span></span><br><span class="line">$(<span class="string">"li.item-2"</span>).parentsUntil( $(<span class="string">"ul.level-1"</span>), <span class="string">".yes"</span> )</span><br><span class="line">  .css(<span class="string">"border"</span>, <span class="string">"3px solid blue"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="查找后代元素"><a href="#查找后代元素" class="headerlink" title="查找后代元素"></a>查找后代元素</h4><p>在jQuery中，提供了3种查找后代元素的方法：<br>（1）children()；<br>（2）contents()；<br>（3）find()；</p>
+<ol>
+<li><p><strong>children()方法</strong><br>在jQuery中，我们可以使用children()方法来查找当前元素的“所有子元素”或“部分子元素”。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">children(expression)</span><br><span class="line"></span><br><span class="line"><span class="comment">//案例：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">".wrapper"</span>).hover(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="keyword">this</span>).children(<span class="string">".test"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">            &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="keyword">this</span>).children(<span class="string">".test"</span>).css(<span class="string">"color"</span>, <span class="string">"black"</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>contents()</strong><br>contents()方法也是用来查找子内容的，但它不仅获取子元素，还可以获取文本节点、注释节点等。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.contents()</span><br><span class="line"><span class="comment">//案例：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"p"</span>).contents().filter(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>.nodeType != <span class="number">1</span>; &#125;).wrap(<span class="string">"&lt;b/&gt;"</span>);</span><br><span class="line">        &#125;)</span><br><span class="line"><span class="comment">//找到段落中的所有文本节点，并用粗体标签包装它们。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>find()</strong><br>find()方法能够查找所有后代元素，而children()方法仅能够查找子元素。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">find(expression)</span><br><span class="line"></span><br><span class="line"><span class="comment">//案例：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">".wrapper"</span>).hover(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="keyword">this</span>).find(<span class="string">".test"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">            &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="keyword">this</span>).find(<span class="string">".test"</span>).css(<span class="string">"color"</span>, <span class="string">"black"</span>);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line"><span class="comment">//$(this).find(".test")表示选择当前元素下的class为test的所有“后代元素”，既包括子元素，也包括孙元素等所有后代元素。</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="向前查找兄弟元素"><a href="#向前查找兄弟元素" class="headerlink" title="向前查找兄弟元素"></a>向前查找兄弟元素</h4><p>“向前查找兄弟元素”，就是找到某个元素之前的兄弟元素。在jQuery中，为我们提供了3种向前查找兄弟元素的方法：<br>（1）prev()；<br>（2）prevAll()；<br>（3）prevUntil()；<br>兄弟元素，指的是该元素在同一个父元素下的“同级”元素。</p>
+<ol>
+<li><p><strong>prev()</strong><br>在jQuery中，我们可以使用prev()方法来查找某个元素的前一个“相邻”的兄弟元素。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$().prev()</span><br><span class="line"></span><br><span class="line"><span class="comment">//案例：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#lvye"</span>).prev().css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>prevAll()</strong><br>prevAll()可以查找所选元素前面“所有”同级的兄弟元素。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">prevAll(expression)</span><br><span class="line"><span class="comment">//参数expression表示jQuery选择器表达式字符串，用于过滤匹配元素。当参数省略时，则表示查找所选元素的前面“所有”的兄弟元素；当参数不省略时，则查找所选元素前面“符合条件”的兄弟元素。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//案例：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#lvye"</span>).prevAll().css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>prevUntil()</strong><br>prevUntil()方法介于prev()方法和prevAll()方法之间.<br>prevUntil()方法能够选择前面指定范围的兄弟元素。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">prevUntil(expression)</span><br><span class="line"><span class="comment">//参数expression表示jQuery选择器表达式字符串，用于过滤匹配元素。当参数省略时，则表示查找所选元素的前面“所有”的兄弟元素；当参数不省略时，则查找所选元素前面“符合条件”的兄弟元素。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//案例：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#lvye"</span>).prevUntil(<span class="string">"#until"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">        &#125;)</span><br><span class="line"><span class="comment">//$("#lvye").prevUntil("#until")表示以id为lvye的元素为基点，向前找到id为until的同级兄弟元素，然后选择“这个范围之间”的兄弟元素。</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="向后查找兄弟元素"><a href="#向后查找兄弟元素" class="headerlink" title="向后查找兄弟元素"></a>向后查找兄弟元素</h4><p>“向后查找兄弟元素”，就是找到某个元素之后的兄弟元素。在jQuery中，提供了3种为我们向后查找兄弟元素的方法：<br>（1）next()；<br>（2）nextAll()；<br>（3）nextUntil()；</p>
+<ol>
+<li><p><strong>next()</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$().next()</span><br><span class="line"><span class="comment">//案例：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#lvye"</span>).next().css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>nextAll()</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nextAll(expression)</span><br><span class="line"><span class="comment">//案例：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#lvye"</span>).nextAll().css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>nextUntil()</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nextUntil(expression)</span><br><span class="line"><span class="comment">//案例：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#lvye"</span>).nextUntil(<span class="string">"#until"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">        &#125;)</span><br><span class="line"><span class="comment">//$("#lvye").nextUntil("#until")表示以id为lvye的元素为基点，向后找到id为until的同级兄弟元素，然后选择“这个范围之间”的兄弟元素。</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="查找所有兄弟元素"><a href="#查找所有兄弟元素" class="headerlink" title="查找所有兄弟元素"></a>查找所有兄弟元素</h4><p>查找所有兄弟元素,siblings(),使用siblings()方法来查找兄弟元素，这是不分前后的.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">siblings(expression)</span><br><span class="line"><span class="comment">//案例：</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#lvye"</span>).siblings().css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">        &#125;)</span><br><span class="line"><span class="comment">//$("#lvye").siblings()表示选择id为lvye元素的所有兄弟元素，这里的兄弟元素不分前面和后面。</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#lvye"</span>).siblings(<span class="string">".brother"</span>).css(<span class="string">"color"</span>, <span class="string">"red"</span>);</span><br><span class="line">        &#125;)</span><br><span class="line"><span class="comment">//$("#lvye").siblings(".brother")表示选择id为lvye元素的所有符合条件（即class为brother）兄弟元素，这里的兄弟元素不分前面和后面。</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat.jpg" alt="Xifengxx wechat" style="width: 200px; max-width: 100%;"/>
+    <div>坚持原创技术分享，每天进步1%！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery学习笔记/" rel="tag">#jQuery学习笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/27/jQuery学习笔记4/" rel="next" title="jQuery学习笔记4">
+                <i class="fa fa-chevron-left"></i> jQuery学习笔记4
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/04/jQuery学习笔记6/" rel="prev" title="jQuery学习笔记6 - Event对象的属性和方法">
+                jQuery学习笔记6 - Event对象的属性和方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/29/jQuery学习笔记5/"
+           data-title="jQuery学习笔记5" data-url="http://xifengxx.github.io/2016/04/29/jQuery学习笔记5/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Xifengxx" />
+          <p class="site-author-name" itemprop="name">Xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery过滤方法"><span class="nav-number">1.</span> <span class="nav-text">jQuery过滤方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类过滤hasClass"><span class="nav-number">1.1.</span> <span class="nav-text">类过滤hasClass()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下标过滤eq"><span class="nav-number">1.2.</span> <span class="nav-text">下标过滤eq()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断过滤is"><span class="nav-number">1.3.</span> <span class="nav-text">判断过滤is()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反向过滤not"><span class="nav-number">1.4.</span> <span class="nav-text">反向过滤not()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表达式过滤filter-和has"><span class="nav-number">1.5.</span> <span class="nav-text">表达式过滤filter()和has()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#filter-方法"><span class="nav-number">1.5.1.</span> <span class="nav-text">filter()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#has-方法"><span class="nav-number">1.5.2.</span> <span class="nav-text">has()方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery查找方法"><span class="nav-number">2.</span> <span class="nav-text">jQuery查找方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查找祖先元素"><span class="nav-number">2.1.</span> <span class="nav-text">查找祖先元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查找后代元素"><span class="nav-number">2.2.</span> <span class="nav-text">查找后代元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向前查找兄弟元素"><span class="nav-number">2.3.</span> <span class="nav-text">向前查找兄弟元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向后查找兄弟元素"><span class="nav-number">2.4.</span> <span class="nav-text">向后查找兄弟元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查找所有兄弟元素"><span class="nav-number">2.5.</span> <span class="nav-text">查找所有兄弟元素</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

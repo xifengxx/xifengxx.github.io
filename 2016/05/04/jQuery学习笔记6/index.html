@@ -1,0 +1,1245 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="jQuery学习笔记," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风Web前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="jQuery Event对象的属性和方法jQuery的Event对象用于表示当前文档元素触发的DOM事件，它对JS原生的Event对象进行了封装，从而实现跨浏览器的兼容。
+该对象主要用于获取事件的相关信息，或对该事件进行处理。
+Event 对象的属性
+
+
+属性
+初始版本
+描述
+
+
+
+
+currentTarget
+1.3
+返回事件冒泡阶段中的当前DOM元素。
+
+
+data
+1.1
+返回绑定事件时传入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery学习笔记6 - Event对象的属性和方法">
+<meta property="og:url" content="http://xifengxx.github.io/2016/05/04/jQuery学习笔记6/index.html">
+<meta property="og:site_name" content="西风Web前端">
+<meta property="og:description" content="jQuery Event对象的属性和方法jQuery的Event对象用于表示当前文档元素触发的DOM事件，它对JS原生的Event对象进行了封装，从而实现跨浏览器的兼容。
+该对象主要用于获取事件的相关信息，或对该事件进行处理。
+Event 对象的属性
+
+
+属性
+初始版本
+描述
+
+
+
+
+currentTarget
+1.3
+返回事件冒泡阶段中的当前DOM元素。
+
+
+data
+1.1
+返回绑定事件时传入">
+<meta property="og:updated_time" content="2016-05-04T10:09:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery学习笔记6 - Event对象的属性和方法">
+<meta name="twitter:description" content="jQuery Event对象的属性和方法jQuery的Event对象用于表示当前文档元素触发的DOM事件，它对JS原生的Event对象进行了封装，从而实现跨浏览器的兼容。
+该对象主要用于获取事件的相关信息，或对该事件进行处理。
+Event 对象的属性
+
+
+属性
+初始版本
+描述
+
+
+
+
+currentTarget
+1.3
+返回事件冒泡阶段中的当前DOM元素。
+
+
+data
+1.1
+返回绑定事件时传入">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> jQuery学习笔记6 - Event对象的属性和方法 | 西风Web前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风Web前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/demo" rel="section">
+            
+            作品DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                jQuery学习笔记6 - Event对象的属性和方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-04T15:23:01+08:00" content="2016-05-04">
+              2016-05-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/04/jQuery学习笔记6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/04/jQuery学习笔记6/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/04/jQuery学习笔记6/" class="leancloud_visitors" data-flag-title="jQuery学习笔记6 - Event对象的属性和方法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="jQuery-Event对象的属性和方法"><a href="#jQuery-Event对象的属性和方法" class="headerlink" title="jQuery Event对象的属性和方法"></a>jQuery Event对象的属性和方法</h2><p>jQuery的Event对象用于表示当前文档元素触发的DOM事件，它对JS原生的Event对象进行了封装，从而实现跨浏览器的兼容。</p>
+<p>该对象主要用于获取事件的相关信息，或对该事件进行处理。</p>
+<h3 id="Event-对象的属性"><a href="#Event-对象的属性" class="headerlink" title="Event 对象的属性"></a>Event 对象的属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>初始版本</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currentTarget</td>
+<td>1.3</td>
+<td>返回事件冒泡阶段中的当前DOM元素。</td>
+</tr>
+<tr>
+<td>data</td>
+<td>1.1</td>
+<td>返回绑定事件时传入的附加数据。</td>
+</tr>
+<tr>
+<td>delegateTarget</td>
+<td>1.7</td>
+<td>返回”受委托”调用当前事件处理函数的DOM元素。</td>
+</tr>
+<tr>
+<td>metaKey</td>
+<td>1.0.4</td>
+<td>指示触发事件时是否按下了Meta键。</td>
+</tr>
+<tr>
+<td>namespace</td>
+<td>1.4.3</td>
+<td>返回触发事件时指定的命名空间。</td>
+</tr>
+<tr>
+<td>pageX</td>
+<td>1.0.4</td>
+<td>返回鼠标相对于当前文档的x坐标。</td>
+</tr>
+<tr>
+<td>pageY</td>
+<td>1.0.4</td>
+<td>返回鼠标相对于当前文档的y坐标。</td>
+</tr>
+<tr>
+<td>relatedTarget</td>
+<td>1.1.4</td>
+<td>返回事件涉及到的其它DOM元素。</td>
+</tr>
+<tr>
+<td>result</td>
+<td>1.3</td>
+<td>返回当前事件绑定的上一个事件处理函数的返回值。</td>
+</tr>
+<tr>
+<td>target</td>
+<td>1.3</td>
+<td>最初触发该事件的DOM元素。</td>
+</tr>
+<tr>
+<td>timeStamp</td>
+<td>1.2.6</td>
+<td>返回事件触发的当前时间与1970年1月1日午夜之间的毫秒数。</td>
+</tr>
+<tr>
+<td>type</td>
+<td>1.0</td>
+<td>返回事件的类型。例如:”click”、”focus”等。</td>
+</tr>
+<tr>
+<td>which</td>
+<td>1.1.3</td>
+<td>返回触发事件时按下的鼠标按钮或键盘按键。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="data属性"><a href="#data属性" class="headerlink" title="data属性"></a>data属性</h4><p>data属性用于返回绑定当前事件处理函数时传递的附加数据。</p>
+<p>data属性的返回值是任意类型，返回绑定当前事件处理函数时传递的附加数据。其类型取决于在绑定当前事件处理函数时所传入的附加数据的类型。<br>如果绑定时没有传入附加数据，则返回undefined。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 附加数据可以为任意类型</span></span><br><span class="line"><span class="keyword">var</span> userObj = &#123; name: <span class="string">"CodePlayer"</span>, age: <span class="number">18</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为所有p元素绑定click事件，并传入附加数据(user)</span></span><br><span class="line">$(<span class="string">"p"</span>).on( <span class="string">"click"</span>, userObj, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    alert( event.data.name ); <span class="comment">// CodePlayer</span></span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure></p>
+<h4 id="delegateTarget属性"><a href="#delegateTarget属性" class="headerlink" title="delegateTarget属性"></a>delegateTarget属性</h4><p>delegateTarget属性用于返回负责绑定当前被调用的事件处理函数的DOM元素。</p>
+<p>delegateTarget属性最常用于事件函数delegate()、 on()添加的委托事件中，用于返回受委托的DOM元素。</p>
+<p>对于bind()、 live()、 click()等”非委托”事件函数而言，该属性的返回值等于currentTarget属性的值，也就是返回事件冒泡阶段中的当前DOM元素。</p>
+<p>delegateTarget属性的返回值是Element类型，返回”受委托”绑定当前事件处理函数的的DOM元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 为id为element的元素中的所有span元素绑定click事件</span><br><span class="line">$(&quot;#element&quot;).on( &quot;click&quot;, &quot;span&quot;, function(event)&#123;</span><br><span class="line">    // event.delegateTarget 就是id为element的DOM元素</span><br><span class="line">    // this 就是当前触发事件的span元素</span><br><span class="line">    alert( event.delegateTarget === this); // false </span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">// 为id为element的元素中的所有span元素绑定click事件</span><br><span class="line">$(&quot;#element span&quot;).bind( &quot;click&quot;, function(event)&#123;</span><br><span class="line">    // event.delegateTarget 就是当前触发事件的span元素</span><br><span class="line">    // this 就是当前触发事件的span元素</span><br><span class="line">    alert( event.delegateTarget === this ); // true</span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure></p>
+<h4 id="namespace"><a href="#namespace" class="headerlink" title="namespace"></a>namespace</h4><p>namespace属性用于返回触发该事件时所指定的命名空间。</p>
+<p>当需要为同一个元素、同一种事件类型绑定多个事件处理函数时，一般情况下，触发某个事件，就会触发执行与之对应的所有事件处理函数；解除某种类型的事件绑定，就会解除该事件类型绑定的所有事件处理函数。</p>
+<p>jQuery中的事件函数可以在绑定事件处理函数时，为每个事件类型定义一个或多个命名空间。使用命名空间，我们就可以只触发执行指定命名空间下的事件处理函数，或者只移除指定命名空间下绑定的事件处理函数。</p>
+<p>namespace属性的返回值是String类型，返回触发该事件时所指定的命名空间。<br>如果触发事件时没有指定命名空间，则返回空字符串(“”)。</p>
+<p>jQuery中事件类型的命名空间有点类似于类名选择器(.className)。在绑定事件时，可以在事件类型后定义一个或多个命名空间；在触发事件或移除事件时，可以只触发或移除包含指定命名空间的事件处理函数。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>CodePlayer<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="comment">// 事件处理函数，弹出警告框并显示命名空间</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params"> event </span>)</span>&#123;</span><br><span class="line">    alert( event.namespace );</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> $p = $(<span class="string">"p"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// A：为所有p元素绑定click事件，定义在abc和foo两个命名空间下</span></span><br><span class="line">$p.on( <span class="string">"click.abc.foo"</span>, handler );</span><br><span class="line"></span><br><span class="line"><span class="comment">// B：为所有p元素绑定click事件，定义在test命名空间下</span></span><br><span class="line">$p.on( <span class="string">"click.test"</span>, handler );</span><br><span class="line"></span><br><span class="line"><span class="comment">// C：为所有p元素绑定click事件，定义在new和foo两个命名空间下</span></span><br><span class="line">$p.on( <span class="string">"click.new.foo"</span>, handler );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行所有的click事件处理函数，不限定命名空间 (触发A、B、C)</span></span><br><span class="line">$p.trigger( <span class="string">"click"</span> ); <span class="comment">// ""</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行定义在abc命名空间下的click事件处理函数 (触发A)</span></span><br><span class="line">$p.trigger( <span class="string">"click.abc"</span> ); <span class="comment">// "abc"</span></span><br><span class="line"><span class="comment">// 执行定义在foo命名空间下的click事件处理函数 (触发A和C)</span></span><br><span class="line">$p.trigger( <span class="string">"click.foo"</span> ); <span class="comment">// "foo"</span></span><br><span class="line"><span class="comment">// 执行同时定义在foo和abc命名空间下的click事件处理函数 (触发A)</span></span><br><span class="line">$p.trigger( <span class="string">"click.foo.abc"</span> ); <span class="comment">// "abc.foo"</span></span><br><span class="line"><span class="comment">// 执行定义在test命名空间下的click事件处理函数 (触发C)</span></span><br><span class="line">$p.trigger( <span class="string">"click.test"</span> ); <span class="comment">// "test"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除所有定义在foo命名空间下的click事件处理函数</span></span><br><span class="line">$p.off( <span class="string">"click.foo"</span> );</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="which属性"><a href="#which属性" class="headerlink" title="which属性"></a>which属性</h4><p>which属性用于返回触发当前事件时按下的键盘按键或鼠标按钮。</p>
+<p>对于键盘和鼠标事件，该属性用于确定你按下的是哪一个键盘按键或鼠标按钮。</p>
+<p>which属性对DOM原生的event.keyCode和event.charCode进行了标准化。</p>
+<p>适用的事件类型主要有键盘事件：keypress、keydown、keyup，以及鼠标事件：mouseup、mousedown。</p>
+<p><strong>返回值</strong><br>which属性的返回值是<strong>Number类型</strong>，返回触发当前事件时按下的键盘按键或鼠标按钮。</p>
+<p>在mousedown、mouseup事件中，event.which属性返回的是对应鼠标按钮的映射代码值(相当于event.button)。以下是主要的鼠标按钮映射代码对应表。</p>
+<table>
+<thead>
+<tr>
+<th>event.which属性值</th>
+<th>对应的鼠标按钮</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>鼠标左键</td>
+</tr>
+<tr>
+<td>2</td>
+<td>鼠标中键(滚轮键)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>鼠标右键</td>
+</tr>
+</tbody>
+</table>
+<p>在keypress事件中，event.which属性返回的是输入的字符的Unicode值(相当于event.charCode)。以下是常用的字符Unicode代码对应表。更多字符的Unicode代码，请参见完整的ASCII编码表(Unicode兼容ASCII)。</p>
+<table>
+<thead>
+<tr>
+<th>which属性值(或范围)</th>
+<th>对应的输入字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>48 - 57</td>
+<td>对应字符 0 - 9</td>
+</tr>
+<tr>
+<td>65 - 90</td>
+<td>对应字符 A - Z</td>
+</tr>
+<tr>
+<td>97 - 122</td>
+<td>对应字符 a - z</td>
+</tr>
+</tbody>
+</table>
+<p>在keydown、keyup事件中，event.which属性返回的是对应按键的映射代码值(相当于event.keyCode)。以下是常用的键盘按键映射代码的对应表：</p>
+<table>
+<thead>
+<tr>
+<th>which属性值(或范围)</th>
+<th>对应的键盘按键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>Backspace键</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Tab键</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Enter键</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Shift键</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Ctrl键</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Alt键</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Caps Lock键(大小写锁定)</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Esc键</td>
+</tr>
+<tr>
+<td>33 - 36</td>
+<td>对应按键 PageUp、PageDown、End、Home</td>
+</tr>
+<tr>
+<td>37 - 40</td>
+<td>对应按键 左、上、右、下(方向键)</td>
+</tr>
+<tr>
+<td>45 - 46</td>
+<td>对应按键 Insert、Delete</td>
+</tr>
+<tr>
+<td>48 - 57</td>
+<td>对应按键 0 - 9(非小键盘)</td>
+</tr>
+<tr>
+<td>65 - 90</td>
+<td>对应按键 A - Z</td>
+</tr>
+<tr>
+<td>91</td>
+<td>Windows键</td>
+</tr>
+<tr>
+<td>96 - 105</td>
+<td>对应按键 0 - 9(小键盘)</td>
+</tr>
+<tr>
+<td>106、107、109、110、111</td>
+<td>对应按键*、+、-、.、/(小键盘)</td>
+</tr>
+<tr>
+<td>112 - 123</td>
+<td>对应按键 F1 - F12</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id="msg"&gt;&lt;/div&gt;</span><br><span class="line">// 为当前文档绑定keydown和mousedown两种事件</span><br><span class="line">// 检测鼠标按下了那些键</span><br><span class="line">// 检测键盘按下了那些字母按键</span><br><span class="line">$(document).bind("keydown mousedown", function(event)&#123;</span><br><span class="line">    var msg = '';</span><br><span class="line">    if( event.type == "mousedown" )&#123; // 鼠标按下事件</span><br><span class="line">        var map = &#123;"1": "左", "2":"中", "3":"右"&#125;;</span><br><span class="line">        msg = '你按下了鼠标[' + map[event.which] + ']键';</span><br><span class="line">    &#125;else&#123; // 键盘按下事件</span><br><span class="line">        if(event.which &gt;= 65 &amp;&amp; event.which &lt;= 90)&#123;</span><br><span class="line">            msg = '你按下了键盘[' + String.fromCharCode(event.which) + ']键';</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(msg)&#123;</span><br><span class="line">        $("#msg").prepend( msg + '&lt;br&gt;');</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Event-对象的方法"><a href="#Event-对象的方法" class="headerlink" title="Event 对象的方法"></a>Event 对象的方法</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>初始版本</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isDefaultPrevented()</td>
+<td>1.3</td>
+<td>是否调用了preventDefault()方法。</td>
+</tr>
+<tr>
+<td>isImmediatePropagationStopped()</td>
+<td>1.3</td>
+<td>是否调用了stopImmediatePropagation()方法。</td>
+</tr>
+<tr>
+<td>isPropagationStopped()</td>
+<td>1.3</td>
+<td>是否调用了stopPropagation()方法。</td>
+</tr>
+<tr>
+<td>preventDefault()</td>
+<td>1.0</td>
+<td>阻止触发事件的默认行为。</td>
+</tr>
+<tr>
+<td>stopImmediatePropagation()</td>
+<td>1.3</td>
+<td>阻止该元素当前触发事件剩余的事件处理函数的执行，并停止事件的冒泡传递。</td>
+</tr>
+<tr>
+<td>stopPropagation()</td>
+<td>1.0</td>
+<td>停止事件的冒泡传递。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="preventDefault-函数"><a href="#preventDefault-函数" class="headerlink" title="preventDefault() 函数"></a>preventDefault() 函数</h4><p>preventDefault()函数用于阻止当前触发事件的默认行为。</p>
+<p>在HTML文档中，当我们触发某些DOM元素的特定事件时，可以执行该元素的默认行为。比如链接的click事件：当我们点击一个链接时，就会跳转到指定的URL。再比如：<form>表单元素的submit事件，当我们触发表单的提交事件时，就可以提交当前表单。</form></p>
+<p>preventDefault()函数没有返回值，也可以说返回值为undefined。<br>如果使用jQuery绑定的事件处理函数的返回值为false，jQuery也会阻止触发元素的默认行为。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://www.365mini.com"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"username"</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">type</span>=<span class="string">"text"</span> /&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.365mini.com"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- javascript代码 --&gt;</span></span><br><span class="line">$("a").click( function(event)&#123;</span><br><span class="line">    if( !confirm("你确定要删除?") )&#123;</span><br><span class="line">        event.preventDefault();  // 阻止链接默认的URL跳转行为</span><br><span class="line">        // return false; // 函数的返回值为false，也可以起到阻止默认行为的效果</span><br><span class="line">    &#125;   </span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$("form").submit( function(event)&#123;</span><br><span class="line">    if( !$("#username").val() )&#123;</span><br><span class="line">        alert("username is required!");</span><br><span class="line">        event.preventDefault(); // 阻止默认的表单提交行为</span><br><span class="line">        // return false; // 函数的返回值为false，也可以起到阻止默认行为的效果</span><br><span class="line">    &#125;   </span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure></p>
+<h4 id="stopPropagation-函数"><a href="#stopPropagation-函数" class="headerlink" title="stopPropagation() 函数"></a>stopPropagation() 函数</h4><p>stopPropagation()函数用于阻止当前事件在DOM树上冒泡。</p>
+<p>根据DOM事件流机制，在元素上触发的大多数事件都会冒泡传递到该元素的所有祖辈元素上，如果这些祖辈元素上也绑定了相应的事件处理函数，就会触发执行这些函数。</p>
+<p>使用stopPropagation()函数可以阻止当前事件向祖辈元素的冒泡传递，也就是说该事件不会触发执行当前元素的任何祖辈元素的任何事件处理函数。</p>
+<p>该函数只阻止事件向祖辈元素的传播，不会阻止该元素自身绑定的其他事件处理函数的函数。event.stopImmediatePropagation()不仅会阻止事件向祖辈元素的传播，还会阻止该元素绑定的其他(尚未执行的)事件处理函数的执行。</p>
+<p>此外，由于live()函数并不是将事件处理函数直接绑定到自己身上，而是”委托”绑定到祖辈元素上，由祖辈元素来触发执行。live()函数会先一次性冒泡到文档的顶部，然后为符合条件的元素触发事件。因此，<strong>stopPropagation()函数无法阻止live事件的冒泡。</strong></p>
+<p>同样地，delegate()函数也是”委托事件函数”，只有事件冒泡传递到”受委托”的祖辈元素才会被触发执行。因此，stopPropagation()函数无法阻止该元素到”受委托”的祖辈元素之间的事件冒泡。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>段落文本内容</span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点击"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- javascript --&gt;</span></span><br><span class="line">// 为所有div元素绑定click事件</span><br><span class="line">$("div").click( function(event)&#123;</span><br><span class="line">    alert("div-click");</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">//为所有p元素绑定click事件</span><br><span class="line">$("p").click( function(event)&#123;</span><br><span class="line">    alert("p-click");</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">//为所有button元素绑定click事件</span><br><span class="line">$(":button").click( function(event)&#123;</span><br><span class="line">    alert("button-click");</span><br><span class="line">    // 阻止事件冒泡到DOM树上</span><br><span class="line">    event.stopPropagation(); // 只执行button的click，如果注释掉该行，将执行button、p和div的click   </span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure></p>
+<h4 id="stopImmediatePropagation-函数"><a href="#stopImmediatePropagation-函数" class="headerlink" title="stopImmediatePropagation() 函数"></a>stopImmediatePropagation() 函数</h4><p>stopImmediatePropagation()函数用于阻止剩余的事件处理函数的执行，并防止当前事件在DOM树上冒泡。</p>
+<p>使用stopImmediatePropagation()函数可以阻止当前事件向祖辈元素的冒泡传递，也就是说该事件不会触发执行当前元素的任何祖辈元素的任何事件处理函数。<br>此外，与event.stopPropagation()函数相比，stopImmediatePropagation()函数还会阻止该元素剩余的其他事件处理函数的执行。</p>
+<p>此外，与event.stopPropagation()函数相比，stopImmediatePropagation()函数还会阻止该元素剩余的其他事件处理函数的执行。</p>
+<p>此外，由于live()函数并不是将事件处理函数直接绑定到自己身上，而是”委托”绑定到祖辈元素上，由祖辈元素来触发执行。live()函数会先一次性冒泡到文档的顶部，然后为符合条件的元素触发事件。因此，<strong>stopImmediatePropagation()函数无法阻止live事件的冒泡。</strong></p>
+<p>同样地，delegate()函数也是”委托事件函数”，只有事件冒泡传递到”受委托”的祖辈元素才会被触发执行。因此，stopImmediatePropagation()函数无法阻止该元素到”受委托”的祖辈元素之间的事件冒泡。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat.jpg" alt="Xifengxx wechat" style="width: 200px; max-width: 100%;"/>
+    <div>坚持原创技术分享，每天进步1%！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery学习笔记/" rel="tag">#jQuery学习笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/29/jQuery学习笔记5/" rel="next" title="jQuery学习笔记5">
+                <i class="fa fa-chevron-left"></i> jQuery学习笔记5
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/04/jQuery学习笔记7/" rel="prev" title="jQuery学习笔记7 - Ajax(1)">
+                jQuery学习笔记7 - Ajax(1) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/04/jQuery学习笔记6/"
+           data-title="jQuery学习笔记6 - Event对象的属性和方法" data-url="http://xifengxx.github.io/2016/05/04/jQuery学习笔记6/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Xifengxx" />
+          <p class="site-author-name" itemprop="name">Xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-Event对象的属性和方法"><span class="nav-number">1.</span> <span class="nav-text">jQuery Event对象的属性和方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Event-对象的属性"><span class="nav-number">1.1.</span> <span class="nav-text">Event 对象的属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#data属性"><span class="nav-number">1.1.1.</span> <span class="nav-text">data属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#delegateTarget属性"><span class="nav-number">1.1.2.</span> <span class="nav-text">delegateTarget属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#namespace"><span class="nav-number">1.1.3.</span> <span class="nav-text">namespace</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#which属性"><span class="nav-number">1.1.4.</span> <span class="nav-text">which属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Event-对象的方法"><span class="nav-number">1.2.</span> <span class="nav-text">Event 对象的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#preventDefault-函数"><span class="nav-number">1.2.1.</span> <span class="nav-text">preventDefault() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stopPropagation-函数"><span class="nav-number">1.2.2.</span> <span class="nav-text">stopPropagation() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#stopImmediatePropagation-函数"><span class="nav-number">1.2.3.</span> <span class="nav-text">stopImmediatePropagation() 函数</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

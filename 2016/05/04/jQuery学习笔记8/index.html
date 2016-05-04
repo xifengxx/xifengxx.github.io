@@ -1,0 +1,1027 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="jQuery学习笔记," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风Web前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="jQuery的AJAX方法工具方法——用于协助发送或处理AJAX请求，简化AJAX操作.
+jQuery.ajaxPrefilter()函数jQuery.ajaxPrefilter()函数用于指定预先处理Ajax参数选项的回调函数。在所有参数选项被jQuery.ajax()函数处理之前，你可以使用该函数设置的回调函数来预先更改任何参数选项。
+你还可以指定数据类型(dataType)，从而只预先处理指">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery学习笔记8 - Ajax(2)">
+<meta property="og:url" content="http://xifengxx.github.io/2016/05/04/jQuery学习笔记8/index.html">
+<meta property="og:site_name" content="西风Web前端">
+<meta property="og:description" content="jQuery的AJAX方法工具方法——用于协助发送或处理AJAX请求，简化AJAX操作.
+jQuery.ajaxPrefilter()函数jQuery.ajaxPrefilter()函数用于指定预先处理Ajax参数选项的回调函数。在所有参数选项被jQuery.ajax()函数处理之前，你可以使用该函数设置的回调函数来预先更改任何参数选项。
+你还可以指定数据类型(dataType)，从而只预先处理指">
+<meta property="og:updated_time" content="2016-05-04T15:34:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery学习笔记8 - Ajax(2)">
+<meta name="twitter:description" content="jQuery的AJAX方法工具方法——用于协助发送或处理AJAX请求，简化AJAX操作.
+jQuery.ajaxPrefilter()函数jQuery.ajaxPrefilter()函数用于指定预先处理Ajax参数选项的回调函数。在所有参数选项被jQuery.ajax()函数处理之前，你可以使用该函数设置的回调函数来预先更改任何参数选项。
+你还可以指定数据类型(dataType)，从而只预先处理指">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> jQuery学习笔记8 - Ajax(2) | 西风Web前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风Web前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/demo" rel="section">
+            
+            作品DEMO
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                jQuery学习笔记8 - Ajax(2)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-04T21:23:01+08:00" content="2016-05-04">
+              2016-05-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/04/jQuery学习笔记8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/04/jQuery学习笔记8/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/04/jQuery学习笔记8/" class="leancloud_visitors" data-flag-title="jQuery学习笔记8 - Ajax(2)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="jQuery的AJAX方法"><a href="#jQuery的AJAX方法" class="headerlink" title="jQuery的AJAX方法"></a>jQuery的AJAX方法</h3><p>工具方法——用于协助发送或处理AJAX请求，简化AJAX操作.</p>
+<h4 id="jQuery-ajaxPrefilter-函数"><a href="#jQuery-ajaxPrefilter-函数" class="headerlink" title="jQuery.ajaxPrefilter()函数"></a>jQuery.ajaxPrefilter()函数</h4><p>jQuery.ajaxPrefilter()函数用于指定预先处理Ajax参数选项的回调函数。<br>在所有参数选项被jQuery.ajax()函数处理之前，你可以使用该函数设置的回调函数来预先更改任何参数选项。</p>
+<p>你还可以指定数据类型(dataType)，从而只预先处理指定数据类型的参数选项。<br>该函数可以调用多次，以便于为不同数据类型的AJAX请求指定不同的回调函数。</p>
+<p><strong>语法</strong><br><code>jQuery.ajaxPrefilter( [ dataType ,] handler )</code></p>
+<ul>
+<li>dataType： 可选/String类型<br>一个或多个用空格隔开的数据类型所组成的字符串。如果未指定该参数，则表示所有数据类型。可用的数据类型为”xml”、 “html”、 “text”、 “json”、 “jsonp”、 “script”。该字符串为它们之间的任意组合(多种类型用空格隔开)，例如：”xml”、 “text html”、 “script json jsonp”。</li>
+<li>handler：Function类型<br>用于预处理参数选项的回调函数。它有以下3个参数：<br>– options：(Object对象)当前AJAX请求的所有参数选项。<br>– originalOptions：(Object对象)传递给$.ajax()方法的未经修改的参数选项。<br>– jqXHR：当前请求的jqXHR对象(经过jQuery封装的XMLHttpRequest对象)。</li>
+<li>jQuery.ajaxPrefilter()函数没有返回值，或者说其返回值为undefined。</li>
+</ul>
+<p>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置AJAX的全局默认选项</span></span><br><span class="line">$.ajaxSetup( &#123;</span><br><span class="line">    url: <span class="string">"/index.html"</span> , <span class="comment">// 默认URL</span></span><br><span class="line">    aysnc: <span class="literal">false</span> , <span class="comment">// 默认同步加载</span></span><br><span class="line">    type: <span class="string">"POST"</span> , <span class="comment">// 默认使用POST方式</span></span><br><span class="line">    headers: &#123; <span class="comment">// 默认添加请求头</span></span><br><span class="line">        <span class="string">"Author"</span>: <span class="string">"CodePlayer"</span> ,</span><br><span class="line">        <span class="string">"Powered-By"</span>: <span class="string">"CodePlayer"</span></span><br><span class="line">    &#125; ,</span><br><span class="line">    error: <span class="function"><span class="keyword">function</span>(<span class="params">jqXHR, textStatus, errorMsg</span>)</span>&#123; <span class="comment">// 出错时默认的处理函数</span></span><br><span class="line">        <span class="comment">// 提示形如：发送AJAX请求到"/index.html"时出错[404]：Not Found</span></span><br><span class="line">        alert( <span class="string">'发送AJAX请求到"'</span> + <span class="keyword">this</span>.url + <span class="string">'"时出错['</span> + jqXHR.status + <span class="string">']：'</span> + errorMsg );        </span><br><span class="line">    &#125;</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 指定预处理参数选项的函数</span></span><br><span class="line">$.ajaxPrefilter( <span class="function"><span class="keyword">function</span>(<span class="params">options, originalOptions, jqXHR</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// options对象 包括accepts、crossDomain、contentType、url、async、type、headers、error、dataType等许多参数选项</span></span><br><span class="line">    <span class="comment">// originalOptions对象 就是你为$.ajax()方法传递的参数对象，也就是 &#123; url: "/index.php" &#125;</span></span><br><span class="line">    <span class="comment">// jqXHR对象 就是经过jQuery封装的XMLHttpRequest对象(保留了其本身的属性和方法)</span></span><br><span class="line">    options.type = <span class="string">"GET"</span>; <span class="comment">// 将请求方式改为GET</span></span><br><span class="line">    options.headers = &#123; &#125;; <span class="comment">// 清空自定义的请求头</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行AJAX请求</span></span><br><span class="line">$.ajax( &#123;</span><br><span class="line">    url: <span class="string">"/index.php"</span></span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery-ajaxSetup-函数"><a href="#jQuery-ajaxSetup-函数" class="headerlink" title="jQuery.ajaxSetup() 函数"></a>jQuery.ajaxSetup() 函数</h4><p>jQuery.ajaxSetup()函数用于设置AJAX的全局默认设置。</p>
+<p>该函数用于更改jQuery中AJAX请求的默认设置选项。之后执行的所有AJAX请求，如果对应的选项参数没有设置，将使用更改后的默认设置。</p>
+<p><strong>语法</strong><br><code>jQuery.ajaxSetup( settings )</code></p>
+<ul>
+<li>settings:    Object类型 一个对象，其中的每个属性表示需要更改默认设置的选项，属性值表示更改后的默认值。</li>
+</ul>
+<p>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置AJAX的全局默认选项</span></span><br><span class="line">$.ajaxSetup( &#123;</span><br><span class="line">    url: <span class="string">"/index.html"</span> , <span class="comment">// 默认URL</span></span><br><span class="line">    aysnc: <span class="literal">false</span> , <span class="comment">// 默认同步加载</span></span><br><span class="line">    type: <span class="string">"POST"</span> , <span class="comment">// 默认使用POST方式</span></span><br><span class="line">    headers: &#123; <span class="comment">// 默认添加请求头</span></span><br><span class="line">        <span class="string">"Author"</span>: <span class="string">"CodePlayer"</span> ,</span><br><span class="line">        <span class="string">"Powered-By"</span>: <span class="string">"CodePlayer"</span></span><br><span class="line">    &#125; ,</span><br><span class="line">    error: <span class="function"><span class="keyword">function</span>(<span class="params">jqXHR, textStatus, errorMsg</span>)</span>&#123; <span class="comment">// 出错时默认的处理函数</span></span><br><span class="line">        <span class="comment">// jqXHR 是经过jQuery封装的XMLHttpRequest对象</span></span><br><span class="line">        <span class="comment">// textStatus 可能为： null、"timeout"、"error"、"abort"或"parsererror"</span></span><br><span class="line">        <span class="comment">// errorMsg 可能为： "Not Found"、"Internal Server Error"等</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 提示形如：发送AJAX请求到"/index.html"时出错[404]：Not Found</span></span><br><span class="line">        alert( <span class="string">'发送AJAX请求到"'</span> + <span class="keyword">this</span>.url + <span class="string">'"时出错['</span> + jqXHR.status + <span class="string">']：'</span> + errorMsg );        </span><br><span class="line">    &#125;</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line"><span class="comment">// 未设置任何参数，但url、async、type、headers、error等参数的默认值均已被$.ajaxSetup()更改(如上)</span></span><br><span class="line">$.ajax( );</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery-param-函数"><a href="#jQuery-param-函数" class="headerlink" title="jQuery.param() 函数"></a>jQuery.param() 函数</h4><p>jQuery.param()函数用于<strong>将一个JS数组或纯粹的对象序列化为字符串值，以便用于URL查询字符串或AJAX请求。</strong></p>
+<p>如果传入的不是数组或”纯粹的对象”，则返回空字符串(“”)；如果传入的是null、undefined等无法访问属性的值，则直接报错。</p>
+<p>所谓”纯粹的对象”，就是通过{}或new Object()自行创建的对象。JS内置的Boolean、Number、String、Date、RegExp、Function、Window等类型的对象都不算是”纯粹的对象”。</p>
+<p>返回的字符串已经过URL编码处理(采用的字符集为UTF-8)。</p>
+<p><strong>语法</strong><br><code>jQuery.param( obj [, traditional ] )</code></p>
+<ul>
+<li>obj: String类型 需要被序列化的JS对象。</li>
+<li>traditional: Boolean类型 指示是否执行一个传统的”浅层”序列化。如果为false，它将递归处理包含嵌套内容的深层对象；如果为true，则对属性值或元素直接浅层处理，不进行递归处理。</li>
+<li>jQuery.param()函数的返回值为String类型，返回解析指定的数组或对象的编码字符串。</li>
+</ul>
+<p>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> v1 = $.param( <span class="literal">true</span> ); <span class="comment">// ""</span></span><br><span class="line"><span class="keyword">var</span> v2 = $.param( <span class="number">100</span> ); <span class="comment">// ""</span></span><br><span class="line"><span class="keyword">var</span> v3 = $.param( <span class="number">12.34</span> ); <span class="comment">// ""</span></span><br><span class="line"><span class="keyword">var</span> v4 = $.param( <span class="string">""</span> ); <span class="comment">// ""</span></span><br><span class="line"><span class="keyword">var</span> v5 = $.param( <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="number">18</span>; &#125; ); <span class="comment">// ""</span></span><br><span class="line"><span class="keyword">var</span> v6 = $.param( <span class="regexp">/\d+/</span> ); <span class="comment">// ""</span></span><br><span class="line"><span class="keyword">var</span> v7 = $.param( <span class="keyword">new</span> <span class="built_in">Date</span>() ); <span class="comment">// ""</span></span><br><span class="line"><span class="keyword">var</span> v8 = $.param( <span class="literal">null</span> ); <span class="comment">// 报错</span></span><br><span class="line"><span class="keyword">var</span> v9 = $.param( <span class="literal">undefined</span> ); <span class="comment">// 报错</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 字符串将被看作一个字符数组</span></span><br><span class="line"><span class="keyword">var</span> v10 = $.param( <span class="string">"name"</span> ); <span class="comment">// "0=n&amp;1=a&amp;2=m&amp;3=e"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> v11 = $.param( &#123; name:<span class="string">"CodePlayer"</span>, age:<span class="number">18</span> &#125; ); <span class="comment">// "name=CodePlayer&amp;age=18"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> array = [</span><br><span class="line">    &#123; name: <span class="string">"name"</span>, value: <span class="string">"张三"</span> &#125;,</span><br><span class="line">    &#123; name: <span class="string">"age"</span>, value: <span class="number">18</span>, extra: <span class="string">"忽略该属性"</span> &#125;,</span><br><span class="line">    &#123; name: <span class="string">"grade"</span> &#125;, <span class="comment">// 没有value属性，则value值为undefined，将被转为空字符串""</span></span><br><span class="line">    &#123; name: <span class="string">"orderId"</span>, value: <span class="number">2</span> &#125;,</span><br><span class="line">    &#123; name: <span class="string">"orderId"</span>, value: <span class="number">3</span> &#125;,</span><br><span class="line">];</span><br><span class="line"><span class="keyword">var</span> v12 = $.param( array ); <span class="comment">// "name=%E5%BC%A0%E4%B8%89&amp;age=18&amp;grade=&amp;orderId=2&amp;orderId=3"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// jQuery将数组的每个元素视作对象，并调用其name和value属性</span></span><br><span class="line"><span class="comment">// 由于这些元素没有name属性，所以为undefined，并被转为字符串"undefined"</span></span><br><span class="line"><span class="comment">// 由于这些元素没有value属性，所以为undefined，并被转为空字符串""</span></span><br><span class="line"><span class="keyword">var</span> v13 = $.param( [ <span class="string">"name"</span>, <span class="number">2</span>, <span class="number">3</span> ] ); <span class="comment">// "undefined=&amp;undefined=&amp;undefined="</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> v14 = $.param( &#123; </span><br><span class="line">    name:<span class="string">"Jim"</span>,</span><br><span class="line">    age: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="number">18</span>; &#125;</span><br><span class="line">&#125; );</span><br><span class="line"><span class="comment">// 1.3之前返回："name=Jim&amp;age=function+()%7B+return+18%3B+%7D"</span></span><br><span class="line"><span class="comment">// 1.3+返回："name=Jim&amp;age=18"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回的字符串已经过URL编码，原始字符串为："name=CodePlayer&amp;age=18&amp;uid[]=2&amp;uid[]=3&amp;uid[]=5"</span></span><br><span class="line"><span class="keyword">var</span> complexV = $.param( obj, <span class="literal">false</span> ); <span class="comment">// "name=CodePlayer&amp;age=18&amp;uid%5B%5D=2&amp;uid%5B%5D=3&amp;uid%5B%5D=5"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 传统的浅层序列化</span></span><br><span class="line"><span class="keyword">var</span> simpleV = $.param( obj, <span class="literal">true</span> ); <span class="comment">// "name=CodePlayer&amp;age=18&amp;uid=2&amp;uid=3&amp;uid=5"</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery-serialize-函数"><a href="#jQuery-serialize-函数" class="headerlink" title="jQuery.serialize() 函数"></a>jQuery.serialize() 函数</h4><p>serialize()函数用于序列化一组表单元素，将表单内容编码为用于提交的字符串。</p>
+<p>serialize()函数常用于将表单内容序列化，以便用于AJAX提交。</p>
+<p>该函数主要根据用于提交的有效表单控件的name和value，将它们拼接为一个可直接用于表单提交的文本字符串，该字符串已经过标准的URL编码处理(字符集编码为UTF-8)。</p>
+<p>该函数不会序列化不需要提交的表单控件，这和常规的表单提交行为是一致的。例如：不在<form>标签内的表单控件不会被提交、没有name属性的表单控件不会被提交、带有disabled属性的表单控件不会被提交、没有被选中的表单控件不会被提交。</form></p>
+<p><strong>语法</strong><br><code>jQueryObject.serialize( )</code></p>
+<p>示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">//html</span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">"myForm"</span> <span class="attr">action</span>=<span class="string">"http://www.365mini.com"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"uid"</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">value</span>=<span class="string">"1"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"张三"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"123456"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"grade"</span> <span class="attr">id</span>=<span class="string">"grade"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>一年级<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>二年级<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"3"</span> <span class="attr">selected</span>=<span class="string">"selected"</span>&gt;</span>三年级<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"4"</span>&gt;</span>四年级<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"5"</span>&gt;</span>五年级<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"6"</span>&gt;</span>六年级<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">checked</span>=<span class="string">"checked"</span> <span class="attr">value</span>=<span class="string">"1"</span> /&gt;</span>男</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"0"</span> /&gt;</span>女</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">checked</span>=<span class="string">"checked"</span> <span class="attr">value</span>=<span class="string">"1"</span> /&gt;</span>游泳</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">checked</span>=<span class="string">"checked"</span> <span class="attr">value</span>=<span class="string">"2"</span> /&gt;</span>跑步</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"3"</span> /&gt;</span>羽毛球</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"btn"</span> <span class="attr">id</span>=<span class="string">"btn"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点击"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//javascript</span><br><span class="line">// 序列化<span class="tag">&lt;<span class="name">form</span>&gt;</span>内的所有表单元素,序列化后的结果：uid=1&amp;username=%E5%BC%A0%E4%B8%89&amp;password=123456&amp;grade=3&amp;sex=1&amp;hobby=1&amp;hobby=2</span><br><span class="line">alert( $("form").serialize() );</span><br><span class="line"></span><br><span class="line">// 序列化所有的text、select、checkbox表单元素,序列化后的结果：username=%E5%BC%A0%E4%B8%89&amp;password=123456&amp;grade=3&amp;hobby=1&amp;hobby=2</span><br><span class="line">alert( $(":text, select, :checkbox").serialize() );</span><br><span class="line"></span><br><span class="line">//serialize()函数通常用于将表单内容序列化，以便通过AJAX方式提交。</span><br><span class="line">$("#btn").click( function()&#123;</span><br><span class="line">    // 将当前表单内容以POST请求的AJAX方式提交到"http://www.365mini.com"</span><br><span class="line">    $.post( "http://www.365mini.com", $("form").serialize(), function( data, textStatus, jqXHR )&#123;</span><br><span class="line">        alert( "AJAX提交成功!" );       </span><br><span class="line">    &#125; );        </span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery-serializeArray-函数"><a href="#jQuery-serializeArray-函数" class="headerlink" title="jQuery.serializeArray() 函数"></a>jQuery.serializeArray() 函数</h4><p>serializeArray()函数用于序列化一组表单元素，将表单内容编码为一个JavaScript数组。</p>
+<p>serializeArray()函数常用于将表单内容序列化为JSON对象，以便于被编码为JSON格式的字符串。</p>
+<p>该函数会将可用于提交的每个表单控件封装成一个Object对象，该对象有name和value属性，对应该表单控件的name和value属性。然后将这些Object对象封装为一个数组并返回。</p>
+<p>该函数不会序列化不需要提交的表单控件，这和常规的表单提交行为是一致的。</p>
+<p><strong>语法</strong><br><code>jQueryObject.serializeArray( )</code></p>
+<p>示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">"myForm"</span> <span class="attr">action</span>=<span class="string">"http://www.365mini.com"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"uid"</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">value</span>=<span class="string">"1"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"张三"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"123456"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"grade"</span> <span class="attr">id</span>=<span class="string">"grade"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span>一年级<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"2"</span>&gt;</span>二年级<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"3"</span> <span class="attr">selected</span>=<span class="string">"selected"</span>&gt;</span>三年级<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"4"</span>&gt;</span>四年级<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"5"</span>&gt;</span>五年级<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"6"</span>&gt;</span>六年级<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">checked</span>=<span class="string">"checked"</span> <span class="attr">value</span>=<span class="string">"1"</span> /&gt;</span>男</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"0"</span> /&gt;</span>女</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">checked</span>=<span class="string">"checked"</span> <span class="attr">value</span>=<span class="string">"1"</span> /&gt;</span>游泳</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">checked</span>=<span class="string">"checked"</span> <span class="attr">value</span>=<span class="string">"2"</span> /&gt;</span>跑步</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"hobby"</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"3"</span> /&gt;</span>羽毛球</span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"btn"</span> <span class="attr">id</span>=<span class="string">"btn"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点击"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//javascript</span><br><span class="line">//对<span class="tag">&lt;<span class="name">form</span>&gt;</span>元素进行序列化可以直接序列化其内部的所有表单元素。</span><br><span class="line">var formArray = $("form").serializeArray();</span><br><span class="line">/* 以下是序列化后的结果数组formArray的内容：</span><br><span class="line">[</span><br><span class="line">    &#123; name: "uid", value: "1" &#125;,</span><br><span class="line">    &#123; name: "username", value: "张三" &#125;,</span><br><span class="line">    &#123; name: "password", value: "123456" &#125;,</span><br><span class="line">    &#123; name: "grade", value: "3" &#125;,</span><br><span class="line">    &#123; name: "sex", value: "1" &#125;,</span><br><span class="line">    &#123; name: "hobby", value: "1" &#125;,</span><br><span class="line">    &#123; name: "hobby", value: "2" &#125;</span><br><span class="line">];</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">//我们也可以直接对部分表单元素进行序列化。</span><br><span class="line">var result = $(":text, select, :checkbox").serializeArray();</span><br><span class="line">/* 以下是序列化后的结果数组result的内容：</span><br><span class="line">[ </span><br><span class="line">    &#123; name: "username", value: "张三" &#125;, </span><br><span class="line">    &#123; name: "password", value: "123456" &#125;,</span><br><span class="line">    &#123; name: "grade", value: "3" &#125;,</span><br><span class="line">    &#123; name: "hobby", value: "1" &#125;,</span><br><span class="line">    &#123; name: "hobby", value: "2" &#125;</span><br><span class="line">];</span><br><span class="line">*/</span><br></pre></td></tr></table></figure></p>
+<p>事件方法——用于为AJAX事件绑定处理一个或多个函数</p>
+<h4 id="jQuery-ajaxComplete-事件"><a href="#jQuery-ajaxComplete-事件" class="headerlink" title="jQuery.ajaxComplete()事件"></a>jQuery.ajaxComplete()事件</h4><p>ajaxComplete()函数用于设置当AJAX请求完成(无论成功或失败)时执行的回调函数。<br>这是一个全局AJAX事件函数，用于为所有AJAX请求的ajaxComplete事件绑定事件处理函数。当AJAX请求完成(无论成功或失败)时，将触发ajaxComplete事件，并执行绑定的事件处理函数。</p>
+<p>该函数必须在jQuery对象实例上调用，ajaxComplete()将为每个匹配元素的ajaxComplete事件绑定处理函数。当AJAX请求完成后，所有匹配元素上的处理函数都将被触发执行。事件处理函数内的this将指向当前DOM元素。</p>
+<p>你可以在同一元素多次调用该函数，从而绑定多个事件处理函数。触发ajaxComplete事件时，jQuery会按照绑定的先后顺序依次执行绑定的事件处理函数。</p>
+<p>从jQuery 1.8开始，<strong>该函数只能为document对象的ajaxComplete事件绑定处理函数</strong>，为其他元素绑定的事件处理函数不会起作用。</p>
+<p>如果在jQuery.ajax()或jQuery.ajaxSetup()中将选项参数global设为false，可以禁止该AJAX请求触发全局的AJAX事件。</p>
+<p><strong>语法</strong><br><code>jQueryObject.ajaxComplete( handler )</code><br>回调函数handler有3个参数：</p>
+<ul>
+<li>其一是表示当前事件的Event对象，</li>
+<li>其二是发送当前AJAX请求的jqXHR对象，jqXHR对象是经过jQuery封装的类似XMLHttpRequest的对象。</li>
+<li>其三是包含为本次AJAX请求设置的所有参数选项(包括无需指定的默认参数选项)的Object对象。</li>
+</ul>
+<p>示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content1"</span>&gt;</span>CodePlayer<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content2"</span>&gt;</span>专注于编程开发技术分享<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content3"</span>&gt;</span>http://www.365mini.com<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//javascript</span><br><span class="line">$(document).ajaxComplete( function(event, jqXHR, options)&#123;</span><br><span class="line">    alert("处理函数1：请求的url为" + options.url);</span><br><span class="line">&#125; );</span><br><span class="line">$(document).ajaxComplete( function(event, jqXHR, options)&#123;</span><br><span class="line">    alert("处理函数2：请求方式为" + options.type);</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">// 执行该AJAX请求，会弹出2次对话框,因为document对象上绑定了2个事件处理函数</span><br><span class="line">$.ajax( &#123;</span><br><span class="line">    url: "index.html"</span><br><span class="line">//  , global: false // 可以禁止触发全局的Ajax事件</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">// 执行该AJAX请求，会弹出3次对话框,因为$.ajax()自己通过complete选项绑定了一个局部的ajaxComplete事件处理函数，它也在document对象上，会执行一次</span><br><span class="line">// 我们还通过ajaxComplete()额外绑定了两个事件处理函数，会再弹出2次</span><br><span class="line">$.ajax( &#123;</span><br><span class="line">    url: "myurl" ,</span><br><span class="line">    complete: function(jqXHR, textStatus)&#123;</span><br><span class="line">        // jqXHR 是经过jQuery封装的XMLHttpRequest对象</span><br><span class="line">        // textStatus 可能为：null、'success'、 'notmodified'、 'error'、 'timeout'、 'abort'或'parsererror'等</span><br><span class="line">       alert( "ajax()" );</span><br><span class="line">    &#125;</span><br><span class="line">//  , global: false // 可以禁止触发全局的Ajax事件</span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery-ajaxSuccess-函数"><a href="#jQuery-ajaxSuccess-函数" class="headerlink" title="jQuery.ajaxSuccess() 函数"></a>jQuery.ajaxSuccess() 函数</h4><p>ajaxSuccess()函数用于设置当AJAX请求成功完成时执行的回调函数。</p>
+<p>这是一个全局AJAX事件函数，用于为任何AJAX请求的ajaxSuccess事件绑定事件处理函数。当AJAX请求成功完成时(不包括失败的情况，例如：找不到页面、服务器内部错误等)，将触发ajaxSuccess事件，并执行绑定的事件处理函数。<br>如果在jQuery.ajax()或jQuery.ajaxSetup()中将选项参数global设为false，可以禁止该AJAX请求触发全局的AJAX事件。</p>
+<p>该函数必须在jQuery对象实例上调用，ajaxSuccess()将为每个匹配元素的ajaxSuccess事件绑定处理函数。当AJAX请求成功完成后，所有匹配元素上的处理函数都将被触发执行。事件处理函数内的this将指向当前DOM元素。</p>
+<p>你可以在同一元素多次调用该函数，从而绑定多个事件处理函数。触发ajaxSuccess事件时，jQuery会按照绑定的先后顺序依次执行绑定的事件处理函数。</p>
+<p>从jQuery 1.8开始，该函数只能为document对象的ajaxSuccess事件绑定处理函数，为其他元素绑定的事件处理函数不会起作用。</p>
+<p><strong>语法</strong><br><code>jQueryObject.ajaxSuccess( handler )</code><br>回调函数handler有4个参数：</p>
+<ul>
+<li>其一是表示当前事件的Event对象，</li>
+<li>其二是发送当前AJAX请求的jqXHR对象，</li>
+<li>其三是包含为本次AJAX请求设置的所有参数选项(包括无需指定的默认参数选项)的Object对象，</li>
+<li>其四是当前AJAX请求返回的数据。</li>
+</ul>
+<p>示例：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id="content1"&gt;CodePlayer&lt;/div&gt;</span><br><span class="line">&lt;div id="content2"&gt;专注于编程开发技术分享&lt;/div&gt;</span><br><span class="line">&lt;div id="content3"&gt;http://www.365mini.com&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">//javascript,不论当前jQuery为何版本，如果不是特殊需求，我们都应该将ajaxSuccess事件的处理函数绑定到document对象上。</span><br><span class="line">$(document).ajaxSuccess( function(event, jqXHR, options, data)&#123;</span><br><span class="line">    alert("处理函数1：请求的url为" + options.url);</span><br><span class="line">&#125; );</span><br><span class="line">$(document).ajaxSuccess( function(event, jqXHR, options, data)&#123;</span><br><span class="line">    alert("处理函数2：请求方式为" + options.type);</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">// 执行该AJAX请求，会弹出2次对话框,因为document对象上绑定了2个事件处理函数</span><br><span class="line">$.ajax( &#123;</span><br><span class="line">    url: "index.html"</span><br><span class="line">//  , global: false // 可以禁止触发全局的Ajax事件</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">// 执行该AJAX请求，会弹出3次对话框,因为$.ajax()自己通过success选项绑定了一个局部的ajaxSuccess事件处理函数，它会执行一次,我们还通过ajaxSuccess()额外绑定了两个事件处理函数，会再弹出2次</span><br><span class="line">$.ajax( &#123;</span><br><span class="line">    url: "myurl" ,</span><br><span class="line">    success: function(data, jqXHR, textStatus)&#123;</span><br><span class="line">        // data 是返回的数据</span><br><span class="line">        // textStatus 可能为"success"、"notmodified"等</span><br><span class="line">        // jqXHR 是经过jQuery封装的XMLHttpRequest对象</span><br><span class="line">        alert( "success" );</span><br><span class="line">    &#125;</span><br><span class="line">    //, global: false // 可以禁止触发全局的Ajax事件</span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery-ajaxError-函数"><a href="#jQuery-ajaxError-函数" class="headerlink" title="jQuery.ajaxError() 函数"></a>jQuery.ajaxError() 函数</h4><p>ajaxError()函数用于设置当AJAX请求失败时执行的回调函数。<br>这是一个全局AJAX事件函数，用于为任何AJAX请求的ajaxError事件绑定事件处理函数。当AJAX请求失败时(例如：找不到页面、服务器内部错误、数据解析失败等)，将触发ajaxError事件，并执行绑定的事件处理函数。<br>如果在jQuery.ajax()或jQuery.ajaxSetup()中将选项参数global设为false，可以禁止该AJAX请求触发全局的AJAX事件。</p>
+<p>该函数必须在jQuery对象实例上调用，ajaxError()将为每个匹配元素的ajaxError事件绑定处理函数。当AJAX请求失败后，所有匹配元素上的处理函数都将被触发执行。事件处理函数内的this将指向当前DOM元素。</p>
+<p>你可以在同一元素多次调用该函数，从而绑定多个事件处理函数。触发ajaxError事件时，jQuery会按照绑定的先后顺序依次执行绑定的事件处理函数。</p>
+<p>请注意，跨域”script”和跨域”JSONP”请求不会调用ajaxError事件的事件处理函数。</p>
+<p>从jQuery 1.8开始，该函数只能为document对象的ajaxError事件绑定处理函数，为其他元素绑定的事件处理函数不会起作用。</p>
+<p><strong>语法</strong><br><code>jQueryObject.ajaxError( handler )</code><br>回调函数handler有4个参数：</p>
+<ul>
+<li>其一是表示当前事件的Event对象；</li>
+<li>其二是发送当前AJAX请求的jqXHR对象；</li>
+<li>其三是表示本次AJAX请求的所有参数设置(包括无需指定的默认参数选项)的Object对象；</li>
+<li>其四是错误信息字符串(响应状态的文本描述部分，例如’Not Found’或’Internal Server Error’)。</li>
+</ul>
+<p>示例：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id="content1"&gt;CodePlayer&lt;/div&gt;</span><br><span class="line">&lt;div id="content2"&gt;专注于编程开发技术分享&lt;/div&gt;</span><br><span class="line">&lt;div id="content3"&gt;http://www.365mini.com&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">//javascript</span><br><span class="line">$(document).ajaxError( function(event, jqXHR, options, errorMsg)&#123;</span><br><span class="line">    alert("处理函数1：请求的url为" + options.url);</span><br><span class="line">&#125; );</span><br><span class="line">$(document).ajaxError( function(event, jqXHR, options, data)&#123;</span><br><span class="line">    alert("处理函数2：请求方式为" + options.type + "，错误描述为" + errorMsg);</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">// 执行该AJAX请求，会弹出2次对话框,因为document对象上绑定了2个事件处理函数</span><br><span class="line">$.ajax( &#123;</span><br><span class="line">    url: "index.html"</span><br><span class="line">//  , global: false // 可以禁止触发全局的Ajax事件</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">// 执行该AJAX请求，会弹出3次对话框,因为$.ajax()自己通过error选项绑定了一个局部的ajaxError事件处理函数，它会执行一次,我们还通过ajaxError()额外绑定了两个事件处理函数，会再弹出2次</span><br><span class="line">$.ajax( &#123;</span><br><span class="line">    url: "myurl" ,</span><br><span class="line">    error: function(jqXHR, textStatus, errorMsg)&#123;</span><br><span class="line">        // jqXHR 是经过jQuery封装的XMLHttpRequest对象</span><br><span class="line">        // textStatus 可能为null、 'timeout'、 'error'、 'abort'和'parsererror'等</span><br><span class="line">        // errorMsg 是错误信息字符串(响应状态的文本描述部分，例如'Not Found'或'Internal Server Error')</span><br><span class="line"></span><br><span class="line">        alert( "error:" + errorMsg );</span><br><span class="line">    &#125;</span><br><span class="line">    //, global: false // 可以禁止触发全局的Ajax事件</span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery-ajaxStart-函数"><a href="#jQuery-ajaxStart-函数" class="headerlink" title="jQuery.ajaxStart() 函数"></a>jQuery.ajaxStart() 函数</h4><p>ajaxStart()函数用于为AJAX请求的ajaxStart事件绑定处理函数。<br>这是一个全局AJAX事件函数，用于在ajaxStart事件被触发时执行绑定的事件处理函数。<br>当开始一个AJAX请求的时候，此时没有其他活跃的AJAX请求，该请求就会触发ajaxStart事件。</p>
+<p>一般而言，连续执行多个AJAX请求，只有其中的第一个AJAX请求会触发ajaxStart事件。等到所有AJAX请求执行完毕后，再次连续执行多个AJAX请求，还是只有其中的第一个AJAX请求会触发ajaxStart事件。</p>
+<p>如果某个AJAX请求被禁止触发全局AJAX事件，则它不会被视为活跃的AJAX请求。</p>
+<p>该函数必须在jQuery对象实例上调用，ajaxStart()将为每个匹配元素绑定事件处理函数。当ajaxStart事件被触发时，所有匹配元素上绑定的处理函数都将被调用。事件处理函数内的this将指向当前DOM元素。</p>
+<p>你可以为同一元素多次调用该函数，从而绑定多个事件处理函数。触发事件时，jQuery会按照绑定的先后顺序依次执行绑定的事件处理函数。</p>
+<p>从jQuery 1.8开始，该函数只能为document对象绑定事件处理函数，为其他元素绑定的事件处理函数不会起作用。<br>如果在jQuery.ajax()或jQuery.ajaxSetup()中将选项参数global设为false，可以禁止该AJAX请求触发全局的AJAX事件。</p>
+<p><strong>语法</strong><br><code>jQueryObject.ajaxStart( handler )</code><br>handler: Function类型触发该事件时，需要执行的事件处理函数。</p>
+<p>示例：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id="content1"&gt;CodePlayer&lt;/div&gt;</span><br><span class="line">&lt;div id="content2"&gt;专注于编程开发技术分享&lt;/div&gt;</span><br><span class="line">&lt;div id="content3"&gt;http://www.365mini.com&lt;/div&gt;</span><br><span class="line">&lt;input id="btn" type="button" value="开始AJAX请求" /&gt;</span><br><span class="line"></span><br><span class="line">//javascript</span><br><span class="line">var $doc = $( document );</span><br><span class="line"></span><br><span class="line">$doc.ajaxStart( function()&#123;</span><br><span class="line">    alert("处理函数1" );</span><br><span class="line">&#125; );</span><br><span class="line">$doc.ajaxStart( function()&#123;</span><br><span class="line">    alert("处理函数2" );</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">// 点击执行AJAX请求</span><br><span class="line">$("#btn").click( function()&#123;</span><br><span class="line">    // 该AJAX请求开始时，此时没有其他活跃的AJAX请求，因此会触发ajaxStart事件</span><br><span class="line">    // 它会弹出2次对话框 ，因为我们为document绑定了2个事件处理函数</span><br><span class="line">    $.ajax( &#123; url: "index.html" &#125; );</span><br><span class="line">    </span><br><span class="line">    // 该AJAX请求开始时，上一个AJAX请求尚未执行完毕，因此不会触发ajaxStart事件，也不会弹出对话框</span><br><span class="line">    $.ajax( &#123; url: "myurl.php" &#125; );</span><br><span class="line">    </span><br><span class="line">    /*</span><br><span class="line">    延迟3秒执行第二个AJAX请求</span><br><span class="line">    setTimeout( function()&#123;</span><br><span class="line">        </span><br><span class="line">        // 该AJAX请求开始时，此时没有其他活跃的AJAX请求(上一个请求已经执行完毕)</span><br><span class="line">        // 因此会触发ajaxStart事件，会弹出2次对话框</span><br><span class="line">        $.ajax( &#123; url: "myurl.php" &#125; );</span><br><span class="line">        </span><br><span class="line">    &#125;, 3000);       </span><br><span class="line">    */</span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery-ajaxStop-函数"><a href="#jQuery-ajaxStop-函数" class="headerlink" title="jQuery.ajaxStop() 函数"></a>jQuery.ajaxStop() 函数</h4><p>ajaxStop()函数用于为AJAX请求的ajaxStop事件绑定处理函数。这是一个全局AJAX事件函数，用于在ajaxStop事件被触发时执行绑定的事件处理函数。<br>当一个AJAX请求结束的时候，此时没有其他活跃的AJAX请求，该请求就会触发ajaxStop事件。</p>
+<p>一般而言，连续执行多个AJAX请求，只有其中最后一个结束的AJAX请求会触发ajaxStop事件。等到所有AJAX请求执行完毕后，再次连续执行多个AJAX请求，还是只有其中最后一个结束的AJAX请求会触发ajaxStop事件。</p>
+<p>如果某个AJAX请求被禁止触发全局AJAX事件，则它不会被视为活跃的AJAX请求。</p>
+<p>该函数必须在jQuery对象实例上调用，ajaxStop()将为每个匹配元素绑定事件处理函数。当ajaxStop事件被触发时，所有匹配元素上绑定的处理函数都将被调用。事件处理函数内的this将指向当前DOM元素。</p>
+<p>你可以为同一元素多次调用该函数，从而绑定多个事件处理函数。触发事件时，jQuery会按照绑定的先后顺序依次执行绑定的事件处理函数。</p>
+<p>从jQuery 1.8开始，该函数只能为document对象绑定事件处理函数，为其他元素绑定的事件处理函数不会起作用。<br>如果在jQuery.ajax()或jQuery.ajaxSetup()中将选项参数global设为false，可以禁止该AJAX请求触发全局的AJAX事件。</p>
+<p><strong>语法</strong><br><code>jQueryObject.ajaxStop( handler )</code><br>handler: Function类型 触发该事件时，需要执行的事件处理函数。</p>
+<p>示例：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id="content1"&gt;CodePlayer&lt;/div&gt;</span><br><span class="line">&lt;div id="content2"&gt;专注于编程开发技术分享&lt;/div&gt;</span><br><span class="line">&lt;div id="content3"&gt;http://www.365mini.com&lt;/div&gt;</span><br><span class="line">&lt;input id="btn" type="button" value="开始AJAX请求" /&gt;</span><br><span class="line"></span><br><span class="line">//javascript</span><br><span class="line">var $divs = $("div");</span><br><span class="line">$divs.ajaxStop( function()&#123;</span><br><span class="line">    alert("处理函数1");</span><br><span class="line">&#125; );</span><br><span class="line">$divs.ajaxStop( function()&#123;</span><br><span class="line">    alert("处理函数2");</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">// 点击执行AJAX请求1:</span><br><span class="line">$("#btn").click( function()&#123;</span><br><span class="line">    // 该AJAX请求结束时，下一个AJAX请求正在执行，因此不会触发ajaxStop事件，也不会弹出对话框   </span><br><span class="line">    $.ajax( &#123; url: "index.html" &#125; );    </span><br><span class="line">    </span><br><span class="line">    // 该AJAX请求结束时，上一个AJAX请求已经执行完毕，因此会触发ajaxStop事件</span><br><span class="line">    // 它会弹出2次对话框 ，因为我们为document绑定了2个事件处理函数</span><br><span class="line">    $.ajax( &#123; url: "myurl.php" &#125; );</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">// 点击执行AJAX请求2:</span><br><span class="line">$("#btn").click( function()&#123;</span><br><span class="line">    // 该AJAX请求结束时，此时没有其他活跃的AJAX请求(下一个请求尚未执行)，因此会触发ajaxStop事件</span><br><span class="line">    // 它会弹出2次对话框</span><br><span class="line">    $.ajax( &#123; url: "index.html" &#125; );</span><br><span class="line"></span><br><span class="line">    // 延迟3秒执行第二个AJAX请求</span><br><span class="line">    setTimeout( function()&#123;</span><br><span class="line">        // 该AJAX请求结束时，此时没有其他活跃的AJAX请求(上一个请求早已经执行完毕)</span><br><span class="line">        // 因此会触发ajaxStop事件，会弹出2次对话框</span><br><span class="line">        $.ajax( &#123; url: "myurl.php" &#125; );</span><br><span class="line">    &#125;, 3000);   </span><br><span class="line">    </span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">// 点击执行AJAX请求3:</span><br><span class="line">$("#btn").click( function()&#123;</span><br><span class="line">    // 该AJAX请求开始时，此时没有其他活跃的AJAX请求(下一个请求虽然尚未执行完成，但它被禁止触发全局AJAX事件，jQuery在检查活跃请求时会忽略掉它)</span><br><span class="line">    // 因此会触发ajaxStop事件，会弹出2次对话框</span><br><span class="line">    $.ajax( &#123; url: "index.html" &#125; );</span><br><span class="line">    </span><br><span class="line">    // 该AJAX请求开始时，此时没有其他活跃的AJAX请求，但它不会触发ajaxStop事件</span><br><span class="line">    // 因为它的global选项为false，被禁止触发任何AJAX事件，所以它不会弹出对话框</span><br><span class="line">    $.ajax( &#123; </span><br><span class="line">        url: "myurl.php" ,</span><br><span class="line">        global: false // 禁止触发全局AJAX事件</span><br><span class="line">    &#125; );</span><br><span class="line">    </span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure></p>
+<p>请注意：并不是先执行的AJAX请求就一定先结束，这与整个AJAX请求过程中的网络、数据量、相关代码执行时间等方面密切相关。</p>
+<h4 id="jQuery-ajaxSend-函数"><a href="#jQuery-ajaxSend-函数" class="headerlink" title="jQuery.ajaxSend() 函数"></a>jQuery.ajaxSend() 函数</h4><p>ajaxSend()函数用于设置当AJAX请求即将被发送时执行的回调函数。</p>
+<p>这是一个全局AJAX事件函数，用于为任何AJAX请求的ajaxSend事件绑定事件处理函数。当AJAX请求即将被发送时，将触发ajaxSend事件，并执行绑定的事件处理函数。<br>如果在jQuery.ajax()或jQuery.ajaxSetup()中将选项参数global设为false，可以禁止该AJAX请求触发全局的AJAX事件。</p>
+<p>该函数必须在jQuery对象实例上调用，ajaxSend()将为每个匹配元素的ajaxSend事件绑定处理函数。当AJAX请求即将被发送完成后，所有匹配元素上的处理函数都将被触发执行。事件处理函数内的this将指向当前DOM元素。</p>
+<p>你可以在同一元素多次调用该函数，从而绑定多个事件处理函数。触发ajaxSend事件时，jQuery会按照绑定的先后顺序依次执行绑定的事件处理函数。</p>
+<p>从jQuery 1.8开始，该函数只能为document对象的ajaxSend事件绑定处理函数，为其他元素绑定的事件处理函数不会起作用。</p>
+<p><strong>语法</strong><br><code>jQueryObject.ajaxSend( handler )</code><br>回调函数handler有3个参数：</p>
+<ul>
+<li>其一是表示当前事件的Event对象，</li>
+<li>其二是发送当前AJAX请求的jqXHR对象，jqXHR对象就是经过jQuery封装的XMLHttpRequest对象(保留了其大多数属性和方法)。</li>
+<li>其三是包含为本次AJAX请求设置的所有参数选项(包括无需指定的默认参数选项)的Object对象。</li>
+</ul>
+<p>示例：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id="content1"&gt;CodePlayer&lt;/div&gt;</span><br><span class="line">&lt;div id="content2"&gt;专注于编程开发技术分享&lt;/div&gt;</span><br><span class="line">&lt;div id="content3"&gt;http://www.365mini.com&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">//javascript</span><br><span class="line">$(document).ajaxSend( function(event, jqXHR, options)&#123;</span><br><span class="line">    alert("处理函数1： 当前元素的id为" + this.id + "，请求的url为" + options.url);</span><br><span class="line">&#125; );</span><br><span class="line">$(document).ajaxSend( function(event, jqXHR, options)&#123;</span><br><span class="line">    alert("处理函数2：请求方式为" + options.type);</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">// 执行该AJAX请求，会弹出2次对话框,因为document对象上绑定了2个事件处理函数</span><br><span class="line">$.ajax( &#123;</span><br><span class="line">    url: "index.html"</span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line">// 执行该AJAX请求，会弹出3次对话框,因为$.ajax()自己通过beforeSend选项绑定了一个局部的ajaxSend事件处理函数，它会执行一次</span><br><span class="line">// 我们还通过ajaxSend()额外绑定了两个事件处理函数，会再弹出2次</span><br><span class="line">$.ajax( &#123;</span><br><span class="line">    url: "myurl" ,</span><br><span class="line">    // global: false , // 可以禁止触发全局的Ajax事件</span><br><span class="line">    beforeSend: function(jqXHR, options)&#123;</span><br><span class="line">        alert( "即将开始发送!" );</span><br><span class="line">        // return false; // 如果返回false，可以取消本次请求</span><br><span class="line">    &#125;</span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat.jpg" alt="Xifengxx wechat" style="width: 200px; max-width: 100%;"/>
+    <div>坚持原创技术分享，每天进步1%！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery学习笔记/" rel="tag">#jQuery学习笔记</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/04/jQuery学习笔记7/" rel="next" title="jQuery学习笔记7 - Ajax(1)">
+                <i class="fa fa-chevron-left"></i> jQuery学习笔记7 - Ajax(1)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/05/jQuery学习笔记9/" rel="prev" title="jQuery学习笔记9 - jQuery的辅助工具属性和方法">
+                jQuery学习笔记9 - jQuery的辅助工具属性和方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/04/jQuery学习笔记8/"
+           data-title="jQuery学习笔记8 - Ajax(2)" data-url="http://xifengxx.github.io/2016/05/04/jQuery学习笔记8/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="Xifengxx" />
+          <p class="site-author-name" itemprop="name">Xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery的AJAX方法"><span class="nav-number">1.</span> <span class="nav-text">jQuery的AJAX方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-ajaxPrefilter-函数"><span class="nav-number">1.1.</span> <span class="nav-text">jQuery.ajaxPrefilter()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-ajaxSetup-函数"><span class="nav-number">1.2.</span> <span class="nav-text">jQuery.ajaxSetup() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-param-函数"><span class="nav-number">1.3.</span> <span class="nav-text">jQuery.param() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-serialize-函数"><span class="nav-number">1.4.</span> <span class="nav-text">jQuery.serialize() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-serializeArray-函数"><span class="nav-number">1.5.</span> <span class="nav-text">jQuery.serializeArray() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-ajaxComplete-事件"><span class="nav-number">1.6.</span> <span class="nav-text">jQuery.ajaxComplete()事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-ajaxSuccess-函数"><span class="nav-number">1.7.</span> <span class="nav-text">jQuery.ajaxSuccess() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-ajaxError-函数"><span class="nav-number">1.8.</span> <span class="nav-text">jQuery.ajaxError() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-ajaxStart-函数"><span class="nav-number">1.9.</span> <span class="nav-text">jQuery.ajaxStart() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-ajaxStop-函数"><span class="nav-number">1.10.</span> <span class="nav-text">jQuery.ajaxStop() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-ajaxSend-函数"><span class="nav-number">1.11.</span> <span class="nav-text">jQuery.ajaxSend() 函数</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
