@@ -75,7 +75,7 @@ JavaScript中正则表达式的定义方法在JavaScript中，正则表达式是
 （1">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.png">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F1.png">
-<meta property="og:updated_time" content="2016-05-05T10:50:10.000Z">
+<meta property="og:updated_time" content="2016-05-05T11:08:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式入门教程">
 <meta name="twitter:description" content="正则表达式简介—描述字符串规则的表达式正则表达式，全称“Regular Expression”，在代码中常简写为regex、regexp或RE。
@@ -357,8 +357,7 @@ JavaScript中正则表达式的定义方法在JavaScript中，正则表达式是
 <h4 id="JavaScript中正则表达式的定义方法"><a href="#JavaScript中正则表达式的定义方法" class="headerlink" title="JavaScript中正则表达式的定义方法"></a>JavaScript中正则表达式的定义方法</h4><p>在JavaScript中，正则表达式是由一个RegExp对象表示的，利用RegExp对象来完成有关正则表达式的操作和功能。</p>
 <p>正则表达式的定义共有2种方式：</p>
 <p>（1）显式定义；<br>显式定义必须是使用new关键词来定义。<br>语法：<code>var 变量名 =  new RegExp(pattern,attrs);</code></p>
-<p>（2）隐式定义；<br>语法：<code>var 变量名 =  /pattern/attrs</code><br>-pattern：正则表达式规则。<br>-attrs: 正则表达式属性， 如g代表全局模式，i表示不区分大小写。</p>
-<p>举例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var myregex = new ReExp("[0-9]");</span><br><span class="line">var myregex = /[0-9]/;</span><br></pre></td></tr></table></figure></p>
+<p>（2）隐式定义；<br>语法：<code>var 变量名 =  /pattern/attrs</code><br>-pattern：正则表达式规则。<br>-attrs: 正则表达式属性， 如g代表全局模式，i表示不区分大小写。<br><a id="more"></a><br>举例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var myregex = new ReExp("[0-9]");</span><br><span class="line">var myregex = /[0-9]/;</span><br></pre></td></tr></table></figure></p>
 <h4 id="regexObj-test-str-方法"><a href="#regexObj-test-str-方法" class="headerlink" title="regexObj.test(str)方法"></a>regexObj.test(str)方法</h4><p>测试正则表达式与指定字符串是否匹配。</p>
 <p>该方法返回一个boolean值。也就是说，test()方法检查字符串str是否符合正则表达式模式regexp，如果符合，则返回true；如果不符合，则返回false。</p>
 <p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/13566668888/.test(‘1356666888’);     // false</span><br><span class="line">/13566668888/.test(‘13566668888’);     // true</span><br><span class="line">/13566668888/.test(‘x1356666888y’);     // true</span><br></pre></td></tr></table></figure></p>
@@ -510,7 +509,8 @@ JavaScript中正则表达式的定义方法在JavaScript中，正则表达式是
 <table>
 <thead>
 <tr>
-<th>表达式 说明</th>
+<th>表达式</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
@@ -551,8 +551,8 @@ JavaScript中正则表达式的定义方法在JavaScript中，正则表达式是
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td>`</td>
+<td>`</td>
 <td>多个子表达式之间取“或”的关系</td>
 </tr>
 </tbody>
@@ -560,8 +560,26 @@ JavaScript中正则表达式的定义方法在JavaScript中，正则表达式是
 <p>例如，“abc|def1”匹配的是“abc”或“def1”，而不是“abc1”或“def1”。如果要匹配“abc1”或“def1”，应该使用分组符，即“(abc|def)1”。</p>
 <h3 id="捕获—捕获组（Capture-Group）"><a href="#捕获—捕获组（Capture-Group）" class="headerlink" title="捕获—捕获组（Capture Group）"></a>捕获—捕获组（Capture Group）</h3><p>保存匹配到的字符串，日后在用。</p>
 <ol>
-<li>捕获组<br>捕获组就是把正则表达式中子表达式匹配的内容，保存到内存中以数字编号或手动命名的组里，以供后面引用。<br>| 表达式 | 说明 |<br>| — | —– |<br>| (Expression) |    普通捕获组，将子表达式Expression匹配的内容保存到以数字编号的组里 |<br>| (?<name> Expression) |    命名捕获组，将子表达式Expression匹配的内容保存到以name命名的组里 |</name></li>
+<li>捕获组<br>捕获组就是把正则表达式中子表达式匹配的内容，保存到内存中以数字编号或手动命名的组里，以供后面引用。</li>
 </ol>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(Expression)</td>
+<td>普通捕获组，将子表达式Expression匹配的内容保存到以数字编号的组里</td>
+</tr>
+<tr>
+<td>(?<name> Expression)</name></td>
+<td>命名捕获组，将子表达式Expression匹配的内容保存到以name命名的组里</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>普通捕获组（在不产生歧义的情况下，简称捕获组）是以数字进行编号的，编号规则是以“(”从左到右出现的顺序，从1开始进行编号。通常情况下，编号为0的组表示整个表达式匹配的内容。</li>
 <li>命名捕获组可以通过捕获组名，而不是序号对捕获内容进行引用，提供了更便捷的引用方式，不用关注捕获组的序号，也不用担心表达式部分变更会导致引用错误的捕获组。</li>
@@ -695,8 +713,8 @@ JavaScript中正则表达式的定义方法在JavaScript中，正则表达式是
 <td>位置和顺序</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>`</td>
+<td>`</td>
 <td>选择符，“或”运算</td>
 </tr>
 </tbody>
