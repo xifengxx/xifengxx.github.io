@@ -265,8 +265,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/05/git实战教程/" itemprop="url">
-                  Git实战教程
+                <a class="post-title-link" href="/2016/04/05/Hexo基本操作/" itemprop="url">
+                  Hexo安装及部署
                 </a>
               
             
@@ -293,8 +293,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
+                  <a href="/categories/博客搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">博客搭建</span>
                   </a>
                 </span>
 
@@ -309,8 +309,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/05/git实战教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/05/git实战教程/" itemprop="commentsCount"></span>
+                <a href="/2016/04/05/Hexo基本操作/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/05/Hexo基本操作/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -320,7 +320,7 @@
 
           
           
-             <span id="/2016/04/05/git实战教程/" class="leancloud_visitors" data-flag-title="Git实战教程">
+             <span id="/2016/04/05/Hexo基本操作/" class="leancloud_visitors" data-flag-title="Hexo安装及部署">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -343,20 +343,32 @@
       
         
           
-          简明释义GitGit 是一个版本控制工具，是一个可以安装在你自己机器上的软件。git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。
-githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。Github 首先是一个公司，Github网站是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。
-安装及初始化安装Windows上安装Gitmsysgit是Windows版的Git。下载地址。
-然后按默认选项安装即可。
-安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！
-安装完成后，还需要最后一步设置，在命令行输入：
+          配置SSH Key用SSH Key将本地git项目与远程GitHub建立联系。定位到目标文件夹，右键-Git Bash下输入命令：
 
-$ git config –global user.name “Your Name”$ git config –global user.email “email@example.com”
+ssh -T git@github.com
 
-git config命令的–global
+Hexo安装首先要安装好Git 和Node.js软件。安装完后，打开Git Bash，输入命令：
+
+npm install hexo-cli -g
+
+通过以下命令来确认Hexo是否安装成功：
+
+hexo -v
+
+如果出现类似内容，则说明安装成功：
+
+hexo-cli: 1.0.1os: Windows_NT 5.1.2600 win32 ia32http_parser: 2.5.0node: 4.2.4v8: 4.5.103.35uv: 1.7.5zlib: 1.2.8ares: 1.10.1-DEVicu: 56.1modules: 46openssl: 1.0.2e
+
+Hexo部署在目标文件夹下，Git Bash命令：
+
+hexo initnpm install
+
+新建博客文章：
+hexo new “文章标题”一个博文内容包括以下几部分：title: 如何通过Github Pages + hexo 搭建个
           ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/05/git实战教程/#more" rel="contents">
+            <a class="btn" href="/2016/04/05/Hexo基本操作/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
