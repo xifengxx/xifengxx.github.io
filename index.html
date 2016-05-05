@@ -343,11 +343,7 @@
       
         
           <p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/git-RegExp.jpg" alt=""></p>
-<h3 id="正则表达式简介—描述字符串规则的表达式"><a href="#正则表达式简介—描述字符串规则的表达式" class="headerlink" title="正则表达式简介—描述字符串规则的表达式"></a>正则表达式简介—描述字符串规则的表达式</h3><p>正则表达式，全称“Regular Expression”，在代码中常简写为regex、regexp或RE。</p>
-<blockquote>
-<p>正则表达式，就是用某种模式去匹配一类字符串的公式。</p>
-</blockquote>
-<h4 id="JavaScript中正则表达式的定义方法"><a href="#JavaScript中正则表达式的定义方法" class="headerlink" title="JavaScript中正则表达式的定义方法"></a>JavaScript中正则表达式的定义方法</h4><p>在JavaScript中，正则表达式是由一个RegExp对象表示的，利用RegExp对象来完成有关正则表达式的操作和功能。<br>
+<h3 id="正则表达式简介—描述字符串规则的表达式"><a href="#正则表达式简介—描述字符串规则的表达式" class="headerlink" title="正则表达式简介—描述字符串规则的表达式"></a>正则表达式简介—描述字符串规则的表达式</h3><p>正则表达式，全称“Regular Expression”，在代码中常简写为regex、regexp或RE。<br>正则表达式，就是用某种模式去匹配一类字符串的公式。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/05/正则表达式入门教程/#more" rel="contents">
               阅读全文 &raquo;
@@ -477,59 +473,13 @@
 
       
         
-          
-          jQuery的辅助工具属性和方法jQuery还为我们提供了许多的辅助工具方法，以便于我们进行各种常用的代码逻辑处理。例如：
-
-检测用户浏览器的指定特性。
-判断指定变量的类型。
-操作指定DOM元素的函数队列。
-操作指定DOM元素上的任意附加数据。
-去除字符串两侧的连续空白字符、解析JSON字符串等。
-
-
-
-
-方法
-版本
-描述
-
-
-
-
-浏览器检测属性——用于检测浏览器的特性和bug信息
-
-
-jQuery.boxModel
-1.0~1.3~1.8
-检测浏览器是否使用标准盒模型渲染当前页面。请使用jQuery.support.boxModel替代。
-
-
-jQuery.browser
-1.0~1.3~1.9
-以对象形式返回用户浏览器的相关信息。
-
-
-jQuery.support
-1.3
-以对象形式返回用户浏览器的特性或bug信息。
-
-
-遍历方法——用于遍历数组元素或对象属性
-
-
-jQuery.each()
-1.0
-遍历对象属性或数组元素，并执行指定的回调函数。
-
-
-jQuery.map()
-1.0
-遍历对象属性或数组元素，执行指定的回调函数，并返回以函数的返回值组成的结果数组。
-
-
-jQuery
-          ...
-
+          <h2 id="jQuery的辅助工具属性和方法"><a href="#jQuery的辅助工具属性和方法" class="headerlink" title="jQuery的辅助工具属性和方法"></a>jQuery的辅助工具属性和方法</h2><p>jQuery还为我们提供了许多的辅助工具方法，以便于我们进行各种常用的代码逻辑处理。<br>例如：</p>
+<ul>
+<li>检测用户浏览器的指定特性。</li>
+<li>判断指定变量的类型。</li>
+<li>操作指定DOM元素的函数队列。</li>
+<li>操作指定DOM元素上的任意附加数据。</li>
+<li>去除字符串两侧的连续空白字符、解析JSON字符串等。
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/05/jQuery学习笔记9/#more" rel="contents">
               阅读全文 &raquo;
@@ -659,16 +609,9 @@ jQuery
 
       
         
-          
-          jQuery的AJAX方法工具方法——用于协助发送或处理AJAX请求，简化AJAX操作.
-jQuery.ajaxPrefilter()函数jQuery.ajaxPrefilter()函数用于指定预先处理Ajax参数选项的回调函数。在所有参数选项被jQuery.ajax()函数处理之前，你可以使用该函数设置的回调函数来预先更改任何参数选项。
-你还可以指定数据类型(dataType)，从而只预先处理指定数据类型的参数选项。该函数可以调用多次，以便于为不同数据类型的AJAX请求指定不同的回调函数。
-语法jQuery.ajaxPrefilter( [ dataType ,] handler )
-
-dataType： 可选/String类型一个或多个用空格隔开的数据类型所组成的字符串。如果未指定该参数，则表示所有数据类型。可用的数据类型为”xml”、 “html”、 “text”、 “json”、 “jsonp”、 “script”。该字符串为它们之间的任意组合(多种类型用空格隔开)，例如：”xml”、 “text html”、 “script json jsonp”。
-handler：Func
-          ...
-
+          <h3 id="jQuery的AJAX方法"><a href="#jQuery的AJAX方法" class="headerlink" title="jQuery的AJAX方法"></a>jQuery的AJAX方法</h3><p>工具方法——用于协助发送或处理AJAX请求，简化AJAX操作.</p>
+<h4 id="jQuery-ajaxPrefilter-函数"><a href="#jQuery-ajaxPrefilter-函数" class="headerlink" title="jQuery.ajaxPrefilter()函数"></a>jQuery.ajaxPrefilter()函数</h4><p>jQuery.ajaxPrefilter()函数用于指定预先处理Ajax参数选项的回调函数。<br>在所有参数选项被jQuery.ajax()函数处理之前，你可以使用该函数设置的回调函数来预先更改任何参数选项。</p>
+<p>你还可以指定数据类型(dataType)，从而只预先处理指定数据类型的参数选项。<br>该函数可以调用多次，以便于为不同数据类型的AJAX请求指定不同的回调函数。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/04/jQuery学习笔记8/#more" rel="contents">
               阅读全文 &raquo;
@@ -798,49 +741,11 @@ handler：Func
 
       
         
-          
-          jQuery核心：AjaxjQuery还对Ajax进行了封装了，我们可以非常方便地发送一个Ajax请求，并对响应进行处理。例如：
-
-在发送AJAX请求之前，序列化JS内容或表单内容，以便用作AJAX请求发送的数据。
-快速发送AJAX请求，并处理响应数据(支持html、xml、text、json、jsonp、script等多种数据类型)。
-监听AJAX事件，绑定事件触发时执行的处理函数。
-
-jQuery的AJAX方法
-
-
-方法
-版本
-描述
-
-
-
-
-核心方法——发送并处理AJAX请求的方法
-
-
-jQuery.ajax()
-1.0
-全局方法发送并处理AJAX请求。这是jQuery底层的AJAX实现，包含处理AJAX请求所需的一切功能。其他发送AJAX请求的方法都是对该方法的进一步封装。
-
-
-jQuery.get()
-1.0
-全局方法发送并处理GET方式的AJAX请求。
-
-
-jQuery.post()
-1.0
-全局方法发送并处理POST方式的AJAX请求。
-
-
-jQuery.getJSON()
-1.0
-全局方法发送并处理GET方式、返回数据为JSON格式的AJAX请求。
-
-
-jQuery.ge
-          ...
-
+          <h2 id="jQuery核心：Ajax"><a href="#jQuery核心：Ajax" class="headerlink" title="jQuery核心：Ajax"></a>jQuery核心：Ajax</h2><p>jQuery还对Ajax进行了封装了，我们可以非常方便地发送一个Ajax请求，并对响应进行处理。<br>例如：</p>
+<ul>
+<li>在发送AJAX请求之前，序列化JS内容或表单内容，以便用作AJAX请求发送的数据。</li>
+<li>快速发送AJAX请求，并处理响应数据(支持html、xml、text、json、jsonp、script等多种数据类型)。</li>
+<li>监听AJAX事件，绑定事件触发时执行的处理函数。
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/04/jQuery学习笔记7/#more" rel="contents">
               阅读全文 &raquo;
@@ -970,73 +875,9 @@ jQuery.ge
 
       
         
-          
-          jQuery Event对象的属性和方法jQuery的Event对象用于表示当前文档元素触发的DOM事件，它对JS原生的Event对象进行了封装，从而实现跨浏览器的兼容。
-该对象主要用于获取事件的相关信息，或对该事件进行处理。
-Event 对象的属性
-
-
-属性
-初始版本
-描述
-
-
-
-
-currentTarget
-1.3
-返回事件冒泡阶段中的当前DOM元素。
-
-
-data
-1.1
-返回绑定事件时传入的附加数据。
-
-
-delegateTarget
-1.7
-返回”受委托”调用当前事件处理函数的DOM元素。
-
-
-metaKey
-1.0.4
-指示触发事件时是否按下了Meta键。
-
-
-namespace
-1.4.3
-返回触发事件时指定的命名空间。
-
-
-pageX
-1.0.4
-返回鼠标相对于当前文档的x坐标。
-
-
-pageY
-1.0.4
-返回鼠标相对于当前文档的y坐标。
-
-
-relatedTarget
-1.1.4
-返回事件涉及到的其它DOM元素。
-
-
-result
-1.3
-返回当前事件绑定的上一个事件处理函数的返回值。
-
-
-target
-1.3
-最初触发该事件的DOM元素。
-
-
-timeStamp
-
-          ...
-
+          <h2 id="jQuery-Event对象的属性和方法"><a href="#jQuery-Event对象的属性和方法" class="headerlink" title="jQuery Event对象的属性和方法"></a>jQuery Event对象的属性和方法</h2><p>jQuery的Event对象用于表示当前文档元素触发的DOM事件，它对JS原生的Event对象进行了封装，从而实现跨浏览器的兼容。</p>
+<p>该对象主要用于获取事件的相关信息，或对该事件进行处理。</p>
+<h3 id="Event-对象的属性"><a href="#Event-对象的属性" class="headerlink" title="Event 对象的属性"></a>Event 对象的属性</h3>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/04/jQuery学习笔记6/#more" rel="contents">
               阅读全文 &raquo;
@@ -1166,47 +1007,8 @@ timeStamp
 
       
         
-          
-          jQuery过滤方法除了选择器之外，jQuery还为我们提供了以“方法”（类似于函数方法）形式存在的2种方式：（1）过滤方法；（2）查找方法。
-过滤和查找这2类方法与之前所学到的“选择器”是相互补充的关系。过滤和查找补充了很多使用选择器无法进行的操作，例如选取某一个元素的父元素、获取当前点击位置下的子元素、判断当前元素是否处于动画状态等等。这些都是很常见的操作。
-在jQuery中，常见的过滤方法如下：
-
-
-
-方法
-说明
-
-
-
-
-hasClass()
-判断所选元素是否含有某个类，返回值为true或false
-
-
-eq(n)
-选择元素集合中指定下标元素，下标从0开始（选择器作用）
-
-
-is()
-判断所选元素是否有符合某个条件的元素，返回值为true或false
-
-
-not()
-选择元素集合中不符合条件的元素（选择器作用）
-
-
-filter()
-使用“自定义表达式”来选择符合条件的元素（功能多）
-
-
-has()
-使用“自定义表达式”来选择符合条件的元素（功能少）
-
-
-
-类过滤hasClass()类过滤，就是根据元素的类名进行过滤操作。在jQuery中，我们可以使用hasClass()方法实现
-          ...
-
+          <h3 id="jQuery过滤方法"><a href="#jQuery过滤方法" class="headerlink" title="jQuery过滤方法"></a>jQuery过滤方法</h3><p>除了选择器之外，jQuery还为我们提供了以“方法”（类似于函数方法）形式存在的2种方式：（1）过滤方法；（2）查找方法。</p>
+<p>过滤和查找这2类方法与之前所学到的“选择器”是相互补充的关系。过滤和查找补充了很多使用选择器无法进行的操作，例如选取某一个元素的父元素、获取当前点击位置下的子元素、判断当前元素是否处于动画状态等等。这些都是很常见的操作。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/29/jQuery学习笔记5/#more" rel="contents">
               阅读全文 &raquo;
@@ -1336,12 +1138,7 @@ has()
 
       
         
-          
-          jQuery动画显示和隐藏在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：（1）show()和hide()；（2）toggle()；
-show()和hide()12345678$().hide() //把所选元素的display属性设置为none。$().show() //把所选元素的display属性还原为隐藏之前的显示状态（block、inline或者inline-block等）。//带动画效果的显示和隐藏$().hide(speed,callback)$(),show(speed,callback)// 参数speed为必选参数，表示动画执行的速度，单位是毫秒；// 参数callback为可选参数（可以省略），表示动画执行完成之后的“回调函数”。
-案例:当点击“隐藏”按钮，使用hide()方法隐藏图片；当点击“显示”按钮，使用show()方法显示图片。这个例子非常简单。12345678$(function () &#123;            $("#btn_hide").click(function () &#123;                $
-          ...
-
+          <h3 id="jQuery动画"><a href="#jQuery动画" class="headerlink" title="jQuery动画"></a>jQuery动画</h3><h4 id="显示和隐藏"><a href="#显示和隐藏" class="headerlink" title="显示和隐藏"></a>显示和隐藏</h4><p>在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：<br>（1）show()和hide()；<br>（2）toggle()；<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/27/jQuery学习笔记4/#more" rel="contents">
               阅读全文 &raquo;
@@ -1471,15 +1268,10 @@ show()和hide()12345678$().hide() //把所选元素的display属性设置为none
 
       
         
-          
-          jQuery事件jQuery封装了JavaScript中所有的事件，使得其操作更加简单方便，并且使得这些事件能够兼容各大浏览器，减少我们大量代码的编写。jQuery事件包括两类：
-
-jQuery对象的常规事件方法常规事件函数，主要用于为元素的指定事件添加、触发绑定的一个或多个事件处理函数。如:ready(),resize(),focus(),blur(),mousedown(),click(),toggle()等。
-jQuery对象的核心事件方法核心事件函数，主要用于为元素的任意事件(包括自定义事件)添加、取消、触发绑定的一个或多个事件处理函数。如：bind(),one(),delegate(),unbind(),off()，trigger()等。在jQuery中，我们需要学习9种事件操作：（1）页面载入事件；（2）鼠标事件；（3）键盘事件；（4）表单事件；（5）滚动事件；（6）绑定事件；（7）解绑事件；（8）合成事件；（9）一次事件；
-
-页面载入事件在jQuery中，对于页面载入事件，我们使用$(document).ready()方法来替代JavaScript中的window.onl
-          ...
-
+          <h3 id="jQuery事件"><a href="#jQuery事件" class="headerlink" title="jQuery事件"></a>jQuery事件</h3><p>jQuery封装了JavaScript中所有的事件，使得其操作更加简单方便，并且使得这些事件能够兼容各大浏览器，减少我们大量代码的编写。</p>
+<p>jQuery事件包括两类：</p>
+<ol>
+<li>jQuery对象的常规事件方法<br>常规事件函数，主要用于为元素的指定事件添加、触发绑定的一个或多个事件处理函数。<br>如:ready(),resize(),focus(),blur(),mousedown(),click(),toggle()等。
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/25/jQuery学习笔记3/#more" rel="contents">
               阅读全文 &raquo;
@@ -1609,17 +1401,10 @@ jQuery对象的核心事件方法核心事件函数，主要用于为元素的�
 
       
         
-          
-          jQuery操作元素属性操作
-获取元素属性： $().attr(&quot;属性名&quot;) $().prop(&quot;属性名&quot;)
-设置元素属性： $().attr(&quot;属性&quot;,&quot;属性值&quot;)
-删除元素属性： $().removeAttr(&quot;属性名&quot;) $().removeProp(&quot;属性名&quot;)
-
-案例：123456789//使用attr()方法获取img元素的src属性$("#btn_src").click(function () &#123;                alert($("img").attr("src"));            &#125;);//使用attr()方法为a标签添加了一个title属性。$("a").attr("title", "欢迎来到西风博客网站");//使用removeAttr()方法删除a标签的title属性。$("a").removeAttr("title");
-attr()方法和prop()方法操作元素属性的区别：
-操作对象不同attr和p
-          ...
-
+          <h3 id="jQuery操作元素"><a href="#jQuery操作元素" class="headerlink" title="jQuery操作元素"></a>jQuery操作元素</h3><h4 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h4><ul>
+<li>获取元素属性：<br> <code>$().attr(&quot;属性名&quot;)</code><br> <code>$().prop(&quot;属性名&quot;)</code></li>
+<li>设置元素属性：<br> <code>$().attr(&quot;属性&quot;,&quot;属性值&quot;)</code></li>
+<li>删除元素属性：<br> <code>$().removeAttr(&quot;属性名&quot;)</code><br> <code>$().removeProp(&quot;属性名&quot;)</code>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/22/jQuery学习笔记2/#more" rel="contents">
               阅读全文 &raquo;
@@ -1749,12 +1534,8 @@ attr()方法和prop()方法操作元素属性的区别：
 
       
         
-          
-          jQuery选择器选择器是一种选中页面元素的方式。只要把元素选中，我们才能对被选中的元素进行各种操作。不同的选择器，在于它们选取方式的不同。jQuery选择器的功能就是把元素选中，然后我们才能对选中的元素进行各种操作。jQuery选择器的格式如下：1$(&quot;选择器&quot;)
-参考：jQuery选择器一览表
-jQuery基础选择器基本选择器；所谓的基本选择器，指的是在jQuery中使用最频繁的选择器。在jQuery中，基本选择器共有5种：（1）元素选择器；$(&quot;元素名&quot;)元素选择器，就是“选中”相同的元素，然后对相同的元素进行操作。12345678910111213141516&lt;&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;    &lt;title&gt;&lt;/title&gt;    &lt;script src="jquery-1.12.0.min.js" type="text/javascript"&gt;&lt;/script&gt;    &lt;script type="text/java
-          ...
-
+          <h3 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器"></a>jQuery选择器</h3><p>选择器是一种选中页面元素的方式。只要把元素选中，我们才能对被选中的元素进行各种操作。不同的选择器，在于它们选取方式的不同。<br>jQuery选择器的功能就是把元素选中，然后我们才能对选中的元素进行各种操作。<br>jQuery选择器的格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;选择器&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>参考：<a href="http://www.365mini.com/page/tag/jquery-all-selectors">jQuery选择器一览表</a><br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/19/jQuery学习笔记1/#more" rel="contents">
               阅读全文 &raquo;

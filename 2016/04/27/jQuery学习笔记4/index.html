@@ -59,19 +59,16 @@
 
 
 
-<meta name="description" content="jQuery动画显示和隐藏在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：（1）show()和hide()；（2）toggle()；
-show()和hide()12345678$().hide() //把所选元素的display属性设置为none。$().show() //把所选元素的display属性还原为隐藏之前的显示状态（block、inline或者inline-blo">
+<meta name="description" content="jQuery动画显示和隐藏在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：（1）show()和hide()；（2）toggle()；">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery学习笔记4 - jQuery动画">
 <meta property="og:url" content="http://xifengxx.github.io/2016/04/27/jQuery学习笔记4/index.html">
 <meta property="og:site_name" content="西风前端">
-<meta property="og:description" content="jQuery动画显示和隐藏在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：（1）show()和hide()；（2）toggle()；
-show()和hide()12345678$().hide() //把所选元素的display属性设置为none。$().show() //把所选元素的display属性还原为隐藏之前的显示状态（block、inline或者inline-blo">
-<meta property="og:updated_time" content="2016-05-05T08:29:10.000Z">
+<meta property="og:description" content="jQuery动画显示和隐藏在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：（1）show()和hide()；（2）toggle()；">
+<meta property="og:updated_time" content="2016-05-05T13:03:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery学习笔记4 - jQuery动画">
-<meta name="twitter:description" content="jQuery动画显示和隐藏在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：（1）show()和hide()；（2）toggle()；
-show()和hide()12345678$().hide() //把所选元素的display属性设置为none。$().show() //把所选元素的display属性还原为隐藏之前的显示状态（block、inline或者inline-blo">
+<meta name="twitter:description" content="jQuery动画显示和隐藏在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：（1）show()和hide()；（2）toggle()；">
 
 
 
@@ -340,8 +337,7 @@ show()和hide()12345678$().hide() //把所选元素的display属性设置为none
       
 
       
-        <h3 id="jQuery动画"><a href="#jQuery动画" class="headerlink" title="jQuery动画"></a>jQuery动画</h3><h4 id="显示和隐藏"><a href="#显示和隐藏" class="headerlink" title="显示和隐藏"></a>显示和隐藏</h4><p>在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：<br>（1）show()和hide()；<br>（2）toggle()；</p>
-<p><strong>show()和hide()</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$().hide() <span class="comment">//把所选元素的display属性设置为none。</span></span><br><span class="line">$().show() <span class="comment">//把所选元素的display属性还原为隐藏之前的显示状态（block、inline或者inline-block等）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//带动画效果的显示和隐藏</span></span><br><span class="line">$().hide(speed,callback)</span><br><span class="line">$(),show(speed,callback)</span><br><span class="line"><span class="comment">// 参数speed为必选参数，表示动画执行的速度，单位是毫秒；</span></span><br><span class="line"><span class="comment">// 参数callback为可选参数（可以省略），表示动画执行完成之后的“回调函数”。</span></span><br></pre></td></tr></table></figure></p>
+        <h3 id="jQuery动画"><a href="#jQuery动画" class="headerlink" title="jQuery动画"></a>jQuery动画</h3><h4 id="显示和隐藏"><a href="#显示和隐藏" class="headerlink" title="显示和隐藏"></a>显示和隐藏</h4><p>在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：<br>（1）show()和hide()；<br>（2）toggle()；<br><a id="more"></a><br><strong>show()和hide()</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$().hide() <span class="comment">//把所选元素的display属性设置为none。</span></span><br><span class="line">$().show() <span class="comment">//把所选元素的display属性还原为隐藏之前的显示状态（block、inline或者inline-block等）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//带动画效果的显示和隐藏</span></span><br><span class="line">$().hide(speed,callback)</span><br><span class="line">$(),show(speed,callback)</span><br><span class="line"><span class="comment">// 参数speed为必选参数，表示动画执行的速度，单位是毫秒；</span></span><br><span class="line"><span class="comment">// 参数callback为可选参数（可以省略），表示动画执行完成之后的“回调函数”。</span></span><br></pre></td></tr></table></figure></p>
 <p><em>案例:</em><br>当点击“隐藏”按钮，使用hide()方法隐藏图片；当点击“显示”按钮，使用show()方法显示图片。这个例子非常简单。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#btn_hide"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">"img"</span>).hide();</span><br><span class="line">            &#125;);</span><br><span class="line">            $(<span class="string">"#btn_show"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">"img"</span>).show(<span class="number">500</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure></p>
 <p><strong>toggle()方法</strong><br>在jQuery中，我们还可以使用toggle()方法来“切换”元素的“显示状态”。<br>如果元素是显示状态，则变成隐藏状态；如果元素是隐藏状态，则变成显示状态。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$().toggle()                     <span class="comment">//简单的toggle()</span></span><br><span class="line">$().toggle(speed , callback);    <span class="comment">//动画的toggle()</span></span><br><span class="line"><span class="comment">//参数speed表示动画执行的速度，单位是毫秒；</span></span><br><span class="line"><span class="comment">//参数callback为可选参数（可以省略），表示动画执行完成之后的“回调函数”。</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="淡入和淡出"><a href="#淡入和淡出" class="headerlink" title="淡入和淡出"></a>淡入和淡出</h4><p>在jQuery中，如果我们想要实现元素的淡入淡出这种渐变效果，有3组方法：<br>（1）fadeIn()和fadeOut()；<br>（2）fadeToggle()；<br>（3）fadeTo()；</p>

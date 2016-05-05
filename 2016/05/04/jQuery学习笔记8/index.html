@@ -69,7 +69,7 @@ jQuery.ajaxPrefilter()函数jQuery.ajaxPrefilter()函数用于指定预先处理
 <meta property="og:description" content="jQuery的AJAX方法工具方法——用于协助发送或处理AJAX请求，简化AJAX操作.
 jQuery.ajaxPrefilter()函数jQuery.ajaxPrefilter()函数用于指定预先处理Ajax参数选项的回调函数。在所有参数选项被jQuery.ajax()函数处理之前，你可以使用该函数设置的回调函数来预先更改任何参数选项。
 你还可以指定数据类型(dataType)，从而只预先处理指">
-<meta property="og:updated_time" content="2016-05-04T15:34:38.000Z">
+<meta property="og:updated_time" content="2016-05-05T13:03:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery学习笔记8 - Ajax(2)">
 <meta name="twitter:description" content="jQuery的AJAX方法工具方法——用于协助发送或处理AJAX请求，简化AJAX操作.
@@ -345,8 +345,7 @@ jQuery.ajaxPrefilter()函数jQuery.ajaxPrefilter()函数用于指定预先处理
       
         <h3 id="jQuery的AJAX方法"><a href="#jQuery的AJAX方法" class="headerlink" title="jQuery的AJAX方法"></a>jQuery的AJAX方法</h3><p>工具方法——用于协助发送或处理AJAX请求，简化AJAX操作.</p>
 <h4 id="jQuery-ajaxPrefilter-函数"><a href="#jQuery-ajaxPrefilter-函数" class="headerlink" title="jQuery.ajaxPrefilter()函数"></a>jQuery.ajaxPrefilter()函数</h4><p>jQuery.ajaxPrefilter()函数用于指定预先处理Ajax参数选项的回调函数。<br>在所有参数选项被jQuery.ajax()函数处理之前，你可以使用该函数设置的回调函数来预先更改任何参数选项。</p>
-<p>你还可以指定数据类型(dataType)，从而只预先处理指定数据类型的参数选项。<br>该函数可以调用多次，以便于为不同数据类型的AJAX请求指定不同的回调函数。</p>
-<p><strong>语法</strong><br><code>jQuery.ajaxPrefilter( [ dataType ,] handler )</code></p>
+<p>你还可以指定数据类型(dataType)，从而只预先处理指定数据类型的参数选项。<br>该函数可以调用多次，以便于为不同数据类型的AJAX请求指定不同的回调函数。<br><a id="more"></a><br><strong>语法</strong><br><code>jQuery.ajaxPrefilter( [ dataType ,] handler )</code></p>
 <ul>
 <li>dataType： 可选/String类型<br>一个或多个用空格隔开的数据类型所组成的字符串。如果未指定该参数，则表示所有数据类型。可用的数据类型为”xml”、 “html”、 “text”、 “json”、 “jsonp”、 “script”。该字符串为它们之间的任意组合(多种类型用空格隔开)，例如：”xml”、 “text html”、 “script json jsonp”。</li>
 <li>handler：Function类型<br>用于预处理参数选项的回调函数。它有以下3个参数：<br>– options：(Object对象)当前AJAX请求的所有参数选项。<br>– originalOptions：(Object对象)传递给$.ajax()方法的未经修改的参数选项。<br>– jqXHR：当前请求的jqXHR对象(经过jQuery封装的XMLHttpRequest对象)。</li>

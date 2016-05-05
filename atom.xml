@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xifengxx.github.io/"/>
-  <updated>2016-05-05T12:48:40.000Z</updated>
+  <updated>2016-05-05T13:07:04.000Z</updated>
   <id>http://xifengxx.github.io/</id>
   
   <author>
@@ -20,14 +20,12 @@
     <link href="http://xifengxx.github.io/2016/05/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/"/>
     <id>http://xifengxx.github.io/2016/05/05/正则表达式入门教程/</id>
     <published>2016-05-05T08:23:01.000Z</published>
-    <updated>2016-05-05T12:48:40.000Z</updated>
+    <updated>2016-05-05T13:07:04.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xrt0g.com1.z0.glb.clouddn.com/git-RegExp.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;正则表达式简介—描述字符串规则的表达式&quot;&gt;&lt;a href=&quot;#正则表达式简介—描述字符串规则的表达式&quot; class=&quot;headerlink&quot; title=&quot;正则表达式简介—描述字符串规则的表达式&quot;&gt;&lt;/a&gt;正则表达式简介—描述字符串规则的表达式&lt;/h3&gt;&lt;p&gt;正则表达式，全称“Regular Expression”，在代码中常简写为regex、regexp或RE。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;正则表达式，就是用某种模式去匹配一类字符串的公式。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&quot;JavaScript中正则表达式的定义方法&quot;&gt;&lt;a href=&quot;#JavaScript中正则表达式的定义方法&quot; class=&quot;headerlink&quot; title=&quot;JavaScript中正则表达式的定义方法&quot;&gt;&lt;/a&gt;JavaScript中正则表达式的定义方法&lt;/h4&gt;&lt;p&gt;在JavaScript中，正则表达式是由一个RegExp对象表示的，利用RegExp对象来完成有关正则表达式的操作和功能。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;正则表达式的定义共有2种方式：&lt;br&gt;（1）显式定义；&lt;br&gt;显式定义必须是使用new关键词来定义。&lt;br&gt;语法：&lt;code&gt;var 变量名 =  new RegExp(pattern,attrs);&lt;/code&gt;&lt;br&gt;（2）隐式定义；&lt;br&gt;语法：&lt;code&gt;var 变量名 =  /pattern/attrs&lt;/code&gt;&lt;br&gt;-pattern：正则表达式规则。&lt;br&gt;-attrs: 正则表达式属性， 如g代表全局模式，i表示不区分大小写。&lt;/p&gt;
+&lt;h3 id=&quot;正则表达式简介—描述字符串规则的表达式&quot;&gt;&lt;a href=&quot;#正则表达式简介—描述字符串规则的表达式&quot; class=&quot;headerlink&quot; title=&quot;正则表达式简介—描述字符串规则的表达式&quot;&gt;&lt;/a&gt;正则表达式简介—描述字符串规则的表达式&lt;/h3&gt;&lt;p&gt;正则表达式，全称“Regular Expression”，在代码中常简写为regex、regexp或RE。&lt;br&gt;正则表达式，就是用某种模式去匹配一类字符串的公式。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;JavaScript中正则表达式的定义方法&quot;&gt;&lt;a href=&quot;#JavaScript中正则表达式的定义方法&quot; class=&quot;headerlink&quot; title=&quot;JavaScript中正则表达式的定义方法&quot;&gt;&lt;/a&gt;JavaScript中正则表达式的定义方法&lt;/h4&gt;&lt;p&gt;在JavaScript中，正则表达式是由一个RegExp对象表示的，利用RegExp对象来完成有关正则表达式的操作和功能。&lt;/p&gt;
+&lt;p&gt;正则表达式的定义共有2种方式：&lt;br&gt;（1）显式定义；&lt;br&gt;显式定义必须是使用new关键词来定义。&lt;br&gt;语法：&lt;code&gt;var 变量名 =  new RegExp(pattern,attrs);&lt;/code&gt;&lt;br&gt;（2）隐式定义；&lt;br&gt;语法：&lt;code&gt;var 变量名 =  /pattern/attrs&lt;/code&gt;&lt;br&gt;-pattern：正则表达式规则。&lt;br&gt;-attrs: 正则表达式属性， 如g代表全局模式，i表示不区分大小写。&lt;/p&gt;
 &lt;p&gt;举例：&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var myregex = new ReExp(&quot;[0-9]&quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var myregex = /[0-9]/;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h4 id=&quot;regexObj-test-str-方法&quot;&gt;&lt;a href=&quot;#regexObj-test-str-方法&quot; class=&quot;headerlink&quot; title=&quot;regexObj.test(str)方法&quot;&gt;&lt;/a&gt;regexObj.test(str)方法&lt;/h4&gt;&lt;p&gt;测试正则表达式与指定字符串是否匹配。&lt;/p&gt;
 &lt;p&gt;该方法返回一个boolean值。也就是说，test()方法检查字符串str是否符合正则表达式模式regexp，如果符合，则返回true；如果不符合，则返回false。&lt;/p&gt;
@@ -387,11 +385,7 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;http://7xrt0g.com1.z0.glb.clouddn.com/git-RegExp.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;正则表达式简介—描述字符串规则的表达式&quot;&gt;&lt;a href=&quot;#正则表达式简介—描述字符串规则的表达式&quot; class=&quot;headerlink&quot; title=&quot;正则表达式简介—描述字符串规则的表达式&quot;&gt;&lt;/a&gt;正则表达式简介—描述字符串规则的表达式&lt;/h3&gt;&lt;p&gt;正则表达式，全称“Regular Expression”，在代码中常简写为regex、regexp或RE。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;正则表达式，就是用某种模式去匹配一类字符串的公式。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&quot;JavaScript中正则表达式的定义方法&quot;&gt;&lt;a href=&quot;#JavaScript中正则表达式的定义方法&quot; class=&quot;headerlink&quot; title=&quot;JavaScript中正则表达式的定义方法&quot;&gt;&lt;/a&gt;JavaScript中正则表达式的定义方法&lt;/h4&gt;&lt;p&gt;在JavaScript中，正则表达式是由一个RegExp对象表示的，利用RegExp对象来完成有关正则表达式的操作和功能。&lt;br&gt;
+&lt;h3 id=&quot;正则表达式简介—描述字符串规则的表达式&quot;&gt;&lt;a href=&quot;#正则表达式简介—描述字符串规则的表达式&quot; class=&quot;headerlink&quot; title=&quot;正则表达式简介—描述字符串规则的表达式&quot;&gt;&lt;/a&gt;正则表达式简介—描述字符串规则的表达式&lt;/h3&gt;&lt;p&gt;正则表达式，全称“Regular Expression”，在代码中常简写为regex、regexp或RE。&lt;br&gt;正则表达式，就是用某种模式去匹配一类字符串的公式。&lt;br&gt;
     
     </summary>
     
@@ -407,7 +401,7 @@
     <link href="http://xifengxx.github.io/2016/05/05/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B09/"/>
     <id>http://xifengxx.github.io/2016/05/05/jQuery学习笔记9/</id>
     <published>2016-05-05T01:23:01.000Z</published>
-    <updated>2016-05-05T08:25:36.000Z</updated>
+    <updated>2016-05-05T13:03:58.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;jQuery的辅助工具属性和方法&quot;&gt;&lt;a href=&quot;#jQuery的辅助工具属性和方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery的辅助工具属性和方法&quot;&gt;&lt;/a&gt;jQuery的辅助工具属性和方法&lt;/h2&gt;&lt;p&gt;jQuery还为我们提供了许多的辅助工具方法，以便于我们进行各种常用的代码逻辑处理。&lt;br&gt;例如：&lt;/p&gt;
 &lt;ul&gt;
@@ -415,204 +409,9 @@
 &lt;li&gt;判断指定变量的类型。&lt;/li&gt;
 &lt;li&gt;操作指定DOM元素的函数队列。&lt;/li&gt;
 &lt;li&gt;操作指定DOM元素上的任意附加数据。&lt;/li&gt;
-&lt;li&gt;去除字符串两侧的连续空白字符、解析JSON字符串等。&lt;/li&gt;
+&lt;li&gt;去除字符串两侧的连续空白字符、解析JSON字符串等。&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+| 方法  |  版本  |  描述 |&lt;br&gt;| —-  | –  | —-  |&lt;br&gt;| 浏览器检测属性——用于检测浏览器的特性和bug信息 |&lt;br&gt;| jQuery.boxModel  | 1.0~1.3~1.8   |检测浏览器是否使用标准盒模型渲染当前页面。请使用jQuery.support.boxModel替代。 |&lt;br&gt;| jQuery.browser  |  1.0~1.3~1.9  | 以对象形式返回用户浏览器的相关信息。 |&lt;br&gt;| jQuery.support  |  1.3  | 以对象形式返回用户浏览器的特性或bug信息。 |&lt;br&gt;| 遍历方法——用于遍历数组元素或对象属性 |&lt;br&gt;| jQuery.each()  |   1.0  | 遍历对象属性或数组元素，并执行指定的回调函数。 |&lt;br&gt;| jQuery.map()  |    1.0  | 遍历对象属性或数组元素，执行指定的回调函数，并返回以函数的返回值组成的结果数组。 |&lt;br&gt;| jQuery.grep()  |   1.0  | 遍历对象属性或数组元素，执行指定的过滤函数，并返回过滤后的结果数组。 |&lt;br&gt;| each()  |  1.0  | 遍历当前jQuery对象匹配的所有DOM元素，并执行指定的回调函数。 |&lt;br&gt;| map()  |   1.2  | 遍历当前jQuery对象匹配的所有DOM元素，执行指定的回调函数，并返回以函数的返回值组成的结果数组。 |&lt;br&gt;| 附加数据、函数队列操作方法 |&lt;br&gt;| data()  |  1.0  | 获取或设置匹配元素上的指定附加数据。 |&lt;br&gt;| removeData()  |    1.0  | 删除匹配元素上指定的附加数据。 |&lt;br&gt;| queue()  | 1.2  | 获取或设置匹配元素上的指定函数队列。 |&lt;br&gt;| dequeue()  |   1.2  | 移除每个匹配元素的指定队列中的第一个函数，并执行被移除的函数 |&lt;br&gt;| clearQueue()  |    1.4  | 清空匹配元素上的指定函数队列。 |&lt;br&gt;| 扩展方法——用于扩展全局jQuery对象或jQuery实例对象的属性和方法 |&lt;br&gt;| jQuery.extend()  | 1.2  | 扩展全局jQuery对象的属性和方法。 |&lt;br&gt;| jQuery.fn.extend()  |  1.2  | 扩展jQuery原型对象的属性和方法，以便于实例对象使用。 |&lt;br&gt;| 遍历方法——用于遍历数组元素或对象属性 |&lt;br&gt;| jQuery.contains()  |   1.4  | 判断指定元素内是否包含另一个元素。 |&lt;br&gt;| jQuery.globalEval()  | 1.0.4  |   全局性地执行一段JavaScript代码。 |&lt;br&gt;| jQuery.inArray()  |    1.2  | 在数组中搜索指定的值，并返回其索引值。如果数组中不存在该值，则返回 -1。 |&lt;br&gt;| jQuery.isArray()  |    1.3  | 判断指定参数是否是一个数组。 |&lt;br&gt;| jQuery.isEmptyObject()  |  1.4  | 判断指定参数是否是一个空对象。 |&lt;br&gt;| jQuery.isPlainObject()  |  1.4  | 判断指定参数是否是一个纯粹的对象。 |&lt;br&gt;| jQuery.isFunction()  | 1.2  | 判断指定参数是否是一个函数。 |&lt;br&gt;| jQuery.isNumeric()  |  1.7  | 判断指定参数是否是一个数字值。 |&lt;br&gt;| jQuery.isWindow()  |   1.4.3  |   判断指定参数是否是一个窗口。 |&lt;br&gt;| jQuery.isXMLDoc()  |   1.1.4  |   判断一个DOM节点是否位于XML文档中，或者其本身就是XML文档。 |&lt;br&gt;| jQuery.makeArray()  |  1.2  | 将一个类数组对象转换为真正的数组对象。 |&lt;br&gt;| jQuery.noop()  |   1.4  | 一个空函数，它什么也不做。 |&lt;br&gt;| jQuery.now()  |    1.4.3  |   返回当前时间距1970年1月1日午夜所经过的毫秒数。 |&lt;br&gt;| jQuery.parseHTML()  |  1.2  | 手动触发元素上的任意事件，但不会触发元素的默认事件行为，也不支持事件冒泡。 |&lt;br&gt;| jQuery.parseJSON()  |  1.4.1  |   将格式完好的JSON字符串转为与之对应的JavaScript对象。 |&lt;br&gt;| jQuery.parseXML()  |   1.5  | 将字符串解析为对应的XML文档。 |&lt;br&gt;| jQuery.trim()  |   1.0  | 去除字符串两端的空白字符。 |&lt;br&gt;| jQuery.type()  |   1.4.3  |   确定JavaScript内置对象的类型，并返回小写形式的类型名称。 |&lt;br&gt;| jQuery.unique()  | 1.1.3  |   根据元素在文档中出现的先后顺序对DOM元素数组进行排序，并移除重复的元素。 |&lt;/li&gt;
 &lt;/ul&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;方法&lt;/th&gt;
-&lt;th&gt;版本&lt;/th&gt;
-&lt;th&gt;描述&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;浏览器检测属性——用于检测浏览器的特性和bug信息&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.boxModel&lt;/td&gt;
-&lt;td&gt;1.0~1.3~1.8&lt;/td&gt;
-&lt;td&gt;检测浏览器是否使用标准盒模型渲染当前页面。请使用jQuery.support.boxModel替代。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.browser&lt;/td&gt;
-&lt;td&gt;1.0~1.3~1.9&lt;/td&gt;
-&lt;td&gt;以对象形式返回用户浏览器的相关信息。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.support&lt;/td&gt;
-&lt;td&gt;1.3&lt;/td&gt;
-&lt;td&gt;以对象形式返回用户浏览器的特性或bug信息。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;遍历方法——用于遍历数组元素或对象属性&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.each()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;遍历对象属性或数组元素，并执行指定的回调函数。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.map()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;遍历对象属性或数组元素，执行指定的回调函数，并返回以函数的返回值组成的结果数组。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.grep()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;遍历对象属性或数组元素，执行指定的过滤函数，并返回过滤后的结果数组。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;each()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;遍历当前jQuery对象匹配的所有DOM元素，并执行指定的回调函数。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;map()&lt;/td&gt;
-&lt;td&gt;1.2&lt;/td&gt;
-&lt;td&gt;遍历当前jQuery对象匹配的所有DOM元素，执行指定的回调函数，并返回以函数的返回值组成的结果数组。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;附加数据、函数队列操作方法&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;data()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;获取或设置匹配元素上的指定附加数据。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;removeData()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;删除匹配元素上指定的附加数据。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;queue()&lt;/td&gt;
-&lt;td&gt;1.2&lt;/td&gt;
-&lt;td&gt;获取或设置匹配元素上的指定函数队列。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;dequeue()&lt;/td&gt;
-&lt;td&gt;1.2&lt;/td&gt;
-&lt;td&gt;移除每个匹配元素的指定队列中的第一个函数，并执行被移除的函数&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;clearQueue()&lt;/td&gt;
-&lt;td&gt;1.4&lt;/td&gt;
-&lt;td&gt;清空匹配元素上的指定函数队列。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;扩展方法——用于扩展全局jQuery对象或jQuery实例对象的属性和方法&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.extend()&lt;/td&gt;
-&lt;td&gt;1.2&lt;/td&gt;
-&lt;td&gt;扩展全局jQuery对象的属性和方法。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.fn.extend()&lt;/td&gt;
-&lt;td&gt;1.2&lt;/td&gt;
-&lt;td&gt;扩展jQuery原型对象的属性和方法，以便于实例对象使用。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;遍历方法——用于遍历数组元素或对象属性&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.contains()&lt;/td&gt;
-&lt;td&gt;1.4&lt;/td&gt;
-&lt;td&gt;判断指定元素内是否包含另一个元素。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.globalEval()&lt;/td&gt;
-&lt;td&gt;1.0.4&lt;/td&gt;
-&lt;td&gt;全局性地执行一段JavaScript代码。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.inArray()&lt;/td&gt;
-&lt;td&gt;1.2&lt;/td&gt;
-&lt;td&gt;在数组中搜索指定的值，并返回其索引值。如果数组中不存在该值，则返回 -1。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.isArray()&lt;/td&gt;
-&lt;td&gt;1.3&lt;/td&gt;
-&lt;td&gt;判断指定参数是否是一个数组。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.isEmptyObject()&lt;/td&gt;
-&lt;td&gt;1.4&lt;/td&gt;
-&lt;td&gt;判断指定参数是否是一个空对象。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.isPlainObject()&lt;/td&gt;
-&lt;td&gt;1.4&lt;/td&gt;
-&lt;td&gt;判断指定参数是否是一个纯粹的对象。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.isFunction()&lt;/td&gt;
-&lt;td&gt;1.2&lt;/td&gt;
-&lt;td&gt;判断指定参数是否是一个函数。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.isNumeric()&lt;/td&gt;
-&lt;td&gt;1.7&lt;/td&gt;
-&lt;td&gt;判断指定参数是否是一个数字值。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.isWindow()&lt;/td&gt;
-&lt;td&gt;1.4.3&lt;/td&gt;
-&lt;td&gt;判断指定参数是否是一个窗口。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.isXMLDoc()&lt;/td&gt;
-&lt;td&gt;1.1.4&lt;/td&gt;
-&lt;td&gt;判断一个DOM节点是否位于XML文档中，或者其本身就是XML文档。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.makeArray()&lt;/td&gt;
-&lt;td&gt;1.2&lt;/td&gt;
-&lt;td&gt;将一个类数组对象转换为真正的数组对象。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.noop()&lt;/td&gt;
-&lt;td&gt;1.4&lt;/td&gt;
-&lt;td&gt;一个空函数，它什么也不做。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.now()&lt;/td&gt;
-&lt;td&gt;1.4.3&lt;/td&gt;
-&lt;td&gt;返回当前时间距1970年1月1日午夜所经过的毫秒数。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.parseHTML()&lt;/td&gt;
-&lt;td&gt;1.2&lt;/td&gt;
-&lt;td&gt;手动触发元素上的任意事件，但不会触发元素的默认事件行为，也不支持事件冒泡。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.parseJSON()&lt;/td&gt;
-&lt;td&gt;1.4.1&lt;/td&gt;
-&lt;td&gt;将格式完好的JSON字符串转为与之对应的JavaScript对象。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.parseXML()&lt;/td&gt;
-&lt;td&gt;1.5&lt;/td&gt;
-&lt;td&gt;将字符串解析为对应的XML文档。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.trim()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;去除字符串两端的空白字符。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.type()&lt;/td&gt;
-&lt;td&gt;1.4.3&lt;/td&gt;
-&lt;td&gt;确定JavaScript内置对象的类型，并返回小写形式的类型名称。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.unique()&lt;/td&gt;
-&lt;td&gt;1.1.3&lt;/td&gt;
-&lt;td&gt;根据元素在文档中出现的先后顺序对DOM元素数组进行排序，并移除重复的元素。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
 &lt;h3 id=&quot;全局jQuery-each-函数&quot;&gt;&lt;a href=&quot;#全局jQuery-each-函数&quot; class=&quot;headerlink&quot; title=&quot;全局jQuery.each() 函数&quot;&gt;&lt;/a&gt;全局jQuery.each() 函数&lt;/h3&gt;&lt;p&gt;jQuery.each()函数用于遍历指定的对象和数组，并以对象的每个属性(或数组的每个成员)作为上下文来遍历执行指定的函数。&lt;br&gt;所谓的上下文，意即该函数内部的this指针引用了该元素。&lt;/p&gt;
 &lt;p&gt;该函数属于全局jQuery对象。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;br&gt;&lt;code&gt;jQuery.each( object, callback )&lt;/code&gt;&lt;/p&gt;
@@ -725,7 +524,13 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;jQuery的辅助工具属性和方法&quot;&gt;&lt;a href=&quot;#jQuery的辅助工具属性和方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery的辅助工具属性和方法&quot;&gt;&lt;/a&gt;jQuery的辅助工具属性和方法&lt;/h2&gt;&lt;p&gt;jQuery还为我们提供了许
+      &lt;h2 id=&quot;jQuery的辅助工具属性和方法&quot;&gt;&lt;a href=&quot;#jQuery的辅助工具属性和方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery的辅助工具属性和方法&quot;&gt;&lt;/a&gt;jQuery的辅助工具属性和方法&lt;/h2&gt;&lt;p&gt;jQuery还为我们提供了许多的辅助工具方法，以便于我们进行各种常用的代码逻辑处理。&lt;br&gt;例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;检测用户浏览器的指定特性。&lt;/li&gt;
+&lt;li&gt;判断指定变量的类型。&lt;/li&gt;
+&lt;li&gt;操作指定DOM元素的函数队列。&lt;/li&gt;
+&lt;li&gt;操作指定DOM元素上的任意附加数据。&lt;/li&gt;
+&lt;li&gt;去除字符串两侧的连续空白字符、解析JSON字符串等。
     
     </summary>
     
@@ -741,12 +546,11 @@
     <link href="http://xifengxx.github.io/2016/05/04/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/"/>
     <id>http://xifengxx.github.io/2016/05/04/jQuery学习笔记8/</id>
     <published>2016-05-04T13:23:01.000Z</published>
-    <updated>2016-05-04T15:34:38.000Z</updated>
+    <updated>2016-05-05T13:03:58.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;jQuery的AJAX方法&quot;&gt;&lt;a href=&quot;#jQuery的AJAX方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery的AJAX方法&quot;&gt;&lt;/a&gt;jQuery的AJAX方法&lt;/h3&gt;&lt;p&gt;工具方法——用于协助发送或处理AJAX请求，简化AJAX操作.&lt;/p&gt;
 &lt;h4 id=&quot;jQuery-ajaxPrefilter-函数&quot;&gt;&lt;a href=&quot;#jQuery-ajaxPrefilter-函数&quot; class=&quot;headerlink&quot; title=&quot;jQuery.ajaxPrefilter()函数&quot;&gt;&lt;/a&gt;jQuery.ajaxPrefilter()函数&lt;/h4&gt;&lt;p&gt;jQuery.ajaxPrefilter()函数用于指定预先处理Ajax参数选项的回调函数。&lt;br&gt;在所有参数选项被jQuery.ajax()函数处理之前，你可以使用该函数设置的回调函数来预先更改任何参数选项。&lt;/p&gt;
-&lt;p&gt;你还可以指定数据类型(dataType)，从而只预先处理指定数据类型的参数选项。&lt;br&gt;该函数可以调用多次，以便于为不同数据类型的AJAX请求指定不同的回调函数。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;br&gt;&lt;code&gt;jQuery.ajaxPrefilter( [ dataType ,] handler )&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;你还可以指定数据类型(dataType)，从而只预先处理指定数据类型的参数选项。&lt;br&gt;该函数可以调用多次，以便于为不同数据类型的AJAX请求指定不同的回调函数。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;strong&gt;语法&lt;/strong&gt;&lt;br&gt;&lt;code&gt;jQuery.ajaxPrefilter( [ dataType ,] handler )&lt;/code&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;dataType： 可选/String类型&lt;br&gt;一个或多个用空格隔开的数据类型所组成的字符串。如果未指定该参数，则表示所有数据类型。可用的数据类型为”xml”、 “html”、 “text”、 “json”、 “jsonp”、 “script”。该字符串为它们之间的任意组合(多种类型用空格隔开)，例如：”xml”、 “text html”、 “script json jsonp”。&lt;/li&gt;
 &lt;li&gt;handler：Function类型&lt;br&gt;用于预处理参数选项的回调函数。它有以下3个参数：&lt;br&gt;– options：(Object对象)当前AJAX请求的所有参数选项。&lt;br&gt;– originalOptions：(Object对象)传递给$.ajax()方法的未经修改的参数选项。&lt;br&gt;– jqXHR：当前请求的jqXHR对象(经过jQuery封装的XMLHttpRequest对象)。&lt;/li&gt;
@@ -855,7 +659,9 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;jQuery的AJAX方法&quot;&gt;&lt;a href=&quot;#jQuery的AJAX方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery的AJAX方法&quot;&gt;&lt;/a&gt;jQuery的AJAX方法&lt;/h3&gt;&lt;p&gt;工具方法——用于协助发送或处理AJAX请求，简化AJ
+      &lt;h3 id=&quot;jQuery的AJAX方法&quot;&gt;&lt;a href=&quot;#jQuery的AJAX方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery的AJAX方法&quot;&gt;&lt;/a&gt;jQuery的AJAX方法&lt;/h3&gt;&lt;p&gt;工具方法——用于协助发送或处理AJAX请求，简化AJAX操作.&lt;/p&gt;
+&lt;h4 id=&quot;jQuery-ajaxPrefilter-函数&quot;&gt;&lt;a href=&quot;#jQuery-ajaxPrefilter-函数&quot; class=&quot;headerlink&quot; title=&quot;jQuery.ajaxPrefilter()函数&quot;&gt;&lt;/a&gt;jQuery.ajaxPrefilter()函数&lt;/h4&gt;&lt;p&gt;jQuery.ajaxPrefilter()函数用于指定预先处理Ajax参数选项的回调函数。&lt;br&gt;在所有参数选项被jQuery.ajax()函数处理之前，你可以使用该函数设置的回调函数来预先更改任何参数选项。&lt;/p&gt;
+&lt;p&gt;你还可以指定数据类型(dataType)，从而只预先处理指定数据类型的参数选项。&lt;br&gt;该函数可以调用多次，以便于为不同数据类型的AJAX请求指定不同的回调函数。&lt;br&gt;
     
     </summary>
     
@@ -871,119 +677,15 @@
     <link href="http://xifengxx.github.io/2016/05/04/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07/"/>
     <id>http://xifengxx.github.io/2016/05/04/jQuery学习笔记7/</id>
     <published>2016-05-04T09:23:01.000Z</published>
-    <updated>2016-05-04T15:34:38.000Z</updated>
+    <updated>2016-05-05T13:03:58.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;jQuery核心：Ajax&quot;&gt;&lt;a href=&quot;#jQuery核心：Ajax&quot; class=&quot;headerlink&quot; title=&quot;jQuery核心：Ajax&quot;&gt;&lt;/a&gt;jQuery核心：Ajax&lt;/h2&gt;&lt;p&gt;jQuery还对Ajax进行了封装了，我们可以非常方便地发送一个Ajax请求，并对响应进行处理。&lt;br&gt;例如：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;在发送AJAX请求之前，序列化JS内容或表单内容，以便用作AJAX请求发送的数据。&lt;/li&gt;
 &lt;li&gt;快速发送AJAX请求，并处理响应数据(支持html、xml、text、json、jsonp、script等多种数据类型)。&lt;/li&gt;
-&lt;li&gt;监听AJAX事件，绑定事件触发时执行的处理函数。&lt;/li&gt;
+&lt;li&gt;监听AJAX事件，绑定事件触发时执行的处理函数。&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;jQuery的AJAX方法&quot;&gt;&lt;a href=&quot;#jQuery的AJAX方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery的AJAX方法&quot;&gt;&lt;/a&gt;jQuery的AJAX方法&lt;/h3&gt;| 方法  |  版本  |  描述 |&lt;br&gt;| —  | —  |  — |&lt;br&gt;| 核心方法——发送并处理AJAX请求的方法 |&lt;br&gt;| jQuery.ajax()  |   1.0  | 全局方法发送并处理AJAX请求。这是jQuery底层的AJAX实现，包含处理AJAX请求所需的一切功能。其他发送AJAX请求的方法都是对该方法的进一步封装。 |&lt;br&gt;| jQuery.get()  |    1.0  | 全局方法发送并处理GET方式的AJAX请求。 |&lt;br&gt;| jQuery.post()  |   1.0  | 全局方法发送并处理POST方式的AJAX请求。 |&lt;br&gt;| jQuery.getJSON()  |    1.0  | 全局方法发送并处理GET方式、返回数据为JSON格式的AJAX请求。 |&lt;br&gt;| jQuery.getScript()  |  1.0  | 全局方法发送GET请求，用于加载一个JS脚本文件。 |&lt;br&gt;| jQuery.load()  |   1.0  | 全局方法发送AJAX请求，用于加载一个HTML文件并替换匹配元素中的内容。 |&lt;br&gt;| 工具方法——用于协助发送或处理AJAX请求，简化AJAX操作 |&lt;br&gt;| jQuery.ajaxPrefilter()  |  1.5  | 全局方法在$.ajax()处理参数选项之前，预处理参数选项。 |&lt;br&gt;| jQuery.ajaxSetup()  |  1.1  | 全局方法设置$.ajax()的全局默认选项。 |&lt;br&gt;| jQuery.param()  |  1.0  | 全局方法将JS数组或对象序列化为字符串，以便用于URL查询字符串或AJAX请求。 |&lt;br&gt;| serialize()  | 1.0  | 将表单元素序列化为字符串，以便用于URL查询字符串或AJAX请求。 |&lt;br&gt;| serializeArray()  |    1.2  | 将表单元素序列化为一个JS数组。 |&lt;br&gt;| 事件方法——用于为AJAX事件绑定处理一个或多个函数 |&lt;br&gt;| ajaxComplete()  |  1.0  | 设置当AJAX请求完成(无论成功或失败)时执行的处理函数。 |&lt;br&gt;| ajaxSuccess()  |   1.0  | 设置当AJAX请求成功时执行的处理函数。 |&lt;br&gt;| ajaxError()  | 1.0  | 设置当AJAX请求失败时执行的处理函数。 |&lt;br&gt;| ajaxStart()  | 1.0  | 设置当前第一个AJAX请求开始时执行的处理函数。 |&lt;br&gt;| ajaxSend()  |  1.0  | 设置在AJAX请求被发送前执行的处理函数。 |&lt;br&gt;| ajaxStop()  |  1.0  | 设置当前最后一个AJAX请求结束时执行的处理函数。 |&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;jQuery的AJAX方法&quot;&gt;&lt;a href=&quot;#jQuery的AJAX方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery的AJAX方法&quot;&gt;&lt;/a&gt;jQuery的AJAX方法&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;方法&lt;/th&gt;
-&lt;th&gt;版本&lt;/th&gt;
-&lt;th&gt;描述&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;核心方法——发送并处理AJAX请求的方法&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.ajax()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;全局方法发送并处理AJAX请求。这是jQuery底层的AJAX实现，包含处理AJAX请求所需的一切功能。其他发送AJAX请求的方法都是对该方法的进一步封装。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.get()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;全局方法发送并处理GET方式的AJAX请求。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.post()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;全局方法发送并处理POST方式的AJAX请求。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.getJSON()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;全局方法发送并处理GET方式、返回数据为JSON格式的AJAX请求。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.getScript()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;全局方法发送GET请求，用于加载一个JS脚本文件。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.load()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;全局方法发送AJAX请求，用于加载一个HTML文件并替换匹配元素中的内容。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;工具方法——用于协助发送或处理AJAX请求，简化AJAX操作&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.ajaxPrefilter()&lt;/td&gt;
-&lt;td&gt;1.5&lt;/td&gt;
-&lt;td&gt;全局方法在$.ajax()处理参数选项之前，预处理参数选项。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.ajaxSetup()&lt;/td&gt;
-&lt;td&gt;1.1&lt;/td&gt;
-&lt;td&gt;全局方法设置$.ajax()的全局默认选项。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;jQuery.param()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;全局方法将JS数组或对象序列化为字符串，以便用于URL查询字符串或AJAX请求。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;serialize()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;将表单元素序列化为字符串，以便用于URL查询字符串或AJAX请求。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;serializeArray()&lt;/td&gt;
-&lt;td&gt;1.2&lt;/td&gt;
-&lt;td&gt;将表单元素序列化为一个JS数组。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;事件方法——用于为AJAX事件绑定处理一个或多个函数&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ajaxComplete()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;设置当AJAX请求完成(无论成功或失败)时执行的处理函数。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ajaxSuccess()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;设置当AJAX请求成功时执行的处理函数。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ajaxError()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;设置当AJAX请求失败时执行的处理函数。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ajaxStart()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;设置当前第一个AJAX请求开始时执行的处理函数。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ajaxSend()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;设置在AJAX请求被发送前执行的处理函数。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;ajaxStop()&lt;/td&gt;
-&lt;td&gt;1.0&lt;/td&gt;
-&lt;td&gt;设置当前最后一个AJAX请求结束时执行的处理函数。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
 &lt;h4 id=&quot;jQuery-ajax-函数&quot;&gt;&lt;a href=&quot;#jQuery-ajax-函数&quot; class=&quot;headerlink&quot; title=&quot;jQuery.ajax() 函数&quot;&gt;&lt;/a&gt;jQuery.ajax() 函数&lt;/h4&gt;&lt;p&gt;jQuery.ajax()函数用于通过后台HTTP请求加载远程数据。&lt;/p&gt;
 &lt;p&gt;jQuery.ajax()函数是jQuery封装的AJAX技术实现，通过该函数，我们无需刷新当前页面即可获取远程服务器上的数据。&lt;/p&gt;
 &lt;p&gt;jQuery.ajax()函数是jQuery的底层AJAX实现。jQuery.get()、 jQuery.post()、 load()、 jQuery.getJSON()、 jQuery.getScript()等函数都是该函数的简化形式(都调用该函数，只是参数设置有所不同或有所省略)。&lt;/p&gt;
@@ -1147,7 +849,11 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;jQuery核心：Ajax&quot;&gt;&lt;a href=&quot;#jQuery核心：Ajax&quot; class=&quot;headerlink&quot; title=&quot;jQuery核心：Ajax&quot;&gt;&lt;/a&gt;jQuery核心：Ajax&lt;/h2&gt;&lt;p&gt;jQuery还对Ajax进行了封装了，我们可以非常方
+      &lt;h2 id=&quot;jQuery核心：Ajax&quot;&gt;&lt;a href=&quot;#jQuery核心：Ajax&quot; class=&quot;headerlink&quot; title=&quot;jQuery核心：Ajax&quot;&gt;&lt;/a&gt;jQuery核心：Ajax&lt;/h2&gt;&lt;p&gt;jQuery还对Ajax进行了封装了，我们可以非常方便地发送一个Ajax请求，并对响应进行处理。&lt;br&gt;例如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在发送AJAX请求之前，序列化JS内容或表单内容，以便用作AJAX请求发送的数据。&lt;/li&gt;
+&lt;li&gt;快速发送AJAX请求，并处理响应数据(支持html、xml、text、json、jsonp、script等多种数据类型)。&lt;/li&gt;
+&lt;li&gt;监听AJAX事件，绑定事件触发时执行的处理函数。
     
     </summary>
     
@@ -1163,11 +869,12 @@
     <link href="http://xifengxx.github.io/2016/05/04/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B06/"/>
     <id>http://xifengxx.github.io/2016/05/04/jQuery学习笔记6/</id>
     <published>2016-05-04T07:23:01.000Z</published>
-    <updated>2016-05-04T10:09:04.000Z</updated>
+    <updated>2016-05-05T13:03:58.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;jQuery-Event对象的属性和方法&quot;&gt;&lt;a href=&quot;#jQuery-Event对象的属性和方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery Event对象的属性和方法&quot;&gt;&lt;/a&gt;jQuery Event对象的属性和方法&lt;/h2&gt;&lt;p&gt;jQuery的Event对象用于表示当前文档元素触发的DOM事件，它对JS原生的Event对象进行了封装，从而实现跨浏览器的兼容。&lt;/p&gt;
 &lt;p&gt;该对象主要用于获取事件的相关信息，或对该事件进行处理。&lt;/p&gt;
-&lt;h3 id=&quot;Event-对象的属性&quot;&gt;&lt;a href=&quot;#Event-对象的属性&quot; class=&quot;headerlink&quot; title=&quot;Event 对象的属性&quot;&gt;&lt;/a&gt;Event 对象的属性&lt;/h3&gt;&lt;table&gt;
+&lt;h3 id=&quot;Event-对象的属性&quot;&gt;&lt;a href=&quot;#Event-对象的属性&quot; class=&quot;headerlink&quot; title=&quot;Event 对象的属性&quot;&gt;&lt;/a&gt;Event 对象的属性&lt;/h3&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;属性&lt;/th&gt;
@@ -1444,7 +1151,9 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;jQuery-Event对象的属性和方法&quot;&gt;&lt;a href=&quot;#jQuery-Event对象的属性和方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery Event对象的属性和方法&quot;&gt;&lt;/a&gt;jQuery Event对象的属性和方法&lt;/h2&gt;&lt;
+      &lt;h2 id=&quot;jQuery-Event对象的属性和方法&quot;&gt;&lt;a href=&quot;#jQuery-Event对象的属性和方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery Event对象的属性和方法&quot;&gt;&lt;/a&gt;jQuery Event对象的属性和方法&lt;/h2&gt;&lt;p&gt;jQuery的Event对象用于表示当前文档元素触发的DOM事件，它对JS原生的Event对象进行了封装，从而实现跨浏览器的兼容。&lt;/p&gt;
+&lt;p&gt;该对象主要用于获取事件的相关信息，或对该事件进行处理。&lt;/p&gt;
+&lt;h3 id=&quot;Event-对象的属性&quot;&gt;&lt;a href=&quot;#Event-对象的属性&quot; class=&quot;headerlink&quot; title=&quot;Event 对象的属性&quot;&gt;&lt;/a&gt;Event 对象的属性&lt;/h3&gt;
     
     </summary>
     
@@ -1460,11 +1169,10 @@
     <link href="http://xifengxx.github.io/2016/04/29/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/"/>
     <id>http://xifengxx.github.io/2016/04/29/jQuery学习笔记5/</id>
     <published>2016-04-29T07:23:01.000Z</published>
-    <updated>2016-05-05T08:28:48.000Z</updated>
+    <updated>2016-05-05T13:03:58.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;jQuery过滤方法&quot;&gt;&lt;a href=&quot;#jQuery过滤方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery过滤方法&quot;&gt;&lt;/a&gt;jQuery过滤方法&lt;/h3&gt;&lt;p&gt;除了选择器之外，jQuery还为我们提供了以“方法”（类似于函数方法）形式存在的2种方式：（1）过滤方法；（2）查找方法。&lt;/p&gt;
-&lt;p&gt;过滤和查找这2类方法与之前所学到的“选择器”是相互补充的关系。过滤和查找补充了很多使用选择器无法进行的操作，例如选取某一个元素的父元素、获取当前点击位置下的子元素、判断当前元素是否处于动画状态等等。这些都是很常见的操作。&lt;/p&gt;
-&lt;p&gt;在jQuery中，常见的过滤方法如下：&lt;/p&gt;
+&lt;p&gt;过滤和查找这2类方法与之前所学到的“选择器”是相互补充的关系。过滤和查找补充了很多使用选择器无法进行的操作，例如选取某一个元素的父元素、获取当前点击位置下的子元素、判断当前元素是否处于动画状态等等。这些都是很常见的操作。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;在jQuery中，常见的过滤方法如下：&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1570,7 +1278,8 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;jQuery过滤方法&quot;&gt;&lt;a href=&quot;#jQuery过滤方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery过滤方法&quot;&gt;&lt;/a&gt;jQuery过滤方法&lt;/h3&gt;&lt;p&gt;除了选择器之外，jQuery还为我们提供了以“方法”（类似于函数方法）形式存
+      &lt;h3 id=&quot;jQuery过滤方法&quot;&gt;&lt;a href=&quot;#jQuery过滤方法&quot; class=&quot;headerlink&quot; title=&quot;jQuery过滤方法&quot;&gt;&lt;/a&gt;jQuery过滤方法&lt;/h3&gt;&lt;p&gt;除了选择器之外，jQuery还为我们提供了以“方法”（类似于函数方法）形式存在的2种方式：（1）过滤方法；（2）查找方法。&lt;/p&gt;
+&lt;p&gt;过滤和查找这2类方法与之前所学到的“选择器”是相互补充的关系。过滤和查找补充了很多使用选择器无法进行的操作，例如选取某一个元素的父元素、获取当前点击位置下的子元素、判断当前元素是否处于动画状态等等。这些都是很常见的操作。&lt;br&gt;
     
     </summary>
     
@@ -1586,10 +1295,9 @@
     <link href="http://xifengxx.github.io/2016/04/27/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/"/>
     <id>http://xifengxx.github.io/2016/04/27/jQuery学习笔记4/</id>
     <published>2016-04-27T07:23:01.000Z</published>
-    <updated>2016-05-05T08:29:10.000Z</updated>
+    <updated>2016-05-05T13:03:58.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;jQuery动画&quot;&gt;&lt;a href=&quot;#jQuery动画&quot; class=&quot;headerlink&quot; title=&quot;jQuery动画&quot;&gt;&lt;/a&gt;jQuery动画&lt;/h3&gt;&lt;h4 id=&quot;显示和隐藏&quot;&gt;&lt;a href=&quot;#显示和隐藏&quot; class=&quot;headerlink&quot; title=&quot;显示和隐藏&quot;&gt;&lt;/a&gt;显示和隐藏&lt;/h4&gt;&lt;p&gt;在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：&lt;br&gt;（1）show()和hide()；&lt;br&gt;（2）toggle()；&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;show()和hide()&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$().hide() &lt;span class=&quot;comment&quot;&gt;//把所选元素的display属性设置为none。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$().show() &lt;span class=&quot;comment&quot;&gt;//把所选元素的display属性还原为隐藏之前的显示状态（block、inline或者inline-block等）。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//带动画效果的显示和隐藏&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$().hide(speed,callback)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(),show(speed,callback)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 参数speed为必选参数，表示动画执行的速度，单位是毫秒；&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 参数callback为可选参数（可以省略），表示动画执行完成之后的“回调函数”。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    <content type="html">&lt;h3 id=&quot;jQuery动画&quot;&gt;&lt;a href=&quot;#jQuery动画&quot; class=&quot;headerlink&quot; title=&quot;jQuery动画&quot;&gt;&lt;/a&gt;jQuery动画&lt;/h3&gt;&lt;h4 id=&quot;显示和隐藏&quot;&gt;&lt;a href=&quot;#显示和隐藏&quot; class=&quot;headerlink&quot; title=&quot;显示和隐藏&quot;&gt;&lt;/a&gt;显示和隐藏&lt;/h4&gt;&lt;p&gt;在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：&lt;br&gt;（1）show()和hide()；&lt;br&gt;（2）toggle()；&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;strong&gt;show()和hide()&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$().hide() &lt;span class=&quot;comment&quot;&gt;//把所选元素的display属性设置为none。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$().show() &lt;span class=&quot;comment&quot;&gt;//把所选元素的display属性还原为隐藏之前的显示状态（block、inline或者inline-block等）。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//带动画效果的显示和隐藏&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$().hide(speed,callback)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(),show(speed,callback)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 参数speed为必选参数，表示动画执行的速度，单位是毫秒；&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 参数callback为可选参数（可以省略），表示动画执行完成之后的“回调函数”。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;案例:&lt;/em&gt;&lt;br&gt;当点击“隐藏”按钮，使用hide()方法隐藏图片；当点击“显示”按钮，使用show()方法显示图片。这个例子非常简单。&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $(&lt;span class=&quot;string&quot;&gt;&quot;#btn_hide&quot;&lt;/span&gt;).click(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                $(&lt;span class=&quot;string&quot;&gt;&quot;img&quot;&lt;/span&gt;).hide();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $(&lt;span class=&quot;string&quot;&gt;&quot;#btn_show&quot;&lt;/span&gt;).click(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                $(&lt;span class=&quot;string&quot;&gt;&quot;img&quot;&lt;/span&gt;).show(&lt;span class=&quot;number&quot;&gt;500&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;toggle()方法&lt;/strong&gt;&lt;br&gt;在jQuery中，我们还可以使用toggle()方法来“切换”元素的“显示状态”。&lt;br&gt;如果元素是显示状态，则变成隐藏状态；如果元素是隐藏状态，则变成显示状态。&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$().toggle()                     &lt;span class=&quot;comment&quot;&gt;//简单的toggle()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$().toggle(speed , callback);    &lt;span class=&quot;comment&quot;&gt;//动画的toggle()&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//参数speed表示动画执行的速度，单位是毫秒；&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//参数callback为可选参数（可以省略），表示动画执行完成之后的“回调函数”。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h4 id=&quot;淡入和淡出&quot;&gt;&lt;a href=&quot;#淡入和淡出&quot; class=&quot;headerlink&quot; title=&quot;淡入和淡出&quot;&gt;&lt;/a&gt;淡入和淡出&lt;/h4&gt;&lt;p&gt;在jQuery中，如果我们想要实现元素的淡入淡出这种渐变效果，有3组方法：&lt;br&gt;（1）fadeIn()和fadeOut()；&lt;br&gt;（2）fadeToggle()；&lt;br&gt;（3）fadeTo()；&lt;/p&gt;
@@ -1664,7 +1372,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;jQuery动画&quot;&gt;&lt;a href=&quot;#jQuery动画&quot; class=&quot;headerlink&quot; title=&quot;jQuery动画&quot;&gt;&lt;/a&gt;jQuery动画&lt;/h3&gt;&lt;h4 id=&quot;显示和隐藏&quot;&gt;&lt;a href=&quot;#显示和隐藏&quot; class=&quot;headerlink
+      &lt;h3 id=&quot;jQuery动画&quot;&gt;&lt;a href=&quot;#jQuery动画&quot; class=&quot;headerlink&quot; title=&quot;jQuery动画&quot;&gt;&lt;/a&gt;jQuery动画&lt;/h3&gt;&lt;h4 id=&quot;显示和隐藏&quot;&gt;&lt;a href=&quot;#显示和隐藏&quot; class=&quot;headerlink&quot; title=&quot;显示和隐藏&quot;&gt;&lt;/a&gt;显示和隐藏&lt;/h4&gt;&lt;p&gt;在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：&lt;br&gt;（1）show()和hide()；&lt;br&gt;（2）toggle()；&lt;br&gt;
     
     </summary>
     
@@ -1680,11 +1388,12 @@
     <link href="http://xifengxx.github.io/2016/04/25/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/"/>
     <id>http://xifengxx.github.io/2016/04/25/jQuery学习笔记3/</id>
     <published>2016-04-25T07:23:01.000Z</published>
-    <updated>2016-05-05T08:29:34.000Z</updated>
+    <updated>2016-05-05T13:03:58.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;jQuery事件&quot;&gt;&lt;a href=&quot;#jQuery事件&quot; class=&quot;headerlink&quot; title=&quot;jQuery事件&quot;&gt;&lt;/a&gt;jQuery事件&lt;/h3&gt;&lt;p&gt;jQuery封装了JavaScript中所有的事件，使得其操作更加简单方便，并且使得这些事件能够兼容各大浏览器，减少我们大量代码的编写。&lt;br&gt;jQuery事件包括两类：&lt;/p&gt;
+    <content type="html">&lt;h3 id=&quot;jQuery事件&quot;&gt;&lt;a href=&quot;#jQuery事件&quot; class=&quot;headerlink&quot; title=&quot;jQuery事件&quot;&gt;&lt;/a&gt;jQuery事件&lt;/h3&gt;&lt;p&gt;jQuery封装了JavaScript中所有的事件，使得其操作更加简单方便，并且使得这些事件能够兼容各大浏览器，减少我们大量代码的编写。&lt;/p&gt;
+&lt;p&gt;jQuery事件包括两类：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;jQuery对象的常规事件方法&lt;br&gt;常规事件函数，主要用于为元素的指定事件添加、触发绑定的一个或多个事件处理函数。&lt;br&gt;如:ready(),resize(),focus(),blur(),mousedown(),click(),toggle()等。&lt;/li&gt;
+&lt;li&gt;jQuery对象的常规事件方法&lt;br&gt;常规事件函数，主要用于为元素的指定事件添加、触发绑定的一个或多个事件处理函数。&lt;br&gt;如:ready(),resize(),focus(),blur(),mousedown(),click(),toggle()等。&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;jQuery对象的核心事件方法&lt;br&gt;核心事件函数，主要用于为元素的任意事件(包括自定义事件)添加、取消、触发绑定的一个或多个事件处理函数。&lt;br&gt;如：bind(),one(),delegate(),unbind(),off()，trigger()等。&lt;br&gt;在jQuery中，我们需要学习9种事件操作：&lt;br&gt;（1）页面载入事件；&lt;br&gt;（2）鼠标事件；&lt;br&gt;（3）键盘事件；&lt;br&gt;（4）表单事件；&lt;br&gt;（5）滚动事件；&lt;br&gt;（6）绑定事件；&lt;br&gt;（7）解绑事件；&lt;br&gt;（8）合成事件；&lt;br&gt;（9）一次事件；&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&quot;页面载入事件&quot;&gt;&lt;a href=&quot;#页面载入事件&quot; class=&quot;headerlink&quot; title=&quot;页面载入事件&quot;&gt;&lt;/a&gt;页面载入事件&lt;/h4&gt;&lt;p&gt;在jQuery中，对于页面载入事件，我们使用&lt;code&gt;$(document).ready()&lt;/code&gt;方法来替代JavaScript中的&lt;code&gt;window.onload&lt;/code&gt;方法&lt;/p&gt;
@@ -1911,7 +1620,10 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;jQuery事件&quot;&gt;&lt;a href=&quot;#jQuery事件&quot; class=&quot;headerlink&quot; title=&quot;jQuery事件&quot;&gt;&lt;/a&gt;jQuery事件&lt;/h3&gt;&lt;p&gt;jQuery封装了JavaScript中所有的事件，使得其操作更加简单方便，并且使得这些事件
+      &lt;h3 id=&quot;jQuery事件&quot;&gt;&lt;a href=&quot;#jQuery事件&quot; class=&quot;headerlink&quot; title=&quot;jQuery事件&quot;&gt;&lt;/a&gt;jQuery事件&lt;/h3&gt;&lt;p&gt;jQuery封装了JavaScript中所有的事件，使得其操作更加简单方便，并且使得这些事件能够兼容各大浏览器，减少我们大量代码的编写。&lt;/p&gt;
+&lt;p&gt;jQuery事件包括两类：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;jQuery对象的常规事件方法&lt;br&gt;常规事件函数，主要用于为元素的指定事件添加、触发绑定的一个或多个事件处理函数。&lt;br&gt;如:ready(),resize(),focus(),blur(),mousedown(),click(),toggle()等。
     
     </summary>
     
@@ -1927,14 +1639,15 @@
     <link href="http://xifengxx.github.io/2016/04/22/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/"/>
     <id>http://xifengxx.github.io/2016/04/22/jQuery学习笔记2/</id>
     <published>2016-04-22T07:23:01.000Z</published>
-    <updated>2016-05-05T08:30:40.000Z</updated>
+    <updated>2016-05-05T13:03:58.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;jQuery操作元素&quot;&gt;&lt;a href=&quot;#jQuery操作元素&quot; class=&quot;headerlink&quot; title=&quot;jQuery操作元素&quot;&gt;&lt;/a&gt;jQuery操作元素&lt;/h3&gt;&lt;h4 id=&quot;属性操作&quot;&gt;&lt;a href=&quot;#属性操作&quot; class=&quot;headerlink&quot; title=&quot;属性操作&quot;&gt;&lt;/a&gt;属性操作&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;获取元素属性：&lt;br&gt; &lt;code&gt;$().attr(&amp;quot;属性名&amp;quot;)&lt;/code&gt;&lt;br&gt; &lt;code&gt;$().prop(&amp;quot;属性名&amp;quot;)&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;设置元素属性：&lt;br&gt; &lt;code&gt;$().attr(&amp;quot;属性&amp;quot;,&amp;quot;属性值&amp;quot;)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;删除元素属性：&lt;br&gt; &lt;code&gt;$().removeAttr(&amp;quot;属性名&amp;quot;)&lt;/code&gt;&lt;br&gt; &lt;code&gt;$().removeProp(&amp;quot;属性名&amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;删除元素属性：&lt;br&gt; &lt;code&gt;$().removeAttr(&amp;quot;属性名&amp;quot;)&lt;/code&gt;&lt;br&gt; &lt;code&gt;$().removeProp(&amp;quot;属性名&amp;quot;)&lt;/code&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+案例：&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//使用attr()方法获取img元素的src属性&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;string&quot;&gt;&quot;#btn_src&quot;&lt;/span&gt;).click(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                alert($(&lt;span class=&quot;string&quot;&gt;&quot;img&quot;&lt;/span&gt;).attr(&lt;span class=&quot;string&quot;&gt;&quot;src&quot;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//使用attr()方法为a标签添加了一个title属性。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;string&quot;&gt;&quot;a&quot;&lt;/span&gt;).attr(&lt;span class=&quot;string&quot;&gt;&quot;title&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;欢迎来到西风博客网站&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//使用removeAttr()方法删除a标签的title属性。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;string&quot;&gt;&quot;a&quot;&lt;/span&gt;).removeAttr(&lt;span class=&quot;string&quot;&gt;&quot;title&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;案例：&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//使用attr()方法获取img元素的src属性&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;string&quot;&gt;&quot;#btn_src&quot;&lt;/span&gt;).click(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                alert($(&lt;span class=&quot;string&quot;&gt;&quot;img&quot;&lt;/span&gt;).attr(&lt;span class=&quot;string&quot;&gt;&quot;src&quot;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//使用attr()方法为a标签添加了一个title属性。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;string&quot;&gt;&quot;a&quot;&lt;/span&gt;).attr(&lt;span class=&quot;string&quot;&gt;&quot;title&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;欢迎来到西风博客网站&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//使用removeAttr()方法删除a标签的title属性。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;string&quot;&gt;&quot;a&quot;&lt;/span&gt;).removeAttr(&lt;span class=&quot;string&quot;&gt;&quot;title&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h4 id=&quot;attr-方法和prop-方法操作元素属性的区别：&quot;&gt;&lt;a href=&quot;#attr-方法和prop-方法操作元素属性的区别：&quot; class=&quot;headerlink&quot; title=&quot;attr()方法和prop()方法操作元素属性的区别：&quot;&gt;&lt;/a&gt;attr()方法和prop()方法操作元素属性的区别：&lt;/h4&gt;&lt;ol&gt;
 &lt;li&gt;操作对象不同&lt;br&gt;attr和prop分别是单词attribute和property的缩写，并且它们均表示”属性”的意思。&lt;/li&gt;
 &lt;/ol&gt;
@@ -2084,7 +1797,10 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;jQuery操作元素&quot;&gt;&lt;a href=&quot;#jQuery操作元素&quot; class=&quot;headerlink&quot; title=&quot;jQuery操作元素&quot;&gt;&lt;/a&gt;jQuery操作元素&lt;/h3&gt;&lt;h4 id=&quot;属性操作&quot;&gt;&lt;a href=&quot;#属性操作&quot; class=&quot;head
+      &lt;h3 id=&quot;jQuery操作元素&quot;&gt;&lt;a href=&quot;#jQuery操作元素&quot; class=&quot;headerlink&quot; title=&quot;jQuery操作元素&quot;&gt;&lt;/a&gt;jQuery操作元素&lt;/h3&gt;&lt;h4 id=&quot;属性操作&quot;&gt;&lt;a href=&quot;#属性操作&quot; class=&quot;headerlink&quot; title=&quot;属性操作&quot;&gt;&lt;/a&gt;属性操作&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;获取元素属性：&lt;br&gt; &lt;code&gt;$().attr(&amp;quot;属性名&amp;quot;)&lt;/code&gt;&lt;br&gt; &lt;code&gt;$().prop(&amp;quot;属性名&amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;设置元素属性：&lt;br&gt; &lt;code&gt;$().attr(&amp;quot;属性&amp;quot;,&amp;quot;属性值&amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;删除元素属性：&lt;br&gt; &lt;code&gt;$().removeAttr(&amp;quot;属性名&amp;quot;)&lt;/code&gt;&lt;br&gt; &lt;code&gt;$().removeProp(&amp;quot;属性名&amp;quot;)&lt;/code&gt;
     
     </summary>
     
@@ -2100,10 +1816,10 @@
     <link href="http://xifengxx.github.io/2016/04/19/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/"/>
     <id>http://xifengxx.github.io/2016/04/19/jQuery学习笔记1/</id>
     <published>2016-04-19T07:23:01.000Z</published>
-    <updated>2016-05-05T08:33:10.000Z</updated>
+    <updated>2016-05-05T13:07:04.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;jQuery选择器&quot;&gt;&lt;a href=&quot;#jQuery选择器&quot; class=&quot;headerlink&quot; title=&quot;jQuery选择器&quot;&gt;&lt;/a&gt;jQuery选择器&lt;/h3&gt;&lt;p&gt;选择器是一种选中页面元素的方式。只要把元素选中，我们才能对被选中的元素进行各种操作。不同的选择器，在于它们选取方式的不同。&lt;br&gt;jQuery选择器的功能就是把元素选中，然后我们才能对选中的元素进行各种操作。&lt;br&gt;jQuery选择器的格式如下：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&amp;quot;选择器&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;参考：&lt;a href=&quot;http://www.365mini.com/page/tag/jquery-all-selectors&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jQuery选择器一览表&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考：&lt;a href=&quot;http://www.365mini.com/page/tag/jquery-all-selectors&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jQuery选择器一览表&lt;/a&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&quot;jQuery基础选择器&quot;&gt;&lt;a href=&quot;#jQuery基础选择器&quot; class=&quot;headerlink&quot; title=&quot;jQuery基础选择器&quot;&gt;&lt;/a&gt;jQuery基础选择器&lt;/h4&gt;&lt;h5 id=&quot;基本选择器；&quot;&gt;&lt;a href=&quot;#基本选择器；&quot; class=&quot;headerlink&quot; title=&quot;基本选择器；&quot;&gt;&lt;/a&gt;基本选择器；&lt;/h5&gt;&lt;p&gt;所谓的基本选择器，指的是在jQuery中使用最频繁的选择器。在jQuery中，基本选择器共有5种：&lt;br&gt;（1）元素选择器；&lt;code&gt;$(&amp;quot;元素名&amp;quot;)&lt;/code&gt;&lt;br&gt;元素选择器，就是“选中”相同的元素，然后对相同的元素进行操作。&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;script src=&quot;jquery-1.12.0.min.js&quot; type=&quot;text/javascript&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;script type=&quot;text/javascript&quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $(function () &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            $(&quot;div&quot;).css(&quot;color&quot;,&quot;red&quot;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;/script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;div&amp;gt;前端学习网&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;p&amp;gt;绿叶学习网&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;分析：&lt;br&gt;&lt;code&gt;$(function () {//这里是你的jQuery代码})&lt;/code&gt;：&lt;br&gt;这句代码功能类似于JavaScript中的window.onload = function(){}，也就是在文档加载完成之后执行的代码。以后我们写jQuery代码都在$(function(){})里面写。&lt;/p&gt;
 &lt;p&gt;在这个例子中，$(“div”)表示选中所有的div元素，css(“color”,”red”)表示将选中的元素的color属性设置为红色。css()方法是jQuery操作CSS样式的方法。由于css()是&lt;strong&gt;对象的一个方法&lt;/strong&gt;，因此我们使用点运算符来调用，如$(“div”).css()。&lt;/p&gt;
@@ -2146,7 +1862,8 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;jQuery选择器&quot;&gt;&lt;a href=&quot;#jQuery选择器&quot; class=&quot;headerlink&quot; title=&quot;jQuery选择器&quot;&gt;&lt;/a&gt;jQuery选择器&lt;/h3&gt;&lt;p&gt;选择器是一种选中页面元素的方式。只要把元素选中，我们才能对被选中的元素进行各种操作。
+      &lt;h3 id=&quot;jQuery选择器&quot;&gt;&lt;a href=&quot;#jQuery选择器&quot; class=&quot;headerlink&quot; title=&quot;jQuery选择器&quot;&gt;&lt;/a&gt;jQuery选择器&lt;/h3&gt;&lt;p&gt;选择器是一种选中页面元素的方式。只要把元素选中，我们才能对被选中的元素进行各种操作。不同的选择器，在于它们选取方式的不同。&lt;br&gt;jQuery选择器的功能就是把元素选中，然后我们才能对选中的元素进行各种操作。&lt;br&gt;jQuery选择器的格式如下：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&amp;quot;选择器&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;参考：&lt;a href=&quot;http://www.365mini.com/page/tag/jquery-all-selectors&quot;&gt;jQuery选择器一览表&lt;/a&gt;&lt;br&gt;
     
     </summary>
     
@@ -2162,10 +1879,9 @@
     <link href="http://xifengxx.github.io/2016/04/19/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/"/>
     <id>http://xifengxx.github.io/2016/04/19/jQuery学习笔记0/</id>
     <published>2016-04-19T02:23:01.000Z</published>
-    <updated>2016-05-05T08:33:18.000Z</updated>
+    <updated>2016-05-05T13:07:04.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;jQuery简介&quot;&gt;&lt;a href=&quot;#jQuery简介&quot; class=&quot;headerlink&quot; title=&quot;jQuery简介&quot;&gt;&lt;/a&gt;jQuery简介&lt;/h3&gt;&lt;h4 id=&quot;从JavaScript到JavaScript库&quot;&gt;&lt;a href=&quot;#从JavaScript到JavaScript库&quot; class=&quot;headerlink&quot; title=&quot;从JavaScript到JavaScript库&quot;&gt;&lt;/a&gt;从JavaScript到JavaScript库&lt;/h4&gt;&lt;p&gt;JavaScript是一门很繁琐的语言。举个例子，如果我们要用JavaScript来实现一些图片轮播、Tabs选项卡等，代码量会非常多。因此为了减少工作量，我们常常会把JavaScript经常用到的一些功能特效封装起来成为一个“代码库”，然后开发者只需要调用一些简单的函数就能进行快速开发。&lt;/p&gt;
-&lt;p&gt;对于“JavaScript库”与“JavaScript”的关系，我们可以这样想：&lt;br&gt;假如我们见到一个特效，然后我把这个特效封装成一个函数，以后每次我们只需要调用函数就能使用到这个特效。我们把常用的特效都像上面那样封装成一个个函数，这些函数放到一起就成了一个JavaScript库。也就是说，jQuery、prototype等这些JavaScript库本身就是用JavaScript语言来写的.&lt;/p&gt;
+    <content type="html">&lt;h3 id=&quot;jQuery简介&quot;&gt;&lt;a href=&quot;#jQuery简介&quot; class=&quot;headerlink&quot; title=&quot;jQuery简介&quot;&gt;&lt;/a&gt;jQuery简介&lt;/h3&gt;&lt;h4 id=&quot;从JavaScript到JavaScript库&quot;&gt;&lt;a href=&quot;#从JavaScript到JavaScript库&quot; class=&quot;headerlink&quot; title=&quot;从JavaScript到JavaScript库&quot;&gt;&lt;/a&gt;从JavaScript到JavaScript库&lt;/h4&gt;&lt;p&gt;JavaScript是一门很繁琐的语言。举个例子，如果我们要用JavaScript来实现一些图片轮播、Tabs选项卡等，代码量会非常多。因此为了减少工作量，我们常常会把JavaScript经常用到的一些功能特效封装起来成为一个“代码库”，然后开发者只需要调用一些简单的函数就能进行快速开发。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;对于“JavaScript库”与“JavaScript”的关系，我们可以这样想：&lt;br&gt;假如我们见到一个特效，然后我把这个特效封装成一个函数，以后每次我们只需要调用函数就能使用到这个特效。我们把常用的特效都像上面那样封装成一个个函数，这些函数放到一起就成了一个JavaScript库。也就是说，jQuery、prototype等这些JavaScript库本身就是用JavaScript语言来写的.&lt;/p&gt;
 &lt;h4 id=&quot;什么是jQuery&quot;&gt;&lt;a href=&quot;#什么是jQuery&quot; class=&quot;headerlink&quot; title=&quot;什么是jQuery&quot;&gt;&lt;/a&gt;什么是jQuery&lt;/h4&gt;&lt;p&gt;jQuery，顾名思义，也就是JavaScript和Query（查询），即辅助JavaScript开发的库。&lt;/p&gt;
 &lt;p&gt;jQuery是一个非常流行的快速、小巧、功能强大的开源JavaScript库。就像官方所宣称的那样——“Write less，do more”，它使得我们常用的HTML文档遍历、DOM操作、事件处理、动画效果、Ajax、工具方法等功能代码的实现变得非常简单。更重要的是，它还为我们做了跨浏览器的兼容。&lt;/p&gt;
 &lt;p&gt;jQuery是全球最流行用得最多的JavaScript库，没有之一。jQuery是在世界前10000个访问最多的网站中，有超过55%在使用jQuery。&lt;br&gt;其实jQuery就是用JavaScript来写的，它只是把我们在JavaScript中最常用的的功能封装起来，以方便我们快速开发。&lt;/p&gt;
@@ -2179,7 +1895,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;jQuery简介&quot;&gt;&lt;a href=&quot;#jQuery简介&quot; class=&quot;headerlink&quot; title=&quot;jQuery简介&quot;&gt;&lt;/a&gt;jQuery简介&lt;/h3&gt;&lt;h4 id=&quot;从JavaScript到JavaScript库&quot;&gt;&lt;a href=&quot;#从JavaS
+      &lt;h3 id=&quot;jQuery简介&quot;&gt;&lt;a href=&quot;#jQuery简介&quot; class=&quot;headerlink&quot; title=&quot;jQuery简介&quot;&gt;&lt;/a&gt;jQuery简介&lt;/h3&gt;&lt;h4 id=&quot;从JavaScript到JavaScript库&quot;&gt;&lt;a href=&quot;#从JavaScript到JavaScript库&quot; class=&quot;headerlink&quot; title=&quot;从JavaScript到JavaScript库&quot;&gt;&lt;/a&gt;从JavaScript到JavaScript库&lt;/h4&gt;&lt;p&gt;JavaScript是一门很繁琐的语言。举个例子，如果我们要用JavaScript来实现一些图片轮播、Tabs选项卡等，代码量会非常多。因此为了减少工作量，我们常常会把JavaScript经常用到的一些功能特效封装起来成为一个“代码库”，然后开发者只需要调用一些简单的函数就能进行快速开发。&lt;br&gt;
     
     </summary>
     
@@ -2247,10 +1963,10 @@
     <link href="http://xifengxx.github.io/2016/04/15/JS%E4%BF%A1%E6%81%AF%E6%BB%9A%E5%8A%A8%E6%95%88%E6%9E%9C/"/>
     <id>http://xifengxx.github.io/2016/04/15/JS信息滚动效果/</id>
     <published>2016-04-15T12:22:35.000Z</published>
-    <updated>2016-04-15T16:16:26.000Z</updated>
+    <updated>2016-05-05T13:07:04.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Marquee标签实现信息滚动&quot;&gt;&lt;a href=&quot;#Marquee标签实现信息滚动&quot; class=&quot;headerlink&quot; title=&quot;Marquee标签实现信息滚动&quot;&gt;&lt;/a&gt;Marquee标签实现信息滚动&lt;/h3&gt;&lt;p&gt;html标签&lt;code&gt;&amp;lt;marquee&amp;gt;&lt;/code&gt;可以实现多种滚动效果，无需js控制。&lt;/p&gt;
-&lt;p&gt;使用marquee标记不仅可以移动文字，也可以移动图片，表格等.&lt;br&gt;语法：&lt;code&gt;&amp;lt;marquee&amp;gt;...&amp;lt;/marquee&amp;gt;&lt;/code&gt;；&lt;br&gt;说明：在标记之间添加要进行滚动的内容。&lt;br&gt;重要属性：&lt;/p&gt;
+&lt;p&gt;使用marquee标记不仅可以移动文字，也可以移动图片，表格等.&lt;br&gt;语法：&lt;code&gt;&amp;lt;marquee&amp;gt;...&amp;lt;/marquee&amp;gt;&lt;/code&gt;；&lt;br&gt;说明：在标记之间添加要进行滚动的内容。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;重要属性：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;滚动方向direction（包括4个值：up、 down、 left和 right）&lt;br&gt;　语法：&lt;code&gt;&amp;lt;marquee direction=&amp;quot;滚动方向&amp;quot;&amp;gt;...&amp;lt;/marquee&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;滚动方式behavior（scroll:循环滚动，默认效果； slide:只滚动一次就停止； alternate:来回交替进行滚动）&lt;br&gt;　语法：&lt;code&gt;&amp;lt;marquee behavior=&amp;quot;滚动方式&amp;quot;&amp;gt;...&amp;lt;/marquee&amp;gt;&lt;/code&gt;&lt;/li&gt;
@@ -2287,7 +2003,8 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Marquee标签实现信息滚动&quot;&gt;&lt;a href=&quot;#Marquee标签实现信息滚动&quot; class=&quot;headerlink&quot; title=&quot;Marquee标签实现信息滚动&quot;&gt;&lt;/a&gt;Marquee标签实现信息滚动&lt;/h3&gt;&lt;p&gt;html标签&lt;code&gt;&amp;lt;ma
+      &lt;h3 id=&quot;Marquee标签实现信息滚动&quot;&gt;&lt;a href=&quot;#Marquee标签实现信息滚动&quot; class=&quot;headerlink&quot; title=&quot;Marquee标签实现信息滚动&quot;&gt;&lt;/a&gt;Marquee标签实现信息滚动&lt;/h3&gt;&lt;p&gt;html标签&lt;code&gt;&amp;lt;marquee&amp;gt;&lt;/code&gt;可以实现多种滚动效果，无需js控制。&lt;/p&gt;
+&lt;p&gt;使用marquee标记不仅可以移动文字，也可以移动图片，表格等.&lt;br&gt;语法：&lt;code&gt;&amp;lt;marquee&amp;gt;...&amp;lt;/marquee&amp;gt;&lt;/code&gt;；&lt;br&gt;说明：在标记之间添加要进行滚动的内容。&lt;br&gt;
     
     </summary>
     
@@ -2303,7 +2020,7 @@
     <link href="http://xifengxx.github.io/2016/04/15/JS%E5%80%92%E8%AE%A1%E6%97%B6%E6%95%88%E6%9E%9C/"/>
     <id>http://xifengxx.github.io/2016/04/15/JS倒计时效果/</id>
     <published>2016-04-15T12:22:35.000Z</published>
-    <updated>2016-04-15T13:27:40.000Z</updated>
+    <updated>2016-05-05T13:07:04.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Date-函数&quot;&gt;&lt;a href=&quot;#Date-函数&quot; class=&quot;headerlink&quot; title=&quot;Date()函数&quot;&gt;&lt;/a&gt;Date()函数&lt;/h3&gt;&lt;p&gt;var myDate =new Date()&lt;br&gt;：返回当前的日期和时间&lt;/p&gt;
 &lt;ul&gt;
@@ -2315,9 +2032,10 @@
 &lt;li&gt;getSeconds()返回秒数&lt;/li&gt;
 &lt;li&gt;getTime()  返回毫秒数&lt;/li&gt;
 &lt;li&gt;getYear()  返回年份&lt;/li&gt;
-&lt;li&gt;getFullYear() 返回年份（如2014）&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;getFullYear() 返回年份（如2014）&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h3 id=&quot;显示当前系统时间&quot;&gt;&lt;a href=&quot;#显示当前系统时间&quot; class=&quot;headerlink&quot; title=&quot;显示当前系统时间&quot;&gt;&lt;/a&gt;显示当前系统时间&lt;/h3&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;!DOCTYPE HTML&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Content-Type&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/html; charset=gb2312&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;当前系统时间&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;style.css&quot;&lt;/span&gt;  /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;language&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;javascript&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.onload = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    showTime();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;checkTime&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;i&lt;/span&gt;)&lt;/span&gt;&amp;#123;  &lt;span class=&quot;comment&quot;&gt;//补位处理&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(i&amp;lt;&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;)  &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        i=&lt;span class=&quot;string&quot;&gt;&#39;0&#39;&lt;/span&gt;+i;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; i;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;showTime&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; now=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; year= now.getFullYear()  ;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; month=  now.getMonth()+&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; ;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; day=  now.getDate()  ;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; h=  now.getHours()  ;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; m=  now.getMinutes()  ;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; s=  now.getSeconds()  ;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    m=checkTime(m)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    s=checkTime(s)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; weekday=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Array&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    weekday[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]=&lt;span class=&quot;string&quot;&gt;&quot;星期日&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    weekday[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]=&lt;span class=&quot;string&quot;&gt;&quot;星期一&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    weekday[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;]=&lt;span class=&quot;string&quot;&gt;&quot;星期二&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    weekday[&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;]=&lt;span class=&quot;string&quot;&gt;&quot;星期三&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    weekday[&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;]=&lt;span class=&quot;string&quot;&gt;&quot;星期四&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    weekday[&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;]=&lt;span class=&quot;string&quot;&gt;&quot;星期五&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    weekday[&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;]=&lt;span class=&quot;string&quot;&gt;&quot;星期六&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&quot;show&quot;&lt;/span&gt;).innerHTML=&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;+year+&lt;span class=&quot;string&quot;&gt;&quot;年&quot;&lt;/span&gt;+month+&lt;span class=&quot;string&quot;&gt;&quot;月&quot;&lt;/span&gt;+day+&lt;span class=&quot;string&quot;&gt;&quot;日 &quot;&lt;/span&gt;+  weekday[now.getDay()] +h+&lt;span class=&quot;string&quot;&gt;&quot;:&quot;&lt;/span&gt;+m+&lt;span class=&quot;string&quot;&gt;&quot;:&quot;&lt;/span&gt;+s;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    t=setTimeout(&lt;span class=&quot;string&quot;&gt;&#39;showTime()&#39;&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;500&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;content1&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;show&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;显示时间的位置&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&quot;高考倒计时&quot;&gt;&lt;a href=&quot;#高考倒计时&quot; class=&quot;headerlink&quot; title=&quot;高考倒计时&quot;&gt;&lt;/a&gt;高考倒计时&lt;/h3&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;!DOCTYPE HTML&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Content-Type&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/html; charset=utf-8&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;高考考试时间&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;style.css&quot;&lt;/span&gt;  /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;language&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;javascript&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;     &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.onload = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; timedate= &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;2016,6,6&#39;&lt;/span&gt;);     &lt;span class=&quot;comment&quot;&gt;//自定义结束时间  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; now =  &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;()  ;    &lt;span class=&quot;comment&quot;&gt;//获取当前时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; date = timedate.getTime() - now.getTime();    &lt;span class=&quot;comment&quot;&gt;//得出的为毫秒&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;　　&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; time = &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.ceil(date/(&lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;24&lt;/span&gt;))  ;  &lt;span class=&quot;comment&quot;&gt;//1000 * 60 * 60 * 24一天的秒数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(time &amp;gt; &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; )&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;timeShow&#39;&lt;/span&gt;).innerHTML = time;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;content2&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;txtshow&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;距离高考还有&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;timeShow&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;天&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;限时抢购-团购-倒计时&quot;&gt;&lt;a href=&quot;#限时抢购-团购-倒计时&quot; class=&quot;headerlink&quot; title=&quot;限时抢购(团购)倒计时&quot;&gt;&lt;/a&gt;限时抢购(团购)倒计时&lt;/h3&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;meta&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;http-equiv&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;Content-Type&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;content&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/html; charset=utf-8&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;团购——限时抢&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;style.css&quot;&lt;/span&gt;  /&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;content3&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;time&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;还剩 &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;LeftTime&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;FreshTime&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; endtime=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&quot;2014/5/15,12:20:12&quot;&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;//结束时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; nowtime = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Date&lt;/span&gt;();&lt;span class=&quot;comment&quot;&gt;//当前时间&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; lefttime=  &lt;span class=&quot;built_in&quot;&gt;parseInt&lt;/span&gt;((endtime.getTime()-nowtime.getTime())/&lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;)  ; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        d=  &lt;span class=&quot;built_in&quot;&gt;parseInt&lt;/span&gt;(lefttime/&lt;span class=&quot;number&quot;&gt;24&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        h=  &lt;span class=&quot;built_in&quot;&gt;parseInt&lt;/span&gt;((lefttime/(&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;))%&lt;span class=&quot;number&quot;&gt;24&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        m=  &lt;span class=&quot;built_in&quot;&gt;parseInt&lt;/span&gt;(lefttime/&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;%&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        s=  &lt;span class=&quot;built_in&quot;&gt;parseInt&lt;/span&gt;(lefttime%&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&quot;LeftTime&quot;&lt;/span&gt;).innerHTML=d+&lt;span class=&quot;string&quot;&gt;&quot;天&quot;&lt;/span&gt;+h+&lt;span class=&quot;string&quot;&gt;&quot;小时&quot;&lt;/span&gt;+m+&lt;span class=&quot;string&quot;&gt;&quot;分&quot;&lt;/span&gt;+s+&lt;span class=&quot;string&quot;&gt;&quot;秒&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(lefttime&amp;lt;=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&quot;LeftTime&quot;&lt;/span&gt;).innerHTML=&lt;span class=&quot;string&quot;&gt;&quot;团购已结束&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        clearInterval(sh);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   FreshTime();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; sh;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   sh= setTimeout(FreshTime,&lt;span class=&quot;number&quot;&gt;500&lt;/span&gt;)   ;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
     
@@ -2325,7 +2043,15 @@
     
       &lt;h3 id=&quot;Date-函数&quot;&gt;&lt;a href=&quot;#Date-函数&quot; class=&quot;headerlink&quot; title=&quot;Date()函数&quot;&gt;&lt;/a&gt;Date()函数&lt;/h3&gt;&lt;p&gt;var myDate =new Date()&lt;br&gt;：返回当前的日期和时间&lt;/p&gt;
 &lt;ul&gt;
-&lt;
+&lt;li&gt;getDate() 查看Date对象并返回日期（1-31）&lt;/li&gt;
+&lt;li&gt;getDay()  返回星期几（0-6）&lt;/li&gt;
+&lt;li&gt;getHours()返回小时数（0-23）&lt;/li&gt;
+&lt;li&gt;getMinutes返回分钟数（0-59）&lt;/li&gt;
+&lt;li&gt;getMonth()返回月份值（从0开始，+1）&lt;/li&gt;
+&lt;li&gt;getSeconds()返回秒数&lt;/li&gt;
+&lt;li&gt;getTime()  返回毫秒数&lt;/li&gt;
+&lt;li&gt;getYear()  返回年份&lt;/li&gt;
+&lt;li&gt;getFullYear() 返回年份（如2014）
     
     </summary>
     
@@ -2341,10 +2067,11 @@
     <link href="http://xifengxx.github.io/2016/04/15/JS%E8%BF%90%E5%8A%A8%E6%A1%86%E6%9E%B6(%E5%8A%A8%E7%94%BB)%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF/"/>
     <id>http://xifengxx.github.io/2016/04/15/JS运动框架(动画)实现思路/</id>
     <published>2016-04-15T01:22:35.000Z</published>
-    <updated>2016-04-15T12:12:26.000Z</updated>
+    <updated>2016-05-05T13:07:04.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;运动框架实现思路&quot;&gt;&lt;a href=&quot;#运动框架实现思路&quot; class=&quot;headerlink&quot; title=&quot;运动框架实现思路&quot;&gt;&lt;/a&gt;运动框架实现思路&lt;/h2&gt;&lt;h3 id=&quot;简单动画（改变值：left-right-width-height-opacity）&quot;&gt;&lt;a href=&quot;#简单动画（改变值：left-right-width-height-opacity）&quot; class=&quot;headerlink&quot; title=&quot;简单动画（改变值：left/right/width/height/opacity）&quot;&gt;&lt;/a&gt;简单动画（改变值：left/right/width/height/opacity）&lt;/h3&gt;&lt;h4 id=&quot;速度动画&quot;&gt;&lt;a href=&quot;#速度动画&quot; class=&quot;headerlink&quot; title=&quot;速度动画&quot;&gt;&lt;/a&gt;速度动画&lt;/h4&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;div1&#39;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;share&#39;&lt;/span&gt;&amp;gt;&lt;/span&gt;分享&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;div&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;span&lt;/span&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;span class=&quot;attribute&quot;&gt;padding&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-id&quot;&gt;#div1&lt;/span&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;:red;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;:relative;&lt;span class=&quot;attribute&quot;&gt;left&lt;/span&gt;:-&lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;span class=&quot;attribute&quot;&gt;top&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-id&quot;&gt;#div1&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;span&lt;/span&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;20px&lt;/span&gt;;&lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;50px&lt;/span&gt;;&lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;:blue;&lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;:absolute;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;left&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;span class=&quot;attribute&quot;&gt;top&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;75px&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.onload=&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; oDiv=&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;div1&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    oDiv.onmouseover=&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        startMove(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    oDiv.onmouseout=&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        startMove(&lt;span class=&quot;number&quot;&gt;-200&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; timer=&lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;startMove&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;iTarget&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    clearInterval(timer);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; oDiv=&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;div1&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    timer=setInterval(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/* 原始代码&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        var speed=0;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        if(oDiv.offsetLeft&amp;gt;iTarget)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            speed=-10;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;else&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            speed=10;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//将上面关于速度（缓冲）的代码进行优化&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; speed=(iTarget-oDiv.offsetLeft)/&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        speed = speed&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;?&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.ceil(speed):&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.floor(speed);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(oDiv.offsetLeft==iTarget)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            clearInterval(timer);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            oDiv.style.left=oDiv.offsetLeft + speed + &lt;span class=&quot;string&quot;&gt;&#39;px&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;,&lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h4 id=&quot;透明度动画&quot;&gt;&lt;a href=&quot;#透明度动画&quot; class=&quot;headerlink&quot; title=&quot;透明度动画&quot;&gt;&lt;/a&gt;透明度动画&lt;/h4&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;animation-1&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-id&quot;&gt;#animation-1&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1px&lt;/span&gt; solid pink;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;: blue;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;opacity&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0.3&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;filter&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;alpha&lt;/span&gt;(opacity:30);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -2362,7 +2089,8 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;运动框架实现思路&quot;&gt;&lt;a href=&quot;#运动框架实现思路&quot; class=&quot;headerlink&quot; title=&quot;运动框架实现思路&quot;&gt;&lt;/a&gt;运动框架实现思路&lt;/h2&gt;&lt;h3 id=&quot;简单动画（改变值：left-right-width-height-opacity）
+      &lt;h2 id=&quot;运动框架实现思路&quot;&gt;&lt;a href=&quot;#运动框架实现思路&quot; class=&quot;headerlink&quot; title=&quot;运动框架实现思路&quot;&gt;&lt;/a&gt;运动框架实现思路&lt;/h2&gt;&lt;h3 id=&quot;简单动画（改变值：left-right-width-height-opacity）&quot;&gt;&lt;a href=&quot;#简单动画（改变值：left-right-width-height-opacity）&quot; class=&quot;headerlink&quot; title=&quot;简单动画（改变值：left/right/width/height/opacity）&quot;&gt;&lt;/a&gt;简单动画（改变值：left/right/width/height/opacity）&lt;/h3&gt;&lt;h4 id=&quot;速度动画&quot;&gt;&lt;a href=&quot;#速度动画&quot; class=&quot;headerlink&quot; title=&quot;速度动画&quot;&gt;&lt;/a&gt;速度动画&lt;/h4&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;div1&#39;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&#39;share&#39;&lt;/span&gt;&amp;gt;&lt;/span&gt;分享&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;div&lt;/span&gt;,&lt;span class=&quot;selector-tag&quot;&gt;span&lt;/span&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;margin&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;span class=&quot;attribute&quot;&gt;padding&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-id&quot;&gt;#div1&lt;/span&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;:red;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;:relative;&lt;span class=&quot;attribute&quot;&gt;left&lt;/span&gt;:-&lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;span class=&quot;attribute&quot;&gt;top&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-id&quot;&gt;#div1&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;span&lt;/span&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;20px&lt;/span&gt;;&lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;50px&lt;/span&gt;;&lt;span class=&quot;attribute&quot;&gt;background&lt;/span&gt;:blue;&lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;:absolute;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attribute&quot;&gt;left&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;200px&lt;/span&gt;;&lt;span class=&quot;attribute&quot;&gt;top&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;75px&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -2378,10 +2106,10 @@
     <link href="http://xifengxx.github.io/2016/04/10/DOM%E4%BA%8B%E4%BB%B6%E6%8E%A2%E7%A7%98/"/>
     <id>http://xifengxx.github.io/2016/04/10/DOM事件探秘/</id>
     <published>2016-04-10T01:10:57.000Z</published>
-    <updated>2016-04-15T01:22:18.000Z</updated>
+    <updated>2016-05-05T13:00:04.000Z</updated>
     
     <content type="html">&lt;p&gt;Javascript与HTML之间的交互是通过事件来实现的。事件，就是文档或浏览器窗口中发生的一些特定的交互瞬间。比如：&lt;br&gt;-点击一个DOM元素&lt;br&gt;-键盘按下一个键&lt;br&gt;-输入框输入内容&lt;br&gt;-页面加载完成&lt;/p&gt;
-&lt;h3 id=&quot;事件流&quot;&gt;&lt;a href=&quot;#事件流&quot; class=&quot;headerlink&quot; title=&quot;事件流&quot;&gt;&lt;/a&gt;事件流&lt;/h3&gt;&lt;p&gt;事件流描述的是从页面中接收事件的顺序。&lt;br&gt;IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.&lt;br&gt;DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。&lt;br&gt;&lt;img src=&quot;https://www.w3.org/TR/uievents/images/eventflow.svg&quot; alt=&quot;事件流&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;事件流&quot;&gt;&lt;a href=&quot;#事件流&quot; class=&quot;headerlink&quot; title=&quot;事件流&quot;&gt;&lt;/a&gt;事件流&lt;/h3&gt;&lt;p&gt;事件流描述的是从页面中接收事件的顺序。&lt;br&gt;IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.&lt;br&gt;DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;img src=&quot;https://www.w3.org/TR/uievents/images/eventflow.svg&quot; alt=&quot;事件流&quot;&gt;&lt;/p&gt;
 &lt;h4 id=&quot;事件冒泡&quot;&gt;&lt;a href=&quot;#事件冒泡&quot; class=&quot;headerlink&quot; title=&quot;事件冒泡&quot;&gt;&lt;/a&gt;事件冒泡&lt;/h4&gt;&lt;p&gt;IE的事件流是事件冒泡流（event bubbling），即事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。&lt;/p&gt;
 &lt;h4 id=&quot;事件捕获&quot;&gt;&lt;a href=&quot;#事件捕获&quot; class=&quot;headerlink&quot; title=&quot;事件捕获&quot;&gt;&lt;/a&gt;事件捕获&lt;/h4&gt;&lt;p&gt;Netscape的事件流是事件捕获流(event capturing)。事件捕获的思想是不太具体的节点应该更早接收到事件，而最具体的节点应该最后接收到事件。&lt;/p&gt;
 &lt;h3 id=&quot;事件处理程序&quot;&gt;&lt;a href=&quot;#事件处理程序&quot; class=&quot;headerlink&quot; title=&quot;事件处理程序&quot;&gt;&lt;/a&gt;事件处理程序&lt;/h3&gt;&lt;p&gt;事件处理程序（事件侦听器）：响应某个事件的函数.&lt;br&gt;事件处理程序的名字以’on’开头，&lt;/p&gt;
@@ -2477,7 +2205,7 @@
     <summary type="html">
     
       &lt;p&gt;Javascript与HTML之间的交互是通过事件来实现的。事件，就是文档或浏览器窗口中发生的一些特定的交互瞬间。比如：&lt;br&gt;-点击一个DOM元素&lt;br&gt;-键盘按下一个键&lt;br&gt;-输入框输入内容&lt;br&gt;-页面加载完成&lt;/p&gt;
-&lt;h3 id=&quot;事件流&quot;&gt;&lt;a hre
+&lt;h3 id=&quot;事件流&quot;&gt;&lt;a href=&quot;#事件流&quot; class=&quot;headerlink&quot; title=&quot;事件流&quot;&gt;&lt;/a&gt;事件流&lt;/h3&gt;&lt;p&gt;事件流描述的是从页面中接收事件的顺序。&lt;br&gt;IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.&lt;br&gt;DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。&lt;br&gt;
     
     </summary>
     
@@ -2540,115 +2268,133 @@
   </entry>
   
   <entry>
-    <title>Git实战教程</title>
-    <link href="http://xifengxx.github.io/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/"/>
-    <id>http://xifengxx.github.io/2016/04/05/git实战教程/</id>
+    <title>Hexo安装及部署</title>
+    <link href="http://xifengxx.github.io/2016/04/05/Hexo%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
+    <id>http://xifengxx.github.io/2016/04/05/Hexo基本操作/</id>
     <published>2016-04-05T11:09:51.000Z</published>
-    <updated>2016-04-07T14:30:58.000Z</updated>
+    <updated>2016-05-05T13:02:10.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;简明释义&quot;&gt;&lt;a href=&quot;#简明释义&quot; class=&quot;headerlink&quot; title=&quot;简明释义&quot;&gt;&lt;/a&gt;简明释义&lt;/h3&gt;&lt;h4 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Git&lt;/h4&gt;&lt;p&gt;Git 是一个版本控制工具，是一个可以安装在你自己机器上的软件。&lt;br&gt;git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。&lt;/p&gt;
-&lt;h4 id=&quot;github&quot;&gt;&lt;a href=&quot;#github&quot; class=&quot;headerlink&quot; title=&quot;github&quot;&gt;&lt;/a&gt;github&lt;/h4&gt;&lt;p&gt;Git 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。&lt;br&gt;Github 首先是一个公司，&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github网站&lt;/a&gt;是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。&lt;/p&gt;
-&lt;h3 id=&quot;安装及初始化&quot;&gt;&lt;a href=&quot;#安装及初始化&quot; class=&quot;headerlink&quot; title=&quot;安装及初始化&quot;&gt;&lt;/a&gt;安装及初始化&lt;/h3&gt;&lt;h4 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Windows上安装Git&lt;/strong&gt;&lt;br&gt;msysgit是Windows版的Git。&lt;br&gt;&lt;a href=&quot;http://msysgit.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;然后按默认选项安装即可。&lt;/p&gt;
-&lt;p&gt;安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！&lt;/p&gt;
-&lt;p&gt;安装完成后，还需要最后一步设置，在命令行输入：&lt;/p&gt;
+    <content type="html">&lt;h3 id=&quot;配置SSH-Key&quot;&gt;&lt;a href=&quot;#配置SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;配置SSH Key&quot;&gt;&lt;/a&gt;配置SSH Key&lt;/h3&gt;&lt;p&gt;用SSH Key将本地git项目与远程GitHub建立联系。&lt;br&gt;定位到目标文件夹，右键-Git Bash下输入命令：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;$ git config –global user.name “Your Name”&lt;br&gt;$ git config –global user.email “email@example.com”&lt;/p&gt;
+&lt;p&gt;ssh -T git@github.com&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。&lt;/p&gt;
-&lt;h4 id=&quot;创建版本库&quot;&gt;&lt;a href=&quot;#创建版本库&quot; class=&quot;headerlink&quot; title=&quot;创建版本库&quot;&gt;&lt;/a&gt;创建版本库&lt;/h4&gt;&lt;p&gt;版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。&lt;/p&gt;
-&lt;p&gt;如何创建版本库？&lt;/p&gt;
+&lt;h3 id=&quot;Hexo安装&quot;&gt;&lt;a href=&quot;#Hexo安装&quot; class=&quot;headerlink&quot; title=&quot;Hexo安装&quot;&gt;&lt;/a&gt;Hexo安装&lt;/h3&gt;&lt;p&gt;首先要安装好Git 和Node.js软件。&lt;br&gt;安装完后，打开Git Bash，输入命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;npm install hexo-cli -g&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;通过以下命令来确认Hexo是否安装成功：&lt;br&gt;hexo -v&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果出现类似内容，则说明安装成功：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hexo-cli: 1.0.1&lt;br&gt;os: Windows_NT 5.1.2600 win32 ia32&lt;br&gt;http_parser: 2.5.0&lt;br&gt;node: 4.2.4&lt;br&gt;v8: 4.5.103.35&lt;br&gt;uv: 1.7.5&lt;br&gt;zlib: 1.2.8&lt;br&gt;ares: 1.10.1-DEV&lt;br&gt;icu: 56.1&lt;br&gt;modules: 46&lt;br&gt;openssl: 1.0.2e&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Hexo部署&quot;&gt;&lt;a href=&quot;#Hexo部署&quot; class=&quot;headerlink&quot; title=&quot;Hexo部署&quot;&gt;&lt;/a&gt;Hexo部署&lt;/h3&gt;&lt;p&gt;在目标文件夹下，Git Bash命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hexo init&lt;br&gt;npm install&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;新建博客文章：&quot;&gt;&lt;a href=&quot;#新建博客文章：&quot; class=&quot;headerlink&quot; title=&quot;新建博客文章：&quot;&gt;&lt;/a&gt;新建博客文章：&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;hexo new “文章标题”&lt;br&gt;一个博文内容包括以下几部分：&lt;br&gt;title: 如何通过Github Pages + hexo 搭建个人博客&lt;br&gt;date: 2016-03-13 00:09:51&lt;br&gt;tags: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;标签1&lt;/li&gt;
+&lt;li&gt;标签2&lt;/li&gt;
+&lt;li&gt;标签3&lt;/li&gt;
+&lt;li&gt;etc…&lt;br&gt;categories: hexo&lt;br&gt;description: #你对文章的描述，可省略&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;此处为正文内容&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;新建页面：&quot;&gt;&lt;a href=&quot;#新建页面：&quot; class=&quot;headerlink&quot; title=&quot;新建页面：&quot;&gt;&lt;/a&gt;新建页面：&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;hexo new page “页面名称”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;博客文章页面预览&quot;&gt;&lt;a href=&quot;#博客文章页面预览&quot; class=&quot;headerlink&quot; title=&quot;博客文章页面预览&quot;&gt;&lt;/a&gt;博客文章页面预览&lt;/h3&gt;&lt;p&gt;使用以下命令启动本地服务器&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hexo server&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;提示信息：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;INFO  Start processing&lt;br&gt;INFO  Hexo is running at &lt;a href=&quot;http://localhost:4000/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/&lt;/a&gt;. Press Ctrl+C to stop.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在浏览器访问：&lt;a href=&quot;http://localhost:4000/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/&lt;/a&gt; 访问页面&lt;/p&gt;
+&lt;h3 id=&quot;将本地文件部署到GitHub&quot;&gt;&lt;a href=&quot;#将本地文件部署到GitHub&quot; class=&quot;headerlink&quot; title=&quot;将本地文件部署到GitHub&quot;&gt;&lt;/a&gt;将本地文件部署到GitHub&lt;/h3&gt;&lt;h4 id=&quot;修改-config-yml文件&quot;&gt;&lt;a href=&quot;#修改-config-yml文件&quot; class=&quot;headerlink&quot; title=&quot;修改_config.yml文件&quot;&gt;&lt;/a&gt;修改_config.yml文件&lt;/h4&gt;&lt;blockquote&gt;
+&lt;h1 id=&quot;Deployment&quot;&gt;&lt;a href=&quot;#Deployment&quot; class=&quot;headerlink&quot; title=&quot;Deployment&quot;&gt;&lt;/a&gt;Deployment&lt;/h1&gt;&lt;h2 id=&quot;Docs-https-hexo-io-docs-deployment-html&quot;&gt;&lt;a href=&quot;#Docs-https-hexo-io-docs-deployment-html&quot; class=&quot;headerlink&quot; title=&quot;Docs: https://hexo.io/docs/deployment.html&quot;&gt;&lt;/a&gt;Docs: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io/docs/deployment.html&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;deploy:&lt;br&gt;  type: git&lt;br&gt;  repository: &lt;a href=&quot;https://github.com/xifengxx/xifengxx.github.io.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/xifengxx.github.io.git&lt;/a&gt;&lt;br&gt;  branch: master&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;将其deploy到仓库&quot;&gt;&lt;a href=&quot;#将其deploy到仓库&quot; class=&quot;headerlink&quot; title=&quot;将其deploy到仓库&quot;&gt;&lt;/a&gt;将其deploy到仓库&lt;/h4&gt;&lt;p&gt;打开Git Bash，依次输入以下命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hexo clean&lt;br&gt;hexo generate&lt;br&gt;hexo deploy&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;此时有可能出现错误，如：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ hexo d&lt;br&gt;ERROR Deployer not found: git&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;此时需要在Git Bash中运行以下命令：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;npm install hexo-deployer-git –save&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后重新再输入命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hexo clean&lt;br&gt;hexo generate&lt;br&gt;hexo deploy&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;hexo clean (清除缓存)&lt;br&gt;hexo generate (生成静态网页)&lt;br&gt;hexo deploy (开始部署)&lt;/p&gt;
+&lt;p&gt;这时出现如下提示表示正确：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;…………（省略内容）&lt;br&gt;Branch master set up to track remote branch master from &lt;a href=&quot;https://github.com/xifengxx/xifengxx.github.io.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/xifengxx.github.io.git&lt;/a&gt;.&lt;br&gt;To &lt;a href=&quot;https://github.com/xifengxx/xifengxx.github.io.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/xifengxx.github.io.git&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fb62809…9b7c22e HEAD -&amp;gt; master (forced update)&lt;br&gt;INFO  Deploy done: git&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;到这里，个人博客已经部署到GitHub上了。可以输入网址查看博客：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;xifengxx.github.io&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;快捷键&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;hexo g == hexo generate&lt;/li&gt;
+&lt;li&gt;hexo d == hexo deploy&lt;/li&gt;
+&lt;li&gt;hexo s == hexo server&lt;/li&gt;
+&lt;li&gt;hexo n == hexo new&lt;br&gt;还能组合使用，如：&lt;/li&gt;
+&lt;li&gt;hexo d -g&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;将Wordpress博客文章迁移到Hexo&quot;&gt;&lt;a href=&quot;#将Wordpress博客文章迁移到Hexo&quot; class=&quot;headerlink&quot; title=&quot;将Wordpress博客文章迁移到Hexo&quot;&gt;&lt;/a&gt;将Wordpress博客文章迁移到Hexo&lt;/h3&gt;&lt;p&gt;如果您曾经是Wordpress 的用戶，可以使用hexo的插件把之前的文章转换成md 的无格式文件，从而迁移到Hexo博客上。&lt;br&gt;具体步骤如下：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;在电脑磁盘里的任意位置，创建一个空目录&lt;br&gt;方法1：直接在磁盘任意位置，右键-新建文件夹；&lt;br&gt;方法2：在git命令行里创建。&lt;br&gt;关于创建文件常用命令（Unix Linux命令）：&lt;br&gt;-mkdir&lt;br&gt;-cd        ：切换目录命令&lt;br&gt;–cd ..    : 切换到上一级目录。&lt;br&gt;如当前目录为e盘下的code目录，使用命令”cd ..”，会切换到e盘。&lt;br&gt;–cd e:    : 切换盘符。&lt;br&gt;如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。&lt;br&gt;–cd /     : 切换到根目录。&lt;br&gt;–cd 目录名：切换到具体目录。&lt;br&gt;如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。&lt;br&gt;如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。&lt;br&gt;-pwd       : 显示当前所在目录&lt;br&gt;-dir       : 显示当前目录下的所有文件&lt;br&gt;-mkdir     : 创建目录。&lt;br&gt;如当前在e盘下，需要在e盘下创建一个新目录”code1”,使用命令”mkdir code1”即可；&lt;br&gt;如果要在其他盘下创建目录，先使用cd命令定位到目标盘，然后再使用mkdir命令。&lt;/p&gt;
+&lt;li&gt;先从Wordpress后台导出需要的文章为XML格式。&lt;br&gt;具体位置：wordpress仪表盘—工具—导出—下载导出的文件&lt;br&gt;将下载后的xml格式文件保存到本地放置Hexo博客的文件夹下。&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装hexo插件：hexo-migrator-wordpress&lt;br&gt;使用命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ npm install hexo-migrator-wordpress –save&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;通过git init命名把这个目录变成Git可以管理的仓库。&lt;br&gt;创建完目录后，在磁盘中找到该目录，右键–Git Bash Here即可定位到当前目录，或是通过上面的Linux命令来定位到目标目录。&lt;br&gt;在命令行输入命令”git init”，即成功创建Git仓库。&lt;br&gt;这时在当前目录下，会多出一个.git目录（如果没有，说明被隐藏了，需要在”工具-文件夹选项-查看”里设置隐藏属性为显示所有文件）。这个目录是Git来跟踪管理版本库的。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;使用hexo-migrator-wordpress插件将xml文件转换为md文件，使用命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$ hexo migrate wordpress export.xml&lt;br&gt;(export.xml为从Wordpress里导出的xml文件名)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&quot;远程仓库&quot;&gt;&lt;a href=&quot;#远程仓库&quot; class=&quot;headerlink&quot; title=&quot;远程仓库&quot;&gt;&lt;/a&gt;远程仓库&lt;/h3&gt;&lt;h4 id=&quot;配置SSH-Key&quot;&gt;&lt;a href=&quot;#配置SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;配置SSH Key&quot;&gt;&lt;/a&gt;配置SSH Key&lt;/h4&gt;&lt;p&gt;目的：本地Git仓库与GitHub网站仓库之间实现同步传输及存储。&lt;br&gt;步骤：&lt;/p&gt;
+&lt;p&gt;执行上述命令后，在本地hexo博客根目录下的source/_post目录内可以看到转换完成的博客文章。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;需要注册一个GitHub账号。(注册地址)[&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com&lt;/a&gt;].&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;设置SSH Key.(本地Git仓库和GitHub仓库之间的传输是通过SSH加密的)&lt;br&gt;打开Git Bash,创建SSH Key.&lt;br&gt;输入命令：$ ssh-keygen -t rsa -c “youremail@examle.com”&lt;br&gt;将邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。&lt;br&gt;成功的话，会在用户主目录（我的是在”C:\Documents and Settings\Administrator”）里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件。（这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;登录&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub网站&lt;/a&gt;，打开”我的账号/Account settings”—“personal settings”—“SSH keys”，点击”New SSH key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;打开Git Bash，输入命令以下命令检测是否成功连接本机与GitHub。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ssh -T git@github.com&lt;br&gt;在遇到提示的情况下，输入”yes”即可。&lt;/p&gt;
+&lt;li&gt;执行Hexo博客发布命令，将其发布的网站上。&lt;blockquote&gt;
+&lt;p&gt;hexo clean&lt;br&gt;hexo g&lt;br&gt;hexo d&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&quot;添加远程库&quot;&gt;&lt;a href=&quot;#添加远程库&quot; class=&quot;headerlink&quot; title=&quot;添加远程库&quot;&gt;&lt;/a&gt;添加远程库&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;登录GitHub,点击右上角的”+”号—“New repository”，创建新的Git仓库。&lt;/li&gt;
-&lt;li&gt;把本地仓库的内容推送到GitHub仓库。&lt;br&gt;① 打开GitHub上新建的repository仓库，找到HTTPS/SSH地址并复制地址，如”&lt;a href=&quot;https://github.com/xifengxx/demo.git&amp;quot;是我的一个仓库https地址。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&amp;quot;是我的一个仓库https地址。&lt;/a&gt;&lt;br&gt;② 本地仓库下运行命令&lt;blockquote&gt;
-&lt;p&gt;$ git remote add origin &lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;&lt;br&gt;添加后，远程仓库的名字就是origin(这是Git默认叫法，可以将origin改成其他的名字)&lt;br&gt;③ 继续运行命令&lt;br&gt;$ git push -u origin master&lt;br&gt;把本地仓库内容推送到远程，用git push命令。实际上是把当前分支master推送到远程。&lt;br&gt;由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。&lt;br&gt;推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样。&lt;br&gt;此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改：&lt;br&gt;$ git push origin master&lt;br&gt;④ 推送时，会弹出需要输入github账号及密码框，输入即可。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;注意事项&lt;/strong&gt;&lt;br&gt;在第二步②时，输入命令”$ git remote add origin &lt;a href=&quot;https://github.com/xifengxx/demo.git&amp;quot;时，可能会报错。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&amp;quot;时，可能会报错。&lt;/a&gt;&lt;br&gt;错误信息：”fatal: remote origin already exists.……”&lt;br&gt;原因：远程仓库已经存在内容，与本地仓库推送内容冲突。&lt;br&gt;解决方法：&lt;br&gt; 1、先输入”$ git remote rm origin”命令，删除远程仓库内容。&lt;br&gt; 2、再输入”$ git remote add origin git@github.com:djqiang/gitdemo.git” 就不会报错了！&lt;br&gt;上述方法针对第一次将本地仓库推送到远程仓库时遇到这个问题的解决方法。&lt;br&gt;如果不想删除远程仓库内容，可以使用下面的方法，将本地仓库内容和远程仓库内容合并。&lt;br&gt;解决方法：&lt;br&gt; 1、先输入”$ git pull origin master”命令，将远程仓库内容pull到本地仓库。&lt;br&gt; 2、再输入”$ git push origin master”命令，即可。&lt;/li&gt;
+&lt;h3 id=&quot;参考资源&quot;&gt;&lt;a href=&quot;#参考资源&quot; class=&quot;headerlink&quot; title=&quot;参考资源&quot;&gt;&lt;/a&gt;参考资源&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://sunwhut.com/2015/10/30/buildBlog/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sunwhut’s 博客&lt;/a&gt; ☆☆☆☆☆推荐。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.arao.me/2015/hexo-next-theme-optimize-seo/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;arao博客&lt;/a&gt; :Hexo博客优化&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&quot;从远程库克隆&quot;&gt;&lt;a href=&quot;#从远程库克隆&quot; class=&quot;headerlink&quot; title=&quot;从远程库克隆&quot;&gt;&lt;/a&gt;从远程库克隆&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;登录GitHub,创建一个新的仓库，例如我的一个仓库，名字叫demo&lt;/li&gt;
-&lt;li&gt;找到新仓库的HTTPS/SSH地址并复制地址，如”git@github.com:xifengxx/demo.git”或”&lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;“&lt;/li&gt;
-&lt;li&gt;使用命令git clone克隆一个本地库&lt;blockquote&gt;
-&lt;p&gt;$ git clone git@github.com:xifengxx/demo.git&lt;br&gt;也可以使用命令：&lt;br&gt;$ git clone &lt;a href=&quot;https://github.com/xifengxx/demo.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/demo.git&lt;/a&gt;&lt;br&gt;Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。&lt;br&gt;使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;Git基础操作&quot;&gt;&lt;a href=&quot;#Git基础操作&quot; class=&quot;headerlink&quot; title=&quot;Git基础操作&quot;&gt;&lt;/a&gt;Git基础操作&lt;/h3&gt;&lt;h4 id=&quot;将文件添加到版本库&quot;&gt;&lt;a href=&quot;#将文件添加到版本库&quot; class=&quot;headerlink&quot; title=&quot;将文件添加到版本库&quot;&gt;&lt;/a&gt;将文件添加到版本库&lt;/h4&gt;&lt;p&gt;使用命令：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;git add:将文件添加到仓库。&lt;br&gt;命令：$ git add 文件名&lt;br&gt;将某个文件复制到当前目录，然后再使用这个命令。&lt;/li&gt;
-&lt;li&gt;git commit:将文件提交到仓库。&lt;br&gt;命令：$ git commit -m “xxx”&lt;br&gt;git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。&lt;br&gt;如：$ git commit -m “首次提交”&lt;br&gt;备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;注意事项&lt;/strong&gt;&lt;br&gt;将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。&lt;br&gt;关键是如何退出默认编辑器界面并重新返回到Git bash界面。&lt;br&gt;方法：&lt;br&gt;① 按ESC键，确定退出编辑模式。&lt;br&gt;② 然后输入”:wq”，即可返回Git界面。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;利用Github-Page-搭建网页Demo&quot;&gt;&lt;a href=&quot;#利用Github-Page-搭建网页Demo&quot; class=&quot;headerlink&quot; title=&quot;利用Github Page 搭建网页Demo&quot;&gt;&lt;/a&gt;利用Github Page 搭建网页Demo&lt;/h3&gt;&lt;p&gt;适用场景：&lt;br&gt;写了一些网页demo,想上传到网上查看效果，并做展示用途。不同于用Github搭建的个人博客。&lt;/p&gt;
-&lt;p&gt;方法：Github Page部署。&lt;br&gt;步骤：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;注册&lt;a href=&quot;https://github.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github账号&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;下载安装git.&lt;br&gt;msysgit是Windows版的Git。(下载地址)[&lt;a href=&quot;http://msysgit.github.io/]。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://msysgit.github.io/]。&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;登录Github，新建一个repository项目(这里使用project做项目名字)。&lt;/li&gt;
-&lt;li&gt;在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。&lt;br&gt;设置完成后，这个repository项目的展示地址变为：&lt;br&gt;&lt;a href=&quot;http://xifengxx.github.io/project&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;‘xifengxx’为我注册Github的账号名，project为repository项目名。&lt;br&gt;可以通过上面的网址来访问项目。&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;电脑里选定一个文件夹（这里是Git）放置Github上的项目project。&lt;br&gt;右键——“git bash here”,调出git命令界面，输入以下命令将project项目克隆到本地文件夹下。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git clone &lt;a href=&quot;https://github.com/xifengxx/project.git&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/xifengxx/project.git&lt;/a&gt;&lt;br&gt;这时本地Git文件夹下会多出一个文件夹Project。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;本地新建分支。&lt;br&gt;输入以下命令，在本地新建一个gh-pages分支并切换到gh-pages分支，这个分支是远程分支origin/gh-pages的镜像。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ cd project/&lt;br&gt;$ git checkout -b gh-pages origin/gh-pages&lt;br&gt;这时本地文件夹project里多出的文件，来自github上的gh-pages分支中的文件。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;执行以下命令，删除原有的gh-pages文件，并提交（commit）本次修改。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git rm -rf .&lt;br&gt;$ git add .&lt;br&gt;$ git commit -m “delete all files”&lt;br&gt;这时project里的文件都删除了。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;将自己的网页Demo文件复制粘贴到project文件夹里。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;将本地gh-pages中的网页文件同步到远程库的gh-pages中。&lt;br&gt;输入以下命令：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;$ git add .&lt;br&gt;$ git commit -m “My design Demo”&lt;br&gt;$ git push origin gh-pages&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;输入第三行命令时，会有弹出框提示输入Github账号和密码，输入后等待片刻，当命令行提示”$”符号时，说明已经完成。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;浏览器输入网址访问：&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://xifengxx.github.io/project/index.html&quot;&gt;http://xifengxx.github.io/project/index.html&lt;/a&gt;&lt;br&gt;或 &lt;a href=&quot;http://xifengxx.github.io/project&quot;&gt;http://xifengxx.github.io/project&lt;/a&gt;&lt;br&gt;此处的index.html为网页Demo中的文件。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/lijiayi/p/githubpages.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考资源&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;简明释义&quot;&gt;&lt;a href=&quot;#简明释义&quot; class=&quot;headerlink&quot; title=&quot;简明释义&quot;&gt;&lt;/a&gt;简明释义&lt;/h3&gt;&lt;h4 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Gi
+      &lt;h3 id=&quot;配置SSH-Key&quot;&gt;&lt;a href=&quot;#配置SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;配置SSH Key&quot;&gt;&lt;/a&gt;配置SSH Key&lt;/h3&gt;&lt;p&gt;用SSH Key将本地git项目与远程GitHub建立联系。&lt;br&gt;定位到目标文件夹，右键-Git Bash下输入命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ssh -T git@github.com&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Hexo安装&quot;&gt;&lt;a href=&quot;#Hexo安装&quot; class=&quot;headerlink&quot; title=&quot;Hexo安装&quot;&gt;&lt;/a&gt;Hexo安装&lt;/h3&gt;&lt;p&gt;首先要安装好Git 和Node.js软件。&lt;br&gt;安装完后，打开Git Bash，输入命令：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;npm install hexo-cli -g&lt;br&gt;
     
     </summary>
     
-      <category term="Git" scheme="http://xifengxx.github.io/categories/Git/"/>
+      <category term="博客搭建" scheme="http://xifengxx.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Git实战" scheme="http://xifengxx.github.io/tags/Git%E5%AE%9E%E6%88%98/"/>
+      <category term="Hexo" scheme="http://xifengxx.github.io/tags/Hexo/"/>
     
   </entry>
   

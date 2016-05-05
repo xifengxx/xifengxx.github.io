@@ -60,25 +60,22 @@
 
 
 <meta name="description" content="Javascript与HTML之间的交互是通过事件来实现的。事件，就是文档或浏览器窗口中发生的一些特定的交互瞬间。比如：-点击一个DOM元素-键盘按下一个键-输入框输入内容-页面加载完成
-事件流事件流描述的是从页面中接收事件的顺序。IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。
-事件冒泡I">
+事件流事件流描述的是从页面中接收事件的顺序。IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DOM事件探秘">
 <meta property="og:url" content="http://xifengxx.github.io/2016/04/10/DOM事件探秘/index.html">
 <meta property="og:site_name" content="西风前端">
 <meta property="og:description" content="Javascript与HTML之间的交互是通过事件来实现的。事件，就是文档或浏览器窗口中发生的一些特定的交互瞬间。比如：-点击一个DOM元素-键盘按下一个键-输入框输入内容-页面加载完成
-事件流事件流描述的是从页面中接收事件的顺序。IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。
-事件冒泡I">
+事件流事件流描述的是从页面中接收事件的顺序。IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。">
 <meta property="og:image" content="https://www.w3.org/TR/uievents/images/eventflow.svg">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-Event-type.png">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-%E5%85%83%E7%B4%A0%E5%B0%BA%E5%AF%B81.gif">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-%E5%85%83%E7%B4%A0%E5%B0%BA%E5%AF%B82.jpg">
-<meta property="og:updated_time" content="2016-04-15T01:22:18.000Z">
+<meta property="og:updated_time" content="2016-05-05T13:00:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM事件探秘">
 <meta name="twitter:description" content="Javascript与HTML之间的交互是通过事件来实现的。事件，就是文档或浏览器窗口中发生的一些特定的交互瞬间。比如：-点击一个DOM元素-键盘按下一个键-输入框输入内容-页面加载完成
-事件流事件流描述的是从页面中接收事件的顺序。IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。
-事件冒泡I">
+事件流事件流描述的是从页面中接收事件的顺序。IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。">
 <meta name="twitter:image" content="https://www.w3.org/TR/uievents/images/eventflow.svg">
 
 
@@ -349,7 +346,7 @@
 
       
         <p>Javascript与HTML之间的交互是通过事件来实现的。事件，就是文档或浏览器窗口中发生的一些特定的交互瞬间。比如：<br>-点击一个DOM元素<br>-键盘按下一个键<br>-输入框输入内容<br>-页面加载完成</p>
-<h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><p>事件流描述的是从页面中接收事件的顺序。<br>IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.<br>DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。<br><img src="https://www.w3.org/TR/uievents/images/eventflow.svg" alt="事件流"></p>
+<h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><p>事件流描述的是从页面中接收事件的顺序。<br>IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.<br>DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。<br><a id="more"></a><br><img src="https://www.w3.org/TR/uievents/images/eventflow.svg" alt="事件流"></p>
 <h4 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h4><p>IE的事件流是事件冒泡流（event bubbling），即事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。</p>
 <h4 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h4><p>Netscape的事件流是事件捕获流(event capturing)。事件捕获的思想是不太具体的节点应该更早接收到事件，而最具体的节点应该最后接收到事件。</p>
 <h3 id="事件处理程序"><a href="#事件处理程序" class="headerlink" title="事件处理程序"></a>事件处理程序</h3><p>事件处理程序（事件侦听器）：响应某个事件的函数.<br>事件处理程序的名字以’on’开头，</p>

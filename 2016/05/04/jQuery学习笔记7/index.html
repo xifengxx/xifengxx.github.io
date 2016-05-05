@@ -63,9 +63,7 @@
 
 在发送AJAX请求之前，序列化JS内容或表单内容，以便用作AJAX请求发送的数据。
 快速发送AJAX请求，并处理响应数据(支持html、xml、text、json、jsonp、script等多种数据类型)。
-监听AJAX事件，绑定事件触发时执行的处理函数。
-
-jQue">
+监听AJAX事件，绑定事件触发时执行的处理函数。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery学习笔记7 - Ajax(1)">
 <meta property="og:url" content="http://xifengxx.github.io/2016/05/04/jQuery学习笔记7/index.html">
@@ -74,19 +72,15 @@ jQue">
 
 在发送AJAX请求之前，序列化JS内容或表单内容，以便用作AJAX请求发送的数据。
 快速发送AJAX请求，并处理响应数据(支持html、xml、text、json、jsonp、script等多种数据类型)。
-监听AJAX事件，绑定事件触发时执行的处理函数。
-
-jQue">
-<meta property="og:updated_time" content="2016-05-04T15:34:38.000Z">
+监听AJAX事件，绑定事件触发时执行的处理函数。">
+<meta property="og:updated_time" content="2016-05-05T13:03:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery学习笔记7 - Ajax(1)">
 <meta name="twitter:description" content="jQuery核心：AjaxjQuery还对Ajax进行了封装了，我们可以非常方便地发送一个Ajax请求，并对响应进行处理。例如：
 
 在发送AJAX请求之前，序列化JS内容或表单内容，以便用作AJAX请求发送的数据。
 快速发送AJAX请求，并处理响应数据(支持html、xml、text、json、jsonp、script等多种数据类型)。
-监听AJAX事件，绑定事件触发时执行的处理函数。
-
-jQue">
+监听AJAX事件，绑定事件触发时执行的处理函数。">
 
 
 
@@ -359,113 +353,9 @@ jQue">
 <ul>
 <li>在发送AJAX请求之前，序列化JS内容或表单内容，以便用作AJAX请求发送的数据。</li>
 <li>快速发送AJAX请求，并处理响应数据(支持html、xml、text、json、jsonp、script等多种数据类型)。</li>
-<li>监听AJAX事件，绑定事件触发时执行的处理函数。</li>
+<li>监听AJAX事件，绑定事件触发时执行的处理函数。<a id="more"></a>
+<h3 id="jQuery的AJAX方法"><a href="#jQuery的AJAX方法" class="headerlink" title="jQuery的AJAX方法"></a>jQuery的AJAX方法</h3>| 方法  |  版本  |  描述 |<br>| —  | —  |  — |<br>| 核心方法——发送并处理AJAX请求的方法 |<br>| jQuery.ajax()  |   1.0  | 全局方法发送并处理AJAX请求。这是jQuery底层的AJAX实现，包含处理AJAX请求所需的一切功能。其他发送AJAX请求的方法都是对该方法的进一步封装。 |<br>| jQuery.get()  |    1.0  | 全局方法发送并处理GET方式的AJAX请求。 |<br>| jQuery.post()  |   1.0  | 全局方法发送并处理POST方式的AJAX请求。 |<br>| jQuery.getJSON()  |    1.0  | 全局方法发送并处理GET方式、返回数据为JSON格式的AJAX请求。 |<br>| jQuery.getScript()  |  1.0  | 全局方法发送GET请求，用于加载一个JS脚本文件。 |<br>| jQuery.load()  |   1.0  | 全局方法发送AJAX请求，用于加载一个HTML文件并替换匹配元素中的内容。 |<br>| 工具方法——用于协助发送或处理AJAX请求，简化AJAX操作 |<br>| jQuery.ajaxPrefilter()  |  1.5  | 全局方法在$.ajax()处理参数选项之前，预处理参数选项。 |<br>| jQuery.ajaxSetup()  |  1.1  | 全局方法设置$.ajax()的全局默认选项。 |<br>| jQuery.param()  |  1.0  | 全局方法将JS数组或对象序列化为字符串，以便用于URL查询字符串或AJAX请求。 |<br>| serialize()  | 1.0  | 将表单元素序列化为字符串，以便用于URL查询字符串或AJAX请求。 |<br>| serializeArray()  |    1.2  | 将表单元素序列化为一个JS数组。 |<br>| 事件方法——用于为AJAX事件绑定处理一个或多个函数 |<br>| ajaxComplete()  |  1.0  | 设置当AJAX请求完成(无论成功或失败)时执行的处理函数。 |<br>| ajaxSuccess()  |   1.0  | 设置当AJAX请求成功时执行的处理函数。 |<br>| ajaxError()  | 1.0  | 设置当AJAX请求失败时执行的处理函数。 |<br>| ajaxStart()  | 1.0  | 设置当前第一个AJAX请求开始时执行的处理函数。 |<br>| ajaxSend()  |  1.0  | 设置在AJAX请求被发送前执行的处理函数。 |<br>| ajaxStop()  |  1.0  | 设置当前最后一个AJAX请求结束时执行的处理函数。 |</li>
 </ul>
-<h3 id="jQuery的AJAX方法"><a href="#jQuery的AJAX方法" class="headerlink" title="jQuery的AJAX方法"></a>jQuery的AJAX方法</h3><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>版本</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>核心方法——发送并处理AJAX请求的方法</td>
-</tr>
-<tr>
-<td>jQuery.ajax()</td>
-<td>1.0</td>
-<td>全局方法发送并处理AJAX请求。这是jQuery底层的AJAX实现，包含处理AJAX请求所需的一切功能。其他发送AJAX请求的方法都是对该方法的进一步封装。</td>
-</tr>
-<tr>
-<td>jQuery.get()</td>
-<td>1.0</td>
-<td>全局方法发送并处理GET方式的AJAX请求。</td>
-</tr>
-<tr>
-<td>jQuery.post()</td>
-<td>1.0</td>
-<td>全局方法发送并处理POST方式的AJAX请求。</td>
-</tr>
-<tr>
-<td>jQuery.getJSON()</td>
-<td>1.0</td>
-<td>全局方法发送并处理GET方式、返回数据为JSON格式的AJAX请求。</td>
-</tr>
-<tr>
-<td>jQuery.getScript()</td>
-<td>1.0</td>
-<td>全局方法发送GET请求，用于加载一个JS脚本文件。</td>
-</tr>
-<tr>
-<td>jQuery.load()</td>
-<td>1.0</td>
-<td>全局方法发送AJAX请求，用于加载一个HTML文件并替换匹配元素中的内容。</td>
-</tr>
-<tr>
-<td>工具方法——用于协助发送或处理AJAX请求，简化AJAX操作</td>
-</tr>
-<tr>
-<td>jQuery.ajaxPrefilter()</td>
-<td>1.5</td>
-<td>全局方法在$.ajax()处理参数选项之前，预处理参数选项。</td>
-</tr>
-<tr>
-<td>jQuery.ajaxSetup()</td>
-<td>1.1</td>
-<td>全局方法设置$.ajax()的全局默认选项。</td>
-</tr>
-<tr>
-<td>jQuery.param()</td>
-<td>1.0</td>
-<td>全局方法将JS数组或对象序列化为字符串，以便用于URL查询字符串或AJAX请求。</td>
-</tr>
-<tr>
-<td>serialize()</td>
-<td>1.0</td>
-<td>将表单元素序列化为字符串，以便用于URL查询字符串或AJAX请求。</td>
-</tr>
-<tr>
-<td>serializeArray()</td>
-<td>1.2</td>
-<td>将表单元素序列化为一个JS数组。</td>
-</tr>
-<tr>
-<td>事件方法——用于为AJAX事件绑定处理一个或多个函数</td>
-</tr>
-<tr>
-<td>ajaxComplete()</td>
-<td>1.0</td>
-<td>设置当AJAX请求完成(无论成功或失败)时执行的处理函数。</td>
-</tr>
-<tr>
-<td>ajaxSuccess()</td>
-<td>1.0</td>
-<td>设置当AJAX请求成功时执行的处理函数。</td>
-</tr>
-<tr>
-<td>ajaxError()</td>
-<td>1.0</td>
-<td>设置当AJAX请求失败时执行的处理函数。</td>
-</tr>
-<tr>
-<td>ajaxStart()</td>
-<td>1.0</td>
-<td>设置当前第一个AJAX请求开始时执行的处理函数。</td>
-</tr>
-<tr>
-<td>ajaxSend()</td>
-<td>1.0</td>
-<td>设置在AJAX请求被发送前执行的处理函数。</td>
-</tr>
-<tr>
-<td>ajaxStop()</td>
-<td>1.0</td>
-<td>设置当前最后一个AJAX请求结束时执行的处理函数。</td>
-</tr>
-</tbody>
-</table>
 <h4 id="jQuery-ajax-函数"><a href="#jQuery-ajax-函数" class="headerlink" title="jQuery.ajax() 函数"></a>jQuery.ajax() 函数</h4><p>jQuery.ajax()函数用于通过后台HTTP请求加载远程数据。</p>
 <p>jQuery.ajax()函数是jQuery封装的AJAX技术实现，通过该函数，我们无需刷新当前页面即可获取远程服务器上的数据。</p>
 <p>jQuery.ajax()函数是jQuery的底层AJAX实现。jQuery.get()、 jQuery.post()、 load()、 jQuery.getJSON()、 jQuery.getScript()等函数都是该函数的简化形式(都调用该函数，只是参数设置有所不同或有所省略)。</p>

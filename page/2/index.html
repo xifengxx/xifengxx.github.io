@@ -342,13 +342,7 @@
 
       
         
-          
-          jQuery简介从JavaScript到JavaScript库JavaScript是一门很繁琐的语言。举个例子，如果我们要用JavaScript来实现一些图片轮播、Tabs选项卡等，代码量会非常多。因此为了减少工作量，我们常常会把JavaScript经常用到的一些功能特效封装起来成为一个“代码库”，然后开发者只需要调用一些简单的函数就能进行快速开发。
-对于“JavaScript库”与“JavaScript”的关系，我们可以这样想：假如我们见到一个特效，然后我把这个特效封装成一个函数，以后每次我们只需要调用函数就能使用到这个特效。我们把常用的特效都像上面那样封装成一个个函数，这些函数放到一起就成了一个JavaScript库。也就是说，jQuery、prototype等这些JavaScript库本身就是用JavaScript语言来写的.
-什么是jQueryjQuery，顾名思义，也就是JavaScript和Query（查询），即辅助JavaScript开发的库。
-jQuery是一个非常流行的快速、小巧、功能强大的开源JavaScript库。就像官方所宣称的那样——“Write less，d
-          ...
-
+          <h3 id="jQuery简介"><a href="#jQuery简介" class="headerlink" title="jQuery简介"></a>jQuery简介</h3><h4 id="从JavaScript到JavaScript库"><a href="#从JavaScript到JavaScript库" class="headerlink" title="从JavaScript到JavaScript库"></a>从JavaScript到JavaScript库</h4><p>JavaScript是一门很繁琐的语言。举个例子，如果我们要用JavaScript来实现一些图片轮播、Tabs选项卡等，代码量会非常多。因此为了减少工作量，我们常常会把JavaScript经常用到的一些功能特效封装起来成为一个“代码库”，然后开发者只需要调用一些简单的函数就能进行快速开发。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/19/jQuery学习笔记0/#more" rel="contents">
               阅读全文 &raquo;
@@ -839,16 +833,8 @@ jQuery是一个非常流行的快速、小巧、功能强大的开源JavaScript�
 
       
         
-          
-          Marquee标签实现信息滚动html标签&lt;marquee&gt;可以实现多种滚动效果，无需js控制。
-使用marquee标记不仅可以移动文字，也可以移动图片，表格等.语法：&lt;marquee&gt;...&lt;/marquee&gt;；说明：在标记之间添加要进行滚动的内容。重要属性：
-
-滚动方向direction（包括4个值：up、 down、 left和 right）　语法：&lt;marquee direction=&quot;滚动方向&quot;&gt;...&lt;/marquee&gt;
-滚动方式behavior（scroll:循环滚动，默认效果； slide:只滚动一次就停止； alternate:来回交替进行滚动）　语法：&lt;marquee behavior=&quot;滚动方式&quot;&gt;...&lt;/marquee&gt;
-滚动速度scrollamount（滚动速度是设置每次滚动时移动的长度，以像素为单位）语法：&lt;marquee scrollamount=&quot;5&quot;&gt;...&lt;/marquee&gt;
-滚动延
-          ...
-
+          <h3 id="Marquee标签实现信息滚动"><a href="#Marquee标签实现信息滚动" class="headerlink" title="Marquee标签实现信息滚动"></a>Marquee标签实现信息滚动</h3><p>html标签<code>&lt;marquee&gt;</code>可以实现多种滚动效果，无需js控制。</p>
+<p>使用marquee标记不仅可以移动文字，也可以移动图片，表格等.<br>语法：<code>&lt;marquee&gt;...&lt;/marquee&gt;</code>；<br>说明：在标记之间添加要进行滚动的内容。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/15/JS信息滚动效果/#more" rel="contents">
               阅读全文 &raquo;
@@ -978,22 +964,17 @@ jQuery是一个非常流行的快速、小巧、功能强大的开源JavaScript�
 
       
         
-          
-          Date()函数var myDate =new Date()：返回当前的日期和时间
-
-getDate() 查看Date对象并返回日期（1-31）
-getDay()  返回星期几（0-6）
-getHours()返回小时数（0-23）
-getMinutes返回分钟数（0-59）
-getMonth()返回月份值（从0开始，+1）
-getSeconds()返回秒数
-getTime()  返回毫秒数
-getYear()  返回年份
-getFullYear() 返回年份（如2014）
-
-显示当前系统时间1234567891011121314151617181920212223242526272829303132333435363738394041424344454647&lt;!DOCTYPE HTML&gt;&lt;html&gt;&lt;head&gt;&lt;meta http-equiv="Content-Type" content="text/html; charset=gb2312" /&gt;&lt;title&gt;当前系统时间&lt;/title&gt;&lt;link rel=
-          ...
-
+          <h3 id="Date-函数"><a href="#Date-函数" class="headerlink" title="Date()函数"></a>Date()函数</h3><p>var myDate =new Date()<br>：返回当前的日期和时间</p>
+<ul>
+<li>getDate() 查看Date对象并返回日期（1-31）</li>
+<li>getDay()  返回星期几（0-6）</li>
+<li>getHours()返回小时数（0-23）</li>
+<li>getMinutes返回分钟数（0-59）</li>
+<li>getMonth()返回月份值（从0开始，+1）</li>
+<li>getSeconds()返回秒数</li>
+<li>getTime()  返回毫秒数</li>
+<li>getYear()  返回年份</li>
+<li>getFullYear() 返回年份（如2014）
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/15/JS倒计时效果/#more" rel="contents">
               阅读全文 &raquo;
@@ -1123,12 +1104,8 @@ getFullYear() 返回年份（如2014）
 
       
         
-          
-          运动框架实现思路简单动画（改变值：left/right/width/height/opacity）速度动画1&lt;div id='div1'&gt;&lt;span id='share'&gt;分享&lt;/span&gt;&lt;/div&gt;
-12345body,div,span&#123;margin:0;padding:0;&#125;#div1&#123;width:200px;height:200px;background:red;      position:relative;left:-200px;top:0;&#125;#div1 span&#123;width:20px;height:50px;background:blue;position:absolute;        left:200px;top:75px;&#125;
-123456789101112131415161718192021222324252627282930313233window.onload=function()&#123;    var oDiv=document.getElemen
-          ...
-
+          <h2 id="运动框架实现思路"><a href="#运动框架实现思路" class="headerlink" title="运动框架实现思路"></a>运动框架实现思路</h2><h3 id="简单动画（改变值：left-right-width-height-opacity）"><a href="#简单动画（改变值：left-right-width-height-opacity）" class="headerlink" title="简单动画（改变值：left/right/width/height/opacity）"></a>简单动画（改变值：left/right/width/height/opacity）</h3><h4 id="速度动画"><a href="#速度动画" class="headerlink" title="速度动画"></a>速度动画</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'div1'</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">'share'</span>&gt;</span>分享<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>,<span class="selector-tag">div</span>,<span class="selector-tag">span</span>&#123;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">padding</span>:<span class="number">0</span>;&#125;</span><br><span class="line"><span class="selector-id">#div1</span>&#123;<span class="attribute">width</span>:<span class="number">200px</span>;<span class="attribute">height</span>:<span class="number">200px</span>;<span class="attribute">background</span>:red;</span><br><span class="line">      <span class="attribute">position</span>:relative;<span class="attribute">left</span>:-<span class="number">200px</span>;<span class="attribute">top</span>:<span class="number">0</span>;&#125;</span><br><span class="line"><span class="selector-id">#div1</span> <span class="selector-tag">span</span>&#123;<span class="attribute">width</span>:<span class="number">20px</span>;<span class="attribute">height</span>:<span class="number">50px</span>;<span class="attribute">background</span>:blue;<span class="attribute">position</span>:absolute;</span><br><span class="line">        <span class="attribute">left</span>:<span class="number">200px</span>;<span class="attribute">top</span>:<span class="number">75px</span>;&#125;</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/15/JS运动框架(动画)实现思路/#more" rel="contents">
               阅读全文 &raquo;
@@ -1258,15 +1235,8 @@ getFullYear() 返回年份（如2014）
 
       
         
-          
-          Javascript与HTML之间的交互是通过事件来实现的。事件，就是文档或浏览器窗口中发生的一些特定的交互瞬间。比如：-点击一个DOM元素-键盘按下一个键-输入框输入内容-页面加载完成
-事件流事件流描述的是从页面中接收事件的顺序。IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。
-事件冒泡IE的事件流是事件冒泡流（event bubbling），即事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。
-事件捕获Netscape的事件流是事件捕获流(event capturing)。事件捕获的思想是不太具体的节点应该更早接收到事件，而最具体的节点应该最后接收到事件。
-事件处理程序事件处理程序（事件侦听器）：响应某个事件的函数.事件处理程序的名字以’on’开头，
-1、HTML事件处理程序1234567&lt;input type="button" value="Click Me" onclick="alert('Clicked')"
-          ...
-
+          <p>Javascript与HTML之间的交互是通过事件来实现的。事件，就是文档或浏览器窗口中发生的一些特定的交互瞬间。比如：<br>-点击一个DOM元素<br>-键盘按下一个键<br>-输入框输入内容<br>-页面加载完成</p>
+<h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><p>事件流描述的是从页面中接收事件的顺序。<br>IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.<br>DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/10/DOM事件探秘/#more" rel="contents">
               阅读全文 &raquo;
@@ -1449,8 +1419,8 @@ getFullYear() 返回年份（如2014）
             
               
                 
-                <a class="post-title-link" href="/2016/04/05/git实战教程/" itemprop="url">
-                  Git实战教程
+                <a class="post-title-link" href="/2016/04/05/Hexo基本操作/" itemprop="url">
+                  Hexo安装及部署
                 </a>
               
             
@@ -1477,8 +1447,8 @@ getFullYear() 返回年份（如2014）
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
+                  <a href="/categories/博客搭建/" itemprop="url" rel="index">
+                    <span itemprop="name">博客搭建</span>
                   </a>
                 </span>
 
@@ -1493,8 +1463,8 @@ getFullYear() 返回年份（如2014）
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/05/git实战教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/05/git实战教程/" itemprop="commentsCount"></span>
+                <a href="/2016/04/05/Hexo基本操作/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/05/Hexo基本操作/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -1504,7 +1474,7 @@ getFullYear() 返回年份（如2014）
 
           
           
-             <span id="/2016/04/05/git实战教程/" class="leancloud_visitors" data-flag-title="Git实战教程">
+             <span id="/2016/04/05/Hexo基本操作/" class="leancloud_visitors" data-flag-title="Hexo安装及部署">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1526,21 +1496,15 @@ getFullYear() 返回年份（如2014）
 
       
         
-          
-          简明释义GitGit 是一个版本控制工具，是一个可以安装在你自己机器上的软件。git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。
-githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。Github 首先是一个公司，Github网站是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。
-安装及初始化安装Windows上安装Gitmsysgit是Windows版的Git。下载地址。
-然后按默认选项安装即可。
-安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！
-安装完成后，还需要最后一步设置，在命令行输入：
-
-$ git config –global user.name “Your Name”$ git config –global user.email “email@example.com”
-
-git config命令的–global
-          ...
-
+          <h3 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h3><p>用SSH Key将本地git项目与远程GitHub建立联系。<br>定位到目标文件夹，右键-Git Bash下输入命令：</p>
+<blockquote>
+<p>ssh -T git@github.com</p>
+</blockquote>
+<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p>首先要安装好Git 和Node.js软件。<br>安装完后，打开Git Bash，输入命令：</p>
+<blockquote>
+<p>npm install hexo-cli -g<br>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/05/git实战教程/#more" rel="contents">
+            <a class="btn" href="/2016/04/05/Hexo基本操作/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

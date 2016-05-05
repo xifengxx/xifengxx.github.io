@@ -7,11 +7,9 @@
       <title><![CDATA[正则表达式入门教程]]></title>
       <url>http://xifengxx.github.io/2016/05/05/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/</url>
       <content type="html"><![CDATA[<p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/git-RegExp.jpg" alt=""></p>
-<h3 id="正则表达式简介—描述字符串规则的表达式"><a href="#正则表达式简介—描述字符串规则的表达式" class="headerlink" title="正则表达式简介—描述字符串规则的表达式"></a>正则表达式简介—描述字符串规则的表达式</h3><p>正则表达式，全称“Regular Expression”，在代码中常简写为regex、regexp或RE。</p>
-<blockquote>
-<p>正则表达式，就是用某种模式去匹配一类字符串的公式。</p>
-</blockquote>
-<h4 id="JavaScript中正则表达式的定义方法"><a href="#JavaScript中正则表达式的定义方法" class="headerlink" title="JavaScript中正则表达式的定义方法"></a>JavaScript中正则表达式的定义方法</h4><p>在JavaScript中，正则表达式是由一个RegExp对象表示的，利用RegExp对象来完成有关正则表达式的操作和功能。<br><a id="more"></a><br>正则表达式的定义共有2种方式：<br>（1）显式定义；<br>显式定义必须是使用new关键词来定义。<br>语法：<code>var 变量名 =  new RegExp(pattern,attrs);</code><br>（2）隐式定义；<br>语法：<code>var 变量名 =  /pattern/attrs</code><br>-pattern：正则表达式规则。<br>-attrs: 正则表达式属性， 如g代表全局模式，i表示不区分大小写。</p>
+<h3 id="正则表达式简介—描述字符串规则的表达式"><a href="#正则表达式简介—描述字符串规则的表达式" class="headerlink" title="正则表达式简介—描述字符串规则的表达式"></a>正则表达式简介—描述字符串规则的表达式</h3><p>正则表达式，全称“Regular Expression”，在代码中常简写为regex、regexp或RE。<br>正则表达式，就是用某种模式去匹配一类字符串的公式。<br><a id="more"></a></p>
+<h4 id="JavaScript中正则表达式的定义方法"><a href="#JavaScript中正则表达式的定义方法" class="headerlink" title="JavaScript中正则表达式的定义方法"></a>JavaScript中正则表达式的定义方法</h4><p>在JavaScript中，正则表达式是由一个RegExp对象表示的，利用RegExp对象来完成有关正则表达式的操作和功能。</p>
+<p>正则表达式的定义共有2种方式：<br>（1）显式定义；<br>显式定义必须是使用new关键词来定义。<br>语法：<code>var 变量名 =  new RegExp(pattern,attrs);</code><br>（2）隐式定义；<br>语法：<code>var 变量名 =  /pattern/attrs</code><br>-pattern：正则表达式规则。<br>-attrs: 正则表达式属性， 如g代表全局模式，i表示不区分大小写。</p>
 <p>举例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var myregex = new ReExp("[0-9]");</span><br><span class="line">var myregex = /[0-9]/;</span><br></pre></td></tr></table></figure></p>
 <h4 id="regexObj-test-str-方法"><a href="#regexObj-test-str-方法" class="headerlink" title="regexObj.test(str)方法"></a>regexObj.test(str)方法</h4><p>测试正则表达式与指定字符串是否匹配。</p>
 <p>该方法返回一个boolean值。也就是说，test()方法检查字符串str是否符合正则表达式模式regexp，如果符合，则返回true；如果不符合，则返回false。</p>
@@ -378,204 +376,9 @@
 <li>判断指定变量的类型。</li>
 <li>操作指定DOM元素的函数队列。</li>
 <li>操作指定DOM元素上的任意附加数据。</li>
-<li>去除字符串两侧的连续空白字符、解析JSON字符串等。</li>
+<li>去除字符串两侧的连续空白字符、解析JSON字符串等。<a id="more"></a>
+| 方法  |  版本  |  描述 |<br>| —-  | –  | —-  |<br>| 浏览器检测属性——用于检测浏览器的特性和bug信息 |<br>| jQuery.boxModel  | 1.0~1.3~1.8   |检测浏览器是否使用标准盒模型渲染当前页面。请使用jQuery.support.boxModel替代。 |<br>| jQuery.browser  |  1.0~1.3~1.9  | 以对象形式返回用户浏览器的相关信息。 |<br>| jQuery.support  |  1.3  | 以对象形式返回用户浏览器的特性或bug信息。 |<br>| 遍历方法——用于遍历数组元素或对象属性 |<br>| jQuery.each()  |   1.0  | 遍历对象属性或数组元素，并执行指定的回调函数。 |<br>| jQuery.map()  |    1.0  | 遍历对象属性或数组元素，执行指定的回调函数，并返回以函数的返回值组成的结果数组。 |<br>| jQuery.grep()  |   1.0  | 遍历对象属性或数组元素，执行指定的过滤函数，并返回过滤后的结果数组。 |<br>| each()  |  1.0  | 遍历当前jQuery对象匹配的所有DOM元素，并执行指定的回调函数。 |<br>| map()  |   1.2  | 遍历当前jQuery对象匹配的所有DOM元素，执行指定的回调函数，并返回以函数的返回值组成的结果数组。 |<br>| 附加数据、函数队列操作方法 |<br>| data()  |  1.0  | 获取或设置匹配元素上的指定附加数据。 |<br>| removeData()  |    1.0  | 删除匹配元素上指定的附加数据。 |<br>| queue()  | 1.2  | 获取或设置匹配元素上的指定函数队列。 |<br>| dequeue()  |   1.2  | 移除每个匹配元素的指定队列中的第一个函数，并执行被移除的函数 |<br>| clearQueue()  |    1.4  | 清空匹配元素上的指定函数队列。 |<br>| 扩展方法——用于扩展全局jQuery对象或jQuery实例对象的属性和方法 |<br>| jQuery.extend()  | 1.2  | 扩展全局jQuery对象的属性和方法。 |<br>| jQuery.fn.extend()  |  1.2  | 扩展jQuery原型对象的属性和方法，以便于实例对象使用。 |<br>| 遍历方法——用于遍历数组元素或对象属性 |<br>| jQuery.contains()  |   1.4  | 判断指定元素内是否包含另一个元素。 |<br>| jQuery.globalEval()  | 1.0.4  |   全局性地执行一段JavaScript代码。 |<br>| jQuery.inArray()  |    1.2  | 在数组中搜索指定的值，并返回其索引值。如果数组中不存在该值，则返回 -1。 |<br>| jQuery.isArray()  |    1.3  | 判断指定参数是否是一个数组。 |<br>| jQuery.isEmptyObject()  |  1.4  | 判断指定参数是否是一个空对象。 |<br>| jQuery.isPlainObject()  |  1.4  | 判断指定参数是否是一个纯粹的对象。 |<br>| jQuery.isFunction()  | 1.2  | 判断指定参数是否是一个函数。 |<br>| jQuery.isNumeric()  |  1.7  | 判断指定参数是否是一个数字值。 |<br>| jQuery.isWindow()  |   1.4.3  |   判断指定参数是否是一个窗口。 |<br>| jQuery.isXMLDoc()  |   1.1.4  |   判断一个DOM节点是否位于XML文档中，或者其本身就是XML文档。 |<br>| jQuery.makeArray()  |  1.2  | 将一个类数组对象转换为真正的数组对象。 |<br>| jQuery.noop()  |   1.4  | 一个空函数，它什么也不做。 |<br>| jQuery.now()  |    1.4.3  |   返回当前时间距1970年1月1日午夜所经过的毫秒数。 |<br>| jQuery.parseHTML()  |  1.2  | 手动触发元素上的任意事件，但不会触发元素的默认事件行为，也不支持事件冒泡。 |<br>| jQuery.parseJSON()  |  1.4.1  |   将格式完好的JSON字符串转为与之对应的JavaScript对象。 |<br>| jQuery.parseXML()  |   1.5  | 将字符串解析为对应的XML文档。 |<br>| jQuery.trim()  |   1.0  | 去除字符串两端的空白字符。 |<br>| jQuery.type()  |   1.4.3  |   确定JavaScript内置对象的类型，并返回小写形式的类型名称。 |<br>| jQuery.unique()  | 1.1.3  |   根据元素在文档中出现的先后顺序对DOM元素数组进行排序，并移除重复的元素。 |</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>版本</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>浏览器检测属性——用于检测浏览器的特性和bug信息</td>
-</tr>
-<tr>
-<td>jQuery.boxModel</td>
-<td>1.0~1.3~1.8</td>
-<td>检测浏览器是否使用标准盒模型渲染当前页面。请使用jQuery.support.boxModel替代。</td>
-</tr>
-<tr>
-<td>jQuery.browser</td>
-<td>1.0~1.3~1.9</td>
-<td>以对象形式返回用户浏览器的相关信息。</td>
-</tr>
-<tr>
-<td>jQuery.support</td>
-<td>1.3</td>
-<td>以对象形式返回用户浏览器的特性或bug信息。</td>
-</tr>
-<tr>
-<td>遍历方法——用于遍历数组元素或对象属性</td>
-</tr>
-<tr>
-<td>jQuery.each()</td>
-<td>1.0</td>
-<td>遍历对象属性或数组元素，并执行指定的回调函数。</td>
-</tr>
-<tr>
-<td>jQuery.map()</td>
-<td>1.0</td>
-<td>遍历对象属性或数组元素，执行指定的回调函数，并返回以函数的返回值组成的结果数组。</td>
-</tr>
-<tr>
-<td>jQuery.grep()</td>
-<td>1.0</td>
-<td>遍历对象属性或数组元素，执行指定的过滤函数，并返回过滤后的结果数组。</td>
-</tr>
-<tr>
-<td>each()</td>
-<td>1.0</td>
-<td>遍历当前jQuery对象匹配的所有DOM元素，并执行指定的回调函数。</td>
-</tr>
-<tr>
-<td>map()</td>
-<td>1.2</td>
-<td>遍历当前jQuery对象匹配的所有DOM元素，执行指定的回调函数，并返回以函数的返回值组成的结果数组。</td>
-</tr>
-<tr>
-<td>附加数据、函数队列操作方法</td>
-</tr>
-<tr>
-<td>data()</td>
-<td>1.0</td>
-<td>获取或设置匹配元素上的指定附加数据。</td>
-</tr>
-<tr>
-<td>removeData()</td>
-<td>1.0</td>
-<td>删除匹配元素上指定的附加数据。</td>
-</tr>
-<tr>
-<td>queue()</td>
-<td>1.2</td>
-<td>获取或设置匹配元素上的指定函数队列。</td>
-</tr>
-<tr>
-<td>dequeue()</td>
-<td>1.2</td>
-<td>移除每个匹配元素的指定队列中的第一个函数，并执行被移除的函数</td>
-</tr>
-<tr>
-<td>clearQueue()</td>
-<td>1.4</td>
-<td>清空匹配元素上的指定函数队列。</td>
-</tr>
-<tr>
-<td>扩展方法——用于扩展全局jQuery对象或jQuery实例对象的属性和方法</td>
-</tr>
-<tr>
-<td>jQuery.extend()</td>
-<td>1.2</td>
-<td>扩展全局jQuery对象的属性和方法。</td>
-</tr>
-<tr>
-<td>jQuery.fn.extend()</td>
-<td>1.2</td>
-<td>扩展jQuery原型对象的属性和方法，以便于实例对象使用。</td>
-</tr>
-<tr>
-<td>遍历方法——用于遍历数组元素或对象属性</td>
-</tr>
-<tr>
-<td>jQuery.contains()</td>
-<td>1.4</td>
-<td>判断指定元素内是否包含另一个元素。</td>
-</tr>
-<tr>
-<td>jQuery.globalEval()</td>
-<td>1.0.4</td>
-<td>全局性地执行一段JavaScript代码。</td>
-</tr>
-<tr>
-<td>jQuery.inArray()</td>
-<td>1.2</td>
-<td>在数组中搜索指定的值，并返回其索引值。如果数组中不存在该值，则返回 -1。</td>
-</tr>
-<tr>
-<td>jQuery.isArray()</td>
-<td>1.3</td>
-<td>判断指定参数是否是一个数组。</td>
-</tr>
-<tr>
-<td>jQuery.isEmptyObject()</td>
-<td>1.4</td>
-<td>判断指定参数是否是一个空对象。</td>
-</tr>
-<tr>
-<td>jQuery.isPlainObject()</td>
-<td>1.4</td>
-<td>判断指定参数是否是一个纯粹的对象。</td>
-</tr>
-<tr>
-<td>jQuery.isFunction()</td>
-<td>1.2</td>
-<td>判断指定参数是否是一个函数。</td>
-</tr>
-<tr>
-<td>jQuery.isNumeric()</td>
-<td>1.7</td>
-<td>判断指定参数是否是一个数字值。</td>
-</tr>
-<tr>
-<td>jQuery.isWindow()</td>
-<td>1.4.3</td>
-<td>判断指定参数是否是一个窗口。</td>
-</tr>
-<tr>
-<td>jQuery.isXMLDoc()</td>
-<td>1.1.4</td>
-<td>判断一个DOM节点是否位于XML文档中，或者其本身就是XML文档。</td>
-</tr>
-<tr>
-<td>jQuery.makeArray()</td>
-<td>1.2</td>
-<td>将一个类数组对象转换为真正的数组对象。</td>
-</tr>
-<tr>
-<td>jQuery.noop()</td>
-<td>1.4</td>
-<td>一个空函数，它什么也不做。</td>
-</tr>
-<tr>
-<td>jQuery.now()</td>
-<td>1.4.3</td>
-<td>返回当前时间距1970年1月1日午夜所经过的毫秒数。</td>
-</tr>
-<tr>
-<td>jQuery.parseHTML()</td>
-<td>1.2</td>
-<td>手动触发元素上的任意事件，但不会触发元素的默认事件行为，也不支持事件冒泡。</td>
-</tr>
-<tr>
-<td>jQuery.parseJSON()</td>
-<td>1.4.1</td>
-<td>将格式完好的JSON字符串转为与之对应的JavaScript对象。</td>
-</tr>
-<tr>
-<td>jQuery.parseXML()</td>
-<td>1.5</td>
-<td>将字符串解析为对应的XML文档。</td>
-</tr>
-<tr>
-<td>jQuery.trim()</td>
-<td>1.0</td>
-<td>去除字符串两端的空白字符。</td>
-</tr>
-<tr>
-<td>jQuery.type()</td>
-<td>1.4.3</td>
-<td>确定JavaScript内置对象的类型，并返回小写形式的类型名称。</td>
-</tr>
-<tr>
-<td>jQuery.unique()</td>
-<td>1.1.3</td>
-<td>根据元素在文档中出现的先后顺序对DOM元素数组进行排序，并移除重复的元素。</td>
-</tr>
-</tbody>
-</table>
 <h3 id="全局jQuery-each-函数"><a href="#全局jQuery-each-函数" class="headerlink" title="全局jQuery.each() 函数"></a>全局jQuery.each() 函数</h3><p>jQuery.each()函数用于遍历指定的对象和数组，并以对象的每个属性(或数组的每个成员)作为上下文来遍历执行指定的函数。<br>所谓的上下文，意即该函数内部的this指针引用了该元素。</p>
 <p>该函数属于全局jQuery对象。</p>
 <p><strong>语法</strong><br><code>jQuery.each( object, callback )</code></p>
@@ -692,8 +495,7 @@
       <url>http://xifengxx.github.io/2016/05/04/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B08/</url>
       <content type="html"><![CDATA[<h3 id="jQuery的AJAX方法"><a href="#jQuery的AJAX方法" class="headerlink" title="jQuery的AJAX方法"></a>jQuery的AJAX方法</h3><p>工具方法——用于协助发送或处理AJAX请求，简化AJAX操作.</p>
 <h4 id="jQuery-ajaxPrefilter-函数"><a href="#jQuery-ajaxPrefilter-函数" class="headerlink" title="jQuery.ajaxPrefilter()函数"></a>jQuery.ajaxPrefilter()函数</h4><p>jQuery.ajaxPrefilter()函数用于指定预先处理Ajax参数选项的回调函数。<br>在所有参数选项被jQuery.ajax()函数处理之前，你可以使用该函数设置的回调函数来预先更改任何参数选项。</p>
-<p>你还可以指定数据类型(dataType)，从而只预先处理指定数据类型的参数选项。<br>该函数可以调用多次，以便于为不同数据类型的AJAX请求指定不同的回调函数。</p>
-<p><strong>语法</strong><br><code>jQuery.ajaxPrefilter( [ dataType ,] handler )</code></p>
+<p>你还可以指定数据类型(dataType)，从而只预先处理指定数据类型的参数选项。<br>该函数可以调用多次，以便于为不同数据类型的AJAX请求指定不同的回调函数。<br><a id="more"></a><br><strong>语法</strong><br><code>jQuery.ajaxPrefilter( [ dataType ,] handler )</code></p>
 <ul>
 <li>dataType： 可选/String类型<br>一个或多个用空格隔开的数据类型所组成的字符串。如果未指定该参数，则表示所有数据类型。可用的数据类型为”xml”、 “html”、 “text”、 “json”、 “jsonp”、 “script”。该字符串为它们之间的任意组合(多种类型用空格隔开)，例如：”xml”、 “text html”、 “script json jsonp”。</li>
 <li>handler：Function类型<br>用于预处理参数选项的回调函数。它有以下3个参数：<br>– options：(Object对象)当前AJAX请求的所有参数选项。<br>– originalOptions：(Object对象)传递给$.ajax()方法的未经修改的参数选项。<br>– jqXHR：当前请求的jqXHR对象(经过jQuery封装的XMLHttpRequest对象)。</li>
@@ -808,113 +610,9 @@
 <ul>
 <li>在发送AJAX请求之前，序列化JS内容或表单内容，以便用作AJAX请求发送的数据。</li>
 <li>快速发送AJAX请求，并处理响应数据(支持html、xml、text、json、jsonp、script等多种数据类型)。</li>
-<li>监听AJAX事件，绑定事件触发时执行的处理函数。</li>
+<li>监听AJAX事件，绑定事件触发时执行的处理函数。<a id="more"></a>
+<h3 id="jQuery的AJAX方法"><a href="#jQuery的AJAX方法" class="headerlink" title="jQuery的AJAX方法"></a>jQuery的AJAX方法</h3>| 方法  |  版本  |  描述 |<br>| —  | —  |  — |<br>| 核心方法——发送并处理AJAX请求的方法 |<br>| jQuery.ajax()  |   1.0  | 全局方法发送并处理AJAX请求。这是jQuery底层的AJAX实现，包含处理AJAX请求所需的一切功能。其他发送AJAX请求的方法都是对该方法的进一步封装。 |<br>| jQuery.get()  |    1.0  | 全局方法发送并处理GET方式的AJAX请求。 |<br>| jQuery.post()  |   1.0  | 全局方法发送并处理POST方式的AJAX请求。 |<br>| jQuery.getJSON()  |    1.0  | 全局方法发送并处理GET方式、返回数据为JSON格式的AJAX请求。 |<br>| jQuery.getScript()  |  1.0  | 全局方法发送GET请求，用于加载一个JS脚本文件。 |<br>| jQuery.load()  |   1.0  | 全局方法发送AJAX请求，用于加载一个HTML文件并替换匹配元素中的内容。 |<br>| 工具方法——用于协助发送或处理AJAX请求，简化AJAX操作 |<br>| jQuery.ajaxPrefilter()  |  1.5  | 全局方法在$.ajax()处理参数选项之前，预处理参数选项。 |<br>| jQuery.ajaxSetup()  |  1.1  | 全局方法设置$.ajax()的全局默认选项。 |<br>| jQuery.param()  |  1.0  | 全局方法将JS数组或对象序列化为字符串，以便用于URL查询字符串或AJAX请求。 |<br>| serialize()  | 1.0  | 将表单元素序列化为字符串，以便用于URL查询字符串或AJAX请求。 |<br>| serializeArray()  |    1.2  | 将表单元素序列化为一个JS数组。 |<br>| 事件方法——用于为AJAX事件绑定处理一个或多个函数 |<br>| ajaxComplete()  |  1.0  | 设置当AJAX请求完成(无论成功或失败)时执行的处理函数。 |<br>| ajaxSuccess()  |   1.0  | 设置当AJAX请求成功时执行的处理函数。 |<br>| ajaxError()  | 1.0  | 设置当AJAX请求失败时执行的处理函数。 |<br>| ajaxStart()  | 1.0  | 设置当前第一个AJAX请求开始时执行的处理函数。 |<br>| ajaxSend()  |  1.0  | 设置在AJAX请求被发送前执行的处理函数。 |<br>| ajaxStop()  |  1.0  | 设置当前最后一个AJAX请求结束时执行的处理函数。 |</li>
 </ul>
-<h3 id="jQuery的AJAX方法"><a href="#jQuery的AJAX方法" class="headerlink" title="jQuery的AJAX方法"></a>jQuery的AJAX方法</h3><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>版本</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>核心方法——发送并处理AJAX请求的方法</td>
-</tr>
-<tr>
-<td>jQuery.ajax()</td>
-<td>1.0</td>
-<td>全局方法发送并处理AJAX请求。这是jQuery底层的AJAX实现，包含处理AJAX请求所需的一切功能。其他发送AJAX请求的方法都是对该方法的进一步封装。</td>
-</tr>
-<tr>
-<td>jQuery.get()</td>
-<td>1.0</td>
-<td>全局方法发送并处理GET方式的AJAX请求。</td>
-</tr>
-<tr>
-<td>jQuery.post()</td>
-<td>1.0</td>
-<td>全局方法发送并处理POST方式的AJAX请求。</td>
-</tr>
-<tr>
-<td>jQuery.getJSON()</td>
-<td>1.0</td>
-<td>全局方法发送并处理GET方式、返回数据为JSON格式的AJAX请求。</td>
-</tr>
-<tr>
-<td>jQuery.getScript()</td>
-<td>1.0</td>
-<td>全局方法发送GET请求，用于加载一个JS脚本文件。</td>
-</tr>
-<tr>
-<td>jQuery.load()</td>
-<td>1.0</td>
-<td>全局方法发送AJAX请求，用于加载一个HTML文件并替换匹配元素中的内容。</td>
-</tr>
-<tr>
-<td>工具方法——用于协助发送或处理AJAX请求，简化AJAX操作</td>
-</tr>
-<tr>
-<td>jQuery.ajaxPrefilter()</td>
-<td>1.5</td>
-<td>全局方法在$.ajax()处理参数选项之前，预处理参数选项。</td>
-</tr>
-<tr>
-<td>jQuery.ajaxSetup()</td>
-<td>1.1</td>
-<td>全局方法设置$.ajax()的全局默认选项。</td>
-</tr>
-<tr>
-<td>jQuery.param()</td>
-<td>1.0</td>
-<td>全局方法将JS数组或对象序列化为字符串，以便用于URL查询字符串或AJAX请求。</td>
-</tr>
-<tr>
-<td>serialize()</td>
-<td>1.0</td>
-<td>将表单元素序列化为字符串，以便用于URL查询字符串或AJAX请求。</td>
-</tr>
-<tr>
-<td>serializeArray()</td>
-<td>1.2</td>
-<td>将表单元素序列化为一个JS数组。</td>
-</tr>
-<tr>
-<td>事件方法——用于为AJAX事件绑定处理一个或多个函数</td>
-</tr>
-<tr>
-<td>ajaxComplete()</td>
-<td>1.0</td>
-<td>设置当AJAX请求完成(无论成功或失败)时执行的处理函数。</td>
-</tr>
-<tr>
-<td>ajaxSuccess()</td>
-<td>1.0</td>
-<td>设置当AJAX请求成功时执行的处理函数。</td>
-</tr>
-<tr>
-<td>ajaxError()</td>
-<td>1.0</td>
-<td>设置当AJAX请求失败时执行的处理函数。</td>
-</tr>
-<tr>
-<td>ajaxStart()</td>
-<td>1.0</td>
-<td>设置当前第一个AJAX请求开始时执行的处理函数。</td>
-</tr>
-<tr>
-<td>ajaxSend()</td>
-<td>1.0</td>
-<td>设置在AJAX请求被发送前执行的处理函数。</td>
-</tr>
-<tr>
-<td>ajaxStop()</td>
-<td>1.0</td>
-<td>设置当前最后一个AJAX请求结束时执行的处理函数。</td>
-</tr>
-</tbody>
-</table>
 <h4 id="jQuery-ajax-函数"><a href="#jQuery-ajax-函数" class="headerlink" title="jQuery.ajax() 函数"></a>jQuery.ajax() 函数</h4><p>jQuery.ajax()函数用于通过后台HTTP请求加载远程数据。</p>
 <p>jQuery.ajax()函数是jQuery封装的AJAX技术实现，通过该函数，我们无需刷新当前页面即可获取远程服务器上的数据。</p>
 <p>jQuery.ajax()函数是jQuery的底层AJAX实现。jQuery.get()、 jQuery.post()、 load()、 jQuery.getJSON()、 jQuery.getScript()等函数都是该函数的简化形式(都调用该函数，只是参数设置有所不同或有所省略)。</p>
@@ -1082,7 +780,8 @@
       <url>http://xifengxx.github.io/2016/05/04/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B06/</url>
       <content type="html"><![CDATA[<h2 id="jQuery-Event对象的属性和方法"><a href="#jQuery-Event对象的属性和方法" class="headerlink" title="jQuery Event对象的属性和方法"></a>jQuery Event对象的属性和方法</h2><p>jQuery的Event对象用于表示当前文档元素触发的DOM事件，它对JS原生的Event对象进行了封装，从而实现跨浏览器的兼容。</p>
 <p>该对象主要用于获取事件的相关信息，或对该事件进行处理。</p>
-<h3 id="Event-对象的属性"><a href="#Event-对象的属性" class="headerlink" title="Event 对象的属性"></a>Event 对象的属性</h3><table>
+<h3 id="Event-对象的属性"><a href="#Event-对象的属性" class="headerlink" title="Event 对象的属性"></a>Event 对象的属性</h3><a id="more"></a>
+<table>
 <thead>
 <tr>
 <th>属性</th>
@@ -1362,8 +1061,7 @@
       <title><![CDATA[jQuery学习笔记5 - jQuery过滤、查找方法]]></title>
       <url>http://xifengxx.github.io/2016/04/29/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05/</url>
       <content type="html"><![CDATA[<h3 id="jQuery过滤方法"><a href="#jQuery过滤方法" class="headerlink" title="jQuery过滤方法"></a>jQuery过滤方法</h3><p>除了选择器之外，jQuery还为我们提供了以“方法”（类似于函数方法）形式存在的2种方式：（1）过滤方法；（2）查找方法。</p>
-<p>过滤和查找这2类方法与之前所学到的“选择器”是相互补充的关系。过滤和查找补充了很多使用选择器无法进行的操作，例如选取某一个元素的父元素、获取当前点击位置下的子元素、判断当前元素是否处于动画状态等等。这些都是很常见的操作。</p>
-<p>在jQuery中，常见的过滤方法如下：</p>
+<p>过滤和查找这2类方法与之前所学到的“选择器”是相互补充的关系。过滤和查找补充了很多使用选择器无法进行的操作，例如选取某一个元素的父元素、获取当前点击位置下的子元素、判断当前元素是否处于动画状态等等。这些都是很常见的操作。<br><a id="more"></a><br>在jQuery中，常见的过滤方法如下：</p>
 <table>
 <thead>
 <tr>
@@ -1471,8 +1169,7 @@
     <entry>
       <title><![CDATA[jQuery学习笔记4 - jQuery动画]]></title>
       <url>http://xifengxx.github.io/2016/04/27/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B04/</url>
-      <content type="html"><![CDATA[<h3 id="jQuery动画"><a href="#jQuery动画" class="headerlink" title="jQuery动画"></a>jQuery动画</h3><h4 id="显示和隐藏"><a href="#显示和隐藏" class="headerlink" title="显示和隐藏"></a>显示和隐藏</h4><p>在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：<br>（1）show()和hide()；<br>（2）toggle()；</p>
-<p><strong>show()和hide()</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$().hide() <span class="comment">//把所选元素的display属性设置为none。</span></span><br><span class="line">$().show() <span class="comment">//把所选元素的display属性还原为隐藏之前的显示状态（block、inline或者inline-block等）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//带动画效果的显示和隐藏</span></span><br><span class="line">$().hide(speed,callback)</span><br><span class="line">$(),show(speed,callback)</span><br><span class="line"><span class="comment">// 参数speed为必选参数，表示动画执行的速度，单位是毫秒；</span></span><br><span class="line"><span class="comment">// 参数callback为可选参数（可以省略），表示动画执行完成之后的“回调函数”。</span></span><br></pre></td></tr></table></figure></p>
+      <content type="html"><![CDATA[<h3 id="jQuery动画"><a href="#jQuery动画" class="headerlink" title="jQuery动画"></a>jQuery动画</h3><h4 id="显示和隐藏"><a href="#显示和隐藏" class="headerlink" title="显示和隐藏"></a>显示和隐藏</h4><p>在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：<br>（1）show()和hide()；<br>（2）toggle()；<br><a id="more"></a><br><strong>show()和hide()</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$().hide() <span class="comment">//把所选元素的display属性设置为none。</span></span><br><span class="line">$().show() <span class="comment">//把所选元素的display属性还原为隐藏之前的显示状态（block、inline或者inline-block等）。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//带动画效果的显示和隐藏</span></span><br><span class="line">$().hide(speed,callback)</span><br><span class="line">$(),show(speed,callback)</span><br><span class="line"><span class="comment">// 参数speed为必选参数，表示动画执行的速度，单位是毫秒；</span></span><br><span class="line"><span class="comment">// 参数callback为可选参数（可以省略），表示动画执行完成之后的“回调函数”。</span></span><br></pre></td></tr></table></figure></p>
 <p><em>案例:</em><br>当点击“隐藏”按钮，使用hide()方法隐藏图片；当点击“显示”按钮，使用show()方法显示图片。这个例子非常简单。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#btn_hide"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">"img"</span>).hide();</span><br><span class="line">            &#125;);</span><br><span class="line">            $(<span class="string">"#btn_show"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="string">"img"</span>).show(<span class="number">500</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure></p>
 <p><strong>toggle()方法</strong><br>在jQuery中，我们还可以使用toggle()方法来“切换”元素的“显示状态”。<br>如果元素是显示状态，则变成隐藏状态；如果元素是隐藏状态，则变成显示状态。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$().toggle()                     <span class="comment">//简单的toggle()</span></span><br><span class="line">$().toggle(speed , callback);    <span class="comment">//动画的toggle()</span></span><br><span class="line"><span class="comment">//参数speed表示动画执行的速度，单位是毫秒；</span></span><br><span class="line"><span class="comment">//参数callback为可选参数（可以省略），表示动画执行完成之后的“回调函数”。</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="淡入和淡出"><a href="#淡入和淡出" class="headerlink" title="淡入和淡出"></a>淡入和淡出</h4><p>在jQuery中，如果我们想要实现元素的淡入淡出这种渐变效果，有3组方法：<br>（1）fadeIn()和fadeOut()；<br>（2）fadeToggle()；<br>（3）fadeTo()；</p>
@@ -1549,9 +1246,10 @@
     <entry>
       <title><![CDATA[jQuery学习笔记3 - jQuery事件]]></title>
       <url>http://xifengxx.github.io/2016/04/25/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/</url>
-      <content type="html"><![CDATA[<h3 id="jQuery事件"><a href="#jQuery事件" class="headerlink" title="jQuery事件"></a>jQuery事件</h3><p>jQuery封装了JavaScript中所有的事件，使得其操作更加简单方便，并且使得这些事件能够兼容各大浏览器，减少我们大量代码的编写。<br>jQuery事件包括两类：</p>
+      <content type="html"><![CDATA[<h3 id="jQuery事件"><a href="#jQuery事件" class="headerlink" title="jQuery事件"></a>jQuery事件</h3><p>jQuery封装了JavaScript中所有的事件，使得其操作更加简单方便，并且使得这些事件能够兼容各大浏览器，减少我们大量代码的编写。</p>
+<p>jQuery事件包括两类：</p>
 <ol>
-<li>jQuery对象的常规事件方法<br>常规事件函数，主要用于为元素的指定事件添加、触发绑定的一个或多个事件处理函数。<br>如:ready(),resize(),focus(),blur(),mousedown(),click(),toggle()等。</li>
+<li>jQuery对象的常规事件方法<br>常规事件函数，主要用于为元素的指定事件添加、触发绑定的一个或多个事件处理函数。<br>如:ready(),resize(),focus(),blur(),mousedown(),click(),toggle()等。<a id="more"></a></li>
 <li>jQuery对象的核心事件方法<br>核心事件函数，主要用于为元素的任意事件(包括自定义事件)添加、取消、触发绑定的一个或多个事件处理函数。<br>如：bind(),one(),delegate(),unbind(),off()，trigger()等。<br>在jQuery中，我们需要学习9种事件操作：<br>（1）页面载入事件；<br>（2）鼠标事件；<br>（3）键盘事件；<br>（4）表单事件；<br>（5）滚动事件；<br>（6）绑定事件；<br>（7）解绑事件；<br>（8）合成事件；<br>（9）一次事件；</li>
 </ol>
 <h4 id="页面载入事件"><a href="#页面载入事件" class="headerlink" title="页面载入事件"></a>页面载入事件</h4><p>在jQuery中，对于页面载入事件，我们使用<code>$(document).ready()</code>方法来替代JavaScript中的<code>window.onload</code>方法</p>
@@ -1783,9 +1481,10 @@
       <content type="html"><![CDATA[<h3 id="jQuery操作元素"><a href="#jQuery操作元素" class="headerlink" title="jQuery操作元素"></a>jQuery操作元素</h3><h4 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h4><ul>
 <li>获取元素属性：<br> <code>$().attr(&quot;属性名&quot;)</code><br> <code>$().prop(&quot;属性名&quot;)</code></li>
 <li>设置元素属性：<br> <code>$().attr(&quot;属性&quot;,&quot;属性值&quot;)</code></li>
-<li>删除元素属性：<br> <code>$().removeAttr(&quot;属性名&quot;)</code><br> <code>$().removeProp(&quot;属性名&quot;)</code></li>
+<li>删除元素属性：<br> <code>$().removeAttr(&quot;属性名&quot;)</code><br> <code>$().removeProp(&quot;属性名&quot;)</code><a id="more"></a>
+案例：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用attr()方法获取img元素的src属性</span></span><br><span class="line">$(<span class="string">"#btn_src"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert($(<span class="string">"img"</span>).attr(<span class="string">"src"</span>));</span><br><span class="line">            &#125;);</span><br><span class="line"><span class="comment">//使用attr()方法为a标签添加了一个title属性。</span></span><br><span class="line">$(<span class="string">"a"</span>).attr(<span class="string">"title"</span>, <span class="string">"欢迎来到西风博客网站"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用removeAttr()方法删除a标签的title属性。</span></span><br><span class="line">$(<span class="string">"a"</span>).removeAttr(<span class="string">"title"</span>);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>案例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用attr()方法获取img元素的src属性</span></span><br><span class="line">$(<span class="string">"#btn_src"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert($(<span class="string">"img"</span>).attr(<span class="string">"src"</span>));</span><br><span class="line">            &#125;);</span><br><span class="line"><span class="comment">//使用attr()方法为a标签添加了一个title属性。</span></span><br><span class="line">$(<span class="string">"a"</span>).attr(<span class="string">"title"</span>, <span class="string">"欢迎来到西风博客网站"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用removeAttr()方法删除a标签的title属性。</span></span><br><span class="line">$(<span class="string">"a"</span>).removeAttr(<span class="string">"title"</span>);</span><br></pre></td></tr></table></figure></p>
 <h4 id="attr-方法和prop-方法操作元素属性的区别："><a href="#attr-方法和prop-方法操作元素属性的区别：" class="headerlink" title="attr()方法和prop()方法操作元素属性的区别："></a>attr()方法和prop()方法操作元素属性的区别：</h4><ol>
 <li>操作对象不同<br>attr和prop分别是单词attribute和property的缩写，并且它们均表示”属性”的意思。</li>
 </ol>
@@ -1938,7 +1637,7 @@
       <title><![CDATA[jQuery学习笔记1 - jQuery选择器]]></title>
       <url>http://xifengxx.github.io/2016/04/19/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</url>
       <content type="html"><![CDATA[<h3 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器"></a>jQuery选择器</h3><p>选择器是一种选中页面元素的方式。只要把元素选中，我们才能对被选中的元素进行各种操作。不同的选择器，在于它们选取方式的不同。<br>jQuery选择器的功能就是把元素选中，然后我们才能对选中的元素进行各种操作。<br>jQuery选择器的格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;选择器&quot;)</span><br></pre></td></tr></table></figure></p>
-<p>参考：<a href="http://www.365mini.com/page/tag/jquery-all-selectors" target="_blank" rel="external">jQuery选择器一览表</a></p>
+<p>参考：<a href="http://www.365mini.com/page/tag/jquery-all-selectors" target="_blank" rel="external">jQuery选择器一览表</a><br><a id="more"></a></p>
 <h4 id="jQuery基础选择器"><a href="#jQuery基础选择器" class="headerlink" title="jQuery基础选择器"></a>jQuery基础选择器</h4><h5 id="基本选择器；"><a href="#基本选择器；" class="headerlink" title="基本选择器；"></a>基本选择器；</h5><p>所谓的基本选择器，指的是在jQuery中使用最频繁的选择器。在jQuery中，基本选择器共有5种：<br>（1）元素选择器；<code>$(&quot;元素名&quot;)</code><br>元素选择器，就是“选中”相同的元素，然后对相同的元素进行操作。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;script src="jquery-1.12.0.min.js" type="text/javascript"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">        $(function () &#123;</span><br><span class="line">            $("div").css("color","red");</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;前端学习网&lt;/div&gt;</span><br><span class="line">    &lt;p&gt;绿叶学习网&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
 <p>分析：<br><code>$(function () {//这里是你的jQuery代码})</code>：<br>这句代码功能类似于JavaScript中的window.onload = function(){}，也就是在文档加载完成之后执行的代码。以后我们写jQuery代码都在$(function(){})里面写。</p>
 <p>在这个例子中，$(“div”)表示选中所有的div元素，css(“color”,”red”)表示将选中的元素的color属性设置为红色。css()方法是jQuery操作CSS样式的方法。由于css()是<strong>对象的一个方法</strong>，因此我们使用点运算符来调用，如$(“div”).css()。</p>
@@ -1983,8 +1682,7 @@
     <entry>
       <title><![CDATA[jQuery学习笔记0 - jQuery简介]]></title>
       <url>http://xifengxx.github.io/2016/04/19/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/</url>
-      <content type="html"><![CDATA[<h3 id="jQuery简介"><a href="#jQuery简介" class="headerlink" title="jQuery简介"></a>jQuery简介</h3><h4 id="从JavaScript到JavaScript库"><a href="#从JavaScript到JavaScript库" class="headerlink" title="从JavaScript到JavaScript库"></a>从JavaScript到JavaScript库</h4><p>JavaScript是一门很繁琐的语言。举个例子，如果我们要用JavaScript来实现一些图片轮播、Tabs选项卡等，代码量会非常多。因此为了减少工作量，我们常常会把JavaScript经常用到的一些功能特效封装起来成为一个“代码库”，然后开发者只需要调用一些简单的函数就能进行快速开发。</p>
-<p>对于“JavaScript库”与“JavaScript”的关系，我们可以这样想：<br>假如我们见到一个特效，然后我把这个特效封装成一个函数，以后每次我们只需要调用函数就能使用到这个特效。我们把常用的特效都像上面那样封装成一个个函数，这些函数放到一起就成了一个JavaScript库。也就是说，jQuery、prototype等这些JavaScript库本身就是用JavaScript语言来写的.</p>
+      <content type="html"><![CDATA[<h3 id="jQuery简介"><a href="#jQuery简介" class="headerlink" title="jQuery简介"></a>jQuery简介</h3><h4 id="从JavaScript到JavaScript库"><a href="#从JavaScript到JavaScript库" class="headerlink" title="从JavaScript到JavaScript库"></a>从JavaScript到JavaScript库</h4><p>JavaScript是一门很繁琐的语言。举个例子，如果我们要用JavaScript来实现一些图片轮播、Tabs选项卡等，代码量会非常多。因此为了减少工作量，我们常常会把JavaScript经常用到的一些功能特效封装起来成为一个“代码库”，然后开发者只需要调用一些简单的函数就能进行快速开发。<br><a id="more"></a><br>对于“JavaScript库”与“JavaScript”的关系，我们可以这样想：<br>假如我们见到一个特效，然后我把这个特效封装成一个函数，以后每次我们只需要调用函数就能使用到这个特效。我们把常用的特效都像上面那样封装成一个个函数，这些函数放到一起就成了一个JavaScript库。也就是说，jQuery、prototype等这些JavaScript库本身就是用JavaScript语言来写的.</p>
 <h4 id="什么是jQuery"><a href="#什么是jQuery" class="headerlink" title="什么是jQuery"></a>什么是jQuery</h4><p>jQuery，顾名思义，也就是JavaScript和Query（查询），即辅助JavaScript开发的库。</p>
 <p>jQuery是一个非常流行的快速、小巧、功能强大的开源JavaScript库。就像官方所宣称的那样——“Write less，do more”，它使得我们常用的HTML文档遍历、DOM操作、事件处理、动画效果、Ajax、工具方法等功能代码的实现变得非常简单。更重要的是，它还为我们做了跨浏览器的兼容。</p>
 <p>jQuery是全球最流行用得最多的JavaScript库，没有之一。jQuery是在世界前10000个访问最多的网站中，有超过55%在使用jQuery。<br>其实jQuery就是用JavaScript来写的，它只是把我们在JavaScript中最常用的的功能封装起来，以方便我们快速开发。</p>
@@ -2019,7 +1717,7 @@
       <title><![CDATA[信息滚动效果制作]]></title>
       <url>http://xifengxx.github.io/2016/04/15/JS%E4%BF%A1%E6%81%AF%E6%BB%9A%E5%8A%A8%E6%95%88%E6%9E%9C/</url>
       <content type="html"><![CDATA[<h3 id="Marquee标签实现信息滚动"><a href="#Marquee标签实现信息滚动" class="headerlink" title="Marquee标签实现信息滚动"></a>Marquee标签实现信息滚动</h3><p>html标签<code>&lt;marquee&gt;</code>可以实现多种滚动效果，无需js控制。</p>
-<p>使用marquee标记不仅可以移动文字，也可以移动图片，表格等.<br>语法：<code>&lt;marquee&gt;...&lt;/marquee&gt;</code>；<br>说明：在标记之间添加要进行滚动的内容。<br>重要属性：</p>
+<p>使用marquee标记不仅可以移动文字，也可以移动图片，表格等.<br>语法：<code>&lt;marquee&gt;...&lt;/marquee&gt;</code>；<br>说明：在标记之间添加要进行滚动的内容。<br><a id="more"></a><br>重要属性：</p>
 <ol>
 <li>滚动方向direction（包括4个值：up、 down、 left和 right）<br>　语法：<code>&lt;marquee direction=&quot;滚动方向&quot;&gt;...&lt;/marquee&gt;</code></li>
 <li>滚动方式behavior（scroll:循环滚动，默认效果； slide:只滚动一次就停止； alternate:来回交替进行滚动）<br>　语法：<code>&lt;marquee behavior=&quot;滚动方式&quot;&gt;...&lt;/marquee&gt;</code></li>
@@ -2068,9 +1766,10 @@
 <li>getSeconds()返回秒数</li>
 <li>getTime()  返回毫秒数</li>
 <li>getYear()  返回年份</li>
-<li>getFullYear() 返回年份（如2014）</li>
-</ul>
+<li>getFullYear() 返回年份（如2014）<a id="more"></a>
 <h3 id="显示当前系统时间"><a href="#显示当前系统时间" class="headerlink" title="显示当前系统时间"></a>显示当前系统时间</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=gb2312"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>当前系统时间<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>  /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">"javascript"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    showTime();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">checkTime</span>(<span class="params">i</span>)</span>&#123;  <span class="comment">//补位处理</span></span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">10</span>)  &#123;</span><br><span class="line">        i=<span class="string">'0'</span>+i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">showTime</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> now=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="keyword">var</span> year= now.getFullYear()  ;</span><br><span class="line">    <span class="keyword">var</span> month=  now.getMonth()+<span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">var</span> day=  now.getDate()  ;</span><br><span class="line">    <span class="keyword">var</span> h=  now.getHours()  ;</span><br><span class="line">    <span class="keyword">var</span> m=  now.getMinutes()  ;</span><br><span class="line">    <span class="keyword">var</span> s=  now.getSeconds()  ;</span><br><span class="line">    m=checkTime(m)</span><br><span class="line">    s=checkTime(s)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> weekday=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">7</span>)</span><br><span class="line">    weekday[<span class="number">0</span>]=<span class="string">"星期日"</span></span><br><span class="line">    weekday[<span class="number">1</span>]=<span class="string">"星期一"</span></span><br><span class="line">    weekday[<span class="number">2</span>]=<span class="string">"星期二"</span></span><br><span class="line">    weekday[<span class="number">3</span>]=<span class="string">"星期三"</span></span><br><span class="line">    weekday[<span class="number">4</span>]=<span class="string">"星期四"</span></span><br><span class="line">    weekday[<span class="number">5</span>]=<span class="string">"星期五"</span></span><br><span class="line">    weekday[<span class="number">6</span>]=<span class="string">"星期六"</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"show"</span>).innerHTML=<span class="string">""</span>+year+<span class="string">"年"</span>+month+<span class="string">"月"</span>+day+<span class="string">"日 "</span>+  weekday[now.getDay()] +h+<span class="string">":"</span>+m+<span class="string">":"</span>+s;</span><br><span class="line">    t=setTimeout(<span class="string">'showTime()'</span>,<span class="number">500</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"show"</span>&gt;</span>显示时间的位置<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h3 id="高考倒计时"><a href="#高考倒计时" class="headerlink" title="高考倒计时"></a>高考倒计时</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>高考考试时间<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>  /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">"javascript"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript">     </span><br><span class="line">  <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　<span class="keyword">var</span> timedate= <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2016,6,6'</span>);     <span class="comment">//自定义结束时间  </span></span><br><span class="line">　　<span class="keyword">var</span> now =  <span class="keyword">new</span> <span class="built_in">Date</span>()  ;    <span class="comment">//获取当前时间</span></span><br><span class="line">　　<span class="keyword">var</span> date = timedate.getTime() - now.getTime();    <span class="comment">//得出的为毫秒</span></span><br><span class="line">　　<span class="keyword">var</span> time = <span class="built_in">Math</span>.ceil(date/(<span class="number">1000</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">24</span>))  ;  <span class="comment">//1000 * 60 * 60 * 24一天的秒数</span></span><br><span class="line">    <span class="keyword">if</span>(time &gt; <span class="number">0</span> )&#123;</span><br><span class="line">      <span class="built_in">document</span>.getElementById(<span class="string">'timeShow'</span>).innerHTML = time;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content2"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"txtshow"</span>&gt;</span>距离高考还有<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"timeShow"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>天<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="限时抢购-团购-倒计时"><a href="#限时抢购-团购-倒计时" class="headerlink" title="限时抢购(团购)倒计时"></a>限时抢购(团购)倒计时</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>团购——限时抢<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>  /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content3"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"time"</span>&gt;</span>还剩 <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"LeftTime"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FreshTime</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> endtime=<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2014/5/15,12:20:12"</span>);<span class="comment">//结束时间</span></span><br><span class="line">        <span class="keyword">var</span> nowtime = <span class="keyword">new</span> <span class="built_in">Date</span>();<span class="comment">//当前时间</span></span><br><span class="line">        <span class="keyword">var</span> lefttime=  <span class="built_in">parseInt</span>((endtime.getTime()-nowtime.getTime())/<span class="number">1000</span>)  ; </span><br><span class="line">        d=  <span class="built_in">parseInt</span>(lefttime/<span class="number">24</span>/<span class="number">60</span>/<span class="number">60</span>);</span><br><span class="line">        h=  <span class="built_in">parseInt</span>((lefttime/(<span class="number">60</span>*<span class="number">60</span>))%<span class="number">24</span>);</span><br><span class="line">        m=  <span class="built_in">parseInt</span>(lefttime/<span class="number">60</span>%<span class="number">60</span>);</span><br><span class="line">        s=  <span class="built_in">parseInt</span>(lefttime%<span class="number">60</span>);</span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"LeftTime"</span>).innerHTML=d+<span class="string">"天"</span>+h+<span class="string">"小时"</span>+m+<span class="string">"分"</span>+s+<span class="string">"秒"</span>;</span><br><span class="line">        <span class="keyword">if</span>(lefttime&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"LeftTime"</span>).innerHTML=<span class="string">"团购已结束"</span>;</span><br><span class="line">        clearInterval(sh);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">   FreshTime();</span><br><span class="line">   <span class="keyword">var</span> sh;</span><br><span class="line">   sh= setTimeout(FreshTime,<span class="number">500</span>)   ;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
     </entry>
@@ -2080,6 +1779,7 @@
       <url>http://xifengxx.github.io/2016/04/15/JS%E8%BF%90%E5%8A%A8%E6%A1%86%E6%9E%B6(%E5%8A%A8%E7%94%BB)%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF/</url>
       <content type="html"><![CDATA[<h2 id="运动框架实现思路"><a href="#运动框架实现思路" class="headerlink" title="运动框架实现思路"></a>运动框架实现思路</h2><h3 id="简单动画（改变值：left-right-width-height-opacity）"><a href="#简单动画（改变值：left-right-width-height-opacity）" class="headerlink" title="简单动画（改变值：left/right/width/height/opacity）"></a>简单动画（改变值：left/right/width/height/opacity）</h3><h4 id="速度动画"><a href="#速度动画" class="headerlink" title="速度动画"></a>速度动画</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'div1'</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">'share'</span>&gt;</span>分享<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>,<span class="selector-tag">div</span>,<span class="selector-tag">span</span>&#123;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">padding</span>:<span class="number">0</span>;&#125;</span><br><span class="line"><span class="selector-id">#div1</span>&#123;<span class="attribute">width</span>:<span class="number">200px</span>;<span class="attribute">height</span>:<span class="number">200px</span>;<span class="attribute">background</span>:red;</span><br><span class="line">      <span class="attribute">position</span>:relative;<span class="attribute">left</span>:-<span class="number">200px</span>;<span class="attribute">top</span>:<span class="number">0</span>;&#125;</span><br><span class="line"><span class="selector-id">#div1</span> <span class="selector-tag">span</span>&#123;<span class="attribute">width</span>:<span class="number">20px</span>;<span class="attribute">height</span>:<span class="number">50px</span>;<span class="attribute">background</span>:blue;<span class="attribute">position</span>:absolute;</span><br><span class="line">        <span class="attribute">left</span>:<span class="number">200px</span>;<span class="attribute">top</span>:<span class="number">75px</span>;&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oDiv=<span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>);</span><br><span class="line">    oDiv.onmouseover=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        startMove(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    oDiv.onmouseout=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        startMove(<span class="number">-200</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> timer=<span class="literal">null</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">startMove</span>(<span class="params">iTarget</span>)</span>&#123;</span><br><span class="line">    clearInterval(timer);</span><br><span class="line">    <span class="keyword">var</span> oDiv=<span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>);</span><br><span class="line">    timer=setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">/* 原始代码</span><br><span class="line">        var speed=0;</span><br><span class="line">        if(oDiv.offsetLeft&gt;iTarget)&#123;</span><br><span class="line">            speed=-10;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            speed=10;</span><br><span class="line">        &#125;</span><br><span class="line">    */</span></span><br><span class="line">    <span class="comment">//将上面关于速度（缓冲）的代码进行优化</span></span><br><span class="line">        <span class="keyword">var</span> speed=(iTarget-oDiv.offsetLeft)/<span class="number">20</span>;</span><br><span class="line">        speed = speed&gt;<span class="number">0</span>?<span class="built_in">Math</span>.ceil(speed):<span class="built_in">Math</span>.floor(speed);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(oDiv.offsetLeft==iTarget)&#123;</span><br><span class="line">            clearInterval(timer);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            oDiv.style.left=oDiv.offsetLeft + speed + <span class="string">'px'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;,<span class="number">30</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="透明度动画"><a href="#透明度动画" class="headerlink" title="透明度动画"></a>透明度动画</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"animation-1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#animation-1</span>&#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">        <span class="attribute">border</span>: <span class="number">1px</span> solid pink;</span><br><span class="line">        <span class="attribute">background</span>: blue;</span><br><span class="line">        <span class="attribute">opacity</span>: <span class="number">0.3</span>;</span><br><span class="line">        <span class="attribute">filter</span>: <span class="built_in">alpha</span>(opacity:30);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -2100,7 +1800,7 @@
       <title><![CDATA[DOM事件探秘]]></title>
       <url>http://xifengxx.github.io/2016/04/10/DOM%E4%BA%8B%E4%BB%B6%E6%8E%A2%E7%A7%98/</url>
       <content type="html"><![CDATA[<p>Javascript与HTML之间的交互是通过事件来实现的。事件，就是文档或浏览器窗口中发生的一些特定的交互瞬间。比如：<br>-点击一个DOM元素<br>-键盘按下一个键<br>-输入框输入内容<br>-页面加载完成</p>
-<h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><p>事件流描述的是从页面中接收事件的顺序。<br>IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.<br>DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。<br><img src="https://www.w3.org/TR/uievents/images/eventflow.svg" alt="事件流"></p>
+<h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><p>事件流描述的是从页面中接收事件的顺序。<br>IE的事件流是事件冒泡流，而Netscape的事件流是事件捕获流.<br>DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。<br><a id="more"></a><br><img src="https://www.w3.org/TR/uievents/images/eventflow.svg" alt="事件流"></p>
 <h4 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h4><p>IE的事件流是事件冒泡流（event bubbling），即事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。</p>
 <h4 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h4><p>Netscape的事件流是事件捕获流(event capturing)。事件捕获的思想是不太具体的节点应该更早接收到事件，而最具体的节点应该最后接收到事件。</p>
 <h3 id="事件处理程序"><a href="#事件处理程序" class="headerlink" title="事件处理程序"></a>事件处理程序</h3><p>事件处理程序（事件侦听器）：响应某个事件的函数.<br>事件处理程序的名字以’on’开头，</p>
@@ -2228,103 +1928,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Git实战教程]]></title>
-      <url>http://xifengxx.github.io/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/</url>
-      <content type="html"><![CDATA[<h3 id="简明释义"><a href="#简明释义" class="headerlink" title="简明释义"></a>简明释义</h3><h4 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h4><p>Git 是一个版本控制工具，是一个可以安装在你自己机器上的软件。<br>git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。</p>
-<h4 id="github"><a href="#github" class="headerlink" title="github"></a>github</h4><p>Git 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。<br>Github 首先是一个公司，<a href="https://github.com" target="_blank" rel="external">Github网站</a>是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。</p>
-<h3 id="安装及初始化"><a href="#安装及初始化" class="headerlink" title="安装及初始化"></a>安装及初始化</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p><strong>Windows上安装Git</strong><br>msysgit是Windows版的Git。<br><a href="http://msysgit.github.io/" target="_blank" rel="external">下载地址</a>。</p>
-<p>然后按默认选项安装即可。</p>
-<p>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！</p>
-<p>安装完成后，还需要最后一步设置，在命令行输入：</p>
-<blockquote>
-<p>$ git config –global user.name “Your Name”<br>$ git config –global user.email “email@example.com”</p>
-</blockquote>
-<p>git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
-<h4 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h4><p>版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。</p>
-<p>如何创建版本库？</p>
-<ol>
-<li><p>在电脑磁盘里的任意位置，创建一个空目录<br>方法1：直接在磁盘任意位置，右键-新建文件夹；<br>方法2：在git命令行里创建。<br>关于创建文件常用命令（Unix Linux命令）：<br>-mkdir<br>-cd        ：切换目录命令<br>–cd ..    : 切换到上一级目录。<br>如当前目录为e盘下的code目录，使用命令”cd ..”，会切换到e盘。<br>–cd e:    : 切换盘符。<br>如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。<br>–cd /     : 切换到根目录。<br>–cd 目录名：切换到具体目录。<br>如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。<br>如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。<br>-pwd       : 显示当前所在目录<br>-dir       : 显示当前目录下的所有文件<br>-mkdir     : 创建目录。<br>如当前在e盘下，需要在e盘下创建一个新目录”code1”,使用命令”mkdir code1”即可；<br>如果要在其他盘下创建目录，先使用cd命令定位到目标盘，然后再使用mkdir命令。</p>
-</li>
-<li><p>通过git init命名把这个目录变成Git可以管理的仓库。<br>创建完目录后，在磁盘中找到该目录，右键–Git Bash Here即可定位到当前目录，或是通过上面的Linux命令来定位到目标目录。<br>在命令行输入命令”git init”，即成功创建Git仓库。<br>这时在当前目录下，会多出一个.git目录（如果没有，说明被隐藏了，需要在”工具-文件夹选项-查看”里设置隐藏属性为显示所有文件）。这个目录是Git来跟踪管理版本库的。</p>
-</li>
-</ol>
-<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><h4 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h4><p>目的：本地Git仓库与GitHub网站仓库之间实现同步传输及存储。<br>步骤：</p>
-<ol>
-<li>需要注册一个GitHub账号。(注册地址)[<a href="https://github.com" target="_blank" rel="external">https://github.com</a>].</li>
-<li><p>设置SSH Key.(本地Git仓库和GitHub仓库之间的传输是通过SSH加密的)<br>打开Git Bash,创建SSH Key.<br>输入命令：$ ssh-keygen -t rsa -c “youremail@examle.com”<br>将邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。<br>成功的话，会在用户主目录（我的是在”C:\Documents and Settings\Administrator”）里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件。（这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。）</p>
-</li>
-<li><p>登录<a href="https://github.com" target="_blank" rel="external">GitHub网站</a>，打开”我的账号/Account settings”—“personal settings”—“SSH keys”，点击”New SSH key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。</p>
-</li>
-<li><p>打开Git Bash，输入命令以下命令检测是否成功连接本机与GitHub。</p>
-<blockquote>
-<p>ssh -T git@github.com<br>在遇到提示的情况下，输入”yes”即可。</p>
-</blockquote>
-</li>
-</ol>
-<h4 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h4><ol>
-<li>登录GitHub,点击右上角的”+”号—“New repository”，创建新的Git仓库。</li>
-<li>把本地仓库的内容推送到GitHub仓库。<br>① 打开GitHub上新建的repository仓库，找到HTTPS/SSH地址并复制地址，如”<a href="https://github.com/xifengxx/demo.git&quot;是我的一个仓库https地址。" target="_blank" rel="external">https://github.com/xifengxx/demo.git&quot;是我的一个仓库https地址。</a><br>② 本地仓库下运行命令<blockquote>
-<p>$ git remote add origin <a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a><br>添加后，远程仓库的名字就是origin(这是Git默认叫法，可以将origin改成其他的名字)<br>③ 继续运行命令<br>$ git push -u origin master<br>把本地仓库内容推送到远程，用git push命令。实际上是把当前分支master推送到远程。<br>由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。<br>推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样。<br>此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改：<br>$ git push origin master<br>④ 推送时，会弹出需要输入github账号及密码框，输入即可。</p>
-</blockquote>
-</li>
-<li><strong>注意事项</strong><br>在第二步②时，输入命令”$ git remote add origin <a href="https://github.com/xifengxx/demo.git&quot;时，可能会报错。" target="_blank" rel="external">https://github.com/xifengxx/demo.git&quot;时，可能会报错。</a><br>错误信息：”fatal: remote origin already exists.……”<br>原因：远程仓库已经存在内容，与本地仓库推送内容冲突。<br>解决方法：<br> 1、先输入”$ git remote rm origin”命令，删除远程仓库内容。<br> 2、再输入”$ git remote add origin git@github.com:djqiang/gitdemo.git” 就不会报错了！<br>上述方法针对第一次将本地仓库推送到远程仓库时遇到这个问题的解决方法。<br>如果不想删除远程仓库内容，可以使用下面的方法，将本地仓库内容和远程仓库内容合并。<br>解决方法：<br> 1、先输入”$ git pull origin master”命令，将远程仓库内容pull到本地仓库。<br> 2、再输入”$ git push origin master”命令，即可。</li>
-</ol>
-<h4 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h4><ol>
-<li>登录GitHub,创建一个新的仓库，例如我的一个仓库，名字叫demo</li>
-<li>找到新仓库的HTTPS/SSH地址并复制地址，如”git@github.com:xifengxx/demo.git”或”<a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a>“</li>
-<li>使用命令git clone克隆一个本地库<blockquote>
-<p>$ git clone git@github.com:xifengxx/demo.git<br>也可以使用命令：<br>$ git clone <a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a><br>Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。<br>使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="Git基础操作"><a href="#Git基础操作" class="headerlink" title="Git基础操作"></a>Git基础操作</h3><h4 id="将文件添加到版本库"><a href="#将文件添加到版本库" class="headerlink" title="将文件添加到版本库"></a>将文件添加到版本库</h4><p>使用命令：</p>
-<ol>
-<li>git add:将文件添加到仓库。<br>命令：$ git add 文件名<br>将某个文件复制到当前目录，然后再使用这个命令。</li>
-<li>git commit:将文件提交到仓库。<br>命令：$ git commit -m “xxx”<br>git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。<br>如：$ git commit -m “首次提交”<br>备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.</li>
-<li><strong>注意事项</strong><br>将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。<br>关键是如何退出默认编辑器界面并重新返回到Git bash界面。<br>方法：<br>① 按ESC键，确定退出编辑模式。<br>② 然后输入”:wq”，即可返回Git界面。</li>
-</ol>
-<h3 id="利用Github-Page-搭建网页Demo"><a href="#利用Github-Page-搭建网页Demo" class="headerlink" title="利用Github Page 搭建网页Demo"></a>利用Github Page 搭建网页Demo</h3><p>适用场景：<br>写了一些网页demo,想上传到网上查看效果，并做展示用途。不同于用Github搭建的个人博客。</p>
-<p>方法：Github Page部署。<br>步骤：</p>
-<ol>
-<li>注册<a href="https://github.com" target="_blank" rel="external">Github账号</a>.</li>
-<li>下载安装git.<br>msysgit是Windows版的Git。(下载地址)[<a href="http://msysgit.github.io/]。" target="_blank" rel="external">http://msysgit.github.io/]。</a></li>
-<li>登录Github，新建一个repository项目(这里使用project做项目名字)。</li>
-<li>在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。<br>设置完成后，这个repository项目的展示地址变为：<br><a href="http://xifengxx.github.io/project">http://xifengxx.github.io/project</a><br>‘xifengxx’为我注册Github的账号名，project为repository项目名。<br>可以通过上面的网址来访问项目。</li>
-<li><p>电脑里选定一个文件夹（这里是Git）放置Github上的项目project。<br>右键——“git bash here”,调出git命令界面，输入以下命令将project项目克隆到本地文件夹下。</p>
-<blockquote>
-<p>$ git clone <a href="https://github.com/xifengxx/project.git" target="_blank" rel="external">https://github.com/xifengxx/project.git</a><br>这时本地Git文件夹下会多出一个文件夹Project。</p>
-</blockquote>
-</li>
-<li><p>本地新建分支。<br>输入以下命令，在本地新建一个gh-pages分支并切换到gh-pages分支，这个分支是远程分支origin/gh-pages的镜像。</p>
-<blockquote>
-<p>$ cd project/<br>$ git checkout -b gh-pages origin/gh-pages<br>这时本地文件夹project里多出的文件，来自github上的gh-pages分支中的文件。</p>
-</blockquote>
-</li>
-<li><p>执行以下命令，删除原有的gh-pages文件，并提交（commit）本次修改。</p>
-<blockquote>
-<p>$ git rm -rf .<br>$ git add .<br>$ git commit -m “delete all files”<br>这时project里的文件都删除了。</p>
-</blockquote>
-</li>
-<li><p>将自己的网页Demo文件复制粘贴到project文件夹里。</p>
-</li>
-<li><p>将本地gh-pages中的网页文件同步到远程库的gh-pages中。<br>输入以下命令：</p>
-<blockquote>
-<p>$ git add .<br>$ git commit -m “My design Demo”<br>$ git push origin gh-pages</p>
-</blockquote>
-</li>
-</ol>
-<p>输入第三行命令时，会有弹出框提示输入Github账号和密码，输入后等待片刻，当命令行提示”$”符号时，说明已经完成。</p>
-<ol>
-<li>浏览器输入网址访问：<blockquote>
-<p><a href="http://xifengxx.github.io/project/index.html">http://xifengxx.github.io/project/index.html</a><br>或 <a href="http://xifengxx.github.io/project">http://xifengxx.github.io/project</a><br>此处的index.html为网页Demo中的文件。</p>
-</blockquote>
-</li>
-</ol>
-<p><a href="http://www.cnblogs.com/lijiayi/p/githubpages.html" target="_blank" rel="external">参考资源</a></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Hexo安装及部署]]></title>
       <url>http://xifengxx.github.io/2016/04/05/Hexo%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
       <content type="html"><![CDATA[<h3 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h3><p>用SSH Key将本地git项目与远程GitHub建立联系。<br>定位到目标文件夹，右键-Git Bash下输入命令：</p>
@@ -2333,11 +1936,7 @@
 </blockquote>
 <h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p>首先要安装好Git 和Node.js软件。<br>安装完后，打开Git Bash，输入命令：</p>
 <blockquote>
-<p>npm install hexo-cli -g</p>
-</blockquote>
-<p>通过以下命令来确认Hexo是否安装成功：</p>
-<blockquote>
-<p>hexo -v</p>
+<p>npm install hexo-cli -g<br><a id="more"></a><br>通过以下命令来确认Hexo是否安装成功：<br>hexo -v</p>
 </blockquote>
 <p>如果出现类似内容，则说明安装成功：</p>
 <blockquote>
@@ -2438,12 +2037,108 @@
     </entry>
     
     <entry>
+      <title><![CDATA[Git实战教程]]></title>
+      <url>http://xifengxx.github.io/2016/04/05/git%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="简明释义"><a href="#简明释义" class="headerlink" title="简明释义"></a>简明释义</h3><h4 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h4><p>Git 是一个版本控制工具，是一个可以安装在你自己机器上的软件。<br>git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。</p>
+<h4 id="github"><a href="#github" class="headerlink" title="github"></a>github</h4><p>Git 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。<br>Github 首先是一个公司，<a href="https://github.com" target="_blank" rel="external">Github网站</a>是他们的产品，提供 Git 仓库的托管服务，但是更重要的，它是世界上最大的开源软件分享协作平台。<br><a id="more"></a></p>
+<h3 id="安装及初始化"><a href="#安装及初始化" class="headerlink" title="安装及初始化"></a>安装及初始化</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p><strong>Windows上安装Git</strong><br>msysgit是Windows版的Git。<br><a href="http://msysgit.github.io/" target="_blank" rel="external">下载地址</a>。</p>
+<p>然后按默认选项安装即可。</p>
+<p>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！</p>
+<p>安装完成后，还需要最后一步设置，在命令行输入：</p>
+<blockquote>
+<p>$ git config –global user.name “Your Name”<br>$ git config –global user.email “email@example.com”</p>
+</blockquote>
+<p>git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
+<h4 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h4><p>版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。</p>
+<p>如何创建版本库？</p>
+<ol>
+<li><p>在电脑磁盘里的任意位置，创建一个空目录<br>方法1：直接在磁盘任意位置，右键-新建文件夹；<br>方法2：在git命令行里创建。<br>关于创建文件常用命令（Unix Linux命令）：<br>-mkdir<br>-cd        ：切换目录命令<br>–cd ..    : 切换到上一级目录。<br>如当前目录为e盘下的code目录，使用命令”cd ..”，会切换到e盘。<br>–cd e:    : 切换盘符。<br>如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。<br>–cd /     : 切换到根目录。<br>–cd 目录名：切换到具体目录。<br>如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。<br>如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。<br>-pwd       : 显示当前所在目录<br>-dir       : 显示当前目录下的所有文件<br>-mkdir     : 创建目录。<br>如当前在e盘下，需要在e盘下创建一个新目录”code1”,使用命令”mkdir code1”即可；<br>如果要在其他盘下创建目录，先使用cd命令定位到目标盘，然后再使用mkdir命令。</p>
+</li>
+<li><p>通过git init命名把这个目录变成Git可以管理的仓库。<br>创建完目录后，在磁盘中找到该目录，右键–Git Bash Here即可定位到当前目录，或是通过上面的Linux命令来定位到目标目录。<br>在命令行输入命令”git init”，即成功创建Git仓库。<br>这时在当前目录下，会多出一个.git目录（如果没有，说明被隐藏了，需要在”工具-文件夹选项-查看”里设置隐藏属性为显示所有文件）。这个目录是Git来跟踪管理版本库的。</p>
+</li>
+</ol>
+<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><h4 id="配置SSH-Key"><a href="#配置SSH-Key" class="headerlink" title="配置SSH Key"></a>配置SSH Key</h4><p>目的：本地Git仓库与GitHub网站仓库之间实现同步传输及存储。<br>步骤：</p>
+<ol>
+<li>需要注册一个GitHub账号。(注册地址)[<a href="https://github.com" target="_blank" rel="external">https://github.com</a>].</li>
+<li><p>设置SSH Key.(本地Git仓库和GitHub仓库之间的传输是通过SSH加密的)<br>打开Git Bash,创建SSH Key.<br>输入命令：$ ssh-keygen -t rsa -c “youremail@examle.com”<br>将邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可。<br>成功的话，会在用户主目录（我的是在”C:\Documents and Settings\Administrator”）里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件。（这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。）</p>
+</li>
+<li><p>登录<a href="https://github.com" target="_blank" rel="external">GitHub网站</a>，打开”我的账号/Account settings”—“personal settings”—“SSH keys”，点击”New SSH key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。</p>
+</li>
+<li><p>打开Git Bash，输入命令以下命令检测是否成功连接本机与GitHub。</p>
+<blockquote>
+<p>ssh -T git@github.com<br>在遇到提示的情况下，输入”yes”即可。</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="添加远程库"><a href="#添加远程库" class="headerlink" title="添加远程库"></a>添加远程库</h4><ol>
+<li>登录GitHub,点击右上角的”+”号—“New repository”，创建新的Git仓库。</li>
+<li>把本地仓库的内容推送到GitHub仓库。<br>① 打开GitHub上新建的repository仓库，找到HTTPS/SSH地址并复制地址，如”<a href="https://github.com/xifengxx/demo.git&quot;是我的一个仓库https地址。" target="_blank" rel="external">https://github.com/xifengxx/demo.git&quot;是我的一个仓库https地址。</a><br>② 本地仓库下运行命令<blockquote>
+<p>$ git remote add origin <a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a><br>添加后，远程仓库的名字就是origin(这是Git默认叫法，可以将origin改成其他的名字)<br>③ 继续运行命令<br>$ git push -u origin master<br>把本地仓库内容推送到远程，用git push命令。实际上是把当前分支master推送到远程。<br>由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。<br>推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样。<br>此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改：<br>$ git push origin master<br>④ 推送时，会弹出需要输入github账号及密码框，输入即可。</p>
+</blockquote>
+</li>
+<li><strong>注意事项</strong><br>在第二步②时，输入命令”$ git remote add origin <a href="https://github.com/xifengxx/demo.git&quot;时，可能会报错。" target="_blank" rel="external">https://github.com/xifengxx/demo.git&quot;时，可能会报错。</a><br>错误信息：”fatal: remote origin already exists.……”<br>原因：远程仓库已经存在内容，与本地仓库推送内容冲突。<br>解决方法：<br> 1、先输入”$ git remote rm origin”命令，删除远程仓库内容。<br> 2、再输入”$ git remote add origin git@github.com:djqiang/gitdemo.git” 就不会报错了！<br>上述方法针对第一次将本地仓库推送到远程仓库时遇到这个问题的解决方法。<br>如果不想删除远程仓库内容，可以使用下面的方法，将本地仓库内容和远程仓库内容合并。<br>解决方法：<br> 1、先输入”$ git pull origin master”命令，将远程仓库内容pull到本地仓库。<br> 2、再输入”$ git push origin master”命令，即可。</li>
+</ol>
+<h4 id="从远程库克隆"><a href="#从远程库克隆" class="headerlink" title="从远程库克隆"></a>从远程库克隆</h4><ol>
+<li>登录GitHub,创建一个新的仓库，例如我的一个仓库，名字叫demo</li>
+<li>找到新仓库的HTTPS/SSH地址并复制地址，如”git@github.com:xifengxx/demo.git”或”<a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a>“</li>
+<li>使用命令git clone克隆一个本地库<blockquote>
+<p>$ git clone git@github.com:xifengxx/demo.git<br>也可以使用命令：<br>$ git clone <a href="https://github.com/xifengxx/demo.git" target="_blank" rel="external">https://github.com/xifengxx/demo.git</a><br>Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。<br>使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="Git基础操作"><a href="#Git基础操作" class="headerlink" title="Git基础操作"></a>Git基础操作</h3><h4 id="将文件添加到版本库"><a href="#将文件添加到版本库" class="headerlink" title="将文件添加到版本库"></a>将文件添加到版本库</h4><p>使用命令：</p>
+<ol>
+<li>git add:将文件添加到仓库。<br>命令：$ git add 文件名<br>将某个文件复制到当前目录，然后再使用这个命令。</li>
+<li>git commit:将文件提交到仓库。<br>命令：$ git commit -m “xxx”<br>git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。<br>如：$ git commit -m “首次提交”<br>备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.</li>
+<li><strong>注意事项</strong><br>将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。<br>关键是如何退出默认编辑器界面并重新返回到Git bash界面。<br>方法：<br>① 按ESC键，确定退出编辑模式。<br>② 然后输入”:wq”，即可返回Git界面。</li>
+</ol>
+<h3 id="利用Github-Page-搭建网页Demo"><a href="#利用Github-Page-搭建网页Demo" class="headerlink" title="利用Github Page 搭建网页Demo"></a>利用Github Page 搭建网页Demo</h3><p>适用场景：<br>写了一些网页demo,想上传到网上查看效果，并做展示用途。不同于用Github搭建的个人博客。</p>
+<p>方法：Github Page部署。<br>步骤：</p>
+<ol>
+<li>注册<a href="https://github.com" target="_blank" rel="external">Github账号</a>.</li>
+<li>下载安装git.<br>msysgit是Windows版的Git。(下载地址)[<a href="http://msysgit.github.io/]。" target="_blank" rel="external">http://msysgit.github.io/]。</a></li>
+<li>登录Github，新建一个repository项目(这里使用project做项目名字)。</li>
+<li>在新建的项目里，点击”Settings”设置”Launch automatic page generator”,按步骤设置即可。<br>设置完成后，这个repository项目的展示地址变为：<br><a href="http://xifengxx.github.io/project">http://xifengxx.github.io/project</a><br>‘xifengxx’为我注册Github的账号名，project为repository项目名。<br>可以通过上面的网址来访问项目。</li>
+<li><p>电脑里选定一个文件夹（这里是Git）放置Github上的项目project。<br>右键——“git bash here”,调出git命令界面，输入以下命令将project项目克隆到本地文件夹下。</p>
+<blockquote>
+<p>$ git clone <a href="https://github.com/xifengxx/project.git" target="_blank" rel="external">https://github.com/xifengxx/project.git</a><br>这时本地Git文件夹下会多出一个文件夹Project。</p>
+</blockquote>
+</li>
+<li><p>本地新建分支。<br>输入以下命令，在本地新建一个gh-pages分支并切换到gh-pages分支，这个分支是远程分支origin/gh-pages的镜像。</p>
+<blockquote>
+<p>$ cd project/<br>$ git checkout -b gh-pages origin/gh-pages<br>这时本地文件夹project里多出的文件，来自github上的gh-pages分支中的文件。</p>
+</blockquote>
+</li>
+<li><p>执行以下命令，删除原有的gh-pages文件，并提交（commit）本次修改。</p>
+<blockquote>
+<p>$ git rm -rf .<br>$ git add .<br>$ git commit -m “delete all files”<br>这时project里的文件都删除了。</p>
+</blockquote>
+</li>
+<li><p>将自己的网页Demo文件复制粘贴到project文件夹里。</p>
+</li>
+<li><p>将本地gh-pages中的网页文件同步到远程库的gh-pages中。<br>输入以下命令：</p>
+<blockquote>
+<p>$ git add .<br>$ git commit -m “My design Demo”<br>$ git push origin gh-pages</p>
+</blockquote>
+</li>
+</ol>
+<p>输入第三行命令时，会有弹出框提示输入Github账号和密码，输入后等待片刻，当命令行提示”$”符号时，说明已经完成。</p>
+<ol>
+<li>浏览器输入网址访问：<blockquote>
+<p><a href="http://xifengxx.github.io/project/index.html">http://xifengxx.github.io/project/index.html</a><br>或 <a href="http://xifengxx.github.io/project">http://xifengxx.github.io/project</a><br>此处的index.html为网页Demo中的文件。</p>
+</blockquote>
+</li>
+</ol>
+<p><a href="http://www.cnblogs.com/lijiayi/p/githubpages.html" target="_blank" rel="external">参考资源</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[如何通过Github Pages + hexo 搭建个人博客]]></title>
       <url>http://xifengxx.github.io/2016/03/13/%E9%80%9A%E8%BF%87Github%20Pages%20+%20Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
       <content type="html"><![CDATA[<p>这是在github page上建立的个人博客站点，专注WEB前端开发技术知识，有别于个人独立博客站点：<a href="http://www.xifengxx.com/" target="_blank" rel="external">西风博客</a>.</p>
 <h3 id="为什么要搭建个人博客呢？"><a href="#为什么要搭建个人博客呢？" class="headerlink" title="为什么要搭建个人博客呢？"></a>为什么要搭建个人博客呢？</h3><ol>
-<li><p>个人知识积累。<br>经历过那么多，是不是想把自己的经历、想法观点给记录下来，网站是个不错的选择。<br>俗话说得好，好记性不如烂笔头。你不写出来，是会遗忘的，那是一笔多么宝贵的财富啊。同时，你在写的过程中，你会思考、会反思自己的过往经历，更能理性的认清生活，了解自己，积累经验教训。</p>
-</li>
+<li>个人知识积累。<br>经历过那么多，是不是想把自己的经历、想法观点给记录下来，网站是个不错的选择。<br>俗话说得好，好记性不如烂笔头。你不写出来，是会遗忘的，那是一笔多么宝贵的财富啊。同时，你在写的过程中，你会思考、会反思自己的过往经历，更能理性的认清生活，了解自己，积累经验教训。<a id="more"></a></li>
 <li><p>自由无拘束。<br>你可能会说，我通过新浪微博、网易博客、QQ空间，照样可以写日记啊，何必多此一举，建自己的网站呢？<br>的却可以，但使用这些空间或服务的时候，必定会受到诸多限制，敏感词汇会被屏蔽，甚至你的博客都有可能被封。而自己的网站，自己想干啥就干啥，自由度很高。</p>
 </li>
 <li><p>交流分享。<br>人与人之间是需要交流学习的，而通过网站这种形式，将自己的思想、经历、生活等展现出来，与别人分享，能让他人更加认识你，成为朋友的几率便更好，如此，你能找到志同道合的朋友，形成所谓的圈子。</p>
@@ -2528,7 +2223,7 @@
       <title><![CDATA[HTTP协议及相关知识]]></title>
       <url>http://xifengxx.github.io/2016/03/03/HTTP%E5%8D%8F%E8%AE%AE%E7%9F%A5%E5%A4%9A%E5%B0%91/</url>
       <content type="html"><![CDATA[<p>HTTP，或者超文本传输协议，是上世纪80年代由蒂姆.伯纳斯.李发明的。<br>它是一个规则系统，是一种协议，把应用程序和超文本文档之间的传输联系起来。换句话说，HTTP 就是机器之间彼此沟通的一个协议，或者说一个消息格式。<br>HTTP 遵循一个简单的模型：从客户端发出请求到服务器并等待响应。因此它也被认为是一种“请求–响应协议”。请求和响应都是文本信息，或者说是字符串，信息写法遵循着一个规则，能保证其他机器能够理解上面的内容。</p>
-<h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><p>每一个HTTP请求都会得到一个响应，哪怕这响应是一个错误响应.(有时响应会超时)<br>GET请求：向服务器发起请求数据；<br>POST请求：给服务器提交数据</p>
+<h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><p>每一个HTTP请求都会得到一个响应，哪怕这响应是一个错误响应.(有时响应会超时)<br>GET请求：向服务器发起请求数据；<br>POST请求：给服务器提交数据<br><a id="more"></a></p>
 <h4 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h4><p>GET 请求一般出现在超链接或者浏览器的地址栏里。当你在你的浏览器地址栏里输入类似 <a href="http://www.reddit.com" target="_blank" rel="external">http://www.reddit.com</a> 这样的地址的时候，你就是在发起一个 GET 请求。你让浏览器去取这个地址上的资源，这就意味着我们在整本书里一直在使用GET请求。在你点击 web 应用上的超链接的时候也会发生同样的事情。超链接的默认行为就是向一个 URL 发送GET请求。</p>
 <ol>
 <li>GET 请求经常用于取得一个资源，而且大部分超链接都是 GET 请求。</li>
@@ -2590,9 +2285,7 @@
     <entry>
       <title><![CDATA[前端知识之查漏补缺:HTML头部(head)标签]]></title>
       <url>http://xifengxx.github.io/2015/12/13/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E4%B9%8B%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA-HTML%E5%A4%B4%E9%83%A8head%E6%A0%87%E7%AD%BE/</url>
-      <content type="html"><![CDATA[<p>我们日常所浏览的网页，都是有HTML文档构成的。HTML文档的基本结构如下图：</p>
-<p><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/HTML文档结构.png" alt="HTML文档结构"></p>
-<p>一个HTML文档由4个基本部分组成：<br><strong>1、文档声明</strong><br><code>&lt;!DOCTYPE html&gt;</code>声明这是一个HTML文档。</p>
+      <content type="html"><![CDATA[<p>我们日常所浏览的网页，都是有HTML文档构成的。HTML文档的基本结构如下图：<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/12/HTML文档结构.png" alt="HTML文档结构"><br><a id="more"></a><br>一个HTML文档由4个基本部分组成：<br><strong>1、文档声明</strong><br><code>&lt;!DOCTYPE html&gt;</code>声明这是一个HTML文档。</p>
 <p><strong>2、<code>&lt;html&gt;</code>标签</strong><br><code>&lt;html&gt;</code>标签的作用相当于设计者在告诉浏览器，整个网页是从<code>&lt;html&gt;</code>这里开始的，然后到<code>&lt;/html&gt;</code>结束。</p>
 <p><strong>3、<code>&lt;head&gt;</code>标签</strong><br>head标签是页面的“头部”，只能定义一些特殊的内容。</p>
 <p><strong>4、<code>&lt;body&gt;</code>标签</strong><br>body标签是页面的“身体”，一般网页绝大多数的标签代码都是在这里编写。</p>
@@ -2648,7 +2341,7 @@
     <entry>
       <title><![CDATA[Hello World]]></title>
       <url>http://xifengxx.github.io/2015/12/13/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
@@ -2665,8 +2358,7 @@
       <url>http://xifengxx.github.io/2015/12/10/%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F%E6%B5%85%E6%9E%90/</url>
       <content type="html"><![CDATA[<p>作为一名前端开发工程师，或是UI设计师，对网页图片格式需要有一定的了解。</p>
 <p>网页图片格式分为2种：一种是<strong>位图</strong>，另一种是<strong>矢量图</strong>。</p>
-<h2 id="一、位图"><a href="#一、位图" class="headerlink" title="一、位图"></a><strong>一、位图</strong></h2><p>位图3种格式：“.jpg”、“.png”、“.gif”。</p>
-<p>位图，又称为点阵图像，是由称作像素（图片元素）的单个点组成的。</p>
+<h2 id="一、位图"><a href="#一、位图" class="headerlink" title="一、位图"></a><strong>一、位图</strong></h2><p>位图3种格式：“.jpg”、“.png”、“.gif”。<br><a id="more"></a><br>位图，又称为点阵图像，是由称作像素（图片元素）的单个点组成的。</p>
 <p>通常位图又分为8位、16位、24位和32位。</p>
 <ul>
 <li>8位图并不是图像只有8种颜色，而是28（即256）种颜色，8位图指的是用8个bits来表示颜色。从人眼的感觉来说，16位色基本能满足需要了。</li>
@@ -2699,8 +2391,7 @@
       <title><![CDATA[初入前端必看的前端开发知识、术语]]></title>
       <url>http://xifengxx.github.io/2015/12/10/%E5%88%9D%E5%85%A5%E5%89%8D%E7%AB%AF%E5%BF%85%E7%9C%8B%E7%9A%84%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86%E3%80%81%E6%9C%AF%E8%AF%AD/</url>
       <content type="html"><![CDATA[<p>作为初入前端，或是对前端感兴趣的网友，最迷茫而又迫切的问题便是：前端开发包含哪些内容，如何快速学习前端知识？</p>
-<p>《前端开发者手册》，便是一本不错的启蒙读物。它介绍了前端开发岗位、前端开发相关的知识术语，前端开发的相关资源，以及如何学习前端开发。看完后，你会对前端有一个整体的了解。</p>
-<p>花了一个下午的时间看完这本前端开发者手册，感觉还是蛮有收获的，拓宽了我对前端的认知。不过该手册是翻译版本，读起来不是那么顺溜，会有些枯燥。</p>
+<p>《前端开发者手册》，便是一本不错的启蒙读物。它介绍了前端开发岗位、前端开发相关的知识术语，前端开发的相关资源，以及如何学习前端开发。看完后，你会对前端有一个整体的了解。<br><a id="more"></a><br>花了一个下午的时间看完这本前端开发者手册，感觉还是蛮有收获的，拓宽了我对前端的认知。不过该手册是翻译版本，读起来不是那么顺溜，会有些枯燥。</p>
 <p>另外手册中所提供的链接资源，大多数都是国外网址，网页内容是英文的，让人头疼，初学者了解下即可，不必深入纠结，否则会增加对前端的畏惧心理。等学习一段时间后，再查阅国外资源会是不错的选择。</p>
 <p>下面的内容是我整理的的知识点：《前端开发者手册》-来自ido321博友的翻译分享，点此<a href="https://dwqs.gitbooks.io/frontenddevhandbook/content/" title="前端开发者手册" target="_blank" rel="external">链接原文</a>。</p>
 <h2 id="第一部分：前端开发实践"><a href="#第一部分：前端开发实践" class="headerlink" title="**第一部分：前端开发实践"></a>**<span style="color: #0000ff;">第一部分：前端开发实践</span></h2><p>**</p>
@@ -3175,10 +2866,12 @@
       <content type="html"><![CDATA[<p>CSS2定义了四种布局：块布局、行内布局、表格布局盒定位布局。</p>
 <p>CSS3引入了一种新的布局模式——Flexbox布局，即伸缩布局盒（Flexible Box）模型，此布局对于设计比较复杂的页面非常有用，特别是“垂直居中”布局，非常容易实现。</p>
 <p>Flexbox布局语法有三种：</p>
-<p>旧版本：2009年版本，使用display:box或者display:inline-box;  [目前仅Safari浏览器支持]</p>
-<p>混合版本：2011年版本，使用display:flexbox或者display:inline-flexbox;  [仅IE10支持]</p>
-<p>最新版本：使用display:flex或者display:inline-flex. [目前的主流浏览器均支持，不过在Webkit内核浏览器需要使用前缀“-webkit-”]</p>
-<p>对于Flex布局，最初是通过看绿叶学习网，学的是flexbox旧版本，感觉很简单；然后又看了大漠老师的《图解CSS3-核心技术与案例实战》，其中详细介绍了三种布局，但我理解的不深，有些迷糊。最后通过网上找到了阮一峰翻译的一篇文章，直观易懂，终于明晰了Flex布局。</p>
+<ul>
+<li>旧版本：2009年版本，使用display:box或者display:inline-box;  [目前仅Safari浏览器支持]</li>
+<li>混合版本：2011年版本，使用display:flexbox或者display:inline-flexbox;  [仅IE10支持]</li>
+<li>最新版本：使用display:flex或者display:inline-flex. [目前的主流浏览器均支持，不过在Webkit内核浏览器需要使用前缀“-webkit-”]<a id="more"></a>
+对于Flex布局，最初是通过看绿叶学习网，学的是flexbox旧版本，感觉很简单；然后又看了大漠老师的《图解CSS3-核心技术与案例实战》，其中详细介绍了三种布局，但我理解的不深，有些迷糊。最后通过网上找到了阮一峰翻译的一篇文章，直观易懂，终于明晰了Flex布局。</li>
+</ul>
 <p>关于Flexbox布局旧版本（display:box/inline-box）版本，请参考<a href="http://www.lvyestudy.com/css3/css3_13.1.aspx" title="弹性盒子模型" target="_blank" rel="external">绿叶学习网教程</a>。</p>
 <p>以下内容主要介绍Flexbox布局最新版本。（内容删减自<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" title="Flex 布局教程：语法篇" target="_blank" rel="external">阮一峰博客</a>）</p>
 <hr>
@@ -3284,34 +2977,32 @@
       <title><![CDATA[CSS3学习笔记:变形transform]]></title>
       <url>http://xifengxx.github.io/2015/08/29/CSS3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8F%98%E5%BD%A2transform/</url>
       <content type="html"><![CDATA[<p>这节学习CSS3中的变形特性，主要涉及transform属性：</p>
-<h2 id="变形–旋转-rotate"><a href="#变形–旋转-rotate" class="headerlink" title="变形–旋转 rotate()"></a><strong>变形–旋转 rotate()</strong></h2><p><strong>旋转rotate()函数</strong>通过指定的角度参数使元素相对原点进行旋转。它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为<strong>正值</strong>，元素相对原点中心<strong>顺时针</strong>旋转；如果这个值为<strong>负值</strong>，元素相对原点中心<strong>逆时针</strong>旋转。如下图所示：<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画1.png" alt="变形与动画1"></p>
-<p>HTML代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">”wrapper”</span>&gt;</span>  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="变形–旋转-rotate"><a href="#变形–旋转-rotate" class="headerlink" title="变形–旋转 rotate()"></a><strong>变形–旋转 rotate()</strong></h2><p><strong>旋转rotate()函数</strong>通过指定的角度参数使元素相对原点进行旋转。它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为<strong>正值</strong>，元素相对原点中心<strong>顺时针</strong>旋转；如果这个值为<strong>负值</strong>，元素相对原点中心<strong>逆时针</strong>旋转。如下图所示：<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画1.png" alt="变形与动画1"><br><a id="more"></a><br>HTML代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">”wrapper”</span>&gt;</span>  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>CSS代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> dotted red;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">100px</span> auto;&#125;</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">     <span class="attribute">width</span>: <span class="number">200px</span>;  <span class="attribute">height</span>: <span class="number">200px</span>;  <span class="attribute">background</span>: orange;</span><br><span class="line">     <span class="attribute">-webkit-transform</span>: <span class="built_in">rotate</span>(45deg);</span><br><span class="line">     <span class="attribute">transform</span>: <span class="built_in">rotate</span>(45deg);&#125;</span><br></pre></td></tr></table></figure></p>
 <p>演示结果<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/变形与动画2.png" alt="变形与动画2"></p>
 <h2 id="变形–扭曲-skew"><a href="#变形–扭曲-skew" class="headerlink" title="变形–扭曲 skew()"></a><strong>变形–扭曲 skew()</strong></h2><p>扭曲skew()函数能够让元素<strong>倾斜显示</strong>。它可以将一个对象以其中心位置围绕着<strong>X轴</strong>和<strong>Y轴</strong>按照一定的角度倾斜。这与rotate()函数的旋转不同，rotate()函数只是旋转，而不会改变元素的形状。skew()函数不会旋转，而只会改变元素的形状。</p>
 <p>(如果不理解扭曲，可参考<a href="http://www.zhangxinxu.com/study/201206/css3-transform-matrix-skew.html" title="CSS扭曲解释" target="_blank" rel="external">此处</a>，加强理解。)</p>
-<p><strong>Skew()具有三种情况：</strong><br>1、skew(x,y)使元素在水平和垂直方向同时扭曲（X轴和Y轴同时按一定的角度值进行扭曲变形）；<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-1.png" alt="skew-1"></p>
-<p>第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则值为0，也就是Y轴方向上无斜切。</p>
-<p>2、skewX(x)仅使元素在水平方向扭曲变形（X轴扭曲变形）；<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-2.png" alt="skew-2"></p>
-<p>3、skewY(y)仅使元素在垂直方向扭曲变形（Y轴扭曲变形）<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-3.png" alt="skew-3"></p>
-<p><strong>示例演示：</strong></p>
-<p>通过skew（）函数将长方形变成平行四边形。<br>HTML代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">”wrapper”</span>&gt;</span>  <span class="tag">&lt;<span class="name">div</span>&gt;</span>我变成平形四边形<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Skew()具有三种情况：</strong><br>1、skew(x,y)使元素在水平和垂直方向同时扭曲（X轴和Y轴同时按一定的角度值进行扭曲变形）；<br>    <img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-1.png" alt="skew-1"></p>
+<pre><code>第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则值为0，也就是Y轴方向上无斜切。
+</code></pre><p>2、skewX(x)仅使元素在水平方向扭曲变形（X轴扭曲变形）；<br>    <img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-2.png" alt="skew-2"></p>
+<p>3、skewY(y)仅使元素在垂直方向扭曲变形（Y轴扭曲变形）<br>    <img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-3.png" alt="skew-3"></p>
+<p><strong>示例演示：</strong><br>通过skew（）函数将长方形变成平行四边形。<br>HTML代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">”wrapper”</span>&gt;</span>  <span class="tag">&lt;<span class="name">div</span>&gt;</span>我变成平形四边形<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>CSS代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> dotted red;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">30px</span> auto;&#125;</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">skew</span>(45deg);</span><br><span class="line">    <span class="attribute">-moz-transform</span>:<span class="built_in">skew</span>(45deg)</span><br><span class="line">    transform:<span class="built_in">skew</span>(45deg);&#125;</span><br></pre></td></tr></table></figure></p>
 <p>演示结果<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/skew-4.png" alt="skew-4"></p>
 <h2 id="变形–缩放-scale"><a href="#变形–缩放-scale" class="headerlink" title="变形–缩放 scale()"></a><strong>变形–缩放 scale()</strong></h2><p><strong>缩放 scale()函数**</strong> **让元素根据中心原点对对象进行缩放。</p>
-<p>缩放 scale 具有三种情况：<br>1、 scale(X,Y)使元素水平方向和垂直方向同时缩放**（也就是X轴和Y轴同时缩放）<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-1.png" alt="scale-1"><br>例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">scale</span>(1.5,0.5);</span><br><span class="line">    <span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(1.5,0.5)</span><br><span class="line">    transform: <span class="built_in">scale</span>(1.5,0.5);&#125;</span><br></pre></td></tr></table></figure></p>
-<p>注意：Y是一个可选参数，如果没有设置Y值，则表示X，Y两个方向的缩放倍数是一样的。</p>
-<p>2、scaleX(x)元素仅水平方向缩放（X轴缩放）<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-2.png" alt="scale-2"></p>
-<p>3、scaleY(y)元素仅垂直方向缩放**（Y轴缩放）<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-3.png" alt="scale-3"></p>
+<p>缩放 scale 具有三种情况：<br>1、 scale(X,Y)使元素水平方向和垂直方向同时缩放**（也就是X轴和Y轴同时缩放）<br>    <img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-1.png" alt="scale-1"><br>    例如：<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">-webkit-transform</span>: <span class="built_in">scale</span>(1.5,0.5);</span><br><span class="line">    <span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(1.5,0.5)</span><br><span class="line">    transform: <span class="built_in">scale</span>(1.5,0.5);&#125;</span><br></pre></td></tr></table></figure></p>
+<pre><code>注意：Y是一个可选参数，如果没有设置Y值，则表示X，Y两个方向的缩放倍数是一样的。
+</code></pre><p>2、scaleX(x)元素仅水平方向缩放（X轴缩放）<br>    <img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-2.png" alt="scale-2"></p>
+<p>3、scaleY(y)元素仅垂直方向缩放**（Y轴缩放）<br>    <img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-3.png" alt="scale-3"></p>
 <p>HTML代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">”wrapper”</span>&gt;</span>  <span class="tag">&lt;<span class="name">div</span>&gt;</span>我将放大1.5倍<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>css代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">2px</span> dashed red;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">100px</span> auto;&#125;</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">    <span class="attribute">text-align</span>: center;  <span class="attribute">color</span>: <span class="number">#fff</span>;&#125;</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">opacity</span>: .<span class="number">5</span>;  <span class="attribute">-webkit-transform</span>: <span class="built_in">scale</span>(1.5);</span><br><span class="line">    <span class="attribute">-moz-transform</span>:<span class="built_in">scale</span>(1.5)</span><br><span class="line">    transform: <span class="built_in">scale</span>(1.5);&#125;</span><br></pre></td></tr></table></figure></p>
 <p>演示结果<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/scale-4.png" alt="scale-4"></p>
 <p><strong>注意：</strong> scale()的取值默认的值为1，当值设置为0.01到0.99之间的任何值，作用使一个元素缩小；而任何大于或等于1.01的值，作用是让元素放大。</p>
 <h2 id="变形–位移-translate"><a href="#变形–位移-translate" class="headerlink" title="变形–位移 translate()"></a><strong>变形–位移 translate()</strong></h2><p><strong>translate()函数</strong>可以将元素向指定的方向移动，类似于position中的<strong>relative</strong>。或以简单的理解为，使用translate()函数，可以把元素从原来的位置移动，而不影响在X、Y轴上的任何Web组件。</p>
 <p><strong>translate我们分为三种情况：</strong></p>
-<p>1、translate(x,y)水平方向和垂直方向同时移动（也就是X轴和Y轴同时移动）<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-1.png" alt="translate-1"></p>
-<p>2、translateX(x)仅水平方向移动**（X轴移动）<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-2.png" alt="translate-2"></p>
-<p>3、translateY(Y)仅垂直方向移动**（Y轴移动）<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-3.png" alt="translate-3"></p>
+<p>1、translate(x,y)水平方向和垂直方向同时移动（也就是X轴和Y轴同时移动）<br>  <img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-1.png" alt="translate-1"></p>
+<p>2、translateX(x)仅水平方向移动**（X轴移动）<br>  <img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-2.png" alt="translate-2"></p>
+<p>3、translateY(Y)仅垂直方向移动**（Y轴移动）<br>  <img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-3.png" alt="translate-3"></p>
 <p><strong>实例演示：</strong>通过translate()函数将元素向Y轴下方移动100px,X轴右方移动50px。<br>HTML代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">”wrapper”</span>&gt;</span>  <span class="tag">&lt;<span class="name">div</span>&gt;</span>我向右向下移动<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>css代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">2px</span> dotted red;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span> auto;&#125;</span><br><span class="line"><span class="selector-class">.wrapper</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;  <span class="attribute">height</span>: <span class="number">200px</span>;  <span class="attribute">line-height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;  </span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;  </span><br><span class="line">    <span class="attribute">-webkit-transform</span>:<span class="built_in">translate</span>(50px,100px);</span><br><span class="line">    <span class="attribute">-moz-transform</span>:<span class="built_in">translate</span>(50px,100px);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(50px,100px);&#125;</span><br></pre></td></tr></table></figure></p>
 <p>**演示结果<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/translate-4.png" alt="translate-4"></p>
@@ -3332,8 +3023,7 @@
       <title><![CDATA[如何将Emmet安装到Sublime text 3]]></title>
       <url>http://xifengxx.github.io/2015/08/03/%E5%A6%82%E4%BD%95%E5%B0%86Emmet%E5%AE%89%E8%A3%85%E5%88%B0%20Sublime%20text%203/</url>
       <content type="html"><![CDATA[<p>学习慕课网<a href="http://www.imooc.com/learn/40" title="慕课网" target="_blank" rel="external">《前端开发工具技巧介绍—Sublime篇》</a>时，提到一个前端开发工具“Sublime”。<br>它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度。<br>（查看这篇文章来了解Sublime具体用法：<a href="http://www.iteye.com/news/27580" title="Emmet：HTML/CSS代码快速编写神器" target="_blank" rel="external"> Emmet：HTML/CSS代码快速编写神器</a>）</p>
-<p>视频介绍Sublime插件Emmet非常实用，但我发现从官网下载的Sublime并不带Emmet插件，需要重新下载安装。</p>
-<p>于是百度搜索，找到了这篇文章<a href="http://www.cnblogs.com/tinyphp/p/3217457.html" title="如何将Emmet安装到 Sublime text 3" target="_blank" rel="external">《如何将Emmet安装到 Sublime text 3》</a>，按照步骤来下载安装：<br>第一步：下载<a href="http://files.cnblogs.com/tinyphp/sublime_package_control-master.zip" target="_blank" rel="external">sublime_package_control-master.zip</a> ，解压命名文件夹为Package Control。(注意大小写)</p>
+<p>视频介绍Sublime插件Emmet非常实用，但我发现从官网下载的Sublime并不带Emmet插件，需要重新下载安装。<br><a id="more"></a><br>于是百度搜索，找到了这篇文章<a href="http://www.cnblogs.com/tinyphp/p/3217457.html" title="如何将Emmet安装到 Sublime text 3" target="_blank" rel="external">《如何将Emmet安装到 Sublime text 3》</a>，按照步骤来下载安装：<br>第一步：下载<a href="http://files.cnblogs.com/tinyphp/sublime_package_control-master.zip" target="_blank" rel="external">sublime_package_control-master.zip</a> ，解压命名文件夹为Package Control。(注意大小写)</p>
 <p>第二步：下载<a href="http://files.cnblogs.com/tinyphp/sublime_package_control-python3.zip" target="_blank" rel="external">sublime_package_control-python3.zip</a>，解压后覆盖到刚刚的Package Control中，完成插件API函数的更新。</p>
 <p>第三步：打开Sublime Text 3，选择菜单：Preference–&gt;Browse Package… 浏览插件<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-1.jpg" alt="sublime text 1"></p>
 <p>第四步：把package control复制到此目录，重启 Sublime text 3。<br>然后菜单Preferences就会多了两个Package..的东西如下： Package Control 安装成功<br><img src="http://www.xifengxx.com/wp-content/uploads/2015/08/sublime-text-2.jpg" alt="sublime text 2"></p>
@@ -3351,10 +3041,10 @@
 <p>那时清闲，去图书馆找了好多网站建设的书籍，诸如Dreamweaver、Fireworks、Flash、Fontpage等，边看边学，看不懂代码，不会操作，最终放弃了，没能建立起个人网站。</p>
 <p>从那之后，我一直以为建网站是项技术活，门槛挺高的。</p>
 <p>直到去年（2014）年9月份，偶然在网上发现了WordPress网站制作教程，想建立网站的欲望又复苏了，于是边看边学习，个人网站终于建成了。</p>
-<p>正所谓，外行看热闹，内行看门道。看着建立个人网站觉得挺难得，但一路走来，觉得非常简单。你所要做的，便是行动而已，而不是仅仅停留在想的阶段。</p>
+<p>正所谓，外行看热闹，内行看门道。看着建立个人网站觉得挺难得，但一路走来，觉得非常简单。你所要做的，便是行动而已，而不是仅仅停留在想的阶段。<br><a id="more"></a></p>
 <hr>
 <p>建立个人网站，最简单直接的方式是套用现有的建站程序，比如Wordpress。</p>
-<p>如何用Wordpress建立个人网站呢？以下列举了些我写的文章来介绍个人网站建立，通过边看文章边实践学习，一周的时间，你就可以学会建立自己的个人网站。<br><a id="more"></a></p>
+<p>如何用Wordpress建立个人网站呢？以下列举了些我写的文章来介绍个人网站建立，通过边看文章边实践学习，一周的时间，你就可以学会建立自己的个人网站。<br><!--more--></p>
 <h4 id="基础篇："><a href="#基础篇：" class="headerlink" title="基础篇："></a>基础篇：</h4><p><a href="http://www.xifengxx.com/seo/wordpress/161.html" title="如何建立个人网站" target="_blank" rel="external">《如何建立个人网站》</a></p>
 <p><a href="http://www.xifengxx.com/seo/wordpress/205.html" title="Wordpress自主建站建议教程" target="_blank" rel="external">《WordPress自主建站建议教程》</a></p>
 <p><a href="http://http://www.xifengxx.com/seo/wordpress/35.html" title="使用PHPnow快速搭建本地php+Mysql建站环境" target="_blank" rel="external">《使用PHPnow快速搭建本地php+Mysql建站环境》</a></p>

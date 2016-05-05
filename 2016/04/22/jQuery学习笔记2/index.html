@@ -62,9 +62,7 @@
 <meta name="description" content="jQuery操作元素属性操作
 获取元素属性： $().attr(&amp;quot;属性名&amp;quot;) $().prop(&amp;quot;属性名&amp;quot;)
 设置元素属性： $().attr(&amp;quot;属性&amp;quot;,&amp;quot;属性值&amp;quot;)
-删除元素属性： $().removeAttr(&amp;quot;属性名&amp;quot;) $().removeProp(&amp;quot;属性名&amp;quot;)
-
-案例：">
+删除元素属性： $().removeAttr(&amp;quot;属性名&amp;quot;) $().removeProp(&amp;quot;属性名&amp;quot;)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery学习笔记2 - jQuery操作元素、DOM">
 <meta property="og:url" content="http://xifengxx.github.io/2016/04/22/jQuery学习笔记2/index.html">
@@ -72,19 +70,15 @@
 <meta property="og:description" content="jQuery操作元素属性操作
 获取元素属性： $().attr(&amp;quot;属性名&amp;quot;) $().prop(&amp;quot;属性名&amp;quot;)
 设置元素属性： $().attr(&amp;quot;属性&amp;quot;,&amp;quot;属性值&amp;quot;)
-删除元素属性： $().removeAttr(&amp;quot;属性名&amp;quot;) $().removeProp(&amp;quot;属性名&amp;quot;)
-
-案例：">
+删除元素属性： $().removeAttr(&amp;quot;属性名&amp;quot;) $().removeProp(&amp;quot;属性名&amp;quot;)">
 <meta property="og:image" content="http://www.lvyestudy.com/App_images/lesson/jq/5-3-1.png">
-<meta property="og:updated_time" content="2016-05-05T08:30:40.000Z">
+<meta property="og:updated_time" content="2016-05-05T13:03:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery学习笔记2 - jQuery操作元素、DOM">
 <meta name="twitter:description" content="jQuery操作元素属性操作
 获取元素属性： $().attr(&amp;quot;属性名&amp;quot;) $().prop(&amp;quot;属性名&amp;quot;)
 设置元素属性： $().attr(&amp;quot;属性&amp;quot;,&amp;quot;属性值&amp;quot;)
-删除元素属性： $().removeAttr(&amp;quot;属性名&amp;quot;) $().removeProp(&amp;quot;属性名&amp;quot;)
-
-案例：">
+删除元素属性： $().removeAttr(&amp;quot;属性名&amp;quot;) $().removeProp(&amp;quot;属性名&amp;quot;)">
 <meta name="twitter:image" content="http://www.lvyestudy.com/App_images/lesson/jq/5-3-1.png">
 
 
@@ -357,9 +351,10 @@
         <h3 id="jQuery操作元素"><a href="#jQuery操作元素" class="headerlink" title="jQuery操作元素"></a>jQuery操作元素</h3><h4 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h4><ul>
 <li>获取元素属性：<br> <code>$().attr(&quot;属性名&quot;)</code><br> <code>$().prop(&quot;属性名&quot;)</code></li>
 <li>设置元素属性：<br> <code>$().attr(&quot;属性&quot;,&quot;属性值&quot;)</code></li>
-<li>删除元素属性：<br> <code>$().removeAttr(&quot;属性名&quot;)</code><br> <code>$().removeProp(&quot;属性名&quot;)</code></li>
+<li>删除元素属性：<br> <code>$().removeAttr(&quot;属性名&quot;)</code><br> <code>$().removeProp(&quot;属性名&quot;)</code><a id="more"></a>
+案例：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用attr()方法获取img元素的src属性</span></span><br><span class="line">$(<span class="string">"#btn_src"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert($(<span class="string">"img"</span>).attr(<span class="string">"src"</span>));</span><br><span class="line">            &#125;);</span><br><span class="line"><span class="comment">//使用attr()方法为a标签添加了一个title属性。</span></span><br><span class="line">$(<span class="string">"a"</span>).attr(<span class="string">"title"</span>, <span class="string">"欢迎来到西风博客网站"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用removeAttr()方法删除a标签的title属性。</span></span><br><span class="line">$(<span class="string">"a"</span>).removeAttr(<span class="string">"title"</span>);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>案例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用attr()方法获取img元素的src属性</span></span><br><span class="line">$(<span class="string">"#btn_src"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                alert($(<span class="string">"img"</span>).attr(<span class="string">"src"</span>));</span><br><span class="line">            &#125;);</span><br><span class="line"><span class="comment">//使用attr()方法为a标签添加了一个title属性。</span></span><br><span class="line">$(<span class="string">"a"</span>).attr(<span class="string">"title"</span>, <span class="string">"欢迎来到西风博客网站"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用removeAttr()方法删除a标签的title属性。</span></span><br><span class="line">$(<span class="string">"a"</span>).removeAttr(<span class="string">"title"</span>);</span><br></pre></td></tr></table></figure></p>
 <h4 id="attr-方法和prop-方法操作元素属性的区别："><a href="#attr-方法和prop-方法操作元素属性的区别：" class="headerlink" title="attr()方法和prop()方法操作元素属性的区别："></a>attr()方法和prop()方法操作元素属性的区别：</h4><ol>
 <li>操作对象不同<br>attr和prop分别是单词attribute和property的缩写，并且它们均表示”属性”的意思。</li>
 </ol>
