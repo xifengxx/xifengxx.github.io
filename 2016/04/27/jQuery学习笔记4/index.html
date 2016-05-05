@@ -47,7 +47,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="西风Web前端" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="西风前端" type="application/atom+xml" />
 
 
 
@@ -64,7 +64,7 @@ show()和hide()12345678$().hide() //把所选元素的display属性设置为none
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery学习笔记4 - jQuery动画">
 <meta property="og:url" content="http://xifengxx.github.io/2016/04/27/jQuery学习笔记4/index.html">
-<meta property="og:site_name" content="西风Web前端">
+<meta property="og:site_name" content="西风前端">
 <meta property="og:description" content="jQuery动画显示和隐藏在jQuery中，如果我们想要实现元素的显示和隐藏，可以使用2组方法：（1）show()和hide()；（2）toggle()；
 show()和hide()12345678$().hide() //把所选元素的display属性设置为none。$().show() //把所选元素的display属性还原为隐藏之前的显示状态（block、inline或者inline-blo">
 <meta property="og:updated_time" content="2016-05-05T08:29:10.000Z">
@@ -89,7 +89,7 @@ show()和hide()12345678$().hide() //把所选元素的display属性设置为none
   };
 </script>
 
-  <title> jQuery学习笔记4 - jQuery动画 | 西风Web前端 </title>
+  <title> jQuery学习笔记4 - jQuery动画 | 西风前端 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -130,7 +130,7 @@ show()和hide()12345678$().hide() //把所选元素的display属性设置为none
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">西风Web前端</span>
+      <span class="site-title">西风前端</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -406,7 +406,7 @@ show()和hide()12345678$().hide() //把所选元素的display属性设置为none
 </tr>
 </tbody>
 </table>
-<p>案例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"#lvye"</span>).hover(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).animate(&#123; <span class="string">"width"</span>: <span class="string">"100px"</span>, <span class="string">"height"</span>: <span class="string">"100px"</span> &#125;, <span class="number">500</span>);</span><br><span class="line">    &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).animate(&#123; <span class="string">"width"</span>: <span class="string">"50px"</span>, <span class="string">"height"</span>: <span class="string">"50px"</span> &#125;, <span class="number">500</span>);<span class="comment">//移出时返回原状态</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">/*</span><br><span class="line">上述代码会产生Bug:animation动画不断地执行！</span><br><span class="line">其实这个bug是由于动画累积导致的，如果一个动画没有执行完，它就会被添加到“动画队列”中去。在这个例子中，每一次移入或者移出，都会添加新一个动画到“动画队列”中，然后没有执行完的动画会继续执行，直到所有动画执行完毕。</span><br><span class="line">此时要解决这个bug的话，我们只需要在移入动画或者移出动画执行之前加入stop()方法，就能解决这个问题。stop()方法会结束当前正在执行的动画，并立即执行队列中下一个动画。修改后的jQuery代码如下：</span><br><span class="line">*/</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"#lvye"</span>).hover(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).stop().animate(&#123; <span class="string">"width"</span>: <span class="string">"100px"</span>, <span class="string">"height"</span>: <span class="string">"100px"</span> &#125;, <span class="number">500</span>);</span><br><span class="line">    &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).stop().animate(&#123; <span class="string">"width"</span>: <span class="string">"50px"</span>, <span class="string">"height"</span>: <span class="string">"50px"</span> &#125;, <span class="number">500</span>);<span class="comment">//移出时返回原状态</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>案例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"#lvye"</span>).hover(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).animate(&#123; <span class="string">"width"</span>: <span class="string">"100px"</span>, <span class="string">"height"</span>: <span class="string">"100px"</span> &#125;, <span class="number">500</span>);</span><br><span class="line">    &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).animate(&#123; <span class="string">"width"</span>: <span class="string">"50px"</span>, <span class="string">"height"</span>: <span class="string">"50px"</span> &#125;, <span class="number">500</span>);<span class="comment">//移出时返回原状态</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">/*</span><br><span class="line">上述代码会产生<span class="doctag">Bug:</span>animation动画不断地执行！</span><br><span class="line">其实这个bug是由于动画累积导致的，如果一个动画没有执行完，它就会被添加到“动画队列”中去。在这个例子中，每一次移入或者移出，都会添加新一个动画到“动画队列”中，然后没有执行完的动画会继续执行，直到所有动画执行完毕。</span><br><span class="line">此时要解决这个bug的话，我们只需要在移入动画或者移出动画执行之前加入stop()方法，就能解决这个问题。stop()方法会结束当前正在执行的动画，并立即执行队列中下一个动画。修改后的jQuery代码如下：</span><br><span class="line">*/</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">"#lvye"</span>).hover(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).stop().animate(&#123; <span class="string">"width"</span>: <span class="string">"100px"</span>, <span class="string">"height"</span>: <span class="string">"100px"</span> &#125;, <span class="number">500</span>);</span><br><span class="line">    &#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).stop().animate(&#123; <span class="string">"width"</span>: <span class="string">"50px"</span>, <span class="string">"height"</span>: <span class="string">"50px"</span> &#125;, <span class="number">500</span>);<span class="comment">//移出时返回原状态</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <h4 id="动画延迟delay"><a href="#动画延迟delay" class="headerlink" title="动画延迟delay()"></a>动画延迟delay()</h4><p>在jQuery中，如果我们想要对动画进行延迟操作，可以用delay()方法来实现。<br><code>$().delay(speed)</code><br>案例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"#lvye"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                $(<span class="keyword">this</span>).animate(&#123; <span class="string">"width"</span>: <span class="string">"200px"</span> &#125;, <span class="number">1000</span>).delay(<span class="number">1000</span>).animate(&#123; <span class="string">"height"</span>: <span class="string">"200px"</span> &#125;, <span class="number">1000</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;)</span><br><span class="line"><span class="comment">//这里使用2个animate()方法定义了一个队列动画，这个队列动画共有2段动画。然后在第1段动画之后使用了delay()方法来延迟2秒（2000毫秒），然后再执行第2段动画。</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="动画立即完成finish"><a href="#动画立即完成finish" class="headerlink" title="动画立即完成finish()"></a>动画立即完成finish()</h4><p>finish()函数用于立即完成队列中的所有动画。<br>finish()会停止当前正在运行的动画，删除所有队列中的动画，并完成匹配元素的所有动画。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$().finish(queueName) <span class="comment">//queueName:可选/String类型,指定的队列名称，默认为"fx"，表示jQuery标准的效果队列</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="深入了解jQuery动画"><a href="#深入了解jQuery动画" class="headerlink" title="深入了解jQuery动画"></a>深入了解jQuery动画</h4><p>所有jQuery动画效果，从本质上来说，都是通过改变元素的CSS属性来实现的，也就是说：<strong>jQuery动画就是通过将元素的属性从“一个属性值”在一定时间内平滑地过渡到“另一个属性值”，从而实现动画效果。</strong></p>
@@ -419,11 +419,6 @@ show()和hide()12345678$().hide() //把所选元素的display属性设置为none
     <div>
       
         
-<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
-    <img id="wechat_subscriber_qcode" src="/uploads/wechat.jpg" alt="Xifengxx wechat" style="width: 200px; max-width: 100%;"/>
-    <div>坚持原创技术分享，每天进步1%！</div>
-</div>
-
       
     </div>
 
@@ -438,13 +433,13 @@ show()和hide()12345678$().hide() //把所选元素的display属性设置为none
   <div id="QR" style="display: none;">
     
       <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="Xifengxx WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="xifengxx WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
         <p>微信打赏</p>
       </div>
     
     
       <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/uploads/alipay.png" alt="Xifengxx Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="xifengxx Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
         <p>支付宝打赏</p>
       </div>
     
@@ -542,8 +537,8 @@ show()和hide()12345678$().hide() //把所选元素的display属性设置为none
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
-               alt="Xifengxx" />
-          <p class="site-author-name" itemprop="name">Xifengxx</p>
+               alt="xifengxx" />
+          <p class="site-author-name" itemprop="name">xifengxx</p>
           <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
         </div>
         <nav class="site-state motion-element">
@@ -671,7 +666,7 @@ show()和hide()12345678$().hide() //把所选元素的display属性设置为none
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Xifengxx</span>
+  <span class="author" itemprop="copyrightHolder">xifengxx</span>
 </div>
 
 <div class="powered-by">
