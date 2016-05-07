@@ -59,25 +59,24 @@
 
 
 
-<meta name="description" content="ajax 的全称是Asynchronous JavaScript and XML(异步的JavaScript和XML),即用JavaScript去异步的获取XML文件作为交换格式，由 Jesse James Garrett 在2005年提出。其中，Asynchronous 是异步的意思，它有别于传统web开发中采用的同步的方式。
-关于同步和异步首先常用的是：普通B/S模式代表同步，AJAX技术代表">
+<meta name="description" content="ajax 的全称是Asynchronous JavaScript and XML(异步的JavaScript和XML),即用JavaScript去异步的获取XML文件作为交换格式，由 Jesse James Garrett 在2005年提出。其中，Asynchronous 是异步的意思，它有别于传统web开发中采用的同步的方式。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ajax学习笔记">
 <meta property="og:url" content="http://xifengxx.github.io/2016/05/06/Ajax学习笔记/index.html">
 <meta property="og:site_name" content="西风前端">
-<meta property="og:description" content="ajax 的全称是Asynchronous JavaScript and XML(异步的JavaScript和XML),即用JavaScript去异步的获取XML文件作为交换格式，由 Jesse James Garrett 在2005年提出。其中，Asynchronous 是异步的意思，它有别于传统web开发中采用的同步的方式。
-关于同步和异步首先常用的是：普通B/S模式代表同步，AJAX技术代表">
+<meta property="og:description" content="ajax 的全称是Asynchronous JavaScript and XML(异步的JavaScript和XML),即用JavaScript去异步的获取XML文件作为交换格式，由 Jesse James Garrett 在2005年提出。其中，Asynchronous 是异步的意思，它有别于传统web开发中采用的同步的方式。">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-Ajax%E5%8E%9F%E7%90%86.png">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-Ajax%E5%8E%9F%E7%90%86.png">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-Ajax.readystate.png">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-http-status.png">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5.png">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-CORS%E5%8E%9F%E7%90%86.png">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-Frame%E4%BB%A3%E7%90%86.png">
-<meta property="og:updated_time" content="2016-05-06T16:02:12.000Z">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-JSONP.png">
+<meta property="og:updated_time" content="2016-05-07T03:14:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax学习笔记">
-<meta name="twitter:description" content="ajax 的全称是Asynchronous JavaScript and XML(异步的JavaScript和XML),即用JavaScript去异步的获取XML文件作为交换格式，由 Jesse James Garrett 在2005年提出。其中，Asynchronous 是异步的意思，它有别于传统web开发中采用的同步的方式。
-关于同步和异步首先常用的是：普通B/S模式代表同步，AJAX技术代表">
+<meta name="twitter:description" content="ajax 的全称是Asynchronous JavaScript and XML(异步的JavaScript和XML),即用JavaScript去异步的获取XML文件作为交换格式，由 Jesse James Garrett 在2005年提出。其中，Asynchronous 是异步的意思，它有别于传统web开发中采用的同步的方式。">
 <meta name="twitter:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-Ajax%E5%8E%9F%E7%90%86.png">
 
 
@@ -347,8 +346,7 @@
       
 
       
-        <p>ajax 的全称是Asynchronous JavaScript and XML(异步的JavaScript和XML),即用JavaScript去异步的获取XML文件作为交换格式，由 Jesse James Garrett 在2005年提出。其中，Asynchronous 是异步的意思，它有别于传统web开发中采用的同步的方式。</p>
-<p><strong>关于同步和异步</strong><br>首先常用的是：普通B/S模式代表同步，AJAX技术代表异步<br>同步：提交请求-&gt;等待服务器处理-&gt;处理完毕返回 这个期间客户端浏览器不能干任何事<br>异步: 请求通过事件触发-&gt;服务器处理（这是浏览器仍然可以作其他事情）-&gt;处理完毕<br>（参考：<a href="http://blog.chinaunix.net/uid-21411227-id-1826898.html" target="_blank" rel="external">同步与异步的概念</a>）<br>Ajax是一种无需刷新页面就能够从服务器获取数据的技术，会带来更好的用户体验。</p>
+        <p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/git-Ajax%E5%8E%9F%E7%90%86.png" alt=""><br>ajax 的全称是Asynchronous JavaScript and XML(异步的JavaScript和XML),即用JavaScript去异步的获取XML文件作为交换格式，由 Jesse James Garrett 在2005年提出。其中，Asynchronous 是异步的意思，它有别于传统web开发中采用的同步的方式。<br><a id="more"></a><br><strong>关于同步和异步</strong><br>首先常用的是：普通B/S模式代表同步，AJAX技术代表异步<br>同步：提交请求-&gt;等待服务器处理-&gt;处理完毕返回 这个期间客户端浏览器不能干任何事<br>异步: 请求通过事件触发-&gt;服务器处理（这是浏览器仍然可以作其他事情）-&gt;处理完毕<br>（参考：<a href="http://blog.chinaunix.net/uid-21411227-id-1826898.html" target="_blank" rel="external">同步与异步的概念</a>）<br>Ajax是一种无需刷新页面就能够从服务器获取数据的技术，会带来更好的用户体验。</p>
 <p>Ajax并非一种新的技术，而是几种原有技术的结合体。它由下列技术组合而成。</p>
 <ol>
 <li>使用CSS和HTML来实现页面，表达信息。</li>
@@ -539,16 +537,26 @@
 <li>代理文件通过消息通讯机制将请求结果返回给a.b.com的应用</li>
 </ol>
 <p>优点：<br>-参照 CORS 标准<br>-支持各种请求方法 GET POST PUT DELETE<br>缺点：<br>-需要在目标服务器放置代理文件<br>-由于首次发起请求时需要载入代理文件，在载入代理文件之前的所有请求都会存在一定的延时。<br>-对于低版本浏览器受限于消息通讯机制的限制，对于并发量大的请求返回时可能存在较大延时。</p>
-<h5 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h5><p>JSON with Padding（填充式 JSON）： 用于解决主流浏览器的跨域数据访问的问题。<br>利用<script> 可以跨域，请求一段 JavaScript 代码，然后执行 JavaScript 代码来实现跨域。<br>JSONP支持get请求方式，不支持post请求方式。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/git-JSONP.png" alt="JSONP"><br>举例：<br>在www.aaa.com页面中：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function jsonp(json)&#123;</span><br><span class="line">    alert(json["name"]);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script src="http://www.bbb.com/jsonp.js"&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h5><p>JSON with Padding（填充式 JSON）： 用于解决主流浏览器的跨域数据访问的问题。<br>利用<code>&lt;script&gt;</code> 可以跨域，请求一段 JavaScript 代码，然后执行 JavaScript 代码来实现跨域。<br>JSONP支持get请求方式，不支持post请求方式。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/git-JSONP.png" alt="JSONP"><br>举例：<br>在www.aaa.com页面中：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function jsonp(json)&#123;</span><br><span class="line">    alert(json["name"]);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script src="http://www.bbb.com/jsonp.js"&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 <p>在www.bbb.com页面中：<br><code>jsonp({&#39;name&#39;:&#39;洪七&#39;,&#39;age&#39;:24});</code></p>
-<h3 id="参考资源："><a href="#参考资源：" class="headerlink" title="参考资源："></a>参考资源：</h3><ol>
-<li>NEJ的前后端通讯系统：<br><a href="https://github.com/genify/nej/blob/master/doc/AJAX.md">https://github.com/genify/nej/blob/master/doc/AJAX.md</a> （☆☆☆☆）</li>
-<li>JavaScript跨域与解决方法：<br><a href="http://www.cnblogs.com/rainman/archive/2011/02/20/1959325.html（☆☆写的不错，但看不懂）">http://www.cnblogs.com/rainman/archive/2011/02/20/1959325.html（☆☆写的不错，但看不懂）</a></li>
-<li>跨域基本知识：<br><a href="http://www.cnblogs.com/scottckt/archive/2011/11/12/2246531.html（☆☆☆☆）">http://www.cnblogs.com/scottckt/archive/2011/11/12/2246531.html（☆☆☆☆）</a></li>
-<li>JavaScript函数节流：<br><a href="http://www.alloyteam.com/2012/11/javascript-throttle/（☆☆☆☆）">http://www.alloyteam.com/2012/11/javascript-throttle/（☆☆☆☆）</a></li>
-<li>Ajax基础知识讲解：<br><a href="http://www.nowamagic.net/librarys/veda/detail/750">http://www.nowamagic.net/librarys/veda/detail/750</a>  （☆☆☆☆）</li>
+<h3 id="DEMO示例"><a href="#DEMO示例" class="headerlink" title="DEMO示例"></a>DEMO示例</h3><p><strong>来源：</strong><a href="http://www.imooc.com/learn/250" target="_blank" rel="external">慕课网-Ajax全接触</a></p>
+<p><strong>分析：</strong><br>通过Ajax实现动态无刷新页面进行查询/添加操作。</p>
+<p><strong>涉及技术点：</strong></p>
+<ol>
+<li>HTML+CSS简单布局</li>
+<li>Ajax + JSON 实现页面查询/添加操作。</li>
+<li>jQuery基础运用</li>
+<li>Ajax跨域解决方案（JSONP + CORS）</li>
 </ol>
-</script></p>
+<p><strong>DEMO下载：</strong><a href="https://github.com/xifengxx/demo/tree/master/ajax" target="_blank" rel="external">下载地址</a></p>
+<h3 id="参考资源："><a href="#参考资源：" class="headerlink" title="参考资源："></a>参考资源：</h3><ol>
+<li>NEJ的前后端通讯系统：<br><a href="https://github.com/genify/nej/blob/master/doc/AJAX.md" target="_blank" rel="external">https://github.com/genify/nej/blob/master/doc/AJAX.md</a> （☆☆☆☆）</li>
+<li>JavaScript跨域与解决方法：<br><a href="http://www.cnblogs.com/rainman/archive/2011/02/20/1959325.html（☆☆写的不错，但看不懂）" target="_blank" rel="external">http://www.cnblogs.com/rainman/archive/2011/02/20/1959325.html（☆☆写的不错，但看不懂）</a></li>
+<li>跨域基本知识：<br><a href="http://www.cnblogs.com/scottckt/archive/2011/11/12/2246531.html（☆☆☆☆）" target="_blank" rel="external">http://www.cnblogs.com/scottckt/archive/2011/11/12/2246531.html（☆☆☆☆）</a></li>
+<li>JavaScript函数节流：<br><a href="http://www.alloyteam.com/2012/11/javascript-throttle/（☆☆☆☆）" target="_blank" rel="external">http://www.alloyteam.com/2012/11/javascript-throttle/（☆☆☆☆）</a></li>
+<li>Ajax基础知识讲解：<br><a href="http://www.nowamagic.net/librarys/veda/detail/750" target="_blank" rel="external">http://www.nowamagic.net/librarys/veda/detail/750</a>  （☆☆☆☆）</li>
+</ol>
+
       
     </div>
     
@@ -775,7 +783,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ajax原理和XmlHttpRequest对象"><span class="nav-number">1.</span> <span class="nav-text">ajax原理和XmlHttpRequest对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#XmlHttpRequest对象"><span class="nav-number">1.1.</span> <span class="nav-text">XmlHttpRequest对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用XMLHttpRequest对象向服务器发送请求"><span class="nav-number">1.1.1.</span> <span class="nav-text">使用XMLHttpRequest对象向服务器发送请求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用XMLHttpRequest对象向取得响应："><span class="nav-number">1.1.2.</span> <span class="nav-text">使用XMLHttpRequest对象向取得响应：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP请求"><span class="nav-number">1.2.</span> <span class="nav-text">HTTP请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ajax优缺点"><span class="nav-number">1.3.</span> <span class="nav-text">Ajax优缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AJAX跨域处理"><span class="nav-number">2.</span> <span class="nav-text">AJAX跨域处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同源策略"><span class="nav-number">2.1.</span> <span class="nav-text">同源策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域资源访问"><span class="nav-number">2.2.</span> <span class="nav-text">跨域资源访问</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CORS标准原理（Cross-Origin-Resource-Sharing）"><span class="nav-number">2.3.</span> <span class="nav-text">CORS标准原理（Cross-Origin Resource Sharing）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他跨域技术"><span class="nav-number">2.4.</span> <span class="nav-text">其他跨域技术</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Frame代理"><span class="nav-number">2.4.1.</span> <span class="nav-text">Frame代理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JSONP"><span class="nav-number">2.4.2.</span> <span class="nav-text">JSONP</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ajax原理和XmlHttpRequest对象"><span class="nav-number">1.</span> <span class="nav-text">ajax原理和XmlHttpRequest对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#XmlHttpRequest对象"><span class="nav-number">1.1.</span> <span class="nav-text">XmlHttpRequest对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用XMLHttpRequest对象向服务器发送请求"><span class="nav-number">1.1.1.</span> <span class="nav-text">使用XMLHttpRequest对象向服务器发送请求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用XMLHttpRequest对象向取得响应："><span class="nav-number">1.1.2.</span> <span class="nav-text">使用XMLHttpRequest对象向取得响应：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTP请求"><span class="nav-number">1.2.</span> <span class="nav-text">HTTP请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ajax优缺点"><span class="nav-number">1.3.</span> <span class="nav-text">Ajax优缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AJAX跨域处理"><span class="nav-number">2.</span> <span class="nav-text">AJAX跨域处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#同源策略"><span class="nav-number">2.1.</span> <span class="nav-text">同源策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域资源访问"><span class="nav-number">2.2.</span> <span class="nav-text">跨域资源访问</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CORS标准原理（Cross-Origin-Resource-Sharing）"><span class="nav-number">2.3.</span> <span class="nav-text">CORS标准原理（Cross-Origin Resource Sharing）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他跨域技术"><span class="nav-number">2.4.</span> <span class="nav-text">其他跨域技术</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Frame代理"><span class="nav-number">2.4.1.</span> <span class="nav-text">Frame代理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JSONP"><span class="nav-number">2.4.2.</span> <span class="nav-text">JSONP</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DEMO示例"><span class="nav-number">3.</span> <span class="nav-text">DEMO示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资源："><span class="nav-number">4.</span> <span class="nav-text">参考资源：</span></a></li></ol></div>
             
           </div>
         </section>
