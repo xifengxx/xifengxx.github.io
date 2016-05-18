@@ -342,12 +342,8 @@
 
       
         
-          
-          jQuery UI型插件
-拖拽插件：draggable拖曳插件draggable的功能是拖动被绑定的元素，当这个jQuery UI插件与元素绑定后，可以通过调用draggable()方法，实现各种拖曳元素的效果，调用格式如下：$(selector). draggable({options})
-options参数为方法调用时的配置对象，根据该对象可以设置各种拖曳效果，如“containment”属性指定拖曳区域，“axis”属性设置拖曳时的坐标方向。123456789101112131415161718//使id号为“x”和“y”的&lt;div&gt;元素只能沿X轴和Y轴拖曳。$(function () &#123;        $("#x").draggable(&#123;axis:"x"&#125;);        $("#y").draggable(&#123;axis:"y"&#125;);    &#125;);//类名为drag的div元素只能在外层的父div元素中任意拖拽。&lt;body&gt;   &lt;div id="divtest"&gt;       &
-          ...
-
+          <p>jQuery UI型插件</p>
+<h3 id="拖拽插件：draggable"><a href="#拖拽插件：draggable" class="headerlink" title="拖拽插件：draggable"></a>拖拽插件：draggable</h3><p>拖曳插件draggable的功能是拖动被绑定的元素，当这个jQuery UI插件与元素绑定后，可以通过调用draggable()方法，实现各种拖曳元素的效果，调用格式如下：<br><code>$(selector). draggable({options})</code><br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/11/jQuery UI型插件介绍/#more" rel="contents">
               阅读全文 &raquo;
@@ -611,12 +607,8 @@ options参数为方法调用时的配置对象，根据该对象可以设置各�
 
       
         
-          
-          表单验证插件：validate该插件自带包含必填、数字、URL在内容的验证规则，即时显示异常信息，此外，还允许自定义验证规则，插件调用方法如下：$(form).validate({options})
-其中form参数表示表单元素名称，options参数表示调用方法时的配置对象，所有的验证规则和异常信息显示的位置都在该对象中进行设置。
-例如，当点击表单中的“提交”按钮时，调用validate插件验证用户名输入是否符合规则，并将异常信息显示在页面中，如下图所示：123456789101112131415161718192021$(function () &#123;        $("#frmV").validate(          &#123;              /*自定义验证规则*/              rules: &#123;                    email:&#123;                    required:true,                    email:true                  &#125;
-          ...
-
+          <h3 id="表单验证插件：validate"><a href="#表单验证插件：validate" class="headerlink" title="表单验证插件：validate"></a>表单验证插件：validate</h3><p>该插件自带包含必填、数字、URL在内容的验证规则，即时显示异常信息，此外，还允许自定义验证规则，插件调用方法如下：<br><code>$(form).validate({options})</code></p>
+<p>其中form参数表示表单元素名称，options参数表示调用方法时的配置对象，所有的验证规则和异常信息显示的位置都在该对象中进行设置。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/10/jQuery常用插件介绍/#more" rel="contents">
               阅读全文 &raquo;
