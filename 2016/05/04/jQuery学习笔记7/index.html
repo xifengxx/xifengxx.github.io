@@ -73,7 +73,7 @@
 在发送AJAX请求之前，序列化JS内容或表单内容，以便用作AJAX请求发送的数据。
 快速发送AJAX请求，并处理响应数据(支持html、xml、text、json、jsonp、script等多种数据类型)。
 监听AJAX事件，绑定事件触发时执行的处理函数。">
-<meta property="og:updated_time" content="2016-05-06T14:15:42.000Z">
+<meta property="og:updated_time" content="2016-05-19T06:13:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery学习笔记7 - Ajax(1)">
 <meta name="twitter:description" content="jQuery核心：AjaxjQuery还对Ajax进行了封装了，我们可以非常方便地发送一个Ajax请求，并对响应进行处理。例如：
@@ -621,6 +621,7 @@
 </table>
 <p>如果参数data为Object对象，jQuery会自动将其转换为字符串。属性名就是对应的请求参数名，属性值就是参数值，如果属性值为数组，jQuery会自动将其拆分为参数名相同、每个元素作为参数值的请求参数。</p>
 <p><strong>示例</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用以下jQuery代码，我们可以加载指定的html内容来替换每个匹配元素的内容(innerHTML)。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 加载http://localhost/index.php的html内容来替换当前文档的每一个div元素, jQuery会过滤掉该文档中的DOCTYPE以及html、head、body标签后再进行替换(以免与当前文档的标签起冲突)</span></span><br><span class="line">$(<span class="string">"div"</span>).load(<span class="string">"http://localhost/index.php"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//加载指定的html文档数据，然后使用其中匹配选择器的元素内容来替换每个匹配元素的内容。</span></span><br><span class="line"><span class="comment">// 加载http://localhost/index.php?id=2的html内容,只使用其中id为site-title的元素来替换所有div元素</span></span><br><span class="line">$(<span class="string">"div"</span>).load(<span class="string">"http://localhost/index.php?id=2 #site-title"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 请分别执行以下三个加载方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可将URL直接写为："action.php?id=5&amp;username=CodePlayer&amp;age=15"</span></span><br><span class="line">$(<span class="string">"div"</span>).load(<span class="string">"action.php?id=5"</span>, <span class="string">"username=CodePlayer&amp;age=15"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 由于数据是对象形式，因此自动转为POST方式</span></span><br><span class="line">$(<span class="string">"div"</span>).load(<span class="string">"action.php?id=5"</span>, &#123; username: <span class="string">"CodePlayer"</span>, age: <span class="number">15</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 由于数据是对象形式，因此自动转为POST方式</span></span><br><span class="line"><span class="comment">// 注意： new String("username=CodePlayer&amp;age=15") 也是一个Object对象，会使用POST方式</span></span><br><span class="line">$(<span class="string">"div"</span>).load(<span class="string">"action.php?id=5"</span>, &#123; username: <span class="string">"CodePlayer"</span>, age: <span class="number">15</span> &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">responseText, textStatus, jqXHR</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// responseText 是响应(返回)的原始文本数据</span></span><br><span class="line">    <span class="comment">// textStatus 可能是 "success"、 "notmodified"、 "error"、 "timeout"、 "abort"或"parsererror"中的一个</span></span><br><span class="line">    <span class="comment">// jqXHR 是经过jQuery封装的XMLHttpRequest对象(保留其本身的所有属性和方法)</span></span><br><span class="line">    <span class="keyword">if</span>(textStatus == <span class="string">"success"</span> || textStatus == <span class="string">"notmodified"</span>)&#123;</span><br><span class="line">        alert(<span class="string">"加载成功!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="Demo示例："><a href="#Demo示例：" class="headerlink" title="Demo示例："></a>Demo示例：</h3><p>通过Ajax实现在线聊天室动态更新。<br>Demo地址：<a href="http://runjs.cn/detail/vo5cfjpd" target="_blank" rel="external">在线地址</a></p>
 
       
     </div>
@@ -753,7 +754,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -761,7 +762,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -770,7 +771,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -852,7 +853,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery核心：Ajax"><span class="nav-number">1.</span> <span class="nav-text">jQuery核心：Ajax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery的AJAX方法"><span class="nav-number">1.1.</span> <span class="nav-text">jQuery的AJAX方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-ajax-函数"><span class="nav-number">1.1.1.</span> <span class="nav-text">jQuery.ajax() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-get-函数"><span class="nav-number">1.1.2.</span> <span class="nav-text">jQuery.get()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-post-函数"><span class="nav-number">1.1.3.</span> <span class="nav-text">jQuery.post() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-getJSON-函数"><span class="nav-number">1.1.4.</span> <span class="nav-text">jQuery.getJSON() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-getScript-函数"><span class="nav-number">1.1.5.</span> <span class="nav-text">jQuery.getScript() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-load-AJAX函数"><span class="nav-number">1.1.6.</span> <span class="nav-text">jQuery.load() AJAX函数</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery核心：Ajax"><span class="nav-number">1.</span> <span class="nav-text">jQuery核心：Ajax</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery的AJAX方法"><span class="nav-number">1.1.</span> <span class="nav-text">jQuery的AJAX方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-ajax-函数"><span class="nav-number">1.1.1.</span> <span class="nav-text">jQuery.ajax() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-get-函数"><span class="nav-number">1.1.2.</span> <span class="nav-text">jQuery.get()函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-post-函数"><span class="nav-number">1.1.3.</span> <span class="nav-text">jQuery.post() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-getJSON-函数"><span class="nav-number">1.1.4.</span> <span class="nav-text">jQuery.getJSON() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-getScript-函数"><span class="nav-number">1.1.5.</span> <span class="nav-text">jQuery.getScript() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-load-AJAX函数"><span class="nav-number">1.1.6.</span> <span class="nav-text">jQuery.load() AJAX函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Demo示例："><span class="nav-number">1.2.</span> <span class="nav-text">Demo示例：</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
