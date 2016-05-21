@@ -160,9 +160,19 @@
 </div>
 <script type="text/javascript" src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript">
-$(function(){
+/*$(function(){
+	waterfall();
+})*/
+
+
+$(window).on('load',function(){
+    waterfall();
+})
+$(window).on('resize',function(){
 	waterfall();
 })
+
+
 function waterfall(){
 	var $box=$("#main").find(".box");
 	var w=$box.eq(0).outerWidth();
