@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="西风前端">
 <meta property="og:description" content="我们日常所浏览的网页，都是有HTML文档构成的。HTML文档的基本结构如下图：">
 <meta property="og:image" content="http://www.xifengxx.com/wp-content/uploads/2015/12/HTML文档结构.png">
-<meta property="og:updated_time" content="2016-05-05T13:07:04.000Z">
+<meta property="og:updated_time" content="2016-05-23T01:31:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端知识之查漏补缺:HTML头部(head)标签">
 <meta name="twitter:description" content="我们日常所浏览的网页，都是有HTML文档构成的。HTML文档的基本结构如下图：">
@@ -345,7 +345,41 @@
 <p><strong>4、<code>&lt;body&gt;</code>标签</strong><br>body标签是页面的“身体”，一般网页绝大多数的标签代码都是在这里编写。</p>
 <p>其他标签都好理解，这里主要介绍下<code>&lt;head&gt;</code>标签，因为其比较特殊，涉及到的东西还是蛮多的。</p>
 <hr>
-<p>一般来说，只有6个标签能放在<code>&lt;head&gt;</code>标签内：<br>| <code>&lt;head&gt;</code>内部标签 |  说明 |<br>|   — |    —  |<br>| <code>&lt;title&gt;</code> | 定义网页的标题|<br>| <code>&lt;meta&gt;</code>|  定义网页的基本信息（供搜索引擎）|<br>| <code>&lt;style&gt;</code> | 定义CSS样式|<br>| <code>&lt;link&gt;</code> |  链接外部CSS文件或脚本文件|<br>| <code>&lt;script&gt;</code>   |  定义脚本语言|<br>| <code>&lt;base&gt;</code> |  定义页面所有链接的基础定位| </p>
+<p>一般来说，只有6个标签能放在<code>&lt;head&gt;</code>标签内：</p>
+<table>
+<thead>
+<tr>
+<th><code>&lt;head&gt;</code>内部标签</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;title&gt;</code></td>
+<td>定义网页的标题</td>
+</tr>
+<tr>
+<td><code>&lt;meta&gt;</code></td>
+<td>定义网页的基本信息（供搜索引擎）</td>
+</tr>
+<tr>
+<td><code>&lt;style&gt;</code></td>
+<td>定义CSS样式</td>
+</tr>
+<tr>
+<td><code>&lt;link&gt;</code></td>
+<td>链接外部CSS文件或脚本文件</td>
+</tr>
+<tr>
+<td><code>&lt;script&gt;</code></td>
+<td>定义脚本语言</td>
+</tr>
+<tr>
+<td><code>&lt;base&gt;</code></td>
+<td>定义页面所有链接的基础定位</td>
+</tr>
+</tbody>
+</table>
 <h2 id="一、title标签"><a href="#一、title标签" class="headerlink" title="一、title标签"></a><strong>一、title标签</strong></h2><p>title标签唯一的作用就是<span style="color: #0000ff;">定义网页的标题</span>，标题的内容都是放在<code>&lt;title&gt;</code>标签内，如:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML head标签_HTML入门教程_绿叶学习网<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="二、meta签"><a href="#二、meta签" class="headerlink" title="二、meta签"></a><strong>二、meta签</strong></h2><p><span style="color: #0000ff;">meta标签又叫“元信息标签”</span><br>meta标签提供的信息不显示在页面中，一般用来定义页面的关键字、页面的描述等，以方便搜索引擎蜘蛛（如百度蜘蛛、谷歌蜘蛛）来搜索到你这个页面的信息。通俗点说，meta标签就是用来告诉“搜索蜘蛛”这个页面是干嘛的。</p>
 <p><strong><span style="color: #0000ff;">meta标签有两个重要的属性name和http-equiv</span></strong></p>
@@ -375,7 +409,34 @@
 </tr>
 </tbody>
 </table>
-<h3 id="2、-meta标签http-equiv属性"><a href="#2、-meta标签http-equiv属性" class="headerlink" title="2、**meta标签http-equiv属性**"></a><strong>2、**</strong>meta标签http-equiv属性**</h3><p><strong>常见的值有：</strong><br>|   Content-type   |    内容类型  |<br>|  —   |  —   |<br>|   Expires |   过期时间  |<br>|   Refresh |   页面刷新  |<br>|   Set-cookie  |   设定cookie  |<br>|   X-UA-Compatible |   针对ie,设置浏览器优先使用什么模式来渲染页面  |<br>如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”X-UA-Compatible”content</span>=<span class="string">”ie</span>=<span class="string">7”</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--ie浏览器都会用ie7来渲染； --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”X-UA-Compatible”content</span>=<span class="string">”IE</span>=<span class="string">edge”</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--ie浏览器会用最高版本来渲染； --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”X-UA-Compatible”content</span>=<span class="string">”IE</span>=<span class="string">Edge,chrome</span>=<span class="string">1”</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--ie浏览器会用最高版本来渲染，如果安装了gcf(google chrome frame)可以使用chrome渲染。 --&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="2、-meta标签http-equiv属性"><a href="#2、-meta标签http-equiv属性" class="headerlink" title="2、**meta标签http-equiv属性**"></a><strong>2、**</strong>meta标签http-equiv属性**</h3><p><strong>常见的值有：</strong></p>
+<table>
+<thead>
+<tr>
+<th>Content-type</th>
+<th>内容类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Expires</td>
+<td>过期时间</td>
+</tr>
+<tr>
+<td>Refresh</td>
+<td>页面刷新</td>
+</tr>
+<tr>
+<td>Set-cookie</td>
+<td>设定cookie</td>
+</tr>
+<tr>
+<td>X-UA-Compatible</td>
+<td>针对ie,设置浏览器优先使用什么模式来渲染页面</td>
+</tr>
+</tbody>
+</table>
+<p>如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”X-UA-Compatible”content</span>=<span class="string">”ie</span>=<span class="string">7”</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--ie浏览器都会用ie7来渲染； --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”X-UA-Compatible”content</span>=<span class="string">”IE</span>=<span class="string">edge”</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--ie浏览器会用最高版本来渲染； --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”X-UA-Compatible”content</span>=<span class="string">”IE</span>=<span class="string">Edge,chrome</span>=<span class="string">1”</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--ie浏览器会用最高版本来渲染，如果安装了gcf(google chrome frame)可以使用chrome渲染。 --&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>学习meta标签的http-equiv属性，我们只需要了解它的两个作用就行了：</p>
 <p><span style="color: #0000ff;">一，定义页面所使用的语言</span></p>
 <p><span style="color: #0000ff;">二，实现页面的自动刷新跳转</span></p>
@@ -521,7 +582,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">37</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -538,7 +599,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
