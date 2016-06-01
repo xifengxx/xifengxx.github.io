@@ -1,0 +1,979 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="网站性能," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="互联网高速发展当今,用户对快速访问网页需求越来越高，做为网站建设者，如何提高网站性能，成为炙手可热的问题，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何提高网站速度(Yahoo军规)">
+<meta property="og:url" content="http://xifengxx.github.io/2016/05/29/如何提高网站速度(Yahoo军规)/index.html">
+<meta property="og:site_name" content="西风前端">
+<meta property="og:description" content="互联网高速发展当今,用户对快速访问网页需求越来越高，做为网站建设者，如何提高网站性能，成为炙手可热的问题，">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/%E9%9B%85%E8%99%8E%E5%86%9B%E8%A7%84.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8401.png">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8402.png">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8403.png">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8404.png">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8405.png">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8406.png">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8407.png">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8408.png">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8409.png">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8410.png">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8411.png">
+<meta property="og:updated_time" content="2016-06-01T00:15:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何提高网站速度(Yahoo军规)">
+<meta name="twitter:description" content="互联网高速发展当今,用户对快速访问网页需求越来越高，做为网站建设者，如何提高网站性能，成为炙手可热的问题，">
+<meta name="twitter:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/%E9%9B%85%E8%99%8E%E5%86%9B%E8%A7%84.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 如何提高网站速度(Yahoo军规) | 西风前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/works.html" rel="section">
+            
+            作品Demo
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                如何提高网站速度(Yahoo军规)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-29T21:23:24+08:00" content="2016-05-29">
+              2016-05-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Web经验/" itemprop="url" rel="index">
+                    <span itemprop="name">Web经验</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/29/如何提高网站速度(Yahoo军规)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/29/如何提高网站速度(Yahoo军规)/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/29/如何提高网站速度(Yahoo军规)/" class="leancloud_visitors" data-flag-title="如何提高网站速度(Yahoo军规)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>互联网高速发展当今,用户对快速访问网页需求越来越高，做为网站建设者，如何提高网站性能，成为炙手可热的问题，<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/%E9%9B%85%E8%99%8E%E5%86%9B%E8%A7%84.jpg" alt="雅虎军规"><br><a id="more"></a></p>
+<h3 id="尽可能减少HTTP请求数"><a href="#尽可能减少HTTP请求数" class="headerlink" title="尽可能减少HTTP请求数"></a>尽可能减少HTTP请求数</h3><p>HTTP请求是什么？<br>当你打开网页的时候，所看到的文字、图片、多媒体等，每一个内容(如文字、图片、js、css)的获取，就是一个http请求；<br>·如何优化请求：文字，图片合并，js合并，css合并；<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8401.png" alt=""></p>
+<h3 id="使用CDN-内容分发网络"><a href="#使用CDN-内容分发网络" class="headerlink" title="使用CDN(内容分发网络)"></a>使用CDN(内容分发网络)</h3><p>什么是CDN？<br>解释：在离你最近的地方，放一台（性能好连接顺畅）副本服务器。以最近的距离，最快速度获取内容。<br>使用CDN系统：增加服务器<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8402.png" alt=""></p>
+<h3 id="添加Expire-Cache-Control头"><a href="#添加Expire-Cache-Control头" class="headerlink" title="添加Expire/Cache-Control头"></a>添加Expire/Cache-Control头</h3><p>expire模块：<br>1.如果要对文件添加cache可以通过apache的mod_expire模块<br>2.如果是对网页的缓存就是通过在页面中添加meta标签实现<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8403.png" alt=""></p>
+<h3 id="启用Gzip压缩"><a href="#启用Gzip压缩" class="headerlink" title="启用Gzip压缩"></a>启用Gzip压缩</h3><p>将资源在服务端口先进行压缩处理减小体积，然后在浏览器上在解压缩解释执行！<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8404.png" alt=""><br>使用Gzip：<br>·把文件先压缩，再传输<br>·流程：原始79–本地压缩–服务器端对已经压缩的再压缩-<br>·优点：提升文件传输速度；（在服务器端配置）</p>
+<h3 id="将CSS房在页面最上方"><a href="#将CSS房在页面最上方" class="headerlink" title="将CSS房在页面最上方"></a>将CSS房在页面最上方</h3><p>将CSS放在页面的最上面，主要是浏览器解析文件的时候是从左到右从上到下来进行的，这样可以解决网页空白或者错乱或者闪烁的问题！<br>解决：先加载css，放头部<head>提高渲染性能，避免页面空白或者重绘</head></p>
+<h3 id="将Script放在页面最下方"><a href="#将Script放在页面最下方" class="headerlink" title="将Script放在页面最下方"></a>将Script放在页面最下方</h3><p>将Script放在页面的最下面，因为浏览器加载和解释网页的顺序是从左到右从上到下的，如果JavaScript代码有死循环的问题，网页可能是空白一片的，如果放在页面的最下面即使如此，页面也能展现出来，当然这个问题最好避免！</p>
+<h3 id="避免在CSS中使用Expressions"><a href="#避免在CSS中使用Expressions" class="headerlink" title="避免在CSS中使用Expressions"></a>避免在CSS中使用Expressions</h3><p>所谓css expression就是css的属性值是由js计算出来的<br>它会将自己的属性（固有属性和自定义属性）与JavaScript结合起来一起使用，这样会比较占资源，影响浏览器的性能影响用户的使用体验度！<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8405.png" alt=""></p>
+<h3 id="把Javascript和CSS都放在外部文件中"><a href="#把Javascript和CSS都放在外部文件中" class="headerlink" title="把Javascript和CSS都放在外部文件中"></a>把Javascript和CSS都放在外部文件中</h3><p>将JavaScript和CSS都放在外部的文件中，单独提取的好处<br>1：提高了JS和CSS的复用性；<br>2：减少了页面的体积；<br>3：提高了JS和CSS的可维护性</p>
+<p>js放在内部的优点<br>1：减少了页面的请求数；<br>2：提升了页面的渲染速度</p>
+<p>css和js写在页面的情况：<br>1.只应用于一个页面<br>2.不经常被访问<br>3.脚本和样式很少（少于20行）</p>
+<h3 id="减少DNS查询"><a href="#减少DNS查询" class="headerlink" title="减少DNS查询"></a>减少DNS查询</h3><p>DNS查找过程：域名对应到一个IP地址，然后通过DNS查找找到IP对应的网址，然后才访问到相关服务器。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8406.png" alt=""><br>如果同时很多查找过程，会影响速度；因此需要浏览器的缓存；<br>·IE30m，ff60s，chrome60s，<br>·缓存长：减少dns重复查找，节省时间；<br>·缓存短：及时检测服务器的变化，保证正确性；</p>
+<p><strong>多域和单域：</strong><br>多域：<br>不同资源放在不同的ip<br>单域：<br>所有资源放在一个IP</p>
+<h3 id="最小化JavaScript和CSS"><a href="#最小化JavaScript和CSS" class="headerlink" title="最小化JavaScript和CSS"></a>最小化JavaScript和CSS</h3><p>体的方法可以有</p>
+<ol>
+<li>去掉不必要的空白符、格式符、注释符；</li>
+<li>简写方法名、参数名压缩Ｊs脚本</li>
+</ol>
+<p><strong>建议：</strong><br>在正式上线项目前，将JavaScript和CSS都进行压缩，使线上版本是最轻量级的，大幅提升网站性能。</p>
+<h3 id="避免重定向"><a href="#避免重定向" class="headerlink" title="避免重定向"></a>避免重定向</h3><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8407.png" alt=""><br>重定向状态码：</p>
+<ol>
+<li>301:被移动到了另外的位置。<strong>永久重定向</strong></li>
+<li>302：用户请求页面被找到，但不在原始位置；<strong>临时重定向</strong><br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8408.png" alt=""><br>为什么避免重定向？<br>弊端：增加服务器到浏览器的访问次数；<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8409.png" alt=""></li>
+</ol>
+<h3 id="移除重复的脚本"><a href="#移除重复的脚本" class="headerlink" title="移除重复的脚本"></a>移除重复的脚本</h3><p>重复引用同一个脚本时,会产生一些意想不到的错误,尽量小心,不要重复引用</p>
+<h3 id="配置实体标签（ETAG）"><a href="#配置实体标签（ETAG）" class="headerlink" title="配置实体标签（ETAG）"></a>配置实体标签（ETAG）</h3><p>什么是ETag?<br>ETag：Entity Tag(实体标签)，属于HTTP协议，受web服务支持。<br>用特殊的字符串，来表示某个请求资源版本<br>·用户通过浏览器向服务器进行请求资源的时候，比对ETAG，如果浏览器的和服务器的etag一样，那就用本地的.<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8410.png" alt="10"></p>
+<blockquote>
+<p>在典型用法中，当一个URL被请求，Web服务器会返回资源和其相应的ETag值，它会被放置在HTTP的“ETag”字段中：<br>ETag: “686897696a7c876b7e”<br>然后，客户端可以决定是否缓存这个资源和它的ETag。以后，如果客户端想再次请求相同的URL，将会发送一个包含已保存的ETag和“If-None-Match”字段的请求。<br>If-None-Match: “686897696a7c876b7e”<br>客户端请求之后，服务器可能会比较客户端的ETag和当前版本资源的ETag。如果ETag值匹配，这就意味着资源没有改变，服务器便会发送回一个极短的响应，包含HTTP “304 未修改”的状态。304状态告诉客户端，它的缓存版本是最新的，并应该使用它。<br>然而，如果ETag的值不匹配，这就意味着资源很可能发生了变化，那么，一个完整的响应就会被返回，包括资源的内容，就好像ETag没有被使用。这种情况下，客户端可以用新返回的资源和新的ETag替代先前的缓存版本。<br>–摘自维基百科HTTP ETAG</p>
+</blockquote>
+<h3 id="使AJAX缓存"><a href="#使AJAX缓存" class="headerlink" title="使AJAX缓存"></a>使AJAX缓存</h3><p>AjAX:异步的JavaScript和XML,在不重新加载页面的情况下，使客户端与服务器间进行交换数据，它可以使网站内容进行分批加载，也可以局部更新内容。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/yahoo%E5%86%9B%E8%A7%8411.png" alt="11"></p>
+<h3 id="Yslow工具插件"><a href="#Yslow工具插件" class="headerlink" title="Yslow工具插件"></a>Yslow工具插件</h3><p>Yslow插件，功能：网站性能分析。对网站进行分析，给出优化报告。<br>YSlow（基于浏览器执行），在ff下执行的最好。<br>安装步骤：<br>1 安装fireBug<br>2 YSlow</p>
+<p>参考资源：</p>
+<ol>
+<li>慕课网 <a href="http://www.imooc.com/learn/50" target="_blank" rel="external">http://www.imooc.com/learn/50</a></li>
+<li>前端优化不完全指南: <a href="http://aotu.io/notes/2016/03/16/optimization/" target="_blank" rel="external">http://aotu.io/notes/2016/03/16/optimization/</a></li>
+<li>雅虎军规：<a href="http://www.alibuybuy.com/posts/62655.html" target="_blank" rel="external">http://www.alibuybuy.com/posts/62655.html</a></li>
+</ol>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="xifengxx WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="xifengxx Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网站性能/" rel="tag">#网站性能</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/24/企业网站综合布局实战/" rel="next" title="企业网站综合布局实战">
+                <i class="fa fa-chevron-left"></i> 企业网站综合布局实战
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/31/DOM探索/" rel="prev" title="DOM探索">
+                DOM探索 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/29/如何提高网站速度(Yahoo军规)/"
+           data-title="如何提高网站速度(Yahoo军规)" data-url="http://xifengxx.github.io/2016/05/29/如何提高网站速度(Yahoo军规)/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="xifengxx" />
+          <p class="site-author-name" itemprop="name">xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">41</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#尽可能减少HTTP请求数"><span class="nav-number">1.</span> <span class="nav-text">尽可能减少HTTP请求数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用CDN-内容分发网络"><span class="nav-number">2.</span> <span class="nav-text">使用CDN(内容分发网络)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加Expire-Cache-Control头"><span class="nav-number">3.</span> <span class="nav-text">添加Expire/Cache-Control头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用Gzip压缩"><span class="nav-number">4.</span> <span class="nav-text">启用Gzip压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将CSS房在页面最上方"><span class="nav-number">5.</span> <span class="nav-text">将CSS房在页面最上方</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将Script放在页面最下方"><span class="nav-number">6.</span> <span class="nav-text">将Script放在页面最下方</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#避免在CSS中使用Expressions"><span class="nav-number">7.</span> <span class="nav-text">避免在CSS中使用Expressions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把Javascript和CSS都放在外部文件中"><span class="nav-number">8.</span> <span class="nav-text">把Javascript和CSS都放在外部文件中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少DNS查询"><span class="nav-number">9.</span> <span class="nav-text">减少DNS查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小化JavaScript和CSS"><span class="nav-number">10.</span> <span class="nav-text">最小化JavaScript和CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#避免重定向"><span class="nav-number">11.</span> <span class="nav-text">避免重定向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除重复的脚本"><span class="nav-number">12.</span> <span class="nav-text">移除重复的脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置实体标签（ETAG）"><span class="nav-number">13.</span> <span class="nav-text">配置实体标签（ETAG）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使AJAX缓存"><span class="nav-number">14.</span> <span class="nav-text">使AJAX缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Yslow工具插件"><span class="nav-number">15.</span> <span class="nav-text">Yslow工具插件</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
