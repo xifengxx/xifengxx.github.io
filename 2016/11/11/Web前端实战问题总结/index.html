@@ -69,7 +69,7 @@
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-bug%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.png">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-minWidth.png">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/IE%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E5%8F%B3%E6%B5%AE%E5%8A%A8%E9%97%AE%E9%A2%98.jpg">
-<meta property="og:updated_time" content="2016-05-28T16:30:02.000Z">
+<meta property="og:updated_time" content="2016-06-09T00:15:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端实战问题总结">
 <meta name="twitter:description" content="经验技巧CSS技巧float及image问题&amp;lt;img&amp;gt;元素默认情况下底部会有空白,这样会导致页面排版时出现错乱问题。代码：">
@@ -368,7 +368,7 @@
 <li>将下面的代码放到html文件中的<code>&lt;head&gt;&lt;/head&gt;</code>之间,注意修改成正确的路径！<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if IE 6]&gt;</span><br><span class="line">&lt;script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type="text/javascript" src="js/ie6Fixpng.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="IE浏览器下图片边框问题"><a href="#IE浏览器下图片边框问题" class="headerlink" title="IE浏览器下图片边框问题"></a>IE浏览器下图片边框问题</h3><p>IE浏览器下，图片会自动加上黑色的边框，看起来不美观。<br>此问题不是图片自身问题（如格式问题,png24/png32/jpg/gif）<br>解决方法：<br>在相关CSS样式文件中为图片设置边框即可：<br><code>img{border:0;}</code></p>
+<h3 id="IE浏览器下图片边框问题"><a href="#IE浏览器下图片边框问题" class="headerlink" title="IE浏览器下图片边框问题"></a>IE浏览器下图片边框问题</h3><p>IE浏览器下，图片会自动加上黑色的边框，看起来不美观。<br>此问题不是图片自身问题（如格式问题,png24/png32/jpg/gif）<br>解决方法：<br>在相关CSS样式文件中为图片设置边框即可：<br><code>img{border:none;}</code>或<code>img{border:0;}</code></p>
 <h3 id="ie6行类标签浮动父级宽度的50-的bug"><a href="#ie6行类标签浮动父级宽度的50-的bug" class="headerlink" title="ie6行类标签浮动父级宽度的50%的bug"></a>ie6行类标签浮动父级宽度的50%的bug</h3><p><strong>问题描述：</strong><br>页面布局需要左右两块各占窗口的50%，把外层容器的宽度设为100%，左侧div宽50%左浮动，右侧同样50%有浮动。<br>调试时，其他浏览器都好用，只在ie6与ie7中出现问题，貌似多出一像素的宽，导致右侧被挤到下面去。<br><strong>解决方案</strong><br>将宽度设为49.9%即可。</p>
 <h3 id="IE6-7子元素超过父元素时触发的bug"><a href="#IE6-7子元素超过父元素时触发的bug" class="headerlink" title="IE6/7子元素超过父元素时触发的bug"></a>IE6/7子元素超过父元素时触发的bug</h3><p><strong>问题描述：</strong><br>IE6/7子元素不能超出父元素，否则会错乱；<br>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.products_title&#123;</span><br><span class="line">    height: 34px;</span><br><span class="line">    border-bottom: 2px solid #ccc;</span><br><span class="line">&#125;</span><br><span class="line">.products_title h3&#123;</span><br><span class="line">    width: 180px;</span><br><span class="line">    border-bottom: 2px solid #096DBA;</span><br><span class="line">    height: 34px;</span><br><span class="line">    line-height: 34px;</span><br><span class="line">    text-indent: 9px;</span><br></pre></td></tr></table></figure></p>
 <p>这里效果是需要两个底边框重合，但在IE6/7下会错乱。<br>修改如下，h3中添加代码：<br><code>margin-bottom: -2px;position: relative;</code><br>这里效果是需要两个底边框重合，所以要设置h3的margin-bottom=-2px，<br>这样两个底边框重合，但是父元素的底边框盖住了子元素h3的，<br>所以要设置子元素h3的相对定位relative，来提升h3的层级。*/</p>
@@ -434,8 +434,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/31/CSS常用命名规范(方法)/" rel="next" title="CSS常用命名规范(方法)">
-                <i class="fa fa-chevron-left"></i> CSS常用命名规范(方法)
+              <a href="/2016/06/09/Bootstrap学习笔记(1)/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -512,7 +512,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">41</span>
+              <span class="site-state-item-count">43</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -520,7 +520,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -529,7 +529,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
