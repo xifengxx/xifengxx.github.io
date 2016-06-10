@@ -1,0 +1,1017 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Bootstrap," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="导航条、分页导航导航条（navbar）和上一节介绍的导航（nav），就相差一个字，多了一个“条”字。其实在Bootstrap框架中他们还是明显的区别。在导航条(navbar)中有一个背景色、而且导航条可以是纯链接（类似导航），也可以是表单，还有就是表单和导航一起结合等多种形式。在这一节中将一起探讨Bootstrap框架中导航条的使用。
+导航条和导航一样，在Bootstrap框架中是一个独立组件，所">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootstrap学习笔记(2)">
+<meta property="og:url" content="http://xifengxx.github.io/2016/06/10/Bootstrap学习笔记(3)/index.html">
+<meta property="og:site_name" content="西风前端">
+<meta property="og:description" content="导航条、分页导航导航条（navbar）和上一节介绍的导航（nav），就相差一个字，多了一个“条”字。其实在Bootstrap框架中他们还是明显的区别。在导航条(navbar)中有一个背景色、而且导航条可以是纯链接（类似导航），也可以是表单，还有就是表单和导航一起结合等多种形式。在这一节中将一起探讨Bootstrap框架中导航条的使用。
+导航条和导航一样，在Bootstrap框架中是一个独立组件，所">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_13.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_14.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_15.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_16.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_17.jpg">
+<meta property="og:updated_time" content="2016-06-10T14:16:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bootstrap学习笔记(2)">
+<meta name="twitter:description" content="导航条、分页导航导航条（navbar）和上一节介绍的导航（nav），就相差一个字，多了一个“条”字。其实在Bootstrap框架中他们还是明显的区别。在导航条(navbar)中有一个背景色、而且导航条可以是纯链接（类似导航），也可以是表单，还有就是表单和导航一起结合等多种形式。在这一节中将一起探讨Bootstrap框架中导航条的使用。
+导航条和导航一样，在Bootstrap框架中是一个独立组件，所">
+<meta name="twitter:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_13.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Bootstrap学习笔记(2) | 西风前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/works.html" rel="section">
+            
+            作品Demo
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Bootstrap学习笔记(2)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-10T15:23:24+08:00" content="2016-06-10">
+              2016-06-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Bootstrap/" itemprop="url" rel="index">
+                    <span itemprop="name">Bootstrap</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/10/Bootstrap学习笔记(3)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/10/Bootstrap学习笔记(3)/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/10/Bootstrap学习笔记(3)/" class="leancloud_visitors" data-flag-title="Bootstrap学习笔记(2)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="导航条、分页导航"><a href="#导航条、分页导航" class="headerlink" title="导航条、分页导航"></a>导航条、分页导航</h3><p>导航条（navbar）和上一节介绍的导航（nav），就相差一个字，多了一个“条”字。<br>其实在Bootstrap框架中他们还是明显的区别。在导航条(navbar)中有一个背景色、而且导航条可以是纯链接（类似导航），也可以是表单，还有就是表单和导航一起结合等多种形式。在这一节中将一起探讨Bootstrap框架中导航条的使用。</p>
+<p>导航条和导航一样，在Bootstrap框架中是一个独立组件，所以你也可以根据自己的需求使用不同的版本：<br>—— LESS版本：对应的源文件navbar.less<br>—— Sass版本：对应的源文件_navbar.scss<br>—— 编译后的版本：查看bootstrap.css文件</p>
+<h4 id="基础导航条"><a href="#基础导航条" class="headerlink" title="基础导航条"></a>基础导航条</h4><p>在Bootstrap框中，导航条和导航从外观上差别不是太多，但在实际使用中导航条要比导航复杂得多。我们先来看导航条中最基础的一个——基础导航条。</p>
+<p><strong>使用方法：</strong><br>在制作一个基础导航条时，主要分以下几步：<br>第一步：首先在制作导航的列表(<code>&lt;ul class=”nav”&gt;</code>)基础上添加类名“navbar-nav”<br>第二步：在列表外部添加一个容器（div），并且使用类名“navbar”和“navbar-default”<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav navbar-nav"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>网站首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>系列教程<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>名师介绍<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>成功案例<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>关于我们<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>“.navbar”样式的主要功能就是设置左右padding和圆角等效果;<br>导航条的颜色都是通过“.navbar-default”来进行控制;<br>navbar-nav样式是在导航.nav的基础上重新调整了菜单项的浮动与内外边距。</p>
+<h4 id="为导航条添加标题、二级菜单及状态"><a href="#为导航条添加标题、二级菜单及状态" class="headerlink" title="为导航条添加标题、二级菜单及状态"></a>为导航条添加标题、二级菜单及状态</h4><p><strong>加入导航条标题</strong><br>在Bootstrap框架中，通过navbar-header”和“navbar-brand”来实现菜单前面的标题。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">  　<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar-header"</span>&gt;</span></span><br><span class="line">  　    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"navbar-brand"</span>&gt;</span>慕课网<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  　<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav navbar-nav"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>网站首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>系列教程<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>关于我们<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>导航条状态、二级菜单</strong><br>在基础导航条中对菜单提供了当前状态(.active)，禁用状态(.disabled)，悬浮状态等效果，而且也可以带有二级菜单的导航条<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">  　<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar-header"</span>&gt;</span></span><br><span class="line">  　    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"navbar-brand"</span>&gt;</span>慕课网<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  　<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav navbar-nav"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>网站首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"dropdown"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">data-toggle</span>=<span class="string">"dropdown"</span> <span class="attr">class</span>=<span class="string">"dropdown-toggle"</span>&gt;</span>系列教程<span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"caret"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"dropdown-menu"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>CSS3<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"disabled"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>PHP<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>名师介绍<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>成功案例<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>关于我们<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="带表单的导航条"><a href="#带表单的导航条" class="headerlink" title="带表单的导航条"></a>带表单的导航条</h4><p>在Bootstrap框架中提供了一个“navbar-form”，使用方法很简单，在navbar容器中放置一个带有navbar-form类名的表单.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">  　<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar-header"</span>&gt;</span></span><br><span class="line">  　    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"navbar-brand"</span>&gt;</span>慕课网<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  　<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav navbar-nav"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>网站首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>名师介绍<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>成功案例<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>关于我们<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"navbar-form navbar-left"</span> <span class="attr">rol</span>=<span class="string">"search"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">placeholder</span>=<span class="string">"请输入关键词"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">class</span>=<span class="string">"btn btn-default"</span>&gt;</span>搜索<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在上面的示例中，大家看到了“navbar-left”让表单左浮动，更好实现对齐。在Bootstrap框架中，还提供了“navbar-right”样式，让元素在导航条靠右对齐。<br>Bootstrap中源码部分：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">768px</span>) &#123;</span><br><span class="line"> <span class="selector-class">.navbar-left</span> &#123;</span><br><span class="line"> <span class="attribute">float</span>: left <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.navbar-right</span> &#123;</span><br><span class="line"> <span class="attribute">float</span>: right <span class="meta">!important</span>;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意：这里有一个条件，只有当浏览器视窗宽度大于768px生效。</p>
+<h4 id="导航条中的按钮、文本和链接"><a href="#导航条中的按钮、文本和链接" class="headerlink" title="导航条中的按钮、文本和链接"></a>导航条中的按钮、文本和链接</h4><p>Bootstrap框架的导航条中除了使用navbar-brand中的a元素和navbar-nav的ul和navbar-form之外，还可以使用其他元素。框架提供了三种其他样式：<br>1、导航条中的按钮navbar-btn<br>2、导航条中的文本navbar-text<br>3、导航条中的普通链接navbar-link</p>
+<p>但这三种样式在框架中使用时受到一定的限制，需要和navbar-brand、navbar-nav配合起来使用。而且对数量也有一定的限制，一般情况在使用一到两个不会有问题，超过两个就会有问题。</p>
+<p>可以使用 class .navbar-btn 向不在 <code>&lt;form&gt;</code> 中的 <code>&lt;button&gt;</code> 元素添加按钮，按钮在导航栏上垂直居中。.navbar-btn 可被使用在<code>&lt;a&gt;</code> 和 <code>&lt;input&gt;</code> 元素上。<br>如果需要在导航中包含文本字符串，请使用 class .navbar-text。这通常与<code>&lt;p&gt;</code> 标签一起使用，确保适当的前导和颜色。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar-header"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"navbar-brand"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>W3Cschool<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"navbar-text"</span>&gt;</span>Signed in as Thomas<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>如果您不想在常规的导航栏导航组件内使用标准的链接，那么请使用 class navbar-link 来为默认的和倒转的导航栏选项添加适当的颜色<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"navbar-text navbar-right"</span>&gt;</span>Signed in as </span><br><span class="line">         <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"navbar-link"</span>&gt;</span>Thomas<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="固定导航条"><a href="#固定导航条" class="headerlink" title="固定导航条"></a>固定导航条</h4><p>Bootstrap框架提供了两种固定导航条的方式：<br>   ☑  .navbar-fixed-top：导航条固定在浏览器窗口顶部<br>   ☑  .navbar-fixed-bottom：导航条固定在浏览器窗口底部</p>
+<p>使用方法很简单，只需要在制作导航条最外部容器navbar上追加对应的类名即可：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default navbar-fixed-top"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">　…</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span>我是内容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default navbar-fixed-bottom"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">　…</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>实现原理很简单，就是在navbar-fixed-top和navbar-fixed-bottom使用了<code>position：fixed</code>属性，并且设置navbar-fixed-top的top值为0,而navbar-fixed-bottom的bottom值为0</p>
+<p><strong>存在bug及解决方法:</strong><br>页面主内容顶部和底部都被固定导航条给遮住了。<br>解法方法：<br>1、为了避免固定导航条遮盖内容，我们需要在body上做一些处理：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="number">70px</span>;<span class="comment">/*有顶部固定导航条时设置*/</span></span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">70px</span>;<span class="comment">/*有底部固定导航条时设置*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>因为固定导航条默认高度是50px，我们一般设置padding-top和padding-bottom的值为70px，当然有的时候还是需要具体情况具体分析。<br>2、把固定导航条都放在页面内容前面：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default navbar-fixed-top"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">　…</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default navbar-fixed-bottom"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">　…</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span>我是内容<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在文件中添加下列样式代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.navbar-fixed-top</span> ~ <span class="selector-class">.content</span> &#123;</span><br><span class="line">   <span class="attribute">padding-top</span>: <span class="number">70px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.navbar-fixed-bottom</span> ~ <span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">70px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="静态导航条"><a href="#静态导航条" class="headerlink" title="静态导航条"></a>静态导航条</h4><p>如需创建能随着页面一起滚动的导航栏，请添加 .navbar-static-top class。该 class 不要求向 <body> 添加内边距（padding）。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default navbar-static-top"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar-header"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"navbar-brand"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>W3Cschool<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav navbar-nav"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>iOS<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>SVN<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"dropdown"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"dropdown-toggle"</span> <span class="attr">data-toggle</span>=<span class="string">"dropdown"</span>&gt;</span></span><br><span class="line">               Java <span class="tag">&lt;<span class="name">b</span> <span class="attr">class</span>=<span class="string">"caret"</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"dropdown-menu"</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>jmeter<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>EJB<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">               <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>Jasper Report<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 此处为正文内容 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></body></p>
+<h4 id="响应式导航条"><a href="#响应式导航条" class="headerlink" title="响应式导航条"></a>响应式导航条</h4><p><strong>使用方法：</strong><br>1、保证在窄屏时需要折叠的内容必须包裹在一个div内，并且为这个div加入collapse、navbar-collapse两个类名。最后为这个div添加一个class类名或者id名。<br>2、保证在窄屏时要显示的图标样式（固定写法）：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"navbar-toggle"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">data-toggle</span>=<span class="string">"collapse"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"sr-only"</span>&gt;</span>Toggle Navigation<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"icon-bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"icon-bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"icon-bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>折叠起来的导航栏实际上是一个带有 class .navbar-toggle 及两个 data- 元素的按钮。第一个是 data-toggle，用于告诉 JavaScript 需要对按钮做什么，第二个是 data-target，指示要切换到哪一个元素。三个带有 class .icon-bar 的 <code>&lt;span&gt;</code>创建所谓的汉堡按钮。这些会切换为 .nav-collapse <code>&lt;div&gt;</code> 中的元素。<br>3、并为button添加data-target=”.类名/#id名”，究竞是类名还是id名呢？由需要折叠的div来决定。如：<br>需要折叠的div代码段：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"collapse navbar-collapse"</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav navbar-nav"</span>&gt;</span></span><br><span class="line">      …</span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>窄屏时显示的图标代码段：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"navbar-toggle"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">data-toggle</span>=<span class="string">"collapse"</span> <span class="attr">data-target</span>=<span class="string">"#example"</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>案例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar-header"</span>&gt;</span></span><br><span class="line">     　<span class="comment">&lt;!-- .navbar-toggle样式用于toggle收缩的内容，即nav-collapse collapse样式所在元素 --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"navbar-toggle"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">data-toggle</span>=<span class="string">"collapse"</span> <span class="attr">data-target</span>=<span class="string">".navbar-responsive-collapse"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"sr-only"</span>&gt;</span>Toggle Navigation<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"icon-bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"icon-bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"icon-bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- 确保无论是宽屏还是窄屏，navbar-brand都显示 --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"navbar-brand"</span>&gt;</span>慕课网<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 屏幕宽度小于768px时，div.navbar-responsive-collapse容器里的内容都会隐藏，显示icon-bar图标，当点击icon-bar图标时，再展开。屏幕大于768px时，默认显示。 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"collapse navbar-collapse navbar-responsive-collapse"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav navbar-nav"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>网站首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>系列教程<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>名师介绍<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>成功案例<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>关于我们<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="反色导航条"><a href="#反色导航条" class="headerlink" title="反色导航条"></a>反色导航条</h4><p>反色导航条其实是Bootstrap框架为大家提供的第二种风格的导航条(创建一个带有黑色背景白色文本的倒置的导航条)，与默认的导航条相比，使用方法并无区别，只是将navbar-deafult类名换成navbar-inverse。其变化只是导航条的背景色和文本做了修改。如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar  navbar-inverse"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav bar-header"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"navbar-brand"</span>&gt;</span>慕课网<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav navbar-nav"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>教程<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>关于我们<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="分页导航"><a href="#分页导航" class="headerlink" title="分页导航"></a>分页导航</h4><p>分页导航几乎在哪个网站都可见。好的分页导航能给用户带来更好的用户体验。在Bootstrap框架中提供了两种分页导航：<br>   ☑   带页码的分页导航<br>   ☑   带翻页的分页导航</p>
+<h5 id="带页码的分页导航"><a href="#带页码的分页导航" class="headerlink" title="带页码的分页导航"></a>带页码的分页导航</h5><p>在Bootstrap框架为开发者提供不同的版本：<br>   ☑   LESS版本：对应的源文件pagination.less<br>   ☑   Sass版本：对应的源文件_pagination.scss<br>   ☑   编译后版本：对应bootstrap.css文件相关内容</p>
+<p><strong>使用方法：</strong><br>平时很多同学喜欢用div&gt;a和div&gt;span结构来制作带页码的分页导航。不过，在Bootstrap框架中使用的是ul&gt;li&gt;a这样的结构，在ul标签上加入pagination方法：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"pagination"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>&amp;laquo;第一页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>5<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"disabled"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>最后一页&amp;raquo;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>大小设置：</strong><br>在Bootstrap框架中，也可以通过几个不同的情况来设置其大小。类似于按钮一样：<br>1、通过“pagination-lg”让分页导航变大；<br>2、通过“pagination-sm”让分页导航变小：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"pagination pagination-lg"</span>&gt;</span></span><br><span class="line"> …</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"pagination"</span>&gt;</span></span><br><span class="line"> …</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"pagination pagination-sm"</span>&gt;</span></span><br><span class="line"> …</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="翻页分页导航"><a href="#翻页分页导航" class="headerlink" title="翻页分页导航"></a>翻页分页导航</h5><p>这种分页导航常常在一些简单的网站上看到，比如说个人博客，杂志网站等。这种分页导航是看不到具体的页码，只会提供一个“上一页”和“下一页”的按钮。<br>Bootstrap框架将其独立成一个单独的部分：<br>  ☑   LESS版本：对应源文件为pager.less<br>  ☑  Sass版本：对应源文件为_pager.scss<br>  ☑  编译后版本：对应bootstrap.css文件第4223行～第4260行</p>
+<p><strong>使用方法：</strong><br>在实际使用中，翻页分页导航和带页码的分页导航类似，为ul标签加入pager类：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"pager"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>&amp;laquo;上一页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>下一页&amp;raquo;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>对齐样式设置：</strong><br>默认情况之下，翻页分页导航是居中显示，但有的时候我们需要一个居左，一个居右。Bootstrap框架提供了两个样式：<br>   ☑   previous：让“上一步”按钮居左<br>   ☑   next：让“下一步”按钮居右<br>具体使用的时候，只需要在li标签上添加对应类名即可：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"pager"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"previous"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>&amp;laquo;上一页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"next"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>下一页&amp;raquo;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>状态样式设置：</strong><br>和带页码分页导航一样，如果在li标签上添加了disabled类名的时候，分页按钮处于禁用状态，但同样不能禁止其点击功能。你可以通过js来处理，或将a标签换成span标签。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"pager"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"disabled"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>&amp;laquo;上一页<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>下一页&amp;raquo;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><p>在一些Web页面中常常会添加一个标签用来告诉用户一些额外的信息，比如说在导航上添加了一个新导航项，可能就会加一个“new”标签，来告诉用户。这是新添加的导航项。<br>在Bootstrap框架中特意将这样的效果提取出来成为一个标签组件，并且以“.label”样式来实现高亮显示。<br>使用方法很简单，你可以在使用span这样的行内标签：<br><code>&lt;h3&gt;Example heading &lt;span class=&quot;label label-default&quot;&gt;New&lt;/span&gt;&lt;/h3&gt;</code><br>有的时候标签内没有内容的时候，可以借助CSS3的:empty伪元素将其隐藏：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.label</span><span class="selector-pseudo">:empty</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>颜色样式设置：</strong><br>和按钮元素button类似，label样式也提供了多种颜色：<br>  ☑   label-deafult:默认标签，深灰色<br>  ☑   label-primary：主要标签，深蓝色<br>  ☑   label-success：成功标签，绿色<br>  ☑   label-info：信息标签，浅蓝色<br>  ☑   label-warning：警告标签，橙色<br>  ☑   label-danger：错误标签，红色<br>主要是通过这几个类名来修改背景颜色和文本颜色：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"label label-default"</span>&gt;</span>默认标签<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"label label-primary"</span>&gt;</span>主要标签<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"label label-success"</span>&gt;</span>成功标签<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"label label-info"</span>&gt;</span>信息标签<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"label label-warning"</span>&gt;</span>警告标签<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"label label-danger"</span>&gt;</span>错误标签<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="徽章"><a href="#徽章" class="headerlink" title="徽章"></a>徽章</h4><p>从某种意义上来说，徽章效果和前面介绍的标签效果是极其的相似。也是用来做一些提示信息使用。常出现的是一些系统发出的信息，比如你登录你的twitter后，如果你信息没有看，系统会告诉你有多少信息未读.<br>在Bootstrap框架中，把这种效果称作为徽章效果，使用“badge”样式来实现。<br>你可以像标签一样，使用span标签来制作，然后为他加入badge类：<br><code>&lt;a href=&quot;#&quot;&gt;Inbox &lt;span class=&quot;badge&quot;&gt;42&lt;/span&gt;&lt;/a&gt;</code></p>
+<h3 id="BootStrap其他内置组件"><a href="#BootStrap其他内置组件" class="headerlink" title="BootStrap其他内置组件"></a>BootStrap其他内置组件</h3><h4 id="缩略图"><a href="#缩略图" class="headerlink" title="缩略图"></a>缩略图</h4><p>缩略图在网站中最常用的地方就是产品列表页面，一行显示几张图片，有的在图片底下（左侧或右侧）带有标题、描述等信息。<br>Bootstrap框架将这一部独立成一个模块组件。并通过“thumbnail”样式配合bootstrap的网格系统来实现。可以将产品列表页变得更好看。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6 col-md-3"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"thumbnail"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://img.mukewang.com/5434eba100014fe906000338.png"</span> <span class="attr">style</span>=<span class="string">"height: 180px; width: 100%; display: block;"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    …</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>上面的结构表示的是在宽屏幕（可视区域大于768px）的时候，一行显示四个缩略图;在窄屏（可视区域小于768px）的时候，一行只显示两个缩略图.</p>
+<p>缩略图还可配合标题、描述内容，按钮等，形成丰富多彩的排版布局。<br>在仅有缩略图的基础上，添加了一个div名为“caption“的容器，在这个容器中放置其他内容，比如说标题，文本描述，按钮等：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-xs-6 col-md-3"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"thumbnail"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/images/1.jpg"</span> <span class="attr">style</span>=<span class="string">"height: 180px; width: 100%; display: block;"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"caption"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">h3</span>&gt;</span>Bootstrap框架系列教程<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span>Bootstrap框架是一个优秀的前端框，就算您是一位后端程序员或者你是一位不懂设计的前端人员，你也能依赖于Bootstrap制作做优美的网站...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>开始学习<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"btn btn-info"</span>&gt;</span>正在学习<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    …</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="警示框"><a href="#警示框" class="headerlink" title="警示框"></a>警示框</h4><p>在Bootstrap框架有一个独立的组件，实现上述的效果(当用户操作上下文为用户提供一些有效的警示框，比如说告诉用户操作成功、操作错误、提示或者警告等。)，这个组件被称为警示框。</p>
+<h5 id="默认警示框"><a href="#默认警示框" class="headerlink" title="默认警示框"></a>默认警示框</h5><p>Bootstrap框架通过“alert“样式来实现警示框效果。在默认情况之下，提供了四种不同的警示框效果：<br>  1、成功警示框：告诉用用户操作成功，在“alert”样式基础上追加“alert-success”样式，具体呈现的是背景、边框和文本都是绿色；<br>  2、信息警示框：给用户提供提示信息，在“alert”样式基础上追加“alert-info”样式，具体呈现的是背景、边框和文本都是浅蓝色；<br>  3、警告警示框：提示用户小心操作（提供警告信息），在“alert”样式基础上追加“alert-warning”样式，具体呈现的是背景、边框、文本都是浅黄色；<br>  4、错误警示框：提示用户操作错误，在“alert”样式基础上追加“alert-danger”样式，具体呈现的是背景、边框和文本都是浅红色。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_13.jpg" alt="13"><br>具体使用的时候，可以在类名为“alert”的div容器里放置提示信息。实现不同类型警示框，只需要在“alert”基础上追加对应的类名，如下：<br><code>&lt;div class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;恭喜您操作成功！&lt;/div&gt;</code></p>
+<h5 id="可关闭的警示框"><a href="#可关闭的警示框" class="headerlink" title="可关闭的警示框"></a>可关闭的警示框</h5><p>一些警示框带有关闭按钮，用户一点击关闭按钮就能自动关闭显示的警示框（也就是让警示框隐藏不显示）。<br>在Bootstrap框架中,只需要在默认的警示框里面添加一个关闭按钮。然后进行三个步骤：<br>  1、需要在基本警示框“alert”的基础上添加“alert-dismissable”样式。<br>  2、在button标签中加入class=”close”类，实现警示框关闭按钮的样式。<br>  3、要确保关闭按钮元素上设置了自定义属性：“data-dismiss=”alert””（因为可关闭警示框需要借助于Javascript来检测该属性，从而控制警示框的关闭）。</p>
+<p>具体使用如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-success alert-dismissable"</span> <span class="attr">role</span>=<span class="string">"alert"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"close"</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">data-dismiss</span>=<span class="string">"alert"</span>&gt;</span>&amp;times;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    恭喜您操作成功！</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="警示框的链接"><a href="#警示框的链接" class="headerlink" title="警示框的链接"></a>警示框的链接</h5><p>有时候你可能想在警示框中加入链接地址，用来告诉用户跳到某一个地方或新的页面。而这个时候你又想让用户能明显的看出来这是链接地址。在Bootstrap框架中对警示框里的链接样式做了一个高亮显示处理。为不同类型的警示框内的链接进行了加粗处理，并且颜色相应加深。<br><strong>实现方法：</strong><br>Bootstrap框架是通过给警示框加的链接添加一个名为“alert-link”的类名，通过“alert-link”样式给链接提供高亮显示。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-success"</span> <span class="attr">role</span>=<span class="string">"alert"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">strong</span>&gt;</span>Well done!<span class="tag">&lt;/<span class="name">strong</span>&gt;</span> </span><br><span class="line">    You successfully read </span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"alert-link"</span>&gt;</span>this important alert message<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="进度条"><a href="#进度条" class="headerlink" title="进度条"></a>进度条</h4><p>进度条和其他独立组件一样，开发者可以根据自己的需要，选择对应的版本：<br>  ☑ LESS版本：源码文件progress-bars.less<br>  ☑ Sass版本：源码文件_progress-bars.scss<br>  ☑ 编译后版本：bootstrap.css文件第4500行～第4575行<br>而且Bootstrap框架为大家提供多种样式风格的进度条，供大家使用.</p>
+<h5 id="进度条-基本样式"><a href="#进度条-基本样式" class="headerlink" title="进度条-基本样式"></a>进度条-基本样式</h5><p>Bootstrap框架中对于进度条提供了一个基本样式，一个100%宽度的背景色，然后个高亮的色表示完成进度。其实制作这样的进度条非常容易，一般是使用两个容器，外容器具有一定的宽度，并且设置一个背景颜色，他的子元素设置一个宽度，比如完成度是30%（也就是父容器的宽度比例值），同时给其设置一个高亮的背景色。</p>
+<p><strong>使用方法：</strong><br>Bootstrap框架中也是按这样的方式实现的，他提供了两个容器，外容器使用“progress”样式，子容器使用“progress-bar”样式。其中progress用来设置进度条的容器样式，而progress-bar用于限制进度条的进度。使用方法非常的简单：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress-bar"</span> <span class="attr">style</span>=<span class="string">"width:40%"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>实现原理：</strong><br>progress样式主要设置进度条容器的背景色，容器高度、间距等;<br>progress-bar样式在设置进度方向，重要的是设置了进度条的背景颜色和过渡效果.</p>
+<p><strong>结构优化：</strong><br>虽然这样实现了基本进度条效果，但对于残障人员浏览网页有点困难，所以我们可以将结构做得更好些（语义化更友好些）：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress-bar"</span> <span class="attr">style</span>=<span class="string">"width:40%;"</span> <span class="attr">role</span>=<span class="string">"progressbar"</span> <span class="attr">aria-valuenow</span>=<span class="string">"40"</span> <span class="attr">aria-valuemin</span>=<span class="string">"0"</span> <span class="attr">aria-valuemax</span>=<span class="string">"100"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"sr-only"</span>&gt;</span>40% Complete<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>1、role属性作用：告诉搜索引擎这个div的作用是进度条。<br>2、aria-valuenow=”40”属性作用：当前进度条的进度为40%。<br>3、aria-valuemin=”0”属性作用：进度条的最小值为0%。<br>4、aria-valuemax=”100”属性作用：进度条的最大值为100%。</p>
+<h5 id="进度条-彩色进度条"><a href="#进度条-彩色进度条" class="headerlink" title="进度条-彩色进度条"></a>进度条-彩色进度条</h5><p>Bootstrap框架中的进度条,根据不同的状态配置了不同的进度条颜色。在此称为彩色进度条，其主要包括以下四种：<br>  ☑ progress-bar-info：表示信息进度条，进度条颜色为蓝色<br>  ☑ progress-bar-success：表示成功进度条，进度条颜色为绿色<br>  ☑ progress-bar-warning：表示警告进度条，进度条颜色为黄色<br>  ☑ progress-bar-danger：表示错误进度条，进度条颜色为红色</p>
+<p><strong>使用方法：</strong><br>只需要在基础的进度上增加对应的类名。如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress-bar progress-bar-success"</span> <span class="attr">style</span>=<span class="string">"width:40%"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress-bar progress-bar-info"</span> <span class="attr">style</span>=<span class="string">"width:60%"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="进度条-条纹进度条"><a href="#进度条-条纹进度条" class="headerlink" title="进度条-条纹进度条"></a>进度条-条纹进度条</h5><p>在Bootstrap框架中,条纹进度条采用CSS3的线性渐变来实现，并未借助任何图片。<br>使用Bootstrap框架中的条纹进度条只需要在进度条的容器“progress”基础上增加类名“progress-striped”，当然，如果你要让你的进度条条纹像彩色进度一样，具有彩色效果，你只需要在进度条上增加相应的颜色类名.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress progress-striped"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress-bar progress-bar-success"</span> <span class="attr">style</span>=<span class="string">"width:40%"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="进度条-动态条纹进度条"><a href="#进度条-动态条纹进度条" class="headerlink" title="进度条-动态条纹进度条"></a>进度条-动态条纹进度条</h5><p><strong>使用方法：</strong><br>在进度条“progress progress-striped”两个类的基础上再加入“active”类名。如下代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress progress-striped active"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress-bar progress-bar-success"</span> <span class="attr">style</span>=<span class="string">"width:40%"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>实现原理：</strong><br>为了让条纹进度条动起来，Bootstrap框架还提供了一种动态条纹进度条。其实现原理主要通过CSS3的animation来完成。首先通过@keyframes创建了一个progress-bar-stripes的动画，这个动画主要做了一件事，就是改变背景图像的位置，也就是background-position的值。因为条纹进度条是通过CSS3的线性渐变来制作的，而linear-gradient实现的正是对应背景中的背景图片。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">keyframes</span> progress-bar-stripes &#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: <span class="number">40px</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;</span><br><span class="line">    <span class="attribute">background-position</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>@keyframes仅仅是创建了一个动画效果，如果要让进度条真正的动起来，我们需要通过一定的方式调用@keyframes创建的动画“progress-bar-stripes”，并且通过一个事件触发动画生效。在Bootstrap框架中，通过给进度条容器“progress”添加一个类名“active”，并让文档加载完成就触“progress-bar-stripes”动画生效。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress progress-striped active"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress-bar progress-bar-success"</span> <span class="attr">style</span>=<span class="string">"width:40%"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>调用动画对应的样式代码如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.progress</span><span class="selector-class">.active</span> <span class="selector-class">.progress-bar</span> &#123;</span><br><span class="line">  <span class="attribute">-webkit-animation</span>: progress-bar-stripes <span class="number">2s</span> linear infinite;</span><br><span class="line">          <span class="attribute">animation</span>: progress-bar-stripes <span class="number">2s</span> linear infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="进度条-层叠进度条"><a href="#进度条-层叠进度条" class="headerlink" title="进度条-层叠进度条"></a>进度条-层叠进度条</h5><p>层叠进度条，可以将不同状态的进度条放置在一起，按水平方式排列。具体使用如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress-bar progress-bar-success"</span> <span class="attr">style</span>=<span class="string">"width:20%"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress-bar progress-bar-info"</span> <span class="attr">style</span>=<span class="string">"width:10%"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress-bar progress-bar-warning"</span> <span class="attr">style</span>=<span class="string">"width:30%"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress-bar progress-bar-danger"</span> <span class="attr">style</span>=<span class="string">"width:15%"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>层叠进度条宽度之和不能大于100%，大于100%就会造成下面的不良效果,溢出。</p>
+<h5 id="进度条-带Label的进度条"><a href="#进度条-带Label的进度条" class="headerlink" title="进度条-带Label的进度条"></a>进度条-带Label的进度条</h5><p>只需要在进度条中添加你需要的值，即可实现：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"progress-bar progress-bar-success"</span>  <span class="attr">role</span>=<span class="string">"progressbar"</span> <span class="attr">aria-valuenow</span>=<span class="string">"20"</span> <span class="attr">aria-valuemin</span>=<span class="string">"0"</span> <span class="attr">aria-valuemax</span>=<span class="string">"100"</span> <span class="attr">style</span>=<span class="string">"width:20%"</span>&gt;</span>20%<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="媒体对象"><a href="#媒体对象" class="headerlink" title="媒体对象"></a>媒体对象</h4><p>在Web页面或者说移动页面制作中，常常看到这样的效果，左边居左（或居右），内容居右（或居左）排列，如下图所示：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_14.jpg" alt="14"></p>
+<p>我们常常把这样的效果称为媒体对象。可以说他是一种抽像的样式，可以用来构建不同类型的组件。这些组件都具有开篇所说的样式风格。那么在Bootstrap框架中特意将些部分提取出来做来一个组件介绍。其对应的版本文件：<br>  ☑ LESS版本：对应的源文件是media.less<br>  ☑ Sass版本：对应的源文件是_media.scss<br>  ☑ 编译后版本：对应bootstrap.css文件第4792行～第4819行</p>
+<h5 id="默认媒体对象"><a href="#默认媒体对象" class="headerlink" title="默认媒体对象"></a>默认媒体对象</h5><p>媒体对象一般是成组出现，而一组媒体对象常常包括以下几个部分：<br>  ☑   媒体对像的容器：常使用“media”类名表示，用来容纳媒体对象的所有内容<br>  ☑  媒体对像的对象：常使用“media-object”表示，就是媒体对象中的对象，常常是图片<br>  ☑  媒体对象的主体：常使用“media-body”表示，就是媒体对像中的主体内容，可以是任何元素，常常是图片侧边内容<br>  ☑  媒体对象的标题：常使用“media-heading”表示，就是用来描述对象的一个标题，此部分可选<br>如下图所示：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_15.jpg" alt="15"></p>
+<p>除了上面四个部分之外，在Bootstrap框架中还常常使用“pull-left”或者“pull-right”来控制媒体对象中的对象浮动方式。<br>在具体使用中如下所示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"pull-left"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"media-object"</span> <span class="attr">src</span>=<span class="string">"http://img.mukewang.com/52e1d29d000161fe06000338-300-170.jpg"</span> <span class="attr">alt</span>=<span class="string">"..."</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media-body"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"media-heading"</span>&gt;</span>系列：十天精通CSS3<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="媒体对象的嵌套"><a href="#媒体对象的嵌套" class="headerlink" title="媒体对象的嵌套"></a>媒体对象的嵌套</h5><p>在评论系统中，常常能看到下图的效果：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_16.jpg" alt="16"><br>从外往里看，这里有三个媒体对象，只不过是一个嵌套在另一个的里面。<br>在Bootstrap框架中的媒体对象也具备这样的功能，只需要将另一个媒体对象结构放置在媒体对象的主体内“media-body”，如下所示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"pull-left"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"media-object"</span> <span class="attr">src</span>=<span class="string">"…"</span> <span class="attr">alt</span>=<span class="string">"..."</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media-body"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"media-heading"</span>&gt;</span>Media Heading<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>…<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"pull-left"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"media-object"</span> <span class="attr">src</span>=<span class="string">"…"</span> <span class="attr">alt</span>=<span class="string">"..."</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media-body"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"media-heading"</span>&gt;</span>Media Heading<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span>&gt;</span>…<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"pull-left"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"media-object"</span> <span class="attr">src</span>=<span class="string">"…"</span> <span class="attr">alt</span>=<span class="string">"..."</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media-body"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"media-heading"</span>&gt;</span>Media Heading<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">div</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="媒体对象列表"><a href="#媒体对象列表" class="headerlink" title="媒体对象列表"></a>媒体对象列表</h5><p>媒体对象的嵌套仅是媒体对象中一个简单应用效果之一，在很多时候，我们还会碰到一个列表，每个列表项都和媒体对象长得差不多，同样用评论系统来说事：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_17.jpg" alt="17"><br><strong>使用方法：</strong><br>针对上图的媒体对象列表效果，Bootstrap框架提供了一个列表展示的效果，在写结构的时候可以使用ul，并且在ul上添加类名“media-list”，在li上使用“media”，示例代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"media-list"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"media"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"pull-left"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"media-object"</span> <span class="attr">src</span>=<span class="string">" "</span> <span class="attr">alt</span>=<span class="string">"..."</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"media-body"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"media-heading"</span>&gt;</span>Media Header<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span>&gt;</span>…<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"media"</span>&gt;</span>…<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"media"</span>&gt;</span>…<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="列表组"><a href="#列表组" class="headerlink" title="列表组"></a>列表组</h4><p>列表组是Bootstrap框架新增的一个组件，可以用来制作列表清单、垂直导航等效果，也可以配合其他的组件制作出更漂亮的组件。</p>
+<h5 id="基础列表组"><a href="#基础列表组" class="headerlink" title="基础列表组"></a>基础列表组</h5><p>基础列表组，看上去就是去掉了列表符号的列表项，并且配上一些特定的样式。在Bootstrap框架中的基础列表组主要包括两个部分：<br>  ☑  list-group：列表组容器，常用的是ul元素，当然也可以是ol或者div元素<br>  ☑  list-group-item：列表项，常用的是li元素，当然也可以是div元素</p>
+<p>来看一个简单的示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"list-group"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span>揭开CSS3的面纱<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span>CSS3选择器<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span>CSS3边框<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span>CSS3背景<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span>CSS3文本<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="带徽章的列表组"><a href="#带徽章的列表组" class="headerlink" title="带徽章的列表组"></a>带徽章的列表组</h5><p>带徽章的列表组其实就是将Bootstrap框架中的徽章组件和基础列表组结合在一起的一个效果。具体做法很简单，只需要在“list-group-item”中添加徽章组件“badge”：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"list-group"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"badge"</span>&gt;</span>13<span class="tag">&lt;/<span class="name">span</span>&gt;</span>揭开CSS3的面</span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"badge"</span>&gt;</span>456<span class="tag">&lt;/<span class="name">span</span>&gt;</span>CSS3选择器</span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"badge"</span>&gt;</span>892<span class="tag">&lt;/<span class="name">span</span>&gt;</span>CSS3边框</span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="带链接的列表组"><a href="#带链接的列表组" class="headerlink" title="带链接的列表组"></a>带链接的列表组</h5><p>带链接的列表组，其实就是每个列表项都具有链接效果。也就是在基础列表组的基础上，给列表项的文本添加链接：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"list-group"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>揭开CSS3的面<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>CSS3选择器<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这样做有一个不足之处，就是链接的点击区域只在文本上有效.如果希望在列表项的任何区域都具备可点击。这个时候就需要在链接标签上增加额外的样式：“display:block”；</p>
+<p>但在Bootstrap框架中，还是采用了另一种实现方式。就是将ul.list-group使用div.list-group来替换，而li.list-group-item直接用a.list-group-item来替换。这样就可以达到需要的效果：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"list-group"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span>图解CSS3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"badge"</span>&gt;</span>220<span class="tag">&lt;/<span class="name">span</span>&gt;</span>Sass教程<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span>玩转Bootstrap<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="自定义列表组"><a href="#自定义列表组" class="headerlink" title="自定义列表组"></a>自定义列表组</h5><p>Bootstrap框加在链接列表组的基础上新增了两个样式：<br>  ☑  list-group-item-heading：用来定义列表项头部样式<br>  ☑  list-group-item-text：用来定义列表项主要内容</p>
+<p>这两个样式最大的作用就是用来帮助开发者可以自定义列表项里的内容，如下面的示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"list-group"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"list-group-item-heading"</span>&gt;</span>图解CSS3<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"list-group-item-text"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"list-group-item-heading"</span>&gt;</span>Sass中国<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"list-group-item-text"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="列表项的状态设置"><a href="#列表项的状态设置" class="headerlink" title="列表项的状态设置"></a>列表项的状态设置</h5><p>Bootstrap框架也给组合列表项提供了状态效果，特别是链接列表组。比如常见状态和禁用状态等。实现方法和前面介绍的组件类似，在列表组中只需要在对应的列表项中添加类名：<br>  ☑  active：表示当前状态<br>  ☑  disabled：表示禁用状态<br>示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"list-group"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"list-group-item active"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"badge"</span>&gt;</span>5902<span class="tag">&lt;/<span class="name">span</span>&gt;</span>图解CSS3<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"badge"</span>&gt;</span>15902<span class="tag">&lt;/<span class="name">span</span>&gt;</span>W3cplus<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"list-group-item"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"badge"</span>&gt;</span>59020<span class="tag">&lt;/<span class="name">span</span>&gt;</span>慕课网<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"list-group-item disabled"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"badge"</span>&gt;</span>0<span class="tag">&lt;/<span class="name">span</span>&gt;</span>Sass中国<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="多彩列表组"><a href="#多彩列表组" class="headerlink" title="多彩列表组"></a>多彩列表组</h5><p>列表组组件和警告组件一样，Bootstrap为不同的状态提供了不同的背景颜色和文本色，可以使用这几个类名定义不同背景色的列表项。<br>  ☑  list-group-item-success：成功，背景色绿色<br>  ☑  list-group-item-info：信息，背景色蓝色<br>  ☑  list-group-item-warning：警告，背景色为黄色<br>  ☑  list-group-item-danger：错误，背景色为红色</p>
+<p>如果你想给列表项添加什么背景色，只需要在“list-group-item”基础上增加对应的类名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;list-group&quot;&gt;</span><br><span class="line">    &lt;a href=&quot;##&quot; class=&quot;list-group-item active&quot;&gt;&lt;span class=&quot;badge&quot;&gt;5902&lt;/span&gt;图解CSS3&lt;/a&gt;</span><br><span class="line">    &lt;a href=&quot;##&quot; class=&quot;list-group-item list-group-item-success&quot;&gt;&lt;span class=&quot;badge&quot;&gt;15902&lt;/span&gt;W3cplus&lt;/a&gt;</span><br><span class="line">    &lt;a href=&quot;##&quot; class=&quot;list-group-item list-group-item-info&quot;&gt;&lt;span class=&quot;badge&quot;&gt;59020&lt;/span&gt;慕课网&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="面板"><a href="#面板" class="headerlink" title="面板"></a>面板</h4><h5 id="基础面板"><a href="#基础面板" class="headerlink" title="基础面板"></a>基础面板</h5><h5 id="带有头和尾的面板"><a href="#带有头和尾的面板" class="headerlink" title="带有头和尾的面板"></a>带有头和尾的面板</h5><h5 id="彩色面板"><a href="#彩色面板" class="headerlink" title="彩色面板"></a>彩色面板</h5><h5 id="面板中嵌套表格"><a href="#面板中嵌套表格" class="headerlink" title="面板中嵌套表格"></a>面板中嵌套表格</h5><h5 id="面板中嵌套列表组"><a href="#面板中嵌套列表组" class="headerlink" title="面板中嵌套列表组"></a>面板中嵌套列表组</h5><h3 id="Bootstrap支持的JavaScript插件"><a href="#Bootstrap支持的JavaScript插件" class="headerlink" title="Bootstrap支持的JavaScript插件"></a>Bootstrap支持的JavaScript插件</h3><h4 id="导入JavaScript插件"><a href="#导入JavaScript插件" class="headerlink" title="导入JavaScript插件"></a>导入JavaScript插件</h4><h4 id="动画过渡-Transitions"><a href="#动画过渡-Transitions" class="headerlink" title="动画过渡(Transitions)"></a>动画过渡(Transitions)</h4><h4 id="模态弹出框-Modals"><a href="#模态弹出框-Modals" class="headerlink" title="模态弹出框(Modals)"></a>模态弹出框(Modals)</h4><h5 id="模态弹出框-结构分析"><a href="#模态弹出框-结构分析" class="headerlink" title="模态弹出框-结构分析"></a>模态弹出框-结构分析</h5><h5 id="模态弹出框-实现原理解析"><a href="#模态弹出框-实现原理解析" class="headerlink" title="模态弹出框-实现原理解析"></a>模态弹出框-实现原理解析</h5><h5 id="触发模态弹出窗2种方法"><a href="#触发模态弹出窗2种方法" class="headerlink" title="触发模态弹出窗2种方法"></a>触发模态弹出窗2种方法</h5><h5 id="为弹出框增加过渡动画效果"><a href="#为弹出框增加过渡动画效果" class="headerlink" title="为弹出框增加过渡动画效果"></a>为弹出框增加过渡动画效果</h5><h5 id="模态弹出窗的使用-data-参数说明"><a href="#模态弹出窗的使用-data-参数说明" class="headerlink" title="模态弹出窗的使用(data-参数说明)"></a>模态弹出窗的使用(data-参数说明)</h5><h5 id="模态弹出窗的使用-JavaScript触发"><a href="#模态弹出窗的使用-JavaScript触发" class="headerlink" title="模态弹出窗的使用(JavaScript触发)"></a>模态弹出窗的使用(JavaScript触发)</h5><h5 id="JavaScript触发时的参数设置"><a href="#JavaScript触发时的参数设置" class="headerlink" title="JavaScript触发时的参数设置"></a>JavaScript触发时的参数设置</h5>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="xifengxx WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="xifengxx Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Bootstrap/" rel="tag">#Bootstrap</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/10/Bootstrap学习笔记(2)/" rel="next" title="Bootstrap学习笔记(2)">
+                <i class="fa fa-chevron-left"></i> Bootstrap学习笔记(2)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/11/Web前端实战问题总结/" rel="prev" title="Web前端实战问题总结">
+                Web前端实战问题总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/10/Bootstrap学习笔记(3)/"
+           data-title="Bootstrap学习笔记(2)" data-url="http://xifengxx.github.io/2016/06/10/Bootstrap学习笔记(3)/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="xifengxx" />
+          <p class="site-author-name" itemprop="name">xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">45</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#导航条、分页导航"><span class="nav-number">1.</span> <span class="nav-text">导航条、分页导航</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础导航条"><span class="nav-number">1.1.</span> <span class="nav-text">基础导航条</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为导航条添加标题、二级菜单及状态"><span class="nav-number">1.2.</span> <span class="nav-text">为导航条添加标题、二级菜单及状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#带表单的导航条"><span class="nav-number">1.3.</span> <span class="nav-text">带表单的导航条</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导航条中的按钮、文本和链接"><span class="nav-number">1.4.</span> <span class="nav-text">导航条中的按钮、文本和链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#固定导航条"><span class="nav-number">1.5.</span> <span class="nav-text">固定导航条</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态导航条"><span class="nav-number">1.6.</span> <span class="nav-text">静态导航条</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应式导航条"><span class="nav-number">1.7.</span> <span class="nav-text">响应式导航条</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反色导航条"><span class="nav-number">1.8.</span> <span class="nav-text">反色导航条</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分页导航"><span class="nav-number">1.9.</span> <span class="nav-text">分页导航</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#带页码的分页导航"><span class="nav-number">1.9.1.</span> <span class="nav-text">带页码的分页导航</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#翻页分页导航"><span class="nav-number">1.9.2.</span> <span class="nav-text">翻页分页导航</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标签"><span class="nav-number">1.10.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#徽章"><span class="nav-number">1.11.</span> <span class="nav-text">徽章</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BootStrap其他内置组件"><span class="nav-number">2.</span> <span class="nav-text">BootStrap其他内置组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#缩略图"><span class="nav-number">2.1.</span> <span class="nav-text">缩略图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#警示框"><span class="nav-number">2.2.</span> <span class="nav-text">警示框</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#默认警示框"><span class="nav-number">2.2.1.</span> <span class="nav-text">默认警示框</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#可关闭的警示框"><span class="nav-number">2.2.2.</span> <span class="nav-text">可关闭的警示框</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#警示框的链接"><span class="nav-number">2.2.3.</span> <span class="nav-text">警示框的链接</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进度条"><span class="nav-number">2.3.</span> <span class="nav-text">进度条</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#进度条-基本样式"><span class="nav-number">2.3.1.</span> <span class="nav-text">进度条-基本样式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进度条-彩色进度条"><span class="nav-number">2.3.2.</span> <span class="nav-text">进度条-彩色进度条</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进度条-条纹进度条"><span class="nav-number">2.3.3.</span> <span class="nav-text">进度条-条纹进度条</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进度条-动态条纹进度条"><span class="nav-number">2.3.4.</span> <span class="nav-text">进度条-动态条纹进度条</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进度条-层叠进度条"><span class="nav-number">2.3.5.</span> <span class="nav-text">进度条-层叠进度条</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进度条-带Label的进度条"><span class="nav-number">2.3.6.</span> <span class="nav-text">进度条-带Label的进度条</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#媒体对象"><span class="nav-number">2.4.</span> <span class="nav-text">媒体对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#默认媒体对象"><span class="nav-number">2.4.1.</span> <span class="nav-text">默认媒体对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#媒体对象的嵌套"><span class="nav-number">2.4.2.</span> <span class="nav-text">媒体对象的嵌套</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#媒体对象列表"><span class="nav-number">2.4.3.</span> <span class="nav-text">媒体对象列表</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表组"><span class="nav-number">2.5.</span> <span class="nav-text">列表组</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基础列表组"><span class="nav-number">2.5.1.</span> <span class="nav-text">基础列表组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#带徽章的列表组"><span class="nav-number">2.5.2.</span> <span class="nav-text">带徽章的列表组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#带链接的列表组"><span class="nav-number">2.5.3.</span> <span class="nav-text">带链接的列表组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义列表组"><span class="nav-number">2.5.4.</span> <span class="nav-text">自定义列表组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#列表项的状态设置"><span class="nav-number">2.5.5.</span> <span class="nav-text">列表项的状态设置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多彩列表组"><span class="nav-number">2.5.6.</span> <span class="nav-text">多彩列表组</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面板"><span class="nav-number">2.6.</span> <span class="nav-text">面板</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基础面板"><span class="nav-number">2.6.1.</span> <span class="nav-text">基础面板</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#带有头和尾的面板"><span class="nav-number">2.6.2.</span> <span class="nav-text">带有头和尾的面板</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#彩色面板"><span class="nav-number">2.6.3.</span> <span class="nav-text">彩色面板</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面板中嵌套表格"><span class="nav-number">2.6.4.</span> <span class="nav-text">面板中嵌套表格</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#面板中嵌套列表组"><span class="nav-number">2.6.5.</span> <span class="nav-text">面板中嵌套列表组</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrap支持的JavaScript插件"><span class="nav-number">3.</span> <span class="nav-text">Bootstrap支持的JavaScript插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导入JavaScript插件"><span class="nav-number">3.1.</span> <span class="nav-text">导入JavaScript插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动画过渡-Transitions"><span class="nav-number">3.2.</span> <span class="nav-text">动画过渡(Transitions)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模态弹出框-Modals"><span class="nav-number">3.3.</span> <span class="nav-text">模态弹出框(Modals)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#模态弹出框-结构分析"><span class="nav-number">3.3.1.</span> <span class="nav-text">模态弹出框-结构分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#模态弹出框-实现原理解析"><span class="nav-number">3.3.2.</span> <span class="nav-text">模态弹出框-实现原理解析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#触发模态弹出窗2种方法"><span class="nav-number">3.3.3.</span> <span class="nav-text">触发模态弹出窗2种方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#为弹出框增加过渡动画效果"><span class="nav-number">3.3.4.</span> <span class="nav-text">为弹出框增加过渡动画效果</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#模态弹出窗的使用-data-参数说明"><span class="nav-number">3.3.5.</span> <span class="nav-text">模态弹出窗的使用(data-参数说明)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#模态弹出窗的使用-JavaScript触发"><span class="nav-number">3.3.6.</span> <span class="nav-text">模态弹出窗的使用(JavaScript触发)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JavaScript触发时的参数设置"><span class="nav-number">3.3.7.</span> <span class="nav-text">JavaScript触发时的参数设置</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
