@@ -1,0 +1,1051 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Bootstrap,JS插件," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="模态弹出框导入JavaScript插件Bootstrap除了包含丰富的Web组件之外，如前面介绍的下拉菜单、按钮组、导航、分页等。他还包括一些JavaScript的插件。
+Bootstrap的JavaScript插件可以单独导入到页面中，也可以一次性导入到页面中。因为在Bootstrap中的JavaScript插件都是依赖于jQuery库，所以不论是单独导入还一次性导入之前必须先导入jQuery库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootstrap学习笔记(4)-JS插件">
+<meta property="og:url" content="http://xifengxx.github.io/2016/06/11/Bootstrap学习笔记(4)-JS插件/index.html">
+<meta property="og:site_name" content="西风前端">
+<meta property="og:description" content="模态弹出框导入JavaScript插件Bootstrap除了包含丰富的Web组件之外，如前面介绍的下拉菜单、按钮组、导航、分页等。他还包括一些JavaScript的插件。
+Bootstrap的JavaScript插件可以单独导入到页面中，也可以一次性导入到页面中。因为在Bootstrap中的JavaScript插件都是依赖于jQuery库，所以不论是单独导入还一次性导入之前必须先导入jQuery库">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_18.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_19.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_20.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_21.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_22.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_24.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_25.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_26.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_27.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_28.jpg">
+<meta property="og:updated_time" content="2016-06-11T14:49:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bootstrap学习笔记(4)-JS插件">
+<meta name="twitter:description" content="模态弹出框导入JavaScript插件Bootstrap除了包含丰富的Web组件之外，如前面介绍的下拉菜单、按钮组、导航、分页等。他还包括一些JavaScript的插件。
+Bootstrap的JavaScript插件可以单独导入到页面中，也可以一次性导入到页面中。因为在Bootstrap中的JavaScript插件都是依赖于jQuery库，所以不论是单独导入还一次性导入之前必须先导入jQuery库">
+<meta name="twitter:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_18.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Bootstrap学习笔记(4)-JS插件 | 西风前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/works.html" rel="section">
+            
+            作品Demo
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Bootstrap学习笔记(4)-JS插件
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-11T09:23:24+08:00" content="2016-06-11">
+              2016-06-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Bootstrap/" itemprop="url" rel="index">
+                    <span itemprop="name">Bootstrap</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/11/Bootstrap学习笔记(4)-JS插件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/11/Bootstrap学习笔记(4)-JS插件/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/11/Bootstrap学习笔记(4)-JS插件/" class="leancloud_visitors" data-flag-title="Bootstrap学习笔记(4)-JS插件">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="模态弹出框"><a href="#模态弹出框" class="headerlink" title="模态弹出框"></a>模态弹出框</h3><h4 id="导入JavaScript插件"><a href="#导入JavaScript插件" class="headerlink" title="导入JavaScript插件"></a>导入JavaScript插件</h4><p>Bootstrap除了包含丰富的Web组件之外，如前面介绍的下拉菜单、按钮组、导航、分页等。他还包括一些JavaScript的插件。</p>
+<p>Bootstrap的JavaScript插件可以单独导入到页面中，也可以一次性导入到页面中。因为在Bootstrap中的JavaScript插件都是依赖于jQuery库，所以不论是单独导入还一次性导入之前必须先导入jQuery库。</p>
+<p><strong>一次性导入：</strong><br>Bootstrap提供了一个单一的文件，这个文件包含了Bootstrap的所有JavaScript插件，即bootstrap.js（压缩版本：bootstrap.min.js）。<br>具体使用如下（或见右侧代码编辑器28-29行）：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">!—导入jQuery版本库，因为Bootstrap的JavaScript插件依赖于jQuery</span> <span class="attr">--</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://libs.baidu.com/jquery/1.9.0/jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">!—-</span> 一次性导入所有<span class="attr">Bootstrap</span>的<span class="attr">JavaScript</span>插件（压缩版本） <span class="attr">--</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/bootstrap.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">特别声明：jQuery版本库也可以加载你本地的jQuery版本。</span><br></pre></td></tr></table></figure></p>
+<p><strong>单独导入：</strong><br>为方便单独导入特效文件，Bootstrap V3.2中提供了12种JavaScript插件，他们分别是：<br>  ☑ 动画过渡（Transitions）:对应的插件文件“transition.js”<br>  ☑ 模态弹窗（Modal）:对应的插件文件“modal.js”<br>  ☑ 下拉菜单（Dropdown）：对应的插件文件“dropdown.js”<br>  ☑ 滚动侦测（Scrollspy）：对应的插件文件“scrollspy.js”<br>  ☑ 选项卡（Tab）：对应的插件文件“tab.js”<br>  ☑ 提示框（Tooltips）：对应的插件文件“tooltop.js”<br>  ☑ 弹出框（Popover）：对应的插件文件“popover.js”<br>  ☑ 警告框（Alert）：对应的插件文件“alert.js”<br>  ☑ 按钮（Buttons）：对应的插件文件“button.js”<br>  ☑ 折叠/手风琴（Collapse）：对应的插件文件“collapse.js”<br>  ☑ 图片轮播Carousel：对应的插件文件“carousel.js”<br>  ☑ 自动定位浮标Affix：对应的插件文件“affix.js”<br>上述单独插件的下载可到github去下载（<a href="https://github.com/twbs/bootstrap）。" target="_blank" rel="external">https://github.com/twbs/bootstrap）。</a></p>
+<h4 id="动画过渡-Transitions"><a href="#动画过渡-Transitions" class="headerlink" title="动画过渡(Transitions)"></a>动画过渡(Transitions)</h4><p>Bootstrap框架默认给各个组件提供了基本动画的过渡效果，如果要使用，有两种方法：<br>  ☑ 调用统一编译的bootstrap.js；<br>  ☑ 调用单一的过渡动画的JavaScript插件文件[transition.js]（<a href="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-transition.js）。" target="_blank" rel="external">http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-transition.js）。</a></p>
+<p>transition.js文件为Bootstrap具有过渡动画效果的组件提供了动画过渡效果。不过需要注意的是，这些过渡动画都是采用CSS3来实现的，所以IE6-8浏览器是不具备这些过渡动画效果。</p>
+<p>默认情况之下，Bootstrap框架中以下组件使用了过渡动画效果：<br>  ☑ 模态弹出窗（Modal）的滑动和渐变效果；<br>  ☑ 选项卡（Tab）的渐变效果；<br>  ☑ 警告框（Alert）的渐变效果；<br>  ☑ 图片轮播（Carousel）的滑动效果。</p>
+<h4 id="模态弹出框-Modals"><a href="#模态弹出框-Modals" class="headerlink" title="模态弹出框(Modals)"></a>模态弹出框(Modals)</h4><p>在 Bootstrap 框架中把模态弹出框统一称为 Modal。这种弹出框效果在大多数 Web 网站的交互中都可见。比如点击一个按钮弹出一个框，弹出的框可能是一段文件描述，也可能带有按钮操作，也有可能弹出的是一张图片。<br>单独引入 bootstrap 中发布出的<a href="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-modal.js" target="_blank" rel="external">“modal.js”文件</a></p>
+<h5 id="模态弹出框-结构分析"><a href="#模态弹出框-结构分析" class="headerlink" title="模态弹出框-结构分析"></a>模态弹出框-结构分析</h5><p>Bootstrap框架中的模态弹出框，分别运用了“modal”、“modal-dialog”和“modal-content”样式，而弹出窗真正的内容都放置在“modal-content”中，其主要又包括三个部分：<br>  ☑ 弹出框头部，一般使用“modal-header”表示，主要包括标题和关闭按钮<br>  ☑ 弹出框主体，一般使用“modal-body”表示，弹出框的主要内容<br>  ☑ 弹出框脚部，一般使用“modal-footer”表示，主要放置操作按钮</p>
+<p>模态弹出窗的结构如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal show"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-dialog"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-content"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-header"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"close"</span> <span class="attr">data-dismiss</span>=<span class="string">"modal"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span>&amp;times;<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"sr-only"</span>&gt;</span>Close<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"modal-title"</span>&gt;</span>模态弹出窗标题<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-body"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span>模态弹出窗主体内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-footer"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn btn-default"</span> <span class="attr">data-dismiss</span>=<span class="string">"modal"</span>&gt;</span>关闭<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>保存<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!-- /.modal-content --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!-- /.modal-dialog --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!-- /.modal --&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>弹出窗的主体样式实现：</strong><br>对于一个模态弹出窗而言，modal-content才是样式的关键。其主要设置了弹出窗的边框、边距、背景色和阴影等样式。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.modal-content</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">-webkit-background-clip</span>: padding-box;</span><br><span class="line">          <span class="attribute">background-clip</span>: padding-box;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#999</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="built_in">rgba</span>(0, 0, 0, .2);</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">6px</span>;</span><br><span class="line">  <span class="attribute">outline</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">3px</span> <span class="number">9px</span> <span class="built_in">rgba</span>(0, 0, 0, .5);</span><br><span class="line">          <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">3px</span> <span class="number">9px</span> <span class="built_in">rgba</span>(0, 0, 0, .5);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>除此之外，modal-content中的modal-header、modal-body和modal-footer三个部分样式设置：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.modal-header</span> &#123;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">16.42857143px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#e5e5e5</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.modal-header</span> <span class="selector-class">.close</span> &#123;</span><br><span class="line">  <span class="attribute">margin-top</span>: -<span class="number">2px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.modal-title</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">1.42857143</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.modal-body</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.modal-footer</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: right;</span><br><span class="line">  <span class="attribute">border-top</span>: <span class="number">1px</span> solid <span class="number">#e5e5e5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这三个部分主要控制一些间距的样式。而modal-footer都是用来放置按钮，所以底部还对包含的按钮做了一定的样式处理。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.modal-footer</span> <span class="selector-class">.btn</span> + <span class="selector-class">.btn</span> &#123;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.modal-footer</span> <span class="selector-class">.btn-group</span> <span class="selector-class">.btn</span> + <span class="selector-class">.btn</span> &#123;</span><br><span class="line">  <span class="attribute">margin-left</span>: -<span class="number">1px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.modal-footer</span> <span class="selector-class">.btn-block</span> + <span class="selector-class">.btn-block</span> &#123;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="模态弹出框-实现原理解析"><a href="#模态弹出框-实现原理解析" class="headerlink" title="模态弹出框-实现原理解析"></a>模态弹出框-实现原理解析</h5><p>bootstrap中的“模态弹出框”有以下几个特点：<br>1、模态弹出窗是固定在浏览器中的。<br>2、在全屏状态下，模态弹出窗宽度是自适应的，而且modal-dialog水平居中。<br>3、当浏览器视窗大于768px时，模态弹出窗的宽度为600px。</p>
+<p><strong>固定在浏览器(源代码)实现：</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.modal</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">1050</span>;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">-webkit-overflow-scrolling</span>: touch;</span><br><span class="line">  <span class="attribute">outline</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>水平居中(源代码)实现：</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.modal-dialog</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">width</span>: auto;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当浏览器视窗大于768px时，模态弹出窗的宽度为600px（源代码）实现：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.modal-dialog</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">30px</span> auto;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.modal-content</span> &#123;</span><br><span class="line">    <span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">5px</span> <span class="number">15px</span> <span class="built_in">rgba</span>(0, 0, 0, .5);</span><br><span class="line">            <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">5px</span> <span class="number">15px</span> <span class="built_in">rgba</span>(0, 0, 0, .5);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.modal-sm</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>蒙板样式实现：</strong><br>在Bootstrap框架中为模态弹出窗也添加了一个蒙层样式“modal-backdrop”，只不过他默认情况下是全屏黑色的.这个是用js的dom操作实现的，当你点击按钮之后，通过js代码加上了一个div层，并给他加了一个class=”modal-backdrop”的样式，关闭之后又会删除这个div。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.modal-backdrop</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">1040</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>同样，给其添加了一个过渡动画，从fade到in，把opacity值从0变成了0.5。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.modal-backdrop</span><span class="selector-class">.fade</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">alpha</span>(opacity=0);</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.modal-backdrop</span><span class="selector-class">.in</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">alpha</span>(opacity=50);</span><br><span class="line">  <span class="attribute">opacity</span>: .<span class="number">5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>两种尺寸选择：</strong><br>Bootstrap框架还为模态弹出窗提供了不同尺寸，一个是大尺寸样式“modal-lg”，另一个是小尺寸样式“modal-sm”。其结构上稍做调整：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 大尺寸模态弹出窗 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal fade bs-example-modal-lg"</span> <span class="attr">tabindex</span>=<span class="string">"-1"</span><span class="attr">role</span>=<span class="string">"dialog"</span> <span class="attr">aria-labelledby</span>=<span class="string">"myLargeModalLabel"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-dialog modal-lg"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-content"</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 小尺寸模态弹出窗 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal fade bs-example-modal-sm"</span><span class="attr">tabindex</span>=<span class="string">"-1"</span><span class="attr">role</span>=<span class="string">"dialog"</span> <span class="attr">aria-labelledby</span>=<span class="string">"mySmallModalLabel"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-dialog modal-sm"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-content"</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="触发模态弹出窗2种方法"><a href="#触发模态弹出窗2种方法" class="headerlink" title="触发模态弹出窗2种方法"></a>触发模态弹出窗2种方法</h5><p>模态弹出窗在页面加载完成时，是被隐藏在页面中的，只有通过一定的动作（事件）才能触发模态弹出窗的显示。<br>在Bootstrap框架中实现方法有2种，接下来分别来介绍这2种触发模态弹出窗的使用方法。</p>
+<h6 id="声明式触发方法-data属性调用-："><a href="#声明式触发方法-data属性调用-：" class="headerlink" title="声明式触发方法(data属性调用)："></a>声明式触发方法(data属性调用)：</h6><p>方法一、模态弹出窗声明，只需要自定义两个必要的属性：data-toggle和data-target（bootstrap中声明式触发方法一般依赖于这些自定义的data-xxx 属性。比如data-toggle=”” 或者 data-dismiss=””）。例如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 触发模态弹出窗的元素 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">data-toggle</span>=<span class="string">"modal"</span> <span class="attr">data-target</span>=<span class="string">"#mymodal"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>点击我会弹出模态弹出窗<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 模态弹出窗 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal fade"</span> <span class="attr">id</span>=<span class="string">"mymodal"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-dialog"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-content"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 模态弹出窗内容 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>注意以下事项：<br>1、data-toggle必须设置为modal(toggle中文翻译过来就是触发器)；<br>2、data-target可以设置为CSS的选择符，也可以设置为模态弹出窗的ID值，一般情况设置为模态弹出窗的ID值，因为ID值是唯一的值。</p>
+<p>方法二：触发模态弹出窗也可以是一个链接<a>元素，那么可以使用链接元素自带的href属性替代data-target属性，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 触发模态弹出窗的元素 --&gt;</span><br><span class="line">&lt;a data-toggle=&quot;modal&quot; href=&quot;#mymodal&quot; class=&quot; btn btn-primary&quot; &gt;点击我会弹出模态弹出窗&lt;/a&gt;</span><br><span class="line">&lt;!-- 模态弹出窗 --&gt;</span><br><span class="line">&lt;div class=&quot;modal fade&quot;  id=&quot;mymodal&quot; &gt;</span><br><span class="line">    &lt;div class=&quot;modal-dialog&quot; &gt;</span><br><span class="line">        &lt;div class=&quot;modal-content&quot; &gt;</span><br><span class="line">        &lt;!-- 模态弹出窗内容 --&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></a></p>
+<p>不过建议还是使用统一使用data-target的方式来触发。</p>
+<h6 id="JavaScript触发方法"><a href="#JavaScript触发方法" class="headerlink" title="JavaScript触发方法"></a>JavaScript触发方法</h6><p>见下文相关内容</p>
+<h5 id="为弹出框增加过渡动画效果"><a href="#为弹出框增加过渡动画效果" class="headerlink" title="为弹出框增加过渡动画效果"></a>为弹出框增加过渡动画效果</h5><p>为模态弹出框增加过度动画效果：<br>可通过给“.modal”增加类名“fade”为模态弹出框增加一个过渡动画效果。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span> <span class="attr">data-toggle</span>=<span class="string">"modal"</span> <span class="attr">data-target</span>=<span class="string">".bs-example-modal-sm"</span>&gt;</span></span><br><span class="line">小的模态弹出窗</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal fade bs-example-modal-sm"</span> <span class="attr">tabindex</span>=<span class="string">"-1"</span> <span class="attr">role</span>=<span class="string">"dialog"</span> <span class="attr">aria-labelledby</span>=<span class="string">"mySmallModalLabel"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-dialog modal-sm"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-content"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-header"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"close"</span> <span class="attr">data-dismiss</span>=<span class="string">"modal"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span>&amp;times;<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"sr-only"</span>&gt;</span>Close<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"modal-title"</span>&gt;</span>模态弹出窗标题<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-body"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span>模态弹出窗主体内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-footer"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn btn-default"</span> <span class="attr">data-dismiss</span>=<span class="string">"modal"</span>&gt;</span>关闭<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>保存<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="模态弹出窗的使用-data-参数说明"><a href="#模态弹出窗的使用-data-参数说明" class="headerlink" title="模态弹出窗的使用(data-参数说明)"></a>模态弹出窗的使用(data-参数说明)</h5><p>除了通过data-toggle和data-target来控制模态弹出窗之外，Bootstrap框架针对模态弹出框还提供了其他自定义data-属性，来控制模态弹出窗。比如说:是否有灰色背景modal-backdrop，是否可以按ESC键关闭模态弹出窗。有关于Modal弹出窗自定义属性相关说明如下所示：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_18.jpg" alt="18"></p>
+<h5 id="模态弹出窗使用JavaScript触发"><a href="#模态弹出窗使用JavaScript触发" class="headerlink" title="模态弹出窗使用JavaScript触发"></a>模态弹出窗使用JavaScript触发</h5><p>除了使用自定义属性触发模态弹出框之外，还可以通过JavaScript方法来触发模态弹出窗。通过给一个元素一个事件，来触发。比如说给一个按钮一个单击事件，然后触发模态弹出窗。如下面的一个简单示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 触发模态弹出窗元素 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span> <span class="attr">type</span>=<span class="string">"button"</span>&gt;</span>点击我<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 模态弹出窗内容 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal"</span> <span class="attr">id</span>=<span class="string">"mymodal"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-dialog"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-content"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-header"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"close"</span> <span class="attr">data-dismiss</span>=<span class="string">"modal"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span>&amp;times;<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"sr-only"</span>&gt;</span>Close<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"modal-title"</span>&gt;</span>模态弹出窗标题<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-body"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span>模态弹出窗主体内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal-footer"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn btn-default"</span> <span class="attr">data-dismiss</span>=<span class="string">"modal"</span>&gt;</span>关闭<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span>保存<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!-- /.modal-content --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!-- /.modal-dialog --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="comment">&lt;!-- /.modal --&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>JavaScript触发的弹出窗代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(function()&#123;</span><br><span class="line">  $(&quot;.btn&quot;).click(function()&#123;</span><br><span class="line">    $(&quot;#mymodal&quot;).modal();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h5 id="JavaScript触发时的参数设置"><a href="#JavaScript触发时的参数设置" class="headerlink" title="JavaScript触发时的参数设置"></a>JavaScript触发时的参数设置</h5><p>使用JavaScript触发模态弹出窗时，Bootstrap框架提供了一些设置，主要包括属性设置、参数设置和事件设置。</p>
+<p><strong>属性设置</strong><br>模态弹出窗默认支持的自定义属性主要有：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_19.jpg" alt="19"></p>
+<p>比如你不想让用户按ESC键关闭模态弹出窗，你就可以这样做：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">".btn"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">"#mymodal"</span>).modal(&#123;</span><br><span class="line">            keyboard:<span class="literal">false</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><strong>参数设置：</strong><br>在Bootstrap框架中还为模态弹出窗提供了三种参数设置，具体说明如下：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_20.jpg" alt="20"></p>
+<p><strong>事件设置：</strong><br>模态弹出窗还支持四种类型的事件，分别是模态弹出窗的弹出前、弹出后，关闭前、关闭后，具体描述如下：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_21.jpg" alt="21"></p>
+<p>调用方法也非常简单：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#myModal'</span>).on(<span class="string">'hidden.bs.modal'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 处理代码...</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="下拉菜单（Dropdown）"><a href="#下拉菜单（Dropdown）" class="headerlink" title="下拉菜单（Dropdown）"></a>下拉菜单（Dropdown）</h3><p>插件对应的源文件：dropdown.js(使用单独引入的方法可使用下面链接)<br>（官方发布引用地址：<a href="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-dropdown.js）" target="_blank" rel="external">http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-dropdown.js）</a><br>和模态弹出窗一样，触发下拉菜单方式有两种，一种是属性声明式用法，另一种是JavaScript方法。</p>
+<h4 id="属性声明方法"><a href="#属性声明方法" class="headerlink" title="属性声明方法"></a>属性声明方法</h4><p>用户只需要点击有向下三角形的按钮链接或者直接点击三角形就会弹出下拉菜单。实现这个效果，都是依赖于HTML相关元素自定义的属性完成。所以在编写HTML结构的时候必须满足下面的规则：<br>  ☑ 按照制作菜单的结构编写结构<br>  ☑ 被点击的菜单项链接或按钮需要添加自定义属性 data-toggle=”dropdown”<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default"</span> <span class="attr">id</span>=<span class="string">"navmenu"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">class</span>=<span class="string">"navbar-brand"</span>&gt;</span>W3cplus<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav navbar-nav"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"dropdown"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span> <span class="attr">data-toggle</span>=<span class="string">"dropdown"</span> <span class="attr">class</span>=<span class="string">"dropdown-toggle"</span> <span class="attr">role</span>=<span class="string">"button"</span> <span class="attr">id</span>=<span class="string">"tutorial"</span>&gt;</span>教程<span class="tag">&lt;<span class="name">b</span> <span class="attr">class</span>=<span class="string">"caret"</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"dropdown-menu"</span> <span class="attr">role</span>=<span class="string">"menu"</span> <span class="attr">aria-labelledby</span>=<span class="string">"tutorial"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">role</span>=<span class="string">"presentation"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>CSS3<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">role</span>=<span class="string">"presentation"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>HTML5<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span> <span class="attr">role</span>=<span class="string">"presentation"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>Sass<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>前端论坛<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>关于我们<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>实现下拉菜单原理：</strong><br>Dropdown插件加载时，对所有带 有“data-toggle=dropdown”样式的元素绑定了事件，用户单击带有“data-toggle=dropdown”样式的链接或按钮时， 会触发JavaScript事件代码。当用户点击带有“data-toggle=dropdown”样式的链接或按钮时，下拉菜单的父容器（上面的示例是 <code>&lt;li class=&quot;dropdown&quot;&gt;</code>）会添加一个open类名，此时下拉菜单显示；再次单击时，JavaScript会删除刚添加的open类 名，此时下拉菜单将隐藏。</p>
+<p>简单的说，要制作下拉菜单，其结构基本如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"dropdown"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">data-toggle</span>=<span class="string">"dropdown"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>下拉菜单触发器<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"dropdown-menu"</span> <span class="attr">role</span>=<span class="string">"menu"</span> <span class="attr">aria-labelledby</span>=<span class="string">"dLabel"</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="JavaScript方法"><a href="#JavaScript方法" class="headerlink" title="JavaScript方法"></a>JavaScript方法</h4><p>使用JavaScript触发下拉菜单和声明式原理是基本类似的，不同的是使用JavaScript方法可以按照自己的方式省略一些元素或者样式。同样用一个简单的示例来做演示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav nav-pills"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"dropdown"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>  <span class="attr">class</span>=<span class="string">"dropdown-toggle"</span> <span class="attr">data-toggle</span>=<span class="string">"dropdown"</span> <span class="attr">role</span>=<span class="string">"button"</span> <span class="attr">id</span>=<span class="string">"tutorial"</span>&gt;</span>教程<span class="tag">&lt;<span class="name">b</span> <span class="attr">class</span>=<span class="string">"caret"</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"dropdown-menu"</span> <span class="attr">role</span>=<span class="string">"menu"</span> <span class="attr">aria-labelledby</span>=<span class="string">"tutorial"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">role</span>=<span class="string">"presentation"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>CSS3<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">role</span>=<span class="string">"presentation"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>HTML5<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span> <span class="attr">role</span>=<span class="string">"presentation"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>Sass<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>前端论坛<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"##"</span>&gt;</span>关于我们<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>使用JavaScript调用dropdown()方法后，单击激活按钮，会弹出下拉菜单，再次单击的时候会收起下拉菜单。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">".dropdown-toggle"</span>).dropdown();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>还可以使用参数“toggle”。当下拉菜单隐藏时，调用dropdown(“toggle”)方法可以显示下拉菜单，反之，如果下拉菜单显示时，调用dropdown(“toggle”)方法可以让下拉菜单隐藏。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">".dropdown-toggle"</span>).dropdown(<span class="string">"toggle"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>不过使用该参数，每次单击都要两次toggle，就会一直是一个不变的状态。所以，一般情况下，使用示例中不带参数的方法。就算你需要使用参数“toggle”，也建议使用jQuery的one方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".dropdown-toggle"</span>).one(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="keyword">this</span>).dropdown(<span class="string">"toggle"</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>使用js控制下拉菜单的显示与影藏不能删掉 data-toggle=”dropdown”属性。</strong><br>如果删掉data-toggle属性，则下拉菜单会无法关闭或是无法打开，因此这里使用的js语法可有可无。</p>
+<h3 id="滚动监控器"><a href="#滚动监控器" class="headerlink" title="滚动监控器"></a>滚动监控器</h3><p>插件源文件：<a href="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-scrollspy.js" target="_blank" rel="external">scrollspy.js</a><br>滚动监控器是Bootstrap提供的非常实用的JavaScript插件，被广泛应用到Web开发中。其表现形式是：<br>1、当用户鼠标滚动时，滚动条的位置会自动更新导航条中相应的导航项。<br>2、用户拖动滚动条，当滚动到导航条相应导航项时，导航项就会高亮显示：<br>这是因为该插件可以自动检测滚动条到达哪个位置，然后在需要高亮的菜单元素上加了一个“active”样式。</p>
+<h4 id="滚动监控器的设计"><a href="#滚动监控器的设计" class="headerlink" title="滚动监控器的设计"></a>滚动监控器的设计</h4><p>在Web页面中实现Bootstrap滚动监控器其实非常简单，<br>第一步：使用滚动监控器，首要的条件是在页面中加载对应的插件。在这里你可以加载合并好的bootstrap.js或者其独立的插件文件scrollspy.js。<br>第二步：设计一个带有下拉菜单的导航条。分别为导航条和下拉菜单项定义一个锚点链接，锚点分别为“#blog”,“html”,“#css”,“#sass”,“#js”,“php”,“#about”。同时为导航条定义一个id值“navbar-menu”（id名称可自由定义），方便滚动监控。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_22.jpg" alt="22"></p>
+<p>第三步：设计监控对象。这里将监控对象内容都放置在一个div名为scrollspy（这个类名可自由定义）的容器中，其中放了多个子内容框。每个子内容框有一个标题，而且每个标题的ID值与导航菜单项中的锚点链接名相对应，并且注意加入“data-target=”#navbar-menu””属性（这个属性值要与前面的nav标签的id名称保持一致）<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"scrollspy"</span> <span class="attr">data-target</span>=<span class="string">"#navbar-menu"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">"blog"</span>&gt;</span>Blog<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>…<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">"html"</span>&gt;</span>Html<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>…<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">"css"</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>…<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">"sass"</span>&gt;</span>Sass<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>…<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">"js"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>…<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>…<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">"php"</span>&gt;</span>PHP<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>…<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>…<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">"about"</span>&gt;</span>About<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>…<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>…<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>第四步： 声明属性触发滚动监控<br>为监控对象设置被监控的data属性：data-spy=”scroll”，指定监控的导航条：data-target=”#navbar-menu”。同时定义监控过程中滚动条偏移位置data-offset=”60”。代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"scrollspy"</span> <span class="attr">data-spy</span>=<span class="string">"scroll"</span> <span class="attr">data-target</span>=<span class="string">"#navbar-menu"</span> <span class="attr">data-offset</span>=<span class="string">"60"</span>&gt;</span></span><br><span class="line">  …</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>第五步：为监控对象定义样式，设置容器scrollspy大小（设置高度目的是为了产生垂直滚动条）。无论何种实现方式，滚动监听都需要被监听的组件是 position: relative; 即相对定位方式。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.scrollspy</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">500px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>:auto;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意事项：</strong><br>经测试，滚动条时导航并不准确，需要加上position:relative,同时调整data-offset=”60”的值，这样比较准确。</p>
+<h4 id="在body中加监控"><a href="#在body中加监控" class="headerlink" title="在body中加监控"></a>在body中加监控</h4><p>直接在body上进行滚动条监控，此时要将滚动监控器移到body上，而且导航nav一定要在body内部。如下所示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">data-spy</span>=<span class="string">"scroll"</span> <span class="attr">data-target</span>=<span class="string">"#navbar-menu"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default navbar-fixed-top"</span> <span class="attr">id</span>=<span class="string">"navbar-menu"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span> <span class="attr">id</span>=<span class="string">"blog"</span>&gt;</span>Blog<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>…<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>注意：导航条必须设置为顶部固定样式（navbar-fixed-top）。</p>
+<h4 id="JavaScript方法触发滚动监控器"><a href="#JavaScript方法触发滚动监控器" class="headerlink" title="JavaScript方法触发滚动监控器"></a>JavaScript方法触发滚动监控器</h4><p>在Bootstrap框架中，使用JavaScript方法触发滚动监控器相对来说较为简单，只需要指定两个容器的名称即可。比如下面的结构：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">nav</span> <span class="attr">id</span>=<span class="string">"navbar-menu"</span> <span class="attr">class</span>=<span class="string">"navbar navbar-default navbar-static"</span> <span class="attr">role</span>=<span class="string">"navigation"</span>&gt;</span></span><br><span class="line">  …</span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"scrollspy"</span> <span class="attr">id</span>=<span class="string">"scrollspy"</span>&gt;</span></span><br><span class="line">  …</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>JavaScript触发可以这样写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#scrollspy"</span>).scrollspy(&#123;</span><br><span class="line">        target: <span class="string">"#navbar-menu"</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>Bootstrap的滚动监控还提供了一个方法scrollspy(“refresh”)。当滚动监控所作用的DOM有增加或删除页面元素的操作时，需要调用下面的refresh方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"[data-spy='scroll']"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> $spy=$(<span class="keyword">this</span>).scrollspy(<span class="string">"refresh"</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是，这种refresh方法只对声明式用法有效。另外滚动监控除了options参数“target”之外，还提供了一个offset参数，此参数默认值为10。默认情况下，滚动内容距离滚动容器10px以内的话，就高一片面前显示所对应的菜单项。</p>
+<h3 id="选项卡"><a href="#选项卡" class="headerlink" title="选项卡"></a>选项卡</h3><p>插件源文件：<a href="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-tab.js" target="_blank" rel="external">tab.js</a><br>选项卡Tabs是Web中一种非常常用的功能。用户点击或悬浮对应的菜单项，能切换出对应的内容。<br>Bootstrap框架中的选项卡主要有两部分内容组成：</p>
+<ul>
+<li>选项卡组件（也就是菜单组件），对应的是 Bootstrap的 nav-tabs）</li>
+<li>底部可以切换的选项卡面板，在 Bootstrap 中通常 tab-pane 来表示</li>
+</ul>
+<h4 id="选项卡的结构"><a href="#选项卡的结构" class="headerlink" title="选项卡的结构"></a>选项卡的结构</h4><p>一个选项卡主要包括两个部分，其一是菜单项，其二是内容面板。拿下面的示例来做演示。其HTML结构如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 选项卡组件（菜单项nav-tabs）--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"myTab"</span> <span class="attr">class</span>=<span class="string">"nav nav-tabs"</span> <span class="attr">role</span>=<span class="string">"tablist"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#bulletin"</span> <span class="attr">role</span>=<span class="string">"tab"</span>&gt;</span>公告<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#rule"</span> <span class="attr">role</span>=<span class="string">"tab"</span>&gt;</span>规则<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#forum"</span> <span class="attr">role</span>=<span class="string">"tab"</span>&gt;</span>论坛<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#security"</span> <span class="attr">role</span>=<span class="string">"tab"</span>&gt;</span>安全<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#welfare"</span> <span class="attr">role</span>=<span class="string">"tab"</span>&gt;</span>公益<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 选项卡面板 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myTabContent"</span> <span class="attr">class</span>=<span class="string">"tab-content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade in active"</span> <span class="attr">id</span>=<span class="string">"bulletin"</span>&gt;</span>公告内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"rule"</span>&gt;</span>规则内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"forum"</span>&gt;</span>论坛内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"security"</span>&gt;</span>安全内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"welfare"</span>&gt;</span>公益内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>关键一点，选项卡中链接的锚点要与对应的面板内容容器的ID相匹配。</p>
+<p>在Bootstrap框架中选项卡nav-tabs已带有样式，前面在介绍导航一节中有详细介绍。而对于面板内容tab-pane都是隐藏的，只有当前面板内容才是显示的：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.tab-content</span> &gt; <span class="selector-class">.tab-pane</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.tab-content</span> &gt; <span class="selector-class">.active</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="选项卡–触发切换效果"><a href="#选项卡–触发切换效果" class="headerlink" title="选项卡–触发切换效果"></a>选项卡–触发切换效果</h4><p>选项卡也定义data属性来触发切换效果。当然前提你也要先加载bootstrap.js或者是tab.js。声明式触发选项卡需要满足以下几点要求：<br>  1、选项卡导航链接中要设置 data-toggle=”tab”<br>  2、并且设置 data-target=”对应内容面板的选择符(一般是ID)”;<br>     如果是链接的话，还可以通过 href=”对应内容面板的选择符(一般是ID)”<br>     主要起的作用是用户点击的时候能找到该选择符所对应的面板内容 tab-pane。<br>  3、面板内容统一放在 tab-content 容器中，而且每个内容面板 tab-pane 都需要设置一个独立的选择符（最好是ID）与选项卡中的 data-target 或 href 的值匹配。</p>
+<p>代码如下所示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 选项卡组件（菜单项nav-tabs）--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"myTab"</span> <span class="attr">class</span>=<span class="string">"nav nav-tabs"</span> <span class="attr">role</span>=<span class="string">"tablist"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#bulletin"</span> <span class="attr">role</span>=<span class="string">"tab"</span> <span class="attr">data-toggle</span>=<span class="string">"tab"</span>&gt;</span>公告<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#rule"</span> <span class="attr">role</span>=<span class="string">"tab"</span> <span class="attr">data-toggle</span>=<span class="string">"tab"</span>&gt;</span>规则<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#forum"</span> <span class="attr">role</span>=<span class="string">"tab"</span> <span class="attr">data-toggle</span>=<span class="string">"tab"</span>&gt;</span>论坛<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#security"</span> <span class="attr">role</span>=<span class="string">"tab"</span>  <span class="attr">data-toggle</span>=<span class="string">"tab"</span>&gt;</span>安全<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#welfare"</span> <span class="attr">role</span>=<span class="string">"tab"</span> <span class="attr">data-toggle</span>=<span class="string">"tab"</span>&gt;</span>公益<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 选项卡面板 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myTabContent"</span> <span class="attr">class</span>=<span class="string">"tab-content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade in active"</span> <span class="attr">id</span>=<span class="string">"bulletin"</span>&gt;</span>公告内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"rule"</span>&gt;</span>规则内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"forum"</span>&gt;</span>论坛内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"security"</span>&gt;</span>安全内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"welfare"</span>&gt;</span>公益内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="为选择卡添加fade样式"><a href="#为选择卡添加fade样式" class="headerlink" title="为选择卡添加fade样式"></a>为选择卡添加fade样式</h4><p>为了让面板的隐藏与显示在切换的过程效果更流畅，可以在面板中添加类名 fade，让其产生渐入的效果。<br>在添加 fade 样式时，最初的默认显示的内容面板一定要记得加上 in 类名，不然其内容用户无法看到。如下面的示例所示。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 选项卡组件（菜单项nav-tabs）--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"myTab"</span> <span class="attr">class</span>=<span class="string">"nav nav-tabs"</span> <span class="attr">role</span>=<span class="string">"tablist"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#bulletin"</span> <span class="attr">role</span>=<span class="string">"tab"</span> <span class="attr">data-toggle</span>=<span class="string">"tab"</span>&gt;</span>公告<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#rule"</span> <span class="attr">role</span>=<span class="string">"tab"</span> <span class="attr">data-toggle</span>=<span class="string">"tab"</span>&gt;</span>规则<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#forum"</span> <span class="attr">role</span>=<span class="string">"tab"</span> <span class="attr">data-toggle</span>=<span class="string">"tab"</span>&gt;</span>论坛<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#security"</span> <span class="attr">role</span>=<span class="string">"tab"</span> <span class="attr">data-toggle</span>=<span class="string">"tab"</span>&gt;</span>安全<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#welfare"</span> <span class="attr">role</span>=<span class="string">"tab"</span> <span class="attr">data-toggle</span>=<span class="string">"tab"</span>&gt;</span>公益<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 选项卡面板 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myTabContent"</span> <span class="attr">class</span>=<span class="string">"tab-content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade in active"</span> <span class="attr">id</span>=<span class="string">"bulletin"</span>&gt;</span>公告内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"rule"</span>&gt;</span>规则内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"forum"</span>&gt;</span>论坛内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"security"</span>&gt;</span>安全内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"welfare"</span>&gt;</span>公益内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="胶囊式选项卡（nav-pills）"><a href="#胶囊式选项卡（nav-pills）" class="headerlink" title="胶囊式选项卡（nav-pills）"></a>胶囊式选项卡（nav-pills）</h4><p>在Bootstrap除了可以让 nav-tabs 具有选项卡的切换功能之外，还可以对胶囊式 nav-pills 导航也具有选项卡的功能。我们只需要将 nav-tabs 换成 nav-pills，另外关键一点是将 data-toggle=”tab”换成data-toggle=”pill”。</p>
+<p>下面的示例是将上面的 nav-tabs 换成 nav-pills：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 选项卡组件（菜单项nav-pills）--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"myTab"</span> <span class="attr">class</span>=<span class="string">"nav nav-pills"</span> <span class="attr">role</span>=<span class="string">"tablist"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#bulletin"</span> <span class="attr">role</span>=<span class="string">"tab"</span> <span class="attr">data-toggle</span>=<span class="string">"pill"</span>&gt;</span>公告<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#rule"</span> <span class="attr">role</span>=<span class="string">"tab"</span> <span class="attr">data-toggle</span>=<span class="string">"pill"</span>&gt;</span>规则<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#forum"</span> <span class="attr">role</span>=<span class="string">"tab"</span> <span class="attr">data-toggle</span>=<span class="string">"pill"</span>&gt;</span>论坛<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#security"</span> <span class="attr">role</span>=<span class="string">"tab"</span> <span class="attr">data-toggle</span>=<span class="string">"pill"</span>&gt;</span>安全<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#welfare"</span> <span class="attr">role</span>=<span class="string">"tab"</span> <span class="attr">data-toggle</span>=<span class="string">"pill"</span>&gt;</span>公益<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 选项卡面板 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myTabContent"</span> <span class="attr">class</span>=<span class="string">"tab-content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade in active"</span> <span class="attr">id</span>=<span class="string">"bulletin"</span>&gt;</span>公告内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"rule"</span>&gt;</span>规则内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"forum"</span>&gt;</span>论坛内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"security"</span>&gt;</span>安全内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tab-pane fade"</span> <span class="attr">id</span>=<span class="string">"welfare"</span>&gt;</span>公益内容面板<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="选项卡–JavaScript触发方法"><a href="#选项卡–JavaScript触发方法" class="headerlink" title="选项卡–JavaScript触发方法"></a>选项卡–JavaScript触发方法</h4><p>除了在HTML设置 data-toggle 来触发选项卡之外，还可以通过JavaScript直接调用。</p>
+<p><strong>调用方法:</strong><br>在每个链接的单击事件中调用tab(“show”)方法，显示对应的标签面板内容。<br>针对上面的示例，删除HTML中自定义的 data-toggle=”tab” 或 data-toggle=”pill” 的属性，然后通过下面的脚本来调用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#myTab a"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        e.preventDefault();</span><br><span class="line">        $(<span class="keyword">this</span>).tab(<span class="string">"show"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="提示框"><a href="#提示框" class="headerlink" title="提示框"></a>提示框</h3><p>插件源文件：<a href="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-tooltip.js" target="_blank" rel="external">tooltip.js</a></p>
+<h4 id="提示框的结构"><a href="#提示框的结构" class="headerlink" title="提示框的结构"></a>提示框的结构</h4><p>在Bootstrap框架中的提示框，结构非常简单，常常使用的是按钮<code>&lt;button&gt;</code>标签或者链接<code>&lt;a&gt;</code>标签来制作。不管是使用按钮还是链接来制作提示框，他们都有一个共性：<br>1、通过 title 属性的值来定义提示信息(也可以使用自定义属性 data-original-title 来设置提示信息)。<br>2、通过 data-placement 自定义属性来控制提示信息框的位置，根据四种不同的位置，data-placement具有四个值：top、right、bottom和left，分别表示提示框出现的位置在顶部、右边、底部和左边。<br>3、还有一个最重要的参数不可缺少，data-toggle=”tooltip”。<br>如下所示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> </span><br><span class="line">        <span class="attr">class</span>=<span class="string">"btnbtn-default"</span> </span><br><span class="line">        <span class="attr">data-toggle</span>=<span class="string">"tooltip"</span> </span><br><span class="line">        <span class="attr">data-placement</span>=<span class="string">"left"</span> </span><br><span class="line">        <span class="attr">data-original-title</span>=<span class="string">"提示框居左"</span>&gt;</span></span><br><span class="line">        提示框居左</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> </span><br><span class="line">        <span class="attr">class</span>=<span class="string">"btnbtn-default"</span> </span><br><span class="line">        <span class="attr">data-toggle</span>=<span class="string">"tooltip"</span> </span><br><span class="line">        <span class="attr">data-placement</span>=<span class="string">"top"</span> </span><br><span class="line">        <span class="attr">data-original-title</span>=<span class="string">"提示框在顶部"</span>&gt;</span></span><br><span class="line">        提示框在顶部</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> </span><br><span class="line">        <span class="attr">class</span>=<span class="string">"btnbtn-default"</span> </span><br><span class="line">        <span class="attr">data-toggle</span>=<span class="string">"tooltip"</span> </span><br><span class="line">        <span class="attr">data-placement</span>=<span class="string">"bottom"</span> </span><br><span class="line">        <span class="attr">data-original-title</span>=<span class="string">"提示框在底部"</span>&gt;</span></span><br><span class="line">        提示框在底部</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> </span><br><span class="line">        <span class="attr">class</span>=<span class="string">"btnbtn-default"</span> </span><br><span class="line">        <span class="attr">data-toggle</span>=<span class="string">"tooltip"</span> </span><br><span class="line">        <span class="attr">data-placement</span>=<span class="string">"right"</span> </span><br><span class="line">        <span class="attr">data-original-title</span>=<span class="string">"提示框居右"</span>&gt;</span></span><br><span class="line">        提示框居右</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="JS触发提示框方法"><a href="#JS触发提示框方法" class="headerlink" title="JS触发提示框方法"></a>JS触发提示框方法</h4><p>Bootstrap框架中的提示框的触发方式和前面介绍的插件略有不同。不能直接通过自定义的属性 data- 来触发。必须得依赖于JavaScript的代码触发。</p>
+<p>最简单的触发方式如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">'[data-toggle="tooltip"]'</span>).tooltip();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>除此之外，也可以单独指定一个元素，在该元素上调用提示框，并且可能通过JavaScript的各种参数来实现，无需定义一些 data 属性，如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">'#myTooltip'</span>).tooltip(&#123;</span><br><span class="line">       title:<span class="string">"我是一个提示框，我在顶部出现"</span>,</span><br><span class="line">       placement:<span class="string">'top'</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="提示框-其他的自定义属性"><a href="#提示框-其他的自定义属性" class="headerlink" title="提示框-其他的自定义属性"></a>提示框-其他的自定义属性</h4><p>除此之外，提示框还有其他的自定义属性，每个自定义属性都具自身存在的意义，如下表所示：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_24.jpg" alt="24"></p>
+<h4 id="JS设置参数方法"><a href="#JS设置参数方法" class="headerlink" title="JS设置参数方法"></a>JS设置参数方法</h4><p>除了在 html 代码中使用 data- 设置提示框参数，还可以使用 JavaScript 来设置提示框参数，主要包括：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_25.jpg" alt="25"><br>表格中的任何属性，在使用 JavaScript 触发提示框时，都可以被调用。<br>例子：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">'#myTooltip1'</span>).tooltip(&#123;</span><br><span class="line">      title:<span class="string">"我是一个提示框，我在顶部出现"</span>,</span><br><span class="line">      placement:<span class="string">"top"</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="弹出框-Popover"><a href="#弹出框-Popover" class="headerlink" title="弹出框(Popover)"></a>弹出框(Popover)</h3><p>插件源文件：<a href="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-popover.js" target="_blank" rel="external">popover.js</a><br>弹出框(Popover)仅从外表上看，和前面介绍的提示框（Tooltip）长得差不多<br>不同的是：弹出框除了有标题 title 以外还增加了内容 content 部分。这个在提示框中是没有的。</p>
+<h4 id="弹出框的结构"><a href="#弹出框的结构" class="headerlink" title="弹出框的结构"></a>弹出框的结构</h4><p>弹出框Popover和提示框tooltip相比，就多了一个content内容，那么在此使用 data-content 来定义弹出框中的内容。同样可以使用<button>或者<a>标签来制作，如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> </span><br><span class="line">        <span class="attr">class</span>=<span class="string">"btnbtn-default"</span> </span><br><span class="line">        <span class="attr">data-container</span>=<span class="string">"body"</span> </span><br><span class="line">        <span class="attr">data-placement</span>=<span class="string">"bottom"</span> </span><br><span class="line">        <span class="attr">data-toggle</span>=<span class="string">"popover"</span> </span><br><span class="line">        <span class="attr">data-original-title</span>=<span class="string">"Bootstrap弹出框标题"</span> </span><br><span class="line">        <span class="attr">data-content</span>=<span class="string">"Bootstrap弹出框的内容"</span> &gt;</span></span><br><span class="line">        猛击我吧</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"btnbtn-default"</span> </span><br><span class="line">        <span class="attr">data-container</span>=<span class="string">"body"</span> </span><br><span class="line">        <span class="attr">data-placement</span>=<span class="string">"right"</span> </span><br><span class="line">        <span class="attr">data-toggle</span>=<span class="string">"popover"</span> </span><br><span class="line">        <span class="attr">title</span>=<span class="string">"Bootstrap弹出框标题"</span> </span><br><span class="line">        <span class="attr">data-content</span>=<span class="string">"Bootstrap弹出框的内容"</span>&gt;</span></span><br><span class="line">        猛击我吧</span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></a></button></p>
+<p>弹出框的制作结构和提示框并无太多差别，但样式风格上还是有蛮大的区别。其主要定义了弹出框边框、圆角、背景、阴影以及三角形等样式.</p>
+<h4 id="触发弹出框的方法"><a href="#触发弹出框的方法" class="headerlink" title="触发弹出框的方法"></a>触发弹出框的方法</h4><p>Bootstrap框架中触发弹出框和提示框一样不能直接通过HTML的自定义data属性来触发。需要依赖于JavaScript脚本。<br>最简单的触发方式如下：<br>html代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> </span><br><span class="line">        <span class="attr">class</span>=<span class="string">"btn btn-default"</span> </span><br><span class="line">        <span class="attr">data-toggle</span>=<span class="string">"popover"</span> </span><br><span class="line">        <span class="attr">data-placement</span>=<span class="string">"left"</span> </span><br><span class="line">        <span class="attr">title</span>=<span class="string">"提示框居左"</span> </span><br><span class="line">        <span class="attr">data-content</span>=<span class="string">"我是弹出框的内容"</span>&gt;</span></span><br><span class="line">        猛击我吧</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>js代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">'[data-toggle="popover"]'</span>).popover();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>注意：上面这种方法注意要使用 data- 设置弹出框的属性。</p>
+<p><strong>使用JS设置参数：</strong><br>除此之外，也可以单独指定一个元素，在该元素上调用提示框，并且可能通过JavaScript的各种参数来实现，无需定义一些data属性，如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span></span><br><span class="line">          <span class="attr">class</span>=<span class="string">"btn btn-default"</span></span><br><span class="line">          <span class="attr">id</span>=<span class="string">"myPopover"</span>&gt;</span></span><br><span class="line">          猛击我吧</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- javascript代码 --&gt;</span></span><br><span class="line">$(function()&#123;</span><br><span class="line">    $('#myPopover').popover(&#123;</span><br><span class="line">        title:"我是弹出框的标题",</span><br><span class="line">        content:"我是弹出框的内容",</span><br><span class="line">        placement:"top"</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="自定义结构属性"><a href="#自定义结构属性" class="headerlink" title="自定义结构属性"></a>自定义结构属性</h4><p>同样在弹出框制作时，可以在HTML中定义下表所列的自定义属性：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_26.jpg" alt="26"><br>举例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span></span><br><span class="line">         <span class="attr">class</span>=<span class="string">"btn btn-default"</span></span><br><span class="line">         <span class="attr">data-toggle</span>=<span class="string">"popover"</span></span><br><span class="line">         <span class="attr">data-placement</span>=<span class="string">"bottom"</span></span><br><span class="line">         <span class="attr">title</span>=<span class="string">"提示框居左"</span></span><br><span class="line">         <span class="attr">data-content</span>=<span class="string">"我是弹出框的内容"</span></span><br><span class="line">         <span class="attr">data-trigger</span>=<span class="string">"hover"</span></span><br><span class="line">         <span class="attr">data-dalay</span>=<span class="string">"600"</span>&gt;</span></span><br><span class="line">         猛击我吧</span><br><span class="line"> <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="提示框和弹出框的异同"><a href="#提示框和弹出框的异同" class="headerlink" title="提示框和弹出框的异同"></a>提示框和弹出框的异同</h4><p>弹出框中HTML自定义的 data 属性和提示框中的自定义的 data 属性基本相同，只不过在其基础上增加了一个 data-content 属性，用来设置弹出框的内容。其实两插件也有略微的不同：<br>1、提示框 tooltip 的默认触发事件是 hover 和 focus，而弹出框popover是click。<br>2、提示框 tooltip 只有一个内容(title)，而弹出框不仅可以设置标题（title）还可以设置内容(content)<br>3、两个插件的显示模板不同：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 提示框tooltip的模板： --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tooltip"</span> <span class="attr">role</span>=<span class="string">"tooltip"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tooltip-arrow"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tooltip-inner"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 弹出框popover的模板： --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"popover"</span> <span class="attr">role</span>=<span class="string">"tooltip"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"arrow"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span> <span class="attr">class</span>=<span class="string">"popover-title"</span>&gt;</span><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"popover-content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="警告框-Alert"><a href="#警告框-Alert" class="headerlink" title="警告框(Alert)"></a>警告框(Alert)</h3><p>插件源文件：<a href="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-alert.min.js" target="_blank" rel="external">alert.js</a></p>
+<h4 id="结构与样式"><a href="#结构与样式" class="headerlink" title="结构与样式"></a>结构与样式</h4><p>警告框插件就是在“警示框组件”基础上添加了一个关闭的按钮，外形上就是一个X。所以其结构只需要在警示框组件的基础上添加一个按钮即可：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert "</span> <span class="attr">role</span>=<span class="string">"alert"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">buttonclass="close"</span> <span class="attr">type</span>=<span class="string">"button"</span> &gt;</span>&amp;times;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    恭喜您操作成功！</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="使用声明式触发警告框"><a href="#使用声明式触发警告框" class="headerlink" title="使用声明式触发警告框"></a>使用声明式触发警告框</h4><p>1、如果通过自定义的HTML属性（声明式）来触发警告框，需要在关闭按钮上设置自定义属性data-dismiss=”alert”，如下所示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-success"</span> <span class="attr">role</span>=<span class="string">"alert"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"close"</span>  <span class="attr">data-dismiss</span>=<span class="string">"alert"</span> <span class="attr">type</span>=<span class="string">"button"</span> &gt;</span>&amp;times;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>恭喜您操作成功！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>点击X会关闭整个警告框。<br>2、其实关闭按钮，不一定非要用X号，也可以是普通的按钮元素或者链接元素，只需要保证关闭元素带有自定义属性data-dismiss=”alert”即可，如下面示例所示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-warning"</span> <span class="attr">role</span>=<span class="string">"alert"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>谨防被骗<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>请确认您转账的信息是你的亲朋好友，不要轻意相信不认识的人...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"btn btn-danger"</span> <span class="attr">data-dismiss</span>=<span class="string">"alert"</span>&gt;</span>关闭<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>当用户点击“关闭”按钮就可以关闭整个警告框。<br>3、当关闭按钮不在 div.alert 容器内时，只要给关闭元素定义了data-target属性（如果是链接元素还可以通过href属性）,而且属性值与div.alert容器的id一致，关闭元素放在容器外也可以关闭警告框。来看一个简单的示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-warning"</span> <span class="attr">role</span>=<span class="string">"alert"</span> <span class="attr">id</span>=<span class="string">"myAlert"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>谨防被骗<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>请确认您转账的信息是你的亲朋好友，不要轻意相信不认识的人...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">data-target</span>=<span class="string">"#myAlert"</span> <span class="attr">class</span>=<span class="string">"btn btn-danger"</span> <span class="attr">data-dismiss</span>=<span class="string">"alert"</span>&gt;</span>关闭<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这种方式点击“关闭”按钮也可以关闭警告框，只不过“关闭”按钮自身没办法关闭，会一直显示在那。</p>
+<h4 id="JavaScript触发警告框"><a href="#JavaScript触发警告框" class="headerlink" title="JavaScript触发警告框"></a>JavaScript触发警告框</h4><p>除了通过自定义data-dismiss=”alert”属性来触发警告框关闭之外，还可以通过JavaScript方法。只需要在关闭按钮上绑定一个事件。如下所示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html部分代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"alert alert-warning"</span> <span class="attr">role</span>=<span class="string">"alert"</span> <span class="attr">id</span>=<span class="string">"myAlert"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>谨防被骗<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>请确认您转账的信息是你的亲朋好友，不要轻意相信不认识的人...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span>  <span class="attr">class</span>=<span class="string">"btn btn-danger"</span> <span class="attr">id</span>=<span class="string">"close"</span>&gt;</span>关闭<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- javascript部分代码 --&gt;</span></span><br><span class="line">$(function()&#123;</span><br><span class="line">    $("#close").on("click",function()&#123;</span><br><span class="line">        $(this).alert("close");</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="按钮插件-Button"><a href="#按钮插件-Button" class="headerlink" title="按钮插件(Button)"></a>按钮插件(Button)</h3><p>插件源文件：<a href="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-button.min.js" target="_blank" rel="external">button.js</a><br>Bootstrap框架中的“按钮插件”适用情形：<br> ☑ 点击按钮时，按钮文字变为“正在加载…”，一旦加载完之后又变回“获取数据”。简单点说就是控制按钮状态，比如禁用状态、正在加载状态、正常状态等；<br> ☑ 按钮切换状态<br> ☑ 按钮模仿单选按钮<br> ☑ 按钮模仿复选按钮</p>
+<h4 id="按钮加载状态"><a href="#按钮加载状态" class="headerlink" title="按钮加载状态"></a>按钮加载状态</h4><p>通过按钮可以设计状态提示，当单击按钮时，会显示loading状态信息。例如，点击“加载”按钮，会触发按钮的加载的状态。如下所示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btnbtn-primary"</span> <span class="attr">data-loading-text</span>=<span class="string">"正在加载中,请稍等..."</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">id</span>=<span class="string">"loaddingBtn"</span>&gt;</span>加载<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>通过data-loading-text属性定义加载的文本信息，然后通过JavaScript给按钮绑定一个事件，并给按钮添加一个button(“loading”)方法来激活按钮的加载状态行为。如下所示：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#loaddingBtn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="keyword">this</span>).button(<span class="string">"loading"</span>);</span><br><span class="line">      &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="模拟单选按钮"><a href="#模拟单选按钮" class="headerlink" title="模拟单选按钮"></a>模拟单选按钮</h4><p>模拟单选择按钮是通过一组按钮来实现单选择操作。使用按钮组来模拟单选按钮组，能够让设计更具个性化，可以定制出更美观的单选按钮组。<br>在Bootstrap框架中按钮插件中，可以通过给按钮组自定义属性data-toggle=”buttons”，如下所示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn-group"</span> <span class="attr">data-toggle</span>=<span class="string">"buttons"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"options"</span> <span class="attr">id</span>=<span class="string">"options1"</span>&gt;</span>男</span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"options"</span> <span class="attr">id</span>=<span class="string">"options2"</span>&gt;</span>女</span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"options"</span> <span class="attr">id</span>=<span class="string">"options3"</span>&gt;</span>未知</span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>运行效果如下：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_27.jpg" alt="27"><br>注：使用这种效果的时候，无需借助JavaScript代码来触发，因为默认Bootstrap就已经为用户初始化好了。</p>
+<h4 id="模拟复选按钮"><a href="#模拟复选按钮" class="headerlink" title="模拟复选按钮"></a>模拟复选按钮</h4><p>使用按钮组来模拟复选按钮和模拟单选按钮是一样的，具有同等效果，也是通过在按钮组上自定义data-toggle=”buttons”来实现。唯一不同的是，将input[type=”radio”]换成input[type=”checkbox”]，如下所示：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn-group"</span> <span class="attr">data-toggle</span>=<span class="string">"buttons"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"options"</span> <span class="attr">id</span>=<span class="string">"options1"</span>&gt;</span>电影</span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"options"</span> <span class="attr">id</span>=<span class="string">"options2"</span>&gt;</span>音乐</span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"options"</span> <span class="attr">id</span>=<span class="string">"options3"</span>&gt;</span>游戏</span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"options"</span> <span class="attr">id</span>=<span class="string">"options4"</span>&gt;</span>摄影</span><br><span class="line">    <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>运行效果如下：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/bootstrap_28.jpg" alt="28"></p>
+<h4 id="按钮状态切换"><a href="#按钮状态切换" class="headerlink" title="按钮状态切换"></a>按钮状态切换</h4><p>使用 data-toggle 属性还可以激活按钮的行为状态，实现在激活和未激活之间进行状态切换。例如，下面代码可以激活按钮行为特性，单击时将按钮激活，再单击可以让按钮恢复到默认状态：<br><code>&lt;button type=&quot;button&quot; data-toggle=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;确认&lt;/button&gt;</code><br>注意，这里自定义属性是 data-toggle=”button”，而不是 data-toggle=”buttons”。</p>
+<h4 id="按钮插件-JavaScript用法"><a href="#按钮插件-JavaScript用法" class="headerlink" title="按钮插件-JavaScript用法"></a>按钮插件-JavaScript用法</h4><p>除了上面介绍的属性声明使用方法之外，按钮插件还可以通过调用button函数，然后给button函数传入具体的参数，实现不同的效果。而其中有两个参数是固定不变的，即toggle和reset。其他的都可以随意定义：<br>1、切换按钮状态（得到焦点）：<br><code>$(&quot;#mybutton&quot;).button(&quot;toggle&quot;)</code><br>2、重新恢复按钮：<br><code>$(&quot;#mybutton&quot;).button(&quot;reset&quot;)</code><br>如下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      $(<span class="string">"#mybutton"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         $(<span class="keyword">this</span>).button(<span class="string">'loading'</span>).delay(<span class="number">1000</span>).queue(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="keyword">this</span>).button(<span class="string">'reset'</span>);</span><br><span class="line">         &#125;);        </span><br><span class="line">      &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>3、任意参数：<br><code>$(&quot;#mybutton&quot;).button(&quot;任意字符参数名&quot;)</code><br>上面代码作用：替换 data-任意字符参数名-text 的属性值为“按钮上显示的文本值”。如下代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html部分 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">data-toggle</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span> <span class="attr">id</span>=<span class="string">"mybutton"</span> <span class="attr">data-complete-text</span>=<span class="string">"Loading finished"</span> &gt;</span>确认<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- js部分代码： --&gt;</span></span><br><span class="line"> $(function() &#123;</span><br><span class="line">      $("#mybutton").click(function()&#123;</span><br><span class="line">         $(this).button('loading').delay(1000).queue(function() &#123;</span><br><span class="line">            $(this).button('complete');</span><br><span class="line">         &#125;);        </span><br><span class="line">      &#125;);</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure></p>
+<p><strong>jQuery知识点：</strong><br>queue()函数用于获取或设置当前匹配元素上待执行的函数队列。<br>如果当前jQuery对象匹配多个元素：获取队列时，只获取第一个匹配元素上的队列；设置队列(替换队列、追加函数)时，则为每个匹配元素都分别进行设置。<br>如果需要移除并执行队列中的第一个函数，请使用dequeue()函数。你也可以使用clearQueue()函数清空指定的队列。<br>dequeue()函数用于移除每个匹配元素的指定队列中的第一个函数，并执行被移除的函数。</p>
+<h3 id="手风琴-Collapse"><a href="#手风琴-Collapse" class="headerlink" title="手风琴(Collapse)"></a>手风琴(Collapse)</h3><h4 id="手风琴结构"><a href="#手风琴结构" class="headerlink" title="手风琴结构"></a>手风琴结构</h4><h4 id="声明式触发手风琴"><a href="#声明式触发手风琴" class="headerlink" title="声明式触发手风琴"></a>声明式触发手风琴</h4><h3 id="图片轮播-Carousel"><a href="#图片轮播-Carousel" class="headerlink" title="图片轮播(Carousel)"></a>图片轮播(Carousel)</h3><h4 id="轮播图片的设计"><a href="#轮播图片的设计" class="headerlink" title="轮播图片的设计"></a>轮播图片的设计</h4><h4 id="声明式触发轮播图的播放"><a href="#声明式触发轮播图的播放" class="headerlink" title="声明式触发轮播图的播放"></a>声明式触发轮播图的播放</h4><h3 id="固定定位-Affix"><a href="#固定定位-Affix" class="headerlink" title="固定定位(Affix)"></a>固定定位(Affix)</h3><h4 id="声明式触发固定定位"><a href="#声明式触发固定定位" class="headerlink" title="声明式触发固定定位"></a>声明式触发固定定位</h4><h3 id="自定义Bootstrap"><a href="#自定义Bootstrap" class="headerlink" title="自定义Bootstrap"></a>自定义Bootstrap</h3><h4 id="在线自定义设置-Bootstrap组件"><a href="#在线自定义设置-Bootstrap组件" class="headerlink" title="在线自定义设置-Bootstrap组件"></a>在线自定义设置-Bootstrap组件</h4>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="xifengxx WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="xifengxx Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Bootstrap/" rel="tag">#Bootstrap</a>
+          
+            <a href="/tags/JS插件/" rel="tag">#JS插件</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/10/Bootstrap学习笔记(3)/" rel="next" title="Bootstrap学习笔记(3)">
+                <i class="fa fa-chevron-left"></i> Bootstrap学习笔记(3)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/11/Web前端实战问题总结/" rel="prev" title="Web前端实战问题总结">
+                Web前端实战问题总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/11/Bootstrap学习笔记(4)-JS插件/"
+           data-title="Bootstrap学习笔记(4)-JS插件" data-url="http://xifengxx.github.io/2016/06/11/Bootstrap学习笔记(4)-JS插件/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="xifengxx" />
+          <p class="site-author-name" itemprop="name">xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">46</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#模态弹出框"><span class="nav-number">1.</span> <span class="nav-text">模态弹出框</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导入JavaScript插件"><span class="nav-number">1.1.</span> <span class="nav-text">导入JavaScript插件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动画过渡-Transitions"><span class="nav-number">1.2.</span> <span class="nav-text">动画过渡(Transitions)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模态弹出框-Modals"><span class="nav-number">1.3.</span> <span class="nav-text">模态弹出框(Modals)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#模态弹出框-结构分析"><span class="nav-number">1.3.1.</span> <span class="nav-text">模态弹出框-结构分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#模态弹出框-实现原理解析"><span class="nav-number">1.3.2.</span> <span class="nav-text">模态弹出框-实现原理解析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#触发模态弹出窗2种方法"><span class="nav-number">1.3.3.</span> <span class="nav-text">触发模态弹出窗2种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#声明式触发方法-data属性调用-："><span class="nav-number">1.3.3.1.</span> <span class="nav-text">声明式触发方法(data属性调用)：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#JavaScript触发方法"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">JavaScript触发方法</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#为弹出框增加过渡动画效果"><span class="nav-number">1.3.4.</span> <span class="nav-text">为弹出框增加过渡动画效果</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#模态弹出窗的使用-data-参数说明"><span class="nav-number">1.3.5.</span> <span class="nav-text">模态弹出窗的使用(data-参数说明)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#模态弹出窗使用JavaScript触发"><span class="nav-number">1.3.6.</span> <span class="nav-text">模态弹出窗使用JavaScript触发</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JavaScript触发时的参数设置"><span class="nav-number">1.3.7.</span> <span class="nav-text">JavaScript触发时的参数设置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下拉菜单（Dropdown）"><span class="nav-number">2.</span> <span class="nav-text">下拉菜单（Dropdown）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性声明方法"><span class="nav-number">2.1.</span> <span class="nav-text">属性声明方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript方法"><span class="nav-number">2.2.</span> <span class="nav-text">JavaScript方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#滚动监控器"><span class="nav-number">3.</span> <span class="nav-text">滚动监控器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#滚动监控器的设计"><span class="nav-number">3.1.</span> <span class="nav-text">滚动监控器的设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在body中加监控"><span class="nav-number">3.2.</span> <span class="nav-text">在body中加监控</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript方法触发滚动监控器"><span class="nav-number">3.3.</span> <span class="nav-text">JavaScript方法触发滚动监控器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选项卡"><span class="nav-number">4.</span> <span class="nav-text">选项卡</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选项卡的结构"><span class="nav-number">4.1.</span> <span class="nav-text">选项卡的结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选项卡–触发切换效果"><span class="nav-number">4.2.</span> <span class="nav-text">选项卡–触发切换效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为选择卡添加fade样式"><span class="nav-number">4.3.</span> <span class="nav-text">为选择卡添加fade样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#胶囊式选项卡（nav-pills）"><span class="nav-number">4.4.</span> <span class="nav-text">胶囊式选项卡（nav-pills）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选项卡–JavaScript触发方法"><span class="nav-number">4.5.</span> <span class="nav-text">选项卡–JavaScript触发方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示框"><span class="nav-number">5.</span> <span class="nav-text">提示框</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#提示框的结构"><span class="nav-number">5.1.</span> <span class="nav-text">提示框的结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS触发提示框方法"><span class="nav-number">5.2.</span> <span class="nav-text">JS触发提示框方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提示框-其他的自定义属性"><span class="nav-number">5.3.</span> <span class="nav-text">提示框-其他的自定义属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS设置参数方法"><span class="nav-number">5.4.</span> <span class="nav-text">JS设置参数方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹出框-Popover"><span class="nav-number">6.</span> <span class="nav-text">弹出框(Popover)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#弹出框的结构"><span class="nav-number">6.1.</span> <span class="nav-text">弹出框的结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#触发弹出框的方法"><span class="nav-number">6.2.</span> <span class="nav-text">触发弹出框的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义结构属性"><span class="nav-number">6.3.</span> <span class="nav-text">自定义结构属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提示框和弹出框的异同"><span class="nav-number">6.4.</span> <span class="nav-text">提示框和弹出框的异同</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#警告框-Alert"><span class="nav-number">7.</span> <span class="nav-text">警告框(Alert)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#结构与样式"><span class="nav-number">7.1.</span> <span class="nav-text">结构与样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用声明式触发警告框"><span class="nav-number">7.2.</span> <span class="nav-text">使用声明式触发警告框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript触发警告框"><span class="nav-number">7.3.</span> <span class="nav-text">JavaScript触发警告框</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按钮插件-Button"><span class="nav-number">8.</span> <span class="nav-text">按钮插件(Button)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#按钮加载状态"><span class="nav-number">8.1.</span> <span class="nav-text">按钮加载状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模拟单选按钮"><span class="nav-number">8.2.</span> <span class="nav-text">模拟单选按钮</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模拟复选按钮"><span class="nav-number">8.3.</span> <span class="nav-text">模拟复选按钮</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按钮状态切换"><span class="nav-number">8.4.</span> <span class="nav-text">按钮状态切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#按钮插件-JavaScript用法"><span class="nav-number">8.5.</span> <span class="nav-text">按钮插件-JavaScript用法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手风琴-Collapse"><span class="nav-number">9.</span> <span class="nav-text">手风琴(Collapse)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#手风琴结构"><span class="nav-number">9.1.</span> <span class="nav-text">手风琴结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声明式触发手风琴"><span class="nav-number">9.2.</span> <span class="nav-text">声明式触发手风琴</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片轮播-Carousel"><span class="nav-number">10.</span> <span class="nav-text">图片轮播(Carousel)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#轮播图片的设计"><span class="nav-number">10.1.</span> <span class="nav-text">轮播图片的设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#声明式触发轮播图的播放"><span class="nav-number">10.2.</span> <span class="nav-text">声明式触发轮播图的播放</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#固定定位-Affix"><span class="nav-number">11.</span> <span class="nav-text">固定定位(Affix)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#声明式触发固定定位"><span class="nav-number">11.1.</span> <span class="nav-text">声明式触发固定定位</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义Bootstrap"><span class="nav-number">12.</span> <span class="nav-text">自定义Bootstrap</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在线自定义设置-Bootstrap组件"><span class="nav-number">12.1.</span> <span class="nav-text">在线自定义设置-Bootstrap组件</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

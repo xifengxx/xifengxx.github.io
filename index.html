@@ -396,8 +396,143 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/11/Bootstrap学习笔记(4)-JS插件/" itemprop="url">
+                  Bootstrap学习笔记(4)-JS插件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-11T09:23:24+08:00" content="2016-06-11">
+              2016-06-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Bootstrap/" itemprop="url" rel="index">
+                    <span itemprop="name">Bootstrap</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/11/Bootstrap学习笔记(4)-JS插件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/11/Bootstrap学习笔记(4)-JS插件/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/11/Bootstrap学习笔记(4)-JS插件/" class="leancloud_visitors" data-flag-title="Bootstrap学习笔记(4)-JS插件">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          模态弹出框导入JavaScript插件Bootstrap除了包含丰富的Web组件之外，如前面介绍的下拉菜单、按钮组、导航、分页等。他还包括一些JavaScript的插件。
+Bootstrap的JavaScript插件可以单独导入到页面中，也可以一次性导入到页面中。因为在Bootstrap中的JavaScript插件都是依赖于jQuery库，所以不论是单独导入还一次性导入之前必须先导入jQuery库。
+一次性导入：Bootstrap提供了一个单一的文件，这个文件包含了Bootstrap的所有JavaScript插件，即bootstrap.js（压缩版本：bootstrap.min.js）。具体使用如下（或见右侧代码编辑器28-29行）：12345&lt;!—导入jQuery版本库，因为Bootstrap的JavaScript插件依赖于jQuery --&gt;&lt;script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"&gt;&lt;/script&gt;&lt;!—- 一次性导入所有Bootstrap的JavaScript插
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/11/Bootstrap学习笔记(4)-JS插件/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/10/Bootstrap学习笔记(3)/" itemprop="url">
-                  Bootstrap学习笔记(2)
+                  Bootstrap学习笔记(3)
                 </a>
               
             
@@ -451,7 +586,7 @@
 
           
           
-             <span id="/2016/06/10/Bootstrap学习笔记(3)/" class="leancloud_visitors" data-flag-title="Bootstrap学习笔记(2)">
+             <span id="/2016/06/10/Bootstrap学习笔记(3)/" class="leancloud_visitors" data-flag-title="Bootstrap学习笔记(3)">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -473,13 +608,7 @@
 
       
         
-          
-          导航条、分页导航导航条（navbar）和上一节介绍的导航（nav），就相差一个字，多了一个“条”字。其实在Bootstrap框架中他们还是明显的区别。在导航条(navbar)中有一个背景色、而且导航条可以是纯链接（类似导航），也可以是表单，还有就是表单和导航一起结合等多种形式。在这一节中将一起探讨Bootstrap框架中导航条的使用。
-导航条和导航一样，在Bootstrap框架中是一个独立组件，所以你也可以根据自己的需求使用不同的版本：—— LESS版本：对应的源文件navbar.less—— Sass版本：对应的源文件_navbar.scss—— 编译后的版本：查看bootstrap.css文件
-基础导航条在Bootstrap框中，导航条和导航从外观上差别不是太多，但在实际使用中导航条要比导航复杂得多。我们先来看导航条中最基础的一个——基础导航条。
-使用方法：在制作一个基础导航条时，主要分以下几步：第一步：首先在制作导航的列表(&lt;ul class=”nav”&gt;)基础上添加类名“navbar-nav”第二步：在列表外部添加一个容器（div），并且使用类名“navbar”和“
-          ...
-
+          <h3 id="导航条、分页导航"><a href="#导航条、分页导航" class="headerlink" title="导航条、分页导航"></a>导航条、分页导航</h3><p>导航条（navbar）和上一节介绍的导航（nav），就相差一个字，多了一个“条”字。<br>其实在Bootstrap框架中他们还是明显的区别。在导航条(navbar)中有一个背景色、而且导航条可以是纯链接（类似导航），也可以是表单，还有就是表单和导航一起结合等多种形式。在这一节中将一起探讨Bootstrap框架中导航条的使用。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/06/10/Bootstrap学习笔记(3)/#more" rel="contents">
               阅读全文 &raquo;
@@ -1431,137 +1560,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/20/瀑布流布局实现方法/" itemprop="url">
-                  瀑布流布局实现方法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-20T09:23:24+08:00" content="2016-05-20">
-              2016-05-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/网页特效/" itemprop="url" rel="index">
-                    <span itemprop="name">网页特效</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/20/瀑布流布局实现方法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/20/瀑布流布局实现方法/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/05/20/瀑布流布局实现方法/" class="leancloud_visitors" data-flag-title="瀑布流布局实现方法">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/git-%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80.jpg" alt=""></p>
-<h3 id="瀑布流介绍"><a href="#瀑布流介绍" class="headerlink" title="瀑布流介绍"></a>瀑布流介绍</h3><p><strong>什么是瀑布流？</strong><br>瀑布流，又称瀑布流式布局，是比较流行的一种网站页面布局，视觉表现为参差不齐的多栏布局，随着页面滚动条向下滚动，这种布局还会不断加载数据块并附加至当前尾部，最早采用此布局的网站是Pinterest，逐渐在国内流行开来，国内大多数清新站基本为这类风格。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/20/瀑布流布局实现方法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1607,7 +1605,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">45</span>
+              <span class="site-state-item-count">46</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1624,7 +1622,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
