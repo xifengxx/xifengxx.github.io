@@ -68,7 +68,7 @@
 <meta property="og:description" content="jQuery选择器选择器是一种选中页面元素的方式。只要把元素选中，我们才能对被选中的元素进行各种操作。不同的选择器，在于它们选取方式的不同。jQuery选择器的功能就是把元素选中，然后我们才能对选中的元素进行各种操作。jQuery选择器的格式如下：1$(&amp;quot;选择器&amp;quot;)
 参考：jQuery选择器一览表">
 <meta property="og:image" content="http://www.lvyestudy.com/App_images/lesson/jq/2-2-2.png">
-<meta property="og:updated_time" content="2016-05-05T13:07:04.000Z">
+<meta property="og:updated_time" content="2016-06-12T15:27:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery学习笔记1 - jQuery选择器">
 <meta name="twitter:description" content="jQuery选择器选择器是一种选中页面元素的方式。只要把元素选中，我们才能对被选中的元素进行各种操作。不同的选择器，在于它们选取方式的不同。jQuery选择器的功能就是把元素选中，然后我们才能对选中的元素进行各种操作。jQuery选择器的格式如下：1$(&amp;quot;选择器&amp;quot;)
@@ -354,23 +354,166 @@
 <p>（5）<em>选择器
 </em>选择器，也成为“全选选择器”，用于选择所有的元素。</p>
 <h5 id="层次选择器；"><a href="#层次选择器；" class="headerlink" title="层次选择器；"></a>层次选择器；</h5><p>层次选择器，就是通过元素之间的层次关系来获取元素。<br>常见的层次关系包括：父子、后代、兄弟、相邻。</p>
-<p>在jQuery，层次选择器共有4种：<br>选择器 | 说明<br>  —- | —-<br><code>$(&quot;M N&quot;)</code>   |   后代选择器，选择M元素内部后代N元素（所有N元素）<br><code>$(&quot;M&gt;N&quot;)</code>   |   子代选择器，选择M元素内部子代N元素（所有第1级N元素）<br><code>$(&quot;M~N&quot;)</code>   |   兄弟选择器，选择M元素后所有的同级N元素<br><code>$(&quot;M+N&quot;)</code>   |   相邻选择器，选择M元素相邻的下一个元素（M、N是同级元素）</p>
-<h5 id="属性选择器；"><a href="#属性选择器；" class="headerlink" title="属性选择器；"></a>属性选择器；</h5><p>在jQuery中，除了直接使用id和class属性作为选择器之外，还可以把各种属性作为选择器，这就是我们所说的属性选择器。</p>
-<p>在jQuery中，常见的属性选择器如下：<br>| 选择器  |  说明 |<br>| —–   |  —— |<br>| <code>$(&quot;selector[attr]&quot;)</code>  |  选择包含给定属性的元素 |<br>| <code>$(&quot;selector[attr=&#39;value&#39;]&quot;)</code>  |   选择给定的属性是某个特定值的元素 |<br>| <code>$(&quot;selector[attr!=&#39;value&#39;]&quot;)</code>   |   选择所有含有指定的属性，但属性不等于特定值的元素 |<br>| <code>$(&quot;selector[attr*=&#39;value&#39;]&quot;)</code>   |   选择给定的属性是以包含某些值的元素 |<br>| <code>$(&quot;selector[attr^=&#39;value&#39;]&quot;)</code>   |   选择给定的属性是以某些值开始的元素（比较少用） |<br>| <code>$(&quot;selector[attr$=&#39;value&#39;]&quot;)</code>   |   选择给定的属性是以某些值结尾的元素（比较少用） |<br>| <code>$(&quot;selector[selector1][selector2]…[selectorN]&quot;)</code>   |  复合属性选择器，需要同时满足多个条件时使用 |<br>备注：selector指的是选择器，attr指的是属性（attribute），value指的是属性值。<br><strong>案例</strong><br>（1）选择含有class属性的div元素。<br><code>$(&quot;div[class]&quot;)</code><br>（2）选择type属性值为checkbox的input元素（也就是选择所有复选框元素）：<br><code>$(&quot;input[type= &#39;checkbox&#39;]&quot;)</code><br>（3）选择type属性值不是checkbox的input元素：<br><code>$(&quot;input[type!= &#39;checkbox&#39;]&quot;)</code><br>（4）选择class属性包含nav的div元素（因为class属性可以包含多个值）：<br><code>$(&quot;div[class*= &#39;nav&#39;]&quot;)</code><br>（5）选择name属性以group开始的input元素，例如<code>&lt;input type=&quot;radio&quot; name=&quot;group-fruit&quot;/&gt;</code>:<br><code>$(&quot;input[name^= &#39;group&#39;]&quot;)</code><br>（6）选择name属性以group结尾的input元素，例如<code>&lt;input type=&quot;radio&quot; name=&quot;fruit-group&quot;/&gt;</code>：<br><code>$(&quot;input[name$= &#39;group&#39;]&quot;)</code><br>（7）选择具有id属性并且class属性是以nav开头的div元素，例如<code>&lt;div id=&quot;div1&quot; class=&quot;lvye-div&quot;&gt;绿叶学习网&lt;/div&gt;</code>：<br><code>$(&quot;div[id][class^=&#39;nav&#39;]&quot;)</code></p>
+<p>在jQuery，层次选择器共有4种：</p>
+<p>选择器 | 说明<br>|   —- | —- |<br>| — | — |<br>| <code>$(&quot;M N&quot;)</code>   |   后代选择器，选择M元素内部后代N元素（所有N元素）|<br>| <code>$(&quot;M&gt;N&quot;)</code>   |   子代选择器，选择M元素内部子代N元素（所有第1级N元素）|<br>| <code>$(&quot;M~N&quot;)</code>   |   兄弟选择器，选择M元素后所有的同级N元素|<br>| <code>$(&quot;M+N&quot;)</code>   |   相邻选择器，选择M元素相邻的下一个元素（M、N是同级元素）| </p>
+<h5 id="属性选择器；"><a href="#属性选择器；" class="headerlink" title="属性选择器；"></a>属性选择器；</h5><p>在jQuery中，除了直接使用id和class属性作为选择器之外，还可以把各种属性作为选择器，这就是我们所说的属性选择器。<br>在jQuery中，常见的属性选择器如下：</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$(&quot;selector[attr]&quot;)</code></td>
+<td>选择包含给定属性的元素</td>
+</tr>
+<tr>
+<td><code>$(&quot;selector[attr=&#39;value&#39;]&quot;)</code></td>
+<td>选择给定的属性是某个特定值的元素</td>
+</tr>
+<tr>
+<td><code>$(&quot;selector[attr!=&#39;value&#39;]&quot;)</code></td>
+<td>选择所有含有指定的属性，但属性不等于特定值的元素</td>
+</tr>
+<tr>
+<td><code>$(&quot;selector[attr*=&#39;value&#39;]&quot;)</code></td>
+<td>选择给定的属性是以包含某些值的元素</td>
+</tr>
+<tr>
+<td><code>$(&quot;selector[attr^=&#39;value&#39;]&quot;)</code></td>
+<td>选择给定的属性是以某些值开始的元素（比较少用）</td>
+</tr>
+<tr>
+<td><code>$(&quot;selector[attr$=&#39;value&#39;]&quot;)</code></td>
+<td>选择给定的属性是以某些值结尾的元素（比较少用）</td>
+</tr>
+<tr>
+<td><code>$(&quot;selector[selector1][selector2]…[selectorN]&quot;)</code></td>
+<td>复合属性选择器，需要同时满足多个条件时使用</td>
+</tr>
+</tbody>
+</table>
+<p>备注：selector指的是选择器，attr指的是属性（attribute），value指的是属性值。<br><strong>案例</strong><br>（1）选择含有class属性的div元素。<br><code>$(&quot;div[class]&quot;)</code><br>（2）选择type属性值为checkbox的input元素（也就是选择所有复选框元素）：<br><code>$(&quot;input[type= &#39;checkbox&#39;]&quot;)</code><br>（3）选择type属性值不是checkbox的input元素：<br><code>$(&quot;input[type!= &#39;checkbox&#39;]&quot;)</code><br>（4）选择class属性包含nav的div元素（因为class属性可以包含多个值）：<br><code>$(&quot;div[class*= &#39;nav&#39;]&quot;)</code><br>（5）选择name属性以group开始的input元素，例如<code>&lt;input type=&quot;radio&quot; name=&quot;group-fruit&quot;/&gt;</code>:<br><code>$(&quot;input[name^= &#39;group&#39;]&quot;)</code><br>（6）选择name属性以group结尾的input元素，例如<code>&lt;input type=&quot;radio&quot; name=&quot;fruit-group&quot;/&gt;</code>：<br><code>$(&quot;input[name$= &#39;group&#39;]&quot;)</code><br>（7）选择具有id属性并且class属性是以nav开头的div元素，例如<code>&lt;div id=&quot;div1&quot; class=&quot;lvye-div&quot;&gt;绿叶学习网&lt;/div&gt;</code>：<br><code>$(&quot;div[id][class^=&#39;nav&#39;]&quot;)</code></p>
 <h4 id="jQuery伪类选择器"><a href="#jQuery伪类选择器" class="headerlink" title="jQuery伪类选择器"></a>jQuery伪类选择器</h4><p>伪类选择器，可以看成是一种特殊的选择器。伪类选择器都是以英文冒号“:”开头。jQuery参考css选择器的形式，为我们提供了大量的伪类选择器，使得我们可以快速地选择我们想要获取的元素。</p>
 <p>在jQuery中常见的伪类选择器分为以下6种：<br>（1）简单伪类选择器；<br>（2）子元素伪类选择器；<br>（3）可见性伪类选择器；<br>（4）内容伪类选择器；<br>（5）表单伪类选择器；<br>（6）表单属性伪类选择器；</p>
-<h5 id="简单伪类选择器；"><a href="#简单伪类选择器；" class="headerlink" title="简单伪类选择器；"></a>简单伪类选择器；</h5><p>jQuery为我们提供了大量的伪类选择器，其中最常用的伪类选择器，我们称为“简单伪类选择器”。<br>在jQuery中，简单伪类选择器如下：<br>| 伪类选择器 | 说明 |<br>| —- | —- |<br>| :not(selector) | 选择除了某个选择器之外的所有元素 | | |<br>| :first或first() | 选择某元素的第一个元素（非子元素） | |<br>| :last或last() | 选择某元素的最后一个元素（非子元素） |<br>| :odd | 选择某元素的索引值为奇数的元素 |<br>| :even |   选择某元素的索引值为偶数的元素 |<br>| :eq(index) | 选择给定索引值的元素，索引值index是一个整数，从0开始 |<br>| :lt(index) | 选择所有小于索引值的元素，索引值index是一个整数，从0开始 |<br>| :gt(index) | 选择所有大于索引值的元素，索引值index是一个整数，从0开始 |<br>| :header | 选择h1~h6的标题元素 |<br>| :animated | 选择所有正在执行动画效果的元素 |<br>| :root | 选择页面的根元素 |<br>| :target | 选择当前活动的目标元素（锚点） |<br><strong>案例</strong></p>
+<h5 id="简单伪类选择器；"><a href="#简单伪类选择器；" class="headerlink" title="简单伪类选择器；"></a>简单伪类选择器；</h5><p>jQuery为我们提供了大量的伪类选择器，其中最常用的伪类选择器，我们称为“简单伪类选择器”。<br>在jQuery中，简单伪类选择器如下：</p>
+<table>
+<thead>
+<tr>
+<th>伪类选择器</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:not(selector)</td>
+<td>选择除了某个选择器之外的所有元素</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>:first或first()</td>
+<td>选择某元素的第一个元素（非子元素）</td>
+<td></td>
+</tr>
+<tr>
+<td>:last或last()</td>
+<td>选择某元素的最后一个元素（非子元素）</td>
+</tr>
+<tr>
+<td>:odd</td>
+<td>选择某元素的索引值为奇数的元素</td>
+</tr>
+<tr>
+<td>:even</td>
+<td>选择某元素的索引值为偶数的元素</td>
+</tr>
+<tr>
+<td>:eq(index)</td>
+<td>选择给定索引值的元素，索引值index是一个整数，从0开始</td>
+</tr>
+<tr>
+<td>:lt(index)</td>
+<td>选择所有小于索引值的元素，索引值index是一个整数，从0开始</td>
+</tr>
+<tr>
+<td>:gt(index)</td>
+<td>选择所有大于索引值的元素，索引值index是一个整数，从0开始</td>
+</tr>
+<tr>
+<td>:header</td>
+<td>选择h1~h6的标题元素</td>
+</tr>
+<tr>
+<td>:animated</td>
+<td>选择所有正在执行动画效果的元素</td>
+</tr>
+<tr>
+<td>:root</td>
+<td>选择页面的根元素</td>
+</tr>
+<tr>
+<td>:target</td>
+<td>选择当前活动的目标元素（锚点）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>案例</strong></p>
 <ul>
 <li>除了id为myLi之外的其他li元素。<br><code>$(&quot;li:not(#myLi)&quot;).css(&quot;color&quot;, &quot;red&quot;)</code></li>
 <li>选择第一个li元素和最后一个li元素<br><code>$(&quot;li:first,li:last&quot;).css(&quot;color&quot;, &quot;red&quot;);</code></li>
 <li>选择索引值为奇数的li元素。（索引值是从0开始，而不是从1开始。）<br><code>$(&quot;li:odd&quot;).css(&quot;color&quot;, &quot;red&quot;);</code></li>
 </ul>
-<h5 id="子元素伪类选择器；"><a href="#子元素伪类选择器；" class="headerlink" title="子元素伪类选择器；"></a>子元素伪类选择器；</h5><p>子元素伪类选择器，就是选择某一个元素下面的子元素的方式。<br>在jQuery中，子元素伪类选择器如下：<br>| 选择器 | 说明 |<br>| 第一类子元素伪类选择器 | 说明 |<br>| —- | —- |<br>| :first-child    选择父元素的第1个子元素 |<br>| :last-child 选择父元素的最后1个子元素 |<br>| :nth-child(n)   选择父元素下的第n个元素或奇偶元素，n的值为“整数|odd|even” |<br>| :only-child 选择父元素中唯一的子元素（该父元素只有一个子元素） |<br>| 第二类子元素伪类选择器 | 说明 |<br>| —- | —- |<br>| :first-of-type  选择父元素下的同元素类型的第1个同级兄弟元素 |<br>| :last-of-type   选择父元素下的同元素类型的最后1个同级兄弟元素 |<br>| :nth-of-type    选择父元素下的同元素类型的第n个同级兄弟元素，n的值可以是“整数|odd|even” |<br>| :only-of-type   匹配父元素中特定类型的唯一子元素（但是父元素可以有多个子元素） |</p>
+<h5 id="子元素伪类选择器；"><a href="#子元素伪类选择器；" class="headerlink" title="子元素伪类选择器；"></a>子元素伪类选择器；</h5><p>子元素伪类选择器，就是选择某一个元素下面的子元素的方式。<br>在jQuery中，子元素伪类选择器如下：</p>
+<p>| 选择器 | 说明 |<br>| 第一类子元素伪类选择器 | 说明 |<br>| —- | —- |<br>| :first-child    选择父元素的第1个子元素 |<br>| :last-child 选择父元素的最后1个子元素 |<br>| :nth-child(n)   选择父元素下的第n个元素或奇偶元素，n的值为“整数|odd|even” |<br>| :only-child 选择父元素中唯一的子元素（该父元素只有一个子元素） |<br>| 第二类子元素伪类选择器 | 说明 |<br>| —- | —- |<br>| :first-of-type  选择父元素下的同元素类型的第1个同级兄弟元素 |<br>| :last-of-type   选择父元素下的同元素类型的最后1个同级兄弟元素 |<br>| :nth-of-type    选择父元素下的同元素类型的第n个同级兄弟元素，n的值可以是“整数|odd|even” |<br>| :only-of-type   匹配父元素中特定类型的唯一子元素（但是父元素可以有多个子元素） |</p>
 <p><strong>“第1类选择器不分元素类型，第2类选择器区分元素类型。”</strong></p>
-<h5 id="可见性伪类选择器；"><a href="#可见性伪类选择器；" class="headerlink" title="可见性伪类选择器；"></a>可见性伪类选择器；</h5><p>可见性伪类选择器，就是根据元素的“可见”与“不可见”这2种状态来选取元素。<br>在jQuery中，可见性伪类选择器只有2种：<br>| 选择器 | 说明 |<br>| —- | —- |<br>| :hidden 选取所有不可见元素 |<br>| :visible    选取所有可见元素，与:hidden相反 |</p>
+<h5 id="可见性伪类选择器；"><a href="#可见性伪类选择器；" class="headerlink" title="可见性伪类选择器；"></a>可见性伪类选择器；</h5><p>可见性伪类选择器，就是根据元素的“可见”与“不可见”这2种状态来选取元素。<br>在jQuery中，可见性伪类选择器只有2种：</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:hidden 选取所有不可见元素</td>
+</tr>
+<tr>
+<td>:visible    选取所有可见元素，与:hidden相反</td>
+</tr>
+</tbody>
+</table>
 <p>“:hidden”选择器选择的不仅包括样式为<code>display:none</code>所有元素，而且还包括属性<code>type=&quot;hidden&quot;</code>和样式为<code>visibility:hidden</code>的所有元素。</p>
-<h5 id="内容伪类选择器；"><a href="#内容伪类选择器；" class="headerlink" title="内容伪类选择器；"></a>内容伪类选择器；</h5><p>内容伪类选择器，就是根据元素中的文字内容或所包含的子元素特征来选择元素，其文字内容可以模糊或绝对匹配进行元素定位。</p>
-<p>jQuery内容伪类选择器包括：<br>| 选择器 | 说明 |<br>| —– | ——— |<br>| :contains(text) | 选择包含给定文本内容的元素 |<br>| :has(selector) |  选择含有选择器所匹配元素的元素 |<br>| :empty |  选择所有不包含子元素或者不包含文本的元素 |<br>| :parent | 选择含有子元素或者文本的元素（跟:empty相反） |</p>
+<h5 id="内容伪类选择器；"><a href="#内容伪类选择器；" class="headerlink" title="内容伪类选择器；"></a>内容伪类选择器；</h5><p>内容伪类选择器，就是根据元素中的文字内容或所包含的子元素特征来选择元素，其文字内容可以模糊或绝对匹配进行元素定位。<br>jQuery内容伪类选择器包括：</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:contains(text)</td>
+<td>选择包含给定文本内容的元素</td>
+</tr>
+<tr>
+<td>:has(selector)</td>
+<td>选择含有选择器所匹配元素的元素</td>
+</tr>
+<tr>
+<td>:empty</td>
+<td>选择所有不包含子元素或者不包含文本的元素</td>
+</tr>
+<tr>
+<td>:parent</td>
+<td>选择含有子元素或者文本的元素（跟:empty相反）</td>
+</tr>
+</tbody>
+</table>
 <p>案例：</p>
 <ul>
 <li><code>$(&quot;p:contains(jQuery)&quot;)</code>表示选择包含“jQuery”这一个文本内容的p元素。</li>
@@ -378,10 +521,103 @@
 <li><code>$(&quot;div:has(#red,#yellow)&quot;)</code>表示选择内部含有id为red和id为yellow子元素的div元素。<code>:has(selector)</code>中的selector是一个群组选择器。</li>
 <li><code>$(&quot;td:empty&quot;)</code>表示选择内部没有文本内容也没有子元素的td元素。</li>
 </ul>
-<h5 id="表单伪类选择器；"><a href="#表单伪类选择器；" class="headerlink" title="表单伪类选择器；"></a>表单伪类选择器；</h5><p>jQuery为方便我们操作表单元素提供了完善的伪类选择器。<br>表单伪类选择器，指的是根据“表单类型”来选择的伪类选择器。</p>
-<p>在jQuery中，常用的表单伪类选择器如下：<br>| 选择器 | 说明|  |<br>| — | ——–  |<br>| :input |  选择所有input元素 |<br>| :button | 选择所有普通按钮，即type=”button”的input元素 |<br>| :submit | 选择所有提交按钮，即type=”submit”的input元素 |<br>| :reset |  选择所有重置按钮，即type=”reset”的input元素 |<br>| :text |   选择所有单行文本框 |<br>| :textarea |   选择所有多行文本框 |<br>| :password  |  选择所有密码文本框 |<br>| :radio |  选择所有单选按钮 |<br>| :checkbox |   选择所有复选框 |<br>| :image |  选择所有图像域 |<br>| :hidden | 选择所有隐藏域 |<br>| :file |   选择所有文件域 |<br>案例：<br><code>$(&quot;input:checkbox&quot;)</code>表示选择所有复选框元素</p>
-<h5 id="表单属性伪类选择器；"><a href="#表单属性伪类选择器；" class="headerlink" title="表单属性伪类选择器；"></a>表单属性伪类选择器；</h5><p>除了表单伪类选择器，jQuery为了更加方便开发者快速选择表单元素进行操作，还提供了一系列的表单属性伪类选择器。<br>表单属性伪类选择器，就是根据表单元素的标签属性来选取某一类表单元素。</p>
-<p>在jQuery中，表单属性伪类选择器如下：<br>| 选择器 | 说明 |<br>| —- | ——- |<br>| :checked |    选择所有被选中的表单元素，一般用于radio和checkbox |<br>| option:selected | 选择所有被选中的option元素 |<br>| :enabled |    选择所有可用元素，一般用于input、select和textarea |<br>| :disabled |   选择所有不可用元素，一般用于input、select和textarea |<br>| :read-only |  选择所有只读元素，一般用于input和textarea |<br>| :focus |  选择获得焦点的元素，常用于input和textarea |<br>案例：<br><code>$(&quot;input:checked&quot;).val()</code>表示选择“被选中”的单选框或复选框（因为只有单选框和复选框有checked属性），并且获取表单元素的value值。</p>
+<h5 id="表单伪类选择器；"><a href="#表单伪类选择器；" class="headerlink" title="表单伪类选择器；"></a>表单伪类选择器；</h5><p>jQuery为方便我们操作表单元素提供了完善的伪类选择器。<br>表单伪类选择器，指的是根据“表单类型”来选择的伪类选择器。<br>在jQuery中，常用的表单伪类选择器如下</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>说明</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:input</td>
+<td>选择所有input元素</td>
+</tr>
+<tr>
+<td>:button</td>
+<td>选择所有普通按钮，即type=”button”的input元素</td>
+</tr>
+<tr>
+<td>:submit</td>
+<td>选择所有提交按钮，即type=”submit”的input元素</td>
+</tr>
+<tr>
+<td>:reset</td>
+<td>选择所有重置按钮，即type=”reset”的input元素</td>
+</tr>
+<tr>
+<td>:text</td>
+<td>选择所有单行文本框</td>
+</tr>
+<tr>
+<td>:textarea</td>
+<td>选择所有多行文本框</td>
+</tr>
+<tr>
+<td>:password</td>
+<td>选择所有密码文本框</td>
+</tr>
+<tr>
+<td>:radio</td>
+<td>选择所有单选按钮</td>
+</tr>
+<tr>
+<td>:checkbox</td>
+<td>选择所有复选框</td>
+</tr>
+<tr>
+<td>:image</td>
+<td>选择所有图像域</td>
+</tr>
+<tr>
+<td>:hidden</td>
+<td>选择所有隐藏域</td>
+</tr>
+<tr>
+<td>:file</td>
+<td>选择所有文件域</td>
+</tr>
+</tbody>
+</table>
+<p>案例：<br><code>$(&quot;input:checkbox&quot;)</code>表示选择所有复选框元素</p>
+<h5 id="表单属性伪类选择器；"><a href="#表单属性伪类选择器；" class="headerlink" title="表单属性伪类选择器；"></a>表单属性伪类选择器；</h5><p>除了表单伪类选择器，jQuery为了更加方便开发者快速选择表单元素进行操作，还提供了一系列的表单属性伪类选择器。<br>表单属性伪类选择器，就是根据表单元素的标签属性来选取某一类表单元素。<br>在jQuery中，表单属性伪类选择器如下：</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:checked</td>
+<td>选择所有被选中的表单元素，一般用于radio和checkbox</td>
+</tr>
+<tr>
+<td>option:selected</td>
+<td>选择所有被选中的option元素</td>
+</tr>
+<tr>
+<td>:enabled</td>
+<td>选择所有可用元素，一般用于input、select和textarea</td>
+</tr>
+<tr>
+<td>:disabled</td>
+<td>选择所有不可用元素，一般用于input、select和textarea</td>
+</tr>
+<tr>
+<td>:read-only</td>
+<td>选择所有只读元素，一般用于input和textarea</td>
+</tr>
+<tr>
+<td>:focus</td>
+<td>选择获得焦点的元素，常用于input和textarea</td>
+</tr>
+</tbody>
+</table>
+<p>案例：<br><code>$(&quot;input:checked&quot;).val()</code>表示选择“被选中”的单选框或复选框（因为只有单选框和复选框有checked属性），并且获取表单元素的value值。</p>
 
       
     </div>
