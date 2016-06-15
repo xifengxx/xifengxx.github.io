@@ -1,0 +1,981 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端架构," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="在互联网应用越来越大，越来越复杂的今天，我们不可避免的需要工具来管理我们的前端代码。,替代以前的一个巨大的脚本文件，我们希望可以将文件写入不同的文件模块。并且希望代码可以重用，可以简单的引用和添加各种各样的依赖到我们的项目（ 无论是菜单一样的 UI 组件还是 一个类似 jQuery 的 DOM 操作库）。不止是 JavaScript 我们希望可以用这种方式来组织， 他应该也包含 CSS，HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电商网站前端架构">
+<meta property="og:url" content="http://xifengxx.github.io/2016/06/01/电商网站前端架构/index.html">
+<meta property="og:site_name" content="西风前端">
+<meta property="og:description" content="在互联网应用越来越大，越来越复杂的今天，我们不可避免的需要工具来管理我们的前端代码。,替代以前的一个巨大的脚本文件，我们希望可以将文件写入不同的文件模块。并且希望代码可以重用，可以简单的引用和添加各种各样的依赖到我们的项目（ 无论是菜单一样的 UI 组件还是 一个类似 jQuery 的 DOM 操作库）。不止是 JavaScript 我们希望可以用这种方式来组织， 他应该也包含 CSS，HTML">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/1.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/2.jpg">
+<meta property="og:updated_time" content="2016-06-15T00:16:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="电商网站前端架构">
+<meta name="twitter:description" content="在互联网应用越来越大，越来越复杂的今天，我们不可避免的需要工具来管理我们的前端代码。,替代以前的一个巨大的脚本文件，我们希望可以将文件写入不同的文件模块。并且希望代码可以重用，可以简单的引用和添加各种各样的依赖到我们的项目（ 无论是菜单一样的 UI 组件还是 一个类似 jQuery 的 DOM 操作库）。不止是 JavaScript 我们希望可以用这种方式来组织， 他应该也包含 CSS，HTML">
+<meta name="twitter:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 电商网站前端架构 | 西风前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-something">
+          <a href="/works.html" rel="section">
+            
+            作品Demo
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                电商网站前端架构
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-01T14:23:24+08:00" content="2016-06-01">
+              2016-06-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">Web前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/01/电商网站前端架构/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/01/电商网站前端架构/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/01/电商网站前端架构/" class="leancloud_visitors" data-flag-title="电商网站前端架构">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E5%89%8D%E7%AB%AF%E6%9E%B6%E6%9E%84.jpg" alt=""><br>在互联网应用越来越大，越来越复杂的今天，我们不可避免的需要工具来管理我们的前端代码。,替代以前的一个巨大的脚本文件，我们希望可以将文件写入不同的文件模块。并且希望代码可以重用，可以简单的引用和添加各种各样的依赖到我们的项目（ 无论是菜单一样的 UI 组件还是 一个类似 jQuery 的 DOM 操作库）。不止是 JavaScript 我们希望可以用这种方式来组织， 他应该也包含 CSS，HTML 模板，字体，图片和其他静态文件。<br><a id="more"></a><br><strong>为什么前端需要模块化开发?</strong><br>随着互联网应用越来越大，前端的开发也越来越复杂。如果还维持在以往以页面为单位的开发， 会导致很多问题，类似依赖管理，命名冲突等棘手的问题。</p>
+<h3 id="前端架构知识储备"><a href="#前端架构知识储备" class="headerlink" title="前端架构知识储备"></a>前端架构知识储备</h3><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/1.jpg" alt="1"></p>
+<h4 id="技术基础："><a href="#技术基础：" class="headerlink" title="技术基础："></a>技术基础：</h4><ol>
+<li>语言基础：JavaScropt, css&html; </li>
+<li>基本框架和类库：jQuery &amp; requirejs/seajs模块化框架 &amp; MVC framework; </li>
+<li>设计模式：代码继承&amp;重用； </li>
+<li>性能优化：http cache/ local cache/compress/DOM render;</li>
+<li>其他： Restful API design &amp; 自动化(grunt/nodejs) &amp; 跨终端适配 &amp; 代码托管。</li>
+</ol>
+<h4 id="产品设计、发布和迭代基础"><a href="#产品设计、发布和迭代基础" class="headerlink" title="产品设计、发布和迭代基础"></a>产品设计、发布和迭代基础</h4><p>1、产品设计：交互没有技术基础，前端和交互沟通，怎样方便实现、实现得更好；<br>2、产品发布：前端外延，与业务绑定<br>3、产品迭代：前端外延，与业务绑定</p>
+<h4 id="数据分析和优化"><a href="#数据分析和优化" class="headerlink" title="数据分析和优化"></a>数据分析和优化</h4><p>数据统计：利用第三方软件对前端展现的数据情况、反馈，对展现进行分析、优化。<br>关注数据的目的：提示产品的质量，做架构不是以技术，而是以产品的角度的，以用户体验为目的。</p>
+<h3 id="前端架构设计"><a href="#前端架构设计" class="headerlink" title="前端架构设计"></a>前端架构设计</h3><p><strong>目录层面的组织</strong></p>
+<ol>
+<li>目录系统在前端架构当中所充当的作用</li>
+<li>更高效的组织开发目录：<br>好的目录组织方式，甚至可以代替那些复杂的代码组织框架</li>
+<li>CSS，JS和图片要分开存放：<br>分开存放，往往不是出于技术角度的考量，而是从团队协作和迭代的管理层面出发。</li>
+</ol>
+<p>一般而言，前端目录基本分为：<br>1、UI层（视图层）：控制视图业务逻辑代码<br>2、modle(数据层)：跟后台服务器打交道代码<br>3、controller(控制层)：轻量控制</p>
+<p><strong>页面层次的架构组织</strong><br>将各个页面公用的代码存放在一个文件夹中。</p>
+<p><strong>高级的前端结构设计-组件化和设计模式层面</strong></p>
+<ol>
+<li>自定义：继承–js的原型链继承；例子：浅拷贝、原型链继承；<br>（目前很少自己定义：1.项目没那么复杂 2.一些类库已经封装好了继承和扩展的方法，比如jQuery的extend。）</li>
+<li>使用闭包，对空间的划分过于随便，闭包中的变量会常驻在内存中，产生性能问题（注意事项：避免在闭包当中使用过大的变量）</li>
+<li>使用组件化框架：requirejs、seajs – CMD（按需加载） AMD（依赖关系前置）。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//CMD 依赖就近，按需加载，用的时候导入依赖模块</span><br><span class="line">define(function(require,export)&#123;</span><br><span class="line">var b=1;</span><br><span class="line">var a = require(&apos;./a&apos;);</span><br><span class="line">a.dosomething();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//AMD 依赖前置，用之前加载依赖模块</span><br><span class="line">define([&apos;./a&apos;],function(a)&#123;</span><br><span class="line">a.dosomething();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="前端架构实施"><a href="#前端架构实施" class="headerlink" title="前端架构实施"></a>前端架构实施</h3><h4 id="前端架构实施前的思考"><a href="#前端架构实施前的思考" class="headerlink" title="前端架构实施前的思考"></a>前端架构实施前的思考</h4><ol>
+<li>更合理的技术选型：团队的技术范围；</li>
+<li>需求分解；</li>
+<li>模块边界划分；</li>
+<li>自动化发布和快速迭代；</li>
+<li>如何降低维护成本：</li>
+</ol>
+<h4 id="前端优化思路"><a href="#前端优化思路" class="headerlink" title="前端优化思路"></a>前端优化思路</h4><ol>
+<li>代码层面:code review&amp;代码规范</li>
+<li>架构层面：可扩展性是否受到制约</li>
+<li>协议层面：通过http(s)协议优化</li>
+<li>综合：优化往往是多种技术的综合使用</li>
+</ol>
+<h4 id="前端自动化"><a href="#前端自动化" class="headerlink" title="前端自动化"></a>前端自动化</h4><p>前端自动化基础：nodejs &amp; grunt<br>自动化的方向：发布&amp;测试&amp;开发</p>
+<h3 id="前端架构实施案例：电商网站"><a href="#前端架构实施案例：电商网站" class="headerlink" title="前端架构实施案例：电商网站"></a>前端架构实施案例：电商网站</h3><p>案例视频：<a href="http://www.imooc.com/learn/186" target="_blank" rel="external">http://www.imooc.com/learn/186</a><br>案例下载：<a href="https://github.com/yoyoren/mescaketouch" target="_blank" rel="external">https://github.com/yoyoren/mescaketouch</a><br>案例网站：<a href="http://www.mescake.com/" target="_blank" rel="external">http://www.mescake.com/</a></p>
+<h4 id="设计和交互的解读。"><a href="#设计和交互的解读。" class="headerlink" title="设计和交互的解读。"></a>设计和交互的解读。</h4><p>公用的东西（页面，组件）进行抽取，封装，多态。前端架构要思考的东西。利用模块化帮助封装。<br>页面工程师：页面结构的划分，CSS的规划<br>前端工程师：页面API的设计，前端组件的规划</p>
+<h4 id="从目录入手搭建基本架构"><a href="#从目录入手搭建基本架构" class="headerlink" title="从目录入手搭建基本架构"></a>从目录入手搭建基本架构</h4><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/2.jpg" alt="2"><a href="http://7xrt0g.com1.z0.glb.clouddn.com/2.jpg" target="_blank" rel="external">http://7xrt0g.com1.z0.glb.clouddn.com/2.jpg</a><br>css:modual模块相关、include-页面相关、release、package.json-打包规则<br>js：common.js、widget-组件相关、release、package.json-打包规则</p>
+<h4 id="页面层次的架构搭建"><a href="#页面层次的架构搭建" class="headerlink" title="页面层次的架构搭建"></a>页面层次的架构搭建</h4><p>根据做出的页面index.html/css，把公共的部分抽成包含快，如从主页面中抽离出header/footer部分，构建header.html/header.css,footer.html/footer.css等页面，等上线发布时再把这些页面进行自动化合并。<br>（个人理解）</p>
+<h3 id="参考资源："><a href="#参考资源：" class="headerlink" title="参考资源："></a>参考资源：</h3><ol>
+<li>前端架构：<a href="http://www.reqianduan.com/2043.html" target="_blank" rel="external">http://www.reqianduan.com/2043.html</a></li>
+<li>前端架构相关：<a href="http://www.pmtoo.com/news/2014/0724/6340.html" target="_blank" rel="external">http://www.pmtoo.com/news/2014/0724/6340.html</a></li>
+</ol>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="xifengxx WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="xifengxx Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端架构/" rel="tag">#前端架构</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/31/CSS常用命名规范(方法)/" rel="next" title="CSS常用命名规范(方法)">
+                <i class="fa fa-chevron-left"></i> CSS常用命名规范(方法)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/03/JS+CSS实现带预览图幻灯片特效/" rel="prev" title="JS+CSS实现带预览图幻灯片特效">
+                JS+CSS实现带预览图幻灯片特效 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/01/电商网站前端架构/"
+           data-title="电商网站前端架构" data-url="http://xifengxx.github.io/2016/06/01/电商网站前端架构/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="xifengxx" />
+          <p class="site-author-name" itemprop="name">xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">51</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端架构知识储备"><span class="nav-number">1.</span> <span class="nav-text">前端架构知识储备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#技术基础："><span class="nav-number">1.1.</span> <span class="nav-text">技术基础：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#产品设计、发布和迭代基础"><span class="nav-number">1.2.</span> <span class="nav-text">产品设计、发布和迭代基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据分析和优化"><span class="nav-number">1.3.</span> <span class="nav-text">数据分析和优化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端架构设计"><span class="nav-number">2.</span> <span class="nav-text">前端架构设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端架构实施"><span class="nav-number">3.</span> <span class="nav-text">前端架构实施</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前端架构实施前的思考"><span class="nav-number">3.1.</span> <span class="nav-text">前端架构实施前的思考</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前端优化思路"><span class="nav-number">3.2.</span> <span class="nav-text">前端优化思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#前端自动化"><span class="nav-number">3.3.</span> <span class="nav-text">前端自动化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端架构实施案例：电商网站"><span class="nav-number">4.</span> <span class="nav-text">前端架构实施案例：电商网站</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设计和交互的解读。"><span class="nav-number">4.1.</span> <span class="nav-text">设计和交互的解读。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从目录入手搭建基本架构"><span class="nav-number">4.2.</span> <span class="nav-text">从目录入手搭建基本架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#页面层次的架构搭建"><span class="nav-number">4.3.</span> <span class="nav-text">页面层次的架构搭建</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资源："><span class="nav-number">5.</span> <span class="nav-text">参考资源：</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
