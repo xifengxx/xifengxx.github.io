@@ -144,7 +144,7 @@
     <link href="http://xifengxx.github.io/2016/06/14/%E5%85%A8%E5%B1%8F%E5%88%87%E6%8D%A2%E6%95%88%E6%9E%9C/"/>
     <id>http://xifengxx.github.io/2016/06/14/全屏切换效果/</id>
     <published>2016-06-14T08:23:24.000Z</published>
-    <updated>2016-06-15T00:13:06.000Z</updated>
+    <updated>2016-06-28T07:59:18.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;如何通过CSS使div实现全屏效果&quot;&gt;&lt;a href=&quot;#如何通过CSS使div实现全屏效果&quot; class=&quot;headerlink&quot; title=&quot;如何通过CSS使div实现全屏效果&quot;&gt;&lt;/a&gt;如何通过CSS使div实现全屏效果&lt;/h3&gt;&lt;p&gt;1、全屏(竖屏)要素&lt;/p&gt;
 &lt;ul&gt;
@@ -161,15 +161,8 @@
 &lt;li&gt;避免第三方插件的破坏&lt;/li&gt;
 &lt;li&gt;兼容jQuery操作符$和jQuery&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h5 id=&quot;开发方法：&quot;&gt;&lt;a href=&quot;#开发方法：&quot; class=&quot;headerlink&quot; title=&quot;开发方法：&quot;&gt;&lt;/a&gt;开发方法：&lt;/h5&gt;&lt;ol&gt;
-&lt;li&gt;类级别组件开发：&lt;br&gt;即给jQuery命名空间下添加新的全局函数，也称为静态方法。&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;jQuery.myPlugin = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// do sth&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;例如 &lt;code&gt;$.Ajax()&lt;/code&gt;, &lt;code&gt;$.extend()&lt;/code&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;对象级别组件开发：&lt;br&gt;即挂在jQuery原型下的方法，这样通过选择器获取的jQuery对象实例也能共享该方法，也称为动态方法。&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$.fn.myPlugin = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// do sth&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h5 id=&quot;开发方法：&quot;&gt;&lt;a href=&quot;#开发方法：&quot; class=&quot;headerlink&quot; title=&quot;开发方法：&quot;&gt;&lt;/a&gt;开发方法：&lt;/h5&gt;&lt;p&gt;1、 类级别组件开发：&lt;br&gt;即给jQuery命名空间下添加新的全局函数，也称为静态方法。&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;jQuery.myPlugin = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// do sth&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;   例如 &lt;code&gt;$.Ajax()&lt;/code&gt;, &lt;code&gt;$.extend()&lt;/code&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;2、 对象级别组件开发：&lt;br&gt;即挂在jQuery原型下的方法，这样通过选择器获取的jQuery对象实例也能共享该方法，也称为动态方法。&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$.fn.myPlugin = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// do sth&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;这里的$.fn===$.prototype&lt;br&gt;例如 &lt;code&gt;addClass()&lt;/code&gt;, &lt;code&gt;attr()&lt;/code&gt;&lt;/p&gt;
 &lt;h5 id=&quot;链式调用&quot;&gt;&lt;a href=&quot;#链式调用&quot; class=&quot;headerlink&quot; title=&quot;链式调用&quot;&gt;&lt;/a&gt;链式调用&lt;/h5&gt;&lt;p&gt;如：$(“div”).next().addClass()…&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$.fn.myPlugin = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.each(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;//do something&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 代码说明：&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// return this 返回当前对象，来维护插件的链式调用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// each 循环实现每个元素的访问&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h5 id=&quot;单例模式&quot;&gt;&lt;a href=&quot;#单例模式&quot; class=&quot;headerlink&quot; title=&quot;单例模式&quot;&gt;&lt;/a&gt;单例模式&lt;/h5&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$.fn.Myplugin = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; me=$(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        instance = me.data(&lt;span class=&quot;string&quot;&gt;&quot;myPlugin&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!instance)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        me.data(&lt;span class=&quot;string&quot;&gt;&quot;myPlugin&quot;&lt;/span&gt;,(instance = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; myPlugin()));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- 代码说明&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;1. 如果实例存在，则不再重新创建实例&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2. 利用data()来存放插件对象的实例&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3. jQuery.data() 函数详解：&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;data()函数用于在当前jQuery对象所匹配的所有元素上存取数据。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;通过data()函数存取的数据都是临时数据，一旦页面刷新，之前存放的数据都将不复存在。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;该函数属于jQuery对象(实例)。如果需要移除通过data()函数存放的数据，请使用removeData()函数。 --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -201,12 +194,191 @@
 &lt;p&gt;&lt;strong&gt;兼容性&lt;/strong&gt;&lt;br&gt;fullPage.js 支持 IE8+ 及其他现代浏览器。&lt;/p&gt;
 &lt;h4 id=&quot;使用方法&quot;&gt;&lt;a href=&quot;#使用方法&quot; class=&quot;headerlink&quot; title=&quot;使用方法&quot;&gt;&lt;/a&gt;使用方法&lt;/h4&gt;&lt;p&gt;1、引入文件&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;css/jquery.fullPage.css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;js/jquery.min.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;js/jquery-ui.min.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;js/jquery.fullPage.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;2、HTML&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;fullpage&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;section&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;第一屏&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;section&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;第二屏&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;section&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;slide&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;第三屏的第一屏&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;slide&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;第三屏的第二屏&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;slide&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;第三屏的第三屏&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;slide&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;第三屏的第四屏&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;section&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;第四屏&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;3、JavaScript&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&#39;#fullpage&#39;&lt;/span&gt;).fullpage(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;verticalCentered&#39;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;css3&#39;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;sectionsColor&#39;&lt;/span&gt;: [&lt;span class=&quot;string&quot;&gt;&#39;#254875&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;#00FF00&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;#254587&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;#695684&#39;&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        anchors: [&lt;span class=&quot;string&quot;&gt;&#39;page1&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;page2&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;page3&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;page4&#39;&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;navigation&#39;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;navigationPosition&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;right&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;navigationTooltips&#39;&lt;/span&gt;: [&lt;span class=&quot;string&quot;&gt;&#39;fullPage.js&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Powerful&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Amazing&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Simple&#39;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;3、JavaScript&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&quot;#fullpage&quot;&lt;/span&gt;).fullpage();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//或添加内容。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&#39;#fullpage&#39;&lt;/span&gt;).fullpage(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;verticalCentered&#39;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;css3&#39;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;sectionsColor&#39;&lt;/span&gt;: [&lt;span class=&quot;string&quot;&gt;&#39;#254875&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;#00FF00&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;#254587&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;#695684&#39;&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        anchors: [&lt;span class=&quot;string&quot;&gt;&#39;page1&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;page2&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;page3&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;page4&#39;&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;navigation&#39;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;navigationPosition&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;right&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&#39;navigationTooltips&#39;&lt;/span&gt;: [&lt;span class=&quot;string&quot;&gt;&#39;fullPage.js&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Powerful&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Amazing&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;Simple&#39;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;经测试，最好至少有 anchors 这个参数，否则在火狐浏览器中，第一次滚动会直接滚到底部。&lt;/p&gt;
 &lt;p&gt;点击这里查看上面代码的示例：&lt;a href=&quot;http://www.uedsc.com/wp-content/uploads/2015/02/fullpage-demo/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.uedsc.com/wp-content/uploads/2015/02/fullpage-demo/&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h4&gt;&lt;p&gt;1、选项&lt;/p&gt;
-&lt;p&gt;| 选项  类型  默认值 说明 |&lt;/p&gt;
-&lt;p&gt;| verticalCentered    字符串 true    内容是否垂直居中 |&lt;br&gt;| resize  布尔值 false   字体是否随着窗口缩放而缩放 |&lt;br&gt;| slidesColor 函数  无   设置背景颜色 |&lt;br&gt;| anchors 数组  无   定义锚链接 |&lt;br&gt;| scrollingSpeed  整数  700 滚动速度，单位为毫秒 |&lt;br&gt;| easing  字符串 easeInQuart 滚动动画方式 |&lt;br&gt;| menu    布尔值 false   绑定菜单，设定的相关属性与 anchors 的值对应后，菜单可以控制滚动 |&lt;br&gt;| navigation  布尔值 false   是否显示项目导航 |&lt;br&gt;| navigationPosition  字符串 right   项目导航的位置，可选 left 或 right |&lt;br&gt;| navigationColor 字符串 #000    项目导航的颜色 |&lt;br&gt;| navigationTooltips  数组  空   项目导航的 tip |&lt;br&gt;| slidesNavigation    布尔值 false   是否显示左右滑块的项目导航 |&lt;br&gt;| slidesNavPosition   字符串 bottom  左右滑块的项目导航的位置，可选 top 或 bottom |&lt;br&gt;| controlArrowColor   字符串 #fff    左右滑块的箭头的背景颜色 |&lt;br&gt;| loopBottom  布尔值 false   滚动到最底部后是否滚回顶部 |&lt;br&gt;| loopTop 布尔值 false   滚动到最顶部后是否滚底部 |&lt;br&gt;| loopHorizontal  布尔值 true    左右滑块是否循环滑动 |&lt;br&gt;| autoScrolling   布尔值 true    是否使用插件的滚动方式，如果选择 false，则会出现浏览器自带的滚动条 |&lt;br&gt;| scrollOverflow  布尔值 false   内容超过满屏后是否显示滚动条 |&lt;br&gt;| css3    布尔值 false   是否使用 CSS3 transforms 滚动 |&lt;br&gt;| paddingTop  字符串 0   与顶部的距离 |&lt;br&gt;| paddingBottom   字符串 0   与底部距离 |&lt;br&gt;| fixedElements   字符串 无    |&lt;br&gt;| normalScrollElements        无    |&lt;br&gt;| keyboardScrolling   布尔值 true    是否使用键盘方向键导航 |&lt;br&gt;| touchSensitivity    整数  5    |&lt;br&gt;| continuousVertical  布尔值 false   是否循环滚动，与 loopTop 及 loopBottom 不兼容 |&lt;br&gt;| animateAnchor   布尔值 true     |&lt;br&gt;| normalScrollElementTouchThreshold   整数  5    |&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;选项&lt;/th&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;默认值&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;verticalCentered&lt;/td&gt;
+&lt;td&gt;字符串&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;内容是否垂直居中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;resize&lt;/td&gt;
+&lt;td&gt;布尔值&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;字体是否随着窗口缩放而缩放&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;slidesColor&lt;/td&gt;
+&lt;td&gt;函数&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;td&gt;设置背景颜色&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;anchors&lt;/td&gt;
+&lt;td&gt;数组&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;td&gt;定义锚链接&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;scrollingSpeed&lt;/td&gt;
+&lt;td&gt;整数&lt;/td&gt;
+&lt;td&gt;700&lt;/td&gt;
+&lt;td&gt;滚动速度，单位为毫秒&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;easing&lt;/td&gt;
+&lt;td&gt;字符串&lt;/td&gt;
+&lt;td&gt;easeInQuart&lt;/td&gt;
+&lt;td&gt;滚动动画方式&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;menu&lt;/td&gt;
+&lt;td&gt;布尔值&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;绑定菜单，设定的相关属性与 anchors 的值对应后，菜单可以控制滚动&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;navigation&lt;/td&gt;
+&lt;td&gt;布尔值&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;是否显示项目导航&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;navigationPosition&lt;/td&gt;
+&lt;td&gt;字符串&lt;/td&gt;
+&lt;td&gt;right&lt;/td&gt;
+&lt;td&gt;项目导航的位置，可选 left 或 right&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;navigationColor&lt;/td&gt;
+&lt;td&gt;字符串&lt;/td&gt;
+&lt;td&gt;#000&lt;/td&gt;
+&lt;td&gt;项目导航的颜色&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;navigationTooltips&lt;/td&gt;
+&lt;td&gt;数组&lt;/td&gt;
+&lt;td&gt;空&lt;/td&gt;
+&lt;td&gt;项目导航的 tip&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;slidesNavigation&lt;/td&gt;
+&lt;td&gt;布尔值&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;是否显示左右滑块的项目导航&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;slidesNavPosition&lt;/td&gt;
+&lt;td&gt;字符串&lt;/td&gt;
+&lt;td&gt;bottom&lt;/td&gt;
+&lt;td&gt;左右滑块的项目导航的位置，可选 top 或 bottom&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;controlArrowColor&lt;/td&gt;
+&lt;td&gt;字符串&lt;/td&gt;
+&lt;td&gt;#fff&lt;/td&gt;
+&lt;td&gt;左右滑块的箭头的背景颜色&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;loopBottom&lt;/td&gt;
+&lt;td&gt;布尔值&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;滚动到最底部后是否滚回顶部&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;loopTop&lt;/td&gt;
+&lt;td&gt;布尔值&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;滚动到最顶部后是否滚底部&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;loopHorizontal&lt;/td&gt;
+&lt;td&gt;布尔值&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;左右滑块是否循环滑动&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;autoScrolling&lt;/td&gt;
+&lt;td&gt;布尔值&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;是否使用插件的滚动方式，如果选择 false，则会出现浏览器自带的滚动条&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;scrollOverflow&lt;/td&gt;
+&lt;td&gt;布尔值&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;内容超过满屏后是否显示滚动条&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;css3&lt;/td&gt;
+&lt;td&gt;布尔值&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;是否使用 CSS3 transforms 滚动&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;paddingTop&lt;/td&gt;
+&lt;td&gt;字符串&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;与顶部的距离&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;paddingBottom&lt;/td&gt;
+&lt;td&gt;字符串&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;与底部距离&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fixedElements&lt;/td&gt;
+&lt;td&gt;字符串&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;normalScrollElements&lt;/td&gt;
+&lt;td&gt;无&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;keyboardScrolling&lt;/td&gt;
+&lt;td&gt;布尔值&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;td&gt;是否使用键盘方向键导航&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;touchSensitivity&lt;/td&gt;
+&lt;td&gt;整数&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;continuousVertical&lt;/td&gt;
+&lt;td&gt;布尔值&lt;/td&gt;
+&lt;td&gt;false&lt;/td&gt;
+&lt;td&gt;是否循环滚动，与 loopTop 及 loopBottom 不兼容&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;animateAnchor&lt;/td&gt;
+&lt;td&gt;布尔值&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;normalScrollElementTouchThreshold&lt;/td&gt;
+&lt;td&gt;整数&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;p&gt;2、方法&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -255,7 +427,48 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;3、回调函数&lt;/p&gt;
-&lt;p&gt;名称  说明&lt;br&gt;afterLoad   滚动到某一屏后的回调函数，接收 anchorLink 和 index 两个参数，anchorLink 是锚链接的名称，index 是序号，从1开始计算&lt;br&gt;onLeave 滚动前的回调函数，接收 index、nextIndex 和 direction 3个参数：&lt;br&gt;index 是离开的“页面”的序号，从1开始计算；&lt;br&gt;nextIndex 是滚动到的“页面”的序号，从1开始计算；&lt;br&gt;direction 判断往上滚动还是往下滚动，值是 up 或 down。&lt;br&gt;afterRender 页面结构生成后的回调函数，或者说页面初始化完成后的回调函数&lt;br&gt;afterSlideLoad  滚动到某一水平滑块后的回调函数，与 afterLoad 类似，接收 anchorLink、index、slideIndex、direction 4个参数&lt;br&gt;onSlideLeave    某一水平滑块滚动前的回调函数，与 onLeave 类似，接收 anchorLink、index、slideIndex、direction 4个参数&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;afterLoad&lt;/td&gt;
+&lt;td&gt;滚动到某一屏后的回调函数，接收 anchorLink 和 index 两个参数，anchorLink 是锚链接的名称，index 是序号，从1开始计算&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;onLeave&lt;/td&gt;
+&lt;td&gt;滚动前的回调函数，接收 index、nextIndex 和 direction 3个参数：&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;index&lt;/td&gt;
+&lt;td&gt;是离开的“页面”的序号，从1开始计算；&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;nextIndex&lt;/td&gt;
+&lt;td&gt;是滚动到的“页面”的序号，从1开始计算；&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;direction&lt;/td&gt;
+&lt;td&gt;判断往上滚动还是往下滚动，值是 up 或 down。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;afterRender&lt;/td&gt;
+&lt;td&gt;页面结构生成后的回调函数，或者说页面初始化完成后的回调函数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;afterSlideLoad&lt;/td&gt;
+&lt;td&gt;滚动到某一水平滑块后的回调函数，与 afterLoad 类似，接收 anchorLink、index、slideIndex、direction 4个参数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;onSlideLeave&lt;/td&gt;
+&lt;td&gt;某一水平滑块滚动前的回调函数，与 onLeave 类似，接收 anchorLink、index、slideIndex、direction 4个参数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h4 id=&quot;如何获取&quot;&gt;&lt;a href=&quot;#如何获取&quot; class=&quot;headerlink&quot; title=&quot;如何获取&quot;&gt;&lt;/a&gt;如何获取&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;http://alvarotrigo.com/fullPage/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;下载地址&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/alvarotrigo/fullPage.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;fullPage.js GitHub 地址下载地址&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/yanhaijing/zepto.fullpage&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;专注于移动端的fullPage.js&lt;/a&gt;&lt;/p&gt;
 </content>
     
@@ -282,7 +495,7 @@
     <link href="http://xifengxx.github.io/2016/06/12/%E5%9F%BA%E4%BA%8EBootstrap%E7%9A%84%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91/"/>
     <id>http://xifengxx.github.io/2016/06/12/基于Bootstrap的网页开发/</id>
     <published>2016-06-12T07:23:24.000Z</published>
-    <updated>2016-06-13T03:51:14.000Z</updated>
+    <updated>2016-06-27T00:10:08.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;Bootstrap简介&quot;&gt;&lt;a href=&quot;#Bootstrap简介&quot; class=&quot;headerlink&quot; title=&quot;Bootstrap简介&quot;&gt;&lt;/a&gt;Bootstrap简介&lt;/h3&gt;&lt;p&gt;Bootstrap是Twitter推出的一个开源的用于前端开发的工具包。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发，是一个CSS/HTML框架，提供了优雅的HTML和CSS规范，并基于jQuery开发了丰富的Web组件。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;strong&gt;bootstrap：&lt;/strong&gt;&lt;br&gt;简单灵活的用于搭建web页面的html、css、js的工具集&lt;br&gt;基于html5、css3&lt;br&gt;简单强大的前端开发框架&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;优点：&lt;/strong&gt;&lt;/p&gt;
@@ -293,13 +506,16 @@
 &lt;li&gt;12列响应式栅格结构、&lt;/li&gt;
 &lt;li&gt;丰富组件&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;导航条及下拉菜单制作&quot;&gt;&lt;a href=&quot;#导航条及下拉菜单制作&quot; class=&quot;headerlink&quot; title=&quot;导航条及下拉菜单制作&quot;&gt;&lt;/a&gt;导航条及下拉菜单制作&lt;/h3&gt;&lt;p&gt;导航条基本结构：&lt;br&gt;用&lt;code&gt;&amp;lt;nav class=“navbar navbar-default navbar-fixed-top navbar-inverse” role=“navigation”&amp;gt;&lt;/code&gt;标签声明&lt;/p&gt;
+&lt;h3 id=&quot;导航条及下拉菜单制作&quot;&gt;&lt;a href=&quot;#导航条及下拉菜单制作&quot; class=&quot;headerlink&quot; title=&quot;导航条及下拉菜单制作&quot;&gt;&lt;/a&gt;导航条及下拉菜单制作&lt;/h3&gt;&lt;p&gt;导航条基本结构：&lt;br&gt;用&lt;code&gt;&amp;lt;nav class=“navbar navbar-default navbar-fixed-top navbar-inverse” role=“navigation”&amp;gt;&lt;/code&gt;标签声明.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;navbar代表这是一个导航条，会应用导航条的样式，&lt;/li&gt;
 &lt;li&gt;navbar-default代表这是一个默认的导航条样式（为白色），&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;role=“navigation”&lt;/code&gt;代表这是一个导航条,主要用于屏幕阅读器，方便视力障碍者阅读。&lt;/li&gt;
 &lt;li&gt;navbar-fixed-top可以使导航条固定在顶部，固定的导航条会遮住页面上其他内容，除非给body元素设置padding，导航条的默认宽度是50px，可设置：&lt;code&gt;body{padding-top:70px;}&lt;/code&gt;，&lt;/li&gt;
-&lt;li&gt;添加navbar-inverse可使导航条变为黑色&lt;br&gt;内容包裹在&lt;code&gt;&amp;lt;div class=&amp;quot;container-fluid&amp;quot;&amp;gt;&lt;/code&gt;或&lt;code&gt;&amp;lt;div class=&amp;quot;container&amp;quot;&lt;/code&gt;&amp;gt;中，&lt;/li&gt;
+&lt;li&gt;添加navbar-inverse可使导航条变为黑色&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;内容包裹在&lt;code&gt;&amp;lt;div class=&amp;quot;container-fluid&amp;quot;&amp;gt;&lt;/code&gt;或&lt;code&gt;&amp;lt;div class=&amp;quot;container&amp;quot;&lt;/code&gt;&amp;gt;中，&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;class=“container”&lt;/code&gt;代表居中的固定大小的导航条，&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;class=&amp;quot;container-fluid&amp;quot;&lt;/code&gt;代表导航条自适应浏览器大小的.&lt;br&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;navbar-header&amp;quot;&amp;gt;&lt;/code&gt;代表导航条头部,其中包含一段代码使在屏幕宽度小于一定值时导航条的按钮会折叠为一个下拉图标，代码如下：&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;button&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;navbar-toggle collapsed&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;data-toggle&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;collapse&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;data-target&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;#bs-example-navbar-collapse-1&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;sr-only&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;Toggle navigation&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;icon-bar&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;icon-bar&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;icon-bar&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;navbar-brand&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;#&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;brand&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;(为最左侧的文字，如：现代浏览器)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
@@ -618,122 +834,6 @@
   </entry>
   
   <entry>
-    <title>Responsive响应式布局设计</title>
-    <link href="http://xifengxx.github.io/2016/06/10/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/"/>
-    <id>http://xifengxx.github.io/2016/06/10/响应式布局/</id>
-    <published>2016-06-10T01:23:24.000Z</published>
-    <updated>2016-06-15T00:14:26.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;响应式布局介绍：&quot;&gt;&lt;a href=&quot;#响应式布局介绍：&quot; class=&quot;headerlink&quot; title=&quot;响应式布局介绍：&quot;&gt;&lt;/a&gt;响应式布局介绍：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;什么是响应式布局&lt;/strong&gt;&lt;br&gt;1、服务器根据不同的浏览器用户端，为用户呈现不同的页面效果。&lt;br&gt;2、可以让一个网站兼容不同分辨率的设备，给用户更好的视觉使用体验。&lt;br&gt;3、移动互联网催生了响应式布局的诞生。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;strong&gt;响应式设计优缺点&lt;/strong&gt;&lt;br&gt;优点:&lt;br&gt;解决了设备之间的差异化展示,让不同的设备达到最优的视觉体验.&lt;br&gt;缺点:&lt;br&gt;兼容性代码多,工作量大,加载速度受影响&lt;br&gt;对原有网站布局会产生影响,用户判断未必精确.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;响应式设计的原则&lt;/strong&gt;&lt;br&gt;1.移动优先：在设计的初期就考虑页面如何在多终端展示&lt;br&gt;2.渐进增强：充分发挥硬件设备的最大功能&lt;/p&gt;
-&lt;h3 id=&quot;如何实现响应式布局&quot;&gt;&lt;a href=&quot;#如何实现响应式布局&quot; class=&quot;headerlink&quot; title=&quot;如何实现响应式布局&quot;&gt;&lt;/a&gt;如何实现响应式布局&lt;/h3&gt;&lt;p&gt;1.css3-Media Query：代码简单&lt;br&gt;2.借助原生Javascript：主要用于老浏览器上，加载速度慢，不推荐&lt;br&gt;3.第三方的开源框架，如bootstrap，可以很好的实现浏览器对响应式的支持&lt;/p&gt;
-&lt;h4 id=&quot;CSS3-Media-Query&quot;&gt;&lt;a href=&quot;#CSS3-Media-Query&quot; class=&quot;headerlink&quot; title=&quot;CSS3-Media Query&quot;&gt;&lt;/a&gt;CSS3-Media Query&lt;/h4&gt;&lt;p&gt;在彻底的了解Media Queries我们需要了解其中的两个重要部分，第一个是媒体类型，第二个是媒体特性。下面的内容我们简单的来了解这两个部分：&lt;/p&gt;
-&lt;h5 id=&quot;媒体类型（Media-Type）&quot;&gt;&lt;a href=&quot;#媒体类型（Media-Type）&quot; class=&quot;headerlink&quot; title=&quot;媒体类型（Media Type）&quot;&gt;&lt;/a&gt;媒体类型（Media Type）&lt;/h5&gt;&lt;p&gt;媒体类型（Media Type）在CSS2中是一个常见的属性，可以通过媒体类型对不同的设备指定不同的样式。&lt;br&gt;W3C总共列出了10种媒体类型。如下表所示：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;值&lt;/th&gt;
-&lt;th&gt;设备类型&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;All&lt;/td&gt;
-&lt;td&gt;所有设备&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Braille&lt;/td&gt;
-&lt;td&gt;盲人用点字法触觉回馈设备&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Embossed&lt;/td&gt;
-&lt;td&gt;盲文打印机&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Handheld&lt;/td&gt;
-&lt;td&gt;便携设备&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Print&lt;/td&gt;
-&lt;td&gt;打印用纸或打印预览视图&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Projection&lt;/td&gt;
-&lt;td&gt;各种投影设备&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Screen&lt;/td&gt;
-&lt;td&gt;电脑显示器&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Speech&lt;/td&gt;
-&lt;td&gt;语音或音频合成器&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Tv&lt;/td&gt;
-&lt;td&gt;电视机类型设备&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Tty&lt;/td&gt;
-&lt;td&gt;使用固定密度字母栅格的媒介，比如电传打字机和终端&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;其中Screen、All和Print为最常见的三种媒体类型。&lt;/p&gt;
-&lt;p&gt;媒体类型的引用方法也有多种，常见的有：link标签、@import和CSS3新增的@media几种：&lt;br&gt;&lt;strong&gt;link方法&lt;/strong&gt;&lt;br&gt;link方法引入媒体类型其实就是在&lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt;标签引用样式的时候，通过link标签中的media属性来指定不同的媒体类型。如下所示。&lt;br&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;style.css&amp;quot; media=&amp;quot;screen&amp;quot; /&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;link.css&amp;quot; media=&amp;quot;only screen and (max-width:480px)/*当屏幕分辨率小于等于480px才使用这个样式*/“/&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;strong&gt;@import方法&lt;/strong&gt;&lt;br&gt;@import可以引用样式文件，同样也可以用来引用媒体类型。&lt;br&gt;@import引入媒体类型主要有两种方式，一种是在样式中通过@import调用另一个样式文件；另一种方法是在&lt;code&gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&lt;/code&gt;标签中的&lt;code&gt;&amp;lt;style&amp;gt;&amp;lt;/style&amp;gt;&lt;/code&gt;中引入，但这种使用方法在IE6~7都不被支持，如样式文件中调用另一个样式文件时，就可以指定对应的媒体类型。&lt;br&gt;&lt;code&gt;@importurl(reset.css) screen;&lt;/code&gt; &lt;/p&gt;
-&lt;p&gt;在&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;中的&lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;标签中引入媒体类型方法。&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;css&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    @&lt;span class=&quot;keyword&quot;&gt;importurl&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;style&lt;/span&gt;.&lt;span class=&quot;keyword&quot;&gt;css&lt;/span&gt;) all;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;@media方法&lt;/strong&gt;&lt;br&gt;@media是CSS3中新引进的一个特性，被称为媒体查询。在页面中也可以通过这个属性来引入媒体类型。&lt;br&gt;@media引入媒体类型和@import有点类似也具有两方式。&lt;br&gt;（1）在样式文件中引用媒体类型：&lt;br&gt;&lt;code&gt;@media screen {
-   选择器{/*你的样式代码写在这里…*/}
-}&lt;/code&gt;&lt;br&gt;（2）使用@media引入媒体类型的方式是在&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;标签中的&lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;中引用。&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;css&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    @&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    选择器&amp;#123;&lt;span class=&quot;comment&quot;&gt;/*你的样式代码写在这里…*/&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h5 id=&quot;媒体特性（Media-Query-也称作设备特性）&quot;&gt;&lt;a href=&quot;#媒体特性（Media-Query-也称作设备特性）&quot; class=&quot;headerlink&quot; title=&quot;媒体特性（Media Query,也称作设备特性）&quot;&gt;&lt;/a&gt;媒体特性（Media Query,也称作设备特性）&lt;/h5&gt;&lt;p&gt;Mddia Query：Media Type(判断条件) + CSS(符合条件的样式规则)&lt;br&gt;W3C共列出了13种CSS3中常用的媒体特性：&lt;br&gt;&lt;img src=&quot;&quot; alt=&quot;1&quot;&gt;&lt;br&gt;常见的属性(媒体特性)：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;device-width,device-height 屏幕宽高，物理&lt;/li&gt;
-&lt;li&gt;width,height 渲染窗口宽度，可视&lt;/li&gt;
-&lt;li&gt;orientation 设备方向，竖屏和横屏展示的区别对待&lt;/li&gt;
-&lt;li&gt;resolution 设备分辨率,不同于像素&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Media Queries使用方法&lt;/strong&gt;&lt;br&gt;Media Queries能在不同的条件下使用不同的样式，使页面在不同在终端设备下达到不同的渲染效果。具体来说,Media Queries的使用方法如下。&lt;br&gt;&lt;strong&gt;@media 媒体类型 and （媒体特性）{你的样式}&lt;/strong&gt;&lt;br&gt;使用Media Queries必须要使用“@media”开头，然后指定媒体类型（也可以称为设备类型），随后是指定媒体特性（也可以称之为设备特性）。&lt;br&gt;媒体特性的书写方式和样式的书写方式非常相似，主要分为两个部分，第一个部分指的是媒体特性，第二部分为媒体特性所指定的值，而且这两个部分之间使用冒号分隔。例如：&lt;br&gt;&lt;code&gt;(max-width: 480px)&lt;/code&gt;&lt;br&gt;媒体特性是通过min/max来表示大于等于或小于做为逻辑判断，而不是使用小于（&amp;lt;）和大于（&amp;gt;）这样的符号来判断。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Media Queries在实际项目中常用的方式。&lt;/strong&gt;&lt;br&gt;1、最大宽度max-width&lt;br&gt;“max-width”是媒体特性中最常用的一个特性，其意思是指媒体类型小于或等于指定的宽度时，样式生效。如：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (max-width:&lt;span class=&quot;number&quot;&gt;480px&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;selector-class&quot;&gt;.ads&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;:none;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;上面表示的是：当屏幕小于或等于480px时,页面中的广告区块（.ads）都将被隐藏。&lt;br&gt;2、最小宽度min-width&lt;br&gt;“min-width”与“max-width”相反，指的是媒体类型大于或等于指定宽度时，样式生效。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (min-width:&lt;span class=&quot;number&quot;&gt;900px&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;980px&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;上面表示的是：当屏幕大于或等于900px时，容器“.wrapper”的宽度为980px。&lt;br&gt;3、多个媒体特性使用&lt;br&gt;Media Queries可以使用关键词”and”将多个媒体特性结合在一起。&lt;br&gt;当屏幕在600px~900px之间时，body的背景色渲染为“#f5f5f5”，如下所示。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (min-width:&lt;span class=&quot;number&quot;&gt;600px&lt;/span&gt;) and (max-width:&lt;span class=&quot;number&quot;&gt;900px&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt; &amp;#123;&lt;span class=&quot;attribute&quot;&gt;background-color&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;#f5f5f5&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;4、设备屏幕的输出宽度Device Width&lt;br&gt;在智能设备上，例如iPhone、iPad等，还可以根据屏幕设备的尺寸来设置相应的样式（或者调用相应的样式文件）。同样的，对于屏幕设备同样可以使用“min/max”对应参数，如“min-device-width”或者“max-device-width”。&lt;br&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; media=&amp;quot;screen and (max-device-width:480px)&amp;quot; href=&amp;quot;iphone.css&amp;quot; /&amp;gt;&lt;/code&gt;&lt;br&gt;上面的代码指的是“iphone.css”样式适用于最大设备宽度为480px，比如说iPhone上的显示，这里的“max-device-width”所指的是设备的实际分辨率，也就是指可视面积分辨率。&lt;br&gt;5、not关键词&lt;br&gt;使用关键词“not”是用来排除某种制定的媒体类型，也就是用来排除符合表达式的设备。换句话说，not关键词表示对后面的表达式执行取反操作，如：&lt;br&gt;&lt;code&gt;@media not print and (max-width: 1200px){样式代码}&lt;/code&gt;&lt;br&gt;上面代码表示的是：样式代码将被使用在除打印设备和设备宽度小于1200px下所有设备中。&lt;br&gt;6、only关键词&lt;br&gt;only用来指定某种特定的媒体类型，可以用来排除不支持媒体查询的浏览器。&lt;br&gt;其实only很多时候是用来对那些不支持Media Query但却支持Media Type的设备隐藏样式表的。其主要有：支持媒体特性的设备，正常调用样式，此时就当only不存在；表示不支持媒体特性但又支持媒体类型的设备，这样就会不读样式，因为其先会读取only而不是screen；另外不支持Media Queries的浏览器，不论是否支持only，样式都不会被采用。如&lt;br&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; media=&amp;quot;only screen and (max-device-width:240px)&amp;quot; href=&amp;quot;android240.css&amp;quot; /&amp;gt;&lt;/code&gt;&lt;br&gt;在Media Query中如果没有明确指定Media Type，那么其默认为all，如：&lt;br&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; media=&amp;quot;(min-width:701px) and (max-width:900px)&amp;quot; href=&amp;quot;mediu.css&amp;quot; /&amp;gt;&lt;/code&gt;&lt;br&gt;另外在样式中，还可以使用多条语句来将同一个样式应用于不同的媒体类型和媒体特性中，指定方式如下所示。&lt;br&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;style.css&amp;quot; media=&amp;quot;handheld and (max-width:480px), screen and (min-width:960px)&amp;quot; /&amp;gt;&lt;/code&gt;&lt;br&gt;上面代码中style.css样式被用在宽度小于或等于480px的手持设备上，或者被用于屏幕宽度大于或等于960px的设备上。&lt;/p&gt;
-&lt;p&gt;到目前为止，CSS3 Media Queries得到了众多浏览器支持，除了IE6-8浏览器不支持之外，在所有现代浏览器中都可以完美支持。Media Queries在其他浏览器中不要像其他CSS3属性一样在不同的浏览器中添加前缀。&lt;/p&gt;
-&lt;h4 id=&quot;Responsive设计&quot;&gt;&lt;a href=&quot;#Responsive设计&quot; class=&quot;headerlink&quot; title=&quot;Responsive设计&quot;&gt;&lt;/a&gt;Responsive设计&lt;/h4&gt;&lt;p&gt;什么是响应式设计呢？维基百科是这样对响应式作的描述：“Responsive设计简单的称为RWD，是精心提供各种设备都能浏览网页的一种设计方法，RWD能让你的网页在不同的设备中展现不同的设计风格。”从这一点描述来说，RWD不是流体布局，也不是网格布局，而是一种独特的网页设计方法。&lt;br&gt;响应式设计要考虑元素布局的秩序，而且还需要做到“有求必应”，那就需要满足以下三个条件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;网站必须建立灵活的网格基础；&lt;/li&gt;
-&lt;li&gt;引用到网站的图片必须是可伸缩的；&lt;/li&gt;
-&lt;li&gt;不同的显示风格，需要在Media Queries上写不同的样式。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id=&quot;Responsive设计常用术语：&quot;&gt;&lt;a href=&quot;#Responsive设计常用术语：&quot; class=&quot;headerlink&quot; title=&quot;Responsive设计常用术语：&quot;&gt;&lt;/a&gt;Responsive设计常用术语：&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;1.流体网格&lt;/strong&gt;&lt;br&gt;流体网格是一个简单的网格系统，这种网格设计参考了流体设计中的网格系统，将每个网格格子使用百分比单位来控制网格大小。这种网格系统最大的好处是让你的网格大小随时根据屏幕尺寸大小做出相对应的比例缩放。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2.弹性图片&lt;/strong&gt;&lt;br&gt;弹性图片指的是不给图片设置固定尺寸，而是根据流体网格进行缩放，用于适应各种网格的尺寸。而实现方法是比较简单，一句代码就能搞定的事情。&lt;br&gt;&lt;code&gt;img {max-width:100%;}&lt;/code&gt;&lt;br&gt;为每一个断点提供不同的图片，这是一个比较头痛的事情，因为Media Queries并不能改变图片“src”的属性值，那有没有办分法可以解决呢？可以参考一下下面的解决方法。使用background-image给元素使用背景图片，显示/隐藏父元素，给父元素使用不同的图片，然后通过Media Queries来控制这些图片显示或隐藏。&lt;br&gt;来看一个断点解决图片自适应的例子。&lt;br&gt;&lt;code&gt;&amp;lt;img src=&amp;quot;image.jpg&amp;quot; data-src-600px=&amp;quot;image-600px.jpg&amp;quot; data-src-800px=&amp;quot;image-800px.jpg&amp;quot; alt=&amp;quot;&amp;quot; /&amp;gt;&lt;/code&gt;&lt;br&gt;对应的CSS代码：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; (min-device-width:&lt;span class=&quot;number&quot;&gt;600px&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;selector-attr&quot;&gt;[data-src-600px]&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;content&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;attr&lt;/span&gt;(data-src-600px,url);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; (min-device-width:&lt;span class=&quot;number&quot;&gt;800px&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;selector-tag&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;selector-attr&quot;&gt;[data-src-800px]&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;content&lt;/span&gt;:&lt;span class=&quot;built_in&quot;&gt;attr&lt;/span&gt;(data-src-800px,url);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt; 请注意：这仅仅是解决响应式图片自适应的一种思路，但这种方案仅仅适配的断点较少。并不太实用，此处仅为扩展同学们的思路。&lt;br&gt;&lt;strong&gt;3.媒体查询&lt;/strong&gt;&lt;br&gt;媒体查询在CSS3中得到了强大的扩展。使用这个属性可以让你的设计根据用户终端设备适配对应的样式。这也是响应式设计中最为关键的。可以说Responsive设计离开了Medial Queries就失去了他生存的意义。简单的说媒体查询可以根据设备的尺寸，查询出适配的样式。Responsive设计最关注的就是：根据用户的使用设备的当前宽度，你的Web页面将加载一个备用的样式，实现特定的页面风格。&lt;br&gt;&lt;strong&gt;4.屏幕分辨率&lt;/strong&gt;&lt;br&gt;屏幕分辨简单点说就是用户显示器的分辨率，深一点说，屏幕分辨率指的是用户使用的设备浏览您的Web页面时的显示屏幕的分辨率，比如说智能手机浏览器、移动电脑浏览器、平板电脑浏览器和桌面浏览器的分辨率。Responsive设计利用Media Queries属性针对浏览器使用的分辨率来适配对应的CSS样式。因此屏幕分辨率在Responsive设计中是一个很重要的东西，因为只有知道Web页面要在哪种分辨率下显示何种效果，才能调用对应的样式。&lt;br&gt;&lt;strong&gt;5.主要断点&lt;/strong&gt;&lt;br&gt;主要断点，在Web开发中是一个新词，但对于Responsive设计中是一个很重要的一部分。简单的描述就是，设备宽度的临界点。在Media Queries中，其中媒体特性“min-width”和“max-width”对应的属性值就是响应式设计中的断点值。简单点说，就是使用主要断点和次要断点，创建媒体查询的条件。而每个断点会对应调用一个样式文件（或者样式代码），如下图所示：&lt;br&gt;&lt;img src=&quot;&quot; alt=&quot;2&quot;&gt;&lt;br&gt;综合下来，设置断点应把握三个要点：满足主要的断点；有可能的话添加一些别的断点；设置高于1024的桌面断点。&lt;/p&gt;
-&lt;h5 id=&quot;Responsive布局技巧&quot;&gt;&lt;a href=&quot;#Responsive布局技巧&quot; class=&quot;headerlink&quot; title=&quot;Responsive布局技巧&quot;&gt;&lt;/a&gt;Responsive布局技巧&lt;/h5&gt;&lt;p&gt;在Responsive布局中，可以毫无保留的丢弃：&lt;br&gt;第一， 尽量少用无关紧要的div；&lt;br&gt;第二，不要使用内联元素（inline）；&lt;br&gt;第三，尽量少用JS或flash；&lt;br&gt;第四，丢弃没用的绝对定位和浮动样式；&lt;br&gt;第五，摒弃任何冗余结构和不使用100%设置。&lt;/p&gt;
-&lt;h5 id=&quot;Responsive设计——meta标签&quot;&gt;&lt;a href=&quot;#Responsive设计——meta标签&quot; class=&quot;headerlink&quot; title=&quot;Responsive设计——meta标签&quot;&gt;&lt;/a&gt;Responsive设计——meta标签&lt;/h5&gt;&lt;p&gt;在响应式设计页面中，需要插入meta标签。&lt;br&gt;meta标签被称为可视区域meta标签，其使用方法如下。&lt;br&gt;&lt;code&gt;&amp;lt;meta name=”viewport” content=”” /&amp;gt;&lt;/code&gt;&lt;br&gt;在content属性中主要包括以下属性值，用来处理可视区域。&lt;br&gt;&lt;img src=&quot;&quot; alt=&quot;3&quot;&gt;&lt;br&gt;在实际项目中，为了让Responsive设计在智能设备中能显示正常，也就是浏览Web页面适应屏幕的大小，显示在屏幕上，可以通过这个可视区域的meta标签进行重置，告诉他使用设备的宽度为视图的宽度，也就是说禁止其默认的自适应页面的效果，具体设置如下：&lt;br&gt;&lt;code&gt;&amp;lt;meta name=”viewport” content=”width=device-width,initial-scale=1.0” /&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;另外一点，由于Responsive设计是结合CSS3的Media Queries属性，才能尽显Responsive设计风格，但大家都清楚，在IE6-8中完全是不支持CSS3 Media。&lt;br&gt;为了让IE6-8支持Media Queries属性，很有必要在IE9以下的浏览器中加上以下脚本：&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;!—[if&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;lt&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;IE9&lt;/span&gt;]&amp;gt;&lt;/span&gt;      &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;scriptsrc=http:&lt;/span&gt;//&lt;span class=&quot;attr&quot;&gt;css3-mediaqueries-js.googlecode.com&lt;/span&gt;/&lt;span class=&quot;attr&quot;&gt;svn&lt;/span&gt;/&lt;span class=&quot;attr&quot;&gt;trunk&lt;/span&gt;/&lt;span class=&quot;attr&quot;&gt;css3-mediaqueries.js&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; ​&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;![endif]&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;脚本下载地址：&lt;br&gt;media-queries.js(&lt;a href=&quot;http://code.google.com/p/css3-mediaqueries-js/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://code.google.com/p/css3-mediaqueries-js/&lt;/a&gt;)&lt;br&gt; respond.js(&lt;a href=&quot;https://github.com/scottjehl/Respond&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/scottjehl/Respond&lt;/a&gt;)&lt;/p&gt;
-&lt;h5 id=&quot;Responsive设计——不同设备的分辨率设置&quot;&gt;&lt;a href=&quot;#Responsive设计——不同设备的分辨率设置&quot; class=&quot;headerlink&quot; title=&quot;Responsive设计——不同设备的分辨率设置&quot;&gt;&lt;/a&gt;Responsive设计——不同设备的分辨率设置&lt;/h5&gt;&lt;p&gt;下面我们一起来看看CSS3 Meida Queries在标准设备上的运用，大家可以把这些样式加到你的样式文件中，或者单独创建一个名为“responsive.css”文件，并在相应的条件中写上你的样式，让他适合你的设计需求：&lt;br&gt;1.1024px显屏&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (max-width : &lt;span class=&quot;number&quot;&gt;1024px&lt;/span&gt;) &amp;#123;                    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;/* 样式写在这里 */&lt;/span&gt;          &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;2.800px显屏&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (max-width : &lt;span class=&quot;number&quot;&gt;800px&lt;/span&gt;) &amp;#123;              &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* 样式写在这里 */&lt;/span&gt;          &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;3.640px显屏&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (max-width : &lt;span class=&quot;number&quot;&gt;640px&lt;/span&gt;) &amp;#123;              &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* 样式写在这*/&lt;/span&gt;            &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;4.iPad横板显屏&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (max-device-width: &lt;span class=&quot;number&quot;&gt;1024px&lt;/span&gt;) and (orientation: landscape) &amp;#123;&lt;span class=&quot;comment&quot;&gt;/* 样式写在这 */&lt;/span&gt;            &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;5.iPad竖板显屏&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (max-device-width: &lt;span class=&quot;number&quot;&gt;768px&lt;/span&gt;) and (orientation: portrait) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;comment&quot;&gt;/* 样式写在这 */&lt;/span&gt;            &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;6.iPhone 和 Smartphones&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (min-device-width: &lt;span class=&quot;number&quot;&gt;320px&lt;/span&gt;) and (min-device-width: &lt;span class=&quot;number&quot;&gt;480px&lt;/span&gt;) &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/* 样式写在这 */&lt;/span&gt;            &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Bootstrap框架-响应式布局&quot;&gt;&lt;a href=&quot;#Bootstrap框架-响应式布局&quot; class=&quot;headerlink&quot; title=&quot;Bootstrap框架-响应式布局&quot;&gt;&lt;/a&gt;Bootstrap框架-响应式布局&lt;/h3&gt;&lt;p&gt;主要是运用grid(栅格布局)，button组件，navbar组件，Dropdown组件等来布局网站。&lt;br&gt;twitter的Bootstrap第二版本中就加上了这方面的运用。&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@media (max-width: 480px) &amp;#123; ... &amp;#125;              &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@media (max-width: 768px) &amp;#123; ... &amp;#125;              &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@media (min-width: 768px) and (max-width: 980px) &amp;#123; ... &amp;#125;      &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@media (min-width: 1200px) &amp;#123; .. &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;响应式布局介绍：&quot;&gt;&lt;a href=&quot;#响应式布局介绍：&quot; class=&quot;headerlink&quot; title=&quot;响应式布局介绍：&quot;&gt;&lt;/a&gt;响应式布局介绍：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;什么是响应式布局&lt;/strong&gt;&lt;br&gt;1、服务器根据不同的浏览器用户端，为用户呈现不同的页面效果。&lt;br&gt;2、可以让一个网站兼容不同分辨率的设备，给用户更好的视觉使用体验。&lt;br&gt;3、移动互联网催生了响应式布局的诞生。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Web前端" scheme="http://xifengxx.github.io/categories/Web%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="响应式布局" scheme="http://xifengxx.github.io/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Bootstrap学习笔记(2)</title>
     <link href="http://xifengxx.github.io/2016/06/10/Bootstrap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(2)/"/>
     <id>http://xifengxx.github.io/2016/06/10/Bootstrap学习笔记(2)/</id>
@@ -882,6 +982,122 @@
     
     
       <category term="Bootstrap" scheme="http://xifengxx.github.io/tags/Bootstrap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Responsive响应式布局设计</title>
+    <link href="http://xifengxx.github.io/2016/06/10/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/"/>
+    <id>http://xifengxx.github.io/2016/06/10/响应式布局/</id>
+    <published>2016-06-10T01:23:24.000Z</published>
+    <updated>2016-06-15T00:14:26.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;响应式布局介绍：&quot;&gt;&lt;a href=&quot;#响应式布局介绍：&quot; class=&quot;headerlink&quot; title=&quot;响应式布局介绍：&quot;&gt;&lt;/a&gt;响应式布局介绍：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;什么是响应式布局&lt;/strong&gt;&lt;br&gt;1、服务器根据不同的浏览器用户端，为用户呈现不同的页面效果。&lt;br&gt;2、可以让一个网站兼容不同分辨率的设备，给用户更好的视觉使用体验。&lt;br&gt;3、移动互联网催生了响应式布局的诞生。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;strong&gt;响应式设计优缺点&lt;/strong&gt;&lt;br&gt;优点:&lt;br&gt;解决了设备之间的差异化展示,让不同的设备达到最优的视觉体验.&lt;br&gt;缺点:&lt;br&gt;兼容性代码多,工作量大,加载速度受影响&lt;br&gt;对原有网站布局会产生影响,用户判断未必精确.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;响应式设计的原则&lt;/strong&gt;&lt;br&gt;1.移动优先：在设计的初期就考虑页面如何在多终端展示&lt;br&gt;2.渐进增强：充分发挥硬件设备的最大功能&lt;/p&gt;
+&lt;h3 id=&quot;如何实现响应式布局&quot;&gt;&lt;a href=&quot;#如何实现响应式布局&quot; class=&quot;headerlink&quot; title=&quot;如何实现响应式布局&quot;&gt;&lt;/a&gt;如何实现响应式布局&lt;/h3&gt;&lt;p&gt;1.css3-Media Query：代码简单&lt;br&gt;2.借助原生Javascript：主要用于老浏览器上，加载速度慢，不推荐&lt;br&gt;3.第三方的开源框架，如bootstrap，可以很好的实现浏览器对响应式的支持&lt;/p&gt;
+&lt;h4 id=&quot;CSS3-Media-Query&quot;&gt;&lt;a href=&quot;#CSS3-Media-Query&quot; class=&quot;headerlink&quot; title=&quot;CSS3-Media Query&quot;&gt;&lt;/a&gt;CSS3-Media Query&lt;/h4&gt;&lt;p&gt;在彻底的了解Media Queries我们需要了解其中的两个重要部分，第一个是媒体类型，第二个是媒体特性。下面的内容我们简单的来了解这两个部分：&lt;/p&gt;
+&lt;h5 id=&quot;媒体类型（Media-Type）&quot;&gt;&lt;a href=&quot;#媒体类型（Media-Type）&quot; class=&quot;headerlink&quot; title=&quot;媒体类型（Media Type）&quot;&gt;&lt;/a&gt;媒体类型（Media Type）&lt;/h5&gt;&lt;p&gt;媒体类型（Media Type）在CSS2中是一个常见的属性，可以通过媒体类型对不同的设备指定不同的样式。&lt;br&gt;W3C总共列出了10种媒体类型。如下表所示：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;值&lt;/th&gt;
+&lt;th&gt;设备类型&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;All&lt;/td&gt;
+&lt;td&gt;所有设备&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Braille&lt;/td&gt;
+&lt;td&gt;盲人用点字法触觉回馈设备&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Embossed&lt;/td&gt;
+&lt;td&gt;盲文打印机&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Handheld&lt;/td&gt;
+&lt;td&gt;便携设备&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Print&lt;/td&gt;
+&lt;td&gt;打印用纸或打印预览视图&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Projection&lt;/td&gt;
+&lt;td&gt;各种投影设备&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Screen&lt;/td&gt;
+&lt;td&gt;电脑显示器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Speech&lt;/td&gt;
+&lt;td&gt;语音或音频合成器&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tv&lt;/td&gt;
+&lt;td&gt;电视机类型设备&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tty&lt;/td&gt;
+&lt;td&gt;使用固定密度字母栅格的媒介，比如电传打字机和终端&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;其中Screen、All和Print为最常见的三种媒体类型。&lt;/p&gt;
+&lt;p&gt;媒体类型的引用方法也有多种，常见的有：link标签、@import和CSS3新增的@media几种：&lt;br&gt;&lt;strong&gt;link方法&lt;/strong&gt;&lt;br&gt;link方法引入媒体类型其实就是在&lt;code&gt;&amp;lt;link&amp;gt;&lt;/code&gt;标签引用样式的时候，通过link标签中的media属性来指定不同的媒体类型。如下所示。&lt;br&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;style.css&amp;quot; media=&amp;quot;screen&amp;quot; /&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;link.css&amp;quot; media=&amp;quot;only screen and (max-width:480px)/*当屏幕分辨率小于等于480px才使用这个样式*/“/&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;strong&gt;@import方法&lt;/strong&gt;&lt;br&gt;@import可以引用样式文件，同样也可以用来引用媒体类型。&lt;br&gt;@import引入媒体类型主要有两种方式，一种是在样式中通过@import调用另一个样式文件；另一种方法是在&lt;code&gt;&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;&lt;/code&gt;标签中的&lt;code&gt;&amp;lt;style&amp;gt;&amp;lt;/style&amp;gt;&lt;/code&gt;中引入，但这种使用方法在IE6~7都不被支持，如样式文件中调用另一个样式文件时，就可以指定对应的媒体类型。&lt;br&gt;&lt;code&gt;@importurl(reset.css) screen;&lt;/code&gt; &lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;中的&lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;标签中引入媒体类型方法。&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;css&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    @&lt;span class=&quot;keyword&quot;&gt;importurl&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;style&lt;/span&gt;.&lt;span class=&quot;keyword&quot;&gt;css&lt;/span&gt;) all;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;@media方法&lt;/strong&gt;&lt;br&gt;@media是CSS3中新引进的一个特性，被称为媒体查询。在页面中也可以通过这个属性来引入媒体类型。&lt;br&gt;@media引入媒体类型和@import有点类似也具有两方式。&lt;br&gt;（1）在样式文件中引用媒体类型：&lt;br&gt;&lt;code&gt;@media screen {
+   选择器{/*你的样式代码写在这里…*/}
+}&lt;/code&gt;&lt;br&gt;（2）使用@media引入媒体类型的方式是在&lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;标签中的&lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;中引用。&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;css&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    @&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    选择器&amp;#123;&lt;span class=&quot;comment&quot;&gt;/*你的样式代码写在这里…*/&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h5 id=&quot;媒体特性（Media-Query-也称作设备特性）&quot;&gt;&lt;a href=&quot;#媒体特性（Media-Query-也称作设备特性）&quot; class=&quot;headerlink&quot; title=&quot;媒体特性（Media Query,也称作设备特性）&quot;&gt;&lt;/a&gt;媒体特性（Media Query,也称作设备特性）&lt;/h5&gt;&lt;p&gt;Mddia Query：Media Type(判断条件) + CSS(符合条件的样式规则)&lt;br&gt;W3C共列出了13种CSS3中常用的媒体特性：&lt;br&gt;&lt;img src=&quot;&quot; alt=&quot;1&quot;&gt;&lt;br&gt;常见的属性(媒体特性)：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;device-width,device-height 屏幕宽高，物理&lt;/li&gt;
+&lt;li&gt;width,height 渲染窗口宽度，可视&lt;/li&gt;
+&lt;li&gt;orientation 设备方向，竖屏和横屏展示的区别对待&lt;/li&gt;
+&lt;li&gt;resolution 设备分辨率,不同于像素&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Media Queries使用方法&lt;/strong&gt;&lt;br&gt;Media Queries能在不同的条件下使用不同的样式，使页面在不同在终端设备下达到不同的渲染效果。具体来说,Media Queries的使用方法如下。&lt;br&gt;&lt;strong&gt;@media 媒体类型 and （媒体特性）{你的样式}&lt;/strong&gt;&lt;br&gt;使用Media Queries必须要使用“@media”开头，然后指定媒体类型（也可以称为设备类型），随后是指定媒体特性（也可以称之为设备特性）。&lt;br&gt;媒体特性的书写方式和样式的书写方式非常相似，主要分为两个部分，第一个部分指的是媒体特性，第二部分为媒体特性所指定的值，而且这两个部分之间使用冒号分隔。例如：&lt;br&gt;&lt;code&gt;(max-width: 480px)&lt;/code&gt;&lt;br&gt;媒体特性是通过min/max来表示大于等于或小于做为逻辑判断，而不是使用小于（&amp;lt;）和大于（&amp;gt;）这样的符号来判断。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Media Queries在实际项目中常用的方式。&lt;/strong&gt;&lt;br&gt;1、最大宽度max-width&lt;br&gt;“max-width”是媒体特性中最常用的一个特性，其意思是指媒体类型小于或等于指定的宽度时，样式生效。如：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (max-width:&lt;span class=&quot;number&quot;&gt;480px&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;selector-class&quot;&gt;.ads&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;attribute&quot;&gt;display&lt;/span&gt;:none;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;上面表示的是：当屏幕小于或等于480px时,页面中的广告区块（.ads）都将被隐藏。&lt;br&gt;2、最小宽度min-width&lt;br&gt;“min-width”与“max-width”相反，指的是媒体类型大于或等于指定宽度时，样式生效。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (min-width:&lt;span class=&quot;number&quot;&gt;900px&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.wrapper&lt;/span&gt;&amp;#123;&lt;span class=&quot;attribute&quot;&gt;width&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;980px&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;上面表示的是：当屏幕大于或等于900px时，容器“.wrapper”的宽度为980px。&lt;br&gt;3、多个媒体特性使用&lt;br&gt;Media Queries可以使用关键词”and”将多个媒体特性结合在一起。&lt;br&gt;当屏幕在600px~900px之间时，body的背景色渲染为“#f5f5f5”，如下所示。&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (min-width:&lt;span class=&quot;number&quot;&gt;600px&lt;/span&gt;) and (max-width:&lt;span class=&quot;number&quot;&gt;900px&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;selector-tag&quot;&gt;body&lt;/span&gt; &amp;#123;&lt;span class=&quot;attribute&quot;&gt;background-color&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;#f5f5f5&lt;/span&gt;;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;4、设备屏幕的输出宽度Device Width&lt;br&gt;在智能设备上，例如iPhone、iPad等，还可以根据屏幕设备的尺寸来设置相应的样式（或者调用相应的样式文件）。同样的，对于屏幕设备同样可以使用“min/max”对应参数，如“min-device-width”或者“max-device-width”。&lt;br&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; media=&amp;quot;screen and (max-device-width:480px)&amp;quot; href=&amp;quot;iphone.css&amp;quot; /&amp;gt;&lt;/code&gt;&lt;br&gt;上面的代码指的是“iphone.css”样式适用于最大设备宽度为480px，比如说iPhone上的显示，这里的“max-device-width”所指的是设备的实际分辨率，也就是指可视面积分辨率。&lt;br&gt;5、not关键词&lt;br&gt;使用关键词“not”是用来排除某种制定的媒体类型，也就是用来排除符合表达式的设备。换句话说，not关键词表示对后面的表达式执行取反操作，如：&lt;br&gt;&lt;code&gt;@media not print and (max-width: 1200px){样式代码}&lt;/code&gt;&lt;br&gt;上面代码表示的是：样式代码将被使用在除打印设备和设备宽度小于1200px下所有设备中。&lt;br&gt;6、only关键词&lt;br&gt;only用来指定某种特定的媒体类型，可以用来排除不支持媒体查询的浏览器。&lt;br&gt;其实only很多时候是用来对那些不支持Media Query但却支持Media Type的设备隐藏样式表的。其主要有：支持媒体特性的设备，正常调用样式，此时就当only不存在；表示不支持媒体特性但又支持媒体类型的设备，这样就会不读样式，因为其先会读取only而不是screen；另外不支持Media Queries的浏览器，不论是否支持only，样式都不会被采用。如&lt;br&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; media=&amp;quot;only screen and (max-device-width:240px)&amp;quot; href=&amp;quot;android240.css&amp;quot; /&amp;gt;&lt;/code&gt;&lt;br&gt;在Media Query中如果没有明确指定Media Type，那么其默认为all，如：&lt;br&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; media=&amp;quot;(min-width:701px) and (max-width:900px)&amp;quot; href=&amp;quot;mediu.css&amp;quot; /&amp;gt;&lt;/code&gt;&lt;br&gt;另外在样式中，还可以使用多条语句来将同一个样式应用于不同的媒体类型和媒体特性中，指定方式如下所示。&lt;br&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;style.css&amp;quot; media=&amp;quot;handheld and (max-width:480px), screen and (min-width:960px)&amp;quot; /&amp;gt;&lt;/code&gt;&lt;br&gt;上面代码中style.css样式被用在宽度小于或等于480px的手持设备上，或者被用于屏幕宽度大于或等于960px的设备上。&lt;/p&gt;
+&lt;p&gt;到目前为止，CSS3 Media Queries得到了众多浏览器支持，除了IE6-8浏览器不支持之外，在所有现代浏览器中都可以完美支持。Media Queries在其他浏览器中不要像其他CSS3属性一样在不同的浏览器中添加前缀。&lt;/p&gt;
+&lt;h4 id=&quot;Responsive设计&quot;&gt;&lt;a href=&quot;#Responsive设计&quot; class=&quot;headerlink&quot; title=&quot;Responsive设计&quot;&gt;&lt;/a&gt;Responsive设计&lt;/h4&gt;&lt;p&gt;什么是响应式设计呢？维基百科是这样对响应式作的描述：“Responsive设计简单的称为RWD，是精心提供各种设备都能浏览网页的一种设计方法，RWD能让你的网页在不同的设备中展现不同的设计风格。”从这一点描述来说，RWD不是流体布局，也不是网格布局，而是一种独特的网页设计方法。&lt;br&gt;响应式设计要考虑元素布局的秩序，而且还需要做到“有求必应”，那就需要满足以下三个条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;网站必须建立灵活的网格基础；&lt;/li&gt;
+&lt;li&gt;引用到网站的图片必须是可伸缩的；&lt;/li&gt;
+&lt;li&gt;不同的显示风格，需要在Media Queries上写不同的样式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&quot;Responsive设计常用术语：&quot;&gt;&lt;a href=&quot;#Responsive设计常用术语：&quot; class=&quot;headerlink&quot; title=&quot;Responsive设计常用术语：&quot;&gt;&lt;/a&gt;Responsive设计常用术语：&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;1.流体网格&lt;/strong&gt;&lt;br&gt;流体网格是一个简单的网格系统，这种网格设计参考了流体设计中的网格系统，将每个网格格子使用百分比单位来控制网格大小。这种网格系统最大的好处是让你的网格大小随时根据屏幕尺寸大小做出相对应的比例缩放。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.弹性图片&lt;/strong&gt;&lt;br&gt;弹性图片指的是不给图片设置固定尺寸，而是根据流体网格进行缩放，用于适应各种网格的尺寸。而实现方法是比较简单，一句代码就能搞定的事情。&lt;br&gt;&lt;code&gt;img {max-width:100%;}&lt;/code&gt;&lt;br&gt;为每一个断点提供不同的图片，这是一个比较头痛的事情，因为Media Queries并不能改变图片“src”的属性值，那有没有办分法可以解决呢？可以参考一下下面的解决方法。使用background-image给元素使用背景图片，显示/隐藏父元素，给父元素使用不同的图片，然后通过Media Queries来控制这些图片显示或隐藏。&lt;br&gt;来看一个断点解决图片自适应的例子。&lt;br&gt;&lt;code&gt;&amp;lt;img src=&amp;quot;image.jpg&amp;quot; data-src-600px=&amp;quot;image-600px.jpg&amp;quot; data-src-800px=&amp;quot;image-800px.jpg&amp;quot; alt=&amp;quot;&amp;quot; /&amp;gt;&lt;/code&gt;&lt;br&gt;对应的CSS代码：&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; (min-device-width:&lt;span class=&quot;number&quot;&gt;600px&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;selector-attr&quot;&gt;[data-src-600px]&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;content&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;attr&lt;/span&gt;(data-src-600px,url);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; (min-device-width:&lt;span class=&quot;number&quot;&gt;800px&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;selector-tag&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;selector-attr&quot;&gt;[data-src-800px]&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;content&lt;/span&gt;:&lt;span class=&quot;built_in&quot;&gt;attr&lt;/span&gt;(data-src-800px,url);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt; 请注意：这仅仅是解决响应式图片自适应的一种思路，但这种方案仅仅适配的断点较少。并不太实用，此处仅为扩展同学们的思路。&lt;br&gt;&lt;strong&gt;3.媒体查询&lt;/strong&gt;&lt;br&gt;媒体查询在CSS3中得到了强大的扩展。使用这个属性可以让你的设计根据用户终端设备适配对应的样式。这也是响应式设计中最为关键的。可以说Responsive设计离开了Medial Queries就失去了他生存的意义。简单的说媒体查询可以根据设备的尺寸，查询出适配的样式。Responsive设计最关注的就是：根据用户的使用设备的当前宽度，你的Web页面将加载一个备用的样式，实现特定的页面风格。&lt;br&gt;&lt;strong&gt;4.屏幕分辨率&lt;/strong&gt;&lt;br&gt;屏幕分辨简单点说就是用户显示器的分辨率，深一点说，屏幕分辨率指的是用户使用的设备浏览您的Web页面时的显示屏幕的分辨率，比如说智能手机浏览器、移动电脑浏览器、平板电脑浏览器和桌面浏览器的分辨率。Responsive设计利用Media Queries属性针对浏览器使用的分辨率来适配对应的CSS样式。因此屏幕分辨率在Responsive设计中是一个很重要的东西，因为只有知道Web页面要在哪种分辨率下显示何种效果，才能调用对应的样式。&lt;br&gt;&lt;strong&gt;5.主要断点&lt;/strong&gt;&lt;br&gt;主要断点，在Web开发中是一个新词，但对于Responsive设计中是一个很重要的一部分。简单的描述就是，设备宽度的临界点。在Media Queries中，其中媒体特性“min-width”和“max-width”对应的属性值就是响应式设计中的断点值。简单点说，就是使用主要断点和次要断点，创建媒体查询的条件。而每个断点会对应调用一个样式文件（或者样式代码），如下图所示：&lt;br&gt;&lt;img src=&quot;&quot; alt=&quot;2&quot;&gt;&lt;br&gt;综合下来，设置断点应把握三个要点：满足主要的断点；有可能的话添加一些别的断点；设置高于1024的桌面断点。&lt;/p&gt;
+&lt;h5 id=&quot;Responsive布局技巧&quot;&gt;&lt;a href=&quot;#Responsive布局技巧&quot; class=&quot;headerlink&quot; title=&quot;Responsive布局技巧&quot;&gt;&lt;/a&gt;Responsive布局技巧&lt;/h5&gt;&lt;p&gt;在Responsive布局中，可以毫无保留的丢弃：&lt;br&gt;第一， 尽量少用无关紧要的div；&lt;br&gt;第二，不要使用内联元素（inline）；&lt;br&gt;第三，尽量少用JS或flash；&lt;br&gt;第四，丢弃没用的绝对定位和浮动样式；&lt;br&gt;第五，摒弃任何冗余结构和不使用100%设置。&lt;/p&gt;
+&lt;h5 id=&quot;Responsive设计——meta标签&quot;&gt;&lt;a href=&quot;#Responsive设计——meta标签&quot; class=&quot;headerlink&quot; title=&quot;Responsive设计——meta标签&quot;&gt;&lt;/a&gt;Responsive设计——meta标签&lt;/h5&gt;&lt;p&gt;在响应式设计页面中，需要插入meta标签。&lt;br&gt;meta标签被称为可视区域meta标签，其使用方法如下。&lt;br&gt;&lt;code&gt;&amp;lt;meta name=”viewport” content=”” /&amp;gt;&lt;/code&gt;&lt;br&gt;在content属性中主要包括以下属性值，用来处理可视区域。&lt;br&gt;&lt;img src=&quot;&quot; alt=&quot;3&quot;&gt;&lt;br&gt;在实际项目中，为了让Responsive设计在智能设备中能显示正常，也就是浏览Web页面适应屏幕的大小，显示在屏幕上，可以通过这个可视区域的meta标签进行重置，告诉他使用设备的宽度为视图的宽度，也就是说禁止其默认的自适应页面的效果，具体设置如下：&lt;br&gt;&lt;code&gt;&amp;lt;meta name=”viewport” content=”width=device-width,initial-scale=1.0” /&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;另外一点，由于Responsive设计是结合CSS3的Media Queries属性，才能尽显Responsive设计风格，但大家都清楚，在IE6-8中完全是不支持CSS3 Media。&lt;br&gt;为了让IE6-8支持Media Queries属性，很有必要在IE9以下的浏览器中加上以下脚本：&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;!—[if&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;lt&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;IE9&lt;/span&gt;]&amp;gt;&lt;/span&gt;      &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;scriptsrc=http:&lt;/span&gt;//&lt;span class=&quot;attr&quot;&gt;css3-mediaqueries-js.googlecode.com&lt;/span&gt;/&lt;span class=&quot;attr&quot;&gt;svn&lt;/span&gt;/&lt;span class=&quot;attr&quot;&gt;trunk&lt;/span&gt;/&lt;span class=&quot;attr&quot;&gt;css3-mediaqueries.js&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; ​&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;![endif]&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;脚本下载地址：&lt;br&gt;media-queries.js(&lt;a href=&quot;http://code.google.com/p/css3-mediaqueries-js/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://code.google.com/p/css3-mediaqueries-js/&lt;/a&gt;)&lt;br&gt; respond.js(&lt;a href=&quot;https://github.com/scottjehl/Respond&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/scottjehl/Respond&lt;/a&gt;)&lt;/p&gt;
+&lt;h5 id=&quot;Responsive设计——不同设备的分辨率设置&quot;&gt;&lt;a href=&quot;#Responsive设计——不同设备的分辨率设置&quot; class=&quot;headerlink&quot; title=&quot;Responsive设计——不同设备的分辨率设置&quot;&gt;&lt;/a&gt;Responsive设计——不同设备的分辨率设置&lt;/h5&gt;&lt;p&gt;下面我们一起来看看CSS3 Meida Queries在标准设备上的运用，大家可以把这些样式加到你的样式文件中，或者单独创建一个名为“responsive.css”文件，并在相应的条件中写上你的样式，让他适合你的设计需求：&lt;br&gt;1.1024px显屏&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (max-width : &lt;span class=&quot;number&quot;&gt;1024px&lt;/span&gt;) &amp;#123;                    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;/* 样式写在这里 */&lt;/span&gt;          &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;2.800px显屏&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (max-width : &lt;span class=&quot;number&quot;&gt;800px&lt;/span&gt;) &amp;#123;              &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* 样式写在这里 */&lt;/span&gt;          &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;3.640px显屏&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (max-width : &lt;span class=&quot;number&quot;&gt;640px&lt;/span&gt;) &amp;#123;              &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* 样式写在这*/&lt;/span&gt;            &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;4.iPad横板显屏&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (max-device-width: &lt;span class=&quot;number&quot;&gt;1024px&lt;/span&gt;) and (orientation: landscape) &amp;#123;&lt;span class=&quot;comment&quot;&gt;/* 样式写在这 */&lt;/span&gt;            &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;5.iPad竖板显屏&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (max-device-width: &lt;span class=&quot;number&quot;&gt;768px&lt;/span&gt;) and (orientation: portrait) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;comment&quot;&gt;/* 样式写在这 */&lt;/span&gt;            &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;6.iPhone 和 Smartphones&lt;br&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; screen and (min-device-width: &lt;span class=&quot;number&quot;&gt;320px&lt;/span&gt;) and (min-device-width: &lt;span class=&quot;number&quot;&gt;480px&lt;/span&gt;) &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/* 样式写在这 */&lt;/span&gt;            &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Bootstrap框架-响应式布局&quot;&gt;&lt;a href=&quot;#Bootstrap框架-响应式布局&quot; class=&quot;headerlink&quot; title=&quot;Bootstrap框架-响应式布局&quot;&gt;&lt;/a&gt;Bootstrap框架-响应式布局&lt;/h3&gt;&lt;p&gt;主要是运用grid(栅格布局)，button组件，navbar组件，Dropdown组件等来布局网站。&lt;br&gt;twitter的Bootstrap第二版本中就加上了这方面的运用。&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@media (max-width: 480px) &amp;#123; ... &amp;#125;              &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@media (max-width: 768px) &amp;#123; ... &amp;#125;              &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@media (min-width: 768px) and (max-width: 980px) &amp;#123; ... &amp;#125;      &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@media (min-width: 1200px) &amp;#123; .. &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;响应式布局介绍：&quot;&gt;&lt;a href=&quot;#响应式布局介绍：&quot; class=&quot;headerlink&quot; title=&quot;响应式布局介绍：&quot;&gt;&lt;/a&gt;响应式布局介绍：&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;什么是响应式布局&lt;/strong&gt;&lt;br&gt;1、服务器根据不同的浏览器用户端，为用户呈现不同的页面效果。&lt;br&gt;2、可以让一个网站兼容不同分辨率的设备，给用户更好的视觉使用体验。&lt;br&gt;3、移动互联网催生了响应式布局的诞生。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Web前端" scheme="http://xifengxx.github.io/categories/Web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="响应式布局" scheme="http://xifengxx.github.io/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/"/>
     
   </entry>
   

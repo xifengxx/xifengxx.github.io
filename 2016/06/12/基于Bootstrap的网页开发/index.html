@@ -65,7 +65,7 @@
 <meta property="og:url" content="http://xifengxx.github.io/2016/06/12/基于Bootstrap的网页开发/index.html">
 <meta property="og:site_name" content="西风前端">
 <meta property="og:description" content="Bootstrap简介Bootstrap是Twitter推出的一个开源的用于前端开发的工具包。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发，是一个CSS/HTML框架，提供了优雅的HTML和CSS规范，并基于jQuery开发了丰富的Web组件。">
-<meta property="og:updated_time" content="2016-06-13T03:51:14.000Z">
+<meta property="og:updated_time" content="2016-06-27T00:10:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Bootstrap的网页开发">
 <meta name="twitter:description" content="Bootstrap简介Bootstrap是Twitter推出的一个开源的用于前端开发的工具包。它由Twitter的设计师Mark Otto和Jacob Thornton合作开发，是一个CSS/HTML框架，提供了优雅的HTML和CSS规范，并基于jQuery开发了丰富的Web组件。">
@@ -185,6 +185,14 @@
           <a href="/works.html" rel="section">
             
             作品Demo
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-webdemo">
+          <a href="https://xifengxx.github.io/web-demo/" rel="section">
+            
+            前端作品Demo
           </a>
         </li>
       
@@ -346,13 +354,16 @@
 <li>12列响应式栅格结构、</li>
 <li>丰富组件</li>
 </ul>
-<h3 id="导航条及下拉菜单制作"><a href="#导航条及下拉菜单制作" class="headerlink" title="导航条及下拉菜单制作"></a>导航条及下拉菜单制作</h3><p>导航条基本结构：<br>用<code>&lt;nav class=“navbar navbar-default navbar-fixed-top navbar-inverse” role=“navigation”&gt;</code>标签声明</p>
+<h3 id="导航条及下拉菜单制作"><a href="#导航条及下拉菜单制作" class="headerlink" title="导航条及下拉菜单制作"></a>导航条及下拉菜单制作</h3><p>导航条基本结构：<br>用<code>&lt;nav class=“navbar navbar-default navbar-fixed-top navbar-inverse” role=“navigation”&gt;</code>标签声明.</p>
 <ul>
 <li>navbar代表这是一个导航条，会应用导航条的样式，</li>
 <li>navbar-default代表这是一个默认的导航条样式（为白色），</li>
 <li><code>role=“navigation”</code>代表这是一个导航条,主要用于屏幕阅读器，方便视力障碍者阅读。</li>
 <li>navbar-fixed-top可以使导航条固定在顶部，固定的导航条会遮住页面上其他内容，除非给body元素设置padding，导航条的默认宽度是50px，可设置：<code>body{padding-top:70px;}</code>，</li>
-<li>添加navbar-inverse可使导航条变为黑色<br>内容包裹在<code>&lt;div class=&quot;container-fluid&quot;&gt;</code>或<code>&lt;div class=&quot;container&quot;</code>&gt;中，</li>
+<li>添加navbar-inverse可使导航条变为黑色</li>
+</ul>
+<p>内容包裹在<code>&lt;div class=&quot;container-fluid&quot;&gt;</code>或<code>&lt;div class=&quot;container&quot;</code>&gt;中，</p>
+<ul>
 <li><code>class=“container”</code>代表居中的固定大小的导航条，</li>
 <li><code>class=&quot;container-fluid&quot;</code>代表导航条自适应浏览器大小的.<br><code>&lt;div class=&quot;navbar-header&quot;&gt;</code>代表导航条头部,其中包含一段代码使在屏幕宽度小于一定值时导航条的按钮会折叠为一个下拉图标，代码如下：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"navbar-toggle collapsed"</span> <span class="attr">data-toggle</span>=<span class="string">"collapse"</span> <span class="attr">data-target</span>=<span class="string">"#bs-example-navbar-collapse-1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"sr-only"</span>&gt;</span>Toggle navigation<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"icon-bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"icon-bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"icon-bar"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"navbar-brand"</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>brand<span class="tag">&lt;/<span class="name">a</span>&gt;</span>(为最左侧的文字，如：现代浏览器)</span><br></pre></td></tr></table></figure>
 </li>
