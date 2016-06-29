@@ -1,0 +1,1041 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Web App," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="移动Web基础知识移动开发像素((Pixel)知识
+px:css pixels,逻辑像素，浏览器使用的抽象单位；
+dp,pt:device independent pixels,设备无关像素,物理像素
+dpr:devicePixelRatio,设备像素缩放比 计算公式：1px=（dpr）^2 dp 1px = dpr ^2  dp 是平面上的像素换算，但实际开发当中使用更多的是长度上的换算： 1p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动Web App开发">
+<meta property="og:url" content="http://xifengxx.github.io/2016/06/26/移动Web开发/index.html">
+<meta property="og:site_name" content="西风前端">
+<meta property="og:description" content="移动Web基础知识移动开发像素((Pixel)知识
+px:css pixels,逻辑像素，浏览器使用的抽象单位；
+dp,pt:device independent pixels,设备无关像素,物理像素
+dpr:devicePixelRatio,设备像素缩放比 计算公式：1px=（dpr）^2 dp 1px = dpr ^2  dp 是平面上的像素换算，但实际开发当中使用更多的是长度上的换算： 1p">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.1.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.2.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.3.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.3.1.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.3.2.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.3.3.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.3.4.jpg">
+<meta property="og:updated_time" content="2016-06-28T16:20:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="移动Web App开发">
+<meta name="twitter:description" content="移动Web基础知识移动开发像素((Pixel)知识
+px:css pixels,逻辑像素，浏览器使用的抽象单位；
+dp,pt:device independent pixels,设备无关像素,物理像素
+dpr:devicePixelRatio,设备像素缩放比 计算公式：1px=（dpr）^2 dp 1px = dpr ^2  dp 是平面上的像素换算，但实际开发当中使用更多的是长度上的换算： 1p">
+<meta name="twitter:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 移动Web App开发 | 西风前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-webdemo">
+          <a href="https://xifengxx.github.io/web-demo/" rel="section">
+            
+            前端作品Demo
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                移动Web App开发
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-26T09:23:24+08:00" content="2016-06-26">
+              2016-06-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/移动Web开发/" itemprop="url" rel="index">
+                    <span itemprop="name">移动Web开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/26/移动Web开发/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/26/移动Web开发/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/26/移动Web开发/" class="leancloud_visitors" data-flag-title="移动Web App开发">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="移动Web基础知识"><a href="#移动Web基础知识" class="headerlink" title="移动Web基础知识"></a>移动Web基础知识</h3><h4 id="移动开发像素-Pixel-知识"><a href="#移动开发像素-Pixel-知识" class="headerlink" title="移动开发像素((Pixel)知识"></a>移动开发像素((Pixel)知识</h4><ul>
+<li>px:css pixels,逻辑像素，浏览器使用的抽象单位；</li>
+<li>dp,pt:device independent pixels,设备无关像素,物理像素</li>
+<li>dpr:devicePixelRatio,设备像素缩放比<br> 计算公式：1px=（dpr）^2 <em>dp<br> 1px = dpr ^2 </em> dp 是平面上的像素换算，但实际开发当中使用更多的是长度上的换算：<br> 1px = dpr * dp。<a id="more"></a></li>
+<li>DPI:打印机每英寸可以喷的墨汁点（印刷行业）</li>
+<li>PPI:屏幕每英寸像素数量，即 每英寸像素密度<br>比如手机分辨率是1920*1080 手机尺寸5英寸<br>ppi=开方(1920^2+1080^2) /5</li>
+<li>Retina屏(高清屏)：dpr都是&gt;=2<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.1.jpg" alt="1"></li>
+</ul>
+<h4 id="Viewport视图"><a href="#Viewport视图" class="headerlink" title="Viewport视图"></a>Viewport视图</h4><p>没有viewport，直接渲染，会使得排版混乱。viewport提供一个虚拟的页面来渲染文档，然后再缩放比例。</p>
+<h5 id="Viewport-Meta标签"><a href="#Viewport-Meta标签" class="headerlink" title="Viewport Meta标签:"></a>Viewport Meta标签:</h5><p>移动Web最佳viewport设置：<br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,user-scalable=no&quot;&gt;</code></p>
+<ul>
+<li>width:设置布局viewport的特定值(“device-width”)</li>
+<li>initial-scale:设置页面的初始缩放</li>
+<li>minimum-scale:最小缩放</li>
+<li>maximum-scale:最大缩放</li>
+<li>user-scalable:用户能否缩放</li>
+</ul>
+<h4 id="设计移动Web"><a href="#设计移动Web" class="headerlink" title="设计移动Web"></a>设计移动Web</h4><p>方案一: 根据设备的实际宽度来设计(常用)<br>手机宽320px, 我们就拿320px设计<br>方案二: 1px = 1dp<br>缩放0.5, 根据设备的物理像素dp等于抽象像素px来设计. 1像素边框和高清图都不需要额外处理.</p>
+<h3 id="高效的移动Web布局"><a href="#高效的移动Web布局" class="headerlink" title="高效的移动Web布局"></a>高效的移动Web布局</h3><h4 id="Flexbox弹性盒子布局"><a href="#Flexbox弹性盒子布局" class="headerlink" title="Flexbox弹性盒子布局"></a>Flexbox弹性盒子布局</h4><p>不定宽高的水平垂直居中布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wrapper</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>:<span class="built_in">translate</span>(-50%,-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>flexbox版-不定宽高的水平垂直居中布局<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.parent&#123;</span><br><span class="line">justify-content:center;//子元素水平居中</span><br><span class="line">align-items:center;//子元素垂直居中</span><br><span class="line">display:-webkit-flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>flex:flex伸缩布局；<code>display:-webkit-flex</code>;</li>
+<li>flex-direction: 伸缩流方向：row/column/row-reverse/column-reverse</li>
+<li>flex-wrap:伸缩换行，nowrap/wrap/wrap-reverse</li>
+<li>flex-flow:伸缩流方向与换行，flex-direction和flex-wrap属性的缩写版本。</li>
+<li>justify-content:主轴对齐方式：flex-start/flex-end/center/space-between/space-around</li>
+<li>align-items:伸缩项目行在侧轴对齐方式：flex-start/flex-end/center/stretch/baseline</li>
+<li>align-self:伸缩项目自身在侧轴对齐方法:flex-start/flex-end/center/baseline/stretch</li>
+<li>align-content:堆栈伸缩行,伸缩行在侧轴对齐方式:flex-start/flex-end/center/space-between/space-around/stretch</li>
+<li>order:显示顺序:</li>
+<li>flex:伸缩性(伸缩项目的宽度/高度自动填充伸缩容器额外空间)：flex-grow(扩展比率,默认0)/flex-shrink(收缩比率,默认1)/flex-basis(伸缩基准值，默认auto)</li>
+</ul>
+<p><strong>Flexbox弹性盒子布局-兼容性</strong><br>iOS可以使用最新的flex布局<br>android4.4以下，只能兼容旧版flexbox布局<br>android4.4及以上，可以使用最新flex布局。</p>
+<h4 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h4><p>响应式布局：可以让一个网站兼容不同分辨率的设备，给用户更好的视觉使用体验。<br>格式：@media 媒体类型 and （媒体特性）{你的样式}<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (max-width:<span class="number">480px</span>)&#123;</span><br><span class="line"> <span class="selector-class">.ads</span> &#123;</span><br><span class="line">   <span class="attribute">display</span>:none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>媒体类型：</strong></p>
+<ul>
+<li>Screen-屏幕</li>
+<li>print-打印机</li>
+<li>handheld-手持设备</li>
+<li>all-通用</li>
+</ul>
+<p><strong>常用媒体查询参数：</strong></p>
+<ul>
+<li>device-width,device-height 屏幕宽高，物理</li>
+<li>width,height 渲染窗口宽度，可视</li>
+<li>orientation 设备方向，竖屏(portrait)和横屏(landscape)展示的区别对待</li>
+<li>resolution 设备分辨率,不同于像素</li>
+</ul>
+<p><strong>响应式设计要点：</strong><br>设计点1：百分比布局<br>设计点2：弹性图片：<code>img {max-width:100%;}</code><br>设计点3：重新布局，显示与隐藏</p>
+<h4 id="移动Web特别样式处理"><a href="#移动Web特别样式处理" class="headerlink" title="移动Web特别样式处理"></a>移动Web特别样式处理</h4><h5 id="高清图片"><a href="#高清图片" class="headerlink" title="高清图片"></a>高清图片</h5><p>在移动web页面上渲染图片，为了避免图片产生模糊，图片的宽高应该用物理像素单位渲染，即100<em>100的图片，应该使用100dp</em>100dp.<br>width:(w_value/dpr)px;<br>height:(h_value/dpr)px;</p>
+<h5 id="一像素边框"><a href="#一像素边框" class="headerlink" title="一像素边框"></a>一像素边框</h5><p>同样是retina屏幕下的问题，根本原因1px使用2dp渲染<br>解决方法：scaleY(.5)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.itemList li + li:before&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: -1px; </span><br><span class="line">    left: 0px; </span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 1px;</span><br><span class="line">    border-top: 1px solid #d1d1d1;</span><br><span class="line">    -webkit-transform: scaleY(0.5);</span><br></pre></td></tr></table></figure></p>
+<h5 id="相对单位rem"><a href="#相对单位rem" class="headerlink" title="相对单位rem"></a>相对单位rem</h5><p>为了适应各大屏幕的手机，px略显固定，不能根据尺寸的大小而改变，使用相对单位更能体验页面兼容性</p>
+<p>em:根据父节点的font-size为相对单位<br>rem:根据html的font-size为相对单位<br>em在多层嵌套下变得非常难以控制；rem更加能够作为全局统一设置的度量<br>不使用rem的情况：font-size(字体大小)</p>
+<h5 id="多行文本溢出"><a href="#多行文本溢出" class="headerlink" title="多行文本溢出"></a>多行文本溢出</h5><p>单行文本溢出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">overflow: hidden;</span><br><span class="line">white-space: nowrap;</span><br><span class="line">text-overflow: ellipsis;</span><br></pre></td></tr></table></figure></p>
+<p>多行文本溢出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">display: -webkit-box !important;</span><br><span class="line">overflow: hidden;</span><br><span class="line"></span><br><span class="line">text-overflow: ellipsis;</span><br><span class="line">word-break: break-all;</span><br><span class="line"></span><br><span class="line">-webkit-box-orient: vertical; // 方向垂直</span><br><span class="line">-webkit-line-clamp: 2; // 自动截断显示2行</span><br></pre></td></tr></table></figure></p>
+<h3 id="终端交互优化"><a href="#终端交互优化" class="headerlink" title="终端交互优化"></a>终端交互优化</h3><h4 id="Tap基础事件"><a href="#Tap基础事件" class="headerlink" title="Tap基础事件"></a>Tap基础事件</h4><p>移动web页面上的click事件响应都要慢上300ms</p>
+<blockquote>
+<p>原因在于单击后面还有个双击缩放动作，这个涉及到触摸设备的手势交互行为原生设计，在平台提供商比如苹果和 google ,本意是通过 300ms 来区分两者之间的不同行为,单击一次等待 300ms 后没有再次单击那么就会触发缩放等双击行为。本意是好的,正常的逻辑实现,但是在现实的应用场景中,用户往往会觉得 web app 的事件触发不是那么灵敏,有那么一点延迟<br>参考阅读：<a href="http://www.jmouse.cn/?p=524" target="_blank" rel="external">5步解决移动设备上的300ms点击延迟</a></p>
+</blockquote>
+<p>300ms延迟怎么破？使用Tap事件代替click事件</p>
+<p>自定义Tap事件原理：<br>在touchstart、touchend时记录时间、手指位置，在touchend时进行比较，如果手指位置为同一位置(或允许移动一个非常小的位移值)且时间间隔较短(一般为200ms),且过程中未曾触发touchmove，即可认为触发了手持设备上的”click”，一般称它为”tap”</p>
+<p>移动端click事件响应慢ms,所以用tap事件替换click事件,tap事件可通过touchstart与touchend自定义,也可以使用zepto.js实现.但是tap事件有bug(tap透传),触发之后过300ms后又触发click事件</p>
+<p>Tap“点透”的bug-点击会触发非当前层的点击事件<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.2.jpg" alt="2"><br>Tap透传的解决方案<br>1.使用缓动动画，过渡300ms的延迟<br>2.中检测dom元素的加入，让中间层接受这个”穿透”事件，稍后隐藏<br>3.”上下”都使用tap事件，原理上解决tap透传事件(但不可避免原生标签的click事件)<br>4.改用Fastclick库</p>
+<h4 id="触摸touch"><a href="#触摸touch" class="headerlink" title="触摸touch"></a>触摸touch</h4><p>touch事件touch是针对触屏手机上的触摸事件。现今大多数触屏手机webkit内核提供了touch事件的监听，让开发者可以获取用户触摸屏幕时的一些信息。<br>其中包括：touchstart,touchmove,touchend,touchcancel 这四个事件<br>touchstart,touchmove,touchend事件可以类比于mousedown，mouseover<br> ，mouseup的触发。</p>
+<ul>
+<li>touchstart ： 当手指触摸到屏幕会触发(已经有手指放屏幕上不会触发)</li>
+<li>touchmove : 当手指在屏幕上移动时，会连续触发；</li>
+<li>touchend : 当手指离开屏幕时，会触发；</li>
+<li>touchcancel：系统取消touch时触发(不常用)</li>
+</ul>
+<p>除了常见的事件属性外，触摸事件包含专有的触摸属性：</p>
+<ul>
+<li>touches:跟踪触摸操作的touch对象数组</li>
+<li>targetTouches:特定事件目标的touch对象数组</li>
+<li>changeTouches:上次触摸改变的touch对象数组<br>每个touch对象包含属性：</li>
+<li>clientX:触摸目标在视口中的X坐标。</li>
+<li>clientY:触摸目标在视口中的Y坐标。</li>
+<li>identifier:标识触摸的唯一ID。</li>
+<li>pageX:触摸目标在页面中的x坐标(包含滚动)</li>
+<li>pageY:触摸目标在页面中的y坐标(包含滚动)</li>
+<li>screenX:触摸目标在屏幕中的x坐标。</li>
+<li>screenY:触摸目标在屏幕中的y坐标。</li>
+<li>target:触摸的DOM节点目标。</li>
+</ul>
+<p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.3.jpg" alt="3"></p>
+<h5 id="弹性滚动-IOS系统适用"><a href="#弹性滚动-IOS系统适用" class="headerlink" title="弹性滚动(IOS系统适用)"></a>弹性滚动(IOS系统适用)</h5><p>当客户端的页面滚动到顶部或底部的时候，滚动条会收缩并让我们多滑动一定距离，通过缓冲反弹的效果，带给用户良好的体验。</p>
+<p>移动web页面也有这样的效果，但滚动有几种情况需要考虑：<br>body层滚动:(系统特殊化处理)<br>自带弹性滚动，overflow:hidden会失效，GIF和定时器暂停。<br>局部滚动：<br>没有弹性滚动，没有滚动惯性，不流畅<br>局部滚动开启弹性滚动：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    overflow：scroll;</span><br><span class="line">    -webkit-overflow-scrolling:touch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Android不支持原生的弹性滚动！需要借助第三方库iScroll来实现。</p>
+<h5 id="下拉刷新"><a href="#下拉刷新" class="headerlink" title="下拉刷新"></a>下拉刷新</h5><p>顶端下拉一小点距离，页面弹性滚动向下</p>
+<h5 id="上拉加载"><a href="#上拉加载" class="headerlink" title="上拉加载"></a>上拉加载</h5><p>使用scroll事件，而不是touch事件(android有bug)</p>
+<h3 id="Web-App打包工具："><a href="#Web-App打包工具：" class="headerlink" title="Web App打包工具："></a>Web App打包工具：</h3><p>基于HTML5+CSS3+JS开发Web App,通过打包工具将Web App变成ISO/Anroid应用。<br>常见的打包工具：<br>Appcan<br>phonegap<br>appcelector<br>Intel XDK(设计开发打包一体化工具)</p>
+<h3 id="常见Web-App框架"><a href="#常见Web-App框架" class="headerlink" title="常见Web App框架"></a>常见Web App框架</h3><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.3.1.jpg" alt="3.1"><br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.3.2.jpg" alt="3.2"></p>
+<p>Web APP优缺点：<br>致命缺陷：运行效率太差<br>纯Web App应用参考：”豆瓣音乐人”</p>
+<h3 id="Hybrid-App："><a href="#Hybrid-App：" class="headerlink" title="Hybrid App："></a>Hybrid App：</h3><p>如桌面平台上的Hybrid App应用：酷我音乐盒/QQ<br>移动平台上的Hybrid App:如QQ<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.3.3.jpg" alt="3.3"><br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.26.3.4.jpg" alt="3.4"></p>
+<h4 id="Hybrid-App优缺点"><a href="#Hybrid-App优缺点" class="headerlink" title="Hybrid App优缺点"></a>Hybrid App优缺点</h4><p>综合了开发效率和运行效率<br>发版本方便<br>运行效率中等(切换engine交互效果)<br>需要写一点原生代码(至少2个平台)</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="xifengxx WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="xifengxx Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web-App/" rel="tag">#Web App</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/15/jQuery插件制作/" rel="next" title="jQuery插件制作 (转)">
+                <i class="fa fa-chevron-left"></i> jQuery插件制作 (转)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/26/基于jQuery Mobile的开发-列车时刻表/" rel="prev" title="基于jQuery Mobile的Web APP开发-列车时刻表">
+                基于jQuery Mobile的Web APP开发-列车时刻表 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/26/移动Web开发/"
+           data-title="移动Web App开发" data-url="http://xifengxx.github.io/2016/06/26/移动Web开发/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="xifengxx" />
+          <p class="site-author-name" itemprop="name">xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">54</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#移动Web基础知识"><span class="nav-number">1.</span> <span class="nav-text">移动Web基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#移动开发像素-Pixel-知识"><span class="nav-number">1.1.</span> <span class="nav-text">移动开发像素((Pixel)知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Viewport视图"><span class="nav-number">1.2.</span> <span class="nav-text">Viewport视图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Viewport-Meta标签"><span class="nav-number">1.2.1.</span> <span class="nav-text">Viewport Meta标签:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设计移动Web"><span class="nav-number">1.3.</span> <span class="nav-text">设计移动Web</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高效的移动Web布局"><span class="nav-number">2.</span> <span class="nav-text">高效的移动Web布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Flexbox弹性盒子布局"><span class="nav-number">2.1.</span> <span class="nav-text">Flexbox弹性盒子布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应式布局"><span class="nav-number">2.2.</span> <span class="nav-text">响应式布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动Web特别样式处理"><span class="nav-number">2.3.</span> <span class="nav-text">移动Web特别样式处理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#高清图片"><span class="nav-number">2.3.1.</span> <span class="nav-text">高清图片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#一像素边框"><span class="nav-number">2.3.2.</span> <span class="nav-text">一像素边框</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#相对单位rem"><span class="nav-number">2.3.3.</span> <span class="nav-text">相对单位rem</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#多行文本溢出"><span class="nav-number">2.3.4.</span> <span class="nav-text">多行文本溢出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#终端交互优化"><span class="nav-number">3.</span> <span class="nav-text">终端交互优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Tap基础事件"><span class="nav-number">3.1.</span> <span class="nav-text">Tap基础事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#触摸touch"><span class="nav-number">3.2.</span> <span class="nav-text">触摸touch</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#弹性滚动-IOS系统适用"><span class="nav-number">3.2.1.</span> <span class="nav-text">弹性滚动(IOS系统适用)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下拉刷新"><span class="nav-number">3.2.2.</span> <span class="nav-text">下拉刷新</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#上拉加载"><span class="nav-number">3.2.3.</span> <span class="nav-text">上拉加载</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web-App打包工具："><span class="nav-number">4.</span> <span class="nav-text">Web App打包工具：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见Web-App框架"><span class="nav-number">5.</span> <span class="nav-text">常见Web App框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hybrid-App："><span class="nav-number">6.</span> <span class="nav-text">Hybrid App：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hybrid-App优缺点"><span class="nav-number">6.1.</span> <span class="nav-text">Hybrid App优缺点</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

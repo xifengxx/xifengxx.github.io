@@ -1,0 +1,1027 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="FullPage.js," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="FullPage.js简介fullPage.js 是一个基于 jQuery 的插件，它能够很方便、很轻松的制作出全屏网站。主要功能
+
+支持鼠标滚动- 
+支持前进后退和键盘控制- 
+多个回调函数- 
+支持手机、平板触摸事件- 
+支持 CSS3 动画- 
+支持窗口缩放- 
+窗口缩放时自动调整- 
+可设置滚动宽度、背景颜色、滚动速度、循环选项、回调、文本对齐方式等等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FullPage.js全屏滚动插件">
+<meta property="og:url" content="http://xifengxx.github.io/2016/06/10/FullPage.js全屏滚动插件/index.html">
+<meta property="og:site_name" content="西风前端">
+<meta property="og:description" content="FullPage.js简介fullPage.js 是一个基于 jQuery 的插件，它能够很方便、很轻松的制作出全屏网站。主要功能
+
+支持鼠标滚动- 
+支持前进后退和键盘控制- 
+多个回调函数- 
+支持手机、平板触摸事件- 
+支持 CSS3 动画- 
+支持窗口缩放- 
+窗口缩放时自动调整- 
+可设置滚动宽度、背景颜色、滚动速度、循环选项、回调、文本对齐方式等等">
+<meta property="og:updated_time" content="2016-06-28T16:21:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FullPage.js全屏滚动插件">
+<meta name="twitter:description" content="FullPage.js简介fullPage.js 是一个基于 jQuery 的插件，它能够很方便、很轻松的制作出全屏网站。主要功能
+
+支持鼠标滚动- 
+支持前进后退和键盘控制- 
+多个回调函数- 
+支持手机、平板触摸事件- 
+支持 CSS3 动画- 
+支持窗口缩放- 
+窗口缩放时自动调整- 
+可设置滚动宽度、背景颜色、滚动速度、循环选项、回调、文本对齐方式等等">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> FullPage.js全屏滚动插件 | 西风前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-webdemo">
+          <a href="https://xifengxx.github.io/web-demo/" rel="section">
+            
+            前端作品Demo
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                FullPage.js全屏滚动插件
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-10T09:23:24+08:00" content="2016-06-10">
+              2016-06-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript插件/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript插件</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/10/FullPage.js全屏滚动插件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/10/FullPage.js全屏滚动插件/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/06/10/FullPage.js全屏滚动插件/" class="leancloud_visitors" data-flag-title="FullPage.js全屏滚动插件">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="FullPage-js简介"><a href="#FullPage-js简介" class="headerlink" title="FullPage.js简介"></a>FullPage.js简介</h3><p>fullPage.js 是一个基于 jQuery 的插件，它能够很方便、很轻松的制作出全屏网站。<br><strong>主要功能</strong></p>
+<ul>
+<li>支持鼠标滚动- </li>
+<li>支持前进后退和键盘控制- </li>
+<li>多个回调函数- </li>
+<li>支持手机、平板触摸事件- </li>
+<li>支持 CSS3 动画- </li>
+<li>支持窗口缩放- </li>
+<li>窗口缩放时自动调整- </li>
+<li>可设置滚动宽度、背景颜色、滚动速度、循环选项、回调、文本对齐方式等等<a id="more"></a>
+<strong>下载地址：</strong><br><a href="http://alvarotrigo.com/fullPage/" target="_blank" rel="external">下载地址</a><br><a href="https://github.com/alvarotrigo/fullPage.js" target="_blank" rel="external">fullPage.js GitHub 地址下载地址</a> </li>
+</ul>
+<p><strong>兼容性</strong><br>fullPage.js 支持 IE8+ 及其他现代浏览器。</p>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><p>1、引入文件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/jquery.fullPage.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery.fullPage.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>2、HTML<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"fullpage"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span>第一屏<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span>第二屏<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slide"</span>&gt;</span>第三屏的第一屏<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slide"</span>&gt;</span>第三屏的第二屏<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slide"</span>&gt;</span>第三屏的第三屏<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"slide"</span>&gt;</span>第三屏的第四屏<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span>第四屏<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>3、JavaScript<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#fullpage"</span>).fullpage();</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">//或添加内容。</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">'#fullpage'</span>).fullpage(&#123;</span><br><span class="line">        <span class="string">'verticalCentered'</span>: <span class="literal">false</span>,</span><br><span class="line">        <span class="string">'css3'</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="string">'sectionsColor'</span>: [<span class="string">'#254875'</span>, <span class="string">'#00FF00'</span>, <span class="string">'#254587'</span>, <span class="string">'#695684'</span>],</span><br><span class="line">        anchors: [<span class="string">'page1'</span>, <span class="string">'page2'</span>, <span class="string">'page3'</span>, <span class="string">'page4'</span>],</span><br><span class="line">        <span class="string">'navigation'</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="string">'navigationPosition'</span>: <span class="string">'right'</span>,</span><br><span class="line">        <span class="string">'navigationTooltips'</span>: [<span class="string">'fullPage.js'</span>, <span class="string">'Powerful'</span>, <span class="string">'Amazing'</span>, <span class="string">'Simple'</span>]</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>经测试，最好至少有 anchors这个参数，否则在火狐浏览器中，第一次滚动会直接滚到底部。</p>
+<h3 id="FullPage-js-API"><a href="#FullPage-js-API" class="headerlink" title="FullPage.js API"></a>FullPage.js API</h3><h4 id="FullPage-js配置项"><a href="#FullPage-js配置项" class="headerlink" title="FullPage.js配置项"></a>FullPage.js配置项</h4><ul>
+<li>sectionsColor:[‘’,’’,’’,’’],//分别为各个section设置背景颜色属性</li>
+<li>controlArrows： 默认为true，定义是否通过箭头来控制slide幻灯片，如果设置为false,幻灯片左右两侧的箭头就会消失，在移动设备上，可以通过滑动来切换幻灯片。</li>
+<li>verticalCentered： 默认为true，每一页的内容是否垂直居中；(测试时，vertical:true也可以。)</li>
+<li>resize： 默认为false，字体是否随着窗口缩放而缩放；</li>
+<li>scrollingSpeed： 滚动速度，单位为毫秒，默认为700；</li>
+<li>anchors：[‘page1’,’’,’’,’’],定义锚链接，默认值为[].使每个section页面在地址栏有不同地址，便于直接找到某一section页面.定义锚链接的时候，值不能与其他的id与name值相同，且不需加#号。</li>
+<li>lockAnchors: 是否锁定锚链接,默认为false，若为true，则所添加的anchors不会自动在地址栏生效，需手动在地址栏地址后面加上自己的命名。</li>
+<li>easing： 定义页面section滚动的动画方式，默认为easeInOutCubic，如果修改此项需引入jquery.easings插件或 jquery ui，</li>
+<li>css3： 是否使用css3 transforms来实现滚动效果，默认为true，可以提供支持css3的浏览器，比如移动设备等的速度。如果浏览器不支持css3,则会使用jquery来替代css3实现滚动效果(会略显卡顿。)</li>
+<li>loopTop： 滚动到顶部后是否连续滚动到底部，默认为false；</li>
+<li>loopBottom： 滚动到底部以后是否连续滚动到顶部，默认为false；</li>
+<li>loopHorizontal： 横向slide是否循环滚动，默认为true；</li>
+<li>autoScrolling： 是否使用插件的滚动方式，默认为true，，如果为false，则会出现浏览器自带的滚动条，将不会按页滚动，而是按照滚动条的行为来滚动。</li>
+<li>scrollBar：是否包含滚动条，默认为false，如果设置为true，则按页滚动与滚动条滚动均有效.</li>
+<li>paddingTop/paddingBottom: ,设置每一个section的顶部和底部的padding，默认为0；一般如果我们需要设置一个固定在顶部或者底部的菜单、导航、元素等，可以使用这两个配置项。</li>
+<li>fixedElements：‘#ID名’，固定的元素，默认值为null，需要为其配置一个jquery选择器，在页面滚动的时候，fixedElements设置的元素固定不动，如果不加这个属性，那么你想固定的东西会被覆盖掉；</li>
+<li>keyboardScrolling： 是否可以使用键盘方向键导航，默认为true；</li>
+<li>touchSensitivity：在移动设备中滑动页面的敏感性，默认为5，最高为100，越大越难滑动</li>
+<li>continuousVertial: ,是否循环滚动，默认为false，如果设置为true，则页面会循环滚动，但是不会像loopTop/loopBottom那样生硬（这个属性和两个loop不兼容，不要同时设置），</li>
+<li>animateAnchor：锚链接是否可以控制滚动动画，默认为true，若设置为false，则通过锚链接定位到某个section时不会有动画。</li>
+<li>recordHistory： 是否记录浏览历史，默认为true，可以记录页面滚动的历史，可以通过浏览器的前进后退来导航，如果设置了autoScrolling：false，则这个属性也被关闭；</li>
+<li>menu：’#ul的ID名’，绑定菜单，设定的相关属性与anchors的值对应后，菜单可以控制滚动，默认为false,可以设置为菜单的jquery选择器。</li>
+<li>(在这之前要先设置一个<code>&lt;ul id=&quot;&quot;&gt;&lt;li data-menuanchor=&quot;page1&quot;&gt;&lt;a href=&quot;#page1&quot;&gt;section1&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</code> ps:data-menuanchor以及href的值都是与锚链接相对应的).</li>
+<li>navigation：是否显示小圆点导航，默认为false</li>
+<li>navigationPosition：导航小圆点的位置，可设置为left或者right</li>
+<li>navigationTooltips：导航小圆点的提示，与每个页面对应，[‘’,’’,’’,’’],可以设置成和anchors一样。</li>
+<li>showActiveTooltip: 是否显示当前页面的导航的tooltip信息,默认为false，设置为true时，则在小圆点处会自动显示navigationTooltips的内容。</li>
+<li>slidesNavigation： 是否显示横向幻灯片的导航，默认为false</li>
+<li>slidesNavPosition： 横向幻灯片的导航位置，默认为bottom，还可为top.</li>
+<li>scrollOverflow： 内容超过满屏后是否显示滚动条，默认为false，如果设置为true，则会显示滚动条，如果要滚动查看内容，还需要引入jquery.slimscroll插件。slimscroll插件主要用于模拟传统的浏览器滚动条.</li>
+<li>sectionSelector： section的选择器，默认为.section；</li>
+<li>slideSelector： slide的选择器，默认为.slide<br>(其他配置项，请查看官方文档。)</li>
+</ul>
+<h4 id="FullPage-js方法："><a href="#FullPage-js方法：" class="headerlink" title="FullPage.js方法："></a>FullPage.js方法：</h4><p>使用方式：<code>$.fn.fullpage.方法名称()</code><br>FullPage.js方法：<br>moveSectionUp()：向上滚动一页。<br>moveSectionDown()：向下滚动一页。<br>moveTo(section,slide):滚动到第几页，第几个slide，section页面是从1开始，slide是从0开始的.<br>silentMoveTo(section,slide):滚动到第几页，和moveTo一样，但没有动画效果。<br>moveSlideRight():幻灯片向右滚动<br>moveSliadLeft（）：幻灯片向左滚动<br>setAutoScrolling（boolean）：动态设置autoScrolling<br>setLockAnchors(boolean):动态设置lockAnchor<br>setRecordHistory(boolean):动态设置recordHistory<br>setScrollingSpeed(milliseconds):动态设置scrollingSpeed<br>setAllowScrolling（Boolean，[directions]）:添加或删除鼠标滚轮/滑动控制，第一个参数表示是否启用，第二个为方向：all，up，down，left，right，方向可以取多个值，用逗号隔开。<br> 作用：比如做一个有奖问答页面，提问的问题在前面的页面有答案，当滚动到最后一页时，不希望用户再滚动回之前的页面查看答案，就可以使用这样的方法。<br>destroy(type):销毁fullpage特效，type可以不写，或者使用all。type为空时，则fullpage特效消失，但fullpage给页面添加的样式和html元素仍存在；type为all时，则页面的一切(样式，html)等全部销毁，页面恢复到和不使用fullpage相同的效果。<br>reBuild（）：重新更新页面和尺寸，用于通过ajax请求后改变了页面结构之后，重建效果。</p>
+<h5 id="fullPage还支持延迟加载图片及视频："><a href="#fullPage还支持延迟加载图片及视频：" class="headerlink" title="fullPage还支持延迟加载图片及视频："></a>fullPage还支持延迟加载图片及视频：</h5><p>通过用data-src代替原因的src属性,即在src之前加data-就可调用。<br>这样设置后，图片或视频在打开网页时不加载，只在滚动到当前页面时才加载；如果不设置，图片或视频会在打开网页时加载。<br>图片：<code>&lt;img data-src=&quot;image.png&quot;&gt;</code><br>视频：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">data-src</span>=<span class="string">"video.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="FullPage-js回调函数"><a href="#FullPage-js回调函数" class="headerlink" title="FullPage.js回调函数"></a>FullPage.js回调函数</h4><p><strong>afterLoad（anchorLink，index）</strong><br>滚动到某一section处，且滚动结束后，会触发一次此回调函数，函数接收anchorLink和index 两个参数，anchorLink是锚链接，index是序号（从1开始）。<br>作用：我们可以根据anchorLink和index的参数值的判断，触发相应的事件。<br>实例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">afterLoad: <span class="function"><span class="keyword">function</span>(<span class="params">anchorLink,index</span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"afterLoad:anchorLink"</span>+anchorLink+<span class="string">";index:"</span>+index);&#125;</span><br><span class="line">            <span class="comment">//将两个参数打印出来，在控制台可以看到</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>onLeave（index，nextIndex，direction）</strong><br>在离开一个页面section时，会触发一次此回调函数，接收index（离开时页面的序号）、nextIndex（滚动到的目标页面的序号）和direction（滚动的方向，有up和down）3个参数<br>通过return false；可以取消滚动</p>
+<p><strong>afterRender（）</strong><br>页面初始化完成后的回调函数</p>
+<p><strong>afterResize（）</strong><br>浏览器窗口尺寸改变后的回调函数</p>
+<p><strong>afterSlideLode（anchorLink，index，slideAnchor，slideIndex）</strong><br>滚动到某一幻灯片slide后的回调函数，与afterLode类似，接收anchorLink、index、slideIndex、direction4个参数</p>
+<p><strong>onSlideLeave（anchorLink，index，slideIndex，direction，nextSlideIndex）</strong><br>在离开一个幻灯片slide时会触发此函数，与onLeave相似，接收anchorLink、index、slideIndex、direction4个参数</p>
+<h3 id="FullPage-js实例："><a href="#FullPage-js实例：" class="headerlink" title="FullPage.js实例："></a>FullPage.js实例：</h3><p>单页面网站的实现步骤：<br>1、设计页面<br>2、准备文字和图片素材<br>3、按照设计实现基本的页面效果<br>4、实现动画(CSS3/Move.js插件)</p>
+<p>动画实现，可以使用CSS3,也可以使用Move.js插件来实现。</p>
+<h4 id="Move-js插件"><a href="#Move-js插件" class="headerlink" title="Move.js插件"></a>Move.js插件</h4><p>move.js是一个js库，支持css3.<br>move.js是使用简单函数创建 CSS3 动画的一个简单的JavaScript库。<br><a href="http://visionmedia.github.io/move.js/" target="_blank" rel="external">move.js官网</a><br><a href="https://segmentfault.com/a/1190000000443523#articleHeader10" target="_blank" rel="external">使用Move.js创建CSS3动画</a><br>例如：<br><code>.box{transition:margin 1s;}
+.box:hover{margin-left:100px;}</code><br>使用Move.js实现如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">move(&quot;.box&quot;)</span><br><span class="line"> .set(&apos;margin-left&apos;,100)</span><br><span class="line"> .end();</span><br></pre></td></tr></table></figure></p>
+<h5 id="Move-js的方法："><a href="#Move-js的方法：" class="headerlink" title="Move.js的方法："></a>Move.js的方法：</h5><ul>
+<li>set(css属性，属性值):set()方法用于设置元素的css属性，他带有两个参数：css属性和属性值。示例用法：<code>.set(&#39;margin-left&#39;, 500)</code></li>
+<li>scale（缩放的倍数）:该方法用于放大或压缩元素的大小，按照提供的每一个值，将调用transform的scale方法：<code>.scale(3, 3)</code></li>
+<li>rotate（旋转的角度数）；可正可负.该方法通过提供的数值作为参数来旋转元素。当方法被调用的时候通过附加到元素的 transform 属性上。<code>.rotate(90)</code></li>
+<li>end（）；用于结束move.js代码片段的结束，标识动画的结束。此方法可接受一个回调函数.如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">move(&apos;.box&apos;)</span><br><span class="line">  .set(&apos;background-color&apos;, &apos;red&apos;)</span><br><span class="line">  .duration(1000)</span><br><span class="line">  .end(function() &#123;</span><br><span class="line">    alert(&quot;Animation Over!&quot;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>给页面添加动画效果可利用回调函数（另外：要实现某一东西从某一方向飞入，则首先给其设置一个较大的margin，并设置overflow：hidden，使此东西在页面中显示不出来，然后通过回调函数应用move.js的set（‘margin-方向’，‘使此东西在正确位置的margin值’）<br>示例代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#fullpage"</span>).fullpage(&#123;</span><br><span class="line">        verticalCentered:<span class="literal">false</span>,</span><br><span class="line">        anchors: [<span class="string">'page1'</span>,<span class="string">'page2'</span>,<span class="string">'page3'</span>,<span class="string">'page4'</span>],</span><br><span class="line">        navigation:<span class="literal">true</span>,</span><br><span class="line">        <span class="comment">// navigationPosition:'right',</span></span><br><span class="line">        navigationTooltips:[<span class="string">'它，终于来了。'</span>,<span class="string">'真正与你贴近的个人设备。'</span>,<span class="string">'重要的事，不错过。'</span>,<span class="string">'在三个特点鲜明的系列中找到你的风格'</span>],</span><br><span class="line">        afterLoad:<span class="function"><span class="keyword">function</span>(<span class="params">link,index</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">switch</span>(index)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    move(<span class="string">'.section1 h1'</span>).scale(<span class="number">1.5</span>).end();</span><br><span class="line">                    move(<span class="string">'.section1 p'</span>).set(<span class="string">'margin-top'</span>,<span class="string">'5%'</span>).end();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    move(<span class="string">'.section2 h1'</span>).scale(<span class="number">0.7</span>).end();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                    move(<span class="string">'.section3 h1'</span>).set(<span class="string">'margin-left'</span>,<span class="string">'20%'</span>).end();</span><br><span class="line">                    move(<span class="string">'.section3 p'</span>).set(<span class="string">'margin-left'</span>,<span class="string">'20%'</span>).end();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                    move(<span class="string">'.section4 img.primary'</span>).rotate(<span class="number">360</span>).end(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                        move(<span class="string">'.section4 img.sport'</span>).rotate(<span class="number">360</span>).end(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                            move(<span class="string">'.section4 img.edition'</span>).rotate(<span class="number">360</span>).end(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                                move(<span class="string">'.section4 h4.primary'</span>).scale(<span class="number">1.3</span>).end(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                                    move(<span class="string">'.section4 h4.sport'</span>).scale(<span class="number">1.3</span>).end(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                                        move(<span class="string">'.section4 h4.edition'</span>).scale(<span class="number">1.3</span>).end();</span><br><span class="line">                                    &#125;);</span><br><span class="line">                                &#125;);</span><br><span class="line">                            &#125;);</span><br><span class="line">                        &#125;);</span><br><span class="line">                    &#125;);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        onLeave:<span class="function"><span class="keyword">function</span>(<span class="params">link,index</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">switch</span>(index)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    move(<span class="string">'.section1 h1'</span>).scale(<span class="number">1</span>).end();</span><br><span class="line">                    move(<span class="string">'.section1 p'</span>).set(<span class="string">'margin-top'</span>,<span class="string">'800px'</span>).end();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    move(<span class="string">'.section2 h1'</span>).scale(<span class="number">1</span>).end();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                    move(<span class="string">'.section3 h1'</span>).set(<span class="string">'margin-left'</span>,<span class="string">'-1500px'</span>).end();</span><br><span class="line">                    move(<span class="string">'.section3 p'</span>).set(<span class="string">'margin-left'</span>,<span class="string">'1500px'</span>).end();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                    move(<span class="string">'.section4 img.primary'</span>).rotate(<span class="number">-360</span>).end()</span><br><span class="line">                    move(<span class="string">'.section4 img.sport'</span>).rotate(<span class="number">-360</span>).end()</span><br><span class="line">                    move(<span class="string">'.section4 img.edition'</span>).rotate(<span class="number">-360</span>).end()</span><br><span class="line">                    move(<span class="string">'.section4 h4.primary'</span>).scale(<span class="number">1</span>).end()</span><br><span class="line">                    move(<span class="string">'.section4 h4.sport'</span>).scale(<span class="number">1</span>).end()</span><br><span class="line">                    move(<span class="string">'.section4 h4.edition'</span>).scale(<span class="number">1</span>).end();</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;)  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="xifengxx WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="xifengxx Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/FullPage-js/" rel="tag">#FullPage.js</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/10/Bootstrap学习笔记(2)/" rel="next" title="Bootstrap学习笔记(2)">
+                <i class="fa fa-chevron-left"></i> Bootstrap学习笔记(2)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/10/响应式布局/" rel="prev" title="Responsive响应式布局设计">
+                Responsive响应式布局设计 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/10/FullPage.js全屏滚动插件/"
+           data-title="FullPage.js全屏滚动插件" data-url="http://xifengxx.github.io/2016/06/10/FullPage.js全屏滚动插件/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="xifengxx" />
+          <p class="site-author-name" itemprop="name">xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">54</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#FullPage-js简介"><span class="nav-number">1.</span> <span class="nav-text">FullPage.js简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用方法"><span class="nav-number">1.1.</span> <span class="nav-text">使用方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FullPage-js-API"><span class="nav-number">2.</span> <span class="nav-text">FullPage.js API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FullPage-js配置项"><span class="nav-number">2.1.</span> <span class="nav-text">FullPage.js配置项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FullPage-js方法："><span class="nav-number">2.2.</span> <span class="nav-text">FullPage.js方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#fullPage还支持延迟加载图片及视频："><span class="nav-number">2.2.1.</span> <span class="nav-text">fullPage还支持延迟加载图片及视频：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FullPage-js回调函数"><span class="nav-number">2.3.</span> <span class="nav-text">FullPage.js回调函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FullPage-js实例："><span class="nav-number">3.</span> <span class="nav-text">FullPage.js实例：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Move-js插件"><span class="nav-number">3.1.</span> <span class="nav-text">Move.js插件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Move-js的方法："><span class="nav-number">3.1.1.</span> <span class="nav-text">Move.js的方法：</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
