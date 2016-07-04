@@ -67,7 +67,7 @@ githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作
 <meta property="og:site_name" content="西风前端">
 <meta property="og:description" content="简明释义GitGit 是一个版本控制工具，是一个可以安装在你自己机器上的软件。git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。
 githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作的理念更好的进行了推广，因为 Github 让 Git 变得更为易用。Github 首先是一个公司，Github网站是他们的产品，提供 Gi">
-<meta property="og:updated_time" content="2016-06-29T14:06:56.000Z">
+<meta property="og:updated_time" content="2016-07-03T14:11:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git实战教程">
 <meta name="twitter:description" content="简明释义GitGit 是一个版本控制工具，是一个可以安装在你自己机器上的软件。git 的用途，就是对一个文件夹中的所有数据信息做跟踪，通过记录版本的形式来对内容的变化做记录。
@@ -399,7 +399,7 @@ githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作
 <li>git commit:将文件提交到仓库。<br>命令：$ git commit -m “xxx”<br>git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。<br>如：$ git commit -m “首次提交”<br>备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.</li>
 <li><strong>注意事项</strong><br>将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。<br>关键是如何退出默认编辑器界面并重新返回到Git bash界面。<br>方法：<br>① 按ESC键，确定退出编辑模式。<br>② 然后输入”:wq”，即可返回Git界面。</li>
 </ol>
-<h3 id="Git常用命令："><a href="#Git常用命令：" class="headerlink" title="Git常用命令："></a>Git常用命令：</h3><p>1、<code>git init</code> 初始化一个git项目<br>  在初始化的项目中有一个.git文件，可以被称为“附属于该仓库的工作树”。文件的操作都在工作树中进行，然后记录到仓库中去。</p>
+<h3 id="Git常用命令："><a href="#Git常用命令：" class="headerlink" title="Git常用命令："></a>Git常用命令：</h3><p>1、<code>git init</code> 初始化一个git项目<br>  在初始化的项目中有一个.git文件，可以被称为“附属于该仓库的工作树”。文件的操作都在工作树中进行，然后记录到仓库中去。<br>  <code>touch README.md</code>: 添加一个 README.md （可选）用于描述项目<br>  <strong>忽略某些文件:</strong><br>  在提交代码之前，我们需要将某些文件排除在外，比如由 npm 产生的 node_modules 文件夹，这是开发环境下用到的，可以通过 npm install 在新环境下安装依赖。所以理应不纳入版本管理，还有缓存之类的都应该排除掉。<br>  那么我们就创建一个名为 .gitignore 的文件，内容就如下：<br>  .DS_Store<br>  node_modules<br>  .sass-cache<br>  上面只是一个大致的内容，实际开发的时候你得根据自己的需求去忽略某些文件。</p>
 <p>2、<code>git status</code> 查看状态<br>  只要对git的工作树或者仓库操作，git status的现实结果就会发生变化。</p>
 <p>3、<code>git add</code> 向暂存区中添加文件<br>  暂存区属于仓库的范畴<br>  假如只是在工作区操作文件，并不会在被计入git仓库的版本管理对象中。用status查看状态时只会出现在Untracked files里，而git add操作后，文件就进入了暂存区即仓库。</p>
 <p>4、<code>git commit</code> 保存仓库的历史记录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;xxx&quot;    // &quot;xxx&quot;为提交说明，可以输入任意内容，方便以后查找。</span><br></pre></td></tr></table></figure></p>
@@ -584,7 +584,7 @@ githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">54</span>
+              <span class="site-state-item-count">57</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -592,7 +592,7 @@ githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -601,7 +601,7 @@ githubGit 的魅力在于开源文化，2008 年 github 的诞生把开源协作
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-count">42</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

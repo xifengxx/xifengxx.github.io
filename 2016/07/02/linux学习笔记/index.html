@@ -1,0 +1,1122 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="linux命令," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="创建、删除文件和文件夹常用命令：
+
+创建文件夹： mkdir fileName // mkdir demo:创建demo文件夹
+创建文件：
+touch fileName   // touch index.html:创建index.html文件
+vi fileName      //vi index.html:创建index.html并打开">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux常用命令">
+<meta property="og:url" content="http://xifengxx.github.io/2016/07/02/linux学习笔记/index.html">
+<meta property="og:site_name" content="西风前端">
+<meta property="og:description" content="创建、删除文件和文件夹常用命令：
+
+创建文件夹： mkdir fileName // mkdir demo:创建demo文件夹
+创建文件：
+touch fileName   // touch index.html:创建index.html文件
+vi fileName      //vi index.html:创建index.html并打开">
+<meta property="og:updated_time" content="2016-07-04T08:09:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux常用命令">
+<meta name="twitter:description" content="创建、删除文件和文件夹常用命令：
+
+创建文件夹： mkdir fileName // mkdir demo:创建demo文件夹
+创建文件：
+touch fileName   // touch index.html:创建index.html文件
+vi fileName      //vi index.html:创建index.html并打开">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> linux常用命令 | 西风前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-webdemo">
+          <a href="https://xifengxx.github.io/web-demo/" rel="section">
+            
+            前端作品Demo
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                linux常用命令
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-02T19:23:24+08:00" content="2016-07-02">
+              2016-07-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/02/linux学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/02/linux学习笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/02/linux学习笔记/" class="leancloud_visitors" data-flag-title="linux常用命令">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="创建、删除文件和文件夹"><a href="#创建、删除文件和文件夹" class="headerlink" title="创建、删除文件和文件夹"></a>创建、删除文件和文件夹</h3><p>常用命令：</p>
+<ol>
+<li>创建文件夹： mkdir fileName // <code>mkdir demo</code>:创建demo文件夹</li>
+<li>创建文件：<ul>
+<li>touch fileName   // <code>touch index.html</code>:创建index.html文件</li>
+<li>vi fileName      //<code>vi index.html</code>:创建index.html并打开<a id="more"></a></li>
+</ul>
+</li>
+<li>切换目录命令cd：<ul>
+<li>cd 目录名：切换到具体目录。如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。</li>
+<li>cd ..    : 切换到上一级目录。如当前目录为e盘下的code目录，使用命令”cd ..”会切换到e盘。</li>
+<li>cd e:    : 切换盘符。如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。</li>
+<li>cd /     : 切换到根目录。</li>
+</ul>
+</li>
+<li>其他命令<ul>
+<li>pwd       : 显示当前所在目录</li>
+<li>dir       : 显示当前目录下的所有文件</li>
+<li>mkdir     : 创建目录。</li>
+</ul>
+</li>
+</ol>
+<h4 id="创建文件夹【mkdir】"><a href="#创建文件夹【mkdir】" class="headerlink" title="创建文件夹【mkdir】"></a>创建文件夹【mkdir】</h4><pre><code>一、mkdir命令使用权限
+所有用户都可以在终端使用 mkdir 命令在拥有权限的文件夹创建文件夹或目录。
+
+二、mkdir命令使用格式    
+格式：mkdir [选项] DirName    
+
+三、mkdir命令功能    
+通过 mkdir 命令可以实现在指定位置创建以 DirName(指定的文件名)命名的文件夹或目录。要创建文件夹或目录的用户必须对所创建的文件夹的父文件夹具有写权限。并且，所创建的文件夹(目录)不能与其父目录(即父文件夹)中的文件名重名，即同一个目录下不能有同名的(区分大小写)。    
+
+四、mkdir命令选项说明    
+命令中的［选项］一般有以下两种：    
+
+-m    用于对新建目录设置存取权限，也可以用 chmod 命令进行设置。    
+-p     需要时创建上层文件夹(或目录)，如果文件夹(或目录)已经存在，则不视为错误。    
+
+五、mkdir命令使用举例
+例一：在桌面下面创建以“demo”命名的文件夹。
+使用以下命令即可：
+`mkdir 桌面/demo`
+例二：在桌面下面创建以“demo”命名的文件夹，并且给文件夹赋权限，权限为123。
+`mkdir 123 桌面/demo`
+</code></pre><h4 id="删除文件夹-rm"><a href="#删除文件夹-rm" class="headerlink" title="删除文件夹[rm]"></a>删除文件夹[rm]</h4><pre><code>一、rm命令使用权限
+所有用户都可以在终端使用 rm命令删除目录。
+
+二、rm命令使用格式
+格式：rm [选项] DirName
+
+三、rm命令功能
+删除档案及目录。
+
+四、rm命令选项说明
+命令中的［选项］一般有以下几种：
+-i 删除前逐一询问确认。
+-f 即使原档案属性设为唯读，亦直接删除，无需逐一确认。
+-r 将目录及以下之档案亦逐一删除。
+
+五、rm命令使用举例
+例一：删除所有C语言程序文档；删除前逐一询问确认。
+`rm -i *.c`
+例二：将 Finished 子目录及子目录中所有档案删除。
+`rm -r Finished`
+注：在linux没有回收站，在试用rm命令的时候，一定要小心些，删除之后就无法再恢复了。
+</code></pre><h4 id="创建文件【vi】"><a href="#创建文件【vi】" class="headerlink" title="创建文件【vi】"></a>创建文件【vi】</h4><pre><code>一、进入vi的命令
+vi filename :打开或新建文件filename，并将光标置于第一行首
+vi +n filename ：打开文件，并将光标置于第n行首
+vi + filename ：打开文件，并将光标置于最后一行首
+vi +/pattern filename：打开文件，并将光标置于第一个与pattern匹配的串处
+vi -r filename ：在上次正用vi编辑时发生系统崩溃，恢复filename
+vi filename....filename ：打开多个文件，依次进行编辑
+
+二、移动光标类命令
+h ：光标左移一个字符
+l ：光标右移一个字符
+space：光标右移一个字符
+Backspace：光标左移一个字符
+k或Ctrl+p：光标上移一行
+j或Ctrl+n ：光标下移一行
+Enter ：光标下移一行
+w或W ：光标右移一个字至字首
+b或B ：光标左移一个字至字首
+e或E ：光标右移一个字至字尾
+) ：光标移至句尾
+( ：光标移至句首
+}：光标移至段落开头
+{：光标移至段落结尾
+nG：光标移至第n行首
+n+：光标下移n行
+n-：光标上移n行
+n$：光标移至第n行尾
+H ：光标移至屏幕顶行
+M ：光标移至屏幕中间行
+L ：光标移至屏幕最后行
+0：（注意是数字零）光标移至当前行首
+$：光标移至当前行尾
+
+三、屏幕翻滚类命令
+Ctrl+u：向文件首翻半屏
+Ctrl+d：向文件尾翻半屏
+Ctrl+f：向文件尾翻一屏
+Ctrl＋b；向文件首翻一屏
+nz：将第n行滚至屏幕顶部，不指定n时将当前行滚至屏幕顶部。
+
+四、插入文本类命令
+i ：在光标前
+I ：在当前行首
+a：光标后
+A：在当前行尾
+o：在当前行之下新开一行
+O：在当前行之上新开一行
+r：替换当前字符
+R：替换当前字符及其后的字符，直至按ESC键
+s：从当前光标位置处开始，以输入的文本替代指定数目的字符
+S：删除指定数目的行，并以所输入文本代替之
+ncw或nCW：修改指定数目的字
+nCC：修改指定数目的行
+
+五、删除命令
+ndw或ndW：删除光标处开始及其后的n-1个字
+do：删至行首
+d$：删至行尾
+ndd：删除当前行及其后n-1行
+x或X：删除一个字符，x删除光标后的，而X删除光标前的
+Ctrl+u：删除输入方式下所输入的文本
+
+六、搜索及替换命令
+/pattern：从光标开始处向文件尾搜索pattern
+?pattern：从光标开始处向文件首搜索pattern
+n：在同一方向重复上一次搜索命令
+N：在反方向上重复上一次搜索命令
+：s/p1/p2/g：将当前行中所有p1均用p2替代
+：n1,n2s/p1/p2/g：将第n1至n2行中所有p1均用p2替代
+：g/p1/s//p2/g：将文件中所有p1均用p2替换
+
+七、vi命令使用举例
+
+例一：创建文件a.txt。
+vi a.txt         //创建文件a.txt，若文件已存在，则打开文件。
+Hello everyone!  //按Insert键，也可以按下字母i键，此时vi编辑器的状态就变为Insert了，进入输入模式，可输写内容。
+:wq              //在退出时，直接输入:wq会发现退不出去，
+</code></pre><p>退出方法：<strong>编辑完成后按ESC，然后输入:q就是退出;还有:wq是保存后退出，加感叹号是表示强制</strong></p>
+<h4 id="修改档案时间【touch】"><a href="#修改档案时间【touch】" class="headerlink" title="修改档案时间【touch】"></a>修改档案时间【touch】</h4><pre><code>一、touch命令使用权限
+所有用户都可以在终端使用 touch命令。
+
+二、touch命令使用格式
+格式：touch [-acfm][-d &lt;日期时间&gt;][-r &lt;参考文件或目录&gt;][-t &lt;日期时间&gt;][--help] [--version][文件或目录...] 或 touch [-acfm][--help][--version][日期时间][文件或目录...]
+
+（touch [-acfm][-r reference-file] [--file=reference-file][-t MMDDhhmm[[CC]YY][.ss]][-d time] [--date=time][--time={atime,access,use,mtime,modify}][--no-create][--help] [--version]file1 [file2 ...]）
+
+三、touch命令功能
+1、touch fileA，如果fileA存在，使用touch命令可更改这个文件或目录的日期时间，包括存取时间和更改时间；
+2、如果fileA不存在，touch命令会在当前目录下新建一个空白文件fileA。
+</code></pre><p>  注：使用touch指令可更改文件或目录的日期和时间，包括存取时间和更改时间。文件的时间属性包括文件的最后访问时间，最后修改时间以及最后在磁盘上修改的时间，命令stat显示结果显示了三个时间属性。</p>
+<pre><code>四、touch命令选项说明
+a 改变档案的读取时间记录。 
+m 改变档案的修改时间记录。　 
+c 假如目的档案不存在，不会建立新的档案。与 --no-create 的效果一样。 
+f 不使用，是为了与其他 unix 系统的相容性而保留。 
+r 使用参考档的时间记录，与 --file 的效果一样。 
+d 设定时间与日期，可以使用各种不同的格式。 
+t 设定档案的时间记录，格式与 date 指令相同。[[CC]YY]MMDDhhmm[.SS]，CC为年数中的前两位，即”世纪数”;YY为年数的后两位，即某世纪中的年数.如果不给出CC的值，则linux中touch命令参数将把年数CCYY限定在1969--2068之内.MM为月数，DD为天将把年数CCYY限定在1969--2068之内.MM为月数，DD为天数，hh 为小时数(几点)，mm为分钟数，SS为秒数.此处秒的设定范围是0--61，这样可以处理闰秒.这些数字组成的时间是环境变量TZ指定的时区中的一个时间.由于系统的限制，早于1970年1月1日的时间是错误的.
+--no-create 不会建立新档案。
+--help 列出指令格式。
+--version 列出版本讯息。
+
+五、touch命令使用举例
+例一：更新file1.txt的存取和修改时间。
+`touch file1.txt`
+例二：如果file1.txt不存在，不创建文件
+`touch -c file1.txt`
+例三：更新file1.txt的时间戳和ref+file相同
+`touch -r ref+file file1.txt`
+例四：设置文件的时间戳为2011年5月18日9点45分10秒
+`ls -l file1.txt
+touch -t 1105190945.10 file1.txt`
+</code></pre><p>在新建文件时用touch命令可以建立一个空文件，而vi命令则可以直接编辑文件的内容并保存。touch命令在linux中很少用到，我个人还是比较喜欢vi命令，可以直接对文档进行编辑。</p>
+<h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h3><p>1、学习Linux二（创建、删除文件和文件夹命令）<br> <a href="http://www.cnblogs.com/zf2011/archive/2011/05/17/2049155.html" target="_blank" rel="external">http://www.cnblogs.com/zf2011/archive/2011/05/17/2049155.html</a><br>2、Linux下之使用简略3种创建文件的命令 <a href="http://www.myexception.cn/linux-unix/1899556.html" target="_blank" rel="external">http://www.myexception.cn/linux-unix/1899556.html</a></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="xifengxx WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="xifengxx Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux命令/" rel="tag">#linux命令</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/02/Web前端中各类尺寸/" rel="next" title="Web前端中各类视口尺寸">
+                <i class="fa fa-chevron-left"></i> Web前端中各类视口尺寸
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/03/gulp详细入门教程 (打造一个自动化的前端项目)/" rel="prev" title="gulp详细入门教程 (打造一个自动化的前端项目)">
+                gulp详细入门教程 (打造一个自动化的前端项目) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/02/linux学习笔记/"
+           data-title="linux常用命令" data-url="http://xifengxx.github.io/2016/07/02/linux学习笔记/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="xifengxx" />
+          <p class="site-author-name" itemprop="name">xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">57</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建、删除文件和文件夹"><span class="nav-number">1.</span> <span class="nav-text">创建、删除文件和文件夹</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建文件夹【mkdir】"><span class="nav-number">1.1.</span> <span class="nav-text">创建文件夹【mkdir】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除文件夹-rm"><span class="nav-number">1.2.</span> <span class="nav-text">删除文件夹[rm]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建文件【vi】"><span class="nav-number">1.3.</span> <span class="nav-text">创建文件【vi】</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改档案时间【touch】"><span class="nav-number">1.4.</span> <span class="nav-text">修改档案时间【touch】</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料："><span class="nav-number">2.</span> <span class="nav-text">参考资料：</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

@@ -52,6 +52,276 @@
     </entry>
     
     <entry>
+      <title><![CDATA[gulp详细入门教程 (打造一个自动化的前端项目)]]></title>
+      <url>http://xifengxx.github.io/2016/07/03/gulp%E8%AF%A6%E7%BB%86%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%20(%E6%89%93%E9%80%A0%E4%B8%80%E4%B8%AA%E8%87%AA%E5%8A%A8%E5%8C%96%E7%9A%84%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE)/</url>
+      <content type="html"><![CDATA[<h3 id="工具介绍"><a href="#工具介绍" class="headerlink" title="工具介绍"></a>工具介绍</h3><h4 id="nodeJS"><a href="#nodeJS" class="headerlink" title="nodeJS"></a>nodeJS</h4><blockquote>
+<p>nodeJS的出现，可以算是前端里程碑式的一个事件，它让前端攻城狮们摆脱了浏览器的束缚，踏上了一个更加宽广的舞台。前端的可能性，从此更加具有想象空间。<br>随着一系列基于nodes的应用/工具的出现，工作中与nodeJS打交道的机会越来越多。无论在node应用的开发，还是使用中，包管理都扮演着一个很重要的作用。NPM（node package manager），作为node的包管理工具，极大地便利了我们的开发工作，很有必要了解一下。<br><a id="more"></a></p>
+<h4 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h4><p>NPM（node package manager），通常称为node包管理器。顾名思义，它的主要功能就是管理node包，包括：安装、卸载、更新、查看、搜索、发布等。</p>
+<p>NPM的背后，是基于couchdb的一个数据库，详细记录了每个包的信息，包括作者、版本、依赖、授权信息等。它的一个很重要的作用就是：将开发者从繁琐的包管理工作（版本、依赖等）中解放出来，更加专注于功能的开发。</p>
+</blockquote>
+<h4 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h4><blockquote>
+<p>gulp是基于Nodejs的自动任务运行器， 她能自动化地完成 javascript/coffee/sass/less/html/image/css 等文件的的测试、检查、合并、压缩、格式化、浏览器自动刷新、部署文件生成，并监听文件在改动后重复指定的这些步骤。在实现上，她借鉴了Unix操作系统的管道（pipe）思想，前一级的输出，直接变成后一级的输入，使得在操作上非常简单。通过本文，我们将学习如何使用Gulp来改变开发流程，从而使开发更加快速高效。</p>
+<p>gulp 和 grunt 非常类似，但相比于 grunt 的频繁 IO 操作，gulp 的流操作，能更快地更便捷地完成构建工作。</p>
+</blockquote>
+<h4 id="gulp常用地址："><a href="#gulp常用地址：" class="headerlink" title="gulp常用地址："></a>gulp常用地址：</h4><p>gulp官方网址：<a href="http://gulpjs.com" target="_blank" rel="external">http://gulpjs.com</a><br>gulp插件地址：<a href="http://gulpjs.com/plugins" target="_blank" rel="external">http://gulpjs.com/plugins</a><br>gulp 官方API：<a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank" rel="external">https://github.com/gulpjs/gulp/blob/master/docs/API.md</a><br>gulp 中文API：<a href="http://www.ydcss.com/archives/424" target="_blank" rel="external">http://www.ydcss.com/archives/424</a></p>
+<h3 id="使用gulp的步骤"><a href="#使用gulp的步骤" class="headerlink" title="使用gulp的步骤"></a>使用gulp的步骤</h3><ol>
+<li>首先当然是安装nodejs，通过nodejs的npm全局安装和项目安装gulp</li>
+<li>在项目里安装所需要的gulp插件，然后新建gulp的配置文件gulpfile.js并写好配置信息（定义gulp任务）</li>
+<li>最后通过命令提示符运行gulp任务即可。<br><strong>安装nodejs -&gt; 全局安装gulp -&gt; 项目安装gulp以及gulp插件 -&gt; 配置gulpfile.js -&gt; 运行任务</strong></li>
+</ol>
+<h4 id="nodejs安装："><a href="#nodejs安装：" class="headerlink" title="nodejs安装："></a>nodejs安装：</h4><p>gulp是基于nodejs，理所当然需要安装nodejs。<br><a href="https://nodejs.org/en/download/" target="_blank" rel="external">nodejs官网</a><br><strong>使用命令行</strong><br>命令行在OSX是终端（Terminal），在windows是命令提示符（Command Prompt）</p>
+<p><strong>gulp在使用过程中常用命令</strong><br>打开命令提示符执行下列命令（打开方式：window + r 输入cmd回车）：<br>    node -v  查看安装的nodejs版本，出现版本号，说明刚刚已正确安装nodejs。<br>    npm -v   查看npm的版本号，npm是在安装nodejs时一同安装的nodejs包管理器.<br>    cd       定位到目录，用法：cd + 路径 ；<br>    dir      列出文件列表；<br>    cls      清空命令提示符窗口内容。</p>
+<h4 id="npm介绍"><a href="#npm介绍" class="headerlink" title="npm介绍"></a>npm介绍</h4><p>npm（node package manager）nodejs的包管理器，用于node插件管理（包括安装、卸载、管理依赖等）；</p>
+<p><strong>使用npm安装插件：</strong>命令提示符执行<code>npm install &lt;name&gt; [-g] [--save-dev]</code>；<br>    <name>：node插件名称。例：<code>npm install gulp-less --save-dev</code><br>    -g：全局安装。将会安装在C:\Documents and Settings\Administrator\Application Data\npm，并且写入系统环境变量；<br>    非全局安装：不带’-g’,将会安装在当前定位目录；<br>    全局安装可以通过命令行在任何地方调用它，本地安装将安装在定位目录的node_modules文件夹下，通过require()调用；<br>    –save：将保存配置信息至package.json（package.json是nodejs项目配置文件）；<br>    -dev：保存至package.json的devDependencies节点，不指定-dev将保存至dependencies节点；一般保存在dependencies的像这些express/ejs/body-parser等等。</name></p>
+<p>为什么要保存至package.json？因为node插件包相对来说非常庞大，所以不加入版本管理，将配置信息写入package.json并将其加入版本管理，其他开发者对应下载即可（命令提示符执行npm install，则会根据package.json下载所有需要的包，npm install –production只下载dependencies节点的包）。</p>
+<p><strong>注意</strong><br>安装sass插件时，会报错，出现无法安装的情况。<br><code>npm install sass -g</code><br>因为sass是基于ruby环境的，需要先安装ruby，然后在ruby下的命令行’Start command prompt with Ruby’下输入：’gem install sass’.</p>
+<p><strong>使用npm卸载插件</strong>：<code>npm uninstall &lt;name&gt; [-g] [--save-dev]</code>PS：不要直接删除本地插件包<br>    删除全部插件：<code>npm uninstall gulp-less gulp-uglify gulp-concat ……</code><br>    借助rimraf：<code>npm install rimraf -g</code> 用法：<code>rimraf node_modules</code><br>    使用npm更新插件：<code>npm update &lt;name&gt; [-g] [--save-dev]</code><br>    更新全部插件：<code>npm update [--save-dev]</code><br>    查看npm帮助：<code>npm help</code><br>    查看当前目录已安装插件：<code>npm list</code></p>
+<h4 id="选装cnpm"><a href="#选装cnpm" class="headerlink" title="选装cnpm"></a>选装cnpm</h4><p>因为npm安装插件是从国外服务器(<a href="http://registry.npmjs.org)下载，受网络影响大，可能出现异常，因此可选择国内镜像安装插件。" target="_blank" rel="external">http://registry.npmjs.org)下载，受网络影响大，可能出现异常，因此可选择国内镜像安装插件。</a></p>
+<p>cnpm:这是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。<br>官方网址：<a href="http://npm.taobao.org；" target="_blank" rel="external">http://npm.taobao.org；</a><br>安装：命令提示符执行<code>npm install cnpm -g --registry=https://registry.npm.taobao.org</code><br>注意：安装完后最好查看其版本号cnpm -v或关闭命令提示符重新打开，安装完直接使用有可能会出现错误；<br>注：cnpm跟npm用法完全一致，只是在执行命令时将npm改为cnpm（以下操作将以cnpm代替npm）。</p>
+<h4 id="全局安装gulp安装"><a href="#全局安装gulp安装" class="headerlink" title="全局安装gulp安装"></a>全局安装gulp安装</h4><p>命令：<code>cnpm install -g gulp</code><br>查看是否正确安装：命令提示符执行gulp -v，出现版本号即为正确安装。</p>
+<h4 id="新建package-json文件"><a href="#新建package-json文件" class="headerlink" title="新建package.json文件"></a>新建package.json文件</h4><p>package.json是基于nodejs项目必不可少的配置文件，它是存放在项目根目录的普通json文件；它是这样一个json文件（注意：json文件内是不能写注释的，下面的注释需要删除掉）：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"test"</span>,   <span class="comment">//项目名称（必须）</span></span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,   <span class="comment">//项目版本（必须）</span></span><br><span class="line">  <span class="string">"description"</span>: <span class="string">"This is for study gulp project !"</span>,   <span class="comment">//项目描述（必须）</span></span><br><span class="line">  <span class="string">"homepage"</span>: <span class="string">""</span>,   <span class="comment">//项目主页</span></span><br><span class="line">  <span class="string">"repository"</span>: &#123;    <span class="comment">//项目资源库</span></span><br><span class="line">    <span class="string">"type"</span>: <span class="string">"git"</span>,</span><br><span class="line">    <span class="string">"url"</span>: <span class="string">"https://git.oschina.net/xxxx"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"author"</span>: &#123;    <span class="comment">//项目作者信息</span></span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"xifengxx"</span>,</span><br><span class="line">    <span class="string">"email"</span>: <span class="string">"xifengxx2163.com"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span>,    <span class="comment">//项目许可协议</span></span><br><span class="line">  <span class="string">"devDependencies"</span>: &#123;    <span class="comment">//项目依赖的插件</span></span><br><span class="line">    <span class="string">"gulp"</span>: <span class="string">"^3.8.11"</span>,</span><br><span class="line">    <span class="string">"gulp-less"</span>: <span class="string">"^3.0.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们可以手动新建这个配置文件，也可以在命令行终端中新建：<br>命令提示符执行<code>cnpm init</code>,然后根据提示填写相关信息即可。<br>查看package.json帮助文档，命令提示符执行<code>cnpm help package.json</code></p>
+<h4 id="本地安装gulp及gulp插件"><a href="#本地安装gulp及gulp插件" class="headerlink" title="本地安装gulp及gulp插件"></a>本地安装gulp及gulp插件</h4><p>将gulp安装在全局环境后，在具体项目处理时，输入命令”gulp”，会出现错误：</p>
+<blockquote>
+<p>$ gulp<br>[10:26:46] Local gulp not found in ~\桌面\auto-web<br>[10:26:46] Try running: npm install gulp<br>因此，具体项目操作时，应将gulp再安装到项目本地文件夹下.<br><strong>项目本地安装</strong><br>命令：<code>$ cnpm install gulp --save-dev</code><br>全局安装了gulp，项目也安装了gulp，全局安装gulp是为了执行gulp任务，本地安装gulp则是为了调用gulp插件的功能。</p>
+</blockquote>
+<p><strong>gulp插件安装</strong>：</p>
+<blockquote>
+<p>$ npm install gulp-name1 gulp-name2 –save-dev</p>
+</blockquote>
+<p><strong>注意</strong>：通过cnpm安装gulp及gulp插件时，可能会出现无法安装的情形，诸如如下错误提示信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install gulp --save-dev</span><br><span class="line"></span><br><span class="line">Error: EISDIR: illegal operation on a directory, symlink &apos;D:...\node_modules\.npminstall\archy\1.0.0\archy&apos; -&gt; &apos;D:...\node_modules\.npminstall\gulp\3.9.1\gulp\node_modules\archy&apos;</span><br><span class="line">at error (native)</span><br></pre></td></tr></table></figure></p>
+<p>我在安装gulp或gulp插件时，就曾遇到这种情况，将gulp及gulp插件删除<code>cnpm uninstall gulp --save-dev</code>,再重新安装，还是会出现这个错误，网上的方法都无法解决问题。<br>后来发现是cnpm的问题，即淘宝镜像中npm下的某些插件会与gulp中的相应插件不兼容。</p>
+<p><strong>解决方法</strong>：改用npm安装gulp及gulp插件即可。</p>
+<h4 id="新建gulpfile-js文件"><a href="#新建gulpfile-js文件" class="headerlink" title="新建gulpfile.js文件"></a>新建gulpfile.js文件</h4><p>gulpfile.js是gulp项目的配置文件，是位于项目根目录的普通js文件（其实将gulpfile.js放入其他文件夹下亦可）。<br>它大概是这样一个js文件：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//导入工具包 require('node_modules里对应模块')</span></span><br><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>), <span class="comment">//本地安装gulp所用到的地方</span></span><br><span class="line">    sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="comment">//定义一个styles任务（自定义任务名称）</span></span><br><span class="line">gulp.task(<span class="string">'styles'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'./src/sass/*.scss'</span>)<span class="comment">//该任务针对的文件</span></span><br><span class="line">        .pipe(sass())<span class="comment">//该任务调用的模块</span></span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./dist/css'</span>))<span class="comment">//将会在dist/css下生成*.css文件</span></span><br><span class="line">&#125;)</span><br><span class="line"> </span><br><span class="line">gulp.task(<span class="string">'default'</span>,[<span class="string">'styles'</span>, <span class="string">'elseTask'</span>]); <span class="comment">//定义默认任务 elseTask为其他任务，该示例没有定义elseTask任务</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//gulp.task(name[, deps], fn) 定义任务  name：任务名称 deps：依赖任务名称 fn：回调函数</span></span><br><span class="line"><span class="comment">//gulp.src(globs[, options]) 执行任务处理的文件  globs：处理的文件路径(字符串或者字符串数组) </span></span><br><span class="line"><span class="comment">//gulp.dest(path[, options]) 处理完后文件生成路径</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="gulp使用方法"><a href="#gulp使用方法" class="headerlink" title="gulp使用方法"></a>gulp使用方法</h4><p>创建目标:   <code>gulp.task(&#39;&#39;,[],function(){})</code><br>//例子1（默认）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(&apos;default&apos;,function() &#123;</span><br><span class="line">    console.log(&apos;我是default&apos;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>//运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ gulp  //终端运行命令，后面不跟东西，默认执行default</span><br><span class="line">[21:54:33] Using gulpfile ~/Desktop/nodeJS/gulp/gulpfile.js</span><br><span class="line">[21:54:33] Starting &apos;default&apos;...</span><br><span class="line">我是default</span><br><span class="line">[21:54:33] Finished &apos;default&apos; after 120 μs</span><br></pre></td></tr></table></figure></p>
+<p>//例子2（自定义）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(&apos;task1&apos;,function () &#123;</span><br><span class="line">    console.log(&apos;我是task1&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>//运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ gulp task1  //后面跟上自定义的任务名称</span><br><span class="line">[21:58:00] Using gulpfile ~/Desktop/nodeJS/gulp/gulpfile.js</span><br><span class="line">[21:58:00] Starting &apos;task1&apos;...</span><br><span class="line">我是task1</span><br><span class="line">[21:58:00] Finished &apos;task1&apos; after 121 μs</span><br></pre></td></tr></table></figure></p>
+<p>//例子3（复合）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(&apos;default&apos;,[&apos;task1&apos;],function() &#123;</span><br><span class="line">     console.log(&apos;我是default&apos;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>//运行结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ gulp  //先执行自定义，后执行默认</span><br><span class="line">[22:01:33] Using gulpfile ~/Desktop/nodeJS/gulp/gulpfile.js</span><br><span class="line">[22:01:33] Starting &apos;task1&apos;...</span><br><span class="line">我是task1</span><br><span class="line">[22:01:33] Finished &apos;task1&apos; after 99 μs</span><br><span class="line">[22:01:33] Starting &apos;default&apos;...</span><br><span class="line">我是default</span><br><span class="line">[22:01:33] Finished &apos;default&apos; after 38 μs</span><br></pre></td></tr></table></figure></p>
+<p>目标文件: <code>gulp.src(&#39;&#39;)</code><br>目标输出: <code>gulp.dest(&#39;&#39;)</code><br>管道（上文的输出是下文的输入）: <code>.pipe()</code><br>//举例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(&apos;min&apos;,function () &#123;</span><br><span class="line">  gulp.src(&apos;js/*.js&apos;)          //外部引用</span><br><span class="line">  .pipe(concat(&apos;new.js&apos;))        //合并多个js文件，并生成一个新的文件</span><br><span class="line">  .pipe(jsmin())                //压缩这个新生成的js文件</span><br><span class="line">  .pipe(gulp.dest(&apos;newJS/&apos;))    //将新生成的文件放入新的文件夹中</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h5 id="清除文件"><a href="#清除文件" class="headerlink" title="清除文件"></a>清除文件</h5><p>在任务执行前，最好先清除之前生成的文件：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'clean'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">cb</span>) </span>&#123;</span><br><span class="line">    del([<span class="string">'dist/assets/css'</span>, <span class="string">'dist/assets/js'</span>, <span class="string">'dist/assets/img'</span>], cb)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>在这里没有必要使用Gulp插件了，可以使用NPM提供的插件。我们用一个回调函数（cb）确保在退出前完成任务。</p>
+<h5 id="设置默认任务（default）"><a href="#设置默认任务（default）" class="headerlink" title="设置默认任务（default）"></a>设置默认任务（default）</h5><p>我们在命令行下输入<code>$ gulp</code>执行的就是默认任务，现在我们为默认任务指定执行上面写好的三个任务：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'default'</span>, [<span class="string">'clean'</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.start(<span class="string">'styles'</span>, <span class="string">'scripts'</span>, <span class="string">'images'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>在这个例子里面，clean任务执行完成了才会去运行其他的任务，在gulp.start()里的任务执行的顺序是不确定的，所以将要在它们之前执行的任务写在数组里面。</p>
+<h5 id="监听文件"><a href="#监听文件" class="headerlink" title="监听文件"></a>监听文件</h5><p>在实际的开发过程中，不管我们修改什么文件，只需要 gulp 一下即可，方便了很多。但是仍然每次修改都得执行一下。可不可以让 gulp 来监听我们的文件变化，然后自动重新执行编译任务呢？<br>答案是可以的。只需要将这些任务加入监控 watch 就行了：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  gulp.watch(<span class="string">'./src/sass/*.scss'</span>,[<span class="string">'styles'</span>]);</span><br><span class="line">  gulp.watch(<span class="string">'./src/coffee/*.coffee'</span>,[<span class="string">'scripts'</span>]);</span><br><span class="line">  gulp.watch(<span class="string">'./views/*.jade'</span>,[<span class="string">'templates'</span>]);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>我们将不同类型的文件分开处理，执行对应的数组里的任务。现在我们可以在命令行输入<code>$ gulp watch</code>执行监听任务，当.sass、.js和图片修改时将执行对应的任务。<br>不管我们做了什么修改，都不用再次执行 gulp 了。<br>怎么退出gulp wach模式：<code>Ctrl + C</code></p>
+<h5 id="自动刷新页面"><a href="#自动刷新页面" class="headerlink" title="自动刷新页面"></a>自动刷新页面</h5><p>Gulp也可以实现当文件修改时自动刷新页面，我们要修改watch任务，配置LiveReload：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Create LiveReload server</span></span><br><span class="line">  livereload.listen();</span><br><span class="line">  <span class="comment">// Watch any files in dist/, reload on change</span></span><br><span class="line">  gulp.watch([<span class="string">'dist/**'</span>]).on(<span class="string">'change'</span>, livereload.changed);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>要使这个能够工作，还需要在浏览器上安装LiveReload插件</p>
+<h4 id="运行gulp"><a href="#运行gulp" class="headerlink" title="运行gulp"></a>运行gulp</h4><p>命令提示符执行<code>gulp 任务名称</code>；<br>编译sass：命令提示符执行<code>gulp styles</code>；<br>当执行<code>gulp default</code>或<code>gulp</code>将会调用default任务里的所有任务[‘testLess’,’elseTask’]。</p>
+<h3 id="参考资源："><a href="#参考资源：" class="headerlink" title="参考资源："></a>参考资源：</h3><ol>
+<li>gulp API docs：<a href="http://www.ydcss.com/archives/424" target="_blank" rel="external">http://www.ydcss.com/archives/424</a></li>
+<li>gulp详细入门教程：<a href="http://www.ydcss.com/archives/18" target="_blank" rel="external">http://www.ydcss.com/archives/18</a></li>
+<li>前端扫盲-之打造一个自动化的前端项目：<a href="https://www.awesomes.cn/source/9" target="_blank" rel="external">https://www.awesomes.cn/source/9</a></li>
+<li>Gulp入门教程：<a href="http://blog.csdn.net/yczz/article/details/49636629" target="_blank" rel="external">http://blog.csdn.net/yczz/article/details/49636629</a></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[linux常用命令]]></title>
+      <url>http://xifengxx.github.io/2016/07/02/linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<h3 id="创建、删除文件和文件夹"><a href="#创建、删除文件和文件夹" class="headerlink" title="创建、删除文件和文件夹"></a>创建、删除文件和文件夹</h3><p>常用命令：</p>
+<ol>
+<li>创建文件夹： mkdir fileName // <code>mkdir demo</code>:创建demo文件夹</li>
+<li>创建文件：<ul>
+<li>touch fileName   // <code>touch index.html</code>:创建index.html文件</li>
+<li>vi fileName      //<code>vi index.html</code>:创建index.html并打开<a id="more"></a></li>
+</ul>
+</li>
+<li>切换目录命令cd：<ul>
+<li>cd 目录名：切换到具体目录。如当前在e盘，需要切换到e盘下的code目录，使用命令”cd code”即可。如果当前在其他目录或根目录，需要切换到e盘下的code目录，使用命令”cd e:code”即可。</li>
+<li>cd ..    : 切换到上一级目录。如当前目录为e盘下的code目录，使用命令”cd ..”会切换到e盘。</li>
+<li>cd e:    : 切换盘符。如当前在e盘，需要切换到c盘，使用命令”cd c:”即可。</li>
+<li>cd /     : 切换到根目录。</li>
+</ul>
+</li>
+<li>其他命令<ul>
+<li>pwd       : 显示当前所在目录</li>
+<li>dir       : 显示当前目录下的所有文件</li>
+<li>mkdir     : 创建目录。</li>
+</ul>
+</li>
+</ol>
+<h4 id="创建文件夹【mkdir】"><a href="#创建文件夹【mkdir】" class="headerlink" title="创建文件夹【mkdir】"></a>创建文件夹【mkdir】</h4><pre><code>一、mkdir命令使用权限
+所有用户都可以在终端使用 mkdir 命令在拥有权限的文件夹创建文件夹或目录。
+
+二、mkdir命令使用格式    
+格式：mkdir [选项] DirName    
+
+三、mkdir命令功能    
+通过 mkdir 命令可以实现在指定位置创建以 DirName(指定的文件名)命名的文件夹或目录。要创建文件夹或目录的用户必须对所创建的文件夹的父文件夹具有写权限。并且，所创建的文件夹(目录)不能与其父目录(即父文件夹)中的文件名重名，即同一个目录下不能有同名的(区分大小写)。    
+
+四、mkdir命令选项说明    
+命令中的［选项］一般有以下两种：    
+
+-m    用于对新建目录设置存取权限，也可以用 chmod 命令进行设置。    
+-p     需要时创建上层文件夹(或目录)，如果文件夹(或目录)已经存在，则不视为错误。    
+
+五、mkdir命令使用举例
+例一：在桌面下面创建以“demo”命名的文件夹。
+使用以下命令即可：
+`mkdir 桌面/demo`
+例二：在桌面下面创建以“demo”命名的文件夹，并且给文件夹赋权限，权限为123。
+`mkdir 123 桌面/demo`
+</code></pre><h4 id="删除文件夹-rm"><a href="#删除文件夹-rm" class="headerlink" title="删除文件夹[rm]"></a>删除文件夹[rm]</h4><pre><code>一、rm命令使用权限
+所有用户都可以在终端使用 rm命令删除目录。
+
+二、rm命令使用格式
+格式：rm [选项] DirName
+
+三、rm命令功能
+删除档案及目录。
+
+四、rm命令选项说明
+命令中的［选项］一般有以下几种：
+-i 删除前逐一询问确认。
+-f 即使原档案属性设为唯读，亦直接删除，无需逐一确认。
+-r 将目录及以下之档案亦逐一删除。
+
+五、rm命令使用举例
+例一：删除所有C语言程序文档；删除前逐一询问确认。
+`rm -i *.c`
+例二：将 Finished 子目录及子目录中所有档案删除。
+`rm -r Finished`
+注：在linux没有回收站，在试用rm命令的时候，一定要小心些，删除之后就无法再恢复了。
+</code></pre><h4 id="创建文件【vi】"><a href="#创建文件【vi】" class="headerlink" title="创建文件【vi】"></a>创建文件【vi】</h4><pre><code>一、进入vi的命令
+vi filename :打开或新建文件filename，并将光标置于第一行首
+vi +n filename ：打开文件，并将光标置于第n行首
+vi + filename ：打开文件，并将光标置于最后一行首
+vi +/pattern filename：打开文件，并将光标置于第一个与pattern匹配的串处
+vi -r filename ：在上次正用vi编辑时发生系统崩溃，恢复filename
+vi filename....filename ：打开多个文件，依次进行编辑
+
+二、移动光标类命令
+h ：光标左移一个字符
+l ：光标右移一个字符
+space：光标右移一个字符
+Backspace：光标左移一个字符
+k或Ctrl+p：光标上移一行
+j或Ctrl+n ：光标下移一行
+Enter ：光标下移一行
+w或W ：光标右移一个字至字首
+b或B ：光标左移一个字至字首
+e或E ：光标右移一个字至字尾
+) ：光标移至句尾
+( ：光标移至句首
+}：光标移至段落开头
+{：光标移至段落结尾
+nG：光标移至第n行首
+n+：光标下移n行
+n-：光标上移n行
+n$：光标移至第n行尾
+H ：光标移至屏幕顶行
+M ：光标移至屏幕中间行
+L ：光标移至屏幕最后行
+0：（注意是数字零）光标移至当前行首
+$：光标移至当前行尾
+
+三、屏幕翻滚类命令
+Ctrl+u：向文件首翻半屏
+Ctrl+d：向文件尾翻半屏
+Ctrl+f：向文件尾翻一屏
+Ctrl＋b；向文件首翻一屏
+nz：将第n行滚至屏幕顶部，不指定n时将当前行滚至屏幕顶部。
+
+四、插入文本类命令
+i ：在光标前
+I ：在当前行首
+a：光标后
+A：在当前行尾
+o：在当前行之下新开一行
+O：在当前行之上新开一行
+r：替换当前字符
+R：替换当前字符及其后的字符，直至按ESC键
+s：从当前光标位置处开始，以输入的文本替代指定数目的字符
+S：删除指定数目的行，并以所输入文本代替之
+ncw或nCW：修改指定数目的字
+nCC：修改指定数目的行
+
+五、删除命令
+ndw或ndW：删除光标处开始及其后的n-1个字
+do：删至行首
+d$：删至行尾
+ndd：删除当前行及其后n-1行
+x或X：删除一个字符，x删除光标后的，而X删除光标前的
+Ctrl+u：删除输入方式下所输入的文本
+
+六、搜索及替换命令
+/pattern：从光标开始处向文件尾搜索pattern
+?pattern：从光标开始处向文件首搜索pattern
+n：在同一方向重复上一次搜索命令
+N：在反方向上重复上一次搜索命令
+：s/p1/p2/g：将当前行中所有p1均用p2替代
+：n1,n2s/p1/p2/g：将第n1至n2行中所有p1均用p2替代
+：g/p1/s//p2/g：将文件中所有p1均用p2替换
+
+七、vi命令使用举例
+
+例一：创建文件a.txt。
+vi a.txt         //创建文件a.txt，若文件已存在，则打开文件。
+Hello everyone!  //按Insert键，也可以按下字母i键，此时vi编辑器的状态就变为Insert了，进入输入模式，可输写内容。
+:wq              //在退出时，直接输入:wq会发现退不出去，
+</code></pre><p>退出方法：<strong>编辑完成后按ESC，然后输入:q就是退出;还有:wq是保存后退出，加感叹号是表示强制</strong></p>
+<h4 id="修改档案时间【touch】"><a href="#修改档案时间【touch】" class="headerlink" title="修改档案时间【touch】"></a>修改档案时间【touch】</h4><pre><code>一、touch命令使用权限
+所有用户都可以在终端使用 touch命令。
+
+二、touch命令使用格式
+格式：touch [-acfm][-d &lt;日期时间&gt;][-r &lt;参考文件或目录&gt;][-t &lt;日期时间&gt;][--help] [--version][文件或目录...] 或 touch [-acfm][--help][--version][日期时间][文件或目录...]
+
+（touch [-acfm][-r reference-file] [--file=reference-file][-t MMDDhhmm[[CC]YY][.ss]][-d time] [--date=time][--time={atime,access,use,mtime,modify}][--no-create][--help] [--version]file1 [file2 ...]）
+
+三、touch命令功能
+1、touch fileA，如果fileA存在，使用touch命令可更改这个文件或目录的日期时间，包括存取时间和更改时间；
+2、如果fileA不存在，touch命令会在当前目录下新建一个空白文件fileA。
+</code></pre><p>  注：使用touch指令可更改文件或目录的日期和时间，包括存取时间和更改时间。文件的时间属性包括文件的最后访问时间，最后修改时间以及最后在磁盘上修改的时间，命令stat显示结果显示了三个时间属性。</p>
+<pre><code>四、touch命令选项说明
+a 改变档案的读取时间记录。 
+m 改变档案的修改时间记录。　 
+c 假如目的档案不存在，不会建立新的档案。与 --no-create 的效果一样。 
+f 不使用，是为了与其他 unix 系统的相容性而保留。 
+r 使用参考档的时间记录，与 --file 的效果一样。 
+d 设定时间与日期，可以使用各种不同的格式。 
+t 设定档案的时间记录，格式与 date 指令相同。[[CC]YY]MMDDhhmm[.SS]，CC为年数中的前两位，即”世纪数”;YY为年数的后两位，即某世纪中的年数.如果不给出CC的值，则linux中touch命令参数将把年数CCYY限定在1969--2068之内.MM为月数，DD为天将把年数CCYY限定在1969--2068之内.MM为月数，DD为天数，hh 为小时数(几点)，mm为分钟数，SS为秒数.此处秒的设定范围是0--61，这样可以处理闰秒.这些数字组成的时间是环境变量TZ指定的时区中的一个时间.由于系统的限制，早于1970年1月1日的时间是错误的.
+--no-create 不会建立新档案。
+--help 列出指令格式。
+--version 列出版本讯息。
+
+五、touch命令使用举例
+例一：更新file1.txt的存取和修改时间。
+`touch file1.txt`
+例二：如果file1.txt不存在，不创建文件
+`touch -c file1.txt`
+例三：更新file1.txt的时间戳和ref+file相同
+`touch -r ref+file file1.txt`
+例四：设置文件的时间戳为2011年5月18日9点45分10秒
+`ls -l file1.txt
+touch -t 1105190945.10 file1.txt`
+</code></pre><p>在新建文件时用touch命令可以建立一个空文件，而vi命令则可以直接编辑文件的内容并保存。touch命令在linux中很少用到，我个人还是比较喜欢vi命令，可以直接对文档进行编辑。</p>
+<h3 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h3><p>1、学习Linux二（创建、删除文件和文件夹命令）<br> <a href="http://www.cnblogs.com/zf2011/archive/2011/05/17/2049155.html" target="_blank" rel="external">http://www.cnblogs.com/zf2011/archive/2011/05/17/2049155.html</a><br>2、Linux下之使用简略3种创建文件的命令 <a href="http://www.myexception.cn/linux-unix/1899556.html" target="_blank" rel="external">http://www.myexception.cn/linux-unix/1899556.html</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Web前端中各类视口尺寸]]></title>
+      <url>http://xifengxx.github.io/2016/07/02/Web%E5%89%8D%E7%AB%AF%E4%B8%AD%E5%90%84%E7%B1%BB%E5%B0%BA%E5%AF%B8/</url>
+      <content type="html"><![CDATA[<h3 id="窗口大小相关"><a href="#窗口大小相关" class="headerlink" title="窗口大小相关"></a>窗口大小相关</h3><h4 id="screen-width-screen-height"><a href="#screen-width-screen-height" class="headerlink" title="screen.width || screen.height"></a>screen.width || screen.height</h4><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.29.1.jpg" alt="1"><br><a id="more"></a></p>
+<h4 id="window-innerWidth-window-innerHeight"><a href="#window-innerWidth-window-innerHeight" class="headerlink" title="window.innerWidth || window.innerHeight."></a>window.innerWidth || window.innerHeight.</h4><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.29.2.jpg" alt="2"><br>当浏览器进行缩放时，大小为：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.29.3.jpg" alt="3"></p>
+<h4 id="window-pageXOffset-window-pageYOffset"><a href="#window-pageXOffset-window-pageYOffset" class="headerlink" title="window.pageXOffset || window.pageYOffset"></a>window.pageXOffset || window.pageYOffset</h4><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.29.4.jpg" alt="4"><br>当浏览器进行缩放时，大小为：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.29.5.jpg" alt="5"></p>
+<h4 id="document-documentElement-clientWidth-document-documentElement-clientHeight"><a href="#document-documentElement-clientWidth-document-documentElement-clientHeight" class="headerlink" title="document.documentElement.clientWidth || document.documentElement.clientHeight"></a>document.documentElement.clientWidth || document.documentElement.clientHeight</h4><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.29.6.jpg" alt="6"></p>
+<h4 id="document-documentElement-offsetWidth-document-documentElement-offsetHeight"><a href="#document-documentElement-offsetWidth-document-documentElement-offsetHeight" class="headerlink" title="document.documentElement.offsetWidth || document.documentElement.offsetHeight"></a>document.documentElement.offsetWidth || document.documentElement.offsetHeight</h4><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.29.7.jpg" alt="7"><br>当设置html宽度width时，offsetWidth大小也会改变<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.29.8.jpg" alt="8"></p>
+<h3 id="event事件点击时鼠标位置相关："><a href="#event事件点击时鼠标位置相关：" class="headerlink" title="event事件点击时鼠标位置相关："></a>event事件点击时鼠标位置相关：</h3><h4 id="pageX-Y"><a href="#pageX-Y" class="headerlink" title="pageX/Y"></a>pageX/Y</h4><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.29.9.jpg" alt="9"></p>
+<h4 id="clientX-Y"><a href="#clientX-Y" class="headerlink" title="clientX/Y"></a>clientX/Y</h4><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.29.10.jpg" alt="10"></p>
+<h4 id="screenX-Y"><a href="#screenX-Y" class="headerlink" title="screenX/Y"></a>screenX/Y</h4><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.29.11.jpg" alt="11"></p>
+<h4 id="media-query-width-media-query-device-width"><a href="#media-query-width-media-query-device-width" class="headerlink" title="media query width || media query device-width"></a>media query width || media query device-width</h4><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/6.29.12.jpg" alt="12"></p>
+<p>参考资料：</p>
+<ol>
+<li><a href="http://lvdada.org/2015/12/22/viewport%E7%BF%BB%E8%AF%91%E6%80%BB%E7%BB%93/" target="_blank" rel="external">viewport翻译总结</a></li>
+</ol>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[基于jQuery Mobile的Web APP开发-列车时刻表]]></title>
       <url>http://xifengxx.github.io/2016/06/26/%E5%9F%BA%E4%BA%8EjQuery%20Mobile%E7%9A%84%E5%BC%80%E5%8F%91-%E5%88%97%E8%BD%A6%E6%97%B6%E5%88%BB%E8%A1%A8/</url>
       <content type="html"><![CDATA[<p>jQuery Mobile 是创建移动WEB应用程序的框架，使用广泛。<br>web app就是一个针对移动设备的网站。</p>
@@ -4799,7 +5069,7 @@
 <li>git commit:将文件提交到仓库。<br>命令：$ git commit -m “xxx”<br>git commit命令，-m后有一个空格，然后””中填写提交说明，可以输入任意内容，方便以后查找。<br>如：$ git commit -m “首次提交”<br>备注：commit命令可以一次提交很多文件；git add+文件名为添加一个文件，如果添加很多文件，使用命令”git add .”.</li>
 <li><strong>注意事项</strong><br>将文件提交到仓库时，如果使用命令”git commit -a”时，会自动弹出系统默认的编辑器界面，在其中根据提示输入信息即可。<br>关键是如何退出默认编辑器界面并重新返回到Git bash界面。<br>方法：<br>① 按ESC键，确定退出编辑模式。<br>② 然后输入”:wq”，即可返回Git界面。</li>
 </ol>
-<h3 id="Git常用命令："><a href="#Git常用命令：" class="headerlink" title="Git常用命令："></a>Git常用命令：</h3><p>1、<code>git init</code> 初始化一个git项目<br>  在初始化的项目中有一个.git文件，可以被称为“附属于该仓库的工作树”。文件的操作都在工作树中进行，然后记录到仓库中去。</p>
+<h3 id="Git常用命令："><a href="#Git常用命令：" class="headerlink" title="Git常用命令："></a>Git常用命令：</h3><p>1、<code>git init</code> 初始化一个git项目<br>  在初始化的项目中有一个.git文件，可以被称为“附属于该仓库的工作树”。文件的操作都在工作树中进行，然后记录到仓库中去。<br>  <code>touch README.md</code>: 添加一个 README.md （可选）用于描述项目<br>  <strong>忽略某些文件:</strong><br>  在提交代码之前，我们需要将某些文件排除在外，比如由 npm 产生的 node_modules 文件夹，这是开发环境下用到的，可以通过 npm install 在新环境下安装依赖。所以理应不纳入版本管理，还有缓存之类的都应该排除掉。<br>  那么我们就创建一个名为 .gitignore 的文件，内容就如下：<br>  .DS_Store<br>  node_modules<br>  .sass-cache<br>  上面只是一个大致的内容，实际开发的时候你得根据自己的需求去忽略某些文件。</p>
 <p>2、<code>git status</code> 查看状态<br>  只要对git的工作树或者仓库操作，git status的现实结果就会发生变化。</p>
 <p>3、<code>git add</code> 向暂存区中添加文件<br>  暂存区属于仓库的范畴<br>  假如只是在工作区操作文件，并不会在被计入git仓库的版本管理对象中。用status查看状态时只会出现在Untracked files里，而git add操作后，文件就进入了暂存区即仓库。</p>
 <p>4、<code>git commit</code> 保存仓库的历史记录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;xxx&quot;    // &quot;xxx&quot;为提交说明，可以输入任意内容，方便以后查找。</span><br></pre></td></tr></table></figure></p>
