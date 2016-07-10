@@ -1,0 +1,1008 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="按钮特效," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="CSS3关键技术点：
+transform
+transition
+box-sizing
+border-radius
+
+Transform定义和用法transform 属性向元素应用2D或3D转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜.
+
+rotate(angle )定义 2D 旋转，在参数中规定角度 
+rotateX(angle)定义沿着 X 轴的 3D 旋转。
+rotateY(angle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="按钮特效">
+<meta property="og:url" content="http://xifengxx.github.io/2016/07/09/按钮特效/index.html">
+<meta property="og:site_name" content="西风前端">
+<meta property="og:description" content="CSS3关键技术点：
+transform
+transition
+box-sizing
+border-radius
+
+Transform定义和用法transform 属性向元素应用2D或3D转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜.
+
+rotate(angle )定义 2D 旋转，在参数中规定角度 
+rotateX(angle)定义沿着 X 轴的 3D 旋转。
+rotateY(angle">
+<meta property="og:updated_time" content="2016-07-09T03:42:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="按钮特效">
+<meta name="twitter:description" content="CSS3关键技术点：
+transform
+transition
+box-sizing
+border-radius
+
+Transform定义和用法transform 属性向元素应用2D或3D转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜.
+
+rotate(angle )定义 2D 旋转，在参数中规定角度 
+rotateX(angle)定义沿着 X 轴的 3D 旋转。
+rotateY(angle">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 按钮特效 | 西风前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-webdemo">
+          <a href="https://xifengxx.github.io/web-demo/" rel="section">
+            
+            前端作品Demo
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                按钮特效
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-09T09:23:24+08:00" content="2016-07-09">
+              2016-07-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSS3/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS3</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/09/按钮特效/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/09/按钮特效/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/09/按钮特效/" class="leancloud_visitors" data-flag-title="按钮特效">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="CSS3关键技术点："><a href="#CSS3关键技术点：" class="headerlink" title="CSS3关键技术点："></a>CSS3关键技术点：</h3><ul>
+<li>transform</li>
+<li>transition</li>
+<li>box-sizing</li>
+<li>border-radius</li>
+</ul>
+<h4 id="Transform"><a href="#Transform" class="headerlink" title="Transform"></a>Transform</h4><p><strong>定义和用法</strong><br>transform 属性向元素应用2D或3D转换。该属性允许我们对元素进行旋转、缩放、移动或倾斜.</p>
+<ul>
+<li>rotate(angle )定义 2D 旋转，在参数中规定角度 </li>
+<li>rotateX(angle)定义沿着 X 轴的 3D 旋转。</li>
+<li>rotateY(angle)定义沿着 Y 轴的 3D 旋转。</li>
+<li>rotateZ(angle)定义沿着 Z 轴的 3D 旋转。</li>
+<li>scale(x,y)定义 2D 缩放转换。</li>
+<li>scale3d(x,y,z)定义 3D 缩放转换。</li>
+<li>scaleX(x)通过设置 X 轴的值来定义缩放转换。</li>
+<li>scaleY(y)通过设置 Y 轴的值来定义缩放转换。</li>
+<li>scaleZ(z)通过设置 Z 轴的值来定义 3D 缩放转换。</li>
+</ul>
+<h4 id="Transition"><a href="#Transition" class="headerlink" title="Transition"></a>Transition</h4><p><strong>定义和用法</strong><br>transition 属性是一个简写属性，用于设置四个过渡属性：</p>
+<ul>
+<li>transition-property</li>
+<li>transition-duration</li>
+<li>transition-timing-function</li>
+<li>transition-delay<br><strong>语法</strong><br>transition: property duration timing-function delay;<br><strong>值描述</strong><br>transition-property规定设置过渡效果的 CSS 属性的名称。<br>transition-duration规定完成过渡效果需要多少秒或毫秒。<br>transition-timing-function规定速度效果的速度曲线。<br>transition-delay定义过渡效果何时开始。</li>
+</ul>
+<h4 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h4><p><strong>定义和用法</strong><br>box-sizing 属性允许以特定的方式定义匹配某个区域的特定元素。<br><strong>语法</strong><br>box-sizing: content-box|border-box|inherit<br><strong>值描述</strong></p>
+<ul>
+<li>content-box<br>  宽度和高度分别应用到元素的内容框。<br>  在宽度和高度之外绘制元素的内边距和边框。</li>
+<li>border-box<br>  为元素设定的宽度和高度决定了元素的边框盒。<br>  就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。<br>  通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。</li>
+<li>inherit 规定应从父元素继承 box-sizing 属性的值。</li>
+</ul>
+<h4 id="border-radius"><a href="#border-radius" class="headerlink" title="border-radius"></a>border-radius</h4><p><strong>定义和用法</strong><br>border-radius 属性是一个简写属性，用于设置四个 border-*-radius 属性。</p>
+<h3 id="幽灵按钮制作："><a href="#幽灵按钮制作：" class="headerlink" title="幽灵按钮制作："></a>幽灵按钮制作：</h3><p>在设计网页中的按钮之时，不再设计复杂色彩、样式和纹理，而是外仅以线框示意轮廓，内只用文字示意功能，背景透出，与整个页面/背景合而为一的设计方式。国外的设计师称之为“幽灵按钮”（Ghost Buttons），盛赞这种按钮通透简约，贴合整体风格又不失神韵，别具魅力。</p>
+<h4 id="按钮及四周线条特效"><a href="#按钮及四周线条特效" class="headerlink" title="按钮及四周线条特效"></a>按钮及四周线条特效</h4><p><strong>难点：</strong>按钮四周线条特效<br>html代码片段：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"link link-miss"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"icon"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"button"</span> <span class="attr">data</span>=<span class="string">"My mission is clear"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"line line-top"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"line line-right"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"line line-bottom"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"line line-left"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                MISSION</span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        ...</span><br></pre></td></tr></table></figure></p>
+<p>css代码片段：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123; <span class="attribute">position</span>: relative; <span class="attribute">width</span>: <span class="number">800px</span>; <span class="attribute">height</span>: <span class="number">280px</span>; <span class="attribute">margin</span>: <span class="number">50px</span> auto;&#125;</span><br><span class="line"><span class="selector-class">.box</span> <span class="selector-class">.link</span>&#123; <span class="attribute">width</span>: <span class="number">205px</span>; <span class="attribute">height</span>: <span class="number">280px</span>; <span class="attribute">float</span>: left; <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">20px</span>;&#125;</span><br><span class="line"><span class="selector-class">.button</span>&#123; <span class="attribute">position</span>: relative; <span class="attribute">display</span>: block; <span class="attribute">width</span>: <span class="number">180px</span>; <span class="attribute">height</span>: <span class="number">50px</span>; </span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">50px</span>; <span class="attribute">text-decoration</span>: none; <span class="attribute">color</span>: <span class="number">#2dcb70</span>; <span class="attribute">font-family</span>: Arial; <span class="attribute">font-weight</span>: bolder; <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="built_in">rgba</span>(255,255,255,0.8); <span class="attribute">padding-left</span>:<span class="number">20px</span>; <span class="attribute">margin</span>: <span class="number">0</span> auto; <span class="attribute">box-sizing</span>: border-box; </span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(../images/allow.png) no-repeat <span class="number">130px</span> center; </span><br><span class="line">    <span class="attribute">transition</span>: all .<span class="number">5s</span> ease;&#125;</span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span>&#123; <span class="attribute">border</span>: <span class="number">2px</span> solid <span class="built_in">rgba</span>(255,255,255,1);</span><br><span class="line">    <span class="attribute">background-position</span>: <span class="number">140px</span> center;&#125;</span><br><span class="line"><span class="selector-class">.button</span> <span class="selector-class">.line</span>&#123; <span class="attribute">display</span>: block; <span class="attribute">position</span>: absolute; <span class="attribute">background</span>: none; </span><br><span class="line">    <span class="attribute">transition</span>: .<span class="number">4s</span> ease;&#125;</span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.line</span>&#123;<span class="attribute">background</span>: <span class="number">#fff</span>;&#125;</span><br><span class="line"><span class="selector-class">.button</span> <span class="selector-class">.line-top</span>&#123; <span class="attribute">height</span>: <span class="number">2px</span>; <span class="attribute">width</span>: <span class="number">0</span>; <span class="attribute">left</span>: -<span class="number">110%</span>; <span class="attribute">top</span>: -<span class="number">2px</span>;&#125;</span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.line-top</span>&#123;<span class="attribute">width</span>: <span class="number">100%</span>;<span class="attribute">left</span>: -<span class="number">2px</span>;&#125;</span><br><span class="line"><span class="selector-class">.button</span> <span class="selector-class">.line-right</span>&#123; <span class="attribute">width</span>: <span class="number">2px</span>;  <span class="attribute">height</span>: <span class="number">0</span>;  <span class="attribute">right</span>: -<span class="number">2px</span>;  <span class="attribute">top</span>: -<span class="number">110%</span>;&#125;</span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.line-right</span>&#123;<span class="attribute">height</span>: <span class="number">100%</span>; <span class="attribute">top</span>: -<span class="number">2px</span>;&#125;</span><br><span class="line"><span class="selector-class">.button</span> <span class="selector-class">.line-bottom</span>&#123; <span class="attribute">width</span>: <span class="number">2px</span>; <span class="attribute">height</span>: <span class="number">0</span>; <span class="attribute">left</span>: -<span class="number">2px</span>;  <span class="attribute">bottom</span>: -<span class="number">110%</span>;&#125;</span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.line-bottom</span>&#123;<span class="attribute">height</span>: <span class="number">100%</span>;<span class="attribute">bottom</span>: -<span class="number">2px</span>;&#125;</span><br><span class="line"><span class="selector-class">.button</span> <span class="selector-class">.line-left</span>&#123; <span class="attribute">height</span>: <span class="number">2px</span>; <span class="attribute">width</span>: <span class="number">0</span>; <span class="attribute">bottom</span>: -<span class="number">2px</span>; <span class="attribute">right</span>: -<span class="number">110%</span>;&#125;</span><br><span class="line"><span class="selector-class">.button</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.line-left</span>&#123; <span class="attribute">width</span>: <span class="number">100%</span>; <span class="attribute">right</span>: -<span class="number">2px</span>;&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="提示框特效"><a href="#提示框特效" class="headerlink" title="提示框特效"></a>提示框特效</h4><p><strong>难点：</strong>提示框与按钮框对齐<br>html代码片段：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    ......</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tip"</span>&gt;</span><span class="tag">&lt;<span class="name">em</span>&gt;</span><span class="tag">&lt;/<span class="name">em</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>css代码片段：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.tip</span>&#123;  <span class="attribute">position</span>: absolute;  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">14px</span>;  <span class="attribute">height</span>: <span class="number">35px</span>;  <span class="attribute">line-height</span>: <span class="number">35px</span>;     <span class="attribute">background-color</span>: <span class="number">#3dcb70</span>;  <span class="attribute">color</span>: <span class="number">#fff</span>;  <span class="attribute">font-size</span>: <span class="number">18px</span>;  </span><br><span class="line">     <span class="attribute">margin</span>: <span class="number">0</span> auto;  <span class="attribute">border-radius</span>: <span class="number">3px</span>;  <span class="attribute">top</span>: <span class="number">100px</span>;  <span class="attribute">opacity</span>: <span class="number">0</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.tip</span> <span class="selector-tag">em</span>&#123;<span class="attribute">font-style</span>: normal;&#125;</span><br><span class="line"><span class="selector-class">.tip</span> <span class="selector-tag">span</span>&#123;  <span class="attribute">display</span>: block;  <span class="attribute">width</span>: <span class="number">0</span>;  <span class="attribute">height</span>: <span class="number">0</span>;  <span class="attribute">overflow</span>: hidden;  </span><br><span class="line">    <span class="attribute">border</span>: <span class="number">7px</span> solid transparent;  <span class="attribute">border-top-color</span>: <span class="number">#2dcb70</span>;  </span><br><span class="line">    <span class="attribute">position</span>: absolute;  <span class="attribute">top</span>: <span class="number">35px</span>;  <span class="attribute">left</span>: <span class="number">50%</span>;  <span class="attribute">margin-left</span>: -<span class="number">3px</span>;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>JS代码片段：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">".link .button"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> title=$(<span class="keyword">this</span>).attr(<span class="string">"data"</span>);</span><br><span class="line">        $(<span class="string">".tip em"</span>).text(title);</span><br><span class="line">        <span class="keyword">var</span> pos=$(<span class="keyword">this</span>).position().left+<span class="number">10</span>;</span><br><span class="line">        <span class="keyword">var</span> dis=($(<span class="string">'.tip'</span>).outerWidth()-$(<span class="keyword">this</span>).outerWidth())/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">var</span> l=pos-dis;</span><br><span class="line">        $(<span class="string">".tip"</span>).css(&#123;<span class="string">'left'</span>:l+<span class="string">"px"</span>&#125;).stop().animate(&#123;<span class="string">'top'</span>:<span class="number">145</span>,<span class="string">'opacity'</span>:<span class="number">1</span>&#125;,<span class="number">300</span>);</span><br><span class="line">    &#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        $(<span class="string">".tip"</span>).stop().animate(&#123;<span class="string">'top'</span>:<span class="number">100</span>,<span class="string">'opacity'</span>:<span class="number">0</span>&#125;,<span class="number">500</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>提示：</strong>使用jQuery.animate()动画时，为避免bug,需要在animate()前加上stop()。</p>
+<h4 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h4><p><a href="http://sandbox.runjs.cn/show/vatjsrbi" target="_blank" rel="external">在线预览</a></p>
+<h3 id="标签按钮"><a href="#标签按钮" class="headerlink" title="标签按钮"></a>标签按钮</h3><h4 id="传统input标签按钮"><a href="#传统input标签按钮" class="headerlink" title="传统input标签按钮"></a>传统input标签按钮</h4><p>传统表单input标签按钮有：<br>type–button,submit,reset,image(image类型基本上不用）<br>input属于行内块元素，可设置宽高。</p>
+<p>如果input按钮没有设置CSS样式，默认由操作系统给的，有交互功能。如果设置了背景图片，则会失去交互功能，且若宽高不适合，会repeat.</p>
+<p>submit和reset这两种类型有默认动作，平时不需要，比较流行的按钮制作都是由<code>&lt;a&gt;</code>标签实现的。</p>
+<h4 id="a标签按钮"><a href="#a标签按钮" class="headerlink" title="a标签按钮"></a>a标签按钮</h4><p><code>&lt;a&gt;</code>标签制作按钮的优点：<br>1、没有默认事件；<br>2、可以用CSS模拟成按钮外观，并做到宽度自适应；<br>3、可以增加交互效果，且浏览器均兼容；</p>
+<p>css3新增圆角属性：border-radius<br>html5+css3实现圆角按钮border-radius属性,html5+css3可用的浏览器为ie9以上以及最新的浏览器火狐，谷歌。</p>
+<ul>
+<li><code>&lt;a&gt;</code>标签本身是行内元素，变成行内块元素需设置属性：display:inline-block;</li>
+<li><code>&lt;input&gt;</code>标签是行内块元素,用<code>&lt;input&gt;</code>标签做按钮的局限性：宽度无法自适应，当对其进行CSS设置后,其系统默认的交互效果将消失。</li>
+</ul>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="xifengxx WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="xifengxx Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/按钮特效/" rel="tag">#按钮特效</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/08/CSS动画/" rel="next" title="CSS动画实用技巧">
+                <i class="fa fa-chevron-left"></i> CSS动画实用技巧
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/11/Web前端实战问题总结/" rel="prev" title="Web前端实战问题总结">
+                Web前端实战问题总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/09/按钮特效/"
+           data-title="按钮特效" data-url="http://xifengxx.github.io/2016/07/09/按钮特效/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="xifengxx" />
+          <p class="site-author-name" itemprop="name">xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">62</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">47</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3关键技术点："><span class="nav-number">1.</span> <span class="nav-text">CSS3关键技术点：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Transform"><span class="nav-number">1.1.</span> <span class="nav-text">Transform</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Transition"><span class="nav-number">1.2.</span> <span class="nav-text">Transition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#box-sizing"><span class="nav-number">1.3.</span> <span class="nav-text">box-sizing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#border-radius"><span class="nav-number">1.4.</span> <span class="nav-text">border-radius</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#幽灵按钮制作："><span class="nav-number">2.</span> <span class="nav-text">幽灵按钮制作：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#按钮及四周线条特效"><span class="nav-number">2.1.</span> <span class="nav-text">按钮及四周线条特效</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提示框特效"><span class="nav-number">2.2.</span> <span class="nav-text">提示框特效</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#源码"><span class="nav-number">2.3.</span> <span class="nav-text">源码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标签按钮"><span class="nav-number">3.</span> <span class="nav-text">标签按钮</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#传统input标签按钮"><span class="nav-number">3.1.</span> <span class="nav-text">传统input标签按钮</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#a标签按钮"><span class="nav-number">3.2.</span> <span class="nav-text">a标签按钮</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
