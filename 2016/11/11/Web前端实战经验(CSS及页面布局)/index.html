@@ -1,0 +1,1006 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Web前端实战,CSS,页面布局," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="float及image问题&amp;lt;img&amp;gt;元素默认情况下底部会有空白,这样会导致页面排版时出现错乱问题。代码：12345678910111213141516171819202122232425262728293031&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web前端实战经验(CSS及页面布局)">
+<meta property="og:url" content="http://xifengxx.github.io/2016/11/11/Web前端实战经验(CSS及页面布局)/index.html">
+<meta property="og:site_name" content="西风前端">
+<meta property="og:description" content="float及image问题&amp;lt;img&amp;gt;元素默认情况下底部会有空白,这样会导致页面排版时出现错乱问题。代码：12345678910111213141516171819202122232425262728293031&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/web%E5%89%8D%E7%AB%AF.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-bug%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.png">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-minWidth.png">
+<meta property="og:updated_time" content="2016-07-18T01:12:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web前端实战经验(CSS及页面布局)">
+<meta name="twitter:description" content="float及image问题&amp;lt;img&amp;gt;元素默认情况下底部会有空白,这样会导致页面排版时出现错乱问题。代码：12345678910111213141516171819202122232425262728293031&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;">
+<meta name="twitter:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/web%E5%89%8D%E7%AB%AF.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Web前端实战经验(CSS及页面布局) | 西风前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-webdemo">
+          <a href="https://xifengxx.github.io/web-demo/" rel="section">
+            
+            前端作品Demo
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Web前端实战经验(CSS及页面布局)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-11T11:11:11+08:00" content="2016-11-11">
+              2016-11-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Web前端实战/" itemprop="url" rel="index">
+                    <span itemprop="name">Web前端实战</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/11/Web前端实战经验(CSS及页面布局)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/11/Web前端实战经验(CSS及页面布局)/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/11/Web前端实战经验(CSS及页面布局)/" class="leancloud_visitors" data-flag-title="Web前端实战经验(CSS及页面布局)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/web%E5%89%8D%E7%AB%AF.jpg" alt=""></p>
+<h3 id="float及image问题"><a href="#float及image问题" class="headerlink" title="float及image问题"></a>float及image问题</h3><p><code>&lt;img&gt;</code>元素默认情况下底部会有空白,这样会导致页面排版时出现错乱问题。<br>代码：<br><!--more--><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Bug问题汇总<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="css"></span><br><span class="line">    *&#123;<span class="attribute">margin</span>: <span class="number">0</span>;<span class="attribute">padding</span>: <span class="number">0</span>&#125;</span><br><span class="line">    <span class="selector-class">.wrap</span>&#123;<span class="attribute">margin</span>: <span class="number">0</span> auto;<span class="attribute">width</span>: <span class="number">1000px</span>;&#125;</span><br><span class="line">    <span class="selector-class">.top</span>&#123;<span class="attribute">height</span>: <span class="number">80px</span>;<span class="attribute">background-color</span>: <span class="number">#fff</span>;&#125;</span><br><span class="line">    <span class="selector-class">.top-left</span>&#123;<span class="attribute">float</span>: left;<span class="attribute">width</span>: <span class="number">200px</span>;<span class="attribute">background</span>: grey&#125;</span><br><span class="line">    <span class="selector-class">.top-right</span>&#123;<span class="attribute">width</span>:<span class="number">800px</span>;<span class="attribute">height</span>: <span class="number">80px</span>; <span class="attribute">float</span>: right;&#125;</span><br><span class="line">    <span class="selector-class">.mid</span>&#123;<span class="attribute">width</span>: <span class="number">1000px</span>;<span class="attribute">height</span>:<span class="number">40px</span>;<span class="attribute">background-color</span>: yellow;&#125;</span><br><span class="line">    <span class="selector-class">.mid</span> <span class="selector-tag">p</span>&#123;<span class="attribute">float</span>: left;<span class="attribute">width</span>: <span class="number">300px</span>;&#125;</span><br><span class="line">    <span class="selector-class">.mid</span> <span class="selector-tag">div</span>&#123;<span class="attribute">width</span>: <span class="number">800px</span>&#125;</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"top"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"top-left"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"logo.jpg"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"top-right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mid"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是大明星<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是大明星<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>页面布局图如下：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/git-bug%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.png" alt="bug分析"><br>分析：div.top-left这个div元素的尺寸为：200<em>80px;<br>图片logo.jpg尺寸为200</em>80px.<br>但实际上div.top-left这个div元素的尺寸为：200*83px;</p>
+<p><strong>原因分析：</strong><br>img作为内联元素，会和文字一样具有行高和字号属性，默认对齐baseline，因此会溢出，导致p元素排版混乱。</p>
+<p>inline 的图片下面那一道空白(3px左右)正是 baseline 和 bottom 之间的这段距离。即使只有图片没有文字，只要是 inline 的图片这段空白都会存在。<br>要去掉这段空白，最直接的办法是将图片的 vertical-align 设置为其他值。</p>
+<p><strong>解法方法：</strong></p>
+<ol>
+<li>对img元素进行设置，二选一皆可。<br>img { display:block; }<br>img { vertical-align:top/bottom/middle; }</li>
+<li>对.top这个div元素设置overflow:hidden；或是对.mid这个div元素设置clear:both皆可。</li>
+<li>对img元素的父元素设置line-height:0（在没有设置 line-height 的情况下把 font-size 设为0也可以达到同样的效果。）</li>
+</ol>
+<p><strong>参考资源：</strong><br><a href="https://www.zhihu.com/question/21558138" target="_blank" rel="external">https://www.zhihu.com/question/21558138</a></p>
+<h3 id="图片水平垂直居中于DIV"><a href="#图片水平垂直居中于DIV" class="headerlink" title="图片水平垂直居中于DIV"></a>图片水平垂直居中于DIV</h3><p>问题：如何实现一张未知宽高的图片在一个Div里面水平垂直居中呢？<br>解决方法：(三种方法)<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="selector-class">.box</span>&#123;<span class="attribute">width</span>: <span class="number">200px</span>; <span class="attribute">height</span>: <span class="number">200px</span>;<span class="attribute">border</span>: solid <span class="number">1px</span> red;<span class="attribute">text-align</span>: center;&#125;</span><br><span class="line">    <span class="selector-class">.box1</span> <span class="selector-tag">i</span>&#123;<span class="attribute">display</span>: inline-block;<span class="attribute">vertical-align</span>: middle;<span class="attribute">height</span>: <span class="number">100%</span>;&#125;</span><br><span class="line">    <span class="selector-class">.box1</span> <span class="selector-tag">img</span>&#123; <span class="attribute">vertical-align</span>: middle;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.box2</span>&#123;<span class="attribute">display</span>: table;&#125;</span><br><span class="line">    <span class="selector-class">.box2</span> <span class="selector-tag">a</span>&#123;<span class="attribute">display</span>:table-cell;<span class="attribute">vertical-align</span>:middle;&#125;</span><br><span class="line">    <span class="selector-class">.box2</span> <span class="selector-tag">img</span>&#123;<span class="attribute">vertical-align</span>: middle;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.box3</span>&#123;<span class="attribute">position</span>: relative;&#125;</span><br><span class="line">    <span class="selector-class">.box3</span> <span class="selector-tag">img</span>&#123;<span class="attribute">position</span>: absolute;<span class="attribute">top</span>: <span class="number">50%</span>;<span class="attribute">left</span>: <span class="number">50%</span>;<span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%,-50%);&#125;</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">" box box1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://img.mukewang.com/user/53796b7f0001d38801200120-40-40.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box box2"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://img.mukewang.com/user/53796b7f0001d38801200120-40-40.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box box3"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://img.mukewang.com/user/53796b7f0001d38801200120-40-40.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>第4种方法：flex伸缩布局：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.parent</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:flex; </span><br><span class="line">    <span class="attribute">justify-content</span>:center;</span><br><span class="line">    <span class="attribute">align-items</span>:center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>扩展阅读：垂直居中任何元素：<a href="https://css-tricks.com/centering-css-complete-guide/" target="_blank" rel="external">https://css-tricks.com/centering-css-complete-guide/</a></p>
+<h3 id="纯CSS绘制三角形"><a href="#纯CSS绘制三角形" class="headerlink" title="纯CSS绘制三角形"></a>纯CSS绘制三角形</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">//正三角：</span><br><span class="line">#triangle-up &#123;</span><br><span class="line">    width: 0;</span><br><span class="line">    height: 0;</span><br><span class="line">    border-left: 50px solid transparent;</span><br><span class="line">    border-right: 50px solid transparent;</span><br><span class="line">    border-bottom: 100px solid red;</span><br><span class="line">&#125;</span><br><span class="line">或者：</span><br><span class="line">.triangle&#123;</span><br><span class="line">    width: 0;</span><br><span class="line">    height: 0;</span><br><span class="line">    border: 50px solid transparent;</span><br><span class="line">    border-bottom: 100px solid red;</span><br><span class="line">&#125;</span><br><span class="line">下面的也能绘制三角形，但不是正三角。</span><br><span class="line">.triangle&#123;</span><br><span class="line">    width: 0;</span><br><span class="line">    height: 0;</span><br><span class="line">    border: 100px solid transparent;</span><br><span class="line">    border-bottom-color:red;</span><br><span class="line">&#125;</span><br><span class="line">//倒三角：</span><br><span class="line">#triangle-down &#123;</span><br><span class="line">    width: 0;</span><br><span class="line">    height: 0;</span><br><span class="line">    border-left: 50px solid transparent;</span><br><span class="line">    border-right: 50px solid transparent;</span><br><span class="line">    border-top: 100px solid red;</span><br><span class="line">&#125;</span><br><span class="line">//左三角</span><br><span class="line">#triangle-left &#123;</span><br><span class="line">    width: 0;</span><br><span class="line">    height: 0;</span><br><span class="line">    border-top: 50px solid transparent;</span><br><span class="line">    border-right: 100px solid red;</span><br><span class="line">    border-bottom: 50px solid transparent;</span><br><span class="line">&#125;</span><br><span class="line">//右三角</span><br><span class="line">#triangle-right &#123;</span><br><span class="line">    width: 0;</span><br><span class="line">    height: 0;</span><br><span class="line">    border-top: 50px solid transparent;</span><br><span class="line">    border-left: 100px solid red;</span><br><span class="line">    border-bottom: 50px solid transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="line-height与font-size的关系"><a href="#line-height与font-size的关系" class="headerlink" title="line-height与font-size的关系"></a>line-height与font-size的关系</h3><p>对于P元素，当文字超出一行时，决定每行之间的间隙的css是line-height和font-size<br>    解释：P元素中有两行文字，每一行是一个inlineBox,其高对应的css是line-height。在inlineBox里有一个区域叫做contentArea，这里显示的是文字，其高对应的css是font-size。<br>    浏览器自动将contentArea区域设置在inlineBox区域的垂直居中位置。<br>    所以，当inlineBox的高大于contentArea的高，在视图里展现的样子是两行文字之间有一定的间隙，间隙的大小取决于两者高度的差值。</p>
+<h3 id="css属性中line-height继承问题。"><a href="#css属性中line-height继承问题。" class="headerlink" title="css属性中line-height继承问题。"></a>css属性中line-height继承问题。</h3><p>当在css中要继承父元素的line-height时，有几种写法：<br>1、px<br>2、%<br>3、num<br>4、normal(1.2)<br>    px 当在父元素上使用px时，其子元素都会不顾自己的font-size而继承px的确切值。<br>    这样造成的影响是子元素的inlineBox的高度都是相同，而子元素的font-size不同的话就会造成各个文字区块的行间距不同，影响美观。<br>    %是将此时元素的font-size乘以%得到现有的line-hight，同px，子元素继承固定值。<br>    normal相当于数字1.2 ，子元素同样继承固定的line-height。<br>    num子元素只继承num这个数值，但具体line-height数值会跟每个子元素的自身font-size相乘得出line-height。</p>
+<table>
+<thead>
+<tr>
+<th>element</th>
+<th>font-size</th>
+<th>line-height</th>
+<th>after line-height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>body</td>
+<td>14</td>
+<td>1.2</td>
+<td>28px</td>
+</tr>
+<tr>
+<td>p</td>
+<td>30</td>
+<td>1.2</td>
+<td>36</td>
+</tr>
+<tr>
+<td>h1</td>
+<td>24</td>
+<td>1.2</td>
+<td>28</td>
+</tr>
+</tbody>
+</table>
+<p>这样的效果是每个文字区块中的文字段落的行间距都是根据自己的font-size得出的，整体文字排版的行间距很统一。</p>
+<h3 id="宽度设置100-或固定值-比如960px-，窗口缩小出现bug-底部出现横向的滚动条，但看起来内容并没有超出。"><a href="#宽度设置100-或固定值-比如960px-，窗口缩小出现bug-底部出现横向的滚动条，但看起来内容并没有超出。" class="headerlink" title="宽度设置100%或固定值(比如960px)，窗口缩小出现bug(底部出现横向的滚动条，但看起来内容并没有超出。)"></a>宽度设置100%或固定值(比如960px)，窗口缩小出现bug(底部出现横向的滚动条，但看起来内容并没有超出。)</h3><p>有时候我们想让页面导航能100%在窗口中显示，页面主内容设置固定宽度如960px，窗口全屏的情况下能正常显示，但缩小窗口的时候我们发现，右边会出现一片空白，即导航的宽度小于主内容的宽度，导航并没有100%显示。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/git-minWidth.png" alt=""><br><strong>解决方法：</strong><br>父<code>div</code>元素中添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">min-width:1000px;</span><br><span class="line">width: expression((document.documentElement.clientWidth||document.body.clientWidth)&lt;1000?&quot;1000px&quot;:&quot;&quot;); //IE6兼容方案</span><br></pre></td></tr></table></figure></p>
+<p>另一种方法：<br>宽度设置max-width,比如:<br>max-width:960px.<br>当浏览器窗口缩小时，会自动调整宽度值，从而避免滚动条出现。</p>
+<p>参考链接：<a href="http://vod.sjtu.edu.cn/help/Article_Show.asp?ArticleID=2224" target="_blank" rel="external">http://vod.sjtu.edu.cn/help/Article_Show.asp?ArticleID=2224</a></p>
+<h3 id="使用-not-选择器来决定表单是否显示边框-列表最后一个元素是否加边框"><a href="#使用-not-选择器来决定表单是否显示边框-列表最后一个元素是否加边框" class="headerlink" title="使用 :not() 选择器来决定表单是否显示边框/列表最后一个元素是否加边框"></a>使用 :not() 选择器来决定表单是否显示边框/列表最后一个元素是否加边框</h3><p>与其加上边框……<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* 添加边框 */</span><br><span class="line">.nav li &#123;</span><br><span class="line">  border-right: 1px solid #666;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>……然后去掉最后一个元素的边框……<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* 去掉边框 */</span><br><span class="line">.nav li:last-child &#123;</span><br><span class="line">  border-right: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>……不如使用 :not() 伪类来达成同样的效果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.nav li:not(:last-child) &#123;</span><br><span class="line">  border-right: 1px solid #666;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当然，也可以使用 .nav li + li 或者 .nav li:first-child ~ li 来达成，但是 :not() 选择器的方式更清晰明了，一目了然。</p>
+<h3 id="使用负的-nth-child-来选择元素"><a href="#使用负的-nth-child-来选择元素" class="headerlink" title="使用负的 nth-child 来选择元素"></a>使用负的 nth-child 来选择元素</h3><p>使用负的 nth-child 可以选择 1 至 n 个元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">li &#123;</span><br><span class="line">  display: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 选择第 1 至第 3 个元素并显示出来 */</span><br><span class="line">li:nth-child(-n+3) &#123;</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>或许你已经掌握了如何使用 :not()，试下这个：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/* 选择第 1 至第 3 个元素并显示出来 */</span><br><span class="line">li:not(:nth-child(-n+3)) &#123;</span><br><span class="line">  display: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="用-rem-来调整全局大小；用-em-来调整局部大小"><a href="#用-rem-来调整全局大小；用-em-来调整局部大小" class="headerlink" title="用 rem 来调整全局大小；用 em 来调整局部大小"></a>用 rem 来调整全局大小；用 em 来调整局部大小</h3><p>在根设置基本字体大小后 (html { font-size: 16px; }), 请设置为文本元素的字体大小 em:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">h2 &#123; </span><br><span class="line">  font-size: 2em;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p &#123;</span><br><span class="line">  font-size: 1em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后设置字体大小的模块 rem:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">article &#123;</span><br><span class="line">  font-size: 1.25rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">aside .module &#123;</span><br><span class="line">  font-size: .9rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>现在，每个模块变得条块分割，更容易、灵活的样式，以便于维护。</p>
+<p>rem（font size of the root element）是指相对于根元素的字体大小的单位。简单的说它就是一个相对单位。<br>em（font size of the element）是指相对于父元素的字体大小的单位。<br>它们之间其实很相似，只不过一个计算的规则是依赖根元素一个是依赖父元素计算。</p>
+<h3 id="多行文本溢出"><a href="#多行文本溢出" class="headerlink" title="多行文本溢出"></a>多行文本溢出</h3><h4 id="单行文本溢出"><a href="#单行文本溢出" class="headerlink" title="单行文本溢出"></a>单行文本溢出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">overflow: hidden;</span><br><span class="line">white-space: nowrap;</span><br><span class="line">text-overflow: ellipsis;</span><br></pre></td></tr></table></figure>
+<h4 id="多行文本溢出-1"><a href="#多行文本溢出-1" class="headerlink" title="多行文本溢出"></a>多行文本溢出</h4><p>1、WebKit浏览器或移动端的页面<br>  在WebKit浏览器或移动端（绝大部分是WebKit内核的浏览器）的页面实现比较简单，可以直接使用WebKit的CSS扩展属性(WebKit是私有属性)-webkit-line-clamp 。<br>  -webkit-line-clamp用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。<br>  常见结合属性：</p>
+<ul>
+<li>display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。</li>
+<li>-webkit-box-orient 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。</li>
+<li>text-overflow:ellipsis;，可以用来多行文本的情况下，用省略号“…”隐藏超出范围的文本 。<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">display: -webkit-box !important;</span><br><span class="line">overflow: hidden;</span><br><span class="line">text-overflow: ellipsis;</span><br><span class="line"></span><br><span class="line">-webkit-box-orient: vertical; // 方向垂直</span><br><span class="line">-webkit-line-clamp: 2; // 自动截断显示2行</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2、跨浏览器兼容的方案:<br>  设置相对定位的容器高度，用包含省略号(…)的元素模拟实现；<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.tab-paragraph &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    line-height: 1.4em;</span><br><span class="line">    height: 4.2em;//高度=行高*行数</span><br><span class="line">    overflow: hidden;</span><br><span class="line">.tab-paragraph::after &#123;</span><br><span class="line">    content: "...";</span><br><span class="line">    position: absolute;</span><br><span class="line">    bottom: 0;</span><br><span class="line">    right: 0;</span><br><span class="line">    font-weight: 600;</span><br><span class="line">    padding: 0 1px 1px 5px;</span><br><span class="line">    background: linear-gradient(to right,transparent,#fff 55%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>参考链接：<a href="http://www.css88.com/archives/5206" target="_blank" rel="external">多行文本溢出显示省略号(…)全攻略</a></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="xifengxx WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="xifengxx Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Web前端实战/" rel="tag">#Web前端实战</a>
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+            <a href="/tags/页面布局/" rel="tag">#页面布局</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/11/Web前端实战经验(JS相关)/" rel="next" title="Web前端实战问题总结">
+                <i class="fa fa-chevron-left"></i> Web前端实战问题总结
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/11/Web前端实战经验(CSS及页面布局)/"
+           data-title="Web前端实战经验(CSS及页面布局)" data-url="http://xifengxx.github.io/2016/11/11/Web前端实战经验(CSS及页面布局)/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="xifengxx" />
+          <p class="site-author-name" itemprop="name">xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">71</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#float及image问题"><span class="nav-number">1.</span> <span class="nav-text">float及image问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片水平垂直居中于DIV"><span class="nav-number">2.</span> <span class="nav-text">图片水平垂直居中于DIV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#纯CSS绘制三角形"><span class="nav-number">3.</span> <span class="nav-text">纯CSS绘制三角形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#line-height与font-size的关系"><span class="nav-number">4.</span> <span class="nav-text">line-height与font-size的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css属性中line-height继承问题。"><span class="nav-number">5.</span> <span class="nav-text">css属性中line-height继承问题。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宽度设置100-或固定值-比如960px-，窗口缩小出现bug-底部出现横向的滚动条，但看起来内容并没有超出。"><span class="nav-number">6.</span> <span class="nav-text">宽度设置100%或固定值(比如960px)，窗口缩小出现bug(底部出现横向的滚动条，但看起来内容并没有超出。)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-not-选择器来决定表单是否显示边框-列表最后一个元素是否加边框"><span class="nav-number">7.</span> <span class="nav-text">使用 :not() 选择器来决定表单是否显示边框/列表最后一个元素是否加边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用负的-nth-child-来选择元素"><span class="nav-number">8.</span> <span class="nav-text">使用负的 nth-child 来选择元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用-rem-来调整全局大小；用-em-来调整局部大小"><span class="nav-number">9.</span> <span class="nav-text">用 rem 来调整全局大小；用 em 来调整局部大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行文本溢出"><span class="nav-number">10.</span> <span class="nav-text">多行文本溢出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单行文本溢出"><span class="nav-number">10.1.</span> <span class="nav-text">单行文本溢出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多行文本溢出-1"><span class="nav-number">10.2.</span> <span class="nav-text">多行文本溢出</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

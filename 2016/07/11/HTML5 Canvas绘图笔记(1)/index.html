@@ -1,0 +1,1051 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Canvas," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="&amp;lt;canvas&amp;gt;是一个可以使用脚本(通常为JavaScript)在其中绘制图形的 HTML 元素.它可以用于制作照片集或者制作简单的动画.
+Canvas标签：canvas标签添加要使用canvas，首先要在body中添加上canvas标签canvas标签是一块默认300150大小的画布">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5 Canvas绘图笔记(1)">
+<meta property="og:url" content="http://xifengxx.github.io/2016/07/11/HTML5 Canvas绘图笔记(1)/index.html">
+<meta property="og:site_name" content="西风前端">
+<meta property="og:description" content="&amp;lt;canvas&amp;gt;是一个可以使用脚本(通常为JavaScript)在其中绘制图形的 HTML 元素.它可以用于制作照片集或者制作简单的动画.
+Canvas标签：canvas标签添加要使用canvas，首先要在body中添加上canvas标签canvas标签是一块默认300150大小的画布">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.1.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.11.8.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.2.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.3.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.4.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.5.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.6.jpg">
+<meta property="og:updated_time" content="2016-07-18T00:58:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5 Canvas绘图笔记(1)">
+<meta name="twitter:description" content="&amp;lt;canvas&amp;gt;是一个可以使用脚本(通常为JavaScript)在其中绘制图形的 HTML 元素.它可以用于制作照片集或者制作简单的动画.
+Canvas标签：canvas标签添加要使用canvas，首先要在body中添加上canvas标签canvas标签是一块默认300150大小的画布">
+<meta name="twitter:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> HTML5 Canvas绘图笔记(1) | 西风前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-webdemo">
+          <a href="https://xifengxx.github.io/web-demo/" rel="section">
+            
+            前端作品Demo
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTML5 Canvas绘图笔记(1)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-11T16:23:24+08:00" content="2016-07-11">
+              2016-07-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Canvas/" itemprop="url" rel="index">
+                    <span itemprop="name">Canvas</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/11/HTML5 Canvas绘图笔记(1)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/11/HTML5 Canvas绘图笔记(1)/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/11/HTML5 Canvas绘图笔记(1)/" class="leancloud_visitors" data-flag-title="HTML5 Canvas绘图笔记(1)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>&lt;canvas&gt;</code>是一个可以使用脚本(通常为JavaScript)在其中绘制图形的 HTML 元素.它可以用于制作照片集或者制作简单的动画.</p>
+<h3 id="Canvas标签："><a href="#Canvas标签：" class="headerlink" title="Canvas标签："></a>Canvas标签：</h3><p><strong>canvas标签添加</strong><br>要使用canvas，首先要在body中添加上canvas标签<br>canvas标签是一块默认300<em>150大小的画布<br><a id="more"></a><br><em>*画布宽高设置：</em></em><br>使用canvas标签的属性，width及height直接在行间设置<br><code>&lt;canvas id=&quot;canvas1&quot; width=&quot;800&quot; height=&quot;500&quot;&gt;&lt;/canvas&gt;</code><br>此处注意：不要用css样式去改画布大小，这个会导致画布中的图像被拉伸</p>
+<p><strong>画布css样式</strong><br>画布的其他css样式可以正常设置</p>
+<p><strong>canvas标签中的内容</strong><br>canvas标签中的内容是（包括标签）只有在不支持此效果的低版本浏览器中才会显示的；在高版本浏览器中不会显示出来<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"500"</span>&gt;</span></span><br><span class="line">    只是一个canvas标签，然而你看不到</span><br><span class="line"><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="canvas渲染上下文（The-rendering-context）"><a href="#canvas渲染上下文（The-rendering-context）" class="headerlink" title="canvas渲染上下文（The rendering context）"></a>canvas渲染上下文（The rendering context）</h3><p><code>&lt;canvas&gt;</code>元素创造了一个固定大小的画布，它公开了一个或多个渲染上下文，其可以用来绘制和处理要展示的内容。<br>canvas起初是空白的。为了展示，首先脚本需要找到渲染上下文，然后在它的上面绘制。<code>&lt;canvas&gt;</code>元素有一个做 <code>getContext()</code> 的方法，这个方法是用来获得渲染上下文和它的绘画功能。getContext()只有一个参数，上下文的格式。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>);</span><br><span class="line"><span class="keyword">var</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>代码的第一行通过使用 document.getElementById() 方法来为 <code>&lt;canvas&gt;</code> 元素得到DOM对象。一旦有了元素对象，你可以通过使用它的getContext() 方法来访问绘画上下文。</p>
+<h3 id="画布栅格（canvas-grid）以及坐标空间。"><a href="#画布栅格（canvas-grid）以及坐标空间。" class="headerlink" title="画布栅格（canvas grid）以及坐标空间。"></a>画布栅格（canvas grid）以及坐标空间。</h3><p>canvas元素默认被网格所覆盖。<br>通常来说网格中的一个单元相当于canvas元素中的一像素。栅格的起点为左上角（坐标为（0,0））。所有元素的位置都相对于原点定位。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.1.jpg" alt="1"></p>
+<h3 id="Canvas样式设置"><a href="#Canvas样式设置" class="headerlink" title="Canvas样式设置"></a>Canvas样式设置</h3><p>边框设置：<code>context.strokeStyle</code><br>填充设置：<code>context.fillStyle</code><br>线宽设置：<code>context.lineWidth</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">context.strokeStyle = <span class="string">"red"</span>;</span><br><span class="line">context.lineWidth = <span class="number">2</span>;</span><br><span class="line">context.fillStyle = <span class="string">'yellow'</span>;</span><br></pre></td></tr></table></figure></p>
+<h4 id="透明度设置："><a href="#透明度设置：" class="headerlink" title="透明度设置："></a>透明度设置：</h4><p>通过设置 globalAlpha 属性或者使用一个半透明颜色作为轮廓或填充的样式。<br><code>globalAlpha = transparency value</code><br>这个属性影响到 canvas 里所有图形的透明度，有效的值范围是 0.0 （完全透明）到 1.0（完全不透明），默认是 1.0。<br>globalAlpha 属性在需要绘制大量拥有相同透明度的图形时候相当高效。<br>透明度设置，也可使用strokeStyle/fillStyle的CSS3颜色值，如：<br><code>ctx.strokeStyle = &quot;rgba(255,0,0,0.5)&quot;;</code></p>
+<h2 id="Canvas-绘制图形"><a href="#Canvas-绘制图形" class="headerlink" title="Canvas 绘制图形"></a>Canvas 绘制图形</h2><h3 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h3><p>不同于SVG，HTML中的元素<strong>canvas只支持一种原生的图形绘制：矩形。</strong><br>canvas提供了三种方法绘制矩形：</p>
+<ul>
+<li><code>fillRect(x, y, width, height)</code>：绘制一个填充的矩形</li>
+<li><code>strokeRect(x, y, width, height)</code>：绘制一个矩形的边框</li>
+<li><code>clearRect(x, y, width, height)</code>：清除指定矩形区域，让清除部分完全透明。<br>– x与y指定了在canvas画布上所绘制的矩形的左上角（相对于原点）的坐标。width和height设置矩形的尺寸。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">context.fillStyle = &apos;yellow&apos;;</span><br><span class="line">context.fillRect(150,150,200,100);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h3><p>图形的基本元素是路径。路径是通过不同颜色和宽度的线段或曲线相连形成的不同形状的点的集合。一个路径，甚至一个子路径，都是闭合的。使用路径绘制图形需要一些额外的步骤。</p>
+<ul>
+<li>首先，你需要创建路径起始点。</li>
+<li>然后你使用画图命令去画出路径。</li>
+<li>之后你把路径封闭。</li>
+<li>一旦路径生成，你就能通过描边或填充路径区域来渲染图形。</li>
+</ul>
+<h4 id="绘制命令："><a href="#绘制命令：" class="headerlink" title="绘制命令："></a>绘制命令：</h4><ul>
+<li><code>beginPath()</code>: 新建一条路径，生成之后，图形绘制命令被指向到路径上生成路径。</li>
+<li><code>closePath()</code>: 闭合路径之后图形绘制命令又重新指向到上下文中。<pre><code>这个方法会通过绘制一条从当前点到开始点的直线来闭合图形。如果图形是已经闭合了的，即当前点为开始点，该函数什么也不做。
+</code></pre></li>
+<li><code>stroke()</code>:    通过线条来绘制图形轮廓,绘制边框。</li>
+<li><code>fill()</code>:      通过填充路径的内容区域生成实心的图形。<pre><code>当你调用fill()函数时，所有没有闭合的形状都会自动闭合，所以你不需要调用closePath()函数。但是调用stroke()时不会自动闭合。
+</code></pre></li>
+<li><code>moveTo(x, y)</code>:将笔触移动到指定的坐标x以及y上。<pre><code>当canvas初始化或者beginPath()调用后，你通常会使用moveTo()函数设置起点。我们也能够使用moveTo()绘制一些不连续的路径。
+</code></pre></li>
+</ul>
+<h4 id="绘制直线："><a href="#绘制直线：" class="headerlink" title="绘制直线："></a>绘制直线：</h4><p>绘制直线，需要用到的方法lineTo()。<br><code>lineTo(x, y)</code>: 绘制一条从当前位置到指定x以及y位置的直线。<br>设置画笔开始位置：<code>context.moveTo(x,y)</code><br>设置画笔结束位置：<code>context.lineTo(x,y)</code><br>线段两边圆角：<code>context.lineCap = &quot;round&quot;</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">context.strokeStyle = &quot;red&quot;;</span><br><span class="line">context.lineWidth = 2;</span><br><span class="line">context.moveTo(100,100);</span><br><span class="line">context.lineTo(500,100);</span><br><span class="line">context.stroke();</span><br></pre></td></tr></table></figure></p>
+<h4 id="绘制三角："><a href="#绘制三角：" class="headerlink" title="绘制三角："></a>绘制三角：</h4><p>方法就是绘制3条直线.<br>绘制多条连续线段时，不必每次重新定义起始点,画笔会停在上一段线段的终点，并默认为下一次绘制的起始点.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">context.strokeStyle = &quot;red&quot;;</span><br><span class="line">context.lineWidth = 2;</span><br><span class="line"></span><br><span class="line">context.moveTo(10,10);</span><br><span class="line">context.lineTo(10,110);</span><br><span class="line">context.lineTo(110,110);</span><br><span class="line">context.lineTo(10,10);</span><br><span class="line">context.stroke();</span><br></pre></td></tr></table></figure></p>
+<p>用绘制直线的方法，进行图形的绘制时；直线封闭处会出现瑕疵，不会完全闭合.因此需要使用<code>context.closePath()</code>命令，这个方法会自动将起点与末点相连。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">context.strokeStyle = &quot;red&quot;;</span><br><span class="line">context.lineWidth = 2;</span><br><span class="line"></span><br><span class="line">context.beginPath();</span><br><span class="line">context.moveTo(10,10);</span><br><span class="line">context.lineTo(10,110);</span><br><span class="line">context.lineTo(110,110);</span><br><span class="line">context.closePath();  //封闭路径后最后一个点就不用定义了</span><br><span class="line">context.stroke();</span><br></pre></td></tr></table></figure></p>
+<h4 id="矩形"><a href="#矩形" class="headerlink" title="矩形"></a>矩形</h4><p>除了直接在画布上绘制矩形的三个额外方法，也有rect()方法，将一个矩形路径增加到当前路径上。<br><code>rect(x, y, width, height)</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">context.fillStyle = &apos;yellow&apos;;</span><br><span class="line">context.rect(150,150,200,100);</span><br><span class="line">context.fill();</span><br><span class="line">//上面是定义矩形，等价于下面的绘制矩形</span><br><span class="line">context.fillStyle = &apos;yellow&apos;;</span><br><span class="line">context.fillRect(150,150,200,100);</span><br></pre></td></tr></table></figure></p>
+<h4 id="圆弧"><a href="#圆弧" class="headerlink" title="圆弧"></a>圆弧</h4><p>绘制圆弧或者圆，我们使用arc()方法。当然可以使用arcTo().</p>
+<ul>
+<li><code>arc(x, y, radius, startAngle, endAngle, anticlockwise)</code><br>  画一个以（x,y）为圆心的以radius为半径的圆弧（圆），从startAngle开始到endAngle结束，按照anticlockwise给定的方向（默认为顺时针）来生成。</li>
+<li><code>arcTo(x1, y1, x2, y2, radius)</code><br>  根据给定的控制点和半径画一段圆弧，再以直线连接两个控制点。<br>该方法有五个参数：</li>
+<li>x:圆心的x坐标</li>
+<li>y:圆心的y坐标</li>
+<li>straAngle:开始角度</li>
+<li>endAngle:结束角度</li>
+<li>anticlockwise:是否逆时针（true）为逆时针，(false)为顺时针.默认为false,顺时针。</li>
+</ul>
+<p><strong>弧度</strong><br>arc()函数中的角度单位是弧度，不是度数。<br>角度与弧度的js表达式:radians=(Math.PI/180)<em>degrees。因此，180弧度为：Math.PI;360弧度为：Math.PI</em>2;<br>弧度说明：不管是顺时针，还是逆时针，弧度都是固定的。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.11.8.jpg" alt="8"><br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.2.jpg" alt="2"></p>
+<h4 id="贝塞尔（bezier）以及二次贝塞尔"><a href="#贝塞尔（bezier）以及二次贝塞尔" class="headerlink" title="贝塞尔（bezier）以及二次贝塞尔"></a>贝塞尔（bezier）以及二次贝塞尔</h4><p>二次以及三次贝塞尔曲线都十分有用，一般用来绘制复杂有规律的图形。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.3.jpg" alt="3"><br><em> quadraticCurveTo(cp1x, cp1y, x, y)<br>    绘制二次贝塞尔曲线，x,y为结束点，cp1x,cp1y为控制点。
+</em> bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)<br>    绘制三次贝塞尔曲线，x,y为结束点，cp1x,cp1y为控制点一，cp2x,cp2y为控制点二。</p>
+<p>二次贝塞尔曲线有一个开始、结束点（蓝色）以及一个控制点（红色），而三次贝塞尔曲线使用两个控制点。<br>参数x、y在这两个方法中都是结束点坐标。cp1x,cp1y为坐标中的第一个控制点，cp2x,cp2y为坐标中的第二个控制点。</p>
+<h3 id="绘制文字"><a href="#绘制文字" class="headerlink" title="绘制文字"></a>绘制文字</h3><h4 id="渲染文本："><a href="#渲染文本：" class="headerlink" title="渲染文本："></a>渲染文本：</h4><p>canvas 提供了两种方法来渲染文本:</p>
+<ul>
+<li>fillText(text, x, y [, maxWidth])<br> 在指定的(x,y)位置填充指定的文本，绘制的最大宽度是可选的.</li>
+<li>strokeText(text, x, y [, maxWidth])<br> 在指定的(x,y)位置绘制文本边框，绘制的最大宽度是可选的.<ul>
+<li>“text”：中文字内容</li>
+<li>x：起始x坐标</li>
+<li>y：起始y坐标</li>
+</ul>
+</li>
+</ul>
+<h4 id="文本样式："><a href="#文本样式：" class="headerlink" title="文本样式："></a>文本样式：</h4><ul>
+<li>font = value: 绘制文本的样式. 这个字符串使用和 CSS font 属性相同的语法. 默认的字体是 10px sans-serif.</li>
+<li>textAlign = value: 文本对齐选项. 可选的值包括: start, end, left, right or center. 默认值是 start.</li>
+<li>textBaseline = value: 基线对齐选项. 可选的值包括: top, hanging, middle, alphabetic, ideographic, bottom. 默认值是 alphabetic.</li>
+<li>direction = value: 文本方向. 可能的值包括: ltr, rtl, inherit. 默认值是 inherit.</li>
+</ul>
+<p>下图展示了textBaseline属性支持的不同的基线情况。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.4.jpg" alt="4"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">context.lineWidth = 1;</span><br><span class="line">context.strokeStyle = &quot;green&quot;;</span><br><span class="line">context.font = &quot;italic 150px arial&quot;</span><br><span class="line">context.strokeText(&quot;我是文字&quot;,50,200);</span><br></pre></td></tr></table></figure>
+<h3 id="渐变样式"><a href="#渐变样式" class="headerlink" title="渐变样式"></a>渐变样式</h3><p>1、线性渐变：<code>createLinearGradient(x1,y1,x2,y2)</code></p>
+<ul>
+<li>x1/y1：渐变起始位置坐标</li>
+<li>x2/y2：渐变结束位置坐标</li>
+</ul>
+<p>2、径向渐变：<code>createRadiusGradient(x1,y1,r1,x2,y2,r2)</code></p>
+<ul>
+<li>x1/y1：渐变起始圆的圆心位置坐标</li>
+<li>r1：渐变起始圆半径</li>
+<li>x2/y2：渐变结束圆的圆心位置坐标</li>
+<li>r2：渐变结束圆半径</li>
+</ul>
+<p>3、渐变颜色设置：<code>addColorStop(%,&quot;color&quot;);</code></p>
+<ul>
+<li>%：渐变进度，用[0,1]之间的数字表示</li>
+<li>“color”：每个渐变阶段的颜色<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var linearGradient = context.createLinearGradient(10,30,200,200);</span><br><span class="line"></span><br><span class="line">linearGradient.addColorStop(0,&quot;red&quot;);</span><br><span class="line">linearGradient.addColorStop(0.4,&quot;yellow&quot;);</span><br><span class="line">linearGradient.addColorStop(0.8,&quot;green&quot;);</span><br><span class="line">linearGradient.addColorStop(1,&quot;blue&quot;);</span><br><span class="line"></span><br><span class="line">context.fillStyle = linearGradient;</span><br><span class="line">context.fillRect(10,10,200,200)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="绘制阴影"><a href="#绘制阴影" class="headerlink" title="绘制阴影"></a>绘制阴影</h3><p>阴影颜色：shadowColor = “color”;<br>阴影模糊度：shadowblur = number;<br>阴影偏移X：shadowOffsetX = number;<br>阴影偏移Y：shadowOffsetY = number;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">context.shadowColor = &quot;black&quot;;</span><br><span class="line">context.shadowBlur = 20;</span><br><span class="line">context.shadowOffsetX = 10;</span><br><span class="line">context.shadowOffsetY = 5;</span><br><span class="line"></span><br><span class="line">context.strokeRect(100,100,100,100);</span><br></pre></td></tr></table></figure></p>
+<h3 id="变形-Transformations"><a href="#变形-Transformations" class="headerlink" title="变形 Transformations"></a>变形 Transformations</h3><h4 id="状态的保存和恢复"><a href="#状态的保存和恢复" class="headerlink" title="状态的保存和恢复"></a>状态的保存和恢复</h4><p>开始绘制复杂图形就必不可少的方法:</p>
+<ul>
+<li>save()</li>
+<li>restore()<br>save 和 restore 方法是用来保存和恢复 canvas 状态的，都没有参数。Canvas 的状态就是当前画面应用的所有样式和变形的一个快照。</li>
+</ul>
+<p>Canvas 状态是以堆(stack)的方式保存的，每一次调用 save 方法，当前的状态就会被推入堆中保存起来。这种状态包括：</p>
+<ul>
+<li>当前应用的变形（即移动，旋转和缩放等）</li>
+<li>当前的裁切路径<br>你可以调用任意多次 save 方法。每一次调用 restore 方法，上一个保存的状态就从堆中弹出，所有设定都恢复。</li>
+</ul>
+<h4 id="移动-Translating"><a href="#移动-Translating" class="headerlink" title="移动 Translating"></a>移动 Translating</h4><p>translate 方法，它用来移动 canvas 和它的原点到一个不同的位置。<br><code>translate(x, y)</code><br>translate 方法接受两个参数。x 是左右偏移量，y 是上下偏移量，如图所示。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.5.jpg" alt="5"></p>
+<h4 id="旋转-Rotating"><a href="#旋转-Rotating" class="headerlink" title="旋转 Rotating"></a>旋转 Rotating</h4><p>rotate 方法，它用于以原点为中心旋转 canvas。<br><code>rotate(angle)</code><br>这个方法只接受一个参数：旋转的角度(angle)，它是顺时针方向的，以弧度为单位的值。<br>旋转的中心点始终是 canvas 的原点，如果要改变它，我们需要用到 translate 方法。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.6.jpg" alt="6"></p>
+<h4 id="缩放-Scaling"><a href="#缩放-Scaling" class="headerlink" title="缩放 Scaling"></a>缩放 Scaling</h4><p>我们用它来增减图形在 canvas 中的像素数目，对形状，位图进行缩小或者放大。<br><code>scale(x, y)</code><br>scale 方法接受两个参数。x,y 分别是横轴和纵轴的缩放因子，它们都必须是正值。值比 1.0 小表示缩小，比 1.0 大则表示放大，值为 1.0 时什么效果都没有。<br>默认情况下，canvas 的 1 单位就是 1 个像素。<br>举例说，如果我们设置缩放因子是 0.5，1 个单位就变成对应 0.5 个像素，这样绘制出来的形状就会是原先的一半。同理，设置为 2.0 时，1 个单位就对应变成了 2 像素，绘制的结果就是图形放大了 2 倍。</p>
+<h4 id="变形-Transforms"><a href="#变形-Transforms" class="headerlink" title="变形 Transforms"></a>变形 Transforms</h4><p> 这个方法允许直接对变形矩阵作修改。<br><code>transform(m11, m12, m21, m22, dx, dy)</code><br>这个方法必须将当前的变形矩阵乘上下面的矩阵：<br>m11     m21     dx<br>m12     m22     dy<br>0   0   1<br>如果任意一个参数是无限大，变形矩阵也必须被标记为无限大，否则会抛出异常。</p>
+<p><code>setTransform(m11, m12, m21, m22, dx, dy)</code><br>这个方法必须重置当前的变形矩阵为单位矩阵，然后以相同的参数调用 transform 方法。如果任意一个参数是无限大，那么变形矩阵也必须被标记为无限大，否则会抛出异常。</p>
+<blockquote>
+<p>context.translate(x,y) 等同于context.transform (1,0,0,1,x,y)或context.transform(0,1,1,0.x,y)<br>context.scale(x,y)等同于context.transform(x,0,0,y,0,0)或context.transform (0,y,x,0, 0,0);<br>context.rotate(θ)等同于context.transform(Math.cos(θ<em>Math.PI/180)，Math.sin(θ</em>Math.PI/180),-Math.sin(θ<em>Math.PI/180),Math.cos(θ</em>Math.PI/180)，0，0）或 context.transform(-Math.sin(θ<em>Math.PI/180),Math.cos(θ</em>Math.PI/180)，Math.cos(θ<em>Math.PI/180)，Math.sin(θ</em>Math.PI/180), 0，0）</p>
+</blockquote>
+<h3 id="参考资源："><a href="#参考资源：" class="headerlink" title="参考资源："></a>参考资源：</h3><ol>
+<li>canvas学习（二） <a href="http://www.jianshu.com/p/65de47ef33d2" target="_blank" rel="external">http://www.jianshu.com/p/65de47ef33d2</a></li>
+<li>玩转html5<code>&lt;canvas&gt;</code>画图  <a href="http://www.cnblogs.com/tim-li/archive/2012/08/06/2580252.html#10" target="_blank" rel="external">http://www.cnblogs.com/tim-li/archive/2012/08/06/2580252.html#10</a></li>
+<li>Canvas教程 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial</a></li>
+</ol>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="xifengxx WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="xifengxx Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Canvas/" rel="tag">#Canvas</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/11/HTML5 Canvas绘图笔记(2)/" rel="next" title="HTML5 Canvas绘图笔记(2)">
+                <i class="fa fa-chevron-left"></i> HTML5 Canvas绘图笔记(2)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/12/HTML5 Canvas案例-倒计时时钟/" rel="prev" title="HTML5 Canvas实战">
+                HTML5 Canvas实战 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/11/HTML5 Canvas绘图笔记(1)/"
+           data-title="HTML5 Canvas绘图笔记(1)" data-url="http://xifengxx.github.io/2016/07/11/HTML5 Canvas绘图笔记(1)/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="xifengxx" />
+          <p class="site-author-name" itemprop="name">xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">71</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Canvas标签："><span class="nav-number">1.</span> <span class="nav-text">Canvas标签：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#canvas渲染上下文（The-rendering-context）"><span class="nav-number">2.</span> <span class="nav-text">canvas渲染上下文（The rendering context）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#画布栅格（canvas-grid）以及坐标空间。"><span class="nav-number">3.</span> <span class="nav-text">画布栅格（canvas grid）以及坐标空间。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Canvas样式设置"><span class="nav-number">4.</span> <span class="nav-text">Canvas样式设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#透明度设置："><span class="nav-number">4.1.</span> <span class="nav-text">透明度设置：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas-绘制图形"><span class="nav-number"></span> <span class="nav-text">Canvas 绘制图形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制矩形"><span class="nav-number">1.</span> <span class="nav-text">绘制矩形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制路径"><span class="nav-number">2.</span> <span class="nav-text">绘制路径</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#绘制命令："><span class="nav-number">2.1.</span> <span class="nav-text">绘制命令：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绘制直线："><span class="nav-number">2.2.</span> <span class="nav-text">绘制直线：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绘制三角："><span class="nav-number">2.3.</span> <span class="nav-text">绘制三角：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#矩形"><span class="nav-number">2.4.</span> <span class="nav-text">矩形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#圆弧"><span class="nav-number">2.5.</span> <span class="nav-text">圆弧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#贝塞尔（bezier）以及二次贝塞尔"><span class="nav-number">2.6.</span> <span class="nav-text">贝塞尔（bezier）以及二次贝塞尔</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制文字"><span class="nav-number">3.</span> <span class="nav-text">绘制文字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#渲染文本："><span class="nav-number">3.1.</span> <span class="nav-text">渲染文本：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文本样式："><span class="nav-number">3.2.</span> <span class="nav-text">文本样式：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渐变样式"><span class="nav-number">4.</span> <span class="nav-text">渐变样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制阴影"><span class="nav-number">5.</span> <span class="nav-text">绘制阴影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变形-Transformations"><span class="nav-number">6.</span> <span class="nav-text">变形 Transformations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#状态的保存和恢复"><span class="nav-number">6.1.</span> <span class="nav-text">状态的保存和恢复</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动-Translating"><span class="nav-number">6.2.</span> <span class="nav-text">移动 Translating</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#旋转-Rotating"><span class="nav-number">6.3.</span> <span class="nav-text">旋转 Rotating</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缩放-Scaling"><span class="nav-number">6.4.</span> <span class="nav-text">缩放 Scaling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变形-Transforms"><span class="nav-number">6.5.</span> <span class="nav-text">变形 Transforms</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资源："><span class="nav-number">7.</span> <span class="nav-text">参考资源：</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1039 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="HTML5存储,HTML5离线应用," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="HTML5存储知识客户端存储四种传统的存储方法: cache（缓存） 数据库 磁盘文件 内存">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5存储及离线应用实战">
+<meta property="og:url" content="http://xifengxx.github.io/2016/07/10/HTML5存储及离线应用实战/index.html">
+<meta property="og:site_name" content="西风前端">
+<meta property="og:description" content="HTML5存储知识客户端存储四种传统的存储方法: cache（缓存） 数据库 磁盘文件 内存">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.1.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.2.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.3.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.4.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.5.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.6.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.7.0.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.11.7.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.11.1.jpg">
+<meta property="og:updated_time" content="2016-07-18T01:03:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5存储及离线应用实战">
+<meta name="twitter:description" content="HTML5存储知识客户端存储四种传统的存储方法: cache（缓存） 数据库 磁盘文件 内存">
+<meta name="twitter:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> HTML5存储及离线应用实战 | 西风前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-webdemo">
+          <a href="https://xifengxx.github.io/web-demo/" rel="section">
+            
+            前端作品Demo
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTML5存储及离线应用实战
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-10T20:23:24+08:00" content="2016-07-10">
+              2016-07-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/HTML5/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML5</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/10/HTML5存储及离线应用实战/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/10/HTML5存储及离线应用实战/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/10/HTML5存储及离线应用实战/" class="leancloud_visitors" data-flag-title="HTML5存储及离线应用实战">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="HTML5存储知识"><a href="#HTML5存储知识" class="headerlink" title="HTML5存储知识"></a>HTML5存储知识</h2><h3 id="客户端存储"><a href="#客户端存储" class="headerlink" title="客户端存储"></a>客户端存储</h3><p>四种传统的存储方法: cache（缓存） 数据库 磁盘文件 内存<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.1.jpg" alt="1"><br><a id="more"></a></p>
+<h3 id="H5之前的存储"><a href="#H5之前的存储" class="headerlink" title="H5之前的存储"></a>H5之前的存储</h3><h4 id="cookies"><a href="#cookies" class="headerlink" title="cookies"></a>cookies</h4><p><strong>Cookies缺陷：</strong></p>
+<ul>
+<li>http请求头 会显得臃肿 而且效率相对较低</li>
+<li>4kb的大小 能存储的比较有限</li>
+<li>主Domain污染 访问记录或者http请求的时候，会带着主域名的东西，这样随意去存取得话，会造成主域名的污染,造成一定的安全隐患.</li>
+</ul>
+<p>cookies在浏览器存储形态：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.2.jpg" alt="2"></p>
+<h4 id="UserData"><a href="#UserData" class="headerlink" title="UserData"></a>UserData</h4><p>只有IE支持(5-9支持)，XML文件。<br>存储大小：64k.</p>
+<h3 id="HTML5存储"><a href="#HTML5存储" class="headerlink" title="HTML5存储"></a>HTML5存储</h3><p><strong>目标：</strong></p>
+<ol>
+<li>解决4K大小问题</li>
+<li>解决请求头常带存储信息的问题</li>
+<li>解决关系型存储的问题</li>
+<li>跨浏览器支持</li>
+</ol>
+<p><strong>HTML5存储优势：</strong></p>
+<ul>
+<li>存储空间大</li>
+<li>接口丰富</li>
+<li>数据相对安全</li>
+<li>关系型</li>
+<li>省流量</li>
+</ul>
+<p><strong>HTML5存储劣势</strong></p>
+<ul>
+<li>浏览器兼容</li>
+<li>同源</li>
+<li>脚本控制</li>
+<li>更新策略</li>
+</ul>
+<p><strong>H5存储形式：</strong></p>
+<ul>
+<li>localstorage &amp;&amp; sessionstorage：本地存储</li>
+<li>application cache(离线储存)</li>
+<li>indexedDB和Web SQL</li>
+</ul>
+<h4 id="localstorage-amp-amp-sessionstorage：本地存储"><a href="#localstorage-amp-amp-sessionstorage：本地存储" class="headerlink" title="localstorage &amp;&amp; sessionstorage：本地存储"></a>localstorage &amp;&amp; sessionstorage：本地存储</h4><p>Web Storage实际上由两部分组成：sessionStorage与localStorage。<br>sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。<br>localStorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。</p>
+<p><strong>API：</strong>localstorage &amp;&amp; sessionstorage<br><strong>存储形式</strong>：key → Value<br><strong>过期：</strong></p>
+<ul>
+<li>localstorage是永久存储，永不过期的，除非是手动删除</li>
+<li>sessionstorage是如果重新打开页面或者关闭浏览器，则sessionstorage就消失了</li>
+</ul>
+<p><strong>大小：</strong>每个域名5M<br><strong>使用方法：</strong><br>Web Storage中存储的是键值对，而且浏览器会以字符串方式存储。记住在必要的时候将他们转为其他格式。<br>sessionStorage与localStorage除了用途不同外，成员列表是一样的：<br>    key = value: 存贮键值对<br>    setItem(key, value): 存贮键值对<br>    getItem(key): 取键值对<br>    removeItem(key)：移除所有键值对<br>    clear()：清空所有键值对<br>    length：键值对的数目<br>setItem(key,value)方法中的value类型，理论上可以是任意类型，不过实际上浏览器会调用value的toString方法来获取其字符串值并存储到本地，因此如果是自定义的类型则需要自己定义有意义的toString方法。</p>
+<p><strong>h5本地存储：</strong><br>只要是能序列化成字符串 或是转换成字符串的 就可以存储(数组、json数据、图片、脚本、样式文件)<br>图片存储的一个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> src = <span class="string">'5k.jpg'</span></span><br><span class="line"><span class="keyword">var</span> set = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">"img"</span>);</span><br><span class="line">    img.addEventListener(<span class="string">"load"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> imgCanvas = <span class="built_in">document</span>.createElement(<span class="string">"canvas"</span>),</span><br><span class="line">            imgContext = imgCanvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">        imgCanvas.width = <span class="keyword">this</span>.width;</span><br><span class="line">        imgCanvas.height = <span class="keyword">this</span>.height;</span><br><span class="line">        <span class="comment">//渲染</span></span><br><span class="line">        imgContext.drawImage(<span class="keyword">this</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="keyword">this</span>.width,<span class="keyword">this</span>.height);</span><br><span class="line">        <span class="keyword">var</span> imgAsDataUrl = imgCanvas.toDataURL(<span class="string">"image/png"</span>);</span><br><span class="line">        <span class="comment">//保存到本地</span></span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            localStorage.setItem(key,imgAsDataUrl);</span><br><span class="line">        &#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"storage failed : "</span> + e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,<span class="literal">false</span>);</span><br><span class="line">    img.src = src;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> get = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> srcStr = localStorage.getItem(key);</span><br><span class="line">    <span class="keyword">var</span> imgObj = <span class="built_in">document</span>.createElement(<span class="string">"img"</span>);</span><br><span class="line">    imgObj.src = srcStr;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(imgObj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>使用注意事项：</strong><br>1、使用前要判断浏览器是否支持（无痕模式不支持/一些奇葩浏览器不支持）；<br>2、写数据时候，需要异常处理，避免超出容量跑错（单个域名，容量5M）；<br>3、避免把敏感的信息存入localstorage；<br>4、key的唯一性（同key后边的会覆盖前边的）；</p>
+<p><strong>使用限制：</strong><br>1、存储更新策略，过期控制:存储在本地的数据未加密而且永远不会过期，极易造成隐私泄漏。<br>2、子域名之间不能共享存储数据:浏览器会为每个域分配独立的存储空间，即脚本在域A中是无法访问到域B中的存储空间的，但是浏览器却不会检查脚本所在的域与当前域是否相同。即在域B中嵌入域A中的脚本依然可以访问域B中的数据。<br>3、超出存储大小之后如何存储(LRU,FIFO)<br>4、server端如何取到。localstorage只存客户端，server没办法访问到，如果server端有需求，只能更载post/get请求</p>
+<p><strong>使用场景：</strong><br>1、利用本地数据，减少网络传输<br>2、弱网络环境下，高延迟，低带宽，尽量把数据本地化<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.3.jpg" alt="3"></p>
+<h4 id="Web-SQL-Database"><a href="#Web-SQL-Database" class="headerlink" title="Web SQL Database"></a>Web SQL Database</h4><p>Web SQL Database API 实际上未包含在 HTML 5 规范之中，它是一个独立的规范，它引入了一套使用 SQL 操作客户端数据库的 API。<br>它的核心方法有三个：openDatabase，transaction 和 executeSql。 这些 API 已经被广泛的实现在了不同的浏览器里，尤其是手机端浏览器。<br>W3C 官方在 2011 年 11 月声明已经不再维护 Web SQL Database 规范，</p>
+<h4 id="indexedDB"><a href="#indexedDB" class="headerlink" title="indexedDB"></a>indexedDB</h4><p>Indexed Database，也可简称为 IndexedDB（以前被称作 WebSimpleDB），同样是一个 Web 客户端存储结构化数据的规范.<br>indexedDB是一种能在浏览器中持久存储结构化数据的DB，并且为web应用提供了丰富的查询能力。<br>IndexedDB是为了替代目前已被废弃的Web SQL Database API而出现的。Indexed DB的实现是创建一套API，方便保存和读取javaScript对象，同时还支持查询及搜索。<br> var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.msIndexedDB;</p>
+<h5 id="indexedDB存储结构"><a href="#indexedDB存储结构" class="headerlink" title="indexedDB存储结构"></a>indexedDB存储结构</h5><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.4.jpg" alt=""><br>indexedDB按域名分配独立空间，一个域名下可创建N个DB，一个DB有N个储存空间表，一个存储空间有N个对象数据。</p>
+<p>IndexedDB最大的特色是：<strong>使用对象保存数据，而不是使用表来保存数据。</strong>一个IndexedDB数据库，就是一组位于相同命名空间下的对象的集合。</p>
+<h5 id="IndexedDB操作"><a href="#IndexedDB操作" class="headerlink" title="IndexedDB操作"></a>IndexedDB操作</h5><p><strong>数据库</strong><br>使用IndexedDB的第一步是打开它，即把要打开的数据库名传给indexedDB.open().<br>调用indexedDB.open()会返回一个IDBRequest对象，在这个对象上可以添加onerror和onsuccess事件处理程序。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var request = indexedDB.open(dbName);</span><br></pre></td></tr></table></figure></p>
+<p><strong>对象存储空间</strong><br><code>var objectStore = thisDb.createObjectStore(tablename,{keyPath:&quot;id&quot;,autoIncrement:true});</code><br><strong>事务</strong><br>在数据库对象上调用transaction()方法可以创建事务。任何时候，只要想读取或修改数据，都要通过事务来组织所有操作。<br>创建事务：<br><code>var transaction=db.transaction();</code><br>取得了事务的索引后，使用objectStore()方法并传入存储空间的名称，就可以访问特定的存储空间。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var transaction = db.transaction([tablename],&quot;readwrite&quot;);</span><br><span class="line">var objectStore = transaction.objectStore(tablename);</span><br></pre></td></tr></table></figure></p>
+<p><strong>游标</strong><br>使用事务可以直接通过已知的键检索单个对象。而在需要检索多个对象的情况下，则需要在事务内部创建游标。游标就是一指向结果集的指针。<br>在对象存储空间上调用openCursor()方法可以创建游标。openCursor()方法返回的是一个请求对象，因此必须为该对象指定onsuccess和onerror事件处理程序。<br>在onsuccess事件处理程序执行时，可以通过event.target.result取得存储空间中的下一个对象。<br>如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> objectStore = transaction.objectStore(tablename);</span><br><span class="line"><span class="comment">//使用游标遍历</span></span><br><span class="line">objectStore.openCursor().onsuccess =<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> cursor = event.target.result;</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br><span class="line">objectStore.openCursor().onerror=<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.dir(event);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>键范围</strong><br>通过游标查找数据的方式太有限了。键范围(key range)为使用游标增添了一些灵活性。<br>有四种定义键范围的方式，第一种是使用only()方法，传入你想要取得的对象的键。<br><code>var boundKeyRange = IDBKeyRange.only(curName);</code><br>这个范围可以保证只取得键为curName的对象。<br><strong>索引</strong><br>对于某些数据，可能需要为一个对象存储空间指定多个键。因此，可以考虑创建索引。<br>要创建索引，首先引用对象存储空间，然后调用createIndex()方法，如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> objectStore = thisDb.createObjectStore(tablename,&#123;keyPath:<span class="string">"id"</span>,autoIncrement:<span class="literal">true</span>&#125;);</span><br><span class="line">objectStore.createIndex(<span class="string">"name"</span>,<span class="string">"name"</span>,&#123;unique:<span class="literal">false</span>&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="application-cache-离线储存"><a href="#application-cache-离线储存" class="headerlink" title="application cache(离线储存)"></a>application cache(离线储存)</h4><p>它可以让Web应用在离线的情况下继续使用，通过manifest文件指明需要缓存的资源。</p>
+<p>检测是否在线：navigator.onLine</p>
+<h5 id="离线缓存的原理："><a href="#离线缓存的原理：" class="headerlink" title="离线缓存的原理："></a>离线缓存的原理：</h5><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.5.jpg" alt="5"></p>
+<h5 id="HTML5离线缓存使用："><a href="#HTML5离线缓存使用：" class="headerlink" title="HTML5离线缓存使用："></a>HTML5离线缓存使用：</h5><p>1、在HTML页面文件 引入manifest.appcache</p>
+<p><html manifest="manifest.appcache"><br>manifest文件格式：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.6.jpg" alt="6"><br>2、服务器端mime-type文件添加 text/cache-manifest 支持</html></p>
+<p>更新缓存：修改appcache文件中的版本号即可；<br>取消使用缓存：去掉html标签中的manifest=“XXX.appcache”，再修改APPCache文件的名字<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//监控</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.applicationCache.onupdateready = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">window</span>.applicationCache.status);</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">window</span>.applicationCache.status == <span class="built_in">window</span>.applicationCache.UPDATEREADY)&#123;</span><br><span class="line">            <span class="built_in">window</span>.applicationCache.swapCache();</span><br><span class="line">            <span class="keyword">if</span>(confirm(<span class="string">'版本更换，是否确认加载？要重新刷新两次'</span>))&#123;</span><br><span class="line">                <span class="built_in">window</span>.location.reload();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'manifest did not change'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="HTML5离线缓存特点："><a href="#HTML5离线缓存特点：" class="headerlink" title="HTML5离线缓存特点："></a>HTML5离线缓存特点：</h5><p><strong>优点：</strong></p>
+<ul>
+<li>完全离线</li>
+<li>资源被缓存，加载更快</li>
+<li>降低server负担</li>
+</ul>
+<p><strong>使用缺陷：</strong></p>
+<ul>
+<li>含有manifest属性的当前请求页无论如何都会被缓存</li>
+<li>更新需要建立在manifest文件的更新，文件更新后是需要页面再次刷新的(需要2次刷新才能获取新资源)</li>
+<li>更新是全局性的，无法单独更新某个文件(无法单点更新)</li>
+<li>对于链接的参数变化是敏感的，任何一个参数的修改都会被(master)重新缓存(重复缓存含参页面)。index.html和index.html?renew=1会被认为是不同文件，分别缓存。</li>
+</ul>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>单地址的页面</li>
+<li>对实时性要求不高的业务</li>
+<li>离线webapp</li>
+</ul>
+<h2 id="离线应用实战"><a href="#离线应用实战" class="headerlink" title="离线应用实战"></a>离线应用实战</h2><p>离线：<br>离线浏览，缓存数据<br>本地保存用户操作数据</p>
+<p>Web app：HTML5 + CSS3 +JAVASCRIPT</p>
+<p>html5 提供的数据持久化技术：<br>A、Application Cache 本地缓存应用所需的文件，保存应用本身数据<br>B、Local Storeage &amp; Session Storage 键值对（Key - Value）存储数据，应用本身，用户数据，下载数据<br>C、Web SQL 关系数据库，通过SQL语句访问<br>D、IndexDB 索引数据库，键值对（Key - Value）存储数据。数据量更大，查询更快。</p>
+<h3 id="Application-Cache应用介绍"><a href="#Application-Cache应用介绍" class="headerlink" title="Application Cache应用介绍"></a>Application Cache应用介绍</h3><p>Manifest文件：<br>Application Cache 的浏览器事件</p>
+<p>特点：<br>1、Manifest文件有变化才更新<br>2、一次必须更新Manifest中的所有文件下次才生效</p>
+<h3 id="离线应用案例："><a href="#离线应用案例：" class="headerlink" title="离线应用案例："></a>离线应用案例：</h3><p>目标：将一个RSS新闻阅读应用改造为IOS离线APP<br>提纲：<br>新闻阅读器的构架<br>代码分析<br>改造方案</p>
+<h4 id="新闻阅读器的构架"><a href="#新闻阅读器的构架" class="headerlink" title="新闻阅读器的构架"></a>新闻阅读器的构架</h4><h5 id="MVC设计模式"><a href="#MVC设计模式" class="headerlink" title="MVC设计模式"></a>MVC设计模式</h5><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.10.7.0.jpg" alt="7.0"><br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.11.7.jpg" alt="7"></p>
+<h5 id="离线改造"><a href="#离线改造" class="headerlink" title="离线改造"></a>离线改造</h5><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.11.1.jpg" alt="11.1"></p>
+<h5 id="将JS和CSS保存Local-Storage"><a href="#将JS和CSS保存Local-Storage" class="headerlink" title="将JS和CSS保存Local Storage"></a>将JS和CSS保存Local Storage</h5><p>第一步：将JS文件和CSS文件转换成字符串<br>–合并js文件、css文件的内容<br>–转换成json对象<br>路径：api/resources/index.php</p>
+<p>第二步：将字符串加入HTML中<br>–插入Javascript代码<br>–插入CSS样式<br>路径：index.html<br>      applicationController.js</p>
+<p>第三部：保存到Local Storage中<br>路径：applicationController.js</p>
+<h5 id="将应用离线化"><a href="#将应用离线化" class="headerlink" title="将应用离线化"></a>将应用离线化</h5><p>1、准备manifest文件，开启离线缓存<br>2、判断离线状态：navigator&amp;&amp;navigator.onLine<br>3、读取离线资源<br>路径：index.html</p>
+<h3 id="项目下载；"><a href="#项目下载；" class="headerlink" title="项目下载；"></a>项目下载；</h3><p><a href="http://www.imooc.com/learn/46" target="_blank" rel="external">在线视频</a><br><a href="http://img.mukewang.com/down/53a94ea400010b3200000000.zip" target="_blank" rel="external">下载地址</a></p>
+<h3 id="参考资源："><a href="#参考资源：" class="headerlink" title="参考资源："></a>参考资源：</h3><ol>
+<li>HTML5 Web SQL Database 与 Indexed Database 的 CRUD 操作 <a href="http://www.ibm.com/developerworks/cn/web/1210_jiangjj_html5db/index.html" target="_blank" rel="external">http://www.ibm.com/developerworks/cn/web/1210_jiangjj_html5db/index.html</a></li>
+<li></li>
+</ol>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="xifengxx WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="xifengxx Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML5存储/" rel="tag">#HTML5存储</a>
+          
+            <a href="/tags/HTML5离线应用/" rel="tag">#HTML5离线应用</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/10/HTML5音乐可视化/" rel="next" title="HTML5音乐可视化">
+                <i class="fa fa-chevron-left"></i> HTML5音乐可视化
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/11/HTML5 Canvas绘图笔记(2)/" rel="prev" title="HTML5 Canvas绘图笔记(2)">
+                HTML5 Canvas绘图笔记(2) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/10/HTML5存储及离线应用实战/"
+           data-title="HTML5存储及离线应用实战" data-url="http://xifengxx.github.io/2016/07/10/HTML5存储及离线应用实战/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="xifengxx" />
+          <p class="site-author-name" itemprop="name">xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">71</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5存储知识"><span class="nav-number">1.</span> <span class="nav-text">HTML5存储知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端存储"><span class="nav-number">1.1.</span> <span class="nav-text">客户端存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#H5之前的存储"><span class="nav-number">1.2.</span> <span class="nav-text">H5之前的存储</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#cookies"><span class="nav-number">1.2.1.</span> <span class="nav-text">cookies</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UserData"><span class="nav-number">1.2.2.</span> <span class="nav-text">UserData</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5存储"><span class="nav-number">1.3.</span> <span class="nav-text">HTML5存储</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#localstorage-amp-amp-sessionstorage：本地存储"><span class="nav-number">1.3.1.</span> <span class="nav-text">localstorage && sessionstorage：本地存储</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Web-SQL-Database"><span class="nav-number">1.3.2.</span> <span class="nav-text">Web SQL Database</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#indexedDB"><span class="nav-number">1.3.3.</span> <span class="nav-text">indexedDB</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#indexedDB存储结构"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">indexedDB存储结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IndexedDB操作"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">IndexedDB操作</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#application-cache-离线储存"><span class="nav-number">1.3.4.</span> <span class="nav-text">application cache(离线储存)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#离线缓存的原理："><span class="nav-number">1.3.4.1.</span> <span class="nav-text">离线缓存的原理：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML5离线缓存使用："><span class="nav-number">1.3.4.2.</span> <span class="nav-text">HTML5离线缓存使用：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML5离线缓存特点："><span class="nav-number">1.3.4.3.</span> <span class="nav-text">HTML5离线缓存特点：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线应用实战"><span class="nav-number">2.</span> <span class="nav-text">离线应用实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Application-Cache应用介绍"><span class="nav-number">2.1.</span> <span class="nav-text">Application Cache应用介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#离线应用案例："><span class="nav-number">2.2.</span> <span class="nav-text">离线应用案例：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新闻阅读器的构架"><span class="nav-number">2.2.1.</span> <span class="nav-text">新闻阅读器的构架</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MVC设计模式"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">MVC设计模式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#离线改造"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">离线改造</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将JS和CSS保存Local-Storage"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">将JS和CSS保存Local Storage</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将应用离线化"><span class="nav-number">2.2.1.4.</span> <span class="nav-text">将应用离线化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目下载；"><span class="nav-number">2.3.</span> <span class="nav-text">项目下载；</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资源："><span class="nav-number">2.4.</span> <span class="nav-text">参考资源：</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

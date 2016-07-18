@@ -1,0 +1,988 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Canvas," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="西风前端" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="绘制图像引入图像到canvas里需要以下两步基本操作：-获得一个指向HTMLImageElement的对象或者另一个canvas元素的引用作为源，也可以通过提供一个URL的方式来使用图片-使用drawImage()函数将图片绘制到画布上">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5 Canvas绘图笔记(2)">
+<meta property="og:url" content="http://xifengxx.github.io/2016/07/11/HTML5 Canvas绘图笔记(2)/index.html">
+<meta property="og:site_name" content="西风前端">
+<meta property="og:description" content="绘制图像引入图像到canvas里需要以下两步基本操作：-获得一个指向HTMLImageElement的对象或者另一个canvas元素的引用作为源，也可以通过提供一个URL的方式来使用图片-使用drawImage()函数将图片绘制到画布上">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.7.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.9.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.8.jpg">
+<meta property="og:updated_time" content="2016-07-18T00:58:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5 Canvas绘图笔记(2)">
+<meta name="twitter:description" content="绘制图像引入图像到canvas里需要以下两步基本操作：-获得一个指向HTMLImageElement的对象或者另一个canvas元素的引用作为源，也可以通过提供一个URL的方式来使用图片-使用drawImage()函数将图片绘制到画布上">
+<meta name="twitter:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.7.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> HTML5 Canvas绘图笔记(2) | 西风前端 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1e199d27279271fc384c64d64d900b77";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">西风前端</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Web前端学习博客。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-webdemo">
+          <a href="https://xifengxx.github.io/web-demo/" rel="section">
+            
+            前端作品Demo
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-nec">
+          <a href="/course-notes" rel="section">
+            
+            前端微专业
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTML5 Canvas绘图笔记(2)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-11T16:23:24+08:00" content="2016-07-11">
+              2016-07-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Canvas/" itemprop="url" rel="index">
+                    <span itemprop="name">Canvas</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/11/HTML5 Canvas绘图笔记(2)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/11/HTML5 Canvas绘图笔记(2)/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/11/HTML5 Canvas绘图笔记(2)/" class="leancloud_visitors" data-flag-title="HTML5 Canvas绘图笔记(2)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="绘制图像"><a href="#绘制图像" class="headerlink" title="绘制图像"></a>绘制图像</h3><p>引入图像到canvas里需要以下两步基本操作：<br>-获得一个指向HTMLImageElement的对象或者另一个canvas元素的引用作为源，也可以通过提供一个URL的方式来使用图片<br>-使用drawImage()函数将图片绘制到画布上<br><a id="more"></a></p>
+<h4 id="获得需要绘制的图片"><a href="#获得需要绘制的图片" class="headerlink" title="获得需要绘制的图片"></a>获得需要绘制的图片</h4><p>有几种方式可以获取到我们需要在canvas上使用的图片。</p>
+<h5 id="由零开始创建图像"><a href="#由零开始创建图像" class="headerlink" title="由零开始创建图像"></a>由零开始创建图像</h5><p>1、新建图片对象，并将其src属性设置为图片路径。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var img = new Image();   // 创建一个img元素</span><br><span class="line">img.src = &apos;myImage.png&apos;; // 设置图片源地址</span><br></pre></td></tr></table></figure></p>
+<p>2、将绘制代码放在img.onload中，让绘制在图片加载完后执行.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var img = new Image();   // 创建img元素</span><br><span class="line">img.onload = function()&#123;</span><br><span class="line">  context.drawImage(img,50,50);// 执行drawImage语句&#125;</span><br><span class="line">img.src = &apos;myImage.png&apos;; // 设置图片源地址</span><br></pre></td></tr></table></figure>
+<p>当脚本执行后，图片开始装载。若调用 drawImage 时，图片没装载完，那什么都不会发生（在一些旧的浏览器中可能会抛出异常）。因此你应该用load时间来保证不会在加载完毕之前使用这个图片.</p>
+<h5 id="使用相同页面内的图片"><a href="#使用相同页面内的图片" class="headerlink" title="使用相同页面内的图片"></a>使用相同页面内的图片</h5><p>通过下列方法的一种来获得与canvas相同页面内的图片的引用：<br>-document.images集合<br>-document.getElementsByTagName()方法</p>
+<ul>
+<li>document.getElementById() //通过图片ID获得这个图片</li>
+</ul>
+<h5 id="使用其它-canvas-元素"><a href="#使用其它-canvas-元素" class="headerlink" title="使用其它 canvas 元素"></a>使用其它 canvas 元素</h5><p>和引用页面内的图片类似地，用 document.getElementsByTagName 或 document.getElementById 方法来获取其它 canvas 元素。但你引入的应该是已经准备好的 canvas。<br>一个常用的应用就是将第二个canvas作为另一个大的 canvas 的缩略图。</p>
+<h5 id="通过-data-url-方式嵌入图像"><a href="#通过-data-url-方式嵌入图像" class="headerlink" title="通过 data: url 方式嵌入图像"></a>通过 data: url 方式嵌入图像</h5><p>Data urls 允许用一串 Base64 编码的字符串的方式来定义一个图片。<br><code>var img_src = &#39;data:image/gif;base64,R0lGODlhCwALAIAAAAAA3pn/ZiH5BAEAAAEALAAAAAALAAsAAAIUhA+hkcuO4lmNVindo7qyrIXiGBYAOw==&#39;;</code><br>其优点就是图片内容即时可用，无须再到服务器兜一圈。（还有一个优点是，可以将 CSS，JavaScript，HTML 和 图片全部封装在一起，迁移起来十分方便。）<br>缺点就是图像没法缓存，图片大的话内嵌的 url 数据会相当的长.</p>
+<h4 id="绘制图片"><a href="#绘制图片" class="headerlink" title="绘制图片"></a>绘制图片</h4><p>一旦获得了源图对象，我们就可以使用 drawImage 方法将它渲染到 canvas 里。drawImage 方法有三种形态.</p>
+<h5 id="drawImage-image-x-y"><a href="#drawImage-image-x-y" class="headerlink" title="drawImage(image, x, y)"></a><code>drawImage(image, x, y)</code></h5><p>其中image为图片对象名称，x 和 y 为绘图位置（图片左上角在画布中的坐标）.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//画布300*300，图片200*200</span><br><span class="line">var img = new Image();</span><br><span class="line">img.src = &quot;http://img3.imgtn.bdimg.com/it/u=1011179444,2282576107&amp;fm=21&amp;gp=0.jpg&quot;;</span><br><span class="line"></span><br><span class="line">context.beginPath();</span><br><span class="line">img.onload = function () &#123;</span><br><span class="line">    context.drawImage(img,50,50);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="drawImage-image-x-y-width-height"><a href="#drawImage-image-x-y-width-height" class="headerlink" title="drawImage(image, x, y, width, height):"></a>drawImage(image, x, y, width, height):</h5><ul>
+<li>x和y ：绘图位置（图片左上角在画布中的坐标）</li>
+<li>width和height：自定义图片在canvas中显示的大小<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//画布300*300，图片200*200</span><br><span class="line">var img = new Image();</span><br><span class="line">img.src = &quot;http://img3.imgtn.bdimg.com/it/u=1011179444,2282576107&amp;fm=21&amp;gp=0.jpg&quot;;</span><br><span class="line"></span><br><span class="line">context.beginPath();</span><br><span class="line">img.onload = function () &#123;</span><br><span class="line">    context.drawImage(img,0,0,300,300);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="drawImage-image-sx-sy-sWidth-sHeight-dx-dy-dWidth-dHeight"><a href="#drawImage-image-sx-sy-sWidth-sHeight-dx-dy-dWidth-dHeight" class="headerlink" title="drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight):"></a>drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight):</h5><p>选取图像的一部分矩形区域进行绘制.</p>
+<ul>
+<li>sx：图像上的x坐标</li>
+<li>sy：图像上的y坐标</li>
+<li>sWidth：矩形区域的宽度</li>
+<li>sHeight：矩形区域的高度</li>
+<li>dx：画在canvas的x坐标</li>
+<li>dy：画在canvas的y坐标</li>
+<li>dWidth：画出来的宽度</li>
+<li>dHeight：画出来的高度<br>前4个是定义图像源的切片位置和大小，后4个则是定义切片的目标显示位置和大小。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.7.jpg" alt="7"></li>
+</ul>
+<h4 id="图像裁剪c-ontext-clip"><a href="#图像裁剪c-ontext-clip" class="headerlink" title="图像裁剪c ontext.clip()"></a>图像裁剪c ontext.clip()</h4><p>context.clip()只绘制封闭路径区域内的图像，不绘制路径外部图像，用的时候<br>先创建裁剪区域，再绘制图像.<br>如图所示。红边五角星就是裁切路径，所有在路径以外的部分都不会在 canvas 上绘制出来。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.9.jpg" alt="9"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h3 id="图片像素处理"><a href="#图片像素处理" class="headerlink" title="图片像素处理"></a>图片像素处理</h3><h4 id="获取图片信息-使用图像数据"><a href="#获取图片信息-使用图像数据" class="headerlink" title="获取图片信息(使用图像数据)"></a>获取图片信息(使用图像数据)</h4><p><code>getImageData(sx,sy,sw,sh)</code></p>
+<ul>
+<li>sx:cavas的x轴坐标点</li>
+<li>sy:canvas的y轴坐标点</li>
+<li>sw:距离x的宽度</li>
+<li>sh:距离y的高度<br><code>var imagedata=context.getImageData(sx,sy,sw,sh)</code><br>这里返回的对象是ImageData的实例。每个ImageData对象都有三个属性：width/height/data.<br><strong> data</strong><br>data属性是一个数组，保存着图像中每一个像素的数据。在data数组中，每一个像素用4个元素来保存，分别表示红、绿、蓝和透明度值。也就是[r1,g1,b1,a1,r2,g2,b2,a2,r3,g3,b3,a3…]这样一直排列下去.<br>数组的长度length = w <em> h </em> 4<br>在循环数组获取每个元素的时候，一般是要让i+=4这样获取每个像素<br>data数组中每个元素的值大小：0-255.</li>
+</ul>
+<h4 id="设置像素颜色："><a href="#设置像素颜色：" class="headerlink" title="设置像素颜色："></a>设置像素颜色：</h4><p><code>context.putImageData(imagedata,dx,dy,dirtyX,dirtyY,dirtyWidth,dirtyHeight)</code><br>对imagedata数组中的各个像素的r、g、b、a值进行修改，再调用putImageData方法进行绘制</p>
+<ul>
+<li>imagedata:修改后的imagedata</li>
+<li>dx:重绘图像的起点横坐标（重绘的起点和原来的图像一致的话就会把原来的图形覆盖掉，看起来就像是原来的图像变成现在的图像一样）</li>
+<li>dy:重绘图像的起点纵坐标</li>
+<li>//以下可选参数，设置重绘的矩形范围，如果缺省，默认会重绘所有的imegedata<br>  – dirtyX:矩形左上角x轴坐标<br>  – dirtyY:矩形左上角y轴坐标<br>  – dirtyWidth:矩形长度<br>  – dirtyHeight:矩形高度</li>
+</ul>
+<h5 id="灰度效果"><a href="#灰度效果" class="headerlink" title="灰度效果"></a>灰度效果</h5><p>在rgba表示中，rgb值相同就一定是灰色.<br>获取每个像素的rgba值并将rgb值改为<code>gray = (r+g+b)/3</code><br>重绘像素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//灰度处理</span><br><span class="line">var imageData = context.getImageData(0,0,200,200);</span><br><span class="line">var data = imageData.data;</span><br><span class="line">for (var i = 0; i&lt;200*200*4; i+=4)&#123;</span><br><span class="line">    var r = data[i];</span><br><span class="line">    var g = data[i+1];</span><br><span class="line">    var b = data[i+2];</span><br><span class="line">    var gray = (r+g+b)/3;</span><br><span class="line">    data[i] = gray;     //r值</span><br><span class="line">    data[i+1] = gray;    //g值</span><br><span class="line">    data[i+2] = gray;    //b值</span><br><span class="line">&#125;</span><br><span class="line">context.putImageData(imageData,200,0)</span><br></pre></td></tr></table></figure></p>
+<h5 id="反色效果"><a href="#反色效果" class="headerlink" title="反色效果"></a>反色效果</h5><p>在rgba表示中，rgb反色就是用255减去相应的数值<br>获取每个像素的rgba值并将rgb值改为 data[i] = 255-data[i]<br>重绘像素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//反色处理</span><br><span class="line">var imageData = context.getImageData(0,0,200,200);</span><br><span class="line">var data = imageData.data;</span><br><span class="line">for (var j = 0; j&lt;200*200*4; j+=4)&#123;</span><br><span class="line">    data[j] = 255-data[j];</span><br><span class="line">    data[j+1] = 255-data[j+1];</span><br><span class="line">    data[j+2] = 255-data[j+2];</span><br><span class="line">&#125;</span><br><span class="line">context.putImageData(imageData,0,200);</span><br></pre></td></tr></table></figure></p>
+<h3 id="图形输出"><a href="#图形输出" class="headerlink" title="图形输出"></a>图形输出</h3><p>使用<code>toDateURL()</code>方法，可以导出在canvas元素上绘制的图像。<br>这个方法接受一个参数，即图像的MIME类型格式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var canvas=document.getElementById(&quot;canvas&quot;);</span><br><span class="line">...</span><br><span class="line">var imgURI=canvas.toDataURL(&quot;image/png&quot;);</span><br><span class="line">var img=document.createElement(&quot;img&quot;);</span><br><span class="line">img.src=imgURI;</span><br><span class="line">document.body.appendChild(img);</span><br></pre></td></tr></table></figure></p>
+<h3 id="图形组合-compositing"><a href="#图形组合-compositing" class="headerlink" title="图形组合 compositing"></a>图形组合 compositing</h3><p><code>context.globalCompositeOperation=type</code><br>我们不仅可以在已有图形后面再画新图形，还可以用来遮盖，清除（比 clearRect 方法强劲得多）某些区域。<br>图形组合就是两个图形相互叠加了图形的表现形式,是后画的覆盖掉先画的呢，还是相互重叠的部分不显示等等，至于怎么显示就取决于type的值了<br>type：<br>-source-over(default):这是默认设置，新图形会覆盖在原有内容之上。<br>-source-in:新图形会仅仅出现与原有内容重叠的部分。其它区域都变成透明的。<br>-source-out:结果是只有新图形中与原有内容不重叠的部分会被绘制出来。<br>-source-atop:新图形中与原有内容重叠的部分会被绘制，并覆盖于原有内容之上。<br>-destination-over:会在原有内容之下绘制新图形。<br>-destination-in:原有内容中与新图形重叠的部分会被保留，其它区域都变成透明的。<br>-destination-out:原有内容中与新图形不重叠的部分会被保留。<br>-destination-atop:原有内容中与新内容重叠的部分会被保留，并会在原有内容之下绘制新图形<br>-lighter:两图形中重叠部分作加色处理。<br>-darker:两图形中重叠的部分作减色处理。<br>-copy:只有新图形会被保留，其它都被清除掉。<br>-xor:重叠的部分会变成透明。</p>
+<p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/7.12.8.jpg" alt="8"><br>注意：蓝色方块是先绘制的，即“已有的 canvas 内容”，红色圆形是后面绘制，即“新图形”。</p>
+<h3 id="参考资源："><a href="#参考资源：" class="headerlink" title="参考资源："></a>参考资源：</h3><ol>
+<li>canvas学习（二） <a href="http://www.jianshu.com/p/65de47ef33d2" target="_blank" rel="external">http://www.jianshu.com/p/65de47ef33d2</a></li>
+<li>玩转html5<code>&lt;canvas&gt;</code>画图  <a href="http://www.cnblogs.com/tim-li/archive/2012/08/06/2580252.html#10" target="_blank" rel="external">http://www.cnblogs.com/tim-li/archive/2012/08/06/2580252.html#10</a></li>
+<li>Canvas教程 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial" target="_blank" rel="external">https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial</a></li>
+</ol>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.png" alt="xifengxx WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.png" alt="xifengxx Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Canvas/" rel="tag">#Canvas</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/10/HTML5存储及离线应用实战/" rel="next" title="HTML5存储及离线应用实战">
+                <i class="fa fa-chevron-left"></i> HTML5存储及离线应用实战
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/11/HTML5 Canvas绘图笔记(1)/" rel="prev" title="HTML5 Canvas绘图笔记(1)">
+                HTML5 Canvas绘图笔记(1) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/11/HTML5 Canvas绘图笔记(2)/"
+           data-title="HTML5 Canvas绘图笔记(2)" data-url="http://xifengxx.github.io/2016/07/11/HTML5 Canvas绘图笔记(2)/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="xifengxx" />
+          <p class="site-author-name" itemprop="name">xifengxx</p>
+          <p class="site-description motion-element" itemprop="description">在梦想面前，一切都是借口。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">71</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/xifengxx" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="/uploads/wechat.jpg" target="_blank">
+                  
+                    <i class="fa fa-wechat"></i>
+                  
+                  Weixin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xifengxx.com/" target="_blank">西风博客</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制图像"><span class="nav-number">1.</span> <span class="nav-text">绘制图像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获得需要绘制的图片"><span class="nav-number">1.1.</span> <span class="nav-text">获得需要绘制的图片</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#由零开始创建图像"><span class="nav-number">1.1.1.</span> <span class="nav-text">由零开始创建图像</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用相同页面内的图片"><span class="nav-number">1.1.2.</span> <span class="nav-text">使用相同页面内的图片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用其它-canvas-元素"><span class="nav-number">1.1.3.</span> <span class="nav-text">使用其它 canvas 元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过-data-url-方式嵌入图像"><span class="nav-number">1.1.4.</span> <span class="nav-text">通过 data: url 方式嵌入图像</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绘制图片"><span class="nav-number">1.2.</span> <span class="nav-text">绘制图片</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#drawImage-image-x-y"><span class="nav-number">1.2.1.</span> <span class="nav-text">drawImage(image, x, y)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#drawImage-image-x-y-width-height"><span class="nav-number">1.2.2.</span> <span class="nav-text">drawImage(image, x, y, width, height):</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#drawImage-image-sx-sy-sWidth-sHeight-dx-dy-dWidth-dHeight"><span class="nav-number">1.2.3.</span> <span class="nav-text">drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight):</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图像裁剪c-ontext-clip"><span class="nav-number">1.3.</span> <span class="nav-text">图像裁剪c ontext.clip()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片像素处理"><span class="nav-number">2.</span> <span class="nav-text">图片像素处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取图片信息-使用图像数据"><span class="nav-number">2.1.</span> <span class="nav-text">获取图片信息(使用图像数据)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置像素颜色："><span class="nav-number">2.2.</span> <span class="nav-text">设置像素颜色：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#灰度效果"><span class="nav-number">2.2.1.</span> <span class="nav-text">灰度效果</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#反色效果"><span class="nav-number">2.2.2.</span> <span class="nav-text">反色效果</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图形输出"><span class="nav-number">3.</span> <span class="nav-text">图形输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图形组合-compositing"><span class="nav-number">4.</span> <span class="nav-text">图形组合 compositing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资源："><span class="nav-number">5.</span> <span class="nav-text">参考资源：</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xifengxx</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"417131853"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Kkljw3izeaB5Fa8P2HwSjqWq-gzGzoHsz", "JSwiiCRKO0LaKbGHyelnr6jY");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
