@@ -59,19 +59,19 @@
 
 
 
-<meta name="description" content="float及image问题&amp;lt;img&amp;gt;元素默认情况下底部会有空白,这样会导致页面排版时出现错乱问题。代码：12345678910111213141516171819202122232425262728293031&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;">
+<meta name="description">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web前端实战经验(CSS及页面布局)">
 <meta property="og:url" content="http://xifengxx.github.io/2016/11/11/Web前端实战经验(CSS及页面布局)/index.html">
 <meta property="og:site_name" content="西风前端">
-<meta property="og:description" content="float及image问题&amp;lt;img&amp;gt;元素默认情况下底部会有空白,这样会导致页面排版时出现错乱问题。代码：12345678910111213141516171819202122232425262728293031&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;">
+<meta property="og:description">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/web%E5%89%8D%E7%AB%AF.jpg">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-bug%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.png">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/git-minWidth.png">
-<meta property="og:updated_time" content="2016-07-18T01:12:08.000Z">
+<meta property="og:updated_time" content="2016-07-18T01:31:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端实战经验(CSS及页面布局)">
-<meta name="twitter:description" content="float及image问题&amp;lt;img&amp;gt;元素默认情况下底部会有空白,这样会导致页面排版时出现错乱问题。代码：12345678910111213141516171819202122232425262728293031&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=&quot;en&quot;&amp;gt;&amp;lt;head&amp;gt;    &amp;lt;meta charset=&quot;UTF-8&quot;&amp;gt;">
+<meta name="twitter:description">
 <meta name="twitter:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/web%E5%89%8D%E7%AB%AF.jpg">
 
 
@@ -341,8 +341,7 @@
       
 
       
-        <a id="more"></a>
-<p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/web%E5%89%8D%E7%AB%AF.jpg" alt=""></p>
+        <p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/web%E5%89%8D%E7%AB%AF.jpg" alt=""><br><a id="more"></a></p>
 <h3 id="float及image问题"><a href="#float及image问题" class="headerlink" title="float及image问题"></a>float及image问题</h3><p><code>&lt;img&gt;</code>元素默认情况下底部会有空白,这样会导致页面排版时出现错乱问题。<br>代码：<br><!--more--><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Bug问题汇总<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="css"></span><br><span class="line">    *&#123;<span class="attribute">margin</span>: <span class="number">0</span>;<span class="attribute">padding</span>: <span class="number">0</span>&#125;</span><br><span class="line">    <span class="selector-class">.wrap</span>&#123;<span class="attribute">margin</span>: <span class="number">0</span> auto;<span class="attribute">width</span>: <span class="number">1000px</span>;&#125;</span><br><span class="line">    <span class="selector-class">.top</span>&#123;<span class="attribute">height</span>: <span class="number">80px</span>;<span class="attribute">background-color</span>: <span class="number">#fff</span>;&#125;</span><br><span class="line">    <span class="selector-class">.top-left</span>&#123;<span class="attribute">float</span>: left;<span class="attribute">width</span>: <span class="number">200px</span>;<span class="attribute">background</span>: grey&#125;</span><br><span class="line">    <span class="selector-class">.top-right</span>&#123;<span class="attribute">width</span>:<span class="number">800px</span>;<span class="attribute">height</span>: <span class="number">80px</span>; <span class="attribute">float</span>: right;&#125;</span><br><span class="line">    <span class="selector-class">.mid</span>&#123;<span class="attribute">width</span>: <span class="number">1000px</span>;<span class="attribute">height</span>:<span class="number">40px</span>;<span class="attribute">background-color</span>: yellow;&#125;</span><br><span class="line">    <span class="selector-class">.mid</span> <span class="selector-tag">p</span>&#123;<span class="attribute">float</span>: left;<span class="attribute">width</span>: <span class="number">300px</span>;&#125;</span><br><span class="line">    <span class="selector-class">.mid</span> <span class="selector-tag">div</span>&#123;<span class="attribute">width</span>: <span class="number">800px</span>&#125;</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"top"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"top-left"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"logo.jpg"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"top-right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mid"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是大明星<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是大明星<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>页面布局图如下：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/git-bug%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90.png" alt="bug分析"><br>分析：div.top-left这个div元素的尺寸为：200<em>80px;<br>图片logo.jpg尺寸为200</em>80px.<br>但实际上div.top-left这个div元素的尺寸为：200*83px;</p>
 <p><strong>原因分析：</strong><br>img作为内联元素，会和文字一样具有行高和字号属性，默认对齐baseline，因此会溢出，导致p元素排版混乱。</p>
@@ -468,13 +467,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/11/Web前端实战经验(JS相关)/" rel="next" title="Web前端实战问题总结">
+              <a href="/2016/11/11/Web前端实战经验(浏览器兼容)/" rel="next" title="Web前端实战问题总结">
                 <i class="fa fa-chevron-left"></i> Web前端实战问题总结
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/11/Web前端实战经验(JS相关)/" rel="prev" title="Web前端实战问题总结">
+                Web前端实战问题总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
