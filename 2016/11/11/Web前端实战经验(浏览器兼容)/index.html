@@ -59,23 +59,17 @@
 
 
 
-<meta name="description" content="IE6不支持透明图片解法方案：通过JS代码让IE6支持
-
-下载JS支持文件：下载地址">
+<meta name="description" content="什么是CSS hack？由于不同厂商的浏览器或某浏览器的不同版本（如IE6-IE11，Firefox，Safari，Opera，Chrome等），对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。因此，为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Web前端实战经验(浏览器兼容)">
 <meta property="og:url" content="http://xifengxx.github.io/2016/11/11/Web前端实战经验(浏览器兼容)/index.html">
 <meta property="og:site_name" content="西风前端">
-<meta property="og:description" content="IE6不支持透明图片解法方案：通过JS代码让IE6支持
-
-下载JS支持文件：下载地址">
+<meta property="og:description" content="什么是CSS hack？由于不同厂商的浏览器或某浏览器的不同版本（如IE6-IE11，Firefox，Safari，Opera，Chrome等），对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。因此，为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack。">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/IE%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E5%8F%B3%E6%B5%AE%E5%8A%A8%E9%97%AE%E9%A2%98.jpg">
-<meta property="og:updated_time" content="2016-07-28T15:46:18.000Z">
+<meta property="og:updated_time" content="2016-07-31T16:19:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web前端实战经验(浏览器兼容)">
-<meta name="twitter:description" content="IE6不支持透明图片解法方案：通过JS代码让IE6支持
-
-下载JS支持文件：下载地址">
+<meta name="twitter:description" content="什么是CSS hack？由于不同厂商的浏览器或某浏览器的不同版本（如IE6-IE11，Firefox，Safari，Opera，Chrome等），对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。因此，为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack。">
 <meta name="twitter:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/IE%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E5%8F%B3%E6%B5%AE%E5%8A%A8%E9%97%AE%E9%A2%98.jpg">
 
 
@@ -345,13 +339,24 @@
       
 
       
-        <h3 id="IE6不支持透明图片"><a href="#IE6不支持透明图片" class="headerlink" title="IE6不支持透明图片"></a>IE6不支持透明图片</h3><p>解法方案：<br>通过JS代码让IE6支持</p>
+        <h3 id="什么是CSS-hack？"><a href="#什么是CSS-hack？" class="headerlink" title="什么是CSS hack？"></a>什么是CSS hack？</h3><p>由于不同厂商的浏览器或某浏览器的不同版本（如IE6-IE11，Firefox，Safari，Opera，Chrome等），对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。<br>因此，为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack。</p>
+<p><strong>CSS hack大致有3种表现形式，CSS属性前缀法、选择器前缀法以及IE条件注释法（即HTML头部引用if IE）Hack，</strong>实际项目中CSS hack大部分是针对IE浏览器不同版本之间的表现差异而引入的。</p>
+<h4 id="属性前缀法："><a href="#属性前缀法：" class="headerlink" title="属性前缀法："></a>属性前缀法：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">      _color: red;/*IE6识别*/</span><br><span class="line">      *color: red;/*IE6,IE7识别*/</span><br><span class="line">      color: red\9;/*IE6-IE10识别*/</span><br><span class="line">      color: red\0;/*IE8-IE10识别*/</span><br><span class="line">      color: red\9\0;/*IE9,IE10识别*/</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="选择器前缀法（即选择器hack）："><a href="#选择器前缀法（即选择器hack）：" class="headerlink" title="选择器前缀法（即选择器hack）："></a>选择器前缀法（即选择器hack）：</h4><p>针对一些页面不一致或者需要特殊对待的浏览器，在CSS选择器前加上一些只有某些特定浏览器才能识别的前缀进行hack。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*html&#123;&#125;/*只对IE6生效*/</span><br><span class="line">*+html&#123;&#125;/*只对IE7生效*/</span><br><span class="line"></span><br><span class="line">@media screen\9&#123;...&#125;  //IE6-7生效</span><br></pre></td></tr></table></figure></p>
+<h4 id="IE条件注释法（即HTML条件注释hack）："><a href="#IE条件注释法（即HTML条件注释hack）：" class="headerlink" title="IE条件注释法（即HTML条件注释hack）："></a>IE条件注释法（即HTML条件注释hack）：</h4><p>（注：IE10+已经不再支持条件注释）这类hack不仅对CSS生效，对写在判断语句里面的所有代码都会生效。</p>
+<h4 id="如何应对浏览器兼容？"><a href="#如何应对浏览器兼容？" class="headerlink" title="如何应对浏览器兼容？"></a>如何应对浏览器兼容？</h4><p>把浏览器分两类，一类是历史遗留浏览器，一类是现代浏览器。<br>按照W3C标准流程和规范，优先为高端浏览器设计，同时考虑低端浏览器的退化方案。<br><strong>策略：</strong></p>
+<ol>
+<li>渐进增强（progressive enhancement）：<br> 针对低版本浏览器进行构建页面，保证最基本的功能，然后在针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</li>
+<li>优雅降级（graceful degradation）：<br> 一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。<br>优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带。</li>
+</ol>
+<h4 id="reset-css和normalize-css"><a href="#reset-css和normalize-css" class="headerlink" title="reset.css和normalize.css"></a>reset.css和normalize.css</h4><p>reset.css是通过重新定义标签样式，把浏览器的默认样式覆盖掉，以便保持个浏览器渲染的一致性。相对暴力<br>normalize.css是reset.css的替代方案，保留有用的浏览器默认样式，重置掉该重置的样式，同时进行一些bug的修复。相对平和</p>
+<h3 id="IE8不支持HTML5也不支持CSS3-Media"><a href="#IE8不支持HTML5也不支持CSS3-Media" class="headerlink" title="IE8不支持HTML5也不支持CSS3 Media"></a>IE8不支持HTML5也不支持CSS3 Media</h3><p>需要加载两个JS文件，来保证我们的代码实现兼容效果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--[if lt IE 9]&gt;</span><br><span class="line">  &lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="IE6不支持透明图片"><a href="#IE6不支持透明图片" class="headerlink" title="IE6不支持透明图片"></a>IE6不支持透明图片</h3><p>解法方案：<br>通过JS代码让IE6支持</p>
 <ol>
 <li>下载JS支持文件：<a href="https://github.com/xifengxx/demo/tree/master/Web%E5%89%8D%E7%AB%AF%E8%BE%85%E5%8A%A9/JS%E8%AE%A9IE6%E6%94%AF%E6%8C%81%E9%80%8F%E6%98%8E" target="_blank" rel="external">下载地址</a>   <a id="more"></a></li>
 <li>将下面的代码放到html文件中的<code>&lt;head&gt;&lt;/head&gt;</code>之间,注意修改成正确的路径！<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if IE 6]&gt;</span><br><span class="line">&lt;script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type="text/javascript" src="js/ie6Fixpng.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="IE8不支持HTML5也不支持CSS3-Media"><a href="#IE8不支持HTML5也不支持CSS3-Media" class="headerlink" title="IE8不支持HTML5也不支持CSS3 Media"></a>IE8不支持HTML5也不支持CSS3 Media</h3><p>需要加载两个JS文件，来保证我们的代码实现兼容效果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--[if lt IE 9]&gt;</span><br><span class="line">  &lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure></p>
 <h3 id="背景透明度问题"><a href="#背景透明度问题" class="headerlink" title="背景透明度问题"></a>背景透明度问题</h3><p>IE８以下浏览器都不支持 opacity透明度设置。<br>可以使用IE自带的“滤镜”来实现，使用filter:alpha(opacity=)来设置透明度。<br>案例：设置div元素的背景。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">#oDiv&#123;  height:100%; width:100%; </span><br><span class="line">        background:#000; </span><br><span class="line">        opacity:0.5;  //兼容Chrome,firefox,Safari;</span><br><span class="line">        filter:alpha(opacity=50); //IE8以下透明度兼容</span><br><span class="line">        position:absolute; left:0; top:0;</span><br><span class="line">     &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
 <h3 id="IE浏览器下图片边框问题"><a href="#IE浏览器下图片边框问题" class="headerlink" title="IE浏览器下图片边框问题"></a>IE浏览器下图片边框问题</h3><p>IE浏览器下，图片会自动加上黑色的边框，看起来不美观。<br>此问题不是图片自身问题（如格式问题,png24/png32/jpg/gif）<br>解决方法：<br>在相关CSS样式文件中为图片设置边框即可：<br><code>img{border:0;}</code></p>
 <h3 id="ie6行类标签浮动父级宽度的50-的bug"><a href="#ie6行类标签浮动父级宽度的50-的bug" class="headerlink" title="ie6行类标签浮动父级宽度的50%的bug"></a>ie6行类标签浮动父级宽度的50%的bug</h3><p><strong>问题描述：</strong><br>页面布局需要左右两块各占窗口的50%，把外层容器的宽度设为100%，左侧div宽50%左浮动，右侧同样50%有浮动。<br>调试时，其他浏览器都好用，只在ie6与ie7中出现问题，貌似多出一像素的宽，导致右侧被挤到下面去。<br><strong>解决方案</strong><br>将宽度设为49.9%即可。</p>
@@ -419,17 +424,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/30/JavaScript深入浅出(3)/" rel="next" title="JavaScript深入浅出(3)">
-                <i class="fa fa-chevron-left"></i> JavaScript深入浅出(3)
+              <a href="/2016/11/11/Web前端实战经验(JS相关)/" rel="next" title="Web前端实战经验(JS相关)">
+                <i class="fa fa-chevron-left"></i> Web前端实战经验(JS相关)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/11/Web前端实战经验(JS相关)/" rel="prev" title="Web前端实战经验(JS相关)">
-                Web前端实战经验(JS相关) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -501,7 +502,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">74</span>
+              <span class="site-state-item-count">75</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -509,7 +510,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -518,7 +519,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -600,7 +601,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#IE6不支持透明图片"><span class="nav-number">1.</span> <span class="nav-text">IE6不支持透明图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE8不支持HTML5也不支持CSS3-Media"><span class="nav-number">2.</span> <span class="nav-text">IE8不支持HTML5也不支持CSS3 Media</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景透明度问题"><span class="nav-number">3.</span> <span class="nav-text">背景透明度问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE浏览器下图片边框问题"><span class="nav-number">4.</span> <span class="nav-text">IE浏览器下图片边框问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ie6行类标签浮动父级宽度的50-的bug"><span class="nav-number">5.</span> <span class="nav-text">ie6行类标签浮动父级宽度的50%的bug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE6-7子元素超过父元素时触发的bug"><span class="nav-number">6.</span> <span class="nav-text">IE6/7子元素超过父元素时触发的bug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ie6-7中span-或a等行内元素-右浮动折行问题"><span class="nav-number">7.</span> <span class="nav-text">ie6/7中span(或a等行内元素)右浮动折行问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是CSS-hack？"><span class="nav-number">1.</span> <span class="nav-text">什么是CSS hack？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性前缀法："><span class="nav-number">1.1.</span> <span class="nav-text">属性前缀法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择器前缀法（即选择器hack）："><span class="nav-number">1.2.</span> <span class="nav-text">选择器前缀法（即选择器hack）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IE条件注释法（即HTML条件注释hack）："><span class="nav-number">1.3.</span> <span class="nav-text">IE条件注释法（即HTML条件注释hack）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何应对浏览器兼容？"><span class="nav-number">1.4.</span> <span class="nav-text">如何应对浏览器兼容？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reset-css和normalize-css"><span class="nav-number">1.5.</span> <span class="nav-text">reset.css和normalize.css</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE8不支持HTML5也不支持CSS3-Media"><span class="nav-number">2.</span> <span class="nav-text">IE8不支持HTML5也不支持CSS3 Media</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE6不支持透明图片"><span class="nav-number">3.</span> <span class="nav-text">IE6不支持透明图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景透明度问题"><span class="nav-number">4.</span> <span class="nav-text">背景透明度问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE浏览器下图片边框问题"><span class="nav-number">5.</span> <span class="nav-text">IE浏览器下图片边框问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ie6行类标签浮动父级宽度的50-的bug"><span class="nav-number">6.</span> <span class="nav-text">ie6行类标签浮动父级宽度的50%的bug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IE6-7子元素超过父元素时触发的bug"><span class="nav-number">7.</span> <span class="nav-text">IE6/7子元素超过父元素时触发的bug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ie6-7中span-或a等行内元素-右浮动折行问题"><span class="nav-number">8.</span> <span class="nav-text">ie6/7中span(或a等行内元素)右浮动折行问题</span></a></li></ol></div>
             
           </div>
         </section>

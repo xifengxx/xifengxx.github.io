@@ -265,8 +265,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/11/Web前端实战经验(CSS及页面布局)/" itemprop="url">
-                  Web前端实战经验(CSS及页面布局)
+                <a class="post-title-link" href="/2016/11/11/Web前端实战经验(浏览器兼容)/" itemprop="url">
+                  Web前端实战经验(浏览器兼容)
                 </a>
               
             
@@ -293,8 +293,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Web前端实战/" itemprop="url" rel="index">
-                    <span itemprop="name">Web前端实战</span>
+                  <a href="/categories/Web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">Web前端</span>
                   </a>
                 </span>
 
@@ -309,8 +309,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/11/Web前端实战经验(CSS及页面布局)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/11/Web前端实战经验(CSS及页面布局)/" itemprop="commentsCount"></span>
+                <a href="/2016/11/11/Web前端实战经验(浏览器兼容)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/11/Web前端实战经验(浏览器兼容)/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -320,7 +320,7 @@
 
           
           
-             <span id="/2016/11/11/Web前端实战经验(CSS及页面布局)/" class="leancloud_visitors" data-flag-title="Web前端实战经验(CSS及页面布局)">
+             <span id="/2016/11/11/Web前端实战经验(浏览器兼容)/" class="leancloud_visitors" data-flag-title="Web前端实战经验(浏览器兼容)">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -342,9 +342,23 @@
 
       
         
-          <p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/web%E5%89%8D%E7%AB%AF.jpg" alt=""><br>
+          <h3 id="什么是CSS-hack？"><a href="#什么是CSS-hack？" class="headerlink" title="什么是CSS hack？"></a>什么是CSS hack？</h3><p>由于不同厂商的浏览器或某浏览器的不同版本（如IE6-IE11，Firefox，Safari，Opera，Chrome等），对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果。<br>因此，为了获得统一的页面效果，就需要针对不同的浏览器或不同版本写特定的CSS样式，我们把这个针对不同的浏览器/不同版本写相应的CSS code的过程，叫做CSS hack。</p>
+<p><strong>CSS hack大致有3种表现形式，CSS属性前缀法、选择器前缀法以及IE条件注释法（即HTML头部引用if IE）Hack，</strong>实际项目中CSS hack大部分是针对IE浏览器不同版本之间的表现差异而引入的。</p>
+<h4 id="属性前缀法："><a href="#属性前缀法：" class="headerlink" title="属性前缀法："></a>属性前缀法：</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">      _color: red;/*IE6识别*/</span><br><span class="line">      *color: red;/*IE6,IE7识别*/</span><br><span class="line">      color: red\9;/*IE6-IE10识别*/</span><br><span class="line">      color: red\0;/*IE8-IE10识别*/</span><br><span class="line">      color: red\9\0;/*IE9,IE10识别*/</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="选择器前缀法（即选择器hack）："><a href="#选择器前缀法（即选择器hack）：" class="headerlink" title="选择器前缀法（即选择器hack）："></a>选择器前缀法（即选择器hack）：</h4><p>针对一些页面不一致或者需要特殊对待的浏览器，在CSS选择器前加上一些只有某些特定浏览器才能识别的前缀进行hack。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*html&#123;&#125;/*只对IE6生效*/</span><br><span class="line">*+html&#123;&#125;/*只对IE7生效*/</span><br><span class="line"></span><br><span class="line">@media screen\9&#123;...&#125;  //IE6-7生效</span><br></pre></td></tr></table></figure></p>
+<h4 id="IE条件注释法（即HTML条件注释hack）："><a href="#IE条件注释法（即HTML条件注释hack）：" class="headerlink" title="IE条件注释法（即HTML条件注释hack）："></a>IE条件注释法（即HTML条件注释hack）：</h4><p>（注：IE10+已经不再支持条件注释）这类hack不仅对CSS生效，对写在判断语句里面的所有代码都会生效。</p>
+<h4 id="如何应对浏览器兼容？"><a href="#如何应对浏览器兼容？" class="headerlink" title="如何应对浏览器兼容？"></a>如何应对浏览器兼容？</h4><p>把浏览器分两类，一类是历史遗留浏览器，一类是现代浏览器。<br>按照W3C标准流程和规范，优先为高端浏览器设计，同时考虑低端浏览器的退化方案。<br><strong>策略：</strong></p>
+<ol>
+<li>渐进增强（progressive enhancement）：<br> 针对低版本浏览器进行构建页面，保证最基本的功能，然后在针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</li>
+<li>优雅降级（graceful degradation）：<br> 一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。<br>优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带。</li>
+</ol>
+<h4 id="reset-css和normalize-css"><a href="#reset-css和normalize-css" class="headerlink" title="reset.css和normalize.css"></a>reset.css和normalize.css</h4><p>reset.css是通过重新定义标签样式，把浏览器的默认样式覆盖掉，以便保持个浏览器渲染的一致性。相对暴力<br>normalize.css是reset.css的替代方案，保留有用的浏览器默认样式，重置掉该重置的样式，同时进行一些bug的修复。相对平和</p>
+<h3 id="IE8不支持HTML5也不支持CSS3-Media"><a href="#IE8不支持HTML5也不支持CSS3-Media" class="headerlink" title="IE8不支持HTML5也不支持CSS3 Media"></a>IE8不支持HTML5也不支持CSS3 Media</h3><p>需要加载两个JS文件，来保证我们的代码实现兼容效果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--[if lt IE 9]&gt;</span><br><span class="line">  &lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="IE6不支持透明图片"><a href="#IE6不支持透明图片" class="headerlink" title="IE6不支持透明图片"></a>IE6不支持透明图片</h3><p>解法方案：<br>通过JS代码让IE6支持</p>
+<ol>
+<li>下载JS支持文件：<a href="https://github.com/xifengxx/demo/tree/master/Web%E5%89%8D%E7%AB%AF%E8%BE%85%E5%8A%A9/JS%E8%AE%A9IE6%E6%94%AF%E6%8C%81%E9%80%8F%E6%98%8E">下载地址</a>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/11/11/Web前端实战经验(CSS及页面布局)/#more" rel="contents">
+            <a class="btn" href="/2016/11/11/Web前端实战经验(浏览器兼容)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -525,8 +539,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/11/11/Web前端实战经验(浏览器兼容)/" itemprop="url">
-                  Web前端实战经验(浏览器兼容)
+                <a class="post-title-link" href="/2016/11/11/Web前端实战经验(CSS及页面布局)/" itemprop="url">
+                  Web前端实战经验(CSS及页面布局)
                 </a>
               
             
@@ -553,8 +567,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">Web前端</span>
+                  <a href="/categories/Web前端实战/" itemprop="url" rel="index">
+                    <span itemprop="name">Web前端实战</span>
                   </a>
                 </span>
 
@@ -569,8 +583,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/11/Web前端实战经验(浏览器兼容)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/11/Web前端实战经验(浏览器兼容)/" itemprop="commentsCount"></span>
+                <a href="/2016/11/11/Web前端实战经验(CSS及页面布局)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/11/Web前端实战经验(CSS及页面布局)/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -580,7 +594,7 @@
 
           
           
-             <span id="/2016/11/11/Web前端实战经验(浏览器兼容)/" class="leancloud_visitors" data-flag-title="Web前端实战经验(浏览器兼容)">
+             <span id="/2016/11/11/Web前端实战经验(CSS及页面布局)/" class="leancloud_visitors" data-flag-title="Web前端实战经验(CSS及页面布局)">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -602,11 +616,145 @@
 
       
         
-          <h3 id="IE6不支持透明图片"><a href="#IE6不支持透明图片" class="headerlink" title="IE6不支持透明图片"></a>IE6不支持透明图片</h3><p>解法方案：<br>通过JS代码让IE6支持</p>
-<ol>
-<li>下载JS支持文件：<a href="https://github.com/xifengxx/demo/tree/master/Web%E5%89%8D%E7%AB%AF%E8%BE%85%E5%8A%A9/JS%E8%AE%A9IE6%E6%94%AF%E6%8C%81%E9%80%8F%E6%98%8E">下载地址</a>
+          <p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/web%E5%89%8D%E7%AB%AF.jpg" alt=""><br>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/11/11/Web前端实战经验(浏览器兼容)/#more" rel="contents">
+            <a class="btn" href="/2016/11/11/Web前端实战经验(CSS及页面布局)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/11/Web前端开发-新知识点及疑问/" itemprop="url">
+                  Web前端开发-新知识点及疑问
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-11T09:23:24+08:00" content="2016-11-11">
+              2016-11-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Web前端开发/" itemprop="url" rel="index">
+                    <span itemprop="name">Web前端开发</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/11/Web前端开发-新知识点及疑问/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/11/Web前端开发-新知识点及疑问/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/11/Web前端开发-新知识点及疑问/" class="leancloud_visitors" data-flag-title="Web前端开发-新知识点及疑问">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+script标签&lt;script type=&quot;text/template&quot;&gt;疑问在HTML中嵌入模板HTML，往往是类似这样的写法：123&lt;script type="text/template"&gt;    &lt;img src="mm1.jpg"&gt;&lt;/script&gt;
+实际上，并不存在type=”text/template”这样的标准写法.&lt;script&gt;本身的特定，让内部的HTML标签是按照字符串处理的，因此，天生内容不显示。
+在js里面，经常需要使用js往页面中插入html内容。比如这样：var number = 123; $(&#39;#d&#39;).append(&#39;&lt;div class=&quot;t&quot;&gt;&#39;+number+&#39;&lt;/div&gt;&#39;)如果html很短还好说，但是遇到描述里面的这么大段，直接用字符串存储会很困难，因为不光要处理单引号，还需要很多「+」号把字符串一个个连接起来，十分的不方便。给&lt;script&gt;设置type=&q
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/11/Web前端开发-新知识点及疑问/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -864,7 +1012,7 @@
 
       
         
-          <h3 id="函数和作用域"><a href="#函数和作用域" class="headerlink" title="函数和作用域"></a>函数和作用域</h3><h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p>函数是一块JavaScript代码，被定义一次，但可执行和调用多次.<br>JS中的函数也是对象，所以JS函数可以像其它对象那样操作和传递,<br>所以我们也常叫JS中的函数为函数对象。</p>
+          <h3 id="函数和作用域"><a href="#函数和作用域" class="headerlink" title="函数和作用域"></a>函数和作用域</h3><h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><p>函数是一块JavaScript代码，被定义一次，但可执行和调用多次。<br>JS中的函数也是对象，所以JS函数可以像其它对象那样操作和传递，所以我们也常叫JS中的函数为函数对象。</p>
 <h5 id="函数调用方式："><a href="#函数调用方式：" class="headerlink" title="函数调用方式："></a>函数调用方式：</h5><p>在JavaScript中一共有四种调用模式：</p>
 <ul>
 <li>对象方法调用模式：o.method();</li>
@@ -1447,137 +1595,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/11/HTML5 Canvas绘图笔记(1)/" itemprop="url">
-                  HTML5 Canvas绘图笔记(1)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-11T16:23:24+08:00" content="2016-07-11">
-              2016-07-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Canvas/" itemprop="url" rel="index">
-                    <span itemprop="name">Canvas</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/11/HTML5 Canvas绘图笔记(1)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/11/HTML5 Canvas绘图笔记(1)/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/07/11/HTML5 Canvas绘图笔记(1)/" class="leancloud_visitors" data-flag-title="HTML5 Canvas绘图笔记(1)">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><code>&lt;canvas&gt;</code>是一个可以使用脚本(通常为JavaScript)在其中绘制图形的 HTML 元素.它可以用于制作照片集或者制作简单的动画.</p>
-<h3 id="Canvas标签："><a href="#Canvas标签：" class="headerlink" title="Canvas标签："></a>Canvas标签：</h3><p><strong>canvas标签添加</strong><br>要使用canvas，首先要在body中添加上canvas标签<br>canvas标签是一块默认300<em>150大小的画布<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/11/HTML5 Canvas绘图笔记(1)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1623,7 +1640,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">74</span>
+              <span class="site-state-item-count">75</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1631,7 +1648,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1640,7 +1657,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
