@@ -67,7 +67,7 @@
 <meta property="og:description" content="HTTP，或者超文本传输协议，是上世纪80年代由蒂姆.伯纳斯.李发明的。它是一个规则系统，是一种协议，把应用程序和超文本文档之间的传输联系起来。换句话说，HTTP 就是机器之间彼此沟通的一个协议，或者说一个消息格式。HTTP 遵循一个简单的模型：从客户端发出请求到服务器并等待响应。因此它也被认为是一种“请求–响应协议”。请求和响应都是文本信息，或者说是字符串，信息写法遵循着一个规则，能保证其他机器">
 <meta property="og:image" content="http://book.haoduoshipin.com/tealeaf-http/images/http_client_server.png">
 <meta property="og:image" content="http://book.haoduoshipin.com/tealeaf-http/images/https_address_bar.png">
-<meta property="og:updated_time" content="2016-05-05T13:02:10.000Z">
+<meta property="og:updated_time" content="2016-08-17T08:01:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP协议及相关知识">
 <meta name="twitter:description" content="HTTP，或者超文本传输协议，是上世纪80年代由蒂姆.伯纳斯.李发明的。它是一个规则系统，是一种协议，把应用程序和超文本文档之间的传输联系起来。换句话说，HTTP 就是机器之间彼此沟通的一个协议，或者说一个消息格式。HTTP 遵循一个简单的模型：从客户端发出请求到服务器并等待响应。因此它也被认为是一种“请求–响应协议”。请求和响应都是文本信息，或者说是字符串，信息写法遵循着一个规则，能保证其他机器">
@@ -351,7 +351,7 @@
 <h4 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h4><p>浏览器里的典型 POST 使用案例就是你提交一个表单的时候。POST 请求允许我们向服务器发送更大或者敏感的数据，比如图片或者视频。<br>POST 请求也能避免你使用 GET 请求时的查询字符串长度限制问题。通过 POST 请求，我们可以给服务器发送更大的数据。</p>
 <h4 id="HTTP头部"><a href="#HTTP头部" class="headerlink" title="HTTP头部"></a>HTTP头部</h4><p>HTTP 头部允许客户端和服务器在请求/响应的 HTTP 周期里发送额外的信息。头部，通常是以冒号分隔的键值对儿，一般是纯文本格式的。</p>
 <h4 id="请求头部-Request-Headers"><a href="#请求头部-Request-Headers" class="headerlink" title="请求头部 Request Headers"></a>请求头部 Request Headers</h4><p>请求头部提供更多关于服务器和要获取的资源的信息。一些有用的请求头部是:</p>
-<p>字段名          |  描述                    |    举例<br>Host            |  服务器域名              |    Host:www.reddit.com<br>—————-|————————- | ————————-<br>Accept-Language |  可接受的语言            |    Accept-Language: en-US，en;q=0.8<br>User-Agent      |  一个标识客户端的字符串  |    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML，like Gecko) Chrome/38.0.2125.101 Safari/537.36<br>Connection      |   客户端连接的类型       |    Connection: keep-alive</p>
+<p>| 字段名          |  描述                    |    举例 |<br>| Host            |  服务器域名              |    Host:www.reddit.com |<br>| —————-|————————- | ————————- |<br>| Accept-Language |  可接受的语言            |    Accept-Language: en-US，en;q=0.8 |<br>| User-Agent      |  一个标识客户端的字符串  |    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML，like Gecko) Chrome/38.0.2125.101 Safari/537.36 |<br>| Connection      |   客户端连接的类型       |    Connection: keep-alive |</p>
 <h3 id="处理响应"><a href="#处理响应" class="headerlink" title="处理响应"></a>处理响应</h3><p>服务器返回的原始数据就是所谓的响应。</p>
 <h4 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h4><p>状态码是服务器接收到请求后返回的标识请求状态的三位数.在状态码的旁边，就是描述这个状态码的状态文本.<br>常见的状态码有：<br>状态码     |   状态文本                 |     含义<br>———–|—————————-|—————————<br>200        |    OK                      |     请求被正确处理<br>302        |    Found                   |     所请求的资源已暂时更改.通常会重定向到另一个 URL<br>404        |    Not Found               |     所请求的资源无法找到<br>500        |    Internal Server Error   |       服务器出现一般性错误</p>
 <p><strong>302 Redirect（重定向）</strong></p>

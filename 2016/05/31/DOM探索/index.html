@@ -72,9 +72,10 @@
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/DOM-05.jpg">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/DOM-06.jpg">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/DOM-07.jpg">
+<meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/DOM-08.jpg">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/DOM-09.jpg">
 <meta property="og:image" content="http://7xrt0g.com1.z0.glb.clouddn.com/DOM-10.jpg">
-<meta property="og:updated_time" content="2016-06-01T00:14:18.000Z">
+<meta property="og:updated_time" content="2016-08-17T16:05:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM探索">
 <meta name="twitter:description" content="Javascript的组成：ECMAscript:描述了语言的语法和基本对象；BOM:描述了与浏览器进行交互的方法和接口，如浏览器窗口、浏览器导航对象、浏览器分辨率、历史记录、cookie等等。">
@@ -370,7 +371,27 @@
 <h4 id="文档类型"><a href="#文档类型" class="headerlink" title="文档类型"></a>文档类型</h4><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/DOM-03.jpg" alt=""><br>HTML是根据标准HTML规范命名元素、标签、属性, 元素和属性作为标准能被所有浏览器解析；<br>xml是存放格式化数据的，里面的标签可以根据语义要求任意取名，无法被浏览器识别.</p>
 <h4 id="节点类型"><a href="#节点类型" class="headerlink" title="节点类型"></a>节点类型</h4><p>节点类型共12种,其中常用的七种Element(元素节点),Attr(属性节点)Text(文本节点),Comment(注释节点),Document(文档节点),DocumentType(文档类型节点),DocumentFragment(文档片段节点)<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/DOM-04.jpg" alt=""><br>■ 元素节点:</p>
 <blockquote>
-<p>拥有子节点和文本，是唯一能拥有属性的节点类型<br>■ 属性节点:<br>元素中的属性，是附属于元素的，是包含他的元素节点的一部分，不属于文档树的一部分<br>■ 文本节点:<br>只包含文本内容(可以只包含空白)的节点，在xml中称为字符数据；<br>在文档树中元素的文本内容和属性的文本内容都是由文本节点表示的<br>某个节点的空白区域，也是属于文本节点<br>■ 注释节点：<br>表示注释的内容<br><br>■ 文档节点：<br>文档树的根节点，是其他节点的父节点；<br>注意不是html或者xml的根元素。根元素是作为文档节点的子节点出现的<br><br>整个代码之上看做是文档节点<br><br>■ 文档类型节点： 例;&lt;!doctype html&gt;<br><br>■ 文档片段节点：<br>文档片段是轻量级的或者是最小的Document对象，他表示文档的一部分或者是一段，他不属于文档树；<br>他的特殊行为：占位符，暂时存放一次插入文档的节点，同时有利于剪贴复制操作<br>DocumentFragment节点使用示例，DocumentFragment文本片段节点可以作为一个占位符，来保存其他需要一次性插入文档的节点，当将其插入到某个节点内时，只是插入其所有子孙节点，其本身不会被插入！</p>
+<p>拥有子节点和文本，是唯一能拥有属性的节点类型</p>
+</blockquote>
+<p>■ 属性节点:</p>
+<blockquote>
+<p>元素中的属性，是附属于元素的，是包含他的元素节点的一部分，不属于文档树的一部分</p>
+</blockquote>
+<p>■ 文本节点:</p>
+<blockquote>
+<p>只包含文本内容(可以只包含空白)的节点，在xml中称为字符数据；<br>在文档树中元素的文本内容和属性的文本内容都是由文本节点表示的<br>某个节点的空白区域，也是属于文本节点</p>
+</blockquote>
+<p>■ 注释节点： </p>
+<blockquote>
+<p>表示注释的内容<br></p>
+</blockquote>
+<p>■ 文档节点： </p>
+<blockquote>
+<p>文档树的根节点，是其他节点的父节点；<br>注意不是html或者xml的根元素。根元素是作为文档节点的子节点出现的<br><br>整个代码之上看做是文档节点<br></p>
+</blockquote>
+<p>■ 文档类型节点： 例;&lt;!doctype html&gt;<br><br>■ 文档片段节点：</p>
+<blockquote>
+<p>文档片段是轻量级的或者是最小的Document对象，他表示文档的一部分或者是一段，他不属于文档树；<br>他的特殊行为：占位符，暂时存放一次插入文档的节点，同时有利于剪贴复制操作<br>DocumentFragment节点使用示例，DocumentFragment文本片段节点可以作为一个占位符，来保存其他需要一次性插入文档的节点，当将其插入到某个节点内时，只是插入其所有子孙节点，其本身不会被插入！</p>
 </blockquote>
 <p><strong>nodeType判断节点类型：</strong><br>非ie中，可以使用字符串常量判断。divNode.nodeType == Node.ELEMENT_NODE。<br>ie中，由于没有Node对象，需使用数值判断。divNode.nodeType == 1(即元素节点的编号)。<br>因此：<span style="color:red">应使用数值常量来判断节点类型，以兼容所有浏览器。</span></p>
 <p><strong>节点的nodeName与nodeValue</strong><br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/DOM-05.jpg" alt="05"><br>首先获取节点对象，然后通过.nodeName和.nodeValue返回节点的名称和值.</p>
@@ -383,7 +404,7 @@
 </ul>
 <h3 id="DOM-Ready"><a href="#DOM-Ready" class="headerlink" title="DOM Ready"></a>DOM Ready</h3><p>html标签需要通过浏览器渲染引擎的解析才会变成dom节点，在刷新url地址的时候就有dom构建的过程。当所有html都转化为节点后，dom树才构建完毕，简称为dom ready。<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/DOM-06.jpg" alt="06"></p>
 <h4 id="浏览器渲染引擎的基本渲染流程"><a href="#浏览器渲染引擎的基本渲染流程" class="headerlink" title="浏览器渲染引擎的基本渲染流程"></a>浏览器渲染引擎的基本渲染流程</h4><p><img src="http://7xrt0g.com1.z0.glb.clouddn.com/DOM-07.jpg" alt="07"><br>渲染引擎在取得基本内容之后的基本渲染流程：<br>1、解析HTML，构建DOM树（构建DOM节点）；<br>2、构建渲染树（解析样式信息，包括外部的css文件、style标签中的样式）。渲染树由一些包含有各种属性的矩形组成，他们将会按照正确的顺序显 示到屏幕上；<br>3、布局渲染树（布局DOM节点），执行布局的过程，将确定每个节点在屏幕上的确切坐标；<br>4、绘制渲染树（绘制DOM节点，即遍历渲染树），使用UI后端层来绘制每个节点</p>
-<p>Webkit主要渲染流程：<br>![08(<a href="http://7xrt0g.com1.z0.glb.clouddn.com/DOM-08.jpg" target="_blank" rel="external">http://7xrt0g.com1.z0.glb.clouddn.com/DOM-08.jpg</a>)</p>
+<p>Webkit主要渲染流程：<br><img src="http://7xrt0g.com1.z0.glb.clouddn.com/DOM-08.jpg" alt="08"></p>
 <p>参考资源：<br>浏览器内部工作原理： <a href="http://kb.cnblogs.com/page/129756/" target="_blank" rel="external">http://kb.cnblogs.com/page/129756/</a></p>
 <h4 id="DOMReady实现策略"><a href="#DOMReady实现策略" class="headerlink" title="DOMReady实现策略"></a>DOMReady实现策略</h4><p>在实际应用中，我们经常会遇到这样的场景，当页面加载完成后去做一些事情：绑定事件、DOM操作某些结点等。原来比较常用的是window的onload 事件，而该事件的实际效果是：当页面解析/DOM树建立完成，并完成了诸如图片、脚本、样式表甚至是iframe中所有资源的下载后才触发的。这对于很多 实际的应用而言有点太“迟”了，比较影响用户体验。</p>
 <p>为了解决这个问题，ff中便增加了一个DOMContentLoaded方法，与onload相比，该方法触发的时间更早，它是<strong>在页面的DOM内容加载完成后（也就是HTML解析第一步完成）即触发，而无需等待其他资源的加载。</strong>Webkit引擎从版本525（Webkit nightly 1/2008:525+）开始也引入了该事件，Opera中也包含该方法。<br>即DOMReady实现策略：</p>
@@ -414,7 +435,7 @@
 <p><strong>块状元素与内联元素嵌套规则</strong></p>
 <ol>
 <li>块状元素可以包含内联元素或某些块元素，但内联元素却不能包含块元素，它只能包含其他的内联元素。</li>
-<li>块级元素不能放在<p>里面。</p></li>
+<li>块级元素不能放在<code>&lt;p&gt;</code>里面。</li>
 <li>有几个特殊的块级元素只能包含內联元素，不能再包含块级元素，这几个特殊的标签：h1-h6,p,dt。</li>
 <li>li内可以包含div标签。（两者都是装载内容的容器，没有级别之分，同理，li内可以容纳ul/ol）</li>
 <li>块级元素与块级元素并列，内联元素与内联元素并列。<br><code>&lt;div&gt;&lt;h2&gt;&lt;/h2&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;</code>不提倡</li>
